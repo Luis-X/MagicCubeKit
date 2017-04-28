@@ -1,0 +1,20 @@
+//
+//  MagicCubeHeader.pch
+//  MagicCubeKit
+//
+//  Created by LuisX on 2017/4/28.
+//  Copyright © 2017年 LuisX. All rights reserved.
+//
+
+#ifndef MagicCubeHeader_pch
+#define MagicCubeHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Masonry.h>
+
+
+#import "Base-Header.h"
+#import "MagicCubeDefine.h"
+#endif /* MagicCubeHeader_pch */
