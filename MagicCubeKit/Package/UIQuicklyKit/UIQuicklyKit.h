@@ -14,3 +14,10 @@
 #import "QuicklyAsyncDisplay.h"
 #import "QuicklyHUD.h"
 
+@interface UIQuicklyKit : NSObject
+//转场
++ (void)navigationController:(UINavigationController *)navigationController
+          pushViewController:(UIViewController *)viewController
+              hidesBottomBar:(BOOL)hidesBottomBar
+                    animated:(BOOL)animated;
+@end

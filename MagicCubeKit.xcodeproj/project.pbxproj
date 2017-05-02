@@ -75,6 +75,7 @@
 		D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CB81EB8856000C88BAE /* SJResponeInfo.m */; };
 		D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */; };
 		D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */; };
+		D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJResponseViewController.m; sourceTree = "<group>"; };
 		D1C72CBB1EB8856000C88BAE /* SJScreenShortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJScreenShortManager.h; sourceTree = "<group>"; };
 		D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJScreenShortManager.m; sourceTree = "<group>"; };
+		D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQuicklyKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -783,6 +785,7 @@
 				D1C72C941EB87C6B00C88BAE /* QuicklyUI.h */,
 				D1C72C951EB87C6B00C88BAE /* QuicklyUI.m */,
 				D1C72C961EB87C6B00C88BAE /* UIQuicklyKit.h */,
+				D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */,
 			);
 			path = UIQuicklyKit;
 			sourceTree = "<group>";
@@ -1068,6 +1071,7 @@
 				D1C72C521EB86F0C00C88BAE /* TangramContext.m in Sources */,
 				D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
+				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,

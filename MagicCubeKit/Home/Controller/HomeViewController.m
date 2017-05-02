@@ -92,19 +92,15 @@
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         UIViewController *viewController = [ViewController new];
-        viewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:viewController animated:YES];
+        [UIQuicklyKit navigationController:self.navigationController pushViewController:viewController hidesBottomBar:YES animated:YES];
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
         ExampleTangramViewController *viewController = [ExampleTangramViewController new];
-        viewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:viewController animated:YES];
+        [UIQuicklyKit navigationController:self.navigationController pushViewController:viewController hidesBottomBar:YES animated:YES];
     }
     if (indexPath.section == 0 && indexPath.row == 2) {
-        
         ExampleSJBugVideoKitViewController *viewController = [ExampleSJBugVideoKitViewController new];
-        viewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:viewController animated:YES];
+        [UIQuicklyKit navigationController:self.navigationController pushViewController:viewController hidesBottomBar:YES animated:YES];
     }
     
 }
