@@ -1,1 +1,0 @@
-../../../Tangram/Tangram/Source/Protocols/TangramEasyElementProtocol.h

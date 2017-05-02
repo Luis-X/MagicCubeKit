@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - AsyncDisplayKit (2.2.1):
     - AsyncDisplayKit/PINRemoteImage (= 2.2.1)
   - AsyncDisplayKit/Core (2.2.1)
@@ -6,22 +21,11 @@ PODS:
     - AsyncDisplayKit/Core
     - PINRemoteImage/iOS (= 3.0.0-beta.8)
     - PINRemoteImage/PINCache
-  - CSGrowingTextView (1.0.5)
   - DateTools (1.7.0)
-  - EAIntroView (2.9.0):
-    - EARestrictedScrollView (~> 1.1.0)
-  - EARestrictedScrollView (1.1.0)
-  - FBAllocationTracker (0.1.5)
-  - FBMemoryProfiler (0.1.3):
-    - FBAllocationTracker (~> 0.1)
-    - FBRetainCycleDetector (~> 0.1)
-  - FBRetainCycleDetector (0.1.3)
   - FDFullscreenPopGesture (1.1)
   - iCarousel (1.8.3)
   - JLRoutes (2.0.5)
   - LazyScroll (0.0.2)
-  - LBXScan (1.1.1):
-    - ZXingObjC (~> 3.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
@@ -43,61 +47,35 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - Shimmer (1.0.2)
-  - STPopup (1.8.2)
-  - Tangram (1.0.3):
-    - LazyScroll (~> 0.0.2)
-    - SDWebImage (~> 3.7)
-  - TYPagerController (1.0.2)
-  - UICollectionViewLeftAlignedLayout (1.0.2)
-  - UITableView+FDTemplateLayoutCell (1.5.beta)
+  - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
-  - WSProgressHUD (1.1.2):
-    - Shimmer
   - WYPopoverController (0.3.9)
-  - XLForm (3.2.0)
-  - ZXingObjC (3.2.1):
-    - ZXingObjC/All (= 3.2.1)
-  - ZXingObjC/All (3.2.1)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
   - AsyncDisplayKit (~> 2.0-beta.1)
-  - CSGrowingTextView (~> 1.0.5)
   - DateTools (~> 1.7.0)
-  - EAIntroView (~> 2.9.0)
-  - FBMemoryProfiler (~> 0.1.3)
   - FDFullscreenPopGesture
   - iCarousel (~> 1.8.3)
   - JLRoutes (~> 2.0)
-  - LBXScan (~> 1.1.1)
+  - LazyScroll (~> 0.0.2)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - Reachability (~> 3.2)
-  - STPopup (~> 1.8.0)
-  - Tangram
-  - TYPagerController (~> 1.0.2)
-  - UICollectionViewLeftAlignedLayout (~> 1.0.2)
+  - SDWebImage (~> 3.7)
   - UITableView+FDTemplateLayoutCell (~> 1.5.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
-  - WSProgressHUD (~> 1.1.1)
   - WYPopoverController (~> 0.3.9)
-  - XLForm (~> 3.2.0)
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AsyncDisplayKit: 2234dd8d8770a5ed72936b3f8394bd5a807765f6
-  CSGrowingTextView: 129abe533cc079f2797b8e1dff6d42cf84a31024
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
-  EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
-  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
-  FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
-  FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
-  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   LazyScroll: 614022689b8e3b93c7bbe268c1a47b76e4265941
-  LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -106,18 +84,10 @@ SPEC CHECKSUMS:
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
-  Tangram: 3bae7b9dc29816221e2a27f76ca86b8afa95564b
-  TYPagerController: 0b3e3e589a217ff537d5f78e1e76594beaa4cfc6
-  UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
-  UITableView+FDTemplateLayoutCell: 02b508ab1cb4cea16a8c17ac83d2cd1fd72124f9
+  UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
-  WSProgressHUD: e214ab3dd863115bd69ede25cb3b38e27f78c468
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
-  XLForm: 2250b4e96ab8ffa5f3355838c79edd90de451782
-  ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: c40b08f3f9de24524bbf95ec8c83ae62d2da3144
+PODFILE CHECKSUM: dd5eb2c0139b2636cfdfd67621170af08331071c
 
 COCOAPODS: 1.2.0

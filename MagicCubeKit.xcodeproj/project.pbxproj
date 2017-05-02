@@ -21,6 +21,60 @@
 		D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */; };
 		D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816F71EB31D9A004C238A /* BaseNavigationController.m */; };
 		D11816FA1EB32076004C238A /* tabbar_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11816F91EB32076004C238A /* tabbar_0@2x.png */; };
+		D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */; };
+		D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */ = {isa = PBXBuildFile; fileRef = D1C72B611EB83A6C00C88BAE /* exampleTangram.json */; };
+		D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B641EB8645700C88BAE /* ExampleElementText.m */; };
+		D1C72B681EB866A400C88BAE /* ExampleElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B671EB866A400C88BAE /* ExampleElementImage.m */; };
+		D1C72C4A1EB86F0C00C88BAE /* TangramHelperCustomMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF41EB86F0C00C88BAE /* TangramHelperCustomMapping.plist */; };
+		D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF51EB86F0C00C88BAE /* TangramHelperMapping.plist */; };
+		D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF61EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist */; };
+		D1C72C4D1EB86F0C00C88BAE /* TangramView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72BFA1EB86F0C00C88BAE /* TangramView.m */; };
+		D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72BFD1EB86F0C00C88BAE /* TangramBus.m */; };
+		D1C72C4F1EB86F0C00C88BAE /* TangramBusIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72BFF1EB86F0C00C88BAE /* TangramBusIndex.m */; };
+		D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C011EB86F0C00C88BAE /* TangramBusIndexClass.m */; };
+		D1C72C511EB86F0C00C88BAE /* TangramBusIndexTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C031EB86F0C00C88BAE /* TangramBusIndexTopic.m */; };
+		D1C72C521EB86F0C00C88BAE /* TangramContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C051EB86F0C00C88BAE /* TangramContext.m */; };
+		D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C071EB86F0C00C88BAE /* TangramEvent.m */; };
+		D1C72C541EB86F0C00C88BAE /* TangramEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C091EB86F0C00C88BAE /* TangramEventDispatcher.m */; };
+		D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C0B1EB86F0C00C88BAE /* TangramEventQueue.m */; };
+		D1C72C561EB86F0C00C88BAE /* TangramDefaultElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C0E1EB86F0C00C88BAE /* TangramDefaultElementFactory.m */; };
+		D1C72C571EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C101EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m */; };
+		D1C72C581EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C121EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m */; };
+		D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C151EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m */; };
+		D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C171EB86F0C00C88BAE /* TangramLayoutParseHelper.m */; };
+		D1C72C5B1EB86F0C00C88BAE /* UIView+Tangram.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C191EB86F0C00C88BAE /* UIView+Tangram.m */; };
+		D1C72C5C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C1C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m */; };
+		D1C72C5D1EB86F0C00C88BAE /* TangramDragableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C1E1EB86F0C00C88BAE /* TangramDragableLayout.m */; };
+		D1C72C5E1EB86F0C00C88BAE /* TangramFixBottomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C201EB86F0C00C88BAE /* TangramFixBottomLayout.m */; };
+		D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C221EB86F0C00C88BAE /* TangramFixLayout.m */; };
+		D1C72C601EB86F0C00C88BAE /* TangramFixTopLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C241EB86F0C00C88BAE /* TangramFixTopLayout.m */; };
+		D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C261EB86F0C00C88BAE /* TangramFlowLayout.m */; };
+		D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C281EB86F0C00C88BAE /* TangramPageScrollLayout.m */; };
+		D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C2A1EB86F0C00C88BAE /* TangramQuintetColumnLayout.m */; };
+		D1C72C641EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C2C1EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m */; };
+		D1C72C651EB86F0C00C88BAE /* TangramSingleColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C2E1EB86F0C00C88BAE /* TangramSingleColumnLayout.m */; };
+		D1C72C661EB86F0C00C88BAE /* TangramStickyBottomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C301EB86F0C00C88BAE /* TangramStickyBottomLayout.m */; };
+		D1C72C671EB86F0C00C88BAE /* TangramStickyLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C321EB86F0C00C88BAE /* TangramStickyLayout.m */; };
+		D1C72C681EB86F0C00C88BAE /* TangramTetradColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C341EB86F0C00C88BAE /* TangramTetradColumnLayout.m */; };
+		D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C361EB86F0C00C88BAE /* TangramTribleColumnLayout.m */; };
+		D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C381EB86F0C00C88BAE /* TangramWaterFlowLayout.m */; };
+		D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C3B1EB86F0C00C88BAE /* TangramDefaultItemModel.m */; };
+		D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C471EB86F0C00C88BAE /* TangramSafeMethod.m */; };
+		D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C911EB87C6B00C88BAE /* QuicklyAsyncDisplay.m */; };
+		D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C931EB87C6B00C88BAE /* QuicklyHUD.m */; };
+		D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C951EB87C6B00C88BAE /* QuicklyUI.m */; };
+		D1C72CA61EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CA51EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m */; };
+		D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CA91EB8856000C88BAE /* share_friend@2x.png */; };
+		D1C72CBE1EB8856000C88BAE /* share_problem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CAA1EB8856000C88BAE /* share_problem@2x.png */; };
+		D1C72CBF1EB8856000C88BAE /* share_qq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CAB1EB8856000C88BAE /* share_qq@2x.png */; };
+		D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CAC1EB8856000C88BAE /* share_wechat@2x.png */; };
+		D1C72CC11EB8856000C88BAE /* video_start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CAD1EB8856000C88BAE /* video_start@2x.png */; };
+		D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CAE1EB8856000C88BAE /* video_stop@2x.png */; };
+		D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CB21EB8856000C88BAE /* ReplayKitManager.m */; };
+		D1C72CC41EB8856000C88BAE /* SJBugVideoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CB41EB8856000C88BAE /* SJBugVideoTool.m */; };
+		D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CB81EB8856000C88BAE /* SJResponeInfo.m */; };
+		D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */; };
+		D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +126,114 @@
 		D11816F71EB31D9A004C238A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		D11816F91EB32076004C238A /* tabbar_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_0@2x.png"; sourceTree = "<group>"; };
 		D11816FB1EB320B8004C238A /* MagicCubeDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeDefine.h; sourceTree = "<group>"; };
+		D1C72B5E1EB8354F00C88BAE /* ExampleTangramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTangramViewController.h; sourceTree = "<group>"; };
+		D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTangramViewController.m; sourceTree = "<group>"; };
+		D1C72B611EB83A6C00C88BAE /* exampleTangram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exampleTangram.json; sourceTree = "<group>"; };
+		D1C72B631EB8645700C88BAE /* ExampleElementText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleElementText.h; sourceTree = "<group>"; };
+		D1C72B641EB8645700C88BAE /* ExampleElementText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleElementText.m; sourceTree = "<group>"; };
+		D1C72B661EB866A400C88BAE /* ExampleElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleElementImage.h; sourceTree = "<group>"; };
+		D1C72B671EB866A400C88BAE /* ExampleElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleElementImage.m; sourceTree = "<group>"; };
+		D1C72BF41EB86F0C00C88BAE /* TangramHelperCustomMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TangramHelperCustomMapping.plist; sourceTree = "<group>"; };
+		D1C72BF51EB86F0C00C88BAE /* TangramHelperMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TangramHelperMapping.plist; sourceTree = "<group>"; };
+		D1C72BF61EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TangramKitLayoutTypeMap.plist; sourceTree = "<group>"; };
+		D1C72BF91EB86F0C00C88BAE /* TangramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramView.h; sourceTree = "<group>"; };
+		D1C72BFA1EB86F0C00C88BAE /* TangramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramView.m; sourceTree = "<group>"; };
+		D1C72BFC1EB86F0C00C88BAE /* TangramBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramBus.h; sourceTree = "<group>"; };
+		D1C72BFD1EB86F0C00C88BAE /* TangramBus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramBus.m; sourceTree = "<group>"; };
+		D1C72BFE1EB86F0C00C88BAE /* TangramBusIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramBusIndex.h; sourceTree = "<group>"; };
+		D1C72BFF1EB86F0C00C88BAE /* TangramBusIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramBusIndex.m; sourceTree = "<group>"; };
+		D1C72C001EB86F0C00C88BAE /* TangramBusIndexClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramBusIndexClass.h; sourceTree = "<group>"; };
+		D1C72C011EB86F0C00C88BAE /* TangramBusIndexClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramBusIndexClass.m; sourceTree = "<group>"; };
+		D1C72C021EB86F0C00C88BAE /* TangramBusIndexTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramBusIndexTopic.h; sourceTree = "<group>"; };
+		D1C72C031EB86F0C00C88BAE /* TangramBusIndexTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramBusIndexTopic.m; sourceTree = "<group>"; };
+		D1C72C041EB86F0C00C88BAE /* TangramContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramContext.h; sourceTree = "<group>"; };
+		D1C72C051EB86F0C00C88BAE /* TangramContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramContext.m; sourceTree = "<group>"; };
+		D1C72C061EB86F0C00C88BAE /* TangramEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramEvent.h; sourceTree = "<group>"; };
+		D1C72C071EB86F0C00C88BAE /* TangramEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramEvent.m; sourceTree = "<group>"; };
+		D1C72C081EB86F0C00C88BAE /* TangramEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramEventDispatcher.h; sourceTree = "<group>"; };
+		D1C72C091EB86F0C00C88BAE /* TangramEventDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramEventDispatcher.m; sourceTree = "<group>"; };
+		D1C72C0A1EB86F0C00C88BAE /* TangramEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramEventQueue.h; sourceTree = "<group>"; };
+		D1C72C0B1EB86F0C00C88BAE /* TangramEventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramEventQueue.m; sourceTree = "<group>"; };
+		D1C72C0D1EB86F0C00C88BAE /* TangramDefaultElementFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramDefaultElementFactory.h; sourceTree = "<group>"; };
+		D1C72C0E1EB86F0C00C88BAE /* TangramDefaultElementFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramDefaultElementFactory.m; sourceTree = "<group>"; };
+		D1C72C0F1EB86F0C00C88BAE /* TangramDefaultItemModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramDefaultItemModelFactory.h; sourceTree = "<group>"; };
+		D1C72C101EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramDefaultItemModelFactory.m; sourceTree = "<group>"; };
+		D1C72C111EB86F0C00C88BAE /* TangramDefaultLayoutFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramDefaultLayoutFactory.h; sourceTree = "<group>"; };
+		D1C72C121EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramDefaultLayoutFactory.m; sourceTree = "<group>"; };
+		D1C72C141EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramDefaultDataSourceHelper.h; sourceTree = "<group>"; };
+		D1C72C151EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramDefaultDataSourceHelper.m; sourceTree = "<group>"; };
+		D1C72C161EB86F0C00C88BAE /* TangramLayoutParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramLayoutParseHelper.h; sourceTree = "<group>"; };
+		D1C72C171EB86F0C00C88BAE /* TangramLayoutParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramLayoutParseHelper.m; sourceTree = "<group>"; };
+		D1C72C181EB86F0C00C88BAE /* UIView+Tangram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tangram.h"; sourceTree = "<group>"; };
+		D1C72C191EB86F0C00C88BAE /* UIView+Tangram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tangram.m"; sourceTree = "<group>"; };
+		D1C72C1B1EB86F0C00C88BAE /* TangramDoubleColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramDoubleColumnLayout.h; sourceTree = "<group>"; };
+		D1C72C1C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramDoubleColumnLayout.m; sourceTree = "<group>"; };
+		D1C72C1D1EB86F0C00C88BAE /* TangramDragableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramDragableLayout.h; sourceTree = "<group>"; };
+		D1C72C1E1EB86F0C00C88BAE /* TangramDragableLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramDragableLayout.m; sourceTree = "<group>"; };
+		D1C72C1F1EB86F0C00C88BAE /* TangramFixBottomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramFixBottomLayout.h; sourceTree = "<group>"; };
+		D1C72C201EB86F0C00C88BAE /* TangramFixBottomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramFixBottomLayout.m; sourceTree = "<group>"; };
+		D1C72C211EB86F0C00C88BAE /* TangramFixLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramFixLayout.h; sourceTree = "<group>"; };
+		D1C72C221EB86F0C00C88BAE /* TangramFixLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramFixLayout.m; sourceTree = "<group>"; };
+		D1C72C231EB86F0C00C88BAE /* TangramFixTopLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramFixTopLayout.h; sourceTree = "<group>"; };
+		D1C72C241EB86F0C00C88BAE /* TangramFixTopLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramFixTopLayout.m; sourceTree = "<group>"; };
+		D1C72C251EB86F0C00C88BAE /* TangramFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramFlowLayout.h; sourceTree = "<group>"; };
+		D1C72C261EB86F0C00C88BAE /* TangramFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramFlowLayout.m; sourceTree = "<group>"; };
+		D1C72C271EB86F0C00C88BAE /* TangramPageScrollLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramPageScrollLayout.h; sourceTree = "<group>"; };
+		D1C72C281EB86F0C00C88BAE /* TangramPageScrollLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramPageScrollLayout.m; sourceTree = "<group>"; };
+		D1C72C291EB86F0C00C88BAE /* TangramQuintetColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramQuintetColumnLayout.h; sourceTree = "<group>"; };
+		D1C72C2A1EB86F0C00C88BAE /* TangramQuintetColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramQuintetColumnLayout.m; sourceTree = "<group>"; };
+		D1C72C2B1EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramSingleAndDoubleLayout.h; sourceTree = "<group>"; };
+		D1C72C2C1EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramSingleAndDoubleLayout.m; sourceTree = "<group>"; };
+		D1C72C2D1EB86F0C00C88BAE /* TangramSingleColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramSingleColumnLayout.h; sourceTree = "<group>"; };
+		D1C72C2E1EB86F0C00C88BAE /* TangramSingleColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramSingleColumnLayout.m; sourceTree = "<group>"; };
+		D1C72C2F1EB86F0C00C88BAE /* TangramStickyBottomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramStickyBottomLayout.h; sourceTree = "<group>"; };
+		D1C72C301EB86F0C00C88BAE /* TangramStickyBottomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramStickyBottomLayout.m; sourceTree = "<group>"; };
+		D1C72C311EB86F0C00C88BAE /* TangramStickyLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramStickyLayout.h; sourceTree = "<group>"; };
+		D1C72C321EB86F0C00C88BAE /* TangramStickyLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramStickyLayout.m; sourceTree = "<group>"; };
+		D1C72C331EB86F0C00C88BAE /* TangramTetradColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramTetradColumnLayout.h; sourceTree = "<group>"; };
+		D1C72C341EB86F0C00C88BAE /* TangramTetradColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramTetradColumnLayout.m; sourceTree = "<group>"; };
+		D1C72C351EB86F0C00C88BAE /* TangramTribleColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramTribleColumnLayout.h; sourceTree = "<group>"; };
+		D1C72C361EB86F0C00C88BAE /* TangramTribleColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramTribleColumnLayout.m; sourceTree = "<group>"; };
+		D1C72C371EB86F0C00C88BAE /* TangramWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramWaterFlowLayout.h; sourceTree = "<group>"; };
+		D1C72C381EB86F0C00C88BAE /* TangramWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramWaterFlowLayout.m; sourceTree = "<group>"; };
+		D1C72C3A1EB86F0C00C88BAE /* TangramDefaultItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramDefaultItemModel.h; sourceTree = "<group>"; };
+		D1C72C3B1EB86F0C00C88BAE /* TangramDefaultItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramDefaultItemModel.m; sourceTree = "<group>"; };
+		D1C72C3D1EB86F0C00C88BAE /* TangramEasyElementProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramEasyElementProtocol.h; sourceTree = "<group>"; };
+		D1C72C3E1EB86F0C00C88BAE /* TangramElementFactoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramElementFactoryProtocol.h; sourceTree = "<group>"; };
+		D1C72C3F1EB86F0C00C88BAE /* TangramElementHeightProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramElementHeightProtocol.h; sourceTree = "<group>"; };
+		D1C72C401EB86F0C00C88BAE /* TangramElementReuseIdentifierProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramElementReuseIdentifierProtocol.h; sourceTree = "<group>"; };
+		D1C72C411EB86F0C00C88BAE /* TangramItemModelFactoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramItemModelFactoryProtocol.h; sourceTree = "<group>"; };
+		D1C72C421EB86F0C00C88BAE /* TangramItemModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramItemModelProtocol.h; sourceTree = "<group>"; };
+		D1C72C431EB86F0C00C88BAE /* TangramLayoutFactoryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramLayoutFactoryProtocol.h; sourceTree = "<group>"; };
+		D1C72C441EB86F0C00C88BAE /* TangramLayoutProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramLayoutProtocol.h; sourceTree = "<group>"; };
+		D1C72C461EB86F0C00C88BAE /* TangramSafeMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangramSafeMethod.h; sourceTree = "<group>"; };
+		D1C72C471EB86F0C00C88BAE /* TangramSafeMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangramSafeMethod.m; sourceTree = "<group>"; };
+		D1C72C901EB87C6B00C88BAE /* QuicklyAsyncDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuicklyAsyncDisplay.h; sourceTree = "<group>"; };
+		D1C72C911EB87C6B00C88BAE /* QuicklyAsyncDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuicklyAsyncDisplay.m; sourceTree = "<group>"; };
+		D1C72C921EB87C6B00C88BAE /* QuicklyHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuicklyHUD.h; sourceTree = "<group>"; };
+		D1C72C931EB87C6B00C88BAE /* QuicklyHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuicklyHUD.m; sourceTree = "<group>"; };
+		D1C72C941EB87C6B00C88BAE /* QuicklyUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuicklyUI.h; sourceTree = "<group>"; };
+		D1C72C951EB87C6B00C88BAE /* QuicklyUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuicklyUI.m; sourceTree = "<group>"; };
+		D1C72C961EB87C6B00C88BAE /* UIQuicklyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuicklyKit.h; sourceTree = "<group>"; };
+		D1C72CA41EB8849100C88BAE /* ExampleSJBugVideoKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleSJBugVideoKitViewController.h; sourceTree = "<group>"; };
+		D1C72CA51EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleSJBugVideoKitViewController.m; sourceTree = "<group>"; };
+		D1C72CA91EB8856000C88BAE /* share_friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_friend@2x.png"; sourceTree = "<group>"; };
+		D1C72CAA1EB8856000C88BAE /* share_problem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_problem@2x.png"; sourceTree = "<group>"; };
+		D1C72CAB1EB8856000C88BAE /* share_qq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_qq@2x.png"; sourceTree = "<group>"; };
+		D1C72CAC1EB8856000C88BAE /* share_wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_wechat@2x.png"; sourceTree = "<group>"; };
+		D1C72CAD1EB8856000C88BAE /* video_start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video_start@2x.png"; sourceTree = "<group>"; };
+		D1C72CAE1EB8856000C88BAE /* video_stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video_stop@2x.png"; sourceTree = "<group>"; };
+		D1C72CAF1EB8856000C88BAE /* SJBugVideoConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJBugVideoConstant.h; sourceTree = "<group>"; };
+		D1C72CB11EB8856000C88BAE /* ReplayKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplayKitManager.h; sourceTree = "<group>"; };
+		D1C72CB21EB8856000C88BAE /* ReplayKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplayKitManager.m; sourceTree = "<group>"; };
+		D1C72CB31EB8856000C88BAE /* SJBugVideoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJBugVideoTool.h; sourceTree = "<group>"; };
+		D1C72CB41EB8856000C88BAE /* SJBugVideoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJBugVideoTool.m; sourceTree = "<group>"; };
+		D1C72CB71EB8856000C88BAE /* SJResponeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJResponeInfo.h; sourceTree = "<group>"; };
+		D1C72CB81EB8856000C88BAE /* SJResponeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJResponeInfo.m; sourceTree = "<group>"; };
+		D1C72CB91EB8856000C88BAE /* SJResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJResponseViewController.h; sourceTree = "<group>"; };
+		D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJResponseViewController.m; sourceTree = "<group>"; };
+		D1C72CBB1EB8856000C88BAE /* SJScreenShortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJScreenShortManager.h; sourceTree = "<group>"; };
+		D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJScreenShortManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +305,11 @@
 			isa = PBXGroup;
 			children = (
 				D11816CF1EB2F2D5004C238A /* Home(首页) */,
+				D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */,
 				D11816D31EB2F2D5004C238A /* Other(其他) */,
 				D11816DD1EB2F2D5004C238A /* Resource(资源) */,
 				D11816E31EB2F2D5004C238A /* Vender(第三方) */,
+				D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */,
 				D118169F1EB2EFB5004C238A /* AppDelegate.h */,
 				D11816A01EB2EFB5004C238A /* AppDelegate.m */,
 				D11816A21EB2EFB5004C238A /* ViewController.h */,
@@ -365,6 +529,7 @@
 		D11816E31EB2F2D5004C238A /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				D1C72BF11EB86F0C00C88BAE /* Tangram */,
 			);
 			name = "Vender(第三方)";
 			path = Vender;
@@ -376,6 +541,315 @@
 			);
 			name = "Module(组件)";
 			path = Module;
+			sourceTree = "<group>";
+		};
+		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C6D1EB8791A00C88BAE /* ExampleSJBugVideoKit(录屏、截屏) */,
+				D1C72B5A1EB834ED00C88BAE /* ExampleTangram(七巧板) */,
+			);
+			name = "HomeExample(Home示例)";
+			path = HomeExample;
+			sourceTree = "<group>";
+		};
+		D1C72B5A1EB834ED00C88BAE /* ExampleTangram(七巧板) */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72B5B1EB834ED00C88BAE /* Controller */,
+				D1C72B5C1EB834ED00C88BAE /* Model */,
+				D1C72B5D1EB834ED00C88BAE /* View */,
+			);
+			name = "ExampleTangram(七巧板)";
+			path = ExampleTangram;
+			sourceTree = "<group>";
+		};
+		D1C72B5B1EB834ED00C88BAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72B5E1EB8354F00C88BAE /* ExampleTangramViewController.h */,
+				D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1C72B5C1EB834ED00C88BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72B611EB83A6C00C88BAE /* exampleTangram.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1C72B5D1EB834ED00C88BAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72B631EB8645700C88BAE /* ExampleElementText.h */,
+				D1C72B641EB8645700C88BAE /* ExampleElementText.m */,
+				D1C72B661EB866A400C88BAE /* ExampleElementImage.h */,
+				D1C72B671EB866A400C88BAE /* ExampleElementImage.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1C72BF11EB86F0C00C88BAE /* Tangram */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72BF31EB86F0C00C88BAE /* Resource */,
+				D1C72BF71EB86F0C00C88BAE /* Source */,
+			);
+			path = Tangram;
+			sourceTree = "<group>";
+		};
+		D1C72BF31EB86F0C00C88BAE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72BF41EB86F0C00C88BAE /* TangramHelperCustomMapping.plist */,
+				D1C72BF51EB86F0C00C88BAE /* TangramHelperMapping.plist */,
+				D1C72BF61EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D1C72BF71EB86F0C00C88BAE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72BF81EB86F0C00C88BAE /* Core */,
+				D1C72BFB1EB86F0C00C88BAE /* EventBus */,
+				D1C72C0C1EB86F0C00C88BAE /* Factory */,
+				D1C72C131EB86F0C00C88BAE /* Helper */,
+				D1C72C1A1EB86F0C00C88BAE /* Layouts */,
+				D1C72C391EB86F0C00C88BAE /* Model */,
+				D1C72C3C1EB86F0C00C88BAE /* Protocols */,
+				D1C72C451EB86F0C00C88BAE /* Util */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D1C72BF81EB86F0C00C88BAE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72BF91EB86F0C00C88BAE /* TangramView.h */,
+				D1C72BFA1EB86F0C00C88BAE /* TangramView.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D1C72BFB1EB86F0C00C88BAE /* EventBus */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72BFC1EB86F0C00C88BAE /* TangramBus.h */,
+				D1C72BFD1EB86F0C00C88BAE /* TangramBus.m */,
+				D1C72BFE1EB86F0C00C88BAE /* TangramBusIndex.h */,
+				D1C72BFF1EB86F0C00C88BAE /* TangramBusIndex.m */,
+				D1C72C001EB86F0C00C88BAE /* TangramBusIndexClass.h */,
+				D1C72C011EB86F0C00C88BAE /* TangramBusIndexClass.m */,
+				D1C72C021EB86F0C00C88BAE /* TangramBusIndexTopic.h */,
+				D1C72C031EB86F0C00C88BAE /* TangramBusIndexTopic.m */,
+				D1C72C041EB86F0C00C88BAE /* TangramContext.h */,
+				D1C72C051EB86F0C00C88BAE /* TangramContext.m */,
+				D1C72C061EB86F0C00C88BAE /* TangramEvent.h */,
+				D1C72C071EB86F0C00C88BAE /* TangramEvent.m */,
+				D1C72C081EB86F0C00C88BAE /* TangramEventDispatcher.h */,
+				D1C72C091EB86F0C00C88BAE /* TangramEventDispatcher.m */,
+				D1C72C0A1EB86F0C00C88BAE /* TangramEventQueue.h */,
+				D1C72C0B1EB86F0C00C88BAE /* TangramEventQueue.m */,
+			);
+			path = EventBus;
+			sourceTree = "<group>";
+		};
+		D1C72C0C1EB86F0C00C88BAE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C0D1EB86F0C00C88BAE /* TangramDefaultElementFactory.h */,
+				D1C72C0E1EB86F0C00C88BAE /* TangramDefaultElementFactory.m */,
+				D1C72C0F1EB86F0C00C88BAE /* TangramDefaultItemModelFactory.h */,
+				D1C72C101EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m */,
+				D1C72C111EB86F0C00C88BAE /* TangramDefaultLayoutFactory.h */,
+				D1C72C121EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		D1C72C131EB86F0C00C88BAE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C141EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.h */,
+				D1C72C151EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m */,
+				D1C72C161EB86F0C00C88BAE /* TangramLayoutParseHelper.h */,
+				D1C72C171EB86F0C00C88BAE /* TangramLayoutParseHelper.m */,
+				D1C72C181EB86F0C00C88BAE /* UIView+Tangram.h */,
+				D1C72C191EB86F0C00C88BAE /* UIView+Tangram.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		D1C72C1A1EB86F0C00C88BAE /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C1B1EB86F0C00C88BAE /* TangramDoubleColumnLayout.h */,
+				D1C72C1C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m */,
+				D1C72C1D1EB86F0C00C88BAE /* TangramDragableLayout.h */,
+				D1C72C1E1EB86F0C00C88BAE /* TangramDragableLayout.m */,
+				D1C72C1F1EB86F0C00C88BAE /* TangramFixBottomLayout.h */,
+				D1C72C201EB86F0C00C88BAE /* TangramFixBottomLayout.m */,
+				D1C72C211EB86F0C00C88BAE /* TangramFixLayout.h */,
+				D1C72C221EB86F0C00C88BAE /* TangramFixLayout.m */,
+				D1C72C231EB86F0C00C88BAE /* TangramFixTopLayout.h */,
+				D1C72C241EB86F0C00C88BAE /* TangramFixTopLayout.m */,
+				D1C72C251EB86F0C00C88BAE /* TangramFlowLayout.h */,
+				D1C72C261EB86F0C00C88BAE /* TangramFlowLayout.m */,
+				D1C72C271EB86F0C00C88BAE /* TangramPageScrollLayout.h */,
+				D1C72C281EB86F0C00C88BAE /* TangramPageScrollLayout.m */,
+				D1C72C291EB86F0C00C88BAE /* TangramQuintetColumnLayout.h */,
+				D1C72C2A1EB86F0C00C88BAE /* TangramQuintetColumnLayout.m */,
+				D1C72C2B1EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.h */,
+				D1C72C2C1EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m */,
+				D1C72C2D1EB86F0C00C88BAE /* TangramSingleColumnLayout.h */,
+				D1C72C2E1EB86F0C00C88BAE /* TangramSingleColumnLayout.m */,
+				D1C72C2F1EB86F0C00C88BAE /* TangramStickyBottomLayout.h */,
+				D1C72C301EB86F0C00C88BAE /* TangramStickyBottomLayout.m */,
+				D1C72C311EB86F0C00C88BAE /* TangramStickyLayout.h */,
+				D1C72C321EB86F0C00C88BAE /* TangramStickyLayout.m */,
+				D1C72C331EB86F0C00C88BAE /* TangramTetradColumnLayout.h */,
+				D1C72C341EB86F0C00C88BAE /* TangramTetradColumnLayout.m */,
+				D1C72C351EB86F0C00C88BAE /* TangramTribleColumnLayout.h */,
+				D1C72C361EB86F0C00C88BAE /* TangramTribleColumnLayout.m */,
+				D1C72C371EB86F0C00C88BAE /* TangramWaterFlowLayout.h */,
+				D1C72C381EB86F0C00C88BAE /* TangramWaterFlowLayout.m */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		D1C72C391EB86F0C00C88BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C3A1EB86F0C00C88BAE /* TangramDefaultItemModel.h */,
+				D1C72C3B1EB86F0C00C88BAE /* TangramDefaultItemModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1C72C3C1EB86F0C00C88BAE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C3D1EB86F0C00C88BAE /* TangramEasyElementProtocol.h */,
+				D1C72C3E1EB86F0C00C88BAE /* TangramElementFactoryProtocol.h */,
+				D1C72C3F1EB86F0C00C88BAE /* TangramElementHeightProtocol.h */,
+				D1C72C401EB86F0C00C88BAE /* TangramElementReuseIdentifierProtocol.h */,
+				D1C72C411EB86F0C00C88BAE /* TangramItemModelFactoryProtocol.h */,
+				D1C72C421EB86F0C00C88BAE /* TangramItemModelProtocol.h */,
+				D1C72C431EB86F0C00C88BAE /* TangramLayoutFactoryProtocol.h */,
+				D1C72C441EB86F0C00C88BAE /* TangramLayoutProtocol.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D1C72C451EB86F0C00C88BAE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C461EB86F0C00C88BAE /* TangramSafeMethod.h */,
+				D1C72C471EB86F0C00C88BAE /* TangramSafeMethod.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D1C72C6D1EB8791A00C88BAE /* ExampleSJBugVideoKit(录屏、截屏) */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CA31EB8849100C88BAE /* Controller */,
+			);
+			name = "ExampleSJBugVideoKit(录屏、截屏)";
+			path = ExampleSJBugVideoKit;
+			sourceTree = "<group>";
+		};
+		D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CA71EB8856000C88BAE /* SJBugVideoKit */,
+				D1C72C8F1EB87C6B00C88BAE /* UIQuicklyKit */,
+			);
+			name = "Package(封装包)";
+			path = Package;
+			sourceTree = "<group>";
+		};
+		D1C72C8F1EB87C6B00C88BAE /* UIQuicklyKit */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72C901EB87C6B00C88BAE /* QuicklyAsyncDisplay.h */,
+				D1C72C911EB87C6B00C88BAE /* QuicklyAsyncDisplay.m */,
+				D1C72C921EB87C6B00C88BAE /* QuicklyHUD.h */,
+				D1C72C931EB87C6B00C88BAE /* QuicklyHUD.m */,
+				D1C72C941EB87C6B00C88BAE /* QuicklyUI.h */,
+				D1C72C951EB87C6B00C88BAE /* QuicklyUI.m */,
+				D1C72C961EB87C6B00C88BAE /* UIQuicklyKit.h */,
+			);
+			path = UIQuicklyKit;
+			sourceTree = "<group>";
+		};
+		D1C72CA31EB8849100C88BAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CA41EB8849100C88BAE /* ExampleSJBugVideoKitViewController.h */,
+				D1C72CA51EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1C72CA71EB8856000C88BAE /* SJBugVideoKit */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CA81EB8856000C88BAE /* ReSource */,
+				D1C72CAF1EB8856000C88BAE /* SJBugVideoConstant.h */,
+				D1C72CB01EB8856000C88BAE /* SJReplay */,
+				D1C72CB51EB8856000C88BAE /* SJScreen */,
+			);
+			path = SJBugVideoKit;
+			sourceTree = "<group>";
+		};
+		D1C72CA81EB8856000C88BAE /* ReSource */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CA91EB8856000C88BAE /* share_friend@2x.png */,
+				D1C72CAA1EB8856000C88BAE /* share_problem@2x.png */,
+				D1C72CAB1EB8856000C88BAE /* share_qq@2x.png */,
+				D1C72CAC1EB8856000C88BAE /* share_wechat@2x.png */,
+				D1C72CAD1EB8856000C88BAE /* video_start@2x.png */,
+				D1C72CAE1EB8856000C88BAE /* video_stop@2x.png */,
+			);
+			path = ReSource;
+			sourceTree = "<group>";
+		};
+		D1C72CB01EB8856000C88BAE /* SJReplay */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CB11EB8856000C88BAE /* ReplayKitManager.h */,
+				D1C72CB21EB8856000C88BAE /* ReplayKitManager.m */,
+				D1C72CB31EB8856000C88BAE /* SJBugVideoTool.h */,
+				D1C72CB41EB8856000C88BAE /* SJBugVideoTool.m */,
+			);
+			path = SJReplay;
+			sourceTree = "<group>";
+		};
+		D1C72CB51EB8856000C88BAE /* SJScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CB61EB8856000C88BAE /* Model */,
+				D1C72CB91EB8856000C88BAE /* SJResponseViewController.h */,
+				D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */,
+				D1C72CBB1EB8856000C88BAE /* SJScreenShortManager.h */,
+				D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */,
+			);
+			path = SJScreen;
+			sourceTree = "<group>";
+		};
+		D1C72CB61EB8856000C88BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1C72CB71EB8856000C88BAE /* SJResponeInfo.h */,
+				D1C72CB81EB8856000C88BAE /* SJResponeInfo.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,10 +961,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C72CBE1EB8856000C88BAE /* share_problem@2x.png in Resources */,
+				D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */,
+				D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */,
+				D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */,
+				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
+				D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */,
 				D11816AC1EB2EFB5004C238A /* LaunchScreen.storyboard in Resources */,
+				D1C72CC11EB8856000C88BAE /* video_start@2x.png in Resources */,
+				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
 				D11816A91EB2EFB5004C238A /* Assets.xcassets in Resources */,
 				D11816A71EB2EFB5004C238A /* Main.storyboard in Resources */,
+				D1C72CBF1EB8856000C88BAE /* share_qq@2x.png in Resources */,
 				D11816FA1EB32076004C238A /* tabbar_0@2x.png in Resources */,
+				D1C72C4A1EB86F0C00C88BAE /* TangramHelperCustomMapping.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,12 +1048,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
+				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
+				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,
+				D1C72C5C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m in Sources */,
+				D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */,
 				D11816A41EB2EFB5004C238A /* ViewController.m in Sources */,
+				D1C72C571EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m in Sources */,
 				D11816E71EB2F511004C238A /* BaseViewController.m in Sources */,
+				D1C72C4D1EB86F0C00C88BAE /* TangramView.m in Sources */,
+				D1C72C5E1EB86F0C00C88BAE /* TangramFixBottomLayout.m in Sources */,
+				D1C72C5D1EB86F0C00C88BAE /* TangramDragableLayout.m in Sources */,
+				D1C72C601EB86F0C00C88BAE /* TangramFixTopLayout.m in Sources */,
+				D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */,
 				D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */,
+				D1C72C561EB86F0C00C88BAE /* TangramDefaultElementFactory.m in Sources */,
+				D1C72C681EB86F0C00C88BAE /* TangramTetradColumnLayout.m in Sources */,
+				D1C72CA61EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m in Sources */,
+				D1C72C641EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m in Sources */,
+				D1C72C521EB86F0C00C88BAE /* TangramContext.m in Sources */,
 				D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */,
+				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
+				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
+				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
+				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
+				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
+				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
+				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
+				D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */,
+				D1C72C4F1EB86F0C00C88BAE /* TangramBusIndex.m in Sources */,
+				D1C72CC41EB8856000C88BAE /* SJBugVideoTool.m in Sources */,
+				D1C72C541EB86F0C00C88BAE /* TangramEventDispatcher.m in Sources */,
+				D1C72C5B1EB86F0C00C88BAE /* UIView+Tangram.m in Sources */,
+				D1C72C581EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m in Sources */,
+				D1C72C511EB86F0C00C88BAE /* TangramBusIndexTopic.m in Sources */,
+				D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */,
+				D1C72B681EB866A400C88BAE /* ExampleElementImage.m in Sources */,
+				D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */,
+				D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */,
+				D1C72C661EB86F0C00C88BAE /* TangramStickyBottomLayout.m in Sources */,
+				D1C72C651EB86F0C00C88BAE /* TangramSingleColumnLayout.m in Sources */,
+				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
+				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
+				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
+				D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */,
+				D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */,
+				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
+				D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */,
+				D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */,
+				D1C72C671EB86F0C00C88BAE /* TangramStickyLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

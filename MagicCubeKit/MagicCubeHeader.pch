@@ -12,9 +12,17 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#import <Masonry.h>
 
-
+//项目内
 #import "Base-Header.h"
 #import "MagicCubeDefine.h"
+#import "AppDelegate.h"
+
+//开源
+#import <Masonry.h>
+#import <AFNetworking.h>
+#import <DateTools.h>
+
+//封装包
+#import "UIQuicklyKit.h"
 #endif /* MagicCubeHeader_pch */

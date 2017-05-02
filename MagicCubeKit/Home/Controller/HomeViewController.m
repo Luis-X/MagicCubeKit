@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "ViewController.h"
+#import "ExampleTangramViewController.h"
+#import "ExampleSJBugVideoKitViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -41,7 +43,9 @@
 
 - (void)initailData{
     self.title = @"MagicCubeKit";
-    _menuArray = @[@{@"ViewController调用时机":@"UIViewController"}];
+    _menuArray = @[@{@"UIViewController":@"ViewController调用机制"},
+                   @{@"Tangram":@"七巧板界面动态化"},
+                   @{@"SJBugVideoKit":@"录屏、截屏"}];
 }
 
 - (void)createMainViews{
@@ -60,6 +64,7 @@
 }
 
 #pragma mark - UITableViewDataSource
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -87,6 +92,17 @@
     
     if (indexPath.section == 0 && indexPath.row == 0) {
         UIViewController *viewController = [ViewController new];
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        ExampleTangramViewController *viewController = [ExampleTangramViewController new];
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    if (indexPath.section == 0 && indexPath.row == 2) {
+        
+        ExampleSJBugVideoKitViewController *viewController = [ExampleSJBugVideoKitViewController new];
         viewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:viewController animated:YES];
     }

@@ -1,1 +1,0 @@
-../../../Tangram/Tangram/Source/Helper/TangramDefaultDataSourceHelper.h

@@ -9,9 +9,11 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 
+#import "SJBugVideoTool.h"
+#import "SJScreenShortManager.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) SJBugVideoTool *bugVideoTool;
 @end
 
 @implementation AppDelegate
@@ -22,29 +24,10 @@
  *
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //创建一个window对象,属于AppDelegate的属性
-    //UIScreen:      表示屏幕硬件类
-    //mainScreen:    获得主屏幕信息
-    //bounds:        当前手机屏幕大小
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    HomeViewController *homeViewController = [HomeViewController new];
-    BaseNavigationController *homeNavigationController = [[BaseNavigationController alloc] initWithRootViewController:homeViewController];
-    UIImage *home_normal = [Magic_LoadImage(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_selected = [Magic_LoadImage(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    homeNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:home_normal selectedImage:home_selected];
-    //标签栏
-    UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
-    rootTabBarController.viewControllers = @[homeNavigationController];
-    
-    //对窗口的根视图控制器进行赋值操作
-    //整个UIKit框架中只有一个根视图控制器,属于window的属性
-    //视图控制器用来管理界面和处理界面的逻辑类对象
-    //程序启动前必须对根视图控制器赋值
-    self.window.rootViewController = rootTabBarController;
-    //将window作为主视图并且显示
-    [self.window makeKeyAndVisible];
+    [self startSJBugVideoKit:YES];
+    [self startMainUIWindow];
+   
     return YES;
 }
 
@@ -111,5 +94,64 @@
     return YES;
 }
 
+#pragma mark - 获取AppDelete实例
++ (AppDelegate *)shareAppDelegate{
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
 
+
+#pragma mark - UIWindow
+
+- (void)startMainUIWindow{
+    
+    //创建一个window对象,属于AppDelegate的属性
+    //UIScreen:      表示屏幕硬件类
+    //mainScreen:    获得主屏幕信息
+    //bounds:        当前手机屏幕大小
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    HomeViewController *homeViewController = [HomeViewController new];
+    BaseNavigationController *homeNavigationController = [[BaseNavigationController alloc] initWithRootViewController:homeViewController];
+    UIImage *home_normal = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_selected = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:home_normal selectedImage:home_selected];
+    //标签栏
+    UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
+    rootTabBarController.viewControllers = @[homeNavigationController];
+    
+    //对窗口的根视图控制器进行赋值操作
+    //整个UIKit框架中只有一个根视图控制器,属于window的属性
+    //视图控制器用来管理界面和处理界面的逻辑类对象
+    //程序启动前必须对根视图控制器赋值
+    self.window.rootViewController = rootTabBarController;
+    //将window作为主视图并且显示
+    [self.window makeKeyAndVisible];
+    
+}
+
+
+#pragma mark - SJBugVideoKit
+
+- (void)startSJBugVideoKit:(BOOL)start{
+    
+    if (start) {
+        // 初始化屏幕录制（默认：隐藏）
+        self.bugVideoTool = [SJBugVideoTool show];
+        // 初始化截屏
+        [[SJScreenShortManager shareManager] startScreenShort:YES];
+    }
+    
+}
+
+/**
+ BUG录制
+ */
+- (void)showSJBugVideo:(BOOL)show{
+    
+    self.bugVideoTool.hidden = !show;
+    if (show == NO) {
+        [self.bugVideoTool stopBugVideo];
+    }
+    
+}
 @end

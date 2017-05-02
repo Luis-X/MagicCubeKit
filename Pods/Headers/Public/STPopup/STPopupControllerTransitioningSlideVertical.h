@@ -1,1 +1,0 @@
-../../../STPopup/STPopup/STPopupControllerTransitioningSlideVertical.h

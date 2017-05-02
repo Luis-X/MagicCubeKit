@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (AppDelegate *)shareAppDelegate; //获取AppDelegate实例
 
+- (void)showSJBugVideo:(BOOL)show;
 @end
 
