@@ -21,6 +21,11 @@
 		D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */; };
 		D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816F71EB31D9A004C238A /* BaseNavigationController.m */; };
 		D11816FA1EB32076004C238A /* tabbar_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11816F91EB32076004C238A /* tabbar_0@2x.png */; };
+		D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F11EC2F00000841273 /* ExampleMagicAlertViewViewController.m */; };
+		D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F41EC2F06600841273 /* MagicAlertView.m */; };
+		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
+		D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993FF1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m */; };
+		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
 		D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */; };
 		D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */ = {isa = PBXBuildFile; fileRef = D1C72B611EB83A6C00C88BAE /* exampleTangram.json */; };
 		D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B641EB8645700C88BAE /* ExampleElementText.m */; };
@@ -127,6 +132,18 @@
 		D11816F71EB31D9A004C238A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		D11816F91EB32076004C238A /* tabbar_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_0@2x.png"; sourceTree = "<group>"; };
 		D11816FB1EB320B8004C238A /* MagicCubeDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeDefine.h; sourceTree = "<group>"; };
+		D11993F01EC2F00000841273 /* ExampleMagicAlertViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicAlertViewViewController.h; sourceTree = "<group>"; };
+		D11993F11EC2F00000841273 /* ExampleMagicAlertViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicAlertViewViewController.m; sourceTree = "<group>"; };
+		D11993F31EC2F06600841273 /* MagicAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicAlertView.h; sourceTree = "<group>"; };
+		D11993F41EC2F06600841273 /* MagicAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicAlertView.m; sourceTree = "<group>"; };
+		D11993F71EC2F2F100841273 /* MagicPermissionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPermissionManager.h; sourceTree = "<group>"; };
+		D11993F81EC2F2F100841273 /* MagicPermissionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicPermissionManager.m; sourceTree = "<group>"; };
+		D11993FE1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicPermissionManagerViewController.h; sourceTree = "<group>"; };
+		D11993FF1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicPermissionManagerViewController.m; sourceTree = "<group>"; };
+		D11994011EC3022800841273 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		D11994031EC3022D00841273 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
+		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
 		D1C72B5E1EB8354F00C88BAE /* ExampleTangramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTangramViewController.h; sourceTree = "<group>"; };
 		D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTangramViewController.m; sourceTree = "<group>"; };
 		D1C72B611EB83A6C00C88BAE /* exampleTangram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exampleTangram.json; sourceTree = "<group>"; };
@@ -267,6 +284,8 @@
 		AF49EF4A6382731E5F62CE6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D11994031EC3022D00841273 /* AssetsLibrary.framework */,
+				D11994011EC3022800841273 /* PhotosUI.framework */,
 				0A6F1EAA10BE5E744C2C4F61 /* libPods-MagicCubeKit.a */,
 			);
 			name = Frameworks;
@@ -545,9 +564,83 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		D11993E91EC2EFC300841273 /* ExampleMagicAlertView(弹框) */ = {
+			isa = PBXGroup;
+			children = (
+				D11993EA1EC2EFC300841273 /* Controller */,
+				D11993EC1EC2EFC300841273 /* View */,
+			);
+			name = "ExampleMagicAlertView(弹框)";
+			path = ExampleMagicAlertView;
+			sourceTree = "<group>";
+		};
+		D11993EA1EC2EFC300841273 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D11993F01EC2F00000841273 /* ExampleMagicAlertViewViewController.h */,
+				D11993F11EC2F00000841273 /* ExampleMagicAlertViewViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D11993EC1EC2EFC300841273 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D11993F31EC2F06600841273 /* MagicAlertView.h */,
+				D11993F41EC2F06600841273 /* MagicAlertView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D11993F61EC2F2D300841273 /* MagicPermissionManager */ = {
+			isa = PBXGroup;
+			children = (
+				D11993F71EC2F2F100841273 /* MagicPermissionManager.h */,
+				D11993F81EC2F2F100841273 /* MagicPermissionManager.m */,
+			);
+			path = MagicPermissionManager;
+			sourceTree = "<group>";
+		};
+		D11993FA1EC2F3EC00841273 /* ExampleMagicPermissionManager(权限管理) */ = {
+			isa = PBXGroup;
+			children = (
+				D11993FB1EC2F3EC00841273 /* Controller */,
+				D11993FD1EC2F3EC00841273 /* View */,
+			);
+			name = "ExampleMagicPermissionManager(权限管理)";
+			path = ExampleMagicPermissionManager;
+			sourceTree = "<group>";
+		};
+		D11993FB1EC2F3EC00841273 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D11993FE1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.h */,
+				D11993FF1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D11993FD1EC2F3EC00841273 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1643A751EB96FA900964594 /* MagicRouterManager */ = {
+			isa = PBXGroup;
+			children = (
+				D1643A761EB96FBB00964594 /* MagicRouterManager.h */,
+				D1643A771EB96FBB00964594 /* MagicRouterManager.m */,
+			);
+			path = MagicRouterManager;
+			sourceTree = "<group>";
+		};
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
+				D11993FA1EC2F3EC00841273 /* ExampleMagicPermissionManager(权限管理) */,
+				D11993E91EC2EFC300841273 /* ExampleMagicAlertView(弹框) */,
 				D1C72C6D1EB8791A00C88BAE /* ExampleSJBugVideoKit(录屏、截屏) */,
 				D1C72B5A1EB834ED00C88BAE /* ExampleTangram(七巧板) */,
 			);
@@ -768,6 +861,8 @@
 		D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */ = {
 			isa = PBXGroup;
 			children = (
+				D11993F61EC2F2D300841273 /* MagicPermissionManager */,
+				D1643A751EB96FA900964594 /* MagicRouterManager */,
 				D1C72CA71EB8856000C88BAE /* SJBugVideoKit */,
 				D1C72C8F1EB87C6B00C88BAE /* UIQuicklyKit */,
 			);
@@ -925,6 +1020,7 @@
 				TargetAttributes = {
 					D11816981EB2EFB5004C238A = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = YS5VMXEH8P;
 						ProvisioningStyle = Automatic;
 					};
 					D11816B11EB2EFB5004C238A = {
@@ -1050,6 +1146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
 				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
 				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,
@@ -1072,10 +1169,13 @@
 				D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
 				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
+				D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */,
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
+				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
+				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
 				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
@@ -1094,6 +1194,7 @@
 				D1C72C651EB86F0C00C88BAE /* TangramSingleColumnLayout.m in Sources */,
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
+				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
 				D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */,
@@ -1253,6 +1354,7 @@
 			baseConfigurationReference = B6E3BD2ED335FC0B76E72DDC /* Pods-MagicCubeKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YS5VMXEH8P;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MagicCubeKit/MagicCubeHeader.pch";
 				INFOPLIST_FILE = MagicCubeKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1266,6 +1368,7 @@
 			baseConfigurationReference = 1376F89D65284C294DD77F5D /* Pods-MagicCubeKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YS5VMXEH8P;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MagicCubeKit/MagicCubeHeader.pch";
 				INFOPLIST_FILE = MagicCubeKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

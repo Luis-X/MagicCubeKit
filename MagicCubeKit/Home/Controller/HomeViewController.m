@@ -7,9 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "ViewController.h"
-#import "ExampleTangramViewController.h"
-#import "ExampleSJBugVideoKitViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -22,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+     self.navigationItem.title = @"Magic";
     [self initailData];
     [self createMainViews];
 }
@@ -42,10 +40,11 @@
 */
 
 - (void)initailData{
-    self.title = @"MagicCubeKit";
     _menuArray = @[@{@"UIViewController":@"ViewController调用机制"},
                    @{@"Tangram":@"七巧板界面动态化"},
-                   @{@"SJBugVideoKit":@"录屏、截屏"}];
+                   @{@"SJBugVideoKit":@"录屏、截屏"},
+                   @{@"MagicAlertView":@"弹框"},
+                   @{@"MagicPermissionManager":@"权限"},];
 }
 
 - (void)createMainViews{
@@ -91,17 +90,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 0 && indexPath.row == 0) {
-        UIViewController *viewController = [ViewController new];
-        [UIQuicklyKit navigationController:self.navigationController pushViewController:viewController hidesBottomBar:YES animated:YES];
+        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ViewController AddedNavigationController:self.navigationController];
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
-        ExampleTangramViewController *viewController = [ExampleTangramViewController new];
-        [UIQuicklyKit navigationController:self.navigationController pushViewController:viewController hidesBottomBar:YES animated:YES];
+        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleTangramViewController AddedNavigationController:self.navigationController];
     }
     if (indexPath.section == 0 && indexPath.row == 2) {
-        ExampleSJBugVideoKitViewController *viewController = [ExampleSJBugVideoKitViewController new];
-        [UIQuicklyKit navigationController:self.navigationController pushViewController:viewController hidesBottomBar:YES animated:YES];
+        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleSJBugVideoKitViewController AddedNavigationController:self.navigationController];
     }
-    
+    if (indexPath.section == 0 && indexPath.row == 3) {
+        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleMagicAlertViewViewController AddedNavigationController:self.navigationController];
+    }
+    if (indexPath.section == 0 && indexPath.row == 4) {
+        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleMagicPermissionManagerViewController AddedNavigationController:self.navigationController];
+    }
 }
 @end

@@ -17,6 +17,7 @@
 #import "Base-Header.h"
 #import "MagicCubeDefine.h"
 #import "AppDelegate.h"
+#import "MagicRouterManager.h"
 
 //开源
 #import <Masonry.h>

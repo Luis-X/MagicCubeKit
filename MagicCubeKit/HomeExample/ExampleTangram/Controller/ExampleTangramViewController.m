@@ -23,19 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //获取数据
-    NSString *jsonString = [NSString stringWithContentsOfFile:Magic_bundle(@"exampleTangram", @"json") encoding:NSUTF8StringEncoding error:nil];
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
-    self.layoutModelArray = [[dic objectForKey:@"data"] objectForKey:@"cards"];
-    
-    [TangramDefaultItemModelFactory registElementType:@"1" className:@"ExampleElementImage"];
-    [TangramDefaultItemModelFactory registElementType:@"2" className:@"ExampleElementText"];
-    self.layoutArray = [TangramDefaultDataSourceHelper layoutsWithArray:self.layoutModelArray tangramBus:self.tangramBus];
- 
-    //刷新视图
-    [self.tangramView reloadData];
+    self.title = @"Tangram";
+    [self initialData];
+    [self createMainView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +42,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)initialData{
+    
+}
+
+- (void)createMainView{
+    //获取数据
+    NSString *jsonString = [NSString stringWithContentsOfFile:Magic_bundle(@"exampleTangram", @"json") encoding:NSUTF8StringEncoding error:nil];
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    self.layoutModelArray = [[dic objectForKey:@"data"] objectForKey:@"cards"];
+    
+    [TangramDefaultItemModelFactory registElementType:@"1" className:@"ExampleElementImage"];
+    [TangramDefaultItemModelFactory registElementType:@"2" className:@"ExampleElementText"];
+    self.layoutArray = [TangramDefaultDataSourceHelper layoutsWithArray:self.layoutModelArray tangramBus:self.tangramBus];
+    
+    //刷新视图
+    [self.tangramView reloadData];
+}
 
 #pragma mark -TangramViewDatasource
 //返回layout个数

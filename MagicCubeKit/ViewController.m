@@ -63,6 +63,7 @@
  */
 - (void)viewDidLoad {
     
+    self.title = @"UIViewController";
     //调用父类加载视图函数
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

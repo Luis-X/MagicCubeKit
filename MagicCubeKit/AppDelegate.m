@@ -115,6 +115,7 @@
     UIImage *home_normal = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_selected = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     homeNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:home_normal selectedImage:home_selected];
+
     //标签栏
     UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
     rootTabBarController.viewControllers = @[homeNavigationController];
@@ -126,12 +127,23 @@
     self.window.rootViewController = rootTabBarController;
     //将window作为主视图并且显示
     [self.window makeKeyAndVisible];
+    [self customAllNavigationBarAppearance];
     
 }
 
+#pragma mark - 全局导航栏
+- (void)customAllNavigationBarAppearance{
+    //背景颜色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.18 green:0.65 blue:0.91 alpha:1.00]];
+    //文本颜色
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    //按钮颜色
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    //按钮字体
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:15],NSFontAttributeName,nil] forState:UIControlStateNormal];
+}
 
 #pragma mark - SJBugVideoKit
-
 - (void)startSJBugVideoKit:(BOOL)start{
     
     if (start) {
