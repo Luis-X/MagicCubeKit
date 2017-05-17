@@ -44,7 +44,8 @@
                    @{@"Tangram":@"七巧板界面动态化"},
                    @{@"SJBugVideoKit":@"录屏、截屏"},
                    @{@"MagicAlertView":@"弹框"},
-                   @{@"MagicPermissionManager":@"权限"},];
+                   @{@"MagicPermissionManager":@"权限"},
+                   @{@"AFNetworkingViewController":@"网络"},];
 }
 
 - (void)createMainViews{
@@ -103,6 +104,9 @@
     }
     if (indexPath.section == 0 && indexPath.row == 4) {
         [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleMagicPermissionManagerViewController AddedNavigationController:self.navigationController];
+    }
+    if (indexPath.section == 0 && indexPath.row == 5) {
+        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleMagicNetworkingViewController AddedNavigationController:self.navigationController];
     }
 }
 @end

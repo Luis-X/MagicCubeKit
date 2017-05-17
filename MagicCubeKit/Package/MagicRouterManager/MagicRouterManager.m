@@ -65,7 +65,11 @@
         ExampleMagicPermissionManagerViewController *vc = [ExampleMagicPermissionManagerViewController new];
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
     }
-    
+    //网络
+    if ([object isEqualToString:@"ExampleMagicNetworkingViewController"]) {
+        ExampleMagicNetworkingViewController *vc = [ExampleMagicNetworkingViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
 }
 
 @end

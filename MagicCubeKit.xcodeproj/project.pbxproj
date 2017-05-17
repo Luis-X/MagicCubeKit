@@ -25,7 +25,9 @@
 		D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F41EC2F06600841273 /* MagicAlertView.m */; };
 		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
 		D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993FF1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m */; };
+		D13E1FED1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E1FEC1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
+		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */; };
 		D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */ = {isa = PBXBuildFile; fileRef = D1C72B611EB83A6C00C88BAE /* exampleTangram.json */; };
 		D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B641EB8645700C88BAE /* ExampleElementText.m */; };
@@ -142,8 +144,12 @@
 		D11993FF1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicPermissionManagerViewController.m; sourceTree = "<group>"; };
 		D11994011EC3022800841273 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		D11994031EC3022D00841273 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D13E1FEB1ECC5D1600472533 /* ExampleMagicNetworkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicNetworkingViewController.h; sourceTree = "<group>"; };
+		D13E1FEC1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicNetworkingViewController.m; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
+		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
+		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
 		D1C72B5E1EB8354F00C88BAE /* ExampleTangramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTangramViewController.h; sourceTree = "<group>"; };
 		D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTangramViewController.m; sourceTree = "<group>"; };
 		D1C72B611EB83A6C00C88BAE /* exampleTangram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exampleTangram.json; sourceTree = "<group>"; };
@@ -636,9 +642,37 @@
 			path = MagicRouterManager;
 			sourceTree = "<group>";
 		};
+		D1B2D59C1ECAA9A100EA7146 /* ExampleAFNetworking(网络) */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2D59D1ECAA9A100EA7146 /* Controller */,
+			);
+			name = "ExampleAFNetworking(网络)";
+			path = ExampleAFNetworking;
+			sourceTree = "<group>";
+		};
+		D1B2D59D1ECAA9A100EA7146 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FEB1ECC5D1600472533 /* ExampleMagicNetworkingViewController.h */,
+				D13E1FEC1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */,
+				D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */,
+			);
+			path = MagicNetworkManager;
+			sourceTree = "<group>";
+		};
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
+				D1B2D59C1ECAA9A100EA7146 /* ExampleAFNetworking(网络) */,
 				D11993FA1EC2F3EC00841273 /* ExampleMagicPermissionManager(权限管理) */,
 				D11993E91EC2EFC300841273 /* ExampleMagicAlertView(弹框) */,
 				D1C72C6D1EB8791A00C88BAE /* ExampleSJBugVideoKit(录屏、截屏) */,
@@ -861,6 +895,7 @@
 		D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */ = {
 			isa = PBXGroup;
 			children = (
+				D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */,
 				D11993F61EC2F2D300841273 /* MagicPermissionManager */,
 				D1643A751EB96FA900964594 /* MagicRouterManager */,
 				D1C72CA71EB8856000C88BAE /* SJBugVideoKit */,
@@ -1147,6 +1182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
+				D13E1FED1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m in Sources */,
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
 				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
 				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,
@@ -1177,6 +1213,7 @@
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
 				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
+				D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */,
 				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
 				D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */,

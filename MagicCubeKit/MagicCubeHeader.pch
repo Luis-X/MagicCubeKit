@@ -18,6 +18,7 @@
 #import "MagicCubeDefine.h"
 #import "AppDelegate.h"
 #import "MagicRouterManager.h"
+#import "MagicNetworkManager.h"
 
 //开源
 #import <Masonry.h>
@@ -26,4 +27,5 @@
 
 //封装包
 #import "UIQuicklyKit.h"
+
 #endif /* MagicCubeHeader_pch */
