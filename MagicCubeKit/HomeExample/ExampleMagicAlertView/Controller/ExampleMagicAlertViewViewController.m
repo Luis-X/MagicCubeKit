@@ -49,7 +49,6 @@
     }];
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    
 }
 
 #pragma mark - Action

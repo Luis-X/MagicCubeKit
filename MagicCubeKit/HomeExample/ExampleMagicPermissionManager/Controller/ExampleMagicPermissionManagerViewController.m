@@ -46,6 +46,7 @@
 }
 
 - (void)createMainView{
+    
     UITableView *mainTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     mainTableView.backgroundColor = [UIColor whiteColor];
     mainTableView.dataSource = self;

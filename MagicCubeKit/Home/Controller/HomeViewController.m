@@ -45,7 +45,12 @@
                    @{@"SJBugVideoKit":@"录屏、截屏"},
                    @{@"MagicAlertView":@"弹框"},
                    @{@"MagicPermissionManager":@"权限"},
-                   @{@"AFNetworkingViewController":@"网络"},];
+                   @{@"MagicNetworkManager":@"网络"},
+                   @{@"MagicIconButton":@"icon按钮"},
+                   @{@"MagicScrollPage":@"滚动分页"},
+                   @{@"MagicImageDownloader":@"图片下载"},
+                   @{@"MagicWebProgress":@"网页进度条"},
+                   @{@"MagicLoading":@"加载动画"}];
 }
 
 - (void)createMainViews{
@@ -85,28 +90,46 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    NSString *routerSkipString = [NSString string];
     if (indexPath.section == 0 && indexPath.row == 0) {
-        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ViewController AddedNavigationController:self.navigationController];
+        routerSkipString = Router_Skip_ViewController;
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
-        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleTangramViewController AddedNavigationController:self.navigationController];
+        routerSkipString = Router_Skip_ExampleTangramViewController;
     }
     if (indexPath.section == 0 && indexPath.row == 2) {
-        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleSJBugVideoKitViewController AddedNavigationController:self.navigationController];
+        routerSkipString = Router_Skip_ExampleSJBugVideoKitViewController;
     }
     if (indexPath.section == 0 && indexPath.row == 3) {
-        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleMagicAlertViewViewController AddedNavigationController:self.navigationController];
+        routerSkipString = Router_Skip_ExampleMagicAlertViewViewController;
     }
     if (indexPath.section == 0 && indexPath.row == 4) {
-        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleMagicPermissionManagerViewController AddedNavigationController:self.navigationController];
+        routerSkipString = Router_Skip_ExampleMagicPermissionManagerViewController;
     }
     if (indexPath.section == 0 && indexPath.row == 5) {
-        [MagicRouterManager showAnyViewControllerWithRouterURL:Router_Skip_ExampleMagicNetworkingViewController AddedNavigationController:self.navigationController];
+        routerSkipString = Router_Skip_ExampleMagicNetworkingViewController;
     }
+    if (indexPath.section == 0 && indexPath.row == 6) {
+        routerSkipString = Router_Skip_ExampleMagicButtonViewController;
+    }
+    if (indexPath.section == 0 && indexPath.row == 7) {
+        routerSkipString = Router_Skip_ExampleMagicScrollPageViewController;
+    }
+    if (indexPath.section == 0 && indexPath.row == 8) {
+        routerSkipString = Router_Skip_ExampleMagicImageDownloaderViewController;
+    }
+    if (indexPath.section == 0 && indexPath.row == 9) {
+        routerSkipString = Router_Skip_ExampleMagicWebProgressViewController;
+    }
+    if (indexPath.section == 0 && indexPath.row == 10) {
+        routerSkipString = Router_Skip_ExampleMagicLoadingViewController;
+    }
+    [MagicRouterManager showAnyViewControllerWithRouterURL:routerSkipString AddedNavigationController:self.navigationController];
+    
 }
 @end

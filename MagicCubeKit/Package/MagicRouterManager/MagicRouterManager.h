@@ -14,6 +14,11 @@
 #import "ExampleMagicAlertViewViewController.h"
 #import "ExampleMagicPermissionManagerViewController.h"
 #import "ExampleMagicNetworkingViewController.h"
+#import "ExampleMagicButtonViewController.h"
+#import "ExampleMagicScrollPageViewController.h"
+#import "ExampleMagicImageDownloaderViewController.h"
+#import "ExampleMagicWebProgressViewController.h"
+#import "ExampleMagicLoadingViewController.h"
 
 @interface MagicRouterManager : NSObject
 #define Router_HOST @"tiantian://"                                                                                  //协议
@@ -26,6 +31,12 @@
 #define Router_Skip_ExampleMagicAlertViewViewController            Router_URL(@"ExampleMagicAlertViewViewController", nil)
 #define Router_Skip_ExampleMagicPermissionManagerViewController    Router_URL(@"ExampleMagicPermissionManagerViewController", nil)
 #define Router_Skip_ExampleMagicNetworkingViewController           Router_URL(@"ExampleMagicNetworkingViewController", nil)
+#define Router_Skip_ExampleMagicButtonViewController               Router_URL(@"ExampleMagicButtonViewController", nil)
+#define Router_Skip_ExampleMagicScrollPageViewController           Router_URL(@"ExampleMagicScrollPageViewController", nil)
+#define Router_Skip_ExampleMagicImageDownloaderViewController      Router_URL(@"ExampleMagicImageDownloaderViewController", nil)
+#define Router_Skip_ExampleMagicWebProgressViewController          Router_URL(@"ExampleMagicWebProgressViewController", nil)
+#define Router_Skip_ExampleMagicLoadingViewController              Router_URL(@"ExampleMagicLoadingViewController", nil)
+
 
 + (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL AddedNavigationController:(UINavigationController *)navigationController;
 

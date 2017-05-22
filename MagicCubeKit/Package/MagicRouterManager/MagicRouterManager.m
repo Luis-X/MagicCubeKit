@@ -70,6 +70,32 @@
         ExampleMagicNetworkingViewController *vc = [ExampleMagicNetworkingViewController new];
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
     }
+    //按钮
+    if ([object isEqualToString:@"ExampleMagicButtonViewController"]) {
+        ExampleMagicButtonViewController *vc = [ExampleMagicButtonViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
+    //分页
+    if ([object isEqualToString:@"ExampleMagicScrollPageViewController"]) {
+        ExampleMagicScrollPageViewController *vc = [ExampleMagicScrollPageViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
+    //图片下载
+    if ([object isEqualToString:@"ExampleMagicImageDownloaderViewController"]) {
+        ExampleMagicImageDownloaderViewController *vc = [ExampleMagicImageDownloaderViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
+    //web进度
+    if ([object isEqualToString:@"ExampleMagicWebProgressViewController"]) {
+        ExampleMagicWebProgressViewController *vc = [ExampleMagicWebProgressViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
+    //加载动画
+    if ([object isEqualToString:@"ExampleMagicLoadingViewController"]) {
+        ExampleMagicLoadingViewController *vc = [ExampleMagicLoadingViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
+    
 }
 
 @end

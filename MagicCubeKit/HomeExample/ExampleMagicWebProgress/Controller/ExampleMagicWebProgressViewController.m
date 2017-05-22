@@ -1,29 +1,24 @@
 //
-//  ExampleMagicNetworkingViewController.m
+//  ExampleMagicWebProgressViewController.m
 //  MagicCubeKit
 //
-//  Created by LuisX on 2017/5/17.
+//  Created by LuisX on 2017/5/22.
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#import "ExampleMagicNetworkingViewController.h"
+#import "ExampleMagicWebProgressViewController.h"
 
-@interface ExampleMagicNetworkingViewController ()
+@interface ExampleMagicWebProgressViewController ()
 
 @end
 
-@implementation ExampleMagicNetworkingViewController
+@implementation ExampleMagicWebProgressViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [[MagicNetworkManager shareManager] GET:@"http://mi.xcar.com.cn/interface/xcarapp/getBrands.php" Parameters:nil Success:^(NSURLResponse *response, id responseObject) {
-        NSLog(@"%@", responseObject);
-    } Failure:^(NSURLResponse *response, id error) {
-        NSLog(@"%@", error);
-        
-    }];
+    self.title = @"MagicWebProgress";
+    [self createMainView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,4 +36,7 @@
 }
 */
 
+- (void)createMainView{
+    
+}
 @end

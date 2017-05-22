@@ -25,9 +25,19 @@
 		D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F41EC2F06600841273 /* MagicAlertView.m */; };
 		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
 		D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993FF1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m */; };
-		D13E1FED1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E1FEC1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m */; };
+		D13E1FF51ECC645A00472533 /* ExampleMagicNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E1FF31ECC645A00472533 /* ExampleMagicNetworkingViewController.m */; };
+		D13E1FFB1ECC658300472533 /* ExampleMagicScrollPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E1FFA1ECC658300472533 /* ExampleMagicScrollPageViewController.m */; };
+		D13E1FFE1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E1FFD1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m */; };
+		D13E20011ECC65CB00472533 /* ExampleMagicButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E20001ECC65CB00472533 /* ExampleMagicButtonViewController.m */; };
+		D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
+		D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */; };
+		D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
+		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
+		D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */; };
+		D1BDFD971ED2CF7D000064B8 /* ExampleMagicLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BDFD961ED2CF7D000064B8 /* ExampleMagicLoadingViewController.m */; };
+		D1BDFDA41ED2D536000064B8 /* ExampleMagicWebProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BDFDA31ED2D536000064B8 /* ExampleMagicWebProgressViewController.m */; };
 		D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */; };
 		D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */ = {isa = PBXBuildFile; fileRef = D1C72B611EB83A6C00C88BAE /* exampleTangram.json */; };
 		D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72B641EB8645700C88BAE /* ExampleElementText.m */; };
@@ -144,12 +154,30 @@
 		D11993FF1EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicPermissionManagerViewController.m; sourceTree = "<group>"; };
 		D11994011EC3022800841273 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		D11994031EC3022D00841273 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		D13E1FEB1ECC5D1600472533 /* ExampleMagicNetworkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicNetworkingViewController.h; sourceTree = "<group>"; };
-		D13E1FEC1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicNetworkingViewController.m; sourceTree = "<group>"; };
+		D13E1FF21ECC645A00472533 /* ExampleMagicNetworkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicNetworkingViewController.h; sourceTree = "<group>"; };
+		D13E1FF31ECC645A00472533 /* ExampleMagicNetworkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicNetworkingViewController.m; sourceTree = "<group>"; };
+		D13E1FF91ECC658300472533 /* ExampleMagicScrollPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicScrollPageViewController.h; sourceTree = "<group>"; };
+		D13E1FFA1ECC658300472533 /* ExampleMagicScrollPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicScrollPageViewController.m; sourceTree = "<group>"; };
+		D13E1FFC1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicImageDownloaderViewController.h; sourceTree = "<group>"; };
+		D13E1FFD1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicImageDownloaderViewController.m; sourceTree = "<group>"; };
+		D13E1FFF1ECC65CB00472533 /* ExampleMagicButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicButtonViewController.h; sourceTree = "<group>"; };
+		D13E20001ECC65CB00472533 /* ExampleMagicButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicButtonViewController.m; sourceTree = "<group>"; };
+		D13E20061ECC6B0A00472533 /* MagicImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicImageDownloader.h; sourceTree = "<group>"; };
+		D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicImageDownloader.m; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
+		D17DE7A51ECEF61400CE48D4 /* MagicIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicIconButton.h; sourceTree = "<group>"; };
+		D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicIconButton.m; sourceTree = "<group>"; };
+		D17DE7A81ECEF63B00CE48D4 /* MagicScrollPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPage.h; sourceTree = "<group>"; };
+		D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPage.m; sourceTree = "<group>"; };
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
 		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
+		D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MVCommonUI.bundle; sourceTree = "<group>"; };
+		D1BDFD951ED2CF7D000064B8 /* ExampleMagicLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicLoadingViewController.h; sourceTree = "<group>"; };
+		D1BDFD961ED2CF7D000064B8 /* ExampleMagicLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicLoadingViewController.m; sourceTree = "<group>"; };
+		D1BDFDA21ED2D536000064B8 /* ExampleMagicWebProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicWebProgressViewController.h; sourceTree = "<group>"; };
+		D1BDFDA31ED2D536000064B8 /* ExampleMagicWebProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicWebProgressViewController.m; sourceTree = "<group>"; };
 		D1C72B5E1EB8354F00C88BAE /* ExampleTangramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTangramViewController.h; sourceTree = "<group>"; };
 		D1C72B5F1EB8354F00C88BAE /* ExampleTangramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTangramViewController.m; sourceTree = "<group>"; };
 		D1C72B611EB83A6C00C88BAE /* exampleTangram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exampleTangram.json; sourceTree = "<group>"; };
@@ -516,6 +544,7 @@
 		D11816DE1EB2F2D5004C238A /* Font(字体) */ = {
 			isa = PBXGroup;
 			children = (
+				D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */,
 			);
 			name = "Font(字体)";
 			path = Font;
@@ -633,6 +662,96 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D13E1FEE1ECC645A00472533 /* ExampleMagicButton(icon按钮) */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FF81ECC654000472533 /* Controller */,
+			);
+			name = "ExampleMagicButton(icon按钮)";
+			path = ExampleMagicButton;
+			sourceTree = "<group>";
+		};
+		D13E1FEF1ECC645A00472533 /* ExampleMagicImageDownloader(图片下载) */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FF71ECC653800472533 /* Controller */,
+			);
+			name = "ExampleMagicImageDownloader(图片下载)";
+			path = ExampleMagicImageDownloader;
+			sourceTree = "<group>";
+		};
+		D13E1FF01ECC645A00472533 /* ExampleMagicNetworkManager(网络) */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FF11ECC645A00472533 /* Controller */,
+			);
+			name = "ExampleMagicNetworkManager(网络)";
+			path = ExampleMagicNetworkManager;
+			sourceTree = "<group>";
+		};
+		D13E1FF11ECC645A00472533 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FF21ECC645A00472533 /* ExampleMagicNetworkingViewController.h */,
+				D13E1FF31ECC645A00472533 /* ExampleMagicNetworkingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D13E1FF41ECC645A00472533 /* ExampleMagicScrollPage(滚动分页) */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FF61ECC652F00472533 /* Controller */,
+			);
+			name = "ExampleMagicScrollPage(滚动分页)";
+			path = ExampleMagicScrollPage;
+			sourceTree = "<group>";
+		};
+		D13E1FF61ECC652F00472533 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FF91ECC658300472533 /* ExampleMagicScrollPageViewController.h */,
+				D13E1FFA1ECC658300472533 /* ExampleMagicScrollPageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D13E1FF71ECC653800472533 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FFC1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.h */,
+				D13E1FFD1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D13E1FF81ECC654000472533 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13E1FFF1ECC65CB00472533 /* ExampleMagicButtonViewController.h */,
+				D13E20001ECC65CB00472533 /* ExampleMagicButtonViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D13E20051ECC6B0A00472533 /* MagicImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				D13E20061ECC6B0A00472533 /* MagicImageDownloader.h */,
+				D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */,
+			);
+			path = MagicImageDownloader;
+			sourceTree = "<group>";
+		};
+		D148265E1ECED70000FCB35C /* MagicScrollPage */ = {
+			isa = PBXGroup;
+			children = (
+				D17DE7A81ECEF63B00CE48D4 /* MagicScrollPage.h */,
+				D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */,
+			);
+			path = MagicScrollPage;
+			sourceTree = "<group>";
+		};
 		D1643A751EB96FA900964594 /* MagicRouterManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,22 +761,13 @@
 			path = MagicRouterManager;
 			sourceTree = "<group>";
 		};
-		D1B2D59C1ECAA9A100EA7146 /* ExampleAFNetworking(网络) */ = {
+		D17DE7A41ECEF5CA00CE48D4 /* MagicIconButton */ = {
 			isa = PBXGroup;
 			children = (
-				D1B2D59D1ECAA9A100EA7146 /* Controller */,
+				D17DE7A51ECEF61400CE48D4 /* MagicIconButton.h */,
+				D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */,
 			);
-			name = "ExampleAFNetworking(网络)";
-			path = ExampleAFNetworking;
-			sourceTree = "<group>";
-		};
-		D1B2D59D1ECAA9A100EA7146 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D13E1FEB1ECC5D1600472533 /* ExampleMagicNetworkingViewController.h */,
-				D13E1FEC1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m */,
-			);
-			path = Controller;
+			path = MagicIconButton;
 			sourceTree = "<group>";
 		};
 		D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */ = {
@@ -669,10 +779,60 @@
 			path = MagicNetworkManager;
 			sourceTree = "<group>";
 		};
+		D1BDFD901ED2CF5F000064B8 /* ExampleMagicLoading(加载动画) */ = {
+			isa = PBXGroup;
+			children = (
+				D1BDFD911ED2CF5F000064B8 /* Controller */,
+				D1BDFD921ED2CF5F000064B8 /* Resource */,
+			);
+			name = "ExampleMagicLoading(加载动画)";
+			path = ExampleMagicLoading;
+			sourceTree = "<group>";
+		};
+		D1BDFD911ED2CF5F000064B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1BDFD951ED2CF7D000064B8 /* ExampleMagicLoadingViewController.h */,
+				D1BDFD961ED2CF7D000064B8 /* ExampleMagicLoadingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1BDFD921ED2CF5F000064B8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D1BDFD9D1ED2D50B000064B8 /* ExampleMagicWebProgress(web进度) */ = {
+			isa = PBXGroup;
+			children = (
+				D1BDFD9E1ED2D50B000064B8 /* Controller */,
+			);
+			name = "ExampleMagicWebProgress(web进度)";
+			path = ExampleMagicWebProgress;
+			sourceTree = "<group>";
+		};
+		D1BDFD9E1ED2D50B000064B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1BDFDA21ED2D536000064B8 /* ExampleMagicWebProgressViewController.h */,
+				D1BDFDA31ED2D536000064B8 /* ExampleMagicWebProgressViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
-				D1B2D59C1ECAA9A100EA7146 /* ExampleAFNetworking(网络) */,
+				D1BDFD9D1ED2D50B000064B8 /* ExampleMagicWebProgress(web进度) */,
+				D1BDFD901ED2CF5F000064B8 /* ExampleMagicLoading(加载动画) */,
+				D13E1FEE1ECC645A00472533 /* ExampleMagicButton(icon按钮) */,
+				D13E1FEF1ECC645A00472533 /* ExampleMagicImageDownloader(图片下载) */,
+				D13E1FF01ECC645A00472533 /* ExampleMagicNetworkManager(网络) */,
+				D13E1FF41ECC645A00472533 /* ExampleMagicScrollPage(滚动分页) */,
 				D11993FA1EC2F3EC00841273 /* ExampleMagicPermissionManager(权限管理) */,
 				D11993E91EC2EFC300841273 /* ExampleMagicAlertView(弹框) */,
 				D1C72C6D1EB8791A00C88BAE /* ExampleSJBugVideoKit(录屏、截屏) */,
@@ -895,6 +1055,9 @@
 		D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */ = {
 			isa = PBXGroup;
 			children = (
+				D17DE7A41ECEF5CA00CE48D4 /* MagicIconButton */,
+				D148265E1ECED70000FCB35C /* MagicScrollPage */,
+				D13E20051ECC6B0A00472533 /* MagicImageDownloader */,
 				D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */,
 				D11993F61EC2F2D300841273 /* MagicPermissionManager */,
 				D1643A751EB96FA900964594 /* MagicRouterManager */,
@@ -1098,11 +1261,13 @@
 				D1C72CBE1EB8856000C88BAE /* share_problem@2x.png in Resources */,
 				D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */,
 				D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */,
+				D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */,
 				D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */,
 				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
 				D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */,
 				D11816AC1EB2EFB5004C238A /* LaunchScreen.storyboard in Resources */,
 				D1C72CC11EB8856000C88BAE /* video_start@2x.png in Resources */,
+				D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */,
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
 				D11816A91EB2EFB5004C238A /* Assets.xcassets in Resources */,
 				D11816A71EB2EFB5004C238A /* Main.storyboard in Resources */,
@@ -1182,7 +1347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
-				D13E1FED1ECC5D1600472533 /* ExampleMagicNetworkingViewController.m in Sources */,
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
 				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
 				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,
@@ -1195,14 +1359,19 @@
 				D1C72C5E1EB86F0C00C88BAE /* TangramFixBottomLayout.m in Sources */,
 				D1C72C5D1EB86F0C00C88BAE /* TangramDragableLayout.m in Sources */,
 				D1C72C601EB86F0C00C88BAE /* TangramFixTopLayout.m in Sources */,
+				D13E1FF51ECC645A00472533 /* ExampleMagicNetworkingViewController.m in Sources */,
 				D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */,
+				D13E20011ECC65CB00472533 /* ExampleMagicButtonViewController.m in Sources */,
 				D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */,
 				D1C72C561EB86F0C00C88BAE /* TangramDefaultElementFactory.m in Sources */,
+				D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */,
 				D1C72C681EB86F0C00C88BAE /* TangramTetradColumnLayout.m in Sources */,
 				D1C72CA61EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m in Sources */,
+				D13E1FFE1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m in Sources */,
 				D1C72C641EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m in Sources */,
 				D1C72C521EB86F0C00C88BAE /* TangramContext.m in Sources */,
 				D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */,
+				D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
 				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
 				D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */,
@@ -1214,10 +1383,12 @@
 				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
 				D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */,
+				D13E1FFB1ECC658300472533 /* ExampleMagicScrollPageViewController.m in Sources */,
 				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
 				D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */,
 				D1C72C4F1EB86F0C00C88BAE /* TangramBusIndex.m in Sources */,
+				D1BDFD971ED2CF7D000064B8 /* ExampleMagicLoadingViewController.m in Sources */,
 				D1C72CC41EB8856000C88BAE /* SJBugVideoTool.m in Sources */,
 				D1C72C541EB86F0C00C88BAE /* TangramEventDispatcher.m in Sources */,
 				D1C72C5B1EB86F0C00C88BAE /* UIView+Tangram.m in Sources */,
@@ -1232,11 +1403,13 @@
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
 				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
+				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
 				D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */,
 				D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */,
 				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
+				D1BDFDA41ED2D536000064B8 /* ExampleMagicWebProgressViewController.m in Sources */,
 				D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */,
 				D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */,
 				D1C72C671EB86F0C00C88BAE /* TangramStickyLayout.m in Sources */,

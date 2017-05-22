@@ -141,6 +141,8 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     //按钮字体
     [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:15],NSFontAttributeName,nil] forState:UIControlStateNormal];
+    //半透明
+    [[UINavigationBar appearance] setTranslucent:NO];
 }
 
 #pragma mark - SJBugVideoKit
