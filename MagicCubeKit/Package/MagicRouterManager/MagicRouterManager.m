@@ -95,7 +95,11 @@
         ExampleMagicLoadingViewController *vc = [ExampleMagicLoadingViewController new];
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
     }
-    
+    //倒计时按钮
+    if ([object isEqualToString:@"ExampleMagicTimerButtonViewController"]) {
+        ExampleMagicTimerButtonViewController *vc = [ExampleMagicTimerButtonViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
 }
 
 @end

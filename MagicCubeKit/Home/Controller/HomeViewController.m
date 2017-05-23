@@ -50,7 +50,8 @@
                    @{@"MagicScrollPage":@"滚动分页"},
                    @{@"MagicImageDownloader":@"图片下载"},
                    @{@"MagicWebProgress":@"网页进度条"},
-                   @{@"MagicLoading":@"加载动画"}];
+                   @{@"MagicLoading":@"加载动画"},
+                   @{@"MagicTimerButton":@"倒计时按钮"}];
 }
 
 - (void)createMainViews{
@@ -128,6 +129,9 @@
     }
     if (indexPath.section == 0 && indexPath.row == 10) {
         routerSkipString = Router_Skip_ExampleMagicLoadingViewController;
+    }
+    if (indexPath.section == 0 && indexPath.row == 11) {
+        routerSkipString = Router_Skip_ExampleMagicTimerButtonViewController;
     }
     [MagicRouterManager showAnyViewControllerWithRouterURL:routerSkipString AddedNavigationController:self.navigationController];
     

@@ -19,6 +19,7 @@
 #import "ExampleMagicImageDownloaderViewController.h"
 #import "ExampleMagicWebProgressViewController.h"
 #import "ExampleMagicLoadingViewController.h"
+#import "ExampleMagicTimerButtonViewController.h"
 
 @interface MagicRouterManager : NSObject
 #define Router_HOST @"tiantian://"                                                                                  //协议
@@ -36,7 +37,7 @@
 #define Router_Skip_ExampleMagicImageDownloaderViewController      Router_URL(@"ExampleMagicImageDownloaderViewController", nil)
 #define Router_Skip_ExampleMagicWebProgressViewController          Router_URL(@"ExampleMagicWebProgressViewController", nil)
 #define Router_Skip_ExampleMagicLoadingViewController              Router_URL(@"ExampleMagicLoadingViewController", nil)
-
+#define Router_Skip_ExampleMagicTimerButtonViewController          Router_URL(@"ExampleMagicTimerButtonViewController", nil)
 
 + (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL AddedNavigationController:(UINavigationController *)navigationController;
 
