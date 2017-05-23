@@ -29,6 +29,8 @@
 		D13E1FFB1ECC658300472533 /* ExampleMagicScrollPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E1FFA1ECC658300472533 /* ExampleMagicScrollPageViewController.m */; };
 		D13E1FFE1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E1FFD1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m */; };
 		D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */; };
+		D156E1DE1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1DD1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m */; };
+		D156E1E11ED4119D0024D309 /* ExampleJSWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = D156E1E01ED4119D0024D309 /* ExampleJSWeb.html */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
 		D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */; };
 		D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */; };
@@ -164,6 +166,9 @@
 		D13E1FFD1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicImageDownloaderViewController.m; sourceTree = "<group>"; };
 		D13E20061ECC6B0A00472533 /* MagicImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicImageDownloader.h; sourceTree = "<group>"; };
 		D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicImageDownloader.m; sourceTree = "<group>"; };
+		D156E1DC1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleWebViewJavascriptBridgeViewController.h; sourceTree = "<group>"; };
+		D156E1DD1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleWebViewJavascriptBridgeViewController.m; sourceTree = "<group>"; };
+		D156E1E01ED4119D0024D309 /* ExampleJSWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleJSWeb.html; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
 		D17DE7A51ECEF61400CE48D4 /* MagicIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicIconButton.h; sourceTree = "<group>"; };
@@ -740,6 +745,33 @@
 			path = MagicScrollPage;
 			sourceTree = "<group>";
 		};
+		D156E1DA1ED40E4F0024D309 /* ExampleWebViewJavascriptBridge(JS交互) */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1DF1ED411790024D309 /* ReSource */,
+				D156E1DB1ED40E4F0024D309 /* Controller */,
+			);
+			name = "ExampleWebViewJavascriptBridge(JS交互)";
+			path = ExampleWebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		D156E1DB1ED40E4F0024D309 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1DC1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.h */,
+				D156E1DD1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D156E1DF1ED411790024D309 /* ReSource */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1E01ED4119D0024D309 /* ExampleJSWeb.html */,
+			);
+			path = ReSource;
+			sourceTree = "<group>";
+		};
 		D1643A751EB96FA900964594 /* MagicRouterManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,6 +892,7 @@
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
+				D156E1DA1ED40E4F0024D309 /* ExampleWebViewJavascriptBridge(JS交互) */,
 				D187ACEF1ED3DBDD00E8C4BA /* ExampleMagicTimerButton(Timer按钮) */,
 				D187ACEA1ED3DBCB00E8C4BA /* ExampleMagicIconButton(icon按钮) */,
 				D1BDFD9D1ED2D50B000064B8 /* ExampleMagicWebProgress(web进度) */,
@@ -1301,6 +1334,7 @@
 				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
 				D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */,
 				D11816AC1EB2EFB5004C238A /* LaunchScreen.storyboard in Resources */,
+				D156E1E11ED4119D0024D309 /* ExampleJSWeb.html in Resources */,
 				D1C72CC11EB8856000C88BAE /* video_start@2x.png in Resources */,
 				D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */,
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
@@ -1382,6 +1416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
+				D156E1DE1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m in Sources */,
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
 				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
 				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,

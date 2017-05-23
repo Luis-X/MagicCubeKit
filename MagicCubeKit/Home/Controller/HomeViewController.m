@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-     self.navigationItem.title = @"Magic";
+     self.mainTitle = @"MagicCubeKit";
     [self initailData];
     [self createMainViews];
 }
@@ -51,7 +51,8 @@
                    @{@"MagicImageDownloader":@"图片下载"},
                    @{@"MagicWebProgress":@"网页进度条"},
                    @{@"MagicLoading":@"加载动画"},
-                   @{@"MagicTimerButton":@"倒计时按钮"}];
+                   @{@"MagicTimerButton":@"倒计时按钮"},
+                   @{@"WebViewJavascriptBridge":@"JS交互"}];
 }
 
 - (void)createMainViews{
@@ -96,44 +97,54 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *routerSkipString = [NSString string];
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        routerSkipString = Router_Skip_ViewController;
+    if (indexPath.section == 0) {
+        NSString *routerSkipString = [NSString string];
+        
+        switch (indexPath.row) {
+            case 0:
+                routerSkipString = Router_Skip_ViewController;
+                break;
+            case 1:
+                routerSkipString = Router_Skip_ExampleTangramViewController;
+                break;
+            case 2:
+                routerSkipString = Router_Skip_ExampleSJBugVideoKitViewController;
+                break;
+            case 3:
+                routerSkipString = Router_Skip_ExampleMagicAlertViewViewController;
+                break;
+            case 4:
+                routerSkipString = Router_Skip_ExampleMagicPermissionManagerViewController;
+                break;
+            case 5:
+                routerSkipString = Router_Skip_ExampleMagicNetworkingViewController;
+                break;
+            case 6:
+                routerSkipString = Router_Skip_ExampleMagicButtonViewController;
+                break;
+            case 7:
+                routerSkipString = Router_Skip_ExampleMagicScrollPageViewController;
+                break;
+            case 8:
+                routerSkipString = Router_Skip_ExampleMagicImageDownloaderViewController;
+                break;
+            case 9:
+                routerSkipString = Router_Skip_ExampleMagicWebProgressViewController;
+                break;
+            case 10:
+                routerSkipString = Router_Skip_ExampleMagicLoadingViewController;
+                break;
+            case 11:
+                routerSkipString = Router_Skip_ExampleMagicTimerButtonViewController;
+                break;
+            case 12:
+                routerSkipString = Router_Skip_ExampleWebViewJavascriptBridgeViewController;
+                break;
+            default:
+                break;
+        }
+        [MagicRouterManager showAnyViewControllerWithRouterURL:routerSkipString AddedNavigationController:self.navigationController];
     }
-    if (indexPath.section == 0 && indexPath.row == 1) {
-        routerSkipString = Router_Skip_ExampleTangramViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 2) {
-        routerSkipString = Router_Skip_ExampleSJBugVideoKitViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 3) {
-        routerSkipString = Router_Skip_ExampleMagicAlertViewViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 4) {
-        routerSkipString = Router_Skip_ExampleMagicPermissionManagerViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 5) {
-        routerSkipString = Router_Skip_ExampleMagicNetworkingViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 6) {
-        routerSkipString = Router_Skip_ExampleMagicButtonViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 7) {
-        routerSkipString = Router_Skip_ExampleMagicScrollPageViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 8) {
-        routerSkipString = Router_Skip_ExampleMagicImageDownloaderViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 9) {
-        routerSkipString = Router_Skip_ExampleMagicWebProgressViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 10) {
-        routerSkipString = Router_Skip_ExampleMagicLoadingViewController;
-    }
-    if (indexPath.section == 0 && indexPath.row == 11) {
-        routerSkipString = Router_Skip_ExampleMagicTimerButtonViewController;
-    }
-    [MagicRouterManager showAnyViewControllerWithRouterURL:routerSkipString AddedNavigationController:self.navigationController];
     
 }
 @end

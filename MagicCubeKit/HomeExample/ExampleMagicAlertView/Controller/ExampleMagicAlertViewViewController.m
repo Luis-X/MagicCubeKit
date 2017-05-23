@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"MagicAlertView";
+    self.mainTitle = @"MagicAlertView";
     [self createMainView];
 }
 
@@ -38,8 +38,11 @@
 */
 - (void)createMainView{
     
-    UIButton *button = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor orangeColor] cornerRadius:5];
+    UIButton *button = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor clearColor] cornerRadius:5];
     [button setTitle:@"SJAlertView" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.layer.borderWidth = 2;
+    button.layer.cornerRadius = 5;
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(self.view).offset(100);

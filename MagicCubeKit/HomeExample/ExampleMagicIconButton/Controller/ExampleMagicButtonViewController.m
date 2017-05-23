@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"MagicIconButton";
+    self.mainTitle = @"MagicIconButton";
     [self createMainView];
 }
 
@@ -39,18 +39,20 @@
 - (void)createMainView{
     
     MagicIconButton *button = [MagicIconButton new];
-    button.backgroundColor = [UIColor orangeColor];
-    button.titleLabel.text = @"微信登录";
+    //button.backgroundColor = [UIColor orangeColor];
+    button.titleLabel.text = @"iconfont";
     //button.iconImageView.image = [UIImage imageNamed:@"tabbar_0@2x.png"];
     button.iconLabel.text = @"\U0000e63c";
     button.buttonStyle = IconTextButtonStyleLeft;
-    button.buttonEdges = UIEdgeInsetsMake(20, 0, 20, 0);
+    button.buttonEdges = UIEdgeInsetsMake(20, 10, 20, 10);
     button.iconFontSize = 25;
+    button.layer.borderWidth = 2;
+    button.layer.cornerRadius = 5;
     [self.view addSubview:button];
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.center.equalTo(self.view);
-        make.width.mas_equalTo(100);
+        make.width.mas_equalTo(130);
         make.height.mas_equalTo(50);
         
     }];

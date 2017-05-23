@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Tangram";
+    self.mainTitle = @"Tangram";
     [self initialData];
     [self createMainView];
 }

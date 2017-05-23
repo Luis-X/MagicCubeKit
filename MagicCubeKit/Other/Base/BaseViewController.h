@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
-
+@property (nonatomic, copy) NSString *mainTitle;
 @end

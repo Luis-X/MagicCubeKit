@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"MagicPermissionManager";
+    self.mainTitle = @"MagicPermissionManager";
     [self initialData];
     [self createMainView];
 }

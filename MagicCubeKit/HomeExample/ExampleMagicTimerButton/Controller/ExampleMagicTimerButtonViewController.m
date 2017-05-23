@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"MagicTimerButton";
+    self.mainTitle = @"MagicTimerButton";
     [self createMainView];
 }
 
@@ -49,7 +49,7 @@
     timeButton.timeRunningTitleColor = [UIColor grayColor];
     timeButton.timeRunningBorderColor = [UIColor grayColor];
     timeButton.timeRunningBackgroundColor = [UIColor whiteColor];
-    timeButton.layer.borderWidth = 3;
+    timeButton.layer.borderWidth = 2;
     timeButton.layer.cornerRadius = 5;
     [self.view addSubview:timeButton];
     [timeButton mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"SJBugVideoKit";
+    self.mainTitle = @"SJBugVideoKit";
     [self initialData];
     [self createMainView];
 }
@@ -52,8 +52,11 @@
 
 - (void)createMainView{
     
-    UIButton *replayButton = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor orangeColor] cornerRadius:5];
+    UIButton *replayButton = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor clearColor] cornerRadius:5];
     [replayButton setTitle:@"录屏 (真机)" forState:UIControlStateNormal];
+    [replayButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    replayButton.layer.borderWidth = 2;
+    replayButton.layer.cornerRadius = 5;
     [replayButton mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.equalTo(self.view).offset(100);
@@ -63,8 +66,11 @@
     }];
     [replayButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *screenButton =  [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor purpleColor] cornerRadius:5];
+    UIButton *screenButton =  [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor clearColor] cornerRadius:5];
     [screenButton setTitle:@"截屏 (真机Home + Power)" forState:UIControlStateNormal];
+    [screenButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    screenButton.layer.borderWidth = 2;
+    screenButton.layer.cornerRadius = 5;
     [screenButton mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(replayButton.mas_bottom).offset(30);

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"MagicImageDownloader";
+    self.mainTitle = @"MagicImageDownloader";
     [self initialData];
     [self createMainView];
 }
@@ -53,8 +53,11 @@
 
 - (void)createMainView{
     
-    UIButton *startButton = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor orangeColor] cornerRadius:5];
+    UIButton *startButton = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor clearColor] cornerRadius:5];
+    [startButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [startButton setTitle:@" 批量下载保存到相册 " forState:UIControlStateNormal];
+    startButton.layer.borderWidth = 2;
+    startButton.layer.cornerRadius = 5;
     [startButton mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.center.equalTo(self.view);

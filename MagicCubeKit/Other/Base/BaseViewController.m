@@ -35,4 +35,22 @@
 }
 */
 
+#pragma mark - 自定义Title
+- (void)setMainTitle:(NSString *)mainTitle{
+    self.navigationItem.titleView = [self customNavigationBarTitleStyleWithTitle:mainTitle];
+}
+
+- (UILabel *)customNavigationBarTitleStyleWithTitle:(NSString *)titleStr{
+    
+    UIFont *titleFont = [UIFont systemFontOfSize:18];
+    CGSize labelSize = [titleStr sizeWithAttributes:[NSDictionary dictionaryWithObject:titleFont forKey:NSFontAttributeName]];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.f, 0.f, labelSize.width, 44.f)];
+    titleLabel.font = titleFont;
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.text = titleStr;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    //titleLabel.backgroundColor = [UIColor orangeColor];
+    return titleLabel;
+    
+}
 @end

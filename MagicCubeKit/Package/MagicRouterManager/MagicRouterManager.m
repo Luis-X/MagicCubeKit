@@ -100,6 +100,11 @@
         ExampleMagicTimerButtonViewController *vc = [ExampleMagicTimerButtonViewController new];
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
     }
+    //JS交互
+    if ([object isEqualToString:@"ExampleWebViewJavascriptBridgeViewController"]) {
+        ExampleWebViewJavascriptBridgeViewController *vc = [ExampleWebViewJavascriptBridgeViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
 }
 
 @end

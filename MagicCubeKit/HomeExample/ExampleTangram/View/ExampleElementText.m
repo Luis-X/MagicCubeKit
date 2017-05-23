@@ -38,7 +38,7 @@
 - (void)mui_afterGetView{
     
     self.label.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    self.label.backgroundColor = [UIColor orangeColor];
+    self.label.backgroundColor = [UIColor grayColor];
     self.label.text = self.text;
     
 }

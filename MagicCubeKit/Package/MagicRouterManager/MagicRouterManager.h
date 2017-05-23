@@ -20,6 +20,7 @@
 #import "ExampleMagicWebProgressViewController.h"
 #import "ExampleMagicLoadingViewController.h"
 #import "ExampleMagicTimerButtonViewController.h"
+#import "ExampleWebViewJavascriptBridgeViewController.h"
 
 @interface MagicRouterManager : NSObject
 #define Router_HOST @"tiantian://"                                                                                  //协议
@@ -38,6 +39,7 @@
 #define Router_Skip_ExampleMagicWebProgressViewController          Router_URL(@"ExampleMagicWebProgressViewController", nil)
 #define Router_Skip_ExampleMagicLoadingViewController              Router_URL(@"ExampleMagicLoadingViewController", nil)
 #define Router_Skip_ExampleMagicTimerButtonViewController          Router_URL(@"ExampleMagicTimerButtonViewController", nil)
+#define Router_Skip_ExampleWebViewJavascriptBridgeViewController   Router_URL(@"ExampleWebViewJavascriptBridgeViewController", nil)
 
 + (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL AddedNavigationController:(UINavigationController *)navigationController;
 

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BaseViewController.h"
 //所有的视图控制器都需要自定义来完成
 //继承于官方的UIViewController
-@interface ViewController : UIViewController
+@interface ViewController : BaseViewController
 
 
 @end
