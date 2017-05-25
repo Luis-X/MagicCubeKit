@@ -105,6 +105,21 @@
         ExampleWebViewJavascriptBridgeViewController *vc = [ExampleWebViewJavascriptBridgeViewController new];
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
     }
+    //3D卡片
+    if ([object isEqualToString:@"ExampleiCarouselViewController"]) {
+        ExampleiCarouselViewController *vc = [ExampleiCarouselViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
+    //网络状态
+    if ([object isEqualToString:@"ExampleReachabilityViewController"]) {
+        ExampleReachabilityViewController *vc = [ExampleReachabilityViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
+    //气泡
+    if ([object isEqualToString:@"ExampleWYPopoverControllerViewController"]) {
+        ExampleWYPopoverControllerViewController *vc = [ExampleWYPopoverControllerViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
 }
 
 @end

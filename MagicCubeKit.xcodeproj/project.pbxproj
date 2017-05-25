@@ -31,6 +31,9 @@
 		D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */; };
 		D156E1DE1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1DD1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m */; };
 		D156E1E11ED4119D0024D309 /* ExampleJSWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = D156E1E01ED4119D0024D309 /* ExampleJSWeb.html */; };
+		D156E1EA1ED441E50024D309 /* ExampleiCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1E91ED441E50024D309 /* ExampleiCarouselViewController.m */; };
+		D156E1ED1ED441F00024D309 /* ExampleReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1EC1ED441F00024D309 /* ExampleReachabilityViewController.m */; };
+		D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1F21ED442380024D309 /* ExampleWYPopoverControllerViewController.m */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
 		D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */; };
 		D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */; };
@@ -169,6 +172,12 @@
 		D156E1DC1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleWebViewJavascriptBridgeViewController.h; sourceTree = "<group>"; };
 		D156E1DD1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleWebViewJavascriptBridgeViewController.m; sourceTree = "<group>"; };
 		D156E1E01ED4119D0024D309 /* ExampleJSWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ExampleJSWeb.html; sourceTree = "<group>"; };
+		D156E1E81ED441E50024D309 /* ExampleiCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleiCarouselViewController.h; sourceTree = "<group>"; };
+		D156E1E91ED441E50024D309 /* ExampleiCarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleiCarouselViewController.m; sourceTree = "<group>"; };
+		D156E1EB1ED441F00024D309 /* ExampleReachabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleReachabilityViewController.h; sourceTree = "<group>"; };
+		D156E1EC1ED441F00024D309 /* ExampleReachabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleReachabilityViewController.m; sourceTree = "<group>"; };
+		D156E1F11ED442380024D309 /* ExampleWYPopoverControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleWYPopoverControllerViewController.h; sourceTree = "<group>"; };
+		D156E1F21ED442380024D309 /* ExampleWYPopoverControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleWYPopoverControllerViewController.m; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
 		D17DE7A51ECEF61400CE48D4 /* MagicIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicIconButton.h; sourceTree = "<group>"; };
@@ -772,6 +781,60 @@
 			path = ReSource;
 			sourceTree = "<group>";
 		};
+		D156E1E21ED441800024D309 /* ExampleiCarousel(3D卡片) */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1E31ED441800024D309 /* Controller */,
+			);
+			name = "ExampleiCarousel(3D卡片)";
+			path = ExampleiCarousel;
+			sourceTree = "<group>";
+		};
+		D156E1E31ED441800024D309 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1E81ED441E50024D309 /* ExampleiCarouselViewController.h */,
+				D156E1E91ED441E50024D309 /* ExampleiCarouselViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D156E1E41ED441800024D309 /* ExampleReachability(网络状态) */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1E51ED441800024D309 /* Controller */,
+			);
+			name = "ExampleReachability(网络状态)";
+			path = ExampleReachability;
+			sourceTree = "<group>";
+		};
+		D156E1E51ED441800024D309 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1EB1ED441F00024D309 /* ExampleReachabilityViewController.h */,
+				D156E1EC1ED441F00024D309 /* ExampleReachabilityViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D156E1E61ED441800024D309 /* ExampleWYPopoverController(弹出气泡) */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1E71ED441800024D309 /* Controller */,
+			);
+			name = "ExampleWYPopoverController(弹出气泡)";
+			path = ExampleWYPopoverController;
+			sourceTree = "<group>";
+		};
+		D156E1E71ED441800024D309 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D156E1F11ED442380024D309 /* ExampleWYPopoverControllerViewController.h */,
+				D156E1F21ED442380024D309 /* ExampleWYPopoverControllerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D1643A751EB96FA900964594 /* MagicRouterManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,6 +955,9 @@
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
+				D156E1E21ED441800024D309 /* ExampleiCarousel(3D卡片) */,
+				D156E1E41ED441800024D309 /* ExampleReachability(网络状态) */,
+				D156E1E61ED441800024D309 /* ExampleWYPopoverController(弹出气泡) */,
 				D156E1DA1ED40E4F0024D309 /* ExampleWebViewJavascriptBridge(JS交互) */,
 				D187ACEF1ED3DBDD00E8C4BA /* ExampleMagicTimerButton(Timer按钮) */,
 				D187ACEA1ED3DBCB00E8C4BA /* ExampleMagicIconButton(icon按钮) */,
@@ -1425,9 +1491,11 @@
 				D187ACF31ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m in Sources */,
 				D11816A41EB2EFB5004C238A /* ViewController.m in Sources */,
 				D1C72C571EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m in Sources */,
+				D156E1ED1ED441F00024D309 /* ExampleReachabilityViewController.m in Sources */,
 				D11816E71EB2F511004C238A /* BaseViewController.m in Sources */,
 				D1C72C4D1EB86F0C00C88BAE /* TangramView.m in Sources */,
 				D1C72C5E1EB86F0C00C88BAE /* TangramFixBottomLayout.m in Sources */,
+				D156E1EA1ED441E50024D309 /* ExampleiCarouselViewController.m in Sources */,
 				D1C72C5D1EB86F0C00C88BAE /* TangramDragableLayout.m in Sources */,
 				D1C72C601EB86F0C00C88BAE /* TangramFixTopLayout.m in Sources */,
 				D13E1FF51ECC645A00472533 /* ExampleMagicNetworkingViewController.m in Sources */,
@@ -1450,6 +1518,7 @@
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
 				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
+				D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
 				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,

@@ -11,38 +11,90 @@
 @implementation QuicklyHUD
 #pragma mark - MBProgressHUD
 //----------------------------------------------------------------------------------------------------------------------------------
+
 /**
  通用MBProgressHUD
 
- @param view             添加view
- @param mode             显示样式
- @param animationType    动画类型
- @param cornerRadius     圆角
- @param minSize          最小尺寸
- @param labelText        文本(1行)
- @param labelFont        文本字体
- @param detailsLabelText 详情(n行)
- @param detailsLabelFont 详情字体
- @param margin           边距
- @param yoffset           偏移量(居添加View的Center/不会超出屏幕)
- @param bezelViewColor   面板颜色
- @param backgroundColor  背景颜色
+ @param view                        添加View
+ @param mode                        显示样式
+ @param contentColor                内容颜色
+ @param animationType               动画类型
+ @param offset                      center偏移量
+ @param margin                      边距
+ @param minSize                     最小尺寸
+ @param bezelViewColor              面板颜色
+ @param bezelViewStyle              面板样式
+ @param bezelViewCornerRadius       面板圆角
+ @param backgroundViewColor         背景颜色
+ @param backgroundViewStyle         背景样式
+ @param labelText                   单行文本
+ @param labelFont                   单行字体
+ @param detailsLabelText            多行文本
+ @param detailsLabelFont            多行字体
  */
-+ (MBProgressHUD *)addCommonHUDAddedTo:(UIView *)view Mode:(MBProgressHUDMode)mode AnimationType:(MBProgressHUDAnimation)animationType CornerRadius:(CGFloat)cornerRadius MinSize:(CGSize)minSize LabelText:(NSString *)labelText LabelFont:(UIFont *)labelFont DetailsLabelText:(NSString *)detailsLabelText DetailsLabelFont:(UIFont *)detailsLabelFont Margin:(CGFloat)margin YOffset:(CGFloat)yoffset BezelViewColor:(UIColor *)bezelViewColor BackgroundColor:(UIColor *)backgroundColor{
+
++ (MBProgressHUD *)addCommonHUDAddedTo:(UIView *)view
+                                  mode:(MBProgressHUDMode)mode
+                          contentColor:(UIColor *)contentColor
+                         animationType:(MBProgressHUDAnimation)animationType
+                                offset:(CGPoint)offset
+                                margin:(CGFloat)margin
+                               minSize:(CGSize)minSize
+                        bezelViewColor:(UIColor *)bezelViewColor
+                        bezelViewStyle:(MBProgressHUDBackgroundStyle)bezelViewStyle
+                 bezelViewCornerRadius:(CGFloat)bezelViewCornerRadius
+                   backgroundViewColor:(UIColor *)backgroundViewColor
+                   backgroundViewStyle:(MBProgressHUDBackgroundStyle)backgroundViewStyle
+                             labelText:(NSString *)labelText
+                             labelFont:(UIFont *)labelFont
+                      detailsLabelText:(NSString *)detailsLabelText
+                      detailsLabelFont:(UIFont *)detailsLabelFont{
 
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    HUD.mode = mode;                                                        //显示样式           默认:MBProgressHUDModeIndeterminate
-    HUD.animationType = animationType;                                      //动画类型           默认:MBProgressHUDAnimationFade
-    HUD.cornerRadius = cornerRadius;                                        //圆角              默认:5
-    HUD.minSize = minSize;                                                  //最小尺寸           默认:CGSizeZero
-    HUD.labelText = labelText;                                              //说明(单行)         默认:nil
-    HUD.labelFont = labelFont;                                              //说明字体(单行)      默认:17
-    HUD.detailsLabelText = detailsLabelText;                                //详细说明(多行)      默认:nil
-    HUD.detailsLabelFont = detailsLabelFont;                                //详细说明字体(多行)   默认:17
-    HUD.margin = margin;                                                    //边距               默认:20
-    HUD.yOffset = yoffset;                                                  //center偏移量       默认:0,0
-    HUD.color = bezelViewColor;                                             //面板颜色
-    HUD.backgroundColor = backgroundColor;                                  //背景颜色            默认:nil
+    //(显示样式)
+    if (mode) {
+        HUD.mode = mode;                                                        //枚举: MBProgressHUDMode
+    }
+    //(统一内容颜色)
+    if (contentColor) {
+        HUD.contentColor = contentColor;                                        //默认: 内容颜色
+    }
+    //(动画类型)
+    if (animationType) {
+        HUD.animationType = animationType;                                      //枚举: MBProgressHUDAnimation
+    }
+    //(center偏移量)
+    HUD.offset = offset;                                                        //默认: CGPointZero
+    
+    //(边距)
+    if (margin) {
+        HUD.margin = margin;                                                    //默认: 20
+    }
+    //(最小尺寸)
+    HUD.minSize = minSize;                                                      //默认: CGSizeZero
+    //(面板)
+    if (bezelViewColor) {
+        HUD.bezelView.color = bezelViewColor;
+    }
+    if (bezelViewStyle) {
+        HUD.bezelView.style = bezelViewStyle;                                   //枚举: MBProgressHUDBackgroundStyle
+    }
+    if (bezelViewCornerRadius) {
+        HUD.bezelView.layer.cornerRadius = bezelViewCornerRadius;
+    }
+    //(背景)
+    if (backgroundViewColor) {
+        HUD.backgroundView.color = backgroundViewColor;
+    }
+    if (backgroundViewStyle) {
+        HUD.backgroundView.style = backgroundViewStyle;                         //枚举: MBProgressHUDBackgroundStyle
+    }
+    //(单行文本)
+    HUD.label.text = labelText;
+    HUD.label.font = labelFont;
+    //(多行文本)
+    HUD.detailsLabel.text = detailsLabelText;
+    HUD.detailsLabel.font = detailsLabelFont;
     return HUD;
 }
 /**
@@ -63,7 +115,22 @@
 + (void)showWindowsProgressHUDText:(NSString *)text{
 
     [self hiddenMBProgressHUDForView:[UIApplication sharedApplication].keyWindow];
-    [self addCommonHUDAddedTo:[UIApplication sharedApplication].keyWindow Mode:MBProgressHUDModeIndeterminate AnimationType:MBProgressHUDAnimationFade CornerRadius:3 MinSize:CGSizeMake(120, 80) LabelText:text LabelFont:[UIFont systemFontOfSize:14] DetailsLabelText:nil DetailsLabelFont:nil Margin:15 YOffset:0 BezelViewColor:[UIColor colorWithWhite:0.00 alpha:0.80] BackgroundColor:nil];
+    [self addCommonHUDAddedTo:[UIApplication sharedApplication].keyWindow
+                         mode:MBProgressHUDModeIndeterminate
+                 contentColor:[UIColor whiteColor]
+                animationType:MBProgressHUDAnimationFade
+                       offset:CGPointZero
+                       margin:15
+                      minSize:CGSizeZero
+               bezelViewColor:[UIColor colorWithWhite:0.00 alpha:0.80]
+               bezelViewStyle:MBProgressHUDBackgroundStyleSolidColor
+        bezelViewCornerRadius:3
+          backgroundViewColor:nil
+          backgroundViewStyle:MBProgressHUDBackgroundStyleSolidColor
+                    labelText:text
+                    labelFont:[UIFont systemFontOfSize:14]
+             detailsLabelText:nil
+             detailsLabelFont:nil];
 
 }
 /**
@@ -74,8 +141,23 @@
 + (void)showWindowsOnlyTextHUDText:(NSString *)text{
 
     [self hiddenMBProgressHUDForView:[UIApplication sharedApplication].keyWindow];
-    MBProgressHUD *HUD = [self addCommonHUDAddedTo:[UIApplication sharedApplication].keyWindow Mode:MBProgressHUDModeText AnimationType:MBProgressHUDAnimationFade CornerRadius:3 MinSize:CGSizeZero LabelText:nil LabelFont:nil DetailsLabelText:text DetailsLabelFont:[UIFont systemFontOfSize:14] Margin:15 YOffset:0 BezelViewColor:[UIColor colorWithWhite:0.00 alpha:0.80] BackgroundColor:nil];
-    [HUD hide:YES afterDelay:1.5];
+    MBProgressHUD *HUD = [self addCommonHUDAddedTo:[UIApplication sharedApplication].keyWindow
+                         mode:MBProgressHUDModeText
+                 contentColor:[UIColor whiteColor]
+                animationType:MBProgressHUDAnimationFade
+                       offset:CGPointZero
+                       margin:15
+                      minSize:CGSizeZero
+               bezelViewColor:[UIColor colorWithWhite:0.00 alpha:1.00]
+               bezelViewStyle:MBProgressHUDBackgroundStyleSolidColor
+        bezelViewCornerRadius:3
+          backgroundViewColor:nil
+          backgroundViewStyle:MBProgressHUDBackgroundStyleSolidColor
+                    labelText:text
+                    labelFont:[UIFont systemFontOfSize:14]
+             detailsLabelText:nil
+             detailsLabelFont:nil];
+    [HUD hideAnimated:YES afterDelay:1.5];
     [HUD removeFromSuperViewOnHide];
 
 }
@@ -83,18 +165,41 @@
 /**
  自定义(HUD)
 
- @param view            添加view
- @param customView      自定义view
- @param animationType   动画类型
- @param cornerRadius    圆角
- @param margin          面板边距
- @param yoffset         偏移center
- @param bezelViewColor  面板颜色
- @param backgroundColor 背景颜色
+ @param view                    添加view
+ @param customView              自定义view
+ @param animationType           动画类型
+ @param bezelViewCornerRadius   圆角
+ @param margin                  面板边距
+ @param offset                  偏移center
+ @param bezelViewColor          面板颜色
+ @param backgroundViewColor     背景颜色
  */
-+ (void)showCustomHUDAddedTo:(UIView *)view CustomView:(UIView *)customView AnimationType:(MBProgressHUDAnimation)animationType CornerRadius:(CGFloat)cornerRadius Margin:(CGFloat)margin YOffset:(CGFloat)yoffset bezelViewColor:(UIColor *)bezelViewColor BackgroundColor:(UIColor *)backgroundColor{
++ (void)showCustomHUDAddedTo:(UIView *)view
+                  customView:(UIView *)customView
+               animationType:(MBProgressHUDAnimation)animationType
+                bezelViewCornerRadius:(CGFloat)bezelViewCornerRadius
+                      margin:(CGFloat)margin
+                      offset:(CGPoint)offset
+              bezelViewColor:(UIColor *)bezelViewColor
+             backgroundViewColor:(UIColor *)backgroundViewColor{
+    
+    MBProgressHUD *HUD = [self addCommonHUDAddedTo:view
+                                              mode:MBProgressHUDModeCustomView
+                                      contentColor:nil
+                                     animationType:animationType
+                                            offset:offset
+                                            margin:margin
+                                           minSize:CGSizeZero
+                                    bezelViewColor:bezelViewColor
+                                    bezelViewStyle:MBProgressHUDBackgroundStyleSolidColor
+                             bezelViewCornerRadius:bezelViewCornerRadius
+                               backgroundViewColor:backgroundViewColor
+                               backgroundViewStyle:MBProgressHUDBackgroundStyleSolidColor
+                                         labelText:nil
+                                         labelFont:nil
+                                  detailsLabelText:nil
+                                  detailsLabelFont:nil];
 
-    MBProgressHUD *HUD = [self addCommonHUDAddedTo:view Mode:MBProgressHUDModeCustomView AnimationType:animationType CornerRadius:cornerRadius MinSize:CGSizeZero LabelText:nil LabelFont:nil DetailsLabelText:nil DetailsLabelFont:nil Margin:margin YOffset:yoffset BezelViewColor:bezelViewColor BackgroundColor:backgroundColor];
     HUD.customView = customView;
 
 }

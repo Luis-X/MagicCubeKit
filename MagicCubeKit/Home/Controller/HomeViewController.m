@@ -40,19 +40,22 @@
 */
 
 - (void)initailData{
-    _menuArray = @[@{@"UIViewController":@"ViewController调用机制"},
-                   @{@"Tangram":@"七巧板界面动态化"},
-                   @{@"SJBugVideoKit":@"录屏、截屏"},
-                   @{@"MagicAlertView":@"弹框"},
-                   @{@"MagicPermissionManager":@"权限"},
-                   @{@"MagicNetworkManager":@"网络"},
-                   @{@"MagicIconButton":@"icon按钮"},
-                   @{@"MagicScrollPage":@"滚动分页"},
-                   @{@"MagicImageDownloader":@"图片下载"},
-                   @{@"MagicWebProgress":@"网页进度条"},
-                   @{@"MagicLoading":@"加载动画"},
-                   @{@"MagicTimerButton":@"倒计时按钮"},
-                   @{@"WebViewJavascriptBridge":@"JS交互"}];
+    _menuArray = @[@{@"UIViewController" : @"ViewController调用机制"},
+                   @{@"Tangram" : @"七巧板界面动态化"},
+                   @{@"SJBugVideoKit" : @"录屏、截屏"},
+                   @{@"MagicAlertView" : @"弹框"},
+                   @{@"MagicPermissionManager" : @"权限"},
+                   @{@"MagicNetworkManager" : @"网络请求"},
+                   @{@"MagicIconButton" : @"icon按钮"},
+                   @{@"MagicScrollPage" : @"滚动分页"},
+                   @{@"MagicImageDownloader" : @"图片下载"},
+                   @{@"MagicWebProgress" : @"网页进度条"},
+                   @{@"MagicLoading" : @"加载动画"},
+                   @{@"MagicTimerButton" : @"倒计时按钮"},
+                   @{@"WebViewJavascriptBridge" : @"JS交互"},
+                   @{@"Reachability" : @"网络状态"},
+                   @{@"iCarousel" : @"3D卡片"},
+                   @{@"WYPopoverController" : @"气泡"}];
 }
 
 - (void)createMainViews{
@@ -140,6 +143,16 @@
             case 12:
                 routerSkipString = Router_Skip_ExampleWebViewJavascriptBridgeViewController;
                 break;
+            case 13:
+                routerSkipString = Router_Skip_ExampleReachabilityViewController;
+                break;
+            case 14:
+                routerSkipString = Router_Skip_ExampleiCarouselViewController;
+                break;
+            case 15:
+                routerSkipString = Router_Skip_ExampleWYPopoverControllerViewController;
+                break;
+
             default:
                 break;
         }

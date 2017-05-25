@@ -21,5 +21,12 @@
 
 + (void)showWindowsOnlyTextHUDText:(NSString *)text;                                    //窗口纯文本HUD
 
-+ (void)showCustomHUDAddedTo:(UIView *)view CustomView:(UIView *)customView AnimationType:(MBProgressHUDAnimation)animationType CornerRadius:(CGFloat)cornerRadius Margin:(CGFloat)margin YOffset:(CGFloat)yoffset bezelViewColor:(UIColor *)bezelViewColor BackgroundColor:(UIColor *)backgroundColor;
++ (void)showCustomHUDAddedTo:(UIView *)view
+                  customView:(UIView *)customView
+               animationType:(MBProgressHUDAnimation)animationType
+       bezelViewCornerRadius:(CGFloat)bezelViewCornerRadius
+                      margin:(CGFloat)margin
+                      offset:(CGPoint)offset
+              bezelViewColor:(UIColor *)bezelViewColor
+         backgroundViewColor:(UIColor *)backgroundViewColor;
 @end

@@ -40,14 +40,14 @@
     self.navigationItem.titleView = [self customNavigationBarTitleStyleWithTitle:mainTitle];
 }
 
-- (UILabel *)customNavigationBarTitleStyleWithTitle:(NSString *)titleStr{
+- (UILabel *)customNavigationBarTitleStyleWithTitle:(NSString *)title{
     
-    UIFont *titleFont = [UIFont systemFontOfSize:18];
-    CGSize labelSize = [titleStr sizeWithAttributes:[NSDictionary dictionaryWithObject:titleFont forKey:NSFontAttributeName]];
+    UIFont *font = [UIFont systemFontOfSize:18];
+    CGSize labelSize = [title sizeWithAttributes:[NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName]];
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.f, 0.f, labelSize.width, 44.f)];
-    titleLabel.font = titleFont;
+    titleLabel.font = font;
     titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.text = titleStr;
+    titleLabel.text = title;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     //titleLabel.backgroundColor = [UIColor orangeColor];
     return titleLabel;
