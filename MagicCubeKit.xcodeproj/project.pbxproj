@@ -20,7 +20,6 @@
 		D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816E91EB2F52D004C238A /* HomeViewController.m */; };
 		D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */; };
 		D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816F71EB31D9A004C238A /* BaseNavigationController.m */; };
-		D11816FA1EB32076004C238A /* tabbar_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11816F91EB32076004C238A /* tabbar_0@2x.png */; };
 		D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F11EC2F00000841273 /* ExampleMagicAlertViewViewController.m */; };
 		D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F41EC2F06600841273 /* MagicAlertView.m */; };
 		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
@@ -35,6 +34,15 @@
 		D156E1ED1ED441F00024D309 /* ExampleReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1EC1ED441F00024D309 /* ExampleReachabilityViewController.m */; };
 		D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1F21ED442380024D309 /* ExampleWYPopoverControllerViewController.m */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
+		D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */; };
+		D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8B1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m */; };
+		D1707A8F1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8E1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m */; };
+		D1707A951ED7C9440024FC83 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1707A911ED7C9440024FC83 /* 1.jpg */; };
+		D1707A961ED7C9440024FC83 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1707A921ED7C9440024FC83 /* 2.jpg */; };
+		D1707A971ED7C9440024FC83 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1707A931ED7C9440024FC83 /* 3.jpg */; };
+		D1707A9A1ED7C95F0024FC83 /* ExampleMagicDynamic.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1707A991ED7C95F0024FC83 /* ExampleMagicDynamic.plist */; };
+		D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1707A9D1ED7CB260024FC83 /* tabbar_0@2x.png */; };
+		D1707AA01ED7CB400024FC83 /* LuisX.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D1707A9F1ED7CB400024FC83 /* LuisX.JPG */; };
 		D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */; };
 		D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */; };
 		D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
@@ -149,7 +157,6 @@
 		D11816F51EB31C96004C238A /* Base-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base-Header.h"; sourceTree = "<group>"; };
 		D11816F61EB31D9A004C238A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		D11816F71EB31D9A004C238A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		D11816F91EB32076004C238A /* tabbar_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_0@2x.png"; sourceTree = "<group>"; };
 		D11816FB1EB320B8004C238A /* MagicCubeDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeDefine.h; sourceTree = "<group>"; };
 		D11993F01EC2F00000841273 /* ExampleMagicAlertViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicAlertViewViewController.h; sourceTree = "<group>"; };
 		D11993F11EC2F00000841273 /* ExampleMagicAlertViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicAlertViewViewController.m; sourceTree = "<group>"; };
@@ -180,6 +187,18 @@
 		D156E1F21ED442380024D309 /* ExampleWYPopoverControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleWYPopoverControllerViewController.m; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
+		D1707A871ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicTableViewCell.h; sourceTree = "<group>"; };
+		D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicDynamicTableViewCell.m; sourceTree = "<group>"; };
+		D1707A8A1ED7C1990024FC83 /* ExampleMagicDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicViewController.h; sourceTree = "<group>"; };
+		D1707A8B1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicDynamicViewController.m; sourceTree = "<group>"; };
+		D1707A8D1ED7C1A70024FC83 /* ExampleMagicDynamicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicModel.h; sourceTree = "<group>"; };
+		D1707A8E1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicDynamicModel.m; sourceTree = "<group>"; };
+		D1707A911ED7C9440024FC83 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		D1707A921ED7C9440024FC83 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		D1707A931ED7C9440024FC83 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		D1707A991ED7C95F0024FC83 /* ExampleMagicDynamic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExampleMagicDynamic.plist; sourceTree = "<group>"; };
+		D1707A9D1ED7CB260024FC83 /* tabbar_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_0@2x.png"; sourceTree = "<group>"; };
+		D1707A9F1ED7CB400024FC83 /* LuisX.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LuisX.JPG; sourceTree = "<group>"; };
 		D17DE7A51ECEF61400CE48D4 /* MagicIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicIconButton.h; sourceTree = "<group>"; };
 		D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicIconButton.m; sourceTree = "<group>"; };
 		D17DE7A81ECEF63B00CE48D4 /* MagicScrollPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPage.h; sourceTree = "<group>"; };
@@ -581,7 +600,8 @@
 		D11816E01EB2F2D5004C238A /* Image(图片) */ = {
 			isa = PBXGroup;
 			children = (
-				D11816F91EB32076004C238A /* tabbar_0@2x.png */,
+				D1707A9B1ED7CB260024FC83 /* Logo */,
+				D1707A9C1ED7CB260024FC83 /* Tabbar */,
 			);
 			name = "Image(图片)";
 			path = Image;
@@ -844,6 +864,71 @@
 			path = MagicRouterManager;
 			sourceTree = "<group>";
 		};
+		D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell */ = {
+			isa = PBXGroup;
+			children = (
+				D1707A901ED7C9440024FC83 /* Resource */,
+				D1707A811ED7C01E0024FC83 /* Controller */,
+				D1707A821ED7C01E0024FC83 /* Model */,
+				D1707A831ED7C01E0024FC83 /* View */,
+			);
+			path = ExampleFDTemplateLayoutCell;
+			sourceTree = "<group>";
+		};
+		D1707A811ED7C01E0024FC83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1707A8A1ED7C1990024FC83 /* ExampleMagicDynamicViewController.h */,
+				D1707A8B1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1707A821ED7C01E0024FC83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1707A8D1ED7C1A70024FC83 /* ExampleMagicDynamicModel.h */,
+				D1707A8E1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1707A831ED7C01E0024FC83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1707A871ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.h */,
+				D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1707A901ED7C9440024FC83 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D1707A991ED7C95F0024FC83 /* ExampleMagicDynamic.plist */,
+				D1707A911ED7C9440024FC83 /* 1.jpg */,
+				D1707A921ED7C9440024FC83 /* 2.jpg */,
+				D1707A931ED7C9440024FC83 /* 3.jpg */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D1707A9B1ED7CB260024FC83 /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				D1707A9F1ED7CB400024FC83 /* LuisX.JPG */,
+			);
+			path = Logo;
+			sourceTree = "<group>";
+		};
+		D1707A9C1ED7CB260024FC83 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				D1707A9D1ED7CB260024FC83 /* tabbar_0@2x.png */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		D17DE7A41ECEF5CA00CE48D4 /* MagicIconButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,6 +1040,7 @@
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
+				D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell */,
 				D156E1E21ED441800024D309 /* ExampleiCarousel(3D卡片) */,
 				D156E1E41ED441800024D309 /* ExampleReachability(网络状态) */,
 				D156E1E61ED441800024D309 /* ExampleWYPopoverController(弹出气泡) */,
@@ -1401,14 +1487,19 @@
 				D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */,
 				D11816AC1EB2EFB5004C238A /* LaunchScreen.storyboard in Resources */,
 				D156E1E11ED4119D0024D309 /* ExampleJSWeb.html in Resources */,
+				D1707A961ED7C9440024FC83 /* 2.jpg in Resources */,
 				D1C72CC11EB8856000C88BAE /* video_start@2x.png in Resources */,
 				D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */,
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
+				D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */,
 				D11816A91EB2EFB5004C238A /* Assets.xcassets in Resources */,
 				D11816A71EB2EFB5004C238A /* Main.storyboard in Resources */,
+				D1707A971ED7C9440024FC83 /* 3.jpg in Resources */,
 				D1C72CBF1EB8856000C88BAE /* share_qq@2x.png in Resources */,
-				D11816FA1EB32076004C238A /* tabbar_0@2x.png in Resources */,
+				D1707A951ED7C9440024FC83 /* 1.jpg in Resources */,
+				D1707A9A1ED7C95F0024FC83 /* ExampleMagicDynamic.plist in Resources */,
 				D1C72C4A1EB86F0C00C88BAE /* TangramHelperCustomMapping.plist in Resources */,
+				D1707AA01ED7CB400024FC83 /* LuisX.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1513,6 +1604,7 @@
 				D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
 				D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */,
+				D1707A8F1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m in Sources */,
 				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
 				D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */,
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
@@ -1520,6 +1612,7 @@
 				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
 				D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
+				D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */,
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
 				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
@@ -1543,6 +1636,7 @@
 				D1C72C651EB86F0C00C88BAE /* TangramSingleColumnLayout.m in Sources */,
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
+				D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */,
 				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
 				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,

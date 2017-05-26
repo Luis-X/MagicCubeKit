@@ -10,12 +10,13 @@ pod 'DateTools', '~> 1.7.0'				# 日期工具
 pod 'JLRoutes', '~> 2.0'				# 路由跳转
 pod 'WebViewJavascriptBridge', '~> 6.0.2'	        # JS交互
 pod 'FDFullscreenPopGesture'  				# 滑动返回
-pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'	# 自适应表内容高度	
+pod 'UITableView+FDTemplateLayoutCell', '~> 1.6.beta'	# 自适应表内容高度	
 pod 'LazyScroll', '~>0.0.2'				# 七巧板依赖
 pod 'MJRefresh', '~> 3.1.12'				# 上下拉刷新
 pod 'MBProgressHUD', '~> 1.0.0'				# HUD
 pod 'AsyncDisplayKit', '~> 2.0-beta.1'			# 界面流畅性
 pod 'iCarousel', '~> 1.8.3'				# 3D自定义滚动图
 pod 'WYPopoverController', '~> 0.3.9'			# 自定义弹出气泡
+pod 'ChameleonFramework', '~> 2.1.0'			# 变色龙
 end
 

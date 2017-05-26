@@ -134,7 +134,7 @@
 #pragma mark - 全局导航栏
 - (void)customAllNavigationBarAppearance{
     //背景颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.18 green:0.65 blue:0.91 alpha:1.00]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor randomFlatColor]];
     //文本颜色
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //按钮颜色

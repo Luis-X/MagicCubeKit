@@ -24,6 +24,7 @@
 #import "ExampleReachabilityViewController.h"
 #import "ExampleiCarouselViewController.h"
 #import "ExampleWYPopoverControllerViewController.h"
+#import "ExampleMagicDynamicViewController.h"
 
 @interface MagicRouterManager : NSObject
 #define Router_HOST @"tiantian://"                                                                                  //协议
@@ -46,6 +47,7 @@
 #define Router_Skip_ExampleReachabilityViewController              Router_URL(@"ExampleReachabilityViewController", nil)
 #define Router_Skip_ExampleiCarouselViewController                 Router_URL(@"ExampleiCarouselViewController", nil)
 #define Router_Skip_ExampleWYPopoverControllerViewController       Router_URL(@"ExampleWYPopoverControllerViewController", nil)
+#define Router_Skip_ExampleMagicDynamicViewController              Router_URL(@"ExampleMagicDynamicViewController", nil)
 
 + (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL AddedNavigationController:(UINavigationController *)navigationController;
 

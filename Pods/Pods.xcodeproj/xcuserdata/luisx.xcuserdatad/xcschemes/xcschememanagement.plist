@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DateTools.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,12 +107,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
+		<key>02430C17A047921BFDB0FC46903F4802</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>08806F3A2BDE13841AFCD187DDF54BE0</key>
+		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,7 +122,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>26F2E62BB302EEDBB09ABF396497E7C7</key>
+		<key>31A6A3BE10D7E2608B71B750DFC5E622</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53A7DBE7BCDE24C05782675AAB5CDAE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +147,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>870A1AE3E62964ED84782D3B5D9C2107</key>
+		<key>9052D62A0F2F55AF4943E6434ABA83E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,12 +177,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C7704D02C6D92B1A3A3A843C8E159795</key>
+		<key>CF54B6E6878A14AB5FF607B2A03BC421</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CFE6A3CF3309BE4A6F9517A9ADF1F7FE</key>
+		<key>D57F6DD7CBDE11E457971075B0805982</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,7 +192,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9776965A5964F73DDD3AE908D87930E</key>
+		<key>E343C3F62292EEC6DC805B28F3E10115</key>
 		<dict>
 			<key>primary</key>
 			<true/>

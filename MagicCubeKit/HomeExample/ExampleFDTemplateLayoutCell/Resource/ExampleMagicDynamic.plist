@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>userInfo</key>
+		<dict>
+			<key>userName</key>
+			<string>LuisX</string>
+			<key>userImage</key>
+			<string>LuisX.jpg</string>
+			<key>userID</key>
+			<string>0001</string>
+		</dict>
+		<key>textContent</key>
+		<string>容易实现的它不是梦想,轻言放弃的它不是诺言,要想成功就得敢于挑战,有了梦想才有美好的明天!容易实现的它不是梦想,轻言放弃的它不是诺言,要想成功就得敢于挑战,有了梦想才有美好的明天!</string>
+		<key>imageContent</key>
+		<string>1.jpg</string>
+		<key>address</key>
+		<string>北京</string>
+		<key>publishTime</key>
+		<string>2016-03-10 00:00:00</string>
+	</dict>
+	<dict>
+		<key>userInfo</key>
+		<dict>
+			<key>userName</key>
+			<string>德玛西亚</string>
+			<key>userImage</key>
+			<string>LuisX.jpg</string>
+			<key>userID</key>
+			<string>0002</string>
+		</dict>
+		<key>textContent</key>
+		<string>在东方世界里，挑选小公牛到竞技场角斗有一定的程序。每一头被带进场地的公牛都要向手持长矛刺它的斗牛士发起进攻。其勇敢程度是根据它不顾矛刃的刺痛向斗牛士进攻的次数来认真评定的。
+
+从今以后，我要懂得，生命的每一都在接受类似的考验。如果坚持不懈，不断尝试，勇往向前，我就会成功。</string>
+		<key>imageContent</key>
+		<string>2.jpg</string>
+		<key>address</key>
+		<string>上海</string>
+		<key>publishTime</key>
+		<string>2016-03-10 00:00:00</string>
+	</dict>
+	<dict>
+		<key>userInfo</key>
+		<dict>
+			<key>userName</key>
+			<string>诺克萨斯</string>
+			<key>userImage</key>
+			<string>LuisX.jpg</string>
+			<key>userID</key>
+			<string>0003</string>
+		</dict>
+		<key>textContent</key>
+		<string>我不会再考虑失败，我要从我的词典里去除诸放弃、不能，不会、棘手、成问题、不可能、失败、不可行、没希望、退缩这类愚蠢的字眼。我要避免绝望，哪怕这一思想之疾感染了我，我也要在绝望中继续前行。我会辛勤耕耘，极力忍受，不去理会脚下的障碍，只放眼于远大的目标，因为我相信，沙漠尽头必有绿洲。</string>
+		<key>imageContent</key>
+		<string>3.jpg</string>
+		<key>address</key>
+		<string>深圳</string>
+		<key>publishTime</key>
+		<string>2016-03-10 00:00:00</string>
+	</dict>
+	<dict>
+		<key>userInfo</key>
+		<dict>
+			<key>userName</key>
+			<string>德莱文</string>
+			<key>userImage</key>
+			<string>LuisX.jpg</string>
+			<key>userID</key>
+			<string>0004</string>
+		</dict>
+		<key>textContent</key>
+		<string>平时没有跑发卫千米，占时就难以进行一百米的冲刺。</string>
+		<key>imageContent</key>
+		<string>2.jpg</string>
+		<key>address</key>
+		<string>台湾</string>
+		<key>publishTime</key>
+		<string>2016-03-10 00:00:00</string>
+	</dict>
+</array>
+</plist>

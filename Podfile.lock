@@ -21,6 +21,9 @@ PODS:
     - AsyncDisplayKit/Core
     - PINRemoteImage/iOS (= 3.0.0-beta.8)
     - PINRemoteImage/PINCache
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
   - DateTools (1.7.0)
   - FDFullscreenPopGesture (1.1)
   - iCarousel (1.8.3)
@@ -54,6 +57,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AsyncDisplayKit (~> 2.0-beta.1)
+  - ChameleonFramework (~> 2.1.0)
   - DateTools (~> 1.7.0)
   - FDFullscreenPopGesture
   - iCarousel (~> 1.8.3)
@@ -64,13 +68,14 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
   - Reachability (~> 3.2)
   - SDWebImage (~> 3.7)
-  - UITableView+FDTemplateLayoutCell (~> 1.5.beta)
+  - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
   - WYPopoverController (~> 0.3.9)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AsyncDisplayKit: 2234dd8d8770a5ed72936b3f8394bd5a807765f6
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
@@ -88,6 +93,6 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
 
-PODFILE CHECKSUM: dd5eb2c0139b2636cfdfd67621170af08331071c
+PODFILE CHECKSUM: 546600fcdeb8544f5339a300a78281fc9a4bd8aa
 
 COCOAPODS: 1.2.0

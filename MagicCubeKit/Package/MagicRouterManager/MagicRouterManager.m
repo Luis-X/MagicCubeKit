@@ -120,6 +120,11 @@
         ExampleWYPopoverControllerViewController *vc = [ExampleWYPopoverControllerViewController new];
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
     }
+    //动态Cell高度
+    if ([object isEqualToString:@"ExampleMagicDynamicViewController"]) {
+        ExampleMagicDynamicViewController *vc = [ExampleMagicDynamicViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
 }
 
 @end

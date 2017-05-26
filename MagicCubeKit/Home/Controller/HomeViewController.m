@@ -55,7 +55,8 @@
                    @{@"WebViewJavascriptBridge" : @"JS交互"},
                    @{@"Reachability" : @"网络状态"},
                    @{@"iCarousel" : @"3D卡片"},
-                   @{@"WYPopoverController" : @"气泡"}];
+                   @{@"WYPopoverController" : @"气泡"},
+                   @{@"UITableView+FDTemplateLayoutCell" : @"列表高度自适应"}];
 }
 
 - (void)createMainViews{
@@ -152,7 +153,9 @@
             case 15:
                 routerSkipString = Router_Skip_ExampleWYPopoverControllerViewController;
                 break;
-
+            case 16:
+                routerSkipString = Router_Skip_ExampleMagicDynamicViewController;
+                break;
             default:
                 break;
         }
