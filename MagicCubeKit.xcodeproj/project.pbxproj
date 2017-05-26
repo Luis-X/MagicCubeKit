@@ -864,7 +864,7 @@
 			path = MagicRouterManager;
 			sourceTree = "<group>";
 		};
-		D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell */ = {
+		D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell(Cell动态高度) */ = {
 			isa = PBXGroup;
 			children = (
 				D1707A901ED7C9440024FC83 /* Resource */,
@@ -872,6 +872,7 @@
 				D1707A821ED7C01E0024FC83 /* Model */,
 				D1707A831ED7C01E0024FC83 /* View */,
 			);
+			name = "ExampleFDTemplateLayoutCell(Cell动态高度)";
 			path = ExampleFDTemplateLayoutCell;
 			sourceTree = "<group>";
 		};
@@ -1040,7 +1041,7 @@
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
-				D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell */,
+				D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell(Cell动态高度) */,
 				D156E1E21ED441800024D309 /* ExampleiCarousel(3D卡片) */,
 				D156E1E41ED441800024D309 /* ExampleReachability(网络状态) */,
 				D156E1E61ED441800024D309 /* ExampleWYPopoverController(弹出气泡) */,
