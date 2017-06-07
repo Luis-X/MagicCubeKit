@@ -18,5 +18,7 @@ pod 'AsyncDisplayKit', '~> 2.0-beta.1'			# 界面流畅性
 pod 'iCarousel', '~> 1.8.3'				# 3D自定义滚动图
 pod 'WYPopoverController', '~> 0.3.9'			# 自定义弹出气泡
 pod 'ChameleonFramework', '~> 2.1.0'			# 变色龙
+pod 'STPopup', '~> 1.8.2'				# 自定义弹出视图
+pod 'MJExtension', '~> 3.0.13'				# 数据转模型
 end
 

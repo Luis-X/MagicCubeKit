@@ -31,6 +31,7 @@ PODS:
   - LazyScroll (0.0.2)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - PINCache (3.0.1-beta.4):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
@@ -50,6 +51,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - STPopup (1.8.2)
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
   - WYPopoverController (0.3.9)
@@ -65,9 +67,11 @@ DEPENDENCIES:
   - LazyScroll (~> 0.0.2)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
+  - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - Reachability (~> 3.2)
   - SDWebImage (~> 3.7)
+  - STPopup (~> 1.8.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
   - WYPopoverController (~> 0.3.9)
@@ -83,16 +87,18 @@ SPEC CHECKSUMS:
   LazyScroll: 614022689b8e3b93c7bbe268c1a47b76e4265941
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
 
-PODFILE CHECKSUM: 546600fcdeb8544f5339a300a78281fc9a4bd8aa
+PODFILE CHECKSUM: f9c532c085173392727492936b5b6cbb261df58c
 
 COCOAPODS: 1.2.0

@@ -1,0 +1,170 @@
+{
+    "count": 0,
+    "data": {
+        "shop": {
+            "gmtCreate": 1494993266000,
+            "gmtModified": 1495684772000,
+            "headImage": "",
+            "id": 64353,
+            "isProbation": true,
+            "isVip": 0,
+            "membersCount": 0,
+            "name": "lrisz5fstxrm",
+            "paid": false,
+            "parentId": 32691,
+            "payOrderId": 0,
+            "position": 0,
+            "source": "礼包C:艾尼尤超值面膜套装",
+            "userId": 2868376,
+            "vipShopId": 0
+        },
+        "isSelect": false,
+        "pageName": "itemDetail",
+        "productDeatilParam": {
+            "归属": "嘉娜宝",
+            "类别": "洁面",
+            "发货地": "达人店1号仓",
+            "品牌国籍": "日本",
+            "规格": "100.0g",
+            "英文名": "无"
+        },
+        "showCommission": true,
+        "commentsNum": 0,
+        "skuList": [
+                    {
+                    "classify": "选择规格",
+                    "value": [
+                              {
+                              "name": "100.0g",
+                              "skuId": 142271
+                              },
+                              {
+                              "name": "120.0g",
+                              "skuId": 142270
+                              }
+                              ]
+                    },
+                    {
+                    "classify": "选择尺寸",
+                    "value": [
+                              {
+                              "name": "1个",
+                              "skuId": 142271
+                              },
+                              {
+                              "name": "2个",
+                              "skuId": 142270
+                              }
+                              ]
+                    }
+                    ],
+        "type": "3",
+        "addCart": true,
+        "shopProductId": 0,
+        "recommend": [
+                      {
+                      "id": "141517",
+                      "price": "138.00",
+                      "name": "欧树 蜂蜜洁面凝胶400ml",
+                      "image": "//cdn1.showjoy.com/images/34/349b5980d5744a08af6f814157e2adee.png",
+                      "discount": "3.90"
+                      },
+                      {
+                      "id": "144009",
+                      "price": "105.00",
+                      "name": "馥蕾诗 大豆精萃卸妆洁面凝露50ml",
+                      "image": "//cdn1.showjoy.com/images/a2/a210cf5a12c842c9abee46748f293199.png",
+                      "discount": "4.20"
+                      },
+                      {
+                      "id": "15815",
+                      "price": "68.00",
+                      "name": "雅诗兰黛 鲜亮焕采泡沫洁面乳30ml",
+                      "image": "//cdn1.showjoy.com/images/9d/9d0e8914be744de4a7d344e1a1ec97b8.png",
+                      "discount": "4.30"
+                      },
+                      {
+                      "id": "144759",
+                      "price": "399.00",
+                      "name": "肌肤之钥 奢华泡沫洁面乳( 滋润型 )125g",
+                      "image": "//cdn1.showjoy.com/images/bd/bde6c2411af74e36805e70036df73a3d.png",
+                      "discount": "4.50"
+                      },
+                      {
+                      "id": "145175",
+                      "price": "388.00",
+                      "name": "肌肤之钥 奢华泡沫洁面乳( 清爽型 )125g",
+                      "image": "//cdn1.showjoy.com/images/25/25f923f9f6ae40a8809d422a62ee4db6.png",
+                      "discount": "4.30"
+                      },
+                      {
+                      "id": "145225",
+                      "price": "158.00",
+                      "name": "城野医生 果酸去黑头角质收敛毛孔啫喱120g",
+                      "image": "//cdn1.showjoy.com/images/cb/cb3c4ae11cc74ca787579ddcfefc2913.png",
+                      "discount": "5.50"
+                      }
+                      ],
+        "discount": "5.9",
+        "skuCommission": {
+            "actPrice": 0,
+            "commissionRate": 0.1,
+            "endTime": 1474255013000,
+            "gmtCreate": 1473647639000,
+            "gmtModified": 1473657362000,
+            "isDelete": 0,
+            "limitCommissionRate": 0,
+            "limitInventory": 0,
+            "skuId": 142271,
+            "specialSell": false,
+            "startTime": 1474255013000,
+            "type": 0
+        },
+        "isFromHome": false,
+        "byStages": "该商品最多可享12期免息分期购",
+        "price": "119.00",
+        "shopId": 64353,
+        "isSpecialSell": false,
+        "shopName": "lrisz5fstxrm",
+        "item": {
+            "zhName": "净润洗面霜",
+            "spuId": 161619,
+            "image": "//cdn1.showjoy.com/images/42/42305ebaceaf40998806786964f77de9.png",
+            "brandName": "芙丽芳丝",
+            "discount": "5.9",
+            "id": 142271,
+            "unit": "g",
+            "price": 119,
+            "originalPrice": 200,
+            "inventory": 75,
+            "productTitle": "[芙丽芳丝]净润洗面霜100g",
+            "volume": 100,
+            "images": [
+                       "http://cdn1.showjoy.com/images/a9/a9c81bd443304965bd3777e990d42b46.png",
+                       "http://cdn1.showjoy.com/images/45/4582715fbdc94ae1ad38b6541bd2b121.png"
+                       ],
+            "isHaiTao": false,
+            "brandImage": "http://cdn1.showjoy.com/images/41/41799820569e433580b9650bd86bad14.png",
+            "introduction": "产品功效：芙丽芳丝净润洗面霜100g，温和清除肌理及毛孔中的污垢，保湿提亮肤色，让你真正体验进零刺激的呵护！ 特含陈皮、核桃仁、薏苡仁、甘草叶、川芎跟、大枣六种植物互相作用，保护纤弱的肌肤，打造不易感到刺激的健康肌肤 \n适用于各种肌肤，包括敏感性肌肤 \n它是一款很温和的洗面奶，泡沫非常丰富细腻，不含皂碱，也没有化学起泡剂，所以不会带走肌肤的水分哦"
+        },
+        "tagSkus": [
+                    {
+                    "discount": "5.9",
+                    "id": 142271,
+                    "inventory": 75,
+                    "isCanSelect": false,
+                    "originalPrice": "200.00",
+                    "price": "119.00",
+                    "tagMaps": {
+                    
+                    },
+                    "unit": "g",
+                    "volume": 100
+                    }
+                    ],
+        "commission": "11.90"
+    },
+    "isRedirect": 0,
+    "isSuccess": 1,
+    "login": 0
+}

@@ -55,7 +55,7 @@
     
     UIButton *startButton = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor clearColor] cornerRadius:5];
     [startButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [startButton setTitle:@" 批量下载保存到相册 " forState:UIControlStateNormal];
+    [startButton setTitle:@"  批量下载保存到相册  " forState:UIControlStateNormal];
     startButton.layer.borderWidth = 2;
     startButton.layer.cornerRadius = 5;
     [startButton mas_makeConstraints:^(MASConstraintMaker *make) {

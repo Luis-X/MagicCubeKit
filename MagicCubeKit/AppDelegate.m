@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "LaboratoryViewController.h"
 
 #import "SJBugVideoTool.h"
 #import "SJScreenShortManager.h"
@@ -104,22 +105,28 @@
 
 - (void)startMainUIWindow{
     
-    //创建一个window对象,属于AppDelegate的属性
-    //UIScreen:      表示屏幕硬件类
-    //mainScreen:    获得主屏幕信息
-    //bounds:        当前手机屏幕大小
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     HomeViewController *homeViewController = [HomeViewController new];
     BaseNavigationController *homeNavigationController = [[BaseNavigationController alloc] initWithRootViewController:homeViewController];
     UIImage *home_normal = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *home_selected = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     homeNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:home_normal selectedImage:home_selected];
+    
+    LaboratoryViewController *laboratoryViewController = [LaboratoryViewController new];
+    BaseNavigationController *laboratoryNavigationController = [[BaseNavigationController alloc] initWithRootViewController:laboratoryViewController];
+    UIImage *laboratory_normal = [Magic_image(@"tabbar_1@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *laboratory_selected = [Magic_image(@"tabbar_1@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    laboratoryNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"实验室" image:laboratory_normal selectedImage:laboratory_selected];
 
     //标签栏
     UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
-    rootTabBarController.viewControllers = @[homeNavigationController];
+    rootTabBarController.viewControllers = @[homeNavigationController, laboratoryNavigationController];
     
+    
+    //创建一个window对象,属于AppDelegate的属性
+    //UIScreen:      表示屏幕硬件类
+    //mainScreen:    获得主屏幕信息
+    //bounds:        当前手机屏幕大小
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //对窗口的根视图控制器进行赋值操作
     //整个UIKit框架中只有一个根视图控制器,属于window的属性
     //视图控制器用来管理界面和处理界面的逻辑类对象
@@ -143,6 +150,10 @@
     [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:15],NSFontAttributeName,nil] forState:UIControlStateNormal];
     //半透明
     [[UINavigationBar appearance] setTranslucent:NO];
+    
+    
+    //标签栏
+    [[UITabBar appearance] setTintColor:[UIColor randomFlatColor]];
 }
 
 #pragma mark - SJBugVideoKit

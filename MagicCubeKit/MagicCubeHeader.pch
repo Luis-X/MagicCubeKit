@@ -25,6 +25,7 @@
 #import <AFNetworking.h>
 #import <DateTools.h>
 #import <ChameleonFramework/Chameleon.h>
+#import <MJExtension.h>
 
 //封装包
 #import "UIQuicklyKit.h"

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CCC0D2F4E37508F360F5908D /* libPods-MagicCubeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6F1EAA10BE5E744C2C4F61 /* libPods-MagicCubeKit.a */; };
+		D1036A911EE7FD96002D656E /* ProductSelectQuantityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1036A901EE7FD96002D656E /* ProductSelectQuantityView.m */; };
 		D118169E1EB2EFB5004C238A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D118169D1EB2EFB5004C238A /* main.m */; };
 		D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816A01EB2EFB5004C238A /* AppDelegate.m */; };
 		D11816A41EB2EFB5004C238A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816A31EB2EFB5004C238A /* ViewController.m */; };
@@ -48,6 +49,10 @@
 		D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
 		D187ACEE1ED3DBCB00E8C4BA /* ExampleMagicButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACED1ED3DBCB00E8C4BA /* ExampleMagicButtonViewController.m */; };
 		D187ACF31ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACF21ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m */; };
+		D19424631EE5383A00C9A867 /* shopSku.json in Resources */ = {isa = PBXBuildFile; fileRef = D19424621EE5383A00C9A867 /* shopSku.json */; };
+		D19424661EE5396000C9A867 /* ProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19424651EE5396000C9A867 /* ProductDetailModel.m */; };
+		D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */; };
+		D194246E1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D194246D1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
 		D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */; };
@@ -108,6 +113,28 @@
 		D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */; };
 		D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */; };
 		D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */; };
+		D1D257E81EDFC88C00A7CADD /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257E71EDFC88C00A7CADD /* ProductDetailViewController.m */; };
+		D1D257EB1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257EA1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m */; };
+		D1D257EE1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257ED1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m */; };
+		D1D257FB1EDFFB9900A7CADD /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257F81EDFFB9900A7CADD /* ParallaxHeaderView.m */; };
+		D1D257FC1EDFFB9900A7CADD /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257FA1EDFFB9900A7CADD /* UIImage+ImageEffects.m */; };
+		D1D257FF1EDFFEC400A7CADD /* ProductConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257FE1EDFFEC400A7CADD /* ProductConstant.m */; };
+		D1D258031EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D258021EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m */; };
+		D1D258051EE1023800A7CADD /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D258041EE1023800A7CADD /* Reveal.framework */; };
+		D1D2580D1EE1098E00A7CADD /* ProductInfomationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D258081EE1098E00A7CADD /* ProductInfomationTableViewCell.m */; };
+		D1D2580E1EE1098E00A7CADD /* ProductOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2580A1EE1098E00A7CADD /* ProductOptionTableViewCell.m */; };
+		D1D258141EE109FA00A7CADD /* ProductSelectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D258131EE109FA00A7CADD /* ProductSelectCollectionViewCell.m */; };
+		D1D258171EE1107900A7CADD /* ProductSaleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D258161EE1107900A7CADD /* ProductSaleTableViewCell.m */; };
+		D1D2581B1EE1161B00A7CADD /* ProductBuyMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2581A1EE1161B00A7CADD /* ProductBuyMenuView.m */; };
+		D1D2581E1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2581D1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.m */; };
+		D1D258211EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D258201EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.m */; };
+		D1E0BE4A1ED91C0200493704 /* LaboratoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0BE491ED91C0200493704 /* LaboratoryViewController.m */; };
+		D1E0BE511ED920A600493704 /* tabbar_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4B1ED920A600493704 /* tabbar_1@2x.png */; };
+		D1E0BE521ED920A600493704 /* tabbar_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4C1ED920A600493704 /* tabbar_2@2x.png */; };
+		D1E0BE531ED920A600493704 /* tabbar_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4D1ED920A600493704 /* tabbar_3@2x.png */; };
+		D1E0BE541ED920A600493704 /* tabbar_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4E1ED920A600493704 /* tabbar_4@2x.png */; };
+		D1E0BE551ED920A600493704 /* tabbar_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4F1ED920A600493704 /* tabbar_5@2x.png */; };
+		D1E0BE561ED920A600493704 /* tabbar_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE501ED920A600493704 /* tabbar_6@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +158,8 @@
 		0A6F1EAA10BE5E744C2C4F61 /* libPods-MagicCubeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MagicCubeKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1376F89D65284C294DD77F5D /* Pods-MagicCubeKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicCubeKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicCubeKit/Pods-MagicCubeKit.release.xcconfig"; sourceTree = "<group>"; };
 		B6E3BD2ED335FC0B76E72DDC /* Pods-MagicCubeKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicCubeKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicCubeKit/Pods-MagicCubeKit.debug.xcconfig"; sourceTree = "<group>"; };
+		D1036A8F1EE7FD96002D656E /* ProductSelectQuantityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSelectQuantityView.h; sourceTree = "<group>"; };
+		D1036A901EE7FD96002D656E /* ProductSelectQuantityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSelectQuantityView.m; sourceTree = "<group>"; };
 		D11816991EB2EFB5004C238A /* MagicCubeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicCubeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D118169D1EB2EFB5004C238A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D118169F1EB2EFB5004C238A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,6 +238,13 @@
 		D187ACED1ED3DBCB00E8C4BA /* ExampleMagicButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicButtonViewController.m; sourceTree = "<group>"; };
 		D187ACF11ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicTimerButtonViewController.h; sourceTree = "<group>"; };
 		D187ACF21ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicTimerButtonViewController.m; sourceTree = "<group>"; };
+		D19424621EE5383A00C9A867 /* shopSku.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shopSku.json; sourceTree = "<group>"; };
+		D19424641EE5396000C9A867 /* ProductDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailModel.h; sourceTree = "<group>"; };
+		D19424651EE5396000C9A867 /* ProductDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailModel.m; sourceTree = "<group>"; };
+		D19424691EE6A51500C9A867 /* ProductActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductActivityTableViewCell.h; sourceTree = "<group>"; };
+		D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductActivityTableViewCell.m; sourceTree = "<group>"; };
+		D194246C1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecialTableViewCell.h; sourceTree = "<group>"; };
+		D194246D1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecialTableViewCell.m; sourceTree = "<group>"; };
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
 		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
 		D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
@@ -326,6 +362,43 @@
 		D1C72CBB1EB8856000C88BAE /* SJScreenShortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJScreenShortManager.h; sourceTree = "<group>"; };
 		D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJScreenShortManager.m; sourceTree = "<group>"; };
 		D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQuicklyKit.m; sourceTree = "<group>"; };
+		D1D257E61EDFC88C00A7CADD /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		D1D257E71EDFC88C00A7CADD /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		D1D257E91EDFC8BA00A7CADD /* ProductDetailSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailSelectViewController.h; sourceTree = "<group>"; };
+		D1D257EA1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailSelectViewController.m; sourceTree = "<group>"; };
+		D1D257EC1EDFC8DB00A7CADD /* ProductDetailSaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailSaleViewController.h; sourceTree = "<group>"; };
+		D1D257ED1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailSaleViewController.m; sourceTree = "<group>"; };
+		D1D257F71EDFFB9900A7CADD /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		D1D257F81EDFFB9900A7CADD /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		D1D257F91EDFFB9900A7CADD /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		D1D257FA1EDFFB9900A7CADD /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		D1D257FD1EDFFEC400A7CADD /* ProductConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductConstant.h; sourceTree = "<group>"; };
+		D1D257FE1EDFFEC400A7CADD /* ProductConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductConstant.m; sourceTree = "<group>"; };
+		D1D258011EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		D1D258021EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
+		D1D258041EE1023800A7CADD /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		D1D258071EE1098E00A7CADD /* ProductInfomationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfomationTableViewCell.h; sourceTree = "<group>"; };
+		D1D258081EE1098E00A7CADD /* ProductInfomationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfomationTableViewCell.m; sourceTree = "<group>"; };
+		D1D258091EE1098E00A7CADD /* ProductOptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductOptionTableViewCell.h; sourceTree = "<group>"; };
+		D1D2580A1EE1098E00A7CADD /* ProductOptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductOptionTableViewCell.m; sourceTree = "<group>"; };
+		D1D258121EE109FA00A7CADD /* ProductSelectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSelectCollectionViewCell.h; sourceTree = "<group>"; };
+		D1D258131EE109FA00A7CADD /* ProductSelectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSelectCollectionViewCell.m; sourceTree = "<group>"; };
+		D1D258151EE1107900A7CADD /* ProductSaleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSaleTableViewCell.h; sourceTree = "<group>"; };
+		D1D258161EE1107900A7CADD /* ProductSaleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSaleTableViewCell.m; sourceTree = "<group>"; };
+		D1D258191EE1161B00A7CADD /* ProductBuyMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductBuyMenuView.h; sourceTree = "<group>"; };
+		D1D2581A1EE1161B00A7CADD /* ProductBuyMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductBuyMenuView.m; sourceTree = "<group>"; };
+		D1D2581C1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSelectHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		D1D2581D1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSelectHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		D1D2581F1EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSelectFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		D1D258201EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSelectFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		D1E0BE481ED91C0200493704 /* LaboratoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaboratoryViewController.h; sourceTree = "<group>"; };
+		D1E0BE491ED91C0200493704 /* LaboratoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaboratoryViewController.m; sourceTree = "<group>"; };
+		D1E0BE4B1ED920A600493704 /* tabbar_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_1@2x.png"; sourceTree = "<group>"; };
+		D1E0BE4C1ED920A600493704 /* tabbar_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_2@2x.png"; sourceTree = "<group>"; };
+		D1E0BE4D1ED920A600493704 /* tabbar_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_3@2x.png"; sourceTree = "<group>"; };
+		D1E0BE4E1ED920A600493704 /* tabbar_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_4@2x.png"; sourceTree = "<group>"; };
+		D1E0BE4F1ED920A600493704 /* tabbar_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_5@2x.png"; sourceTree = "<group>"; };
+		D1E0BE501ED920A600493704 /* tabbar_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_6@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC0D2F4E37508F360F5908D /* libPods-MagicCubeKit.a in Frameworks */,
+				D1D258051EE1023800A7CADD /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,9 +447,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D1036A8E1EE7FD96002D656E /* ProductSelectQuantityView(数量功能) */ = {
+			isa = PBXGroup;
+			children = (
+				D1036A8F1EE7FD96002D656E /* ProductSelectQuantityView.h */,
+				D1036A901EE7FD96002D656E /* ProductSelectQuantityView.m */,
+			);
+			name = "ProductSelectQuantityView(数量功能)";
+			path = ProductSelectQuantityView;
+			sourceTree = "<group>";
+		};
 		D11816901EB2EFB4004C238A = {
 			isa = PBXGroup;
 			children = (
+				D1D258041EE1023800A7CADD /* Reveal.framework */,
 				D118169B1EB2EFB5004C238A /* MagicCubeKit */,
 				D11816B51EB2EFB5004C238A /* MagicCubeKitTests */,
 				D11816C01EB2EFB5004C238A /* MagicCubeKitUITests */,
@@ -398,7 +483,9 @@
 		D118169B1EB2EFB5004C238A /* MagicCubeKit */ = {
 			isa = PBXGroup;
 			children = (
+				D1E0BE441ED91BDB00493704 /* Laboratory(实验室) */,
 				D11816CF1EB2F2D5004C238A /* Home(首页) */,
+				D1E0BE571ED922B200493704 /* LabExample(Labs示例) */,
 				D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */,
 				D11816D31EB2F2D5004C238A /* Other(其他) */,
 				D11816DD1EB2F2D5004C238A /* Resource(资源) */,
@@ -925,6 +1012,12 @@
 		D1707A9C1ED7CB260024FC83 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				D1E0BE4B1ED920A600493704 /* tabbar_1@2x.png */,
+				D1E0BE4C1ED920A600493704 /* tabbar_2@2x.png */,
+				D1E0BE4D1ED920A600493704 /* tabbar_3@2x.png */,
+				D1E0BE4E1ED920A600493704 /* tabbar_4@2x.png */,
+				D1E0BE4F1ED920A600493704 /* tabbar_5@2x.png */,
+				D1E0BE501ED920A600493704 /* tabbar_6@2x.png */,
 				D1707A9D1ED7CB260024FC83 /* tabbar_0@2x.png */,
 			);
 			path = Tabbar;
@@ -982,6 +1075,26 @@
 				D187ACF21ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D19424671EE6A4B500C9A867 /* ProductActivityCell(活动) */ = {
+			isa = PBXGroup;
+			children = (
+				D19424691EE6A51500C9A867 /* ProductActivityTableViewCell.h */,
+				D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */,
+			);
+			name = "ProductActivityCell(活动)";
+			path = ProductActivityCell;
+			sourceTree = "<group>";
+		};
+		D19424681EE6A4B500C9A867 /* ProductSpecialCell(特卖) */ = {
+			isa = PBXGroup;
+			children = (
+				D194246C1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.h */,
+				D194246D1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m */,
+			);
+			name = "ProductSpecialCell(特卖)";
+			path = ProductSpecialCell;
 			sourceTree = "<group>";
 		};
 		D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */ = {
@@ -1369,6 +1482,174 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D1D257F51EDFFB9900A7CADD /* ReSource */ = {
+			isa = PBXGroup;
+			children = (
+				D1D258001EE0222700A7CADD /* UICollectionViewLeftAlignedLayout */,
+				D1D257F61EDFFB9900A7CADD /* ParallaxTableViewHeader */,
+				D19424621EE5383A00C9A867 /* shopSku.json */,
+			);
+			path = ReSource;
+			sourceTree = "<group>";
+		};
+		D1D257F61EDFFB9900A7CADD /* ParallaxTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D1D257F71EDFFB9900A7CADD /* ParallaxHeaderView.h */,
+				D1D257F81EDFFB9900A7CADD /* ParallaxHeaderView.m */,
+				D1D257F91EDFFB9900A7CADD /* UIImage+ImageEffects.h */,
+				D1D257FA1EDFFB9900A7CADD /* UIImage+ImageEffects.m */,
+			);
+			path = ParallaxTableViewHeader;
+			sourceTree = "<group>";
+		};
+		D1D258001EE0222700A7CADD /* UICollectionViewLeftAlignedLayout */ = {
+			isa = PBXGroup;
+			children = (
+				D1D258011EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.h */,
+				D1D258021EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m */,
+			);
+			path = UICollectionViewLeftAlignedLayout;
+			sourceTree = "<group>";
+		};
+		D1D258061EE1098E00A7CADD /* ProductDetailCell(详情) */ = {
+			isa = PBXGroup;
+			children = (
+				D1D258071EE1098E00A7CADD /* ProductInfomationTableViewCell.h */,
+				D1D258081EE1098E00A7CADD /* ProductInfomationTableViewCell.m */,
+				D1D258091EE1098E00A7CADD /* ProductOptionTableViewCell.h */,
+				D1D2580A1EE1098E00A7CADD /* ProductOptionTableViewCell.m */,
+			);
+			name = "ProductDetailCell(详情)";
+			path = ProductDetailCell;
+			sourceTree = "<group>";
+		};
+		D1D2580B1EE1098E00A7CADD /* ProductSaleCell(促销) */ = {
+			isa = PBXGroup;
+			children = (
+				D1D258151EE1107900A7CADD /* ProductSaleTableViewCell.h */,
+				D1D258161EE1107900A7CADD /* ProductSaleTableViewCell.m */,
+			);
+			name = "ProductSaleCell(促销)";
+			path = ProductSaleCell;
+			sourceTree = "<group>";
+		};
+		D1D2580C1EE1098E00A7CADD /* ProductSelectCell(规格) */ = {
+			isa = PBXGroup;
+			children = (
+				D1D258121EE109FA00A7CADD /* ProductSelectCollectionViewCell.h */,
+				D1D258131EE109FA00A7CADD /* ProductSelectCollectionViewCell.m */,
+				D1D2581C1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.h */,
+				D1D2581D1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.m */,
+				D1D2581F1EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.h */,
+				D1D258201EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.m */,
+			);
+			name = "ProductSelectCell(规格)";
+			path = ProductSelectCell;
+			sourceTree = "<group>";
+		};
+		D1D258181EE1160100A7CADD /* ProductBuyMenuView(菜单功能) */ = {
+			isa = PBXGroup;
+			children = (
+				D1D258191EE1161B00A7CADD /* ProductBuyMenuView.h */,
+				D1D2581A1EE1161B00A7CADD /* ProductBuyMenuView.m */,
+			);
+			name = "ProductBuyMenuView(菜单功能)";
+			path = ProductBuyMenuView;
+			sourceTree = "<group>";
+		};
+		D1E0BE441ED91BDB00493704 /* Laboratory(实验室) */ = {
+			isa = PBXGroup;
+			children = (
+				D1E0BE451ED91BDB00493704 /* Controller */,
+				D1E0BE461ED91BDB00493704 /* Model */,
+				D1E0BE471ED91BDB00493704 /* View */,
+			);
+			name = "Laboratory(实验室)";
+			path = Laboratory;
+			sourceTree = "<group>";
+		};
+		D1E0BE451ED91BDB00493704 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1E0BE481ED91C0200493704 /* LaboratoryViewController.h */,
+				D1E0BE491ED91C0200493704 /* LaboratoryViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1E0BE461ED91BDB00493704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1E0BE471ED91BDB00493704 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1E0BE571ED922B200493704 /* LabExample(Labs示例) */ = {
+			isa = PBXGroup;
+			children = (
+				D1E0BE581ED922B200493704 /* Test */,
+			);
+			name = "LabExample(Labs示例)";
+			path = LabExample;
+			sourceTree = "<group>";
+		};
+		D1E0BE581ED922B200493704 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				D1D257F51EDFFB9900A7CADD /* ReSource */,
+				D1E0BE591ED922B200493704 /* Controller */,
+				D1E0BE5A1ED922B200493704 /* Model */,
+				D1E0BE5B1ED922B200493704 /* View */,
+				D1D257FD1EDFFEC400A7CADD /* ProductConstant.h */,
+				D1D257FE1EDFFEC400A7CADD /* ProductConstant.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		D1E0BE591ED922B200493704 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1D257E61EDFC88C00A7CADD /* ProductDetailViewController.h */,
+				D1D257E71EDFC88C00A7CADD /* ProductDetailViewController.m */,
+				D1D257E91EDFC8BA00A7CADD /* ProductDetailSelectViewController.h */,
+				D1D257EA1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m */,
+				D1D257EC1EDFC8DB00A7CADD /* ProductDetailSaleViewController.h */,
+				D1D257ED1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1E0BE5A1ED922B200493704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D19424641EE5396000C9A867 /* ProductDetailModel.h */,
+				D19424651EE5396000C9A867 /* ProductDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1E0BE5B1ED922B200493704 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1D258181EE1160100A7CADD /* ProductBuyMenuView(菜单功能) */,
+				D1036A8E1EE7FD96002D656E /* ProductSelectQuantityView(数量功能) */,
+				D19424671EE6A4B500C9A867 /* ProductActivityCell(活动) */,
+				D19424681EE6A4B500C9A867 /* ProductSpecialCell(特卖) */,
+				D1D258061EE1098E00A7CADD /* ProductDetailCell(详情) */,
+				D1D2580B1EE1098E00A7CADD /* ProductSaleCell(促销) */,
+				D1D2580C1EE1098E00A7CADD /* ProductSelectCell(规格) */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1481,6 +1762,7 @@
 			files = (
 				D1C72CBE1EB8856000C88BAE /* share_problem@2x.png in Resources */,
 				D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */,
+				D19424631EE5383A00C9A867 /* shopSku.json in Resources */,
 				D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */,
 				D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */,
 				D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */,
@@ -1488,18 +1770,24 @@
 				D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */,
 				D11816AC1EB2EFB5004C238A /* LaunchScreen.storyboard in Resources */,
 				D156E1E11ED4119D0024D309 /* ExampleJSWeb.html in Resources */,
+				D1E0BE521ED920A600493704 /* tabbar_2@2x.png in Resources */,
+				D1E0BE531ED920A600493704 /* tabbar_3@2x.png in Resources */,
 				D1707A961ED7C9440024FC83 /* 2.jpg in Resources */,
 				D1C72CC11EB8856000C88BAE /* video_start@2x.png in Resources */,
+				D1E0BE561ED920A600493704 /* tabbar_6@2x.png in Resources */,
 				D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */,
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
 				D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */,
 				D11816A91EB2EFB5004C238A /* Assets.xcassets in Resources */,
+				D1E0BE541ED920A600493704 /* tabbar_4@2x.png in Resources */,
 				D11816A71EB2EFB5004C238A /* Main.storyboard in Resources */,
 				D1707A971ED7C9440024FC83 /* 3.jpg in Resources */,
 				D1C72CBF1EB8856000C88BAE /* share_qq@2x.png in Resources */,
+				D1E0BE551ED920A600493704 /* tabbar_5@2x.png in Resources */,
 				D1707A951ED7C9440024FC83 /* 1.jpg in Resources */,
 				D1707A9A1ED7C95F0024FC83 /* ExampleMagicDynamic.plist in Resources */,
 				D1C72C4A1EB86F0C00C88BAE /* TangramHelperCustomMapping.plist in Resources */,
+				D1E0BE511ED920A600493704 /* tabbar_1@2x.png in Resources */,
 				D1707AA01ED7CB400024FC83 /* LuisX.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1575,13 +1863,16 @@
 			files = (
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
 				D156E1DE1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m in Sources */,
+				D1D2581B1EE1161B00A7CADD /* ProductBuyMenuView.m in Sources */,
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
+				D19424661EE5396000C9A867 /* ProductDetailModel.m in Sources */,
 				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
 				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,
 				D1C72C5C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m in Sources */,
 				D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */,
 				D187ACF31ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m in Sources */,
 				D11816A41EB2EFB5004C238A /* ViewController.m in Sources */,
+				D1D257EB1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m in Sources */,
 				D1C72C571EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m in Sources */,
 				D156E1ED1ED441F00024D309 /* ExampleReachabilityViewController.m in Sources */,
 				D11816E71EB2F511004C238A /* BaseViewController.m in Sources */,
@@ -1589,10 +1880,13 @@
 				D1C72C5E1EB86F0C00C88BAE /* TangramFixBottomLayout.m in Sources */,
 				D156E1EA1ED441E50024D309 /* ExampleiCarouselViewController.m in Sources */,
 				D1C72C5D1EB86F0C00C88BAE /* TangramDragableLayout.m in Sources */,
+				D1D2581E1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.m in Sources */,
 				D1C72C601EB86F0C00C88BAE /* TangramFixTopLayout.m in Sources */,
 				D13E1FF51ECC645A00472533 /* ExampleMagicNetworkingViewController.m in Sources */,
 				D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */,
+				D1D257E81EDFC88C00A7CADD /* ProductDetailViewController.m in Sources */,
 				D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */,
+				D1D258211EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.m in Sources */,
 				D1C72C561EB86F0C00C88BAE /* TangramDefaultElementFactory.m in Sources */,
 				D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */,
 				D1C72C681EB86F0C00C88BAE /* TangramTetradColumnLayout.m in Sources */,
@@ -1611,11 +1905,16 @@
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
 				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
+				D1D258141EE109FA00A7CADD /* ProductSelectCollectionViewCell.m in Sources */,
 				D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */,
+				D1D257FC1EDFFB9900A7CADD /* UIImage+ImageEffects.m in Sources */,
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
+				D1D257FF1EDFFEC400A7CADD /* ProductConstant.m in Sources */,
+				D194246E1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m in Sources */,
 				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,
+				D1036A911EE7FD96002D656E /* ProductSelectQuantityView.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
 				D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */,
 				D13E1FFB1ECC658300472533 /* ExampleMagicScrollPageViewController.m in Sources */,
@@ -1623,14 +1922,18 @@
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
 				D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */,
 				D1C72C4F1EB86F0C00C88BAE /* TangramBusIndex.m in Sources */,
+				D1D257EE1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m in Sources */,
 				D1BDFD971ED2CF7D000064B8 /* ExampleMagicLoadingViewController.m in Sources */,
 				D1C72CC41EB8856000C88BAE /* SJBugVideoTool.m in Sources */,
+				D1D2580D1EE1098E00A7CADD /* ProductInfomationTableViewCell.m in Sources */,
 				D1C72C541EB86F0C00C88BAE /* TangramEventDispatcher.m in Sources */,
 				D1C72C5B1EB86F0C00C88BAE /* UIView+Tangram.m in Sources */,
 				D1C72C581EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m in Sources */,
 				D1C72C511EB86F0C00C88BAE /* TangramBusIndexTopic.m in Sources */,
 				D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */,
 				D1C72B681EB866A400C88BAE /* ExampleElementImage.m in Sources */,
+				D1E0BE4A1ED91C0200493704 /* LaboratoryViewController.m in Sources */,
+				D1D258031EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */,
 				D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */,
 				D1C72C661EB86F0C00C88BAE /* TangramStickyBottomLayout.m in Sources */,
@@ -1639,15 +1942,19 @@
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
 				D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */,
 				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
+				D1D257FB1EDFFB9900A7CADD /* ParallaxHeaderView.m in Sources */,
 				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
+				D1D2580E1EE1098E00A7CADD /* ProductOptionTableViewCell.m in Sources */,
 				D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */,
 				D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */,
 				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
 				D1BDFDA41ED2D536000064B8 /* ExampleMagicWebProgressViewController.m in Sources */,
+				D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */,
 				D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */,
 				D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */,
+				D1D258171EE1107900A7CADD /* ProductSaleTableViewCell.m in Sources */,
 				D1C72C671EB86F0C00C88BAE /* TangramStickyLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1801,9 +2108,70 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YS5VMXEH8P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MagicCubeKit/MagicCubeHeader.pch";
 				INFOPLIST_FILE = MagicCubeKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"AsyncDisplayKit\"",
+					"-l\"ChameleonFramework\"",
+					"-l\"DateTools\"",
+					"-l\"FDFullscreenPopGesture\"",
+					"-l\"JLRoutes\"",
+					"-l\"LazyScroll\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"PINCache\"",
+					"-l\"PINOperation\"",
+					"-l\"PINRemoteImage\"",
+					"-l\"Reachability\"",
+					"-l\"SDWebImage\"",
+					"-l\"STPopup\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"WYPopoverController\"",
+					"-l\"WebViewJavascriptBridge\"",
+					"-l\"c++\"",
+					"-l\"iCarousel\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebKit\"",
+					"-weak_framework",
+					"\"AssetsLibrary\"",
+					"-weak_framework",
+					"\"MapKit\"",
+					"-weak_framework",
+					"\"Photos\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luisx.MagicCubeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1815,9 +2183,70 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YS5VMXEH8P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MagicCubeKit/MagicCubeHeader.pch";
 				INFOPLIST_FILE = MagicCubeKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"AsyncDisplayKit\"",
+					"-l\"ChameleonFramework\"",
+					"-l\"DateTools\"",
+					"-l\"FDFullscreenPopGesture\"",
+					"-l\"JLRoutes\"",
+					"-l\"LazyScroll\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"PINCache\"",
+					"-l\"PINOperation\"",
+					"-l\"PINRemoteImage\"",
+					"-l\"Reachability\"",
+					"-l\"SDWebImage\"",
+					"-l\"STPopup\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"WYPopoverController\"",
+					"-l\"WebViewJavascriptBridge\"",
+					"-l\"c++\"",
+					"-l\"iCarousel\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebKit\"",
+					"-weak_framework",
+					"\"AssetsLibrary\"",
+					"-weak_framework",
+					"\"MapKit\"",
+					"-weak_framework",
+					"\"Photos\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luisx.MagicCubeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

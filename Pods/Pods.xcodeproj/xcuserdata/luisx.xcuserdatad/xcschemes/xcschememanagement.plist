@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -84,6 +89,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>STPopup.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,11 +117,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02430C17A047921BFDB0FC46903F4802</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
 		<dict>
 			<key>primary</key>
@@ -122,12 +127,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31A6A3BE10D7E2608B71B750DFC5E622</key>
+		<key>49E02A0C61D0B5D844EA19424CCC7AD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53A7DBE7BCDE24C05782675AAB5CDAE2</key>
+		<key>4AD462501D9CF045786FB476282FA7D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4DFC61EDF2B9A437A85FABD603C3FE74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8586BC1CCCEA41239BBA567020B94D71</key>
+		<key>83FAB1727A12AC150547911230925A02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9052D62A0F2F55AF4943E6434ABA83E2</key>
+		<key>8586BC1CCCEA41239BBA567020B94D71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,7 +172,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4B0C96B5661D82EEEC45EEA46682C6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A89C52C6948621A698B8D27A2503EAF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF9E323473205C956AAEE29412B97999</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,12 +197,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B57D92384FA2F23CD05FDC32553AECFD</key>
+		<key>B46863FCCAD3DF19B2F08223B07FA505</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF54B6E6878A14AB5FF607B2A03BC421</key>
+		<key>B57D92384FA2F23CD05FDC32553AECFD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -188,11 +213,6 @@
 			<true/>
 		</dict>
 		<key>DC7A51F0B370F9976D21032BDDB7222E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E343C3F62292EEC6DC805B28F3E10115</key>
 		<dict>
 			<key>primary</key>
 			<true/>
