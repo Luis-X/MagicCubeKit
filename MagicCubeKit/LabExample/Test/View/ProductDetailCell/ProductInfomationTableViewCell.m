@@ -45,15 +45,15 @@
     
     _priceLabel = [UILabel new];
 //    _priceLabel.backgroundColor = [UIColor orangeColor];
-    _priceLabel.font = [UIFont systemFontOfSize:20];
-    _priceLabel.textColor = [UIColor colorWithRed:0.98 green:0.47 blue:0.55 alpha:1.00];
+    _priceLabel.font = [UIFont boldSystemFontOfSize:22];
+    _priceLabel.textColor = [UIColor colorWithHexString:@"#FC343D"];
     _priceLabel.numberOfLines = 0;
     [self.contentView addSubview:_priceLabel];
 
     _commissionLabel = [UILabel new];
 //    _commissionLabel.backgroundColor = [UIColor orangeColor];
-    _commissionLabel.textColor = [UIColor colorWithRed:0.98 green:0.47 blue:0.55 alpha:1.00];
-    _commissionLabel.font = [UIFont boldSystemFontOfSize:14];
+    _commissionLabel.textColor = [UIColor colorWithHexString:@"#FC343D"];
+    _commissionLabel.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:_commissionLabel];
     
     _originalPriceLabel = [UILabel new];
@@ -107,20 +107,20 @@
 
 
 #pragma mark -更新数据
-- (void)setModel:(ProductDetailModel *)model{
+- (void)setProductDetailModel:(ProductDetailModel *)productDetailModel{
     
-    if (_model != model) {
-        _model = model;
+    if (_productDetailModel != productDetailModel) {
+        _productDetailModel = productDetailModel;
     }
     
     NSString *temp = [NSString string];
     for (NSInteger i = 0; i < 5; i++) {
         temp = [temp stringByAppendingString:@" "];
     }
-    _titleLabel.text = [NSString stringWithFormat:@"%@ %@ %@", temp, _model.item.brandName, _model.item.productTitle];
-    _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _model.item.price];
-    _commissionLabel.text = [NSString stringWithFormat:@"赚:¥%.2f", _model.commission];
-    _originalPriceLabel.text = [NSString stringWithFormat:@"¥%.2f", _model.item.originalPrice];
+    _titleLabel.text = [NSString stringWithFormat:@"%@ %@ %@", temp, _productDetailModel.item.brandName, _productDetailModel.item.productTitle];
+    _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
+    _commissionLabel.text = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
+    _originalPriceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.originalPrice];
 
 }
 

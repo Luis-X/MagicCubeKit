@@ -16,5 +16,5 @@
 
 @interface ProductDetailSelectViewController : BaseViewController
 @property (nonatomic, assign) id <ProductDetailSelectViewControllerDelegate> delegate;
-@property (nonatomic, strong) NSArray *allSkuListModelArray;                    //数据
+@property (nonatomic, strong) ProductDetailModel *productDetailModel;
 @end

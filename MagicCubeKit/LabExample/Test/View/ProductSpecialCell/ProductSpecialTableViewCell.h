@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProductDetailModel.h"
 @interface ProductSpecialTableViewCell : UITableViewCell
-
+@property (nonatomic, strong)ProductDetailModel *productDetailModel;
 @end

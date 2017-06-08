@@ -29,7 +29,7 @@
     UICollectionView *_selectedCollectionView;  //选择视图
     ProductBuyMenuView *_mainBuyMenuView;       //购买菜单栏
     NSMutableDictionary *_allSelectedDic;       //选中
-    
+    NSMutableArray *_allSkuListModelArray;      //SKUList数据
 }
 
 
@@ -68,6 +68,7 @@
     
     self.view.backgroundColor = [UIColor clearColor];
     _allSelectedDic = [NSMutableDictionary dictionary];
+    _allSkuListModelArray = [NSMutableArray arrayWithArray:_productDetailModel.skuList];
     
 }
 
@@ -90,7 +91,7 @@
     
     
     UIView *blackLine = [UIView new];
-    blackLine.backgroundColor = [UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:1.00];
+    blackLine.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6"];
     [_headerBackgroundView addSubview:blackLine];
     [blackLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(_headerBackgroundView);
@@ -111,11 +112,10 @@
     
     
     _productImageView = [UIImageView new];
-    _productImageView.backgroundColor = [UIColor grayColor];
-    [_productImageView setImage:[UIImage imageNamed:@"1.jpg"]];
+    _productImageView.backgroundColor = [UIColor whiteColor];
     _productImageView.contentMode = 2;
     _productImageView.clipsToBounds = YES;
-    _productImageView.layer.borderColor = [UIColor blackColor].CGColor;
+    _productImageView.layer.borderColor = [UIColor colorWithHexString:@"#E6E6E6"].CGColor;
     _productImageView.layer.borderWidth = 0.5;
     _productImageView.layer.masksToBounds = YES;
     _productImageView.layer.cornerRadius = 5;
@@ -123,34 +123,35 @@
     [_productImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);
         make.left.equalTo(_headerBackgroundView).offset(10);
-        make.width.height.mas_equalTo(90);
+        make.width.mas_equalTo(90);
+        make.bottom.equalTo(blackLine).offset(-20);
     }];
-    
-    
-    _productPriceLabel = [UILabel new];
-    _productPriceLabel.text = @"￥85.00";
-    _productPriceLabel.textColor = [UIColor blackColor];
-    _productPriceLabel.font = [UIFont systemFontOfSize:18];
-    //_productPriceLabel.backgroundColor = [UIColor grayColor];
-    [_headerBackgroundView addSubview:_productPriceLabel];
-    [_productPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_headerBackgroundView.mas_centerY);
-        make.left.equalTo(_productImageView.mas_right).offset(10);
-        make.right.lessThanOrEqualTo(_headerBackgroundView).offset(-10);
-    }];
-    
     
     _productCommissionLabel = [UILabel new];
-    _productCommissionLabel.text = @"商品编号: 1425875";
     _productCommissionLabel.textColor = [UIColor blackColor];
     _productCommissionLabel.font = [UIFont systemFontOfSize:12];
     //_productCommissionLabel.backgroundColor = [UIColor grayColor];
     [_headerBackgroundView addSubview:_productCommissionLabel];
     [_productCommissionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_headerBackgroundView.mas_centerY).offset(5);
-        make.left.equalTo(_productPriceLabel);
-        make.right.lessThanOrEqualTo(_productPriceLabel);
+        make.bottom.equalTo(_productImageView).offset(-5);
+        make.left.equalTo(_productImageView.mas_right).offset(10);
     }];
+    
+    
+    _productPriceLabel = [UILabel new];
+    _productPriceLabel.textColor = [UIColor flatRedColor];
+    _productPriceLabel.font = [UIFont systemFontOfSize:18];
+    //_productPriceLabel.backgroundColor = [UIColor grayColor];
+    [_headerBackgroundView addSubview:_productPriceLabel];
+    [_productPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_productCommissionLabel.mas_top).offset(-5);
+        make.left.equalTo(_productCommissionLabel);
+    }];
+    
+    _productPriceLabel.text = [NSString stringWithFormat:@"￥%.2f", _productDetailModel.price];
+    [_productImageView sd_setImageWithURL:[NSURL URLWithString:_productDetailModel.item.image]];
+    _productCommissionLabel.text = [NSString stringWithFormat:@"skuId: %@", _productDetailModel.skuCommission.skuId];
+    
 }
 
 

@@ -35,6 +35,10 @@
 		D156E1ED1ED441F00024D309 /* ExampleReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1EC1ED441F00024D309 /* ExampleReachabilityViewController.m */; };
 		D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D156E1F21ED442380024D309 /* ExampleWYPopoverControllerViewController.m */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
+		D16665E71EE8FBD000B84D1B /* ProductSaleTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E61EE8FBD000B84D1B /* ProductSaleTagView.m */; };
+		D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */; };
+		D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */; };
+		D16665EF1EE94E4C00B84D1B /* ZYBannerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */; };
 		D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */; };
 		D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8B1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m */; };
 		D1707A8F1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8E1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m */; };
@@ -216,6 +220,13 @@
 		D156E1F21ED442380024D309 /* ExampleWYPopoverControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleWYPopoverControllerViewController.m; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
+		D16665E51EE8FBD000B84D1B /* ProductSaleTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSaleTagView.h; sourceTree = "<group>"; };
+		D16665E61EE8FBD000B84D1B /* ProductSaleTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSaleTagView.m; sourceTree = "<group>"; };
+		D16665E81EE92F8600B84D1B /* MagicScrollPageRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPageRefreshFooter.h; sourceTree = "<group>"; };
+		D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPageRefreshFooter.m; sourceTree = "<group>"; };
+		D16665EB1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPageRefreshHeader.h; sourceTree = "<group>"; };
+		D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPageRefreshHeader.m; sourceTree = "<group>"; };
+		D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYBannerView.bundle; sourceTree = "<group>"; };
 		D1707A871ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicTableViewCell.h; sourceTree = "<group>"; };
 		D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicDynamicTableViewCell.m; sourceTree = "<group>"; };
 		D1707A8A1ED7C1990024FC83 /* ExampleMagicDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicViewController.h; sourceTree = "<group>"; };
@@ -857,6 +868,10 @@
 			children = (
 				D17DE7A81ECEF63B00CE48D4 /* MagicScrollPage.h */,
 				D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */,
+				D16665E81EE92F8600B84D1B /* MagicScrollPageRefreshFooter.h */,
+				D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */,
+				D16665EB1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.h */,
+				D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */,
 			);
 			path = MagicScrollPage;
 			sourceTree = "<group>";
@@ -949,6 +964,16 @@
 				D1643A771EB96FBB00964594 /* MagicRouterManager.m */,
 			);
 			path = MagicRouterManager;
+			sourceTree = "<group>";
+		};
+		D16665E11EE8FB8900B84D1B /* ProductTagView(标签功能) */ = {
+			isa = PBXGroup;
+			children = (
+				D16665E51EE8FBD000B84D1B /* ProductSaleTagView.h */,
+				D16665E61EE8FBD000B84D1B /* ProductSaleTagView.m */,
+			);
+			name = "ProductTagView(标签功能)";
+			path = ProductTagView;
 			sourceTree = "<group>";
 		};
 		D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell(Cell动态高度) */ = {
@@ -1485,6 +1510,7 @@
 		D1D257F51EDFFB9900A7CADD /* ReSource */ = {
 			isa = PBXGroup;
 			children = (
+				D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */,
 				D1D258001EE0222700A7CADD /* UICollectionViewLeftAlignedLayout */,
 				D1D257F61EDFFB9900A7CADD /* ParallaxTableViewHeader */,
 				D19424621EE5383A00C9A867 /* shopSku.json */,
@@ -1639,6 +1665,7 @@
 		D1E0BE5B1ED922B200493704 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D16665E11EE8FB8900B84D1B /* ProductTagView(标签功能) */,
 				D1D258181EE1160100A7CADD /* ProductBuyMenuView(菜单功能) */,
 				D1036A8E1EE7FD96002D656E /* ProductSelectQuantityView(数量功能) */,
 				D19424671EE6A4B500C9A867 /* ProductActivityCell(活动) */,
@@ -1775,6 +1802,7 @@
 				D1707A961ED7C9440024FC83 /* 2.jpg in Resources */,
 				D1C72CC11EB8856000C88BAE /* video_start@2x.png in Resources */,
 				D1E0BE561ED920A600493704 /* tabbar_6@2x.png in Resources */,
+				D16665EF1EE94E4C00B84D1B /* ZYBannerView.bundle in Resources */,
 				D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */,
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
 				D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */,
@@ -1899,12 +1927,14 @@
 				D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
 				D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */,
+				D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */,
 				D1707A8F1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m in Sources */,
 				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
 				D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */,
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
 				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
+				D16665E71EE8FBD000B84D1B /* ProductSaleTagView.m in Sources */,
 				D1D258141EE109FA00A7CADD /* ProductSelectCollectionViewCell.m in Sources */,
 				D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
@@ -1935,6 +1965,7 @@
 				D1E0BE4A1ED91C0200493704 /* LaboratoryViewController.m in Sources */,
 				D1D258031EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */,
+				D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */,
 				D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */,
 				D1C72C661EB86F0C00C88BAE /* TangramStickyBottomLayout.m in Sources */,
 				D1C72C651EB86F0C00C88BAE /* TangramSingleColumnLayout.m in Sources */,

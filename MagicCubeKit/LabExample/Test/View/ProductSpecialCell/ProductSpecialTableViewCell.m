@@ -8,6 +8,10 @@
 
 #import "ProductSpecialTableViewCell.h"
 
+
+#define DATE_FORMATTER_ONE @"MM月dd日HH点"
+#define DATE_FORMATTER_TWO @"MM月dd日HH:mm"
+
 @implementation ProductSpecialTableViewCell{
     UIView *_cellBackgroundView;     //背景
     UIButton *_tagButton;            //标签
@@ -29,24 +33,24 @@
 - (void)createSubViews{
 
     _cellBackgroundView = [UIView new];
-    _cellBackgroundView.backgroundColor = [UIColor colorWithRed:0.93 green:0.45 blue:0.48 alpha:1.00];
+    _cellBackgroundView.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:CGRectMake(0, 0, Magic_screen_Width, 44) andColors:@[[UIColor colorWithHexString:@"#F13390"], [UIColor colorWithHexString:@"#F03558"]]];
+    
     [self.contentView addSubview:_cellBackgroundView];
 
     
     _tagButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_tagButton setTitle:@"限时特卖" forState:UIControlStateNormal];
-    [_tagButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_tagButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _tagButton.titleLabel.font = [UIFont systemFontOfSize:12];
     _tagButton.layer.masksToBounds = YES;
     _tagButton.layer.cornerRadius = 26 / 2;
-    _tagButton.backgroundColor = [UIColor flatRedColor];
+    _tagButton.backgroundColor = [UIColor colorWithHexString:@"#FFE9E9"];
     [_cellBackgroundView addSubview:_tagButton];
 
     
     _messageLabel = [UILabel new];
     _messageLabel.font = [UIFont systemFontOfSize:14];
     _messageLabel.textColor = [UIColor whiteColor];
-    _messageLabel.text = [NSString stringWithFormat:@"距离结束 %@", [[NSDate date] formattedDateWithFormat:@"YYYY-MM-dd HH:mm:ss"] ];
     _messageLabel.adjustsFontSizeToFitWidth = YES;
     //_messageLabel.backgroundColor = [UIColor redColor];
     [_cellBackgroundView addSubview:_messageLabel];
@@ -85,4 +89,26 @@
     // Configure the view for the selected state
 }
 
+- (void)setProductDetailModel:(ProductDetailModel *)productDetailModel{
+    if (_productDetailModel != productDetailModel) {
+        _productDetailModel = productDetailModel;
+    }
+    
+    NSString *startTime = [self getDateStringWithTimeValue:_productDetailModel.skuCommission.startTime formatter:DATE_FORMATTER_TWO];
+    NSString *message = [NSString stringWithFormat:@"%@开抢！特卖价格：¥%.2f", startTime, _productDetailModel.price];
+    _messageLabel.text = message;
+}
+
+/**
+ 根据13位时间戳返回日期
+ */
+- (NSString *)getDateStringWithTimeValue:(NSTimeInterval)timeValue formatter:(NSString *)formatter{
+    
+    if (timeValue <= 0) {
+        return nil;
+    }
+    NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:timeValue / 1000];
+    return [timeDate formattedDateWithFormat:formatter];
+    
+}
 @end

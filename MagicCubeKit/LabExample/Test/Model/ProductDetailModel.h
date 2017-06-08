@@ -34,7 +34,7 @@
 @property (nonatomic, strong) SkuCommission *skuCommission;
 @property (nonatomic, assign) BOOL isFromHome;
 @property (nonatomic, strong) NSString *byStages;
-@property (nonatomic, strong) NSString *price;
+@property (nonatomic, assign) CGFloat price;
 @property (nonatomic, assign) NSInteger shopId;
 @property (nonatomic, assign) BOOL isSpecialSell;
 @property (nonatomic, strong) NSString *shopName;
@@ -47,7 +47,7 @@
 @property (nonatomic, assign) NSInteger gmtCreate;
 @property (nonatomic, assign) NSInteger gmtModified;
 @property (nonatomic, strong) NSString *headImage;
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, assign) BOOL isProbation;
 @property (nonatomic, assign) NSInteger isVip;
 @property (nonatomic, assign) NSInteger membersCount;
@@ -76,7 +76,7 @@
 @end
 
 @interface Recommend : NSObject
-@property (nonatomic, strong) NSString *id;
+@property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *price;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *image;
@@ -84,7 +84,7 @@
 @end
 
 @interface SkuCommission : NSObject
-@property (nonatomic, assign) NSInteger actPrice;
+@property (nonatomic, assign) CGFloat actPrice;
 @property (nonatomic, assign) CGFloat commissionRate;
 @property (nonatomic, assign) NSInteger endTime;
 @property (nonatomic, assign) NSInteger gmtCreate;
@@ -92,7 +92,7 @@
 @property (nonatomic, assign) NSInteger isDelete;
 @property (nonatomic, assign) NSInteger limitCommissionRate;
 @property (nonatomic, assign) NSInteger limitInventory;
-@property (nonatomic, assign) NSInteger skuId;
+@property (nonatomic, copy) NSString *skuId;
 @property (nonatomic, assign) BOOL specialSell;
 @property (nonatomic, assign) NSInteger startTime;
 @property (nonatomic, assign) NSInteger type;
@@ -104,7 +104,7 @@
 @property (nonatomic, strong) NSString *image;
 @property (nonatomic, strong) NSString *brandName;
 @property (nonatomic, strong) NSString *discount;
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, strong) NSString *unit;
 @property (nonatomic, assign) CGFloat price;
 @property (nonatomic, assign) CGFloat originalPrice;
@@ -119,7 +119,7 @@
 
 @interface TagSkus : NSObject
 @property (nonatomic, strong) NSString *discount;
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, assign) NSInteger inventory;
 @property (nonatomic, assign) BOOL isCanSelect;
 @property (nonatomic, strong) NSString *originalPrice;

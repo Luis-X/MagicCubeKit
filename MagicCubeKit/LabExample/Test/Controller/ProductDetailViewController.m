@@ -12,6 +12,8 @@
 #import "ParallaxHeaderView.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "MagicScrollPage.h"
+#import "ZYBannerView.h"
+
 #import "ProductInfomationTableViewCell.h"
 #import "ProductOptionTableViewCell.h"
 #import "ProductActivityTableViewCell.h"
@@ -20,7 +22,7 @@
 #import "ProductDetailSaleViewController.h"
 #import "ProductBuyMenuView.h"
 #import "ProductDetailModel.h"
-@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate>
+@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate>
 
 @end
 
@@ -32,6 +34,8 @@
     STPopupController *_productDetailSelectPopup;                //选规格
     STPopupController *_productDetailSalePopup;                  //选优惠
     ProductDetailModel *_mainModel;                              //数据
+    ZYBannerView *_productBannerView;                            //主图Banner
+    NSMutableArray *_allBannerDataArray;                         //主图Banner数据
 }
 
 
@@ -61,7 +65,7 @@
 */
 
 - (void)initailData{
-    
+    _allBannerDataArray = [NSMutableArray array];
 }
 
 - (void)createMainView{
@@ -88,19 +92,22 @@
  */
 - (void)createFirstPage{
     
-    UIImageView *productBrowerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 320)];
-    productBrowerView.backgroundColor = [UIColor whiteColor];
-    productBrowerView.image = [UIImage imageNamed:@"1.jpg"];
-    productBrowerView.contentMode = 2;
-    productBrowerView.clipsToBounds = YES;
+    //主图Banner
+    _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 320)];
+    _productBannerView.backgroundColor = [UIColor whiteColor];
+    _productBannerView.dataSource = self;
+    _productBannerView.delegate = self;
+    _productBannerView.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    _productBannerView.pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:0/255.0 alpha:0.2];
+    [_mainScrollView addSubview:_productBannerView];
     
     //滚动效果表头
-    ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithSubView:productBrowerView];
+    ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithSubView:_productBannerView];
     headerView.backgroundColor = [UIColor whiteColor];
 
     
-    _firtTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    _firtTableView.backgroundColor = [UIColor whiteColor];
+    _firtTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    _firtTableView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
     _firtTableView.tableHeaderView = headerView;
     _firtTableView.fd_debugLogEnabled = NO;       //打开自适应高度debug模式
     _firtTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -142,7 +149,7 @@
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(ProductBuyMenu_Height);
     }];
-    _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNoAdd;
+    _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNormal;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _mainBuyMenuView.cartAmount = 10;
     });
@@ -163,6 +170,7 @@
     //特卖
     if (indexPath.section == 0) {
         ProductSpecialTableViewCell *specialCell = [tableView dequeueReusableCellWithIdentifier:@"special" forIndexPath:indexPath];
+        specialCell.productDetailModel = _mainModel;
         return specialCell;
     }
     
@@ -184,8 +192,8 @@
     if (indexPath.section == 3) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
         optionCell.titleLabel.text = @"促销";
-        optionCell.subTitleLabel.text = @"促销标签";
-        optionCell.tagLabel.text = @"购物满两件可享受八折";
+        optionCell.subTitleLabel.text = @"购物满两件可享受八折";
+        optionCell.saleTagView.title = @"促销标签";
         return optionCell;
     }
     
@@ -205,7 +213,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.5;
+    
+    if (section == 0) {
+        return 0.01;
+    }
+    if (section == 4) {
+        return 50;
+    }
+    return 10;
+    
 }
 
 
@@ -235,7 +251,7 @@
 #pragma mark -重点 自适应高度必须实现
 //预加载商品介绍
 - (void)setupIntroduceModelOfCell:(ProductInfomationTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
-     cell.model = _mainModel;
+     cell.productDetailModel = _mainModel;
 }
 
 
@@ -256,7 +272,7 @@
     
     
     ProductDetailSelectViewController *vc = [ProductDetailSelectViewController new];
-    vc.allSkuListModelArray = _mainModel.skuList;
+    vc.productDetailModel = _mainModel;
     vc.delegate = self;
     _productDetailSelectPopup = [[ProductConstant shareManager] showPopViewControllerWithMagicVC:vc AddController:self CornerRadius:0 NavigationBarHidden:YES];
     
@@ -330,10 +346,73 @@
     
 }
 
+#pragma mark - ZYBannerViewDataSource
+
+- (NSInteger)numberOfItemsInBanner:(ZYBannerView *)banner{
+    return _allBannerDataArray.count;
+}
+
+- (UIView *)banner:(ZYBannerView *)banner viewForItemAtIndex:(NSInteger)index{
+   
+    NSString *url = [_allBannerDataArray objectAtIndex:index];
+    UIImageView *bannerImageView = [UIImageView new];
+    [bannerImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"1.png"]];
+    bannerImageView.contentMode = 2;
+    bannerImageView.clipsToBounds = YES;
+    return bannerImageView;
+    
+}
+
+- (NSString *)banner:(ZYBannerView *)banner titleForFooterWithState:(ZYBannerFooterState)footerState{
+    
+    if (footerState == ZYBannerFooterStateIdle) {
+        return @"滑动查看图文详情";
+    }
+    if (footerState == ZYBannerFooterStateTrigger) {
+        return @"释放查看图文详情";
+    }
+    return @"";
+    
+}
+
+#pragma mark - ZYBannerViewDelegate
+
+- (void)banner:(ZYBannerView *)banner didSelectItemAtIndex:(NSInteger)index{
+    NSLog(@"放大%ld", index);
+}
+
+- (void)bannerFooterDidTrigger:(ZYBannerView *)banner{
+    
+    NSLog(@"触发侧拉");
+    
+}
+
+#pragma mark - ReloadData
+
+/**
+ 更新主图Banner数据
+ */
+- (void)reloadProductBannerViewData{
+    
+    if (_mainModel.item.images.count > 0) {
+        for (NSString *imageUrl in _mainModel.item.images) {
+            [_allBannerDataArray addObject:imageUrl];
+        }
+    }else{
+        [_allBannerDataArray addObject:_mainModel.item.image];
+    }
+    
+    _productBannerView.showFooter = (_allBannerDataArray.count > 0) ? YES : NO;
+    [_productBannerView reloadData];
+    
+}
+
+
 #pragma mark - Network
 - (void)networkGetAllProductDetailData{
 
     //获取数据
+    [_allBannerDataArray removeAllObjects];
     NSString *jsonString = [NSString stringWithContentsOfFile:Magic_bundle(@"shopSku", @"json") encoding:NSUTF8StringEncoding error:nil];
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
@@ -352,6 +431,9 @@
     }];
     _mainModel = [ProductDetailModel mj_objectWithKeyValues:[dic objectForKey:@"data"]];
     [_firtTableView reloadData];
+    [self reloadProductBannerViewData];
     
 }
+
+
 @end

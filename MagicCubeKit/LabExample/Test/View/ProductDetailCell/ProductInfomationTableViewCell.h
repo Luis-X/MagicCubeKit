@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "ProductDetailModel.h"
 @interface ProductInfomationTableViewCell : UITableViewCell
-@property (nonatomic, strong)ProductDetailModel *model;
+@property (nonatomic, strong)ProductDetailModel *productDetailModel;
 @end

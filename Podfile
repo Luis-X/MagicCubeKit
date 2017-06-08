@@ -20,5 +20,6 @@ pod 'WYPopoverController', '~> 0.3.9'			# 自定义弹出气泡
 pod 'ChameleonFramework', '~> 2.1.0'			# 变色龙
 pod 'STPopup', '~> 1.8.2'				# 自定义弹出视图
 pod 'MJExtension', '~> 3.0.13'				# 数据转模型
+pod 'ZYBannerView', '~> 1.1.2'				# 滑动Banner侧拉
 end
 

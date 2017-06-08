@@ -57,7 +57,7 @@
 - (void)createTopLine{
     
     _topLine = [UIView new];
-    _topLine.backgroundColor = [UIColor blackColor];
+    _topLine.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6"];
     [self addSubview:_topLine];
     [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
@@ -100,6 +100,7 @@
     iconLabel.tag = OptionButton_Icon_Tag + index;
     iconLabel.text = [data objectForKey:@"icon"];
     iconLabel.font = [UIFont fontWithName:@"iconfont" size:20];
+    iconLabel.textColor = [UIColor colorWithHexString:@"#605F65"];
     [button addSubview:iconLabel];
     [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button);
@@ -110,6 +111,7 @@
     textLabel.tag = OptionButton_Title_Tag + index;
     textLabel.text = [data objectForKey:@"title"];
     textLabel.font = [UIFont systemFontOfSize:12];
+    textLabel.textColor = [UIColor colorWithHexString:@"#605F65"];
     [button addSubview:textLabel];
     [textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button);
@@ -153,7 +155,8 @@
     
     
     _buyButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _buyButton.backgroundColor = [UIColor flatYellowColor];
+    _buyButton.backgroundColor = [UIColor colorWithHexString:@"#FCBD33"];
+    _buyButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_operationView addSubview:_buyButton];
     [_buyButton addTarget:self action:@selector(buyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [_buyButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -163,6 +166,7 @@
 
     
     _addCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _addCartButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_operationView addSubview:_addCartButton];
     [_addCartButton addTarget:self action:@selector(addCartButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [_addCartButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -234,7 +238,7 @@
     }else{
         
         [_addCartButton setTitle:@"加入购物车" forState:UIControlStateNormal];
-        _addCartButton.backgroundColor = [UIColor flatRedColor];
+        _addCartButton.backgroundColor = [UIColor colorWithHexString:@"#F03337"];
         
     }
     

@@ -13,7 +13,9 @@
 @end
 
 @implementation Shop
-
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return  @{@"ID" : @"id"};
+}
 @end
 
 @implementation ProductDeatilParam
@@ -29,7 +31,9 @@
 @end
 
 @implementation Recommend
-
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return  @{@"ID" : @"id"};
+}
 @end
 
 @implementation SkuCommission
@@ -37,11 +41,15 @@
 @end
 
 @implementation Item
-
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return  @{@"ID" : @"id"};
+}
 @end
 
 @implementation TagSkus
-
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return  @{@"ID" : @"id"};
+}
 @end
 
 @implementation TagMap

@@ -26,6 +26,7 @@
 #import <DateTools.h>
 #import <ChameleonFramework/Chameleon.h>
 #import <MJExtension.h>
+#import <UIImageView+WebCache.h>
 
 //封装包
 #import "UIQuicklyKit.h"

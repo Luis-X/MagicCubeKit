@@ -55,6 +55,7 @@ PODS:
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
   - WYPopoverController (0.3.9)
+  - ZYBannerView (1.1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
   - WYPopoverController (~> 0.3.9)
+  - ZYBannerView (~> 1.1.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -98,7 +100,8 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
+  ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: f9c532c085173392727492936b5b6cbb261df58c
+PODFILE CHECKSUM: 687ae5742f8bc8e915d8af4f798b94f7518f9e2c
 
 COCOAPODS: 1.2.0

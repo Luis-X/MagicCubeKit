@@ -7,7 +7,8 @@
 //
 
 #import "MagicScrollPage.h"
-#import "MJRefresh.h"
+#import "MagicScrollPageRefreshHeader.h"
+#import "MagicScrollPageRefreshFooter.h"
 
 @interface MagicScrollPage ()
 @property (nonatomic, strong) UIScrollView *topPageView;       //第一页
@@ -15,8 +16,8 @@
 @end
 
 @implementation MagicScrollPage{
-    MJRefreshBackNormalFooter *_footer;
-    MJRefreshNormalHeader *_header;
+    MagicScrollPageRefreshFooter *_footer;
+    MagicScrollPageRefreshHeader *_header;
 }
 
 
@@ -93,9 +94,9 @@
     if (_headerRefreshTitle != headerRefreshTitle) {
         _headerRefreshTitle = headerRefreshTitle;
         
-        [_header setTitle:_headerRefreshTitle forState:MJRefreshStateIdle];
-        [_header setTitle:_headerRefreshTitle forState:MJRefreshStatePulling];
-        [_header setTitle:_headerRefreshTitle forState:MJRefreshStateRefreshing];
+//        [_header setTitle:_headerRefreshTitle forState:MJRefreshStateIdle];
+//        [_header setTitle:_headerRefreshTitle forState:MJRefreshStatePulling];
+//        [_header setTitle:_headerRefreshTitle forState:MJRefreshStateRefreshing];
     }
 }
 
@@ -104,26 +105,25 @@
     if (_footerRefreshTitle != footerRefreshTitle) {
         _footerRefreshTitle = footerRefreshTitle;
         
-        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStateIdle];
-        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStatePulling];
-        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStateRefreshing];
+//        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStateIdle];
+//        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStatePulling];
+//        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStateRefreshing];
     }
 }
 #pragma mark -上下拉切换分页
 - (void)configureRefreshPageControl{
+    
     // 1.设置 (第一页) 上拉显示
-    _footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+    _footer = [MagicScrollPageRefreshFooter footerWithRefreshingBlock:^{
         [self moveToSecondPageView];
     }];
-    _footer.automaticallyHidden = NO; // 关闭自动隐藏(若为YES，cell无数据时，不会执行上拉操作)
     _topPageView.mj_footer = _footer;
     
     
     // 2.设置 (第二页) 下拉显示
-    _header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    _header = [MagicScrollPageRefreshHeader headerWithRefreshingBlock:^{
         [self moveToFirstPageView];
     }];
-    _header.lastUpdatedTimeLabel.hidden = YES;
     _bottomPageView.mj_header = _header;
     
 }

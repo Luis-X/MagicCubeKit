@@ -30,6 +30,9 @@
     _smallIconView.clipsToBounds = YES;
     _smallIconView.contentMode = 2;
     _smallIconView.userInteractionEnabled = YES;
+    _smallIconView.image = [UIImage imageNamed:@"1.jpg"];
+    _smallIconView.contentMode = 2;
+    _smallIconView.clipsToBounds = YES;
     [self.contentView addSubview:_smallIconView];
     
 }

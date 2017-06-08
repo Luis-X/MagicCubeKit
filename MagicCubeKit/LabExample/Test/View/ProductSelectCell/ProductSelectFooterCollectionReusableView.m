@@ -52,7 +52,7 @@
     [_quantityStepView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_titleLabel);
         make.bottom.equalTo(self).offset(-10);
-        make.size.mas_equalTo(CGSizeMake(120, 30));
+        make.size.mas_equalTo(CGSizeMake(100, 28));
     }];
     
 }

@@ -62,7 +62,7 @@
     [self.view addSubview:_mainHeaderView];
     [_mainHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
-        make.height.mas_equalTo(60);
+        make.height.mas_equalTo(40);
     }];
     
     UILabel *closeButton = [UILabel new];
@@ -78,6 +78,7 @@
     
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"促销活动";
+    titleLabel.font = [UIFont systemFontOfSize:15];
     [_mainHeaderView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_mainHeaderView);
@@ -94,6 +95,7 @@
     _mainTableView.fd_debugLogEnabled = NO;       //打开自适应高度debug模式
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
+    _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_mainTableView];
     [_mainTableView registerClass:[ProductSaleTableViewCell class] forCellReuseIdentifier:@"cell"];
     [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
