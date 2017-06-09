@@ -136,32 +136,6 @@
     [self checkAndUpdateCurrentNum];
 }
 
-#pragma mark -Update
-/*
- * 检查更新数量
- */
-- (void)checkAndUpdateCurrentNum{
-    
-    //最小限制
-    if (_currentNum <= _miniValue) {
-        _currentNum = _miniValue;
-        _cutButton.textColor = [UIColor grayColor];
-    }else{
-         _cutButton.textColor = [UIColor blackColor];
-    }
-    
-    //最大限制
-    if (_currentNum >= _maxValue) {
-        _currentNum = _maxValue;
-        _addButton.textColor = [UIColor grayColor];
-    }else{
-         _addButton.textColor = [UIColor blackColor];
-    }
-    
-    _numTextField.text = [NSString stringWithFormat:@"%ld", _currentNum];
-    
-}
-
 #pragma mark -UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
@@ -194,4 +168,33 @@
     [_numTextField resignFirstResponder];
 }
 
+#pragma mark -Update
+/*
+ * 检查更新数量
+ */
+- (void)checkAndUpdateCurrentNum{
+    
+    //最小限制
+    if (_currentNum <= _miniValue) {
+        _currentNum = _miniValue;
+        _cutButton.textColor = [UIColor grayColor];
+    }else{
+        _cutButton.textColor = [UIColor blackColor];
+    }
+    
+    //最大限制
+    if (_currentNum >= _maxValue) {
+        _currentNum = _maxValue;
+        _addButton.textColor = [UIColor grayColor];
+    }else{
+        _addButton.textColor = [UIColor blackColor];
+    }
+    
+    _numTextField.text = [NSString stringWithFormat:@"%ld", _currentNum];
+    
+    if ([self.delegate respondsToSelector:@selector(productSelectQuantityViewUpdateQuantity:)]) {
+        [self.delegate productSelectQuantityViewUpdateQuantity:_currentNum];
+    }
+
+}
 @end

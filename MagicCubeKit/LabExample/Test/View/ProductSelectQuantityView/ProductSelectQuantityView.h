@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ProductSelectQuantityViewDelegate <NSObject>
+
+- (void)productSelectQuantityViewUpdateQuantity:(NSInteger)quantity;
+
+@end
+
 @interface ProductSelectQuantityView : UIView
+@property (nonatomic, assign) id <ProductSelectQuantityViewDelegate> delegate;
 @property (nonatomic, assign) NSInteger currentNum;           //当前值   (默认: 1)
 @property (nonatomic, assign) NSInteger miniValue;            //最小值   (默认: 1)
 @property (nonatomic, assign) NSInteger maxValue;             //最大值   (默认: MAXFLOAT)

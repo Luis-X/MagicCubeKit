@@ -37,21 +37,18 @@
     _titleLabel.text = @"促销活动名称";
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.font = [UIFont systemFontOfSize:14];
-    //    _titleLabel.backgroundColor = [UIColor greenColor];
     [self.contentView addSubview:_titleLabel];
     
     _subTitleLabel = [UILabel new];
     _subTitleLabel.text = @"查看活动";
     _subTitleLabel.textColor = [UIColor blackColor];
     _subTitleLabel.font = [UIFont systemFontOfSize:12];
-    //    _subTitleLabel.backgroundColor = [UIColor greenColor];
     [self.contentView addSubview:_subTitleLabel];
     
     _arrowIcon = [UILabel new];
     _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:15];
     _arrowIcon.text = @"\U0000e64e";
     _arrowIcon.textColor = [UIColor grayColor];
-    //    _arrowIcon.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:_arrowIcon];
 
 }

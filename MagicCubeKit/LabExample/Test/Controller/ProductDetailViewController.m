@@ -81,8 +81,6 @@
  */
 - (void)createMainScrollView{
     _mainScrollView = [MagicScrollPage showScrollPageViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64 - ProductBuyMenu_Height) firstPage:_firtTableView secondPage:_secondScrollView];
-    _mainScrollView.headerRefreshTitle = @"释放回到“商品详情”";
-    _mainScrollView.footerRefreshTitle = @"拖动查看图文详情";
     [self.view addSubview:_mainScrollView];
 }
 
@@ -91,16 +89,14 @@
  */
 - (void)createFirstPage{
     
-    //主图Banner
-    _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 320)];
+    // 主图Banner
+    _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 350)];
     _productBannerView.backgroundColor = [UIColor whiteColor];
     _productBannerView.dataSource = self;
     _productBannerView.delegate = self;
-    _productBannerView.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-    _productBannerView.pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:0/255.0 alpha:0.2];
     [_mainScrollView addSubview:_productBannerView];
     
-    //滚动效果表头
+    // 滚动效果表头
     ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithSubView:_productBannerView];
     headerView.backgroundColor = [UIColor whiteColor];
 
@@ -140,7 +136,6 @@
 - (void)createMainBuyMenuView{
     
     _mainBuyMenuView = [ProductBuyMenuView new];
-//    _mainBuyMenuView.backgroundColor = [UIColor orangeColor];
     _mainBuyMenuView.delegate = self;
     [self.view addSubview:_mainBuyMenuView];
     [_mainBuyMenuView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -148,7 +143,6 @@
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(ProductBuyMenu_Height);
     }];
-    _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNormal;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _mainBuyMenuView.cartAmount = 10;
     });
@@ -166,28 +160,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //特卖
+    // 特卖
     if (indexPath.section == 0) {
         ProductSpecialTableViewCell *specialCell = [tableView dequeueReusableCellWithIdentifier:@"special" forIndexPath:indexPath];
         specialCell.productDetailModel = _mainModel;
         return specialCell;
     }
     
-    //信息
+    // 信息
     if (indexPath.section == 1) {
         ProductInfomationTableViewCell *infomationCell = [tableView dequeueReusableCellWithIdentifier:@"infomation" forIndexPath:indexPath];
         [self setupIntroduceModelOfCell:infomationCell AtIndexPath:indexPath];
         return infomationCell;
     }
     
-    //规格
+    // 规格
     if (indexPath.section == 2) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
         optionCell.titleLabel.text = @"规格选择";
         return optionCell;
     }
     
-    //促销
+    // 促销
     if (indexPath.section == 3) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
         optionCell.titleLabel.text = @"促销";
@@ -196,7 +190,7 @@
         return optionCell;
     }
     
-    //活动
+    // 活动
     if (indexPath.section == 4) {
         ProductActivityTableViewCell *activityCell = [tableView dequeueReusableCellWithIdentifier:@"activity" forIndexPath:indexPath];
         return activityCell;
@@ -248,7 +242,7 @@
 }
 
 #pragma mark -重点 自适应高度必须实现
-//预加载商品介绍
+// 预加载商品介绍
 - (void)setupIntroduceModelOfCell:(ProductInfomationTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
      cell.productDetailModel = _mainModel;
 }
@@ -390,23 +384,21 @@
 
 - (void)networkGetAllProductDetailData{
 
-    //获取数据
     [_allBannerDataArray removeAllObjects];
     NSString *jsonString = [NSString stringWithContentsOfFile:Magic_bundle(@"shopSku", @"json") encoding:NSUTF8StringEncoding error:nil];
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
-    //NSLog(@"%@", dic);
     
     [ProductDetailModel mj_setupObjectClassInArray:^NSDictionary *{
         return @{@"shop" : [Shop class],
-                 @"productDeatilParam" : [ProductDeatilParam class],
-                 @"skuList" : [SkuList class],
-                 @"value" : [Value class],
-                 @"recommend" : [Recommend class],
-                 @"skuCommission" : [SkuCommission class],
+   @"productDeatilParam" : [ProductDeatilParam class],
+              @"skuList" : [SkuList class],
+                @"value" : [Value class],
+            @"recommend" : [Recommend class],
+        @"skuCommission" : [SkuCommission class],
                  @"item" : [Item class],
-                 @"tagSkus" : [TagSkus class],
-                 @"tagMap" : [TagMap class]};
+              @"tagSkus" : [TagSkus class],
+               @"tagMap" : [TagMap class]};
     }];
     _mainModel = [ProductDetailModel mj_objectWithKeyValues:[dic objectForKey:@"data"]];
     [self reloadAllData];
@@ -421,14 +413,16 @@
     
     [_firtTableView reloadData];
     [self reloadProductBannerViewData];
+    [self reloadMainBuyMenuViewData];
     
 }
 
 /**
- 更新主图Banner数据
+ 刷新Banner数据
  */
 - (void)reloadProductBannerViewData{
     
+    // 配置Banner数据
     if (_mainModel.item.images.count > 0) {
         for (NSString *imageUrl in _mainModel.item.images) {
             [_allBannerDataArray addObject:imageUrl];
@@ -436,10 +430,37 @@
     }else{
         [_allBannerDataArray addObject:_mainModel.item.image];
     }
-    
+    // 配置Banner样式
     _productBannerView.showFooter = (_allBannerDataArray.count > 0) ? YES : NO;
+    if (_allBannerDataArray.count > 1) {
+        _productBannerView.pageControl.currentPageIndicatorTintColor =  [UIColor blackColor];
+        _productBannerView.pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:0/255.0 alpha:0.2];
+    }else{
+        _productBannerView.pageControl.currentPageIndicatorTintColor = [UIColor clearColor];
+        _productBannerView.pageControl.pageIndicatorTintColor = [UIColor clearColor];
+    }
     [_productBannerView reloadData];
     
 }
 
+/**
+ 刷新购买菜单数据
+ */
+- (void)reloadMainBuyMenuViewData{
+    
+    // 海淘商品
+    if (_mainModel.item.isHaiTao) {
+        _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNoAdd;
+        return;
+    }
+    
+    // 暂无库存
+    if (_mainModel.item.inventory <= 0) {
+        _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNoInventory;
+        return;
+    }
+    
+    // 普通商品
+    _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNormal;
+}
 @end

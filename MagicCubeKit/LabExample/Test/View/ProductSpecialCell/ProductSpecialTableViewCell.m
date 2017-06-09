@@ -52,7 +52,6 @@
     _messageLabel.font = [UIFont systemFontOfSize:14];
     _messageLabel.textColor = [UIColor whiteColor];
     _messageLabel.adjustsFontSizeToFitWidth = YES;
-    //_messageLabel.backgroundColor = [UIColor redColor];
     [_cellBackgroundView addSubview:_messageLabel];
     
 }

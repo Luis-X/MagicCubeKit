@@ -24,7 +24,6 @@
 - (void)createSubViews{
     
     _titleLabel = [UILabel new];
-    //_titleLabel.backgroundColor = [UIColor yellowColor];
     _titleLabel.textColor = [UIColor colorWithHexString:@"#000000"];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = [UIFont systemFontOfSize:14];

@@ -24,7 +24,6 @@
 - (void)createSubViews{
     
     _titleLabel = [UILabel new];
-    //_titleLabel.backgroundColor = [UIColor yellowColor];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_titleLabel];
@@ -40,7 +39,8 @@
     
 }
 
-- (void)setTitle:(NSString *)title{
-    _titleLabel.text = title;
+#pragma mark -Update
+- (void)updateHeaderDataWithSkuListModel:(SkuList *)skuListModel{
+    _titleLabel.text = [NSString stringWithFormat:@"%@", skuListModel.classify];
 }
 @end

@@ -53,8 +53,6 @@
     scrollPageView.bottomPageView = secondPageView;
     [scrollPageView configureRefreshPageControl];
     scrollPageView.animationDuration = 0.3f;
-    scrollPageView.headerRefreshTitle = @"下拉回到“商品详情”";
-    scrollPageView.footerRefreshTitle = @"上拉查看图文详情";
     return scrollPageView;
     
 }
@@ -89,27 +87,6 @@
     }
 }
 
-//下拉标题
-- (void)setHeaderRefreshTitle:(NSString *)headerRefreshTitle{
-    if (_headerRefreshTitle != headerRefreshTitle) {
-        _headerRefreshTitle = headerRefreshTitle;
-        
-//        [_header setTitle:_headerRefreshTitle forState:MJRefreshStateIdle];
-//        [_header setTitle:_headerRefreshTitle forState:MJRefreshStatePulling];
-//        [_header setTitle:_headerRefreshTitle forState:MJRefreshStateRefreshing];
-    }
-}
-
-//上拉标题
-- (void)setFooterRefreshTitle:(NSString *)footerRefreshTitle{
-    if (_footerRefreshTitle != footerRefreshTitle) {
-        _footerRefreshTitle = footerRefreshTitle;
-        
-//        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStateIdle];
-//        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStatePulling];
-//        [_footer setTitle:_footerRefreshTitle forState:MJRefreshStateRefreshing];
-    }
-}
 #pragma mark -上下拉切换分页
 - (void)configureRefreshPageControl{
     

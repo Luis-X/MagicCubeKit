@@ -11,7 +11,4 @@
 @interface MagicScrollPage : UIScrollView
 + (instancetype)showScrollPageViewWithFrame:(CGRect)frame firstPage:(UIScrollView *)firstPageView secondPage:(UIScrollView *)secondPageView;
 @property (nonatomic, assign) CGFloat animationDuration;               //动画时长  (默认:0.3)
-@property (nonatomic, copy) NSString *headerRefreshTitle;              //下拉标题  (默认: 下拉回到“商品详情”)
-@property (nonatomic, copy) NSString *footerRefreshTitle;              //上拉标题  (默认: 上拉查看图文详情)
-
 @end

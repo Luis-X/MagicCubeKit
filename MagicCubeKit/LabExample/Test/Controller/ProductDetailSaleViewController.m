@@ -58,7 +58,6 @@
 - (void)createMainHeaderView{
     
     _mainHeaderView = [UIView new];
-    //_mainHeaderView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:_mainHeaderView];
     [_mainHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);

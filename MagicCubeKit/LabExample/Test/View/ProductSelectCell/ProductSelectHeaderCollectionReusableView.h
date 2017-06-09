@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProductDetailModel.h"
 @interface ProductSelectHeaderCollectionReusableView : UICollectionReusableView
-@property (nonatomic, copy) NSString *title;
+- (void)updateHeaderDataWithSkuListModel:(SkuList *)skuListModel;
 @end

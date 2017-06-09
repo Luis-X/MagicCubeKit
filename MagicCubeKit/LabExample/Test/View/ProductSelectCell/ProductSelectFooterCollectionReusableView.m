@@ -9,6 +9,10 @@
 #import "ProductSelectFooterCollectionReusableView.h"
 #import "ProductSelectQuantityView.h"
 
+@interface ProductSelectFooterCollectionReusableView ()<ProductSelectQuantityViewDelegate>
+
+@end
+
 @implementation ProductSelectFooterCollectionReusableView{
     UILabel *_titleLabel;
     ProductSelectQuantityView *_quantityStepView;
@@ -27,18 +31,15 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"数量";
-    //_titleLabel.backgroundColor = [UIColor yellowColor];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_titleLabel];
-    _quantityStepView = [ProductSelectQuantityView new];
-    _quantityStepView.currentNum = 1;
-    _quantityStepView.miniValue = 0;
-    _quantityStepView.maxValue = 3;
-    _quantityStepView.inputEnabled = YES;
-    [self addSubview:_quantityStepView];
     
-    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)]];
+    
+    _quantityStepView = [ProductSelectQuantityView new];
+    _quantityStepView.inputEnabled = YES;
+    _quantityStepView.delegate = self;
+    [self addSubview:_quantityStepView];
 
 }
 
@@ -57,9 +58,22 @@
     
 }
 
-- (void)tap{
-    [_quantityStepView hiddenKeyboard];
-    NSLog(@"%ld", _quantityStepView.currentNum);
+
+#pragma mark - ProductSelectQuantityViewDelegate
+- (void)productSelectQuantityViewUpdateQuantity:(NSInteger)quantity{
+    
+    if ([self.delegate respondsToSelector:@selector(productSelectFooterCollectionReusableViewSelectedNumber:)]) {
+        [self.delegate productSelectFooterCollectionReusableViewSelectedNumber:quantity];
+    }
+    
 }
 
+#pragma mark -Update
+- (void)updateFooterDataWithProductDetailModel:(ProductDetailModel *)productDetailModel selectedNumber:(NSInteger)selectedNumber{
+    
+    _quantityStepView.currentNum = selectedNumber;
+    _quantityStepView.miniValue = 1;
+    _quantityStepView.maxValue = productDetailModel.item.inventory;
+    
+}
 @end

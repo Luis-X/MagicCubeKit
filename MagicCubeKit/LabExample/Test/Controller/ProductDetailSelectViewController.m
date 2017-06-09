@@ -11,13 +11,12 @@
 #import "ProductDetailSelectViewController.h"
 #import <STPopup.h>
 #import "UICollectionViewLeftAlignedLayout.h"
-#import "ProductBuyMenuView.h"
 #import "ProductSelectCollectionViewCell.h"
 #import "ProductSelectHeaderCollectionReusableView.h"
 #import "ProductSelectFooterCollectionReusableView.h"
 
 
-@interface ProductDetailSelectViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface ProductDetailSelectViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ProductSelectFooterCollectionReusableViewDelegate>
 
 @end
 
@@ -27,9 +26,10 @@
     UILabel *_productPriceLabel;                //商品价格
     UILabel *_productCommissionLabel;           //商品佣金
     UICollectionView *_selectedCollectionView;  //选择视图
-    ProductBuyMenuView *_mainBuyMenuView;       //购买菜单栏
-    NSInteger currentSelectedSkuId;             //选中skuId
+    UIButton *_mainBuyMenuView;                 //购买菜单栏
     NSMutableArray *_allSkuListModelArray;      //SKUList数据
+    NSInteger currentSelectedSkuId;             //选中skuId
+    NSInteger currentSelectedNumber;            //选中数量
 }
 
 
@@ -70,6 +70,7 @@
     self.view.backgroundColor = [UIColor clearColor];
     _allSkuListModelArray = [NSMutableArray arrayWithArray:_productDetailModel.skuList];
     currentSelectedSkuId = _productDetailModel.item.ID;
+    currentSelectedNumber = 1;
     
 }
 
@@ -131,7 +132,6 @@
     _productCommissionLabel = [UILabel new];
     _productCommissionLabel.textColor = [UIColor blackColor];
     _productCommissionLabel.font = [UIFont systemFontOfSize:12];
-    //_productCommissionLabel.backgroundColor = [UIColor grayColor];
     [_headerBackgroundView addSubview:_productCommissionLabel];
     [_productCommissionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(_productImageView).offset(-5);
@@ -142,7 +142,6 @@
     _productPriceLabel = [UILabel new];
     _productPriceLabel.textColor = [UIColor flatRedColor];
     _productPriceLabel.font = [UIFont systemFontOfSize:18];
-    //_productPriceLabel.backgroundColor = [UIColor grayColor];
     [_headerBackgroundView addSubview:_productPriceLabel];
     [_productPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(_productCommissionLabel.mas_top).offset(-5);
@@ -157,7 +156,6 @@
  */
 - (void)createBodySubViews{
     
-    //居左显示
     UICollectionViewLeftAlignedLayout *collectionLayout = [[UICollectionViewLeftAlignedLayout alloc] init];
     collectionLayout.minimumLineSpacing = 10;
     collectionLayout.minimumInteritemSpacing = 5;
@@ -181,15 +179,16 @@
  */
 - (void)createMainBuyMenuView{
     
-    _mainBuyMenuView = [ProductBuyMenuView new];
-    //    _mainBuyMenuView.backgroundColor = [UIColor orangeColor];
+    _mainBuyMenuView = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_mainBuyMenuView setTitle:@"确定" forState:UIControlStateNormal];
+    _mainBuyMenuView.backgroundColor = [UIColor colorWithHexString:@"#F03337"];
     [self.view addSubview:_mainBuyMenuView];
     [_mainBuyMenuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view);
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(ProductBuyMenu_Height);
     }];
-    _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNoAdd;
+    [_mainBuyMenuView addTarget:self action:@selector(selectedCompleteActionHandler) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -236,16 +235,18 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
-    //头部
+    // 头部
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         ProductSelectHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
         SkuList *skuListModel = [self getSkuListModelWithSection:indexPath.section];
-        headerView.title = [NSString stringWithFormat:@"%@", skuListModel.classify];
+        [headerView updateHeaderDataWithSkuListModel:skuListModel];
         return headerView;
     }
-    //尾部
+    // 尾部
     if ([kind isEqualToString:UICollectionElementKindSectionFooter] && ((indexPath.section + 1) == _allSkuListModelArray.count)) {
         ProductSelectFooterCollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer" forIndexPath:indexPath];
+        footerView.delegate = self;
+        [footerView updateFooterDataWithProductDetailModel:_productDetailModel selectedNumber:currentSelectedNumber];
         return footerView;
     }
     return [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"temp" forIndexPath:indexPath];
@@ -276,6 +277,10 @@
     return frame.size.width + 15;
 }
 
+#pragma mark -ProductSelectFooterCollectionReusableViewDelegate
+- (void)productSelectFooterCollectionReusableViewSelectedNumber:(NSInteger)selectedNumber{
+    currentSelectedNumber = selectedNumber;
+}
 
 #pragma mark -Action
 
@@ -285,6 +290,10 @@
         [self.delegate productDetailSelectCloseActionWithValue:nil];
     }
 
+}
+
+- (void)selectedCompleteActionHandler{
+    NSLog(@"%ld - %ld", currentSelectedSkuId, currentSelectedNumber);
 }
 
 #pragma mark -HandlerData

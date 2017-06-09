@@ -14,6 +14,7 @@
     UILabel *_priceLabel;                       //价格
     UILabel *_originalPriceLabel;               //原价
     ProductSaleTagView *_commissionTagView;     //佣金
+    UILabel *_byStagesLabel;                    //分期
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -32,20 +33,17 @@
     _titleLabel = [UILabel new];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.font = [UIFont systemFontOfSize:15];
-//    _titleLabel.backgroundColor = [UIColor greenColor];
     _titleLabel.numberOfLines = 0;
     [self.contentView addSubview:_titleLabel];
     
     _flagIcon = [UIImageView new];
     [_flagIcon setImage:[UIImage imageNamed:@"1.jpg"]];
-//    _flagIcon.backgroundColor = [UIColor redColor];
     _flagIcon.clipsToBounds = YES;
     _flagIcon.contentMode = 1;
     [self.contentView addSubview:_flagIcon];
     
     _priceLabel = [UILabel new];
-//    _priceLabel.backgroundColor = [UIColor orangeColor];
-    _priceLabel.font = [UIFont boldSystemFontOfSize:22];
+    _priceLabel.font = [UIFont boldSystemFontOfSize:24];
     _priceLabel.textColor = [UIColor colorWithHexString:@"#FC343D"];
     _priceLabel.numberOfLines = 0;
     [self.contentView addSubview:_priceLabel];
@@ -55,7 +53,6 @@
     [self.contentView addSubview:_commissionTagView];
     
     _originalPriceLabel = [UILabel new];
-//    _originalPriceLabel.backgroundColor = [UIColor blueColor];
     _originalPriceLabel.textColor = [UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:1.00];
     _originalPriceLabel.font = [UIFont systemFontOfSize:16];
     [self.contentView addSubview:_originalPriceLabel];
@@ -71,6 +68,10 @@
         make.height.mas_equalTo(1);
     }];
     
+    _byStagesLabel = [UILabel new];
+    _byStagesLabel.textColor = [UIColor colorWithHexString:@"#FC343D"];
+    _byStagesLabel.font = [UIFont systemFontOfSize:12];
+    [self.contentView addSubview:_byStagesLabel];
 }
 
 - (void)settingAutoLayout{
@@ -99,8 +100,14 @@
     [_originalPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_priceLabel);
         make.top.equalTo(_priceLabel.mas_bottom).offset(10);
+    }];
+    
+    [_byStagesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_priceLabel);
+        make.top.equalTo(_originalPriceLabel.mas_bottom).offset(10);
         make.bottom.equalTo(self.contentView).offset(-10);
     }];
+    
 }
 
 
@@ -118,6 +125,7 @@
     _titleLabel.text = [NSString stringWithFormat:@"%@ %@", temp, _productDetailModel.item.productTitle];
     _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
     _commissionTagView.title = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
+    _byStagesLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
     _originalPriceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.originalPrice];
 
 }

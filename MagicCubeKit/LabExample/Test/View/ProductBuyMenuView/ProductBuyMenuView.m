@@ -144,7 +144,6 @@
 - (void)createOperationView{
     
     _operationView = [UIView new];
-    //    _operationView.backgroundColor = [UIColor greenColor];
     [self addSubview:_operationView];
     [_operationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_topLine.mas_bottom);
