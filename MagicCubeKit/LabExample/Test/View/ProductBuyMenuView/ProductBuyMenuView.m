@@ -266,8 +266,8 @@
     
 }
 
-- (void)setIsOnByGoods:(BOOL)isOnByGoods{
-    _isOnByGoods = isOnByGoods;
+- (void)setIsSelectByGoods:(BOOL)isSelectByGoods{
+    _isSelectByGoods = isSelectByGoods;
     [self updateOptionsGoodsOnOffButton];
 }
 
@@ -285,11 +285,11 @@
     NSInteger optionIndex = 1;
     UILabel *textLabel = [self viewWithTag:OptionButton_Title_Tag + optionIndex];
     if (textLabel) {
-       textLabel.text = self.isOnByGoods ? @"已上架" : @"未上架";;
+       textLabel.text = self.isSelectByGoods ? @"已上架" : @"未上架";;
     }
     UILabel *iconLabel = [self viewWithTag:OptionButton_Icon_Tag + optionIndex];
     if (iconLabel) {
-        iconLabel.text = self.isOnByGoods ? @"\U0000e60b" : @"\U0000e617";
+        iconLabel.text = self.isSelectByGoods ? @"\U0000e60b" : @"\U0000e617";
     }
     
 }

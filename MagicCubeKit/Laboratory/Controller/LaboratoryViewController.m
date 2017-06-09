@@ -7,7 +7,7 @@
 //
 
 #import "LaboratoryViewController.h"
-#import "ProductDetailViewController.h"
+#import "ProductDetailMenuViewController.h"
 @interface LaboratoryViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -40,7 +40,7 @@
 }
 */
 - (void)initailData{
-    _menuArray = @[@{@"ProductDetailViewController" : @"商品详情"}];
+    _menuArray = @[@{@"ProductDetailMenuViewController" : @"商品详情"}];
 }
 
 - (void)createMainViews{
@@ -87,7 +87,7 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            ProductDetailViewController *vc = [ProductDetailViewController new];
+            ProductDetailMenuViewController *vc = [ProductDetailMenuViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

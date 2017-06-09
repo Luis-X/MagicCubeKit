@@ -31,6 +31,6 @@ typedef enum : NSUInteger {
 @interface ProductBuyMenuView : UIView
 @property (nonatomic, assign)id <ProductBuyMenuViewDelegate> delegate;
 @property (nonatomic, assign)ProductBuyMenuStatus currentStatus;
-@property (nonatomic, assign)BOOL isOnByGoods;                        //商品是否上架
+@property (nonatomic, assign)BOOL isSelectByGoods;                    //商品是否上架
 @property (nonatomic, assign)NSInteger cartAmount;                    //购物车总数
 @end

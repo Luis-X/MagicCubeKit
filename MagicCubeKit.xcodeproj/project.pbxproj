@@ -39,6 +39,8 @@
 		D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */; };
 		D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */; };
 		D16665EF1EE94E4C00B84D1B /* ZYBannerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */; };
+		D16665F41EEA8EA800B84D1B /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665F31EEA8EA800B84D1B /* CAPSPageMenu.m */; };
+		D16665FA1EEA929500B84D1B /* ProductDetailMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665F91EEA929500B84D1B /* ProductDetailMenuViewController.m */; };
 		D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */; };
 		D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8B1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m */; };
 		D1707A8F1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8E1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m */; };
@@ -227,6 +229,10 @@
 		D16665EB1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPageRefreshHeader.h; sourceTree = "<group>"; };
 		D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPageRefreshHeader.m; sourceTree = "<group>"; };
 		D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYBannerView.bundle; sourceTree = "<group>"; };
+		D16665F21EEA8EA800B84D1B /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
+		D16665F31EEA8EA800B84D1B /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
+		D16665F81EEA929500B84D1B /* ProductDetailMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailMenuViewController.h; sourceTree = "<group>"; };
+		D16665F91EEA929500B84D1B /* ProductDetailMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailMenuViewController.m; sourceTree = "<group>"; };
 		D1707A871ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicTableViewCell.h; sourceTree = "<group>"; };
 		D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicDynamicTableViewCell.m; sourceTree = "<group>"; };
 		D1707A8A1ED7C1990024FC83 /* ExampleMagicDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicViewController.h; sourceTree = "<group>"; };
@@ -976,6 +982,23 @@
 			path = ProductTagView;
 			sourceTree = "<group>";
 		};
+		D16665F01EEA8EA800B84D1B /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D16665F11EEA8EA800B84D1B /* Obj-C Classes */,
+			);
+			path = PageMenu;
+			sourceTree = "<group>";
+		};
+		D16665F11EEA8EA800B84D1B /* Obj-C Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D16665F21EEA8EA800B84D1B /* CAPSPageMenu.h */,
+				D16665F31EEA8EA800B84D1B /* CAPSPageMenu.m */,
+			);
+			path = "Obj-C Classes";
+			sourceTree = "<group>";
+		};
 		D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell(Cell动态高度) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1510,6 +1533,7 @@
 		D1D257F51EDFFB9900A7CADD /* ReSource */ = {
 			isa = PBXGroup;
 			children = (
+				D16665F01EEA8EA800B84D1B /* PageMenu */,
 				D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */,
 				D1D258001EE0222700A7CADD /* UICollectionViewLeftAlignedLayout */,
 				D1D257F61EDFFB9900A7CADD /* ParallaxTableViewHeader */,
@@ -1643,6 +1667,8 @@
 		D1E0BE591ED922B200493704 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D16665F81EEA929500B84D1B /* ProductDetailMenuViewController.h */,
+				D16665F91EEA929500B84D1B /* ProductDetailMenuViewController.m */,
 				D1D257E61EDFC88C00A7CADD /* ProductDetailViewController.h */,
 				D1D257E71EDFC88C00A7CADD /* ProductDetailViewController.m */,
 				D1D257E91EDFC8BA00A7CADD /* ProductDetailSelectViewController.h */,
@@ -1972,6 +1998,7 @@
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
 				D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */,
+				D16665F41EEA8EA800B84D1B /* CAPSPageMenu.m in Sources */,
 				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
 				D1D257FB1EDFFB9900A7CADD /* ParallaxHeaderView.m in Sources */,
 				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
@@ -1980,6 +2007,7 @@
 				D1D2580E1EE1098E00A7CADD /* ProductOptionTableViewCell.m in Sources */,
 				D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */,
 				D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */,
+				D16665FA1EEA929500B84D1B /* ProductDetailMenuViewController.m in Sources */,
 				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
 				D1BDFDA41ED2D536000064B8 /* ExampleMagicWebProgressViewController.m in Sources */,
 				D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */,

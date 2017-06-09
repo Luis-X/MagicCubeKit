@@ -39,7 +39,7 @@
 - (void)createMainView{
     
     [[MagicNetworkManager shareManager] GET:@"http://mi.xcar.com.cn/interface/xcarapp/getBrands.php" Parameters:nil Success:^(NSURLResponse *response, id responseObject) {
-        NSLog(@"%@", responseObject);
+        //NSLog(@"%@", responseObject);
     } Failure:^(NSURLResponse *response, id error) {
         NSLog(@"%@", error);
     }];

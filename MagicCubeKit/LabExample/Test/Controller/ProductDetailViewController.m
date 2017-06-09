@@ -35,6 +35,7 @@
     STPopupController *_productDetailSalePopup;                  //选优惠
     ProductDetailModel *_mainModel;                              //数据
     ZYBannerView *_productBannerView;                            //主图Banner
+    UIImageView *_productLogoImageView;                          //主图Logo
     NSMutableArray *_allBannerDataArray;                         //主图Banner数据
 }
 
@@ -73,6 +74,8 @@
     [self createSecondPage];
     [self createMainScrollView];
     [self createMainBuyMenuView];
+    [self createStickButton];
+    
 }
 
 
@@ -84,26 +87,43 @@
     [self.view addSubview:_mainScrollView];
 }
 
+
 /**
- 第一页
+ 特效表头
  */
-- (void)createFirstPage{
+- (ParallaxHeaderView *)createProductParallaxHeaderView{
     
-    // 主图Banner
     _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 350)];
     _productBannerView.backgroundColor = [UIColor whiteColor];
     _productBannerView.dataSource = self;
     _productBannerView.delegate = self;
     [_mainScrollView addSubview:_productBannerView];
     
-    // 滚动效果表头
+    
+    _productLogoImageView = [UIImageView new];
+    _productLogoImageView.contentMode = 2;
+    _productLogoImageView.clipsToBounds = YES;
+    [_productBannerView addSubview:_productLogoImageView];
+    [_productLogoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.equalTo(_productBannerView).offset(10);
+        make.size.mas_equalTo(CGSizeMake(80, 80));
+    }];
+    
+   
     ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithSubView:_productBannerView];
     headerView.backgroundColor = [UIColor whiteColor];
-
+    return headerView;
     
+}
+
+/**
+ 第一页
+ */
+- (void)createFirstPage{
+
     _firtTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _firtTableView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
-    _firtTableView.tableHeaderView = headerView;
+    _firtTableView.tableHeaderView = [self createProductParallaxHeaderView];
     _firtTableView.fd_debugLogEnabled = NO;       //打开自适应高度debug模式
     _firtTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _firtTableView.dataSource = self;
@@ -121,13 +141,9 @@
  第二页
  */
 - (void)createSecondPage{
+    
     _secondScrollView = [UIScrollView new];
-    UILabel *textLabel = [QuicklyUI quicklyUILabelAddTo:_secondScrollView];
-    textLabel.text = @"Page 2";
-    [textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_secondScrollView);
-    }];
-
+    
 }
 
 /**
@@ -148,6 +164,26 @@
     });
 
 }
+
+
+/**
+ 置顶
+ */
+- (void)createStickButton{
+    
+    CGSize stick_size = CGSizeMake(50, 50);
+    UIButton *stickButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    stickButton.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:stickButton];
+    [stickButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(stick_size);
+        make.bottom.equalTo(self.view).offset(-100);
+        make.right.equalTo(self.view).offset(-20);
+    }];
+    [stickButton addTarget:self action:@selector(stickButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
 
 #pragma mark -UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -292,15 +328,15 @@
             
         case ProductBuyMenuTypeOnOff:
             
-            if (_mainBuyMenuView.isOnByGoods == YES) {
+            if (_mainBuyMenuView.isSelectByGoods == YES) {
                 NSLog(@"下架操作");
-                _mainBuyMenuView.isOnByGoods = NO;
+                _mainBuyMenuView.isSelectByGoods = NO;
                 return;
             }
             
-            if (_mainBuyMenuView.isOnByGoods == NO) {
+            if (_mainBuyMenuView.isSelectByGoods == NO) {
                 NSLog(@"上架操作");
-                _mainBuyMenuView.isOnByGoods = YES;
+                _mainBuyMenuView.isSelectByGoods = YES;
                 return;
             }
             
@@ -375,9 +411,7 @@
 }
 
 - (void)bannerFooterDidTrigger:(ZYBannerView *)banner{
-    
-    NSLog(@"触发侧拉");
-    
+    [_mainScrollView moveToSecondPageView];
 }
 
 #pragma mark - Network
@@ -439,7 +473,9 @@
         _productBannerView.pageControl.currentPageIndicatorTintColor = [UIColor clearColor];
         _productBannerView.pageControl.pageIndicatorTintColor = [UIColor clearColor];
     }
+    
     [_productBannerView reloadData];
+    [_productLogoImageView sd_setImageWithURL:[NSURL URLWithString:_mainModel.item.brandImage]];
     
 }
 
@@ -447,6 +483,8 @@
  刷新购买菜单数据
  */
 - (void)reloadMainBuyMenuViewData{
+    
+    _mainBuyMenuView.isSelectByGoods = _mainModel.isSelect;
     
     // 海淘商品
     if (_mainModel.item.isHaiTao) {
@@ -463,4 +501,9 @@
     // 普通商品
     _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNormal;
 }
+
+- (void)stickButtonAction{
+    [_mainScrollView moveToFirstPageView];
+}
+
 @end

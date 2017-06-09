@@ -10,5 +10,7 @@
 
 @interface MagicScrollPage : UIScrollView
 + (instancetype)showScrollPageViewWithFrame:(CGRect)frame firstPage:(UIScrollView *)firstPageView secondPage:(UIScrollView *)secondPageView;
-@property (nonatomic, assign) CGFloat animationDuration;               //动画时长  (默认:0.3)
+@property (nonatomic, assign) CGFloat animationDuration;               // 动画时长  (默认:0.3)
+- (void)moveToFirstPageView;                                           // 切换到第一页
+- (void)moveToSecondPageView;                                          // 切换到第二页
 @end
