@@ -28,7 +28,7 @@
     UILabel *_productCommissionLabel;           //商品佣金
     UICollectionView *_selectedCollectionView;  //选择视图
     ProductBuyMenuView *_mainBuyMenuView;       //购买菜单栏
-    NSMutableDictionary *_allSelectedDic;       //选中
+    NSInteger currentSelectedSkuId;             //选中skuId
     NSMutableArray *_allSkuListModelArray;      //SKUList数据
 }
 
@@ -47,6 +47,7 @@
     // Do any additional setup after loading the view.
     [self initailData];
     [self createMainView];
+    [self reloadAllData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,8 +68,8 @@
 - (void)initailData{
     
     self.view.backgroundColor = [UIColor clearColor];
-    _allSelectedDic = [NSMutableDictionary dictionary];
     _allSkuListModelArray = [NSMutableArray arrayWithArray:_productDetailModel.skuList];
+    currentSelectedSkuId = _productDetailModel.item.ID;
     
 }
 
@@ -147,10 +148,6 @@
         make.bottom.equalTo(_productCommissionLabel.mas_top).offset(-5);
         make.left.equalTo(_productCommissionLabel);
     }];
-    
-    _productPriceLabel.text = [NSString stringWithFormat:@"￥%.2f", _productDetailModel.price];
-    [_productImageView sd_setImageWithURL:[NSURL URLWithString:_productDetailModel.item.image]];
-    _productCommissionLabel.text = [NSString stringWithFormat:@"skuId: %@", _productDetailModel.skuCommission.skuId];
     
 }
 
@@ -231,8 +228,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ProductSelectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.model = [self getValueModelWithSection:indexPath.section Row:indexPath.row];
-    cell.cellSelected = [self updateCollectionViewSelectedStatusAtIndexPath:indexPath];
+    Value *valueModel =  [self getValueModelWithSection:indexPath.section Row:indexPath.row];
+    [cell updateCellDataWithValueModel:valueModel selectedSkuId:currentSelectedSkuId];
     return cell;
     
 }
@@ -260,8 +257,9 @@
 //单选
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
    
-    [_allSelectedDic setValue:indexPath forKey:[NSString stringWithFormat:@"%ld", indexPath.section]];
-    [collectionView reloadData];
+    Value *valueModel = [self getValueModelWithSection:indexPath.section Row:indexPath.row];
+    currentSelectedSkuId = [[valueModel.mj_keyValues objectForKey:@"skuId"] integerValue];
+    [self reloadAllData];
     
 }
 
@@ -307,11 +305,16 @@
     return valueModel;
 }
 
-
-#pragma mark -Update
-- (BOOL)updateCollectionViewSelectedStatusAtIndexPath:(NSIndexPath *)indexPath{
-    NSIndexPath *selectedIndexPath = [_allSelectedDic objectForKey:[NSString stringWithFormat:@"%ld", indexPath.section]];
-    return (selectedIndexPath == indexPath) ? YES : NO;
+#pragma mark -ReloadData
+/**
+ 刷新数据
+ */
+- (void)reloadAllData{
+    
+    _productPriceLabel.text = [NSString stringWithFormat:@"￥%.2f", _productDetailModel.price];
+    [_productImageView sd_setImageWithURL:[NSURL URLWithString:_productDetailModel.item.image]];
+    _productCommissionLabel.text = [NSString stringWithFormat:@"skuId: %ld", currentSelectedSkuId];
+    [_selectedCollectionView reloadData];
+    
 }
-
 @end

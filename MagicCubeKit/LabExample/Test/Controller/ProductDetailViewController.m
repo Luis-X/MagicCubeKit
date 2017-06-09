@@ -45,7 +45,6 @@
     self.mainTitle = @"商品详情";
     [self initailData];
     [self createMainView];
-    
     [self networkGetAllProductDetailData];
 }
 
@@ -387,28 +386,8 @@
     
 }
 
-#pragma mark - ReloadData
-
-/**
- 更新主图Banner数据
- */
-- (void)reloadProductBannerViewData{
-    
-    if (_mainModel.item.images.count > 0) {
-        for (NSString *imageUrl in _mainModel.item.images) {
-            [_allBannerDataArray addObject:imageUrl];
-        }
-    }else{
-        [_allBannerDataArray addObject:_mainModel.item.image];
-    }
-    
-    _productBannerView.showFooter = (_allBannerDataArray.count > 0) ? YES : NO;
-    [_productBannerView reloadData];
-    
-}
-
-
 #pragma mark - Network
+
 - (void)networkGetAllProductDetailData{
 
     //获取数据
@@ -430,10 +409,37 @@
                  @"tagMap" : [TagMap class]};
     }];
     _mainModel = [ProductDetailModel mj_objectWithKeyValues:[dic objectForKey:@"data"]];
+    [self reloadAllData];
+    
+}
+
+#pragma mark -ReloadData
+/**
+ 刷新数据
+ */
+- (void)reloadAllData{
+    
     [_firtTableView reloadData];
     [self reloadProductBannerViewData];
     
 }
 
+/**
+ 更新主图Banner数据
+ */
+- (void)reloadProductBannerViewData{
+    
+    if (_mainModel.item.images.count > 0) {
+        for (NSString *imageUrl in _mainModel.item.images) {
+            [_allBannerDataArray addObject:imageUrl];
+        }
+    }else{
+        [_allBannerDataArray addObject:_mainModel.item.image];
+    }
+    
+    _productBannerView.showFooter = (_allBannerDataArray.count > 0) ? YES : NO;
+    [_productBannerView reloadData];
+    
+}
 
 @end

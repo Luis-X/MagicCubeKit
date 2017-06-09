@@ -76,7 +76,7 @@
 @end
 
 @interface Recommend : NSObject
-@property (nonatomic, strong) NSString *ID;
+@property (nonatomic, assign) NSInteger ID;
 @property (nonatomic, strong) NSString *price;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *image;
@@ -92,7 +92,7 @@
 @property (nonatomic, assign) NSInteger isDelete;
 @property (nonatomic, assign) NSInteger limitCommissionRate;
 @property (nonatomic, assign) NSInteger limitInventory;
-@property (nonatomic, copy) NSString *skuId;
+@property (nonatomic, assign) NSInteger skuId;
 @property (nonatomic, assign) BOOL specialSell;
 @property (nonatomic, assign) NSInteger startTime;
 @property (nonatomic, assign) NSInteger type;

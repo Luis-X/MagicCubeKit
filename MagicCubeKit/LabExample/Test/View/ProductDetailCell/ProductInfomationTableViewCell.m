@@ -7,13 +7,13 @@
 //
 
 #import "ProductInfomationTableViewCell.h"
-
+#import "ProductSaleTagView.h"
 @implementation ProductInfomationTableViewCell{
-    UIImageView *_flagIcon;         //标识
-    UILabel *_titleLabel;           //标题
-    UILabel *_priceLabel;           //价格
-    UILabel *_originalPriceLabel;   //原价
-    UILabel *_commissionLabel;      //佣金
+    UIImageView *_flagIcon;                     //标识
+    UILabel *_titleLabel;                       //标题
+    UILabel *_priceLabel;                       //价格
+    UILabel *_originalPriceLabel;               //原价
+    ProductSaleTagView *_commissionTagView;     //佣金
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -50,11 +50,9 @@
     _priceLabel.numberOfLines = 0;
     [self.contentView addSubview:_priceLabel];
 
-    _commissionLabel = [UILabel new];
-//    _commissionLabel.backgroundColor = [UIColor orangeColor];
-    _commissionLabel.textColor = [UIColor colorWithHexString:@"#FC343D"];
-    _commissionLabel.font = [UIFont systemFontOfSize:13];
-    [self.contentView addSubview:_commissionLabel];
+    _commissionTagView = [ProductSaleTagView new];
+    _commissionTagView.fontSize = 15;
+    [self.contentView addSubview:_commissionTagView];
     
     _originalPriceLabel = [UILabel new];
 //    _originalPriceLabel.backgroundColor = [UIColor blueColor];
@@ -93,7 +91,7 @@
         make.left.equalTo(self.contentView).offset(10);
     }];
     
-    [_commissionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_commissionTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_priceLabel.mas_right).offset(10);
         make.centerY.equalTo(_priceLabel);
     }];
@@ -117,9 +115,9 @@
     for (NSInteger i = 0; i < 5; i++) {
         temp = [temp stringByAppendingString:@" "];
     }
-    _titleLabel.text = [NSString stringWithFormat:@"%@ %@ %@", temp, _productDetailModel.item.brandName, _productDetailModel.item.productTitle];
+    _titleLabel.text = [NSString stringWithFormat:@"%@ %@", temp, _productDetailModel.item.productTitle];
     _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
-    _commissionLabel.text = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
+    _commissionTagView.title = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
     _originalPriceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.originalPrice];
 
 }

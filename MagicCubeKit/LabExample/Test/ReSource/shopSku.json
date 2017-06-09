@@ -2,167 +2,214 @@
     "count": 0,
     "data": {
         "shop": {
-            "gmtCreate": 1494993266000,
-            "gmtModified": 1495684772000,
+            "gmtCreate": 1470794184000,
+            "gmtModified": 1490147396000,
             "headImage": "",
-            "id": 64353,
+            "id": 6015,
             "isProbation": true,
             "isVip": 0,
             "membersCount": 0,
-            "name": "lrisz5fstxrm",
-            "paid": false,
-            "parentId": 32691,
-            "payOrderId": 0,
+            "name": "JOY的杂货",
+            "paid": true,
+            "parentId": 6015,
+            "payOrderId": 2393,
             "position": 0,
-            "source": "礼包C:艾尼尤超值面膜套装",
-            "userId": 2868376,
+            "source": "Joy的战队",
+            "userId": 2554919,
             "vipShopId": 0
         },
         "isSelect": false,
         "pageName": "itemDetail",
         "productDeatilParam": {
-            "归属": "嘉娜宝",
-            "类别": "洁面",
+            "归属": "暂无信息",
+            "类别": "唇部彩妆",
             "发货地": "达人店1号仓",
-            "品牌国籍": "日本",
-            "规格": "100.0g",
+            "品牌国籍": "暂无信息",
+            "规格": "5.0ml",
             "英文名": "无"
         },
         "showCommission": true,
         "commentsNum": 0,
-        "skuList": [
-                    {
+        "skuList": [{
                     "classify": "选择规格",
-                    "value": [
-                              {
-                              "name": "100.0g",
-                              "skuId": 142271
-                              },
-                              {
-                              "name": "120.0g",
-                              "skuId": 142270
-                              }
-                              ]
-                    },
-                    {
-                    "classify": "选择尺寸",
-                    "value": [
-                              {
-                              "name": "1个",
-                              "skuId": 142271
-                              },
-                              {
-                              "name": "2个",
-                              "skuId": 142270
-                              }
-                              ]
-                    }
-                    ],
+                    "value": [{
+                              "name": "5.0ml",
+                              "skuId": 147997
+                              }]
+                    }, {
+                    "classify": "选择颜色",
+                    "value": [{
+                              "name": "01 淑女雅致",
+                              "skuId": 147992
+                              }, {
+                              "name": "02 名媛正红",
+                              "skuId": 147993
+                              }, {
+                              "name": "03 芭比洋橙",
+                              "skuId": 147995
+                              }, {
+                              "name": "04 亮采珊瑚",
+                              "skuId": 147996
+                              }, {
+                              "name": "05 豆沙裸粉",
+                              "skuId": 147997
+                              }, {
+                              "name": "06 半糖蜜桃",
+                              "skuId": 147998
+                              }]
+                    }],
         "type": "3",
         "addCart": true,
         "shopProductId": 0,
-        "recommend": [
-                      {
-                      "id": "141517",
-                      "price": "138.00",
-                      "name": "欧树 蜂蜜洁面凝胶400ml",
-                      "image": "//cdn1.showjoy.com/images/34/349b5980d5744a08af6f814157e2adee.png",
-                      "discount": "3.90"
-                      },
-                      {
-                      "id": "144009",
-                      "price": "105.00",
-                      "name": "馥蕾诗 大豆精萃卸妆洁面凝露50ml",
-                      "image": "//cdn1.showjoy.com/images/a2/a210cf5a12c842c9abee46748f293199.png",
-                      "discount": "4.20"
-                      },
-                      {
-                      "id": "15815",
-                      "price": "68.00",
-                      "name": "雅诗兰黛 鲜亮焕采泡沫洁面乳30ml",
-                      "image": "//cdn1.showjoy.com/images/9d/9d0e8914be744de4a7d344e1a1ec97b8.png",
-                      "discount": "4.30"
-                      },
-                      {
-                      "id": "144759",
-                      "price": "399.00",
-                      "name": "肌肤之钥 奢华泡沫洁面乳( 滋润型 )125g",
-                      "image": "//cdn1.showjoy.com/images/bd/bde6c2411af74e36805e70036df73a3d.png",
-                      "discount": "4.50"
-                      },
-                      {
-                      "id": "145175",
-                      "price": "388.00",
-                      "name": "肌肤之钥 奢华泡沫洁面乳( 清爽型 )125g",
-                      "image": "//cdn1.showjoy.com/images/25/25f923f9f6ae40a8809d422a62ee4db6.png",
-                      "discount": "4.30"
-                      },
-                      {
-                      "id": "145225",
-                      "price": "158.00",
-                      "name": "城野医生 果酸去黑头角质收敛毛孔啫喱120g",
-                      "image": "//cdn1.showjoy.com/images/cb/cb3c4ae11cc74ca787579ddcfefc2913.png",
-                      "discount": "5.50"
-                      }
-                      ],
-        "discount": "5.9",
+        "recommend": [{
+                      "id": "143511",
+                      "price": "75.00",
+                      "name": "得鲜 【绝美秀智色】按压式唇膏口红2g",
+                      "image": "//cdn1.showjoy.com/images/af/af6dbb901da34c29bbeef2cae4927b6c.png",
+                      "discount": "4.70"
+                      }, {
+                      "id": "155844",
+                      "price": "99.00",
+                      "name": "雅诗兰黛 倾慕晶彩唇膏【体验装】1.2g",
+                      "image": "//cdn1.showjoy.com/images/61/61358835ba3340e99eb3b8d5589bc641.png",
+                      "discount": "4.90"
+                      }, {
+                      "id": "52643",
+                      "price": "245.00",
+                      "name": "迪奥 魅惑润唇膏3.5g",
+                      "image": "//cdn1.showjoy.com/images/03/03ccc12123bb4bac8679113ebd21959f.png",
+                      "discount": "6.30"
+                      }, {
+                      "id": "147499",
+                      "price": "75.00",
+                      "name": "迪奥 【断货N久，难得一见】魅惑丰唇蜜超值中样2ml",
+                      "image": "//cdn1.showjoy.com/images/92/92f60502fb9c414aa679d4cfa6dce220.png",
+                      "discount": "6.00"
+                      }, {
+                      "id": "28288",
+                      "price": "245.00",
+                      "name": "迪奥 魅惑润唇膏3.5g",
+                      "image": "//cdn1.showjoy.com/images/35/35ce3d34b10f449fb968d3011f65d9fa.png",
+                      "discount": "6.30"
+                      }, {
+                      "id": "51619",
+                      "price": "290.00",
+                      "name": "香奈儿 炫亮魅力唇膏丝绒系列 【不退不换】3.5g",
+                      "image": "//cdn1.showjoy.com/images/89/89807760a7ac42f29c85ffff2e2501ff.png",
+                      "discount": "9.10"
+                      }],
+        "discount": "5.4",
         "skuCommission": {
-            "actPrice": 0,
+            "actPrice": 59,
             "commissionRate": 0.1,
-            "endTime": 1474255013000,
-            "gmtCreate": 1473647639000,
-            "gmtModified": 1473657362000,
+            "endTime": 1494777599000,
             "isDelete": 0,
             "limitCommissionRate": 0,
             "limitInventory": 0,
-            "skuId": 142271,
+            "skuId": 0,
             "specialSell": false,
-            "startTime": 1474255013000,
+            "startTime": 1494381600000,
             "type": 0
         },
         "isFromHome": false,
         "byStages": "该商品最多可享12期免息分期购",
-        "price": "119.00",
-        "shopId": 64353,
+        "price": "69.00",
+        "shopId": 6015,
         "isSpecialSell": false,
-        "shopName": "lrisz5fstxrm",
+        "shopName": "JOY的杂货",
         "item": {
-            "zhName": "净润洗面霜",
-            "spuId": 161619,
-            "image": "http://cdn1.showjoy.com/images/42/42305ebaceaf40998806786964f77de9.png",
-            "brandName": "芙丽芳丝",
-            "discount": "5.9",
-            "id": 142271,
-            "unit": "g",
-            "price": 119,
-            "originalPrice": 200,
-            "inventory": 75,
-            "productTitle": "[芙丽芳丝]净润洗面霜100g",
-            "volume": 100,
-            "images": [
-                       "http://cdn1.showjoy.com/images/a9/a9c81bd443304965bd3777e990d42b46.png",
-                       "http://cdn1.showjoy.com/images/45/4582715fbdc94ae1ad38b6541bd2b121.png"
-                       ],
+            "zhName": "臻彩持久液体口红",
+            "spuId": 169842,
+            "image": "http://cdn1.showjoy.com/images/93/93fba31cc523408f9694533067713351.png",
+            "brandName": "菲奥娜",
+            "discount": "5.4",
+            "id": 147997,
+            "unit": "ml",
+            "price": 69,
+            "originalPrice": 128,
+            "inventory": 18,
+            "productTitle": "[菲奥娜]臻彩持久液体口红05 豆沙裸粉5ml",
+            "volume": 5,
+            "images": [],
             "isHaiTao": false,
-            "brandImage": "http://cdn1.showjoy.com/images/41/41799820569e433580b9650bd86bad14.png",
-            "introduction": "产品功效：芙丽芳丝净润洗面霜100g，温和清除肌理及毛孔中的污垢，保湿提亮肤色，让你真正体验进零刺激的呵护！ 特含陈皮、核桃仁、薏苡仁、甘草叶、川芎跟、大枣六种植物互相作用，保护纤弱的肌肤，打造不易感到刺激的健康肌肤 \n适用于各种肌肤，包括敏感性肌肤 \n它是一款很温和的洗面奶，泡沫非常丰富细腻，不含皂碱，也没有化学起泡剂，所以不会带走肌肤的水分哦"
+            "brandImage": "http://cdn1.showjoy.com/images/ba/babd340038ba477e97a4ae432a795902.png",
+            "introduction": "产品介绍：演绎魅力光泽，惊艳的光感显色让双唇整日都能锁住馥郁色彩，魅色持久绽放。轻盈质地，滋润保湿，一抹丝滑，上妆后紧锁水润，双唇凸显水光感别漾动人。倾斜弧度唇刷，有效遮盖唇纹，在刷头的勾勒下，一触丰唇，青春傲唇，塑形由此开始。"
         },
-        "tagSkus": [
-                    {
-                    "discount": "5.9",
-                    "id": 142271,
-                    "inventory": 75,
-                    "isCanSelect": false,
-                    "originalPrice": "200.00",
-                    "price": "119.00",
+        "tagSkus": [{
+                    "discount": "5.4",
+                    "id": 147992,
+                    "inventory": 20,
+                    "isCanSelect": true,
+                    "originalPrice": "128.00",
+                    "price": "69.00",
                     "tagMaps": {
-                    
+                    "颜色": "01 淑女雅致"
                     },
-                    "unit": "g",
-                    "volume": 100
-                    }
-                    ],
-        "commission": "11.90"
+                    "unit": "ml",
+                    "volume": 5
+                    }, {
+                    "discount": "5.4",
+                    "id": 147993,
+                    "inventory": 17,
+                    "isCanSelect": true,
+                    "originalPrice": "128.00",
+                    "price": "69.00",
+                    "tagMaps": {
+                    "颜色": "02 名媛正红"
+                    },
+                    "unit": "ml",
+                    "volume": 5
+                    }, {
+                    "discount": "5.4",
+                    "id": 147995,
+                    "inventory": 18,
+                    "isCanSelect": true,
+                    "originalPrice": "128.00",
+                    "price": "69.00",
+                    "tagMaps": {
+                    "颜色": "03 芭比洋橙"
+                    },
+                    "unit": "ml",
+                    "volume": 5
+                    }, {
+                    "discount": "5.4",
+                    "id": 147996,
+                    "inventory": 17,
+                    "isCanSelect": true,
+                    "originalPrice": "128.00",
+                    "price": "69.00",
+                    "tagMaps": {
+                    "颜色": "04 亮采珊瑚"
+                    },
+                    "unit": "ml",
+                    "volume": 5
+                    }, {
+                    "discount": "5.4",
+                    "id": 147997,
+                    "inventory": 18,
+                    "isCanSelect": true,
+                    "originalPrice": "128.00",
+                    "price": "69.00",
+                    "tagMaps": {
+                    "颜色": "05 豆沙裸粉"
+                    },
+                    "unit": "ml",
+                    "volume": 5
+                    }, {
+                    "discount": "5.4",
+                    "id": 147998,
+                    "inventory": 22,
+                    "isCanSelect": true,
+                    "originalPrice": "128.00",
+                    "price": "69.00",
+                    "tagMaps": {
+                    "颜色": "06 半糖蜜桃"
+                    },
+                    "unit": "ml",
+                    "volume": 5
+                    }],
+        "comment": [],
+        "commission": "6.90"
     },
     "isRedirect": 0,
     "isSuccess": 1,

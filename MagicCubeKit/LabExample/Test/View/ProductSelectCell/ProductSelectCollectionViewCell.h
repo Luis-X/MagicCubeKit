@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "ProductDetailModel.h"
 @interface ProductSelectCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong)Value *model;
-@property (nonatomic, assign)BOOL cellSelected;
+- (void)updateCellDataWithValueModel:(Value *)valueModel selectedSkuId:(NSInteger)selectedSkuId;
 @end

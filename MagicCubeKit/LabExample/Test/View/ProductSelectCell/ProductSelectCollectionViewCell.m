@@ -17,10 +17,6 @@
     if (self) {
         [self createSubViews];
         [self settingAutoLayout];
-        self.layer.cornerRadius = 3;
-        self.layer.masksToBounds = YES;
-        self.layer.borderColor = [UIColor grayColor].CGColor;
-        self.layer.borderWidth = 0.5;
     }
     return self;
 }
@@ -29,9 +25,12 @@
     
     _titleLabel = [UILabel new];
     //_titleLabel.backgroundColor = [UIColor yellowColor];
-    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.textColor = [UIColor colorWithHexString:@"#000000"];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.layer.borderWidth = 0.5;
+    _titleLabel.layer.masksToBounds = YES;
+    _titleLabel.layer.cornerRadius = 4;
     [self.contentView addSubview:_titleLabel];
     
 }
@@ -44,20 +43,28 @@
     
 }
 
-- (void)setModel:(Value *)model{
+
+
+/**
+ 更新数据
+
+ */
+- (void)updateCellDataWithValueModel:(Value *)valueModel selectedSkuId:(NSInteger)selectedSkuId{
     
-    if (_model != model) {
-        _model = model;
+    NSString *name = [NSString stringWithFormat:@"%@", [valueModel.mj_keyValues objectForKey:@"name"]];
+    NSInteger skuId = [[valueModel.mj_keyValues objectForKey:@"skuId"] integerValue];
+    
+    
+    _titleLabel.text = name;
+    if (skuId == selectedSkuId) {
+        _titleLabel.layer.borderColor = [UIColor colorWithHexString:@"#F03337"].CGColor;
+        _titleLabel.textColor = [UIColor colorWithHexString:@"#F03337"];
+    }else{
+        _titleLabel.layer.borderColor = [UIColor colorWithHexString:@"#000000"].CGColor;
+        _titleLabel.textColor = [UIColor colorWithHexString:@"#000000"];
     }
-    _titleLabel.text = [NSString stringWithFormat:@"%@", [model.mj_keyValues objectForKey:@"name"]];
     
 }
 
-- (void)setCellSelected:(BOOL)cellSelected{
-    
-    _cellSelected = cellSelected;
-    _titleLabel.backgroundColor = _cellSelected ? [UIColor colorWithRed:0.98 green:0.20 blue:0.31 alpha:1.00] : [UIColor whiteColor];
-    
-}
 
 @end
