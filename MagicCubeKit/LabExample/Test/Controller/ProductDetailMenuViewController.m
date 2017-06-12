@@ -12,7 +12,10 @@
 #import "CAPSPageMenu.h"
 
 @interface ProductDetailMenuViewController ()<CAPSPageMenuDelegate>
-
+@property (nonatomic ,strong) UIScrollView *headScrollView;
+@property (nonatomic ,strong) ProductDetailViewController  *firstVC;
+@property (nonatomic ,strong) ExampleMagicNetworkingViewController  *secondVC;
+@property (nonatomic ,strong) UIViewController *currentVC;
 @end
 
 @implementation ProductDetailMenuViewController{
@@ -51,15 +54,27 @@
 
 - (void)createMainView{
     
-    ProductDetailViewController *controller1 = [ProductDetailViewController new];
-    ExampleMagicNetworkingViewController *controller2 = [ExampleMagicNetworkingViewController new];
-    NSArray *controllerArray = @[controller1, controller2];
-    NSDictionary *parameters = @{CAPSPageMenuOptionHideTopMenuBar: @(YES),
-                                 CAPSPageMenuOptionEnableHorizontalBounce: @(NO)};
-    _mainPageMenu = [[CAPSPageMenu alloc] initWithViewControllers:controllerArray frame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height) options:parameters];
-    _mainPageMenu.delegate = self;
-    [self.view addSubview:_mainPageMenu.view];
 
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.headScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, 320, 40)];
+    self.headScrollView.backgroundColor = [UIColor purpleColor];
+    self.headScrollView.contentSize = CGSizeMake(560, 0);
+    self.headScrollView.bounces = NO;
+    self.headScrollView.pagingEnabled = YES;
+    [self.view addSubview:self.headScrollView];
+    
+  
+    self.firstVC = [[ProductDetailViewController alloc] init];
+    [self addChildViewController:_firstVC];
+    
+    self.secondVC = [[ExampleMagicNetworkingViewController alloc] init];
+   
+    
+    
+    //  默认,第一个视图(你会发现,全程就这一个用了addSubview)
+    [self.view addSubview:self.firstVC.view];
+    self.currentVC = self.firstVC;
 }
 
 - (void)customNavigationBarTitleView{
@@ -138,5 +153,39 @@
 
 - (void)pressRightBarButtonItemAction{
     NSLog(@"分享");
+}
+
+
+/**
+ 切换Controller
+ */
+- (void)replaceController:(UIViewController *)oldController newController:(UIViewController *)newController{
+    /**
+     *			着重介绍一下它
+     *  transitionFromViewController:toViewController:duration:options:animations:completion:
+     *  fromViewController	  当前显示在父视图控制器中的子视图控制器
+     *  toViewController		将要显示的姿势图控制器
+     *  duration				动画时间(这个属性,old friend 了 O(∩_∩)O)
+     *  options				 动画效果(渐变,从下往上等等,具体查看API)
+     *  animations			  转换过程中得动画
+     *  completion			  转换完成
+     */
+    
+    [self addChildViewController:newController];
+    [self transitionFromViewController:oldController toViewController:newController duration:2.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+        
+        if (finished) {
+            
+            [newController didMoveToParentViewController:self];
+            [oldController willMoveToParentViewController:nil];
+            [oldController removeFromParentViewController];
+            self.currentVC = newController;
+            
+        }else{
+            
+            self.currentVC = oldController;
+            
+        }
+    }];
 }
 @end

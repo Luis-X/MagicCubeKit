@@ -5,8 +5,7 @@
 //  Created by LuisX on 2017/6/8.
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
-#define Tag_Border_Space            5        //边框间距
-#define Tag_Border_CornerRadius     2        //圆角
+
 #define Tag_Border_Width            0.5      //边框宽度
 
 #import "ProductSaleTagView.h"
@@ -31,13 +30,15 @@
 }
 
 - (void)initialView{
-    
-    self.backgroundColor = [UIColor whiteColor];
+
     _fontSize = 10;
+    _height = _fontSize + 5;
+    
     [self createSubViews];
     [self settingAutoLayout];
-    [self settingTagColor:[UIColor colorWithHexString:@"#F03337"]];
-
+    [self settingTagTextColor:[UIColor colorWithHexString:@"#F63754"]];
+    [self settingTagBorderColor:[UIColor colorWithHexString:@"#F63754"]];
+    
 }
 
 - (void)createSubViews{
@@ -45,8 +46,8 @@
     _tagLabel = [UILabel new];
     _tagLabel.font = [UIFont systemFontOfSize:_fontSize];
     _tagLabel.layer.masksToBounds = YES;
-    _tagLabel.layer.cornerRadius = Tag_Border_CornerRadius;
     _tagLabel.layer.borderWidth = Tag_Border_Width;
+    _tagLabel.clipsToBounds = YES;
     [self addSubview:_tagLabel];
 
 }
@@ -55,24 +56,29 @@
     
     [_tagLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
-        make.height.mas_equalTo(_fontSize + Tag_Border_Space);
+        make.height.mas_equalTo(_height);
+          _tagLabel.layer.cornerRadius = _height / 2;
     }];
     
 }
 
-- (void)settingTagColor:(UIColor *)color{
-    
+- (void)settingTagTextColor:(UIColor *)color{
     _tagLabel.textColor = color;
-    _tagLabel.layer.borderColor = color.CGColor;
-    
 }
 
+- (void)settingTagBorderColor:(UIColor *)color{
+    _tagLabel.layer.borderColor = color.CGColor;
+}
+
+- (void)settingTagBackgroundColor:(UIColor *)color{
+    _tagLabel.backgroundColor = color;
+}
 
 #pragma mark -Property
 - (void)setTitle:(NSString *)title{
     _title = title;
     if (_title.length) {
-        _tagLabel.text = _tagLabel.text = [NSString stringWithFormat:@" %@ ", _title];
+        _tagLabel.text = _tagLabel.text = [NSString stringWithFormat:@"  %@  ", _title];
     }
 }
 
@@ -82,8 +88,23 @@
     [self settingAutoLayout];
 }
 
-- (void)setColor:(UIColor *)color{
-    _color = color;
-    [self settingTagColor:_color];
+- (void)setTextColor:(UIColor *)textColor{
+    _textColor = textColor;
+    [self settingTagTextColor:_textColor];
+}
+
+- (void)setBorderColor:(UIColor *)borderColor{
+    _borderColor = borderColor;
+    [self settingTagBorderColor:_borderColor];
+}
+
+- (void)setBgColor:(UIColor *)bgColor{
+    _bgColor = bgColor;
+    [self settingTagBackgroundColor:_bgColor];
+}
+
+- (void)setHeight:(CGFloat)height{
+    _height = height;
+    [self settingAutoLayout];
 }
 @end

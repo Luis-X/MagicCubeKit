@@ -40,7 +40,6 @@
     [self.contentView addSubview:_titleLabel];
     
     _subTitleLabel = [UILabel new];
-    _subTitleLabel.text = @"查看活动";
     _subTitleLabel.textColor = [UIColor blackColor];
     _subTitleLabel.font = [UIFont systemFontOfSize:12];
     [self.contentView addSubview:_subTitleLabel];

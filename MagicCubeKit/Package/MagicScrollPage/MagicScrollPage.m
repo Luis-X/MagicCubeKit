@@ -112,6 +112,7 @@
         self.contentOffset = CGPointZero;
     } completion:^(BOOL finished) {
         [_bottomPageView.mj_header endRefreshing];
+        [self executeMagicScrollPageDelegateDidScrollToIndex:0];
     }];
     
 }
@@ -122,9 +123,19 @@
         self.contentOffset = CGPointMake(0, CGRectGetHeight(_topPageView.frame));
     } completion:^(BOOL finished) {
         [_topPageView.mj_footer endRefreshing];
+        [self executeMagicScrollPageDelegateDidScrollToIndex:1];
     }];
     
 }
 
-
+/**
+ 执行代理方法
+ */
+- (void)executeMagicScrollPageDelegateDidScrollToIndex:(NSInteger)index{
+    
+    if ([self.myDelegate respondsToSelector:@selector(magicScrollPageDidScrollToPageIndex:)]) {
+        [self.myDelegate magicScrollPageDidScrollToPageIndex:index];
+    }
+    
+}
 @end

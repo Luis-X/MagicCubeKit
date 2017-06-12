@@ -12,9 +12,10 @@
     UIImageView *_flagIcon;                     //标识
     UILabel *_titleLabel;                       //标题
     UILabel *_priceLabel;                       //价格
+    UIView  *_priceBackgroundView;              //价格背景
     UILabel *_originalPriceLabel;               //原价
     ProductSaleTagView *_commissionTagView;     //佣金
-    UILabel *_byStagesLabel;                    //分期
+    ProductSaleTagView *_byStagesTagView;       //分期
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -31,8 +32,8 @@
 - (void)createSubViews{
     
     _titleLabel = [UILabel new];
-    _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.font = [UIFont systemFontOfSize:15];
+    _titleLabel.textColor = [UIColor colorWithHexString:@"#1A1210"];
+    _titleLabel.font = [UIFont boldSystemFontOfSize:16];
     _titleLabel.numberOfLines = 0;
     [self.contentView addSubview:_titleLabel];
     
@@ -42,15 +43,22 @@
     _flagIcon.contentMode = 1;
     [self.contentView addSubview:_flagIcon];
     
+    _priceBackgroundView = [UIView new];
+    _priceBackgroundView.backgroundColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    [self.contentView addSubview:_priceBackgroundView];
+    
     _priceLabel = [UILabel new];
-    _priceLabel.font = [UIFont boldSystemFontOfSize:24];
-    _priceLabel.textColor = [UIColor colorWithHexString:@"#FC343D"];
+    _priceLabel.font = [UIFont boldSystemFontOfSize:22];
+    _priceLabel.textColor = [UIColor whiteColor];
     _priceLabel.numberOfLines = 0;
-    [self.contentView addSubview:_priceLabel];
+    [_priceBackgroundView addSubview:_priceLabel];
 
     _commissionTagView = [ProductSaleTagView new];
-    _commissionTagView.fontSize = 15;
-    [self.contentView addSubview:_commissionTagView];
+    _commissionTagView.fontSize = 12;
+    _commissionTagView.height = 19;
+    _commissionTagView.textColor = [UIColor whiteColor];
+    _commissionTagView.borderColor = [UIColor whiteColor];
+    [_priceBackgroundView addSubview:_commissionTagView];
     
     _originalPriceLabel = [UILabel new];
     _originalPriceLabel.textColor = [UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:1.00];
@@ -68,17 +76,20 @@
         make.height.mas_equalTo(1);
     }];
     
-    _byStagesLabel = [UILabel new];
-    _byStagesLabel.textColor = [UIColor colorWithHexString:@"#FC343D"];
-    _byStagesLabel.font = [UIFont systemFontOfSize:12];
-    [self.contentView addSubview:_byStagesLabel];
+    _byStagesTagView = [ProductSaleTagView new];
+    _byStagesTagView.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
+    _byStagesTagView.fontSize = 10;
+    _byStagesTagView.height = 23;
+    _byStagesTagView.borderColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.00];
+    _byStagesTagView.bgColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.00];
+    [self.contentView addSubview:_byStagesTagView];
 }
 
 - (void)settingAutoLayout{
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(10);
-        make.left.equalTo(self.contentView).offset(10);
+        make.top.equalTo(self.contentView).offset(20);
+        make.centerX.equalTo(self.contentView);
         make.width.mas_equalTo(Magic_screen_Width - 20);
     }];
     
@@ -87,24 +98,32 @@
         make.size.mas_equalTo(CGSizeMake(18, 18));
     }];
     
-    [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    [_priceBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(50);
+        make.centerX.equalTo(self.contentView);
         make.top.equalTo(_titleLabel.mas_bottom).offset(10);
-        make.left.equalTo(self.contentView).offset(10);
+    }];
+    
+    [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_priceBackgroundView);
+        make.left.equalTo(_priceBackgroundView).offset(30);
     }];
     
     [_commissionTagView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_priceLabel.mas_right).offset(10);
-        make.centerY.equalTo(_priceLabel);
+        make.left.equalTo(_priceLabel.mas_right).offset(6);
+        make.centerY.equalTo(_priceBackgroundView);
+        make.right.equalTo(_priceBackgroundView).offset(-30);
     }];
     
-    [_originalPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_priceLabel);
-        make.top.equalTo(_priceLabel.mas_bottom).offset(10);
-    }];
+//    [_originalPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(_priceLabel);
+//        make.top.equalTo(_priceLabel.mas_bottom).offset(10);
+//    }];
     
-    [_byStagesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_priceLabel);
-        make.top.equalTo(_originalPriceLabel.mas_bottom).offset(10);
+    [_byStagesTagView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.contentView);
+        make.top.equalTo(_priceBackgroundView.mas_bottom).offset(10);
         make.bottom.equalTo(self.contentView).offset(-10);
     }];
     
@@ -125,7 +144,7 @@
     _titleLabel.text = [NSString stringWithFormat:@"%@ %@", temp, _productDetailModel.item.productTitle];
     _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
     _commissionTagView.title = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
-    _byStagesLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
+    _byStagesTagView.title = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
     _originalPriceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.originalPrice];
 
 }

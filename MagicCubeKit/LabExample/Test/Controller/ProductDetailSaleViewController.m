@@ -80,9 +80,8 @@
     titleLabel.font = [UIFont systemFontOfSize:15];
     [_mainHeaderView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_mainHeaderView);
-        make.left.equalTo(_mainHeaderView).offset(10);
-        make.right.mas_lessThanOrEqualTo(closeButton.mas_left).offset(-10);
+        make.centerX.equalTo(_mainHeaderView);
+        make.top.equalTo(_mainHeaderView).offset(10);
     }];
     
 }

@@ -22,12 +22,13 @@
 #import "ProductDetailSaleViewController.h"
 #import "ProductBuyMenuView.h"
 #import "ProductDetailModel.h"
-@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate>
+@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate, MagicScrollPageDelegate>
 
 @end
 
 @implementation ProductDetailViewController{
     MagicScrollPage *_mainScrollView;                            //主ScrollView
+    UIButton *_stickButton;                                      //置顶
     UITableView *_firtTableView;                                 //第一页
     UIScrollView *_secondScrollView;                             //第二页
     ProductBuyMenuView *_mainBuyMenuView;                        //购买菜单栏
@@ -84,6 +85,7 @@
  */
 - (void)createMainScrollView{
     _mainScrollView = [MagicScrollPage showScrollPageViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64 - ProductBuyMenu_Height) firstPage:_firtTableView secondPage:_secondScrollView];
+    _mainScrollView.myDelegate = self;
     [self.view addSubview:_mainScrollView];
 }
 
@@ -172,15 +174,16 @@
 - (void)createStickButton{
     
     CGSize stick_size = CGSizeMake(50, 50);
-    UIButton *stickButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    stickButton.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:stickButton];
-    [stickButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    _stickButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _stickButton.backgroundColor = [UIColor blackColor];
+    _stickButton.hidden = YES;
+    [self.view addSubview:_stickButton];
+    [_stickButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(stick_size);
         make.bottom.equalTo(self.view).offset(-100);
         make.right.equalTo(self.view).offset(-20);
     }];
-    [stickButton addTarget:self action:@selector(stickButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [_stickButton addTarget:self action:@selector(stickButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -220,9 +223,8 @@
     // 促销
     if (indexPath.section == 3) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
-        optionCell.titleLabel.text = @"促销";
-        optionCell.subTitleLabel.text = @"购物满两件可享受八折";
         optionCell.saleTagView.title = @"促销标签";
+        optionCell.subTitleLabel.text = @"购物满两件可享受八折";
         return optionCell;
     }
     
@@ -412,6 +414,11 @@
 
 - (void)bannerFooterDidTrigger:(ZYBannerView *)banner{
     [_mainScrollView moveToSecondPageView];
+}
+
+#pragma mark - MagicScrollPageDelegate
+- (void)magicScrollPageDidScrollToPageIndex:(NSInteger)index{
+    _stickButton.hidden = (index == 0) ? YES : NO;
 }
 
 #pragma mark - Network

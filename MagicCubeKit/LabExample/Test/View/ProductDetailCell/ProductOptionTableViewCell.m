@@ -27,20 +27,22 @@
 - (void)createSubViews{
     
     _titleLabel = [UILabel new];
-    _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.font = [UIFont systemFontOfSize:12];
+    _titleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
+    _titleLabel.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:_titleLabel];
     
     _subTitleLabel = [UILabel new];
-    _subTitleLabel.textColor = [UIColor blackColor];
+    _subTitleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
     _subTitleLabel.font = [UIFont systemFontOfSize:12];
     [self.contentView addSubview:_subTitleLabel];
     
     _saleTagView = [ProductSaleTagView new];
+    _saleTagView.fontSize = 12;
+    _saleTagView.height = 18;
     [self.contentView addSubview:_saleTagView];
     
     _arrowIcon = [UILabel new];
-    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:15];
+    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:10];
     _arrowIcon.text = @"\U0000e64e";
     _arrowIcon.textColor = [UIColor grayColor];
     [self.contentView addSubview:_arrowIcon];
@@ -50,25 +52,27 @@
 - (void)settingAutoLayout{
     
     [_arrowIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-10);
-        make.top.equalTo(self.contentView).offset(10);
-        make.bottom.equalTo(self.contentView).offset(-10);
-    }];
-    
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_arrowIcon);
-        make.left.equalTo(self.contentView).offset(10);
-    }];
-    
-    [_subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_arrowIcon);
-        make.left.equalTo(_titleLabel.mas_right).offset(10);
+        make.right.equalTo(self.contentView).offset(-15);
+        make.top.equalTo(self.contentView).offset(18);
+        make.bottom.equalTo(self.contentView).offset(-18);
     }];
     
     [_saleTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_arrowIcon);
-        make.left.equalTo(_subTitleLabel.mas_right).offset(10);
+        make.left.equalTo(self.contentView).offset(10);
     }];
+    
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_arrowIcon);
+        make.left.equalTo(_saleTagView.mas_right).offset(5);
+    }];
+    
+    [_subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_arrowIcon);
+        make.left.equalTo(_titleLabel.mas_right).offset(5);
+    }];
+    
+  
     
 }
 
