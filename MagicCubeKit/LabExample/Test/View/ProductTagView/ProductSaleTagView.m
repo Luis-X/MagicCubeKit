@@ -57,8 +57,8 @@
     [_tagLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
         make.height.mas_equalTo(_height);
-          _tagLabel.layer.cornerRadius = _height / 2;
     }];
+    [self settingTagCornerRadius];
     
 }
 
@@ -72,6 +72,14 @@
 
 - (void)settingTagBackgroundColor:(UIColor *)color{
     _tagLabel.backgroundColor = color;
+}
+
+- (void)settingTagCornerRadius{
+    if (_cornerRadius > 0) {
+        _tagLabel.layer.cornerRadius =_cornerRadius;
+    }else{
+        _tagLabel.layer.cornerRadius = _height / 2;
+    }
 }
 
 #pragma mark -Property
@@ -105,6 +113,11 @@
 
 - (void)setHeight:(CGFloat)height{
     _height = height;
+    [self settingAutoLayout];
+}
+
+- (void)setCornerRadius:(CGFloat)cornerRadius{
+    _cornerRadius = cornerRadius;
     [self settingAutoLayout];
 }
 @end

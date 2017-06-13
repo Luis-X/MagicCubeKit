@@ -23,7 +23,7 @@
 //重写初始化方法
 - (instancetype)init{
     if (self = [super init]) {
-        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, Magic_screen_Height - 400);
+        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, 206);
     }
     return self;
 }
@@ -67,6 +67,7 @@
     UILabel *closeButton = [UILabel new];
     closeButton.font = [UIFont fontWithName:@"iconfont" size:20];
     closeButton.text = @"\U0000e646";
+    closeButton.textColor = [UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.00];
     closeButton.userInteractionEnabled = YES;
     [closeButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allCloseActionHandler)]];
     [_mainHeaderView addSubview:closeButton];
@@ -77,7 +78,8 @@
     
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"促销活动";
-    titleLabel.font = [UIFont systemFontOfSize:15];
+    titleLabel.font = [UIFont systemFontOfSize:16];
+    titleLabel.textColor = [UIColor colorWithRed:0.10 green:0.07 blue:0.06 alpha:1.00];
     [_mainHeaderView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_mainHeaderView);

@@ -8,14 +8,14 @@
 
 #import "ProductInfomationTableViewCell.h"
 #import "ProductSaleTagView.h"
+#import "ProductSpecialTimeView.h"
 @implementation ProductInfomationTableViewCell{
-    UIImageView *_flagIcon;                     //标识
     UILabel *_titleLabel;                       //标题
     UILabel *_priceLabel;                       //价格
     UIView  *_priceBackgroundView;              //价格背景
-    UILabel *_originalPriceLabel;               //原价
     ProductSaleTagView *_commissionTagView;     //佣金
     ProductSaleTagView *_byStagesTagView;       //分期
+    ProductSpecialTimeView *_specialTimeView;   //特卖时间
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -32,16 +32,11 @@
 - (void)createSubViews{
     
     _titleLabel = [UILabel new];
-    _titleLabel.textColor = [UIColor colorWithHexString:@"#1A1210"];
+    _titleLabel.textColor = [UIColor colorWithRed:0.10 green:0.07 blue:0.06 alpha:1.00];
     _titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.numberOfLines = 0;
     [self.contentView addSubview:_titleLabel];
-    
-    _flagIcon = [UIImageView new];
-    [_flagIcon setImage:[UIImage imageNamed:@"1.jpg"]];
-    _flagIcon.clipsToBounds = YES;
-    _flagIcon.contentMode = 1;
-    [self.contentView addSubview:_flagIcon];
     
     _priceBackgroundView = [UIView new];
     _priceBackgroundView.backgroundColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
@@ -60,22 +55,9 @@
     _commissionTagView.borderColor = [UIColor whiteColor];
     [_priceBackgroundView addSubview:_commissionTagView];
     
-    _originalPriceLabel = [UILabel new];
-    _originalPriceLabel.textColor = [UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:1.00];
-    _originalPriceLabel.font = [UIFont systemFontOfSize:16];
-    [self.contentView addSubview:_originalPriceLabel];
-    
-    //删除线
-    UIView *deleteLine = [UIView new];
-    deleteLine.backgroundColor = [UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:1.00];
-    [_originalPriceLabel addSubview:deleteLine];
-    [deleteLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_originalPriceLabel);
-        make.left.equalTo(_originalPriceLabel).offset(-2);
-        make.right.equalTo(_originalPriceLabel).offset(2);
-        make.height.mas_equalTo(1);
-    }];
-    
+    _specialTimeView = [ProductSpecialTimeView new];
+    [self.contentView addSubview:_specialTimeView];
+
     _byStagesTagView = [ProductSaleTagView new];
     _byStagesTagView.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
     _byStagesTagView.fontSize = 10;
@@ -90,14 +72,8 @@
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(20);
         make.centerX.equalTo(self.contentView);
-        make.width.mas_equalTo(Magic_screen_Width - 20);
+        make.width.mas_equalTo(Magic_screen_Width - 40);
     }];
-    
-    [_flagIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.equalTo(_titleLabel);
-        make.size.mas_equalTo(CGSizeMake(18, 18));
-    }];
-    
     
     [_priceBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(50);
@@ -116,15 +92,16 @@
         make.right.equalTo(_priceBackgroundView).offset(-30);
     }];
     
-//    [_originalPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(_priceLabel);
-//        make.top.equalTo(_priceLabel.mas_bottom).offset(10);
-//    }];
+    [_specialTimeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.contentView);
+        make.top.equalTo(_priceBackgroundView.mas_bottom).offset(10);
+        make.height.mas_equalTo(40);
+    }];
     
     [_byStagesTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.top.equalTo(_priceBackgroundView.mas_bottom).offset(10);
-        make.bottom.equalTo(self.contentView).offset(-10);
+        make.top.equalTo(_specialTimeView.mas_bottom).offset(10);
+        make.bottom.equalTo(self.contentView).offset(-25);
     }];
     
 }
@@ -137,16 +114,11 @@
         _productDetailModel = productDetailModel;
     }
     
-    NSString *temp = [NSString string];
-    for (NSInteger i = 0; i < 5; i++) {
-        temp = [temp stringByAppendingString:@" "];
-    }
-    _titleLabel.text = [NSString stringWithFormat:@"%@ %@", temp, _productDetailModel.item.productTitle];
+    _titleLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.item.productTitle];
     _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
     _commissionTagView.title = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
     _byStagesTagView.title = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
-    _originalPriceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.originalPrice];
-
+    _specialTimeView.productDetailModel = productDetailModel;
 }
 
 - (void)awakeFromNib {

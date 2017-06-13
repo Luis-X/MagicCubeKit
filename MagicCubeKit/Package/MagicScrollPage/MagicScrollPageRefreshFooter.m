@@ -23,7 +23,7 @@
     
     self.automaticallyChangeAlpha = NO;
     self.automaticallyHidden = NO;                      // 关闭自动隐藏(若为YES，cell无数据时，不会执行上拉操作)
-    self.ignoredScrollViewContentInsetBottom = -50;
+    self.ignoredScrollViewContentInsetBottom = 0;
     // 设置控件的高度
     self.mj_h = 50;
     

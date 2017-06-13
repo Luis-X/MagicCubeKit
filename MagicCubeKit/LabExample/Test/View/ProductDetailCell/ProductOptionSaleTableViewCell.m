@@ -1,15 +1,18 @@
 //
-//  ProductOptionTableViewCell.m
+//  ProductOptionSaleTableViewCell.m
 //  MagicCubeKit
 //
-//  Created by LuisX on 2017/6/1.
+//  Created by LuisX on 2017/6/13.
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#import "ProductOptionTableViewCell.h"
+#import "ProductOptionSaleTableViewCell.h"
+#import "ProductSaleTagView.h"
 
-@implementation ProductOptionTableViewCell{
+@implementation ProductOptionSaleTableViewCell{
     UILabel *_arrowIcon;                //箭头
+    UILabel *_messageLabel;             //副标题
+    ProductSaleTagView *_saleTagView;   //标签
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -26,17 +29,24 @@
 
 - (void)createSubViews{
     
-    _titleLabel = [UILabel new];
-    _titleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
-    _titleLabel.font = [UIFont systemFontOfSize:14];
-    [self.contentView addSubview:_titleLabel];
+    _messageLabel = [UILabel new];
+    _messageLabel.text = @"只需要199元可享三件商品";
+    _messageLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
+    _messageLabel.font = [UIFont systemFontOfSize:12];
+    [self.contentView addSubview:_messageLabel];
+    
+    _saleTagView = [ProductSaleTagView new];
+    _saleTagView.title = @"3件199元";
+    _saleTagView.fontSize = 12;
+    _saleTagView.height = 18;
+    [self.contentView addSubview:_saleTagView];
     
     _arrowIcon = [UILabel new];
     _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:10];
     _arrowIcon.text = @"\U0000e64e";
     _arrowIcon.textColor = [UIColor grayColor];
     [self.contentView addSubview:_arrowIcon];
-
+    
 }
 
 - (void)settingAutoLayout{
@@ -47,11 +57,17 @@
         make.bottom.equalTo(self.contentView).offset(-18);
     }];
     
-    
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_saleTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_arrowIcon);
         make.left.equalTo(self.contentView).offset(10);
     }];
+    
+    [_messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_arrowIcon);
+        make.left.equalTo(_saleTagView.mas_right).offset(5);
+    }];
+    
+    
     
 }
 

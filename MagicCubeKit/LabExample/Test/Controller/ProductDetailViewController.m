@@ -16,8 +16,11 @@
 
 #import "ProductInfomationTableViewCell.h"
 #import "ProductOptionTableViewCell.h"
+#import "ProductOptionSaleTableViewCell.h"
 #import "ProductActivityTableViewCell.h"
-#import "ProductSpecialTableViewCell.h"
+#import "ProductDescribeTableViewCell.h"
+#import "ProductPromiseTableViewCell.h"
+
 #import "ProductDetailSelectViewController.h"
 #import "ProductDetailSaleViewController.h"
 #import "ProductBuyMenuView.h"
@@ -36,6 +39,7 @@
     STPopupController *_productDetailSalePopup;                  //选优惠
     ProductDetailModel *_mainModel;                              //数据
     ZYBannerView *_productBannerView;                            //主图Banner
+    UILabel *_productBannerPageLabel;                            //主图Page
     UIImageView *_productLogoImageView;                          //主图Logo
     NSMutableArray *_allBannerDataArray;                         //主图Banner数据
 }
@@ -95,7 +99,7 @@
  */
 - (ParallaxHeaderView *)createProductParallaxHeaderView{
     
-    _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 350)];
+    _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 320)];
     _productBannerView.backgroundColor = [UIColor whiteColor];
     _productBannerView.dataSource = self;
     _productBannerView.delegate = self;
@@ -111,6 +115,19 @@
         make.size.mas_equalTo(CGSizeMake(80, 80));
     }];
     
+    _productBannerPageLabel = [UILabel new];
+    _productBannerPageLabel.backgroundColor = [UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.00];
+    _productBannerPageLabel.textAlignment = NSTextAlignmentCenter;
+    _productBannerPageLabel.textColor = [UIColor whiteColor];
+    _productBannerPageLabel.font = [UIFont systemFontOfSize:10];
+    _productBannerPageLabel.layer.masksToBounds = YES;
+    _productBannerPageLabel.layer.cornerRadius = 25 / 2;
+    [_productBannerView addSubview:_productBannerPageLabel];
+    [_productBannerPageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(25, 25));
+        make.bottom.equalTo(_productBannerView);
+        make.right.equalTo(_productBannerView).offset(-15);
+    }];
    
     ParallaxHeaderView *headerView = [ParallaxHeaderView parallaxHeaderViewWithSubView:_productBannerView];
     headerView.backgroundColor = [UIColor whiteColor];
@@ -124,18 +141,19 @@
 - (void)createFirstPage{
 
     _firtTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    _firtTableView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
+    _firtTableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
     _firtTableView.tableHeaderView = [self createProductParallaxHeaderView];
     _firtTableView.fd_debugLogEnabled = NO;       //打开自适应高度debug模式
     _firtTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _firtTableView.dataSource = self;
     _firtTableView.delegate = self;
     [_firtTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [_firtTableView registerClass:[ProductSpecialTableViewCell class] forCellReuseIdentifier:@"special"];
     [_firtTableView registerClass:[ProductInfomationTableViewCell class] forCellReuseIdentifier:@"infomation"];
     [_firtTableView registerClass:[ProductOptionTableViewCell class] forCellReuseIdentifier:@"option"];
+    [_firtTableView registerClass:[ProductOptionSaleTableViewCell class] forCellReuseIdentifier:@"optionSale"];
     [_firtTableView registerClass:[ProductActivityTableViewCell class] forCellReuseIdentifier:@"activity"];
-    
+    [_firtTableView registerClass:[ProductDescribeTableViewCell class] forCellReuseIdentifier:@"describe"];
+    [_firtTableView registerClass:[ProductPromiseTableViewCell class] forCellReuseIdentifier:@"promise"];
 }
 
 
@@ -194,44 +212,48 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    // 特卖
-    if (indexPath.section == 0) {
-        ProductSpecialTableViewCell *specialCell = [tableView dequeueReusableCellWithIdentifier:@"special" forIndexPath:indexPath];
-        specialCell.productDetailModel = _mainModel;
-        return specialCell;
-    }
-    
     // 信息
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
         ProductInfomationTableViewCell *infomationCell = [tableView dequeueReusableCellWithIdentifier:@"infomation" forIndexPath:indexPath];
-        [self setupIntroduceModelOfCell:infomationCell AtIndexPath:indexPath];
+        [self setupProductInfomationModelOfCell:infomationCell AtIndexPath:indexPath];
         return infomationCell;
     }
     
     // 规格
-    if (indexPath.section == 2) {
+    if (indexPath.section == 1) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
         optionCell.titleLabel.text = @"规格选择";
         return optionCell;
     }
     
     // 促销
-    if (indexPath.section == 3) {
-        ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
-        optionCell.saleTagView.title = @"促销标签";
-        optionCell.subTitleLabel.text = @"购物满两件可享受八折";
+    if (indexPath.section == 2) {
+        ProductOptionSaleTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"optionSale" forIndexPath:indexPath];
         return optionCell;
     }
     
     // 活动
-    if (indexPath.section == 4) {
+    if (indexPath.section == 3) {
         ProductActivityTableViewCell *activityCell = [tableView dequeueReusableCellWithIdentifier:@"activity" forIndexPath:indexPath];
         return activityCell;
+    }
+    
+    // 描述
+    if (indexPath.section == 4) {
+        ProductDescribeTableViewCell *describeCell = [tableView dequeueReusableCellWithIdentifier:@"describe" forIndexPath:indexPath];
+        [self setupProductDescribeModelOfCell:describeCell AtIndexPath:indexPath];
+        return describeCell;
+    }
+    
+    // 承诺
+    if (indexPath.section == 5) {
+        ProductPromiseTableViewCell *promiseCell = [tableView dequeueReusableCellWithIdentifier:@"promise" forIndexPath:indexPath];
+        return promiseCell;
     }
     
     return [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -244,13 +266,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    
-    if (section == 0) {
-        return 0.01;
-    }
-    if (section == 4) {
-        return 50;
-    }
+
     return 10;
     
 }
@@ -258,31 +274,54 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
         return [tableView fd_heightForCellWithIdentifier:@"infomation" cacheByIndexPath:indexPath configuration:^(id cell) {
-            [self setupIntroduceModelOfCell:cell AtIndexPath:indexPath];
+            [self setupProductInfomationModelOfCell:cell AtIndexPath:indexPath];
         }];
     }
-    return 44;
+    
+    if (indexPath.section == 2) {
+        return [tableView fd_heightForCellWithIdentifier:@"optionSale" cacheByIndexPath:indexPath configuration:^(id cell) {
+           
+        }];
+    }
+    
+    if (indexPath.section == 4) {
+        return [tableView fd_heightForCellWithIdentifier:@"describe" cacheByIndexPath:indexPath configuration:^(id cell) {
+             [self setupProductDescribeModelOfCell:cell AtIndexPath:indexPath];
+        }];
+    }
+    
+    if (indexPath.section == 5) {
+        return [tableView fd_heightForCellWithIdentifier:@"promise" cacheByIndexPath:indexPath configuration:^(id cell) {
+            
+        }];
+    }
+    return 45;
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 2) {
+    if (indexPath.section == 1) {
         [self showProductDetailSelectViewController];
     }
     
-    if (indexPath.section == 3) {
+    if (indexPath.section == 2) {
         [self showProductDetailSaleViewController];
     }
     
 }
 
 #pragma mark -重点 自适应高度必须实现
-// 预加载商品介绍
-- (void)setupIntroduceModelOfCell:(ProductInfomationTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
+// 详情
+- (void)setupProductInfomationModelOfCell:(ProductInfomationTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
      cell.productDetailModel = _mainModel;
+}
+
+// 描述
+- (void)setupProductDescribeModelOfCell:(ProductDescribeTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
+    cell.productDetailModel = _mainModel;
 }
 
 
@@ -418,6 +457,7 @@
 
 #pragma mark - MagicScrollPageDelegate
 - (void)magicScrollPageDidScrollToPageIndex:(NSInteger)index{
+    [self updateProductBannerPageWithPage:index + 1];
     _stickButton.hidden = (index == 0) ? YES : NO;
 }
 
@@ -483,7 +523,15 @@
     
     [_productBannerView reloadData];
     [_productLogoImageView sd_setImageWithURL:[NSURL URLWithString:_mainModel.item.brandImage]];
+    [self updateProductBannerPageWithPage:1];
     
+}
+
+/**
+ 更新Banner页面值
+ */
+- (void)updateProductBannerPageWithPage:(NSInteger)page{
+    _productBannerPageLabel.text = [NSString stringWithFormat:@"%ld/%ld", page, _allBannerDataArray.count];
 }
 
 /**

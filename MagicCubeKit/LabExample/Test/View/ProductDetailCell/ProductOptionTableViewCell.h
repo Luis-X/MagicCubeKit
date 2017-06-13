@@ -7,9 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProductSaleTagView.h"
 @interface ProductOptionTableViewCell : UITableViewCell
 @property (nonatomic, strong) UILabel *titleLabel;               //标题
-@property (nonatomic, strong) UILabel *subTitleLabel;            //副标题
-@property (nonatomic, strong) ProductSaleTagView *saleTagView;   //标签
 @end

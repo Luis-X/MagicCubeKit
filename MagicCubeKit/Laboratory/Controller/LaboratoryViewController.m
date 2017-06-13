@@ -87,7 +87,9 @@
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            ProductDetailMenuViewController *vc = [ProductDetailMenuViewController new];
+            NSArray *viewControllers = @[[ProductDetailViewController class], [ExampleMagicNetworkingViewController class]];
+            NSArray *titles = @[@"详情", @"素材"];
+            ProductDetailMenuViewController *vc = [[ProductDetailMenuViewController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

@@ -39,8 +39,9 @@
 		D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */; };
 		D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */; };
 		D16665EF1EE94E4C00B84D1B /* ZYBannerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */; };
-		D16665F41EEA8EA800B84D1B /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665F31EEA8EA800B84D1B /* CAPSPageMenu.m */; };
 		D16665FA1EEA929500B84D1B /* ProductDetailMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665F91EEA929500B84D1B /* ProductDetailMenuViewController.m */; };
+		D166660E1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D166660D1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m */; };
+		D16666111EEFB50A00B84D1B /* ProductDescribeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D16666101EEFB50A00B84D1B /* ProductDescribeTableViewCell.m */; };
 		D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */; };
 		D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8B1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m */; };
 		D1707A8F1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8E1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m */; };
@@ -58,7 +59,15 @@
 		D19424631EE5383A00C9A867 /* shopSku.json in Resources */ = {isa = PBXBuildFile; fileRef = D19424621EE5383A00C9A867 /* shopSku.json */; };
 		D19424661EE5396000C9A867 /* ProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19424651EE5396000C9A867 /* ProductDetailModel.m */; };
 		D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */; };
-		D194246E1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D194246D1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m */; };
+		D19FF0C41EEFC6D0007B0632 /* ProductSpecialTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0C31EEFC6D0007B0632 /* ProductSpecialTimeView.m */; };
+		D19FF0C71EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0C61EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m */; };
+		D19FF0D41EEFDDED007B0632 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0CB1EEFDDED007B0632 /* WMMenuItem.m */; };
+		D19FF0D51EEFDDED007B0632 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0CD1EEFDDED007B0632 /* WMMenuView.m */; };
+		D19FF0D61EEFDDED007B0632 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0CF1EEFDDED007B0632 /* WMProgressView.m */; };
+		D19FF0D71EEFDDED007B0632 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0D11EEFDDED007B0632 /* WMScrollView.m */; };
+		D19FF0D81EEFDDED007B0632 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0D31EEFDDED007B0632 /* WMPageController.m */; };
+		D19FF0DE1EEFEAAE007B0632 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */; };
+		D19FF0DF1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
 		D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */; };
@@ -229,10 +238,12 @@
 		D16665EB1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPageRefreshHeader.h; sourceTree = "<group>"; };
 		D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPageRefreshHeader.m; sourceTree = "<group>"; };
 		D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYBannerView.bundle; sourceTree = "<group>"; };
-		D16665F21EEA8EA800B84D1B /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
-		D16665F31EEA8EA800B84D1B /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		D16665F81EEA929500B84D1B /* ProductDetailMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailMenuViewController.h; sourceTree = "<group>"; };
 		D16665F91EEA929500B84D1B /* ProductDetailMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailMenuViewController.m; sourceTree = "<group>"; };
+		D166660C1EEFB4F700B84D1B /* ProductPromiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPromiseTableViewCell.h; sourceTree = "<group>"; };
+		D166660D1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPromiseTableViewCell.m; sourceTree = "<group>"; };
+		D166660F1EEFB50A00B84D1B /* ProductDescribeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDescribeTableViewCell.h; sourceTree = "<group>"; };
+		D16666101EEFB50A00B84D1B /* ProductDescribeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDescribeTableViewCell.m; sourceTree = "<group>"; };
 		D1707A871ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicTableViewCell.h; sourceTree = "<group>"; };
 		D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicDynamicTableViewCell.m; sourceTree = "<group>"; };
 		D1707A8A1ED7C1990024FC83 /* ExampleMagicDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicViewController.h; sourceTree = "<group>"; };
@@ -260,8 +271,24 @@
 		D19424651EE5396000C9A867 /* ProductDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailModel.m; sourceTree = "<group>"; };
 		D19424691EE6A51500C9A867 /* ProductActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductActivityTableViewCell.h; sourceTree = "<group>"; };
 		D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductActivityTableViewCell.m; sourceTree = "<group>"; };
-		D194246C1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecialTableViewCell.h; sourceTree = "<group>"; };
-		D194246D1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecialTableViewCell.m; sourceTree = "<group>"; };
+		D19FF0C21EEFC6D0007B0632 /* ProductSpecialTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecialTimeView.h; sourceTree = "<group>"; };
+		D19FF0C31EEFC6D0007B0632 /* ProductSpecialTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecialTimeView.m; sourceTree = "<group>"; };
+		D19FF0C51EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductOptionSaleTableViewCell.h; sourceTree = "<group>"; };
+		D19FF0C61EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductOptionSaleTableViewCell.m; sourceTree = "<group>"; };
+		D19FF0CA1EEFDDED007B0632 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		D19FF0CB1EEFDDED007B0632 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		D19FF0CC1EEFDDED007B0632 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		D19FF0CD1EEFDDED007B0632 /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		D19FF0CE1EEFDDED007B0632 /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		D19FF0CF1EEFDDED007B0632 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		D19FF0D01EEFDDED007B0632 /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
+		D19FF0D11EEFDDED007B0632 /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
+		D19FF0D21EEFDDED007B0632 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		D19FF0D31EEFDDED007B0632 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		D19FF0DA1EEFEAAE007B0632 /* DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNSegmentedControl.h; sourceTree = "<group>"; };
+		D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
+		D19FF0DC1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DZNSegmentedControl.h"; sourceTree = "<group>"; };
+		D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DZNSegmentedControl.m"; sourceTree = "<group>"; };
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
 		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
 		D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
@@ -982,21 +1009,24 @@
 			path = ProductTagView;
 			sourceTree = "<group>";
 		};
-		D16665F01EEA8EA800B84D1B /* PageMenu */ = {
+		D16666071EEFB4B400B84D1B /* ProductPromiseCell(承诺) */ = {
 			isa = PBXGroup;
 			children = (
-				D16665F11EEA8EA800B84D1B /* Obj-C Classes */,
+				D166660C1EEFB4F700B84D1B /* ProductPromiseTableViewCell.h */,
+				D166660D1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m */,
 			);
-			path = PageMenu;
+			name = "ProductPromiseCell(承诺)";
+			path = ProductPromiseCell;
 			sourceTree = "<group>";
 		};
-		D16665F11EEA8EA800B84D1B /* Obj-C Classes */ = {
+		D16666081EEFB4BB00B84D1B /* ProductDescribeCell(描述) */ = {
 			isa = PBXGroup;
 			children = (
-				D16665F21EEA8EA800B84D1B /* CAPSPageMenu.h */,
-				D16665F31EEA8EA800B84D1B /* CAPSPageMenu.m */,
+				D166660F1EEFB50A00B84D1B /* ProductDescribeTableViewCell.h */,
+				D16666101EEFB50A00B84D1B /* ProductDescribeTableViewCell.m */,
 			);
-			path = "Obj-C Classes";
+			name = "ProductDescribeCell(描述)";
+			path = ProductDescribeCell;
 			sourceTree = "<group>";
 		};
 		D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell(Cell动态高度) */ = {
@@ -1135,14 +1165,50 @@
 			path = ProductActivityCell;
 			sourceTree = "<group>";
 		};
-		D19424681EE6A4B500C9A867 /* ProductSpecialCell(特卖) */ = {
+		D19FF0C11EEFC6D0007B0632 /* ProductSpecialTimeView(特卖) */ = {
 			isa = PBXGroup;
 			children = (
-				D194246C1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.h */,
-				D194246D1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m */,
+				D19FF0C21EEFC6D0007B0632 /* ProductSpecialTimeView.h */,
+				D19FF0C31EEFC6D0007B0632 /* ProductSpecialTimeView.m */,
 			);
-			name = "ProductSpecialCell(特卖)";
-			path = ProductSpecialCell;
+			name = "ProductSpecialTimeView(特卖)";
+			path = ProductSpecialTimeView;
+			sourceTree = "<group>";
+		};
+		D19FF0C81EEFDDED007B0632 /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF0C91EEFDDED007B0632 /* WMMenuView */,
+				D19FF0D21EEFDDED007B0632 /* WMPageController.h */,
+				D19FF0D31EEFDDED007B0632 /* WMPageController.m */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		D19FF0C91EEFDDED007B0632 /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF0CA1EEFDDED007B0632 /* WMMenuItem.h */,
+				D19FF0CB1EEFDDED007B0632 /* WMMenuItem.m */,
+				D19FF0CC1EEFDDED007B0632 /* WMMenuView.h */,
+				D19FF0CD1EEFDDED007B0632 /* WMMenuView.m */,
+				D19FF0CE1EEFDDED007B0632 /* WMProgressView.h */,
+				D19FF0CF1EEFDDED007B0632 /* WMProgressView.m */,
+				D19FF0D01EEFDDED007B0632 /* WMScrollView.h */,
+				D19FF0D11EEFDDED007B0632 /* WMScrollView.m */,
+			);
+			path = WMMenuView;
+			sourceTree = "<group>";
+		};
+		D19FF0D91EEFEAAE007B0632 /* DZNSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF0DA1EEFEAAE007B0632 /* DZNSegmentedControl.h */,
+				D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */,
+				D19FF0DC1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.h */,
+				D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */,
+			);
+			path = DZNSegmentedControl;
 			sourceTree = "<group>";
 		};
 		D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */ = {
@@ -1533,7 +1599,8 @@
 		D1D257F51EDFFB9900A7CADD /* ReSource */ = {
 			isa = PBXGroup;
 			children = (
-				D16665F01EEA8EA800B84D1B /* PageMenu */,
+				D19FF0D91EEFEAAE007B0632 /* DZNSegmentedControl */,
+				D19FF0C81EEFDDED007B0632 /* WMPageController */,
 				D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */,
 				D1D258001EE0222700A7CADD /* UICollectionViewLeftAlignedLayout */,
 				D1D257F61EDFFB9900A7CADD /* ParallaxTableViewHeader */,
@@ -1569,6 +1636,8 @@
 				D1D258081EE1098E00A7CADD /* ProductInfomationTableViewCell.m */,
 				D1D258091EE1098E00A7CADD /* ProductOptionTableViewCell.h */,
 				D1D2580A1EE1098E00A7CADD /* ProductOptionTableViewCell.m */,
+				D19FF0C51EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.h */,
+				D19FF0C61EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m */,
 			);
 			name = "ProductDetailCell(详情)";
 			path = ProductDetailCell;
@@ -1691,14 +1760,16 @@
 		D1E0BE5B1ED922B200493704 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D19FF0C11EEFC6D0007B0632 /* ProductSpecialTimeView(特卖) */,
 				D16665E11EE8FB8900B84D1B /* ProductTagView(标签功能) */,
 				D1D258181EE1160100A7CADD /* ProductBuyMenuView(菜单功能) */,
 				D1036A8E1EE7FD96002D656E /* ProductSelectQuantityView(数量功能) */,
 				D19424671EE6A4B500C9A867 /* ProductActivityCell(活动) */,
-				D19424681EE6A4B500C9A867 /* ProductSpecialCell(特卖) */,
 				D1D258061EE1098E00A7CADD /* ProductDetailCell(详情) */,
 				D1D2580B1EE1098E00A7CADD /* ProductSaleCell(促销) */,
 				D1D2580C1EE1098E00A7CADD /* ProductSelectCell(规格) */,
+				D16666081EEFB4BB00B84D1B /* ProductDescribeCell(描述) */,
+				D16666071EEFB4B400B84D1B /* ProductPromiseCell(承诺) */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1916,22 +1987,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
+				D19FF0DE1EEFEAAE007B0632 /* DZNSegmentedControl.m in Sources */,
 				D156E1DE1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m in Sources */,
 				D1D2581B1EE1161B00A7CADD /* ProductBuyMenuView.m in Sources */,
+				D166660E1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m in Sources */,
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
 				D19424661EE5396000C9A867 /* ProductDetailModel.m in Sources */,
 				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
 				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,
 				D1C72C5C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m in Sources */,
+				D19FF0D71EEFDDED007B0632 /* WMScrollView.m in Sources */,
 				D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */,
 				D187ACF31ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m in Sources */,
 				D11816A41EB2EFB5004C238A /* ViewController.m in Sources */,
+				D19FF0D61EEFDDED007B0632 /* WMProgressView.m in Sources */,
 				D1D257EB1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m in Sources */,
 				D1C72C571EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m in Sources */,
 				D156E1ED1ED441F00024D309 /* ExampleReachabilityViewController.m in Sources */,
 				D11816E71EB2F511004C238A /* BaseViewController.m in Sources */,
 				D1C72C4D1EB86F0C00C88BAE /* TangramView.m in Sources */,
 				D1C72C5E1EB86F0C00C88BAE /* TangramFixBottomLayout.m in Sources */,
+				D19FF0C71EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m in Sources */,
 				D156E1EA1ED441E50024D309 /* ExampleiCarouselViewController.m in Sources */,
 				D1C72C5D1EB86F0C00C88BAE /* TangramDragableLayout.m in Sources */,
 				D1D2581E1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.m in Sources */,
@@ -1940,9 +2016,11 @@
 				D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */,
 				D1D257E81EDFC88C00A7CADD /* ProductDetailViewController.m in Sources */,
 				D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */,
+				D19FF0D51EEFDDED007B0632 /* WMMenuView.m in Sources */,
 				D1D258211EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.m in Sources */,
 				D1C72C561EB86F0C00C88BAE /* TangramDefaultElementFactory.m in Sources */,
 				D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */,
+				D19FF0D41EEFDDED007B0632 /* WMMenuItem.m in Sources */,
 				D1C72C681EB86F0C00C88BAE /* TangramTetradColumnLayout.m in Sources */,
 				D1C72CA61EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m in Sources */,
 				D13E1FFE1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m in Sources */,
@@ -1968,11 +2046,12 @@
 				D1D257FC1EDFFB9900A7CADD /* UIImage+ImageEffects.m in Sources */,
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
 				D1D257FF1EDFFEC400A7CADD /* ProductConstant.m in Sources */,
-				D194246E1EE6A6EA00C9A867 /* ProductSpecialTableViewCell.m in Sources */,
 				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,
+				D19FF0C41EEFC6D0007B0632 /* ProductSpecialTimeView.m in Sources */,
 				D1036A911EE7FD96002D656E /* ProductSelectQuantityView.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
 				D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */,
+				D16666111EEFB50A00B84D1B /* ProductDescribeTableViewCell.m in Sources */,
 				D13E1FFB1ECC658300472533 /* ExampleMagicScrollPageViewController.m in Sources */,
 				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
@@ -1998,10 +2077,10 @@
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
 				D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */,
-				D16665F41EEA8EA800B84D1B /* CAPSPageMenu.m in Sources */,
 				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
 				D1D257FB1EDFFB9900A7CADD /* ParallaxHeaderView.m in Sources */,
 				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
+				D19FF0DF1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
 				D1D2580E1EE1098E00A7CADD /* ProductOptionTableViewCell.m in Sources */,
@@ -2011,6 +2090,7 @@
 				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
 				D1BDFDA41ED2D536000064B8 /* ExampleMagicWebProgressViewController.m in Sources */,
 				D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */,
+				D19FF0D81EEFDDED007B0632 /* WMPageController.m in Sources */,
 				D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */,
 				D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */,
 				D1D258171EE1107900A7CADD /* ProductSaleTableViewCell.m in Sources */,

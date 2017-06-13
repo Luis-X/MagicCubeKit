@@ -7,7 +7,9 @@
 //
 
 #import "BaseViewController.h"
-
-@interface ProductDetailMenuViewController : BaseViewController
+#import "WMPageController.h"
+#import "ProductDetailViewController.h"
+#import "ExampleMagicNetworkingViewController.h"
+@interface ProductDetailMenuViewController : WMPageController
 
 @end

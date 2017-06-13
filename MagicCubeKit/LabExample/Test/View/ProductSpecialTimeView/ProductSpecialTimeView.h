@@ -1,13 +1,14 @@
 //
-//  ProductSpecialTableViewCell.h
+//  ProductSpecialTimeView.h
 //  MagicCubeKit
 //
-//  Created by LuisX on 2017/6/6.
+//  Created by LuisX on 2017/6/13.
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "ProductDetailModel.h"
-@interface ProductSpecialTableViewCell : UITableViewCell
+
+@interface ProductSpecialTimeView : UIView
 @property (nonatomic, strong)ProductDetailModel *productDetailModel;
 @end

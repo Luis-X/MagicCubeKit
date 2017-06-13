@@ -13,6 +13,7 @@
     UILabel *_subTitleLabel;            //副标题
     ProductSaleTagView *_saleTagView;   //标签
     UILabel *_arrowIcon;                //箭头
+    UIView *_blackLine;                 //分割线
 }
 
 
@@ -30,25 +31,32 @@
 - (void)createSubViews{
     
     _saleTagView = [ProductSaleTagView new];
-    _saleTagView.title = @"促销标签";
+    _saleTagView.title = @"3件199元";
+    _saleTagView.cornerRadius = 4;
+    _saleTagView.height = 18;
+    _saleTagView.fontSize = 12;
     [self.contentView addSubview:_saleTagView];
     
     _titleLabel = [UILabel new];
-    _titleLabel.text = @"促销活动名称";
-    _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.text = @"只需要199元可享三件商品";
+    _titleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
+    _titleLabel.font = [UIFont systemFontOfSize:12];
     [self.contentView addSubview:_titleLabel];
     
     _subTitleLabel = [UILabel new];
-    _subTitleLabel.textColor = [UIColor blackColor];
+    _subTitleLabel.textColor =  [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
     _subTitleLabel.font = [UIFont systemFontOfSize:12];
     [self.contentView addSubview:_subTitleLabel];
     
     _arrowIcon = [UILabel new];
-    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:15];
+    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:10];
     _arrowIcon.text = @"\U0000e64e";
-    _arrowIcon.textColor = [UIColor grayColor];
+    _arrowIcon.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
     [self.contentView addSubview:_arrowIcon];
+
+    _blackLine = [UIView new];
+    _blackLine.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00];
+    [self.contentView addSubview:_blackLine];
 
 }
 
@@ -75,6 +83,13 @@
         make.left.equalTo(_saleTagView.mas_right).offset(10);
     }];
 
+    [_blackLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(10);
+        make.right.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView);
+        make.height.mas_equalTo(0.5);
+    }];
+    
 }
 
 - (void)awakeFromNib {
