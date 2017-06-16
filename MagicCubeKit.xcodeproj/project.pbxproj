@@ -68,6 +68,9 @@
 		D19FF0D81EEFDDED007B0632 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0D31EEFDDED007B0632 /* WMPageController.m */; };
 		D19FF0DE1EEFEAAE007B0632 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */; };
 		D19FF0DF1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */; };
+		D19FF0E11EF13DFA007B0632 /* productDetailMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF0E01EF13DFA007B0632 /* productDetailMenu@2x.png */; };
+		D19FF0E31EF36CE4007B0632 /* productDetailTag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF0E21EF36CE4007B0632 /* productDetailTag@2x.png */; };
+		D19FF0E51EF3B678007B0632 /* productDetailLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF0E41EF3B678007B0632 /* productDetailLogo@2x.png */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
 		D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */; };
@@ -289,6 +292,9 @@
 		D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
 		D19FF0DC1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DZNSegmentedControl.h"; sourceTree = "<group>"; };
 		D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DZNSegmentedControl.m"; sourceTree = "<group>"; };
+		D19FF0E01EF13DFA007B0632 /* productDetailMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailMenu@2x.png"; sourceTree = "<group>"; };
+		D19FF0E21EF36CE4007B0632 /* productDetailTag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailTag@2x.png"; sourceTree = "<group>"; };
+		D19FF0E41EF3B678007B0632 /* productDetailLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailLogo@2x.png"; sourceTree = "<group>"; };
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
 		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
 		D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
@@ -1599,6 +1605,9 @@
 		D1D257F51EDFFB9900A7CADD /* ReSource */ = {
 			isa = PBXGroup;
 			children = (
+				D19FF0E41EF3B678007B0632 /* productDetailLogo@2x.png */,
+				D19FF0E21EF36CE4007B0632 /* productDetailTag@2x.png */,
+				D19FF0E01EF13DFA007B0632 /* productDetailMenu@2x.png */,
 				D19FF0D91EEFEAAE007B0632 /* DZNSegmentedControl */,
 				D19FF0C81EEFDDED007B0632 /* WMPageController */,
 				D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */,
@@ -1888,10 +1897,12 @@
 				D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */,
 				D19424631EE5383A00C9A867 /* shopSku.json in Resources */,
 				D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */,
+				D19FF0E31EF36CE4007B0632 /* productDetailTag@2x.png in Resources */,
 				D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */,
 				D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */,
 				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
 				D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */,
+				D19FF0E11EF13DFA007B0632 /* productDetailMenu@2x.png in Resources */,
 				D11816AC1EB2EFB5004C238A /* LaunchScreen.storyboard in Resources */,
 				D156E1E11ED4119D0024D309 /* ExampleJSWeb.html in Resources */,
 				D1E0BE521ED920A600493704 /* tabbar_2@2x.png in Resources */,
@@ -1905,6 +1916,7 @@
 				D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */,
 				D11816A91EB2EFB5004C238A /* Assets.xcassets in Resources */,
 				D1E0BE541ED920A600493704 /* tabbar_4@2x.png in Resources */,
+				D19FF0E51EF3B678007B0632 /* productDetailLogo@2x.png in Resources */,
 				D11816A71EB2EFB5004C238A /* Main.storyboard in Resources */,
 				D1707A971ED7C9440024FC83 /* 3.jpg in Resources */,
 				D1C72CBF1EB8856000C88BAE /* share_qq@2x.png in Resources */,

@@ -13,9 +13,14 @@
     UILabel *_titleLabel;                       //标题
     UILabel *_priceLabel;                       //价格
     UIView  *_priceBackgroundView;              //价格背景
+    UIImageView *_specialBGImageView;           //特卖背景
     ProductSaleTagView *_commissionTagView;     //佣金
     ProductSaleTagView *_byStagesTagView;       //分期
     ProductSpecialTimeView *_specialTimeView;   //特卖时间
+    UIView *_onLineStatisticsView;              //上架统计视图
+    UIView *_onLineBackgroundView;              //上架背景
+    UILabel *_onLineIconLabel;                  //上架icon
+    UILabel *_onLineCountLabel;                 //上架数目
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -38,8 +43,12 @@
     _titleLabel.numberOfLines = 0;
     [self.contentView addSubview:_titleLabel];
     
+    _specialBGImageView = [UIImageView new];
+    _specialBGImageView.image = [UIImage imageNamed:@"productDetailTag@2x.png"];
+    [self.contentView addSubview:_specialBGImageView];
+    
     _priceBackgroundView = [UIView new];
-    _priceBackgroundView.backgroundColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    [_priceBackgroundView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     [self.contentView addSubview:_priceBackgroundView];
     
     _priceLabel = [UILabel new];
@@ -65,6 +74,30 @@
     _byStagesTagView.borderColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.00];
     _byStagesTagView.bgColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.00];
     [self.contentView addSubview:_byStagesTagView];
+    
+    [self createOnLineStatisticsView];
+}
+
+- (void)createOnLineStatisticsView{
+    
+    _onLineStatisticsView = [UIView new];
+    _onLineStatisticsView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
+    [self.contentView addSubview:_onLineStatisticsView];
+    
+    _onLineBackgroundView = [UIView new];
+    [_onLineStatisticsView addSubview:_onLineBackgroundView];
+    
+    _onLineIconLabel = [UILabel new];
+    _onLineIconLabel.font = [UIFont fontWithName:@"iconfont" size:12];
+    _onLineIconLabel.text = @"\U0000e6f1";
+    _onLineIconLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    [_onLineStatisticsView addSubview:_onLineIconLabel];
+    
+    _onLineCountLabel = [UILabel new];
+    _onLineCountLabel.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
+    _onLineCountLabel.font = [UIFont systemFontOfSize:12];
+    [_onLineStatisticsView addSubview:_onLineCountLabel];
+    
 }
 
 - (void)settingAutoLayout{
@@ -76,7 +109,7 @@
     }];
     
     [_priceBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(50);
+        make.height.mas_equalTo(70);
         make.centerX.equalTo(self.contentView);
         make.top.equalTo(_titleLabel.mas_bottom).offset(10);
     }];
@@ -95,15 +128,51 @@
     [_specialTimeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.contentView);
         make.top.equalTo(_priceBackgroundView.mas_bottom).offset(10);
-        make.height.mas_equalTo(40);
     }];
     
     [_byStagesTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
         make.top.equalTo(_specialTimeView.mas_bottom).offset(10);
-        make.bottom.equalTo(self.contentView).offset(-25);
     }];
     
+
+    [_onLineStatisticsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_byStagesTagView.mas_bottom).offset(25);
+        make.left.right.bottom.equalTo(self.contentView);
+        make.height.mas_equalTo(32);
+    }];
+    
+    [_onLineBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(_onLineStatisticsView);
+        make.centerX.equalTo(_onLineStatisticsView);
+    }];
+    
+    [_onLineIconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_onLineStatisticsView);
+        make.left.equalTo(_onLineBackgroundView);
+    }];
+    
+    [_onLineCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_onLineIconLabel.mas_right).offset(5);
+        make.centerY.equalTo(_onLineStatisticsView);
+        make.right.equalTo(_onLineBackgroundView);
+    }];
+    
+    [_specialBGImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(_priceBackgroundView);
+    }];
+}
+
+/**
+ 刷新特卖图片
+ */
+- (void)reloadSpecialBGImageViewAutoLayout{
+    //调用layoutIfNeeded
+    [_priceBackgroundView layoutIfNeeded];
+    [_specialBGImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(_priceBackgroundView.frame.size.width);
+        make.height.mas_equalTo(_priceBackgroundView.frame.size.height);
+    }];
 }
 
 
@@ -112,13 +181,16 @@
     
     if (_productDetailModel != productDetailModel) {
         _productDetailModel = productDetailModel;
+        
+        _titleLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.item.productTitle];
+        _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
+        _commissionTagView.title = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
+        _byStagesTagView.title = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
+        _specialTimeView.productDetailModel = productDetailModel;
+        _onLineCountLabel.text = [self checkGoodsShelvesCountWithShelvesCount:_productDetailModel.item.ID];
+        [self reloadSpecialBGImageViewAutoLayout];
     }
     
-    _titleLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.item.productTitle];
-    _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
-    _commissionTagView.title = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
-    _byStagesTagView.title = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
-    _specialTimeView.productDetailModel = productDetailModel;
 }
 
 - (void)awakeFromNib {
@@ -132,4 +204,14 @@
     // Configure the view for the selected state
 }
 
+//检查上架数量
+- (NSString *)checkGoodsShelvesCountWithShelvesCount:(CGFloat)shelvesCount{
+    
+    if (shelvesCount < 10000) {
+        return [NSString stringWithFormat:@"已被%.f位店主上架", shelvesCount];
+    }
+    
+    return [NSString stringWithFormat:@"已被%.1f万位店主上架", (shelvesCount / 10000)];
+    
+}
 @end

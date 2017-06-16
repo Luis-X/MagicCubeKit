@@ -10,6 +10,8 @@
 
 @implementation ProductPromiseTableViewCell{
     UILabel *_titleLabel;
+    UIView *_leftLine;
+    UIView *_rightLine;
 }
 
 
@@ -31,10 +33,18 @@
     _titleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
     _titleLabel.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:_titleLabel];
+    
+    _leftLine = [UIView new];
+    _leftLine.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00];
+    [self.contentView addSubview:_leftLine];
+    
+    _rightLine = [UIView new];
+    _rightLine.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00];
+    [self.contentView addSubview:_rightLine];
 
 
     [self createMenuButtonWithTitles:@[@"PICC承保", @"正品保障", @"假一赔十", @"90天无理由退货"]
-                               Icons:@[@"\U0000e659", @"\U0000e659", @"\U0000e659", @"\U0000e659"]
+                               Icons:@[@"\U0000e6ef", @"\U0000e6e9", @"\U0000e6ed", @"\U0000e6eb"]
                               Height:70
                         ContentWidth:Magic_screen_Width
                          BoundsSpace:15];
@@ -71,7 +81,7 @@
         
         UILabel *iconLabel = [UILabel new];
         iconLabel.text = [icons objectAtIndex:i];
-        iconLabel.font = [UIFont fontWithName:@"iconfont" size:16];
+        iconLabel.font = [UIFont fontWithName:@"iconfont" size:22];
         iconLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
         iconLabel.textAlignment = NSTextAlignmentCenter;
         iconLabel.layer.masksToBounds = YES;
@@ -104,6 +114,19 @@
         make.top.equalTo(self.contentView).offset(25);
         make.centerX.equalTo(self.contentView);
     }];
+    
+    [_leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(50, 0.5));
+        make.centerY.equalTo(_titleLabel);
+        make.right.equalTo(_titleLabel.mas_left).offset(-10);
+    }];
+    
+    [_rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(50, 0.5));
+        make.centerY.equalTo(_titleLabel);
+        make.left.equalTo(_titleLabel.mas_right).offset(10);
+    }];
+    
     
 }
 

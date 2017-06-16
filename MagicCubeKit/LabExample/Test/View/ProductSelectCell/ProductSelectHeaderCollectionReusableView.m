@@ -24,7 +24,7 @@
 - (void)createSubViews{
     
     _titleLabel = [UILabel new];
-    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
     _titleLabel.font = [UIFont systemFontOfSize:14];
     [self addSubview:_titleLabel];
     
@@ -33,7 +33,7 @@
 - (void)settingAutoLayout{
 
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
+        make.top.equalTo(self);
         make.left.equalTo(self).offset(10);
     }];
     

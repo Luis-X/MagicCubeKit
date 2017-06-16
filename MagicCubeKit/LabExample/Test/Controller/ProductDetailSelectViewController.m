@@ -6,7 +6,7 @@
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#define ProductBuyMenu_Height 50
+#define ProductBuyMenu_Height 55
 
 #import "ProductDetailSelectViewController.h"
 #import <STPopup.h>
@@ -26,17 +26,19 @@
     UILabel *_productPriceLabel;                //商品价格
     UILabel *_productCommissionLabel;           //商品佣金
     UICollectionView *_selectedCollectionView;  //选择视图
-    UIButton *_mainBuyMenuView;                 //购买菜单栏
+    UIView *_mainBuyMenuView;                   //购买菜单栏
     NSMutableArray *_allSkuListModelArray;      //SKUList数据
     NSInteger currentSelectedSkuId;             //选中skuId
     NSInteger currentSelectedNumber;            //选中数量
+    UIButton *_addCartButton;                   //加入购物车
+    UIButton *_buyButton;                       //立即购买
 }
 
 
 //重写初始化方法
 - (instancetype)init{
     if (self = [super init]) {
-        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, Magic_screen_Height - 120);
+        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, Magic_screen_Height - 192);
     }
     return self;
 }
@@ -87,29 +89,21 @@
  */
 - (void)createHeaderSubViews{
     
-    _headerBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 100)];
+    _headerBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 120)];
     _headerBackgroundView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_headerBackgroundView];
     
     
-    UIView *blackLine = [UIView new];
-    blackLine.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6"];
-    [_headerBackgroundView addSubview:blackLine];
-    [blackLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(_headerBackgroundView);
-        make.height.mas_equalTo(0.5);
-    }];
-    
-    
     UILabel *closeButton = [UILabel new];
-    closeButton.font = [UIFont fontWithName:@"iconfont" size:20];
-    closeButton.text = @"\U0000e646";
+    closeButton.font = [UIFont fontWithName:@"iconfont" size:14];
+    closeButton.text = @"\U0000e6e8";
+    closeButton.textColor = [UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.00];
     closeButton.userInteractionEnabled = YES;
     [closeButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allCloseActionHandler)]];
     [_headerBackgroundView addSubview:closeButton];
     [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_headerBackgroundView).offset(10);
-        make.right.equalTo(_headerBackgroundView).offset(-10);
+        make.top.equalTo(_headerBackgroundView).offset(15);
+        make.right.equalTo(_headerBackgroundView).offset(-20);
     }];
     
     
@@ -117,34 +111,35 @@
     _productImageView.backgroundColor = [UIColor whiteColor];
     _productImageView.contentMode = 2;
     _productImageView.clipsToBounds = YES;
-    _productImageView.layer.borderColor = [UIColor colorWithHexString:@"#E6E6E6"].CGColor;
-    _productImageView.layer.borderWidth = 0.5;
+    _productImageView.layer.borderColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00].CGColor;
+    _productImageView.layer.borderWidth = 1;
     _productImageView.layer.masksToBounds = YES;
-    _productImageView.layer.cornerRadius = 5;
+    _productImageView.layer.cornerRadius = 10;
     [_headerBackgroundView addSubview:_productImageView];
     [_productImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);
         make.left.equalTo(_headerBackgroundView).offset(10);
-        make.width.mas_equalTo(90);
-        make.bottom.equalTo(blackLine).offset(-20);
+        make.width.mas_equalTo(120);
+        make.bottom.equalTo(_headerBackgroundView).offset(-25);
     }];
     
     _productCommissionLabel = [UILabel new];
-    _productCommissionLabel.textColor = [UIColor blackColor];
-    _productCommissionLabel.font = [UIFont systemFontOfSize:12];
+    _productCommissionLabel.text = @"请选择规格属性";
+    _productCommissionLabel.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
+    _productCommissionLabel.font = [UIFont systemFontOfSize:14];
     [_headerBackgroundView addSubview:_productCommissionLabel];
     [_productCommissionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_productImageView).offset(-5);
-        make.left.equalTo(_productImageView.mas_right).offset(10);
+        make.bottom.equalTo(_productImageView).offset(-15);
+        make.left.equalTo(_productImageView.mas_right).offset(15);
     }];
     
     
     _productPriceLabel = [UILabel new];
-    _productPriceLabel.textColor = [UIColor flatRedColor];
-    _productPriceLabel.font = [UIFont systemFontOfSize:18];
+    _productPriceLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    _productPriceLabel.font = [UIFont boldSystemFontOfSize:22];
     [_headerBackgroundView addSubview:_productPriceLabel];
     [_productPriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_productCommissionLabel.mas_top).offset(-5);
+        make.bottom.equalTo(_productCommissionLabel.mas_top).offset(-14);
         make.left.equalTo(_productCommissionLabel);
     }];
     
@@ -156,13 +151,13 @@
  */
 - (void)createBodySubViews{
     
-    UICollectionViewLeftAlignedLayout *collectionLayout = [[UICollectionViewLeftAlignedLayout alloc] init];
+    UICollectionViewLeftAlignedLayout *collectionLayout = [UICollectionViewLeftAlignedLayout new];
     collectionLayout.minimumLineSpacing = 10;
     collectionLayout.minimumInteritemSpacing = 5;
-    collectionLayout.sectionInset = UIEdgeInsetsMake(0, 10, 10, 10);
-    collectionLayout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 50);
+    collectionLayout.sectionInset = UIEdgeInsetsMake(0, 10, 25, 10);
+    collectionLayout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 30);
     
-    _selectedCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _headerBackgroundView.frame.origin.y + _headerBackgroundView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _headerBackgroundView.frame.origin.y - _headerBackgroundView.frame.size.height - ProductBuyMenu_Height) collectionViewLayout:collectionLayout];
+    _selectedCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _headerBackgroundView.frame.origin.y + _headerBackgroundView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _headerBackgroundView.frame.origin.y - _headerBackgroundView.frame.size.height) collectionViewLayout:collectionLayout];
     _selectedCollectionView.backgroundColor = [UIColor whiteColor];
     _selectedCollectionView.delegate = self;
     _selectedCollectionView.dataSource = self;
@@ -179,16 +174,48 @@
  */
 - (void)createMainBuyMenuView{
     
-    _mainBuyMenuView = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_mainBuyMenuView setTitle:@"确定" forState:UIControlStateNormal];
-    _mainBuyMenuView.backgroundColor = [UIColor colorWithHexString:@"#F03337"];
+    _mainBuyMenuView = [UIView new];
+    _mainBuyMenuView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_mainBuyMenuView];
     [_mainBuyMenuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view);
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(ProductBuyMenu_Height);
     }];
-    [_mainBuyMenuView addTarget:self action:@selector(selectedCompleteActionHandler) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    UIView *containButton = [UIView new];
+    containButton.layer.masksToBounds = YES;
+    containButton.layer.cornerRadius = (45 / 2);
+    [_mainBuyMenuView addSubview:containButton];
+    [containButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_mainBuyMenuView);
+        make.height.mas_equalTo(45);
+        make.left.equalTo(_mainBuyMenuView).offset(10);
+        make.right.equalTo(_mainBuyMenuView).offset(-10);
+    }];
+    
+    _addCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _addCartButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    _addCartButton.backgroundColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    [_addCartButton setTitle:@"加入购物袋" forState:UIControlStateNormal];
+    [containButton addSubview:_addCartButton];
+    [_addCartButton addTarget:self action:@selector(addCartButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_addCartButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.top.bottom.equalTo(containButton);
+        make.left.equalTo(containButton.mas_centerX);
+    }];
+    
+    _buyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _buyButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    _buyButton.backgroundColor = [UIColor colorWithRed:0.84 green:0.04 blue:0.16 alpha:1.00];
+    [_buyButton setTitle:@"立即购买" forState:UIControlStateNormal];
+    [containButton addSubview:_buyButton];
+    [_buyButton addTarget:self action:@selector(buyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_buyButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.equalTo(containButton);
+        make.right.equalTo(containButton.mas_centerX);
+    }];
     
 }
 
@@ -211,7 +238,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     
     if ((section + 1) == _allSkuListModelArray.count) {
-        return CGSizeMake(self.view.frame.size.width, 80);
+        return CGSizeMake(self.view.frame.size.width, 100 + ProductBuyMenu_Height);
     }
     
     return CGSizeMake(self.view.frame.size.width, 0.01);
@@ -268,13 +295,13 @@
 //计算文字宽度
 - (CGFloat)settingCollectionViewItemWidthBoundingWithText:(NSString *)text{
     //1,设置内容大小  其中高度一定要与item一致,宽度度尽量设置大值
-    CGSize size = CGSizeMake(MAXFLOAT, 20);
+    CGSize size = CGSizeMake(MAXFLOAT, 30);
     //2,设置计算方式
     //3,设置字体大小属性   字体大小必须要与label设置的字体大小一致
-    NSDictionary *attributeDic = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
+    NSDictionary *attributeDic = @{NSFontAttributeName: [UIFont systemFontOfSize:12]};
     CGRect frame = [text boundingRectWithSize:size options: NSStringDrawingUsesLineFragmentOrigin attributes:attributeDic context:nil];
     //4.添加间距
-    return frame.size.width + 15;
+    return frame.size.width + 50;
 }
 
 #pragma mark -ProductSelectFooterCollectionReusableViewDelegate
@@ -290,6 +317,20 @@
         [self.delegate productDetailSelectCloseActionWithValue:nil];
     }
 
+}
+
+/**
+ 加入购物车
+ */
+- (void)addCartButtonAction:(id)sender{
+    
+}
+
+/**
+ 立即购买
+ */
+- (void)buyButtonAction:(id)sender{
+    
 }
 
 - (void)selectedCompleteActionHandler{
@@ -322,7 +363,6 @@
     
     _productPriceLabel.text = [NSString stringWithFormat:@"￥%.2f", _productDetailModel.price];
     [_productImageView sd_setImageWithURL:[NSURL URLWithString:_productDetailModel.item.image]];
-    _productCommissionLabel.text = [NSString stringWithFormat:@"skuId: %ld", currentSelectedSkuId];
     [_selectedCollectionView reloadData];
     
 }

@@ -28,11 +28,8 @@
 - (void)createSubViews{
     
     _logoImageView = [UIImageView new];
-    _logoImageView.clipsToBounds = YES;
-    _logoImageView.contentMode = 2;
-    _logoImageView.layer.masksToBounds = YES;
-    _logoImageView.layer.cornerRadius = (40 / 2);
     [self.contentView addSubview:_logoImageView];
+      [_logoImageView setImage:[UIImage imageNamed:@"productDetailLogo@2x.png"]];
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"达人店为您精选";
@@ -85,8 +82,6 @@
     if (_productDetailModel != productDetailModel) {
         _productDetailModel = productDetailModel;
     }
-    
-    [_logoImageView sd_setImageWithURL:[NSURL URLWithString:_productDetailModel.item.brandImage]];
     _messageLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.item.introduction];
 
 }

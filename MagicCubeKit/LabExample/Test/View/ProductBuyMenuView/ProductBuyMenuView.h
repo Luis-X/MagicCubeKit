@@ -13,13 +13,11 @@ typedef enum : NSUInteger {
     ProductBuyMenuTypeOnOff,    //上下架
     ProductBuyMenuTypeCart,     //购物车
     ProductBuyMenuTypeBuy,      //立即购买
-    ProductBuyMenuTypeAdd,      //加入购物车
 } ProductBuyMenuType;
 
 typedef enum : NSUInteger {
     ProductBuyMenuStatusNormal,         //正常
     ProductBuyMenuStatusNoInventory,    //无库存
-    ProductBuyMenuStatusNoAdd,          //无加入购物车
 } ProductBuyMenuStatus;
 
 @protocol ProductBuyMenuViewDelegate <NSObject>

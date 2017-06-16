@@ -80,12 +80,12 @@
     MagicIconButton *rightItem = [MagicIconButton new];
     rightItem.backgroundColor = [UIColor whiteColor];
     rightItem.titleLabel.text = @"分享赚";
-    rightItem.iconLabel.text = @"\U0000e66a";
+    rightItem.iconLabel.text = @"\U0000e6f3";
     rightItem.titleLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
     rightItem.iconLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
     rightItem.buttonStyle = IconTextButtonStyleRight;
     rightItem.buttonEdges = UIEdgeInsetsMake(0, 10, 0, 0);
-    rightItem.iconFontSize = 10;
+    rightItem.iconFontSize = 14;
     rightItem.titleLabel.font = [UIFont systemFontOfSize:12];
     rightItem.layer.cornerRadius = 25 / 2;
     [navigationBarView addSubview:rightItem];

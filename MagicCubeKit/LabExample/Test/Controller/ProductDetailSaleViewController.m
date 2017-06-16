@@ -23,7 +23,7 @@
 //重写初始化方法
 - (instancetype)init{
     if (self = [super init]) {
-        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, 206);
+        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, 450);
     }
     return self;
 }
@@ -61,19 +61,19 @@
     [self.view addSubview:_mainHeaderView];
     [_mainHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
-        make.height.mas_equalTo(40);
+        make.height.mas_equalTo(66);
     }];
     
     UILabel *closeButton = [UILabel new];
-    closeButton.font = [UIFont fontWithName:@"iconfont" size:20];
-    closeButton.text = @"\U0000e646";
+    closeButton.font = [UIFont fontWithName:@"iconfont" size:14];
+    closeButton.text = @"\U0000e6e8";
     closeButton.textColor = [UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.00];
     closeButton.userInteractionEnabled = YES;
     [closeButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(allCloseActionHandler)]];
     [_mainHeaderView addSubview:closeButton];
     [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_mainHeaderView);
-        make.right.equalTo(_mainHeaderView).offset(-10);
+        make.right.equalTo(_mainHeaderView).offset(-20);
     }];
     
     UILabel *titleLabel = [UILabel new];
@@ -82,8 +82,15 @@
     titleLabel.textColor = [UIColor colorWithRed:0.10 green:0.07 blue:0.06 alpha:1.00];
     [_mainHeaderView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(_mainHeaderView);
-        make.top.equalTo(_mainHeaderView).offset(10);
+        make.center.equalTo(_mainHeaderView);
+    }];
+    
+    UIView *blackLine = [UIView new];
+    blackLine.backgroundColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00];
+    [_mainHeaderView addSubview:blackLine];
+    [blackLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(_mainHeaderView);
+        make.height.mas_equalTo(0.5);
     }];
     
 }

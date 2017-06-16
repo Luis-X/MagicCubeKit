@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <STPopup.h>
+
 @interface ProductConstant : NSObject
 + (ProductConstant *)shareManager;
 - (STPopupController *)showPopViewControllerWithMagicVC:(UIViewController *)magicVC AddController:(UIViewController *)addController CornerRadius:(CGFloat)cornerRadius NavigationBarHidden:(BOOL)navigationBarHidden;

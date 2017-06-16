@@ -13,13 +13,11 @@
 #define OptionButton_Title_Tag  3200
 #define OptionButton_Tag_Tag    3300
 
-#define OptionButton_Width 50
+#define OptionButton_Width 50 * HOME_IPHONE6_WIDTH
 
 @implementation ProductBuyMenuView{
-    UIView *_topLine;            //顶部线
     UIView *_operationView;      //操作视图
     UIButton *_buyButton;        //立即购买
-    UIButton *_addCartButton;    //加入购物车
 }
 
 /*
@@ -33,7 +31,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         [self createSubViews];
     }
     return self;
@@ -41,28 +39,20 @@
 
 - (void)createSubViews{
     
-    [self createTopLine];
-    [self createOptionViewWithOptions:@[@{@"icon":@"\U0000e659", @"title":@"客服"},
+    UIImageView *bgImageView = [UIImageView new];
+    [bgImageView setImage:[UIImage imageNamed:@"productDetailMenu@2x.png"]];
+    //bgImageView.backgroundColor = [UIColor orangeColor];
+    [self addSubview:bgImageView];
+    [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self);
+        make.height.mas_equalTo(95 * HOME_IPHONE6_HEIGHT);
+    }];
+    
+    [self createOptionViewWithOptions:@[@{@"icon":@"\U0000e6ee", @"title":@"客服"},
                                         @{@"icon":@"", @"title":@""},
-                                        @{@"icon":@"\U0000e643", @"title":@"购物车"}]];
+                                        @{@"icon":@"\U0000e6e3", @"title":@"购物袋"}]];
     [self createOperationView];
     [self updateOptionsGoodsOnOffButton];
-    
-}
-
-
-/**
- 分割线
- */
-- (void)createTopLine{
-    
-    _topLine = [UIView new];
-    _topLine.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6"];
-    [self addSubview:_topLine];
-    [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self);
-        make.height.mas_equalTo(0.5);
-    }];
     
 }
 
@@ -85,13 +75,13 @@
 - (void)createOptionButtonWithIndex:(NSInteger)index data:(NSDictionary *)data{
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    //        button.backgroundColor = [UIColor redColor];
+    //button.backgroundColor = [UIColor orangeColor];
     button.tag = OptionButton_Tag + index;
     [self addSubview:button];
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topLine.mas_bottom);
-        make.bottom.equalTo(self);
-        make.left.equalTo(self).offset(index * OptionButton_Width);
+        make.top.equalTo(self).offset(8 * HOME_IPHONE6_HEIGHT);
+        make.bottom.equalTo(self).offset(-8 * HOME_IPHONE6_HEIGHT);
+        make.left.equalTo(self).offset(index * OptionButton_Width + 10 * HOME_IPHONE6_WIDTH);
         make.width.mas_equalTo(OptionButton_Width);
     }];
     [button addTarget:self action:@selector(subButtonHandler:) forControlEvents:UIControlEventTouchUpInside];
@@ -99,41 +89,39 @@
     UILabel *iconLabel = [UILabel new];
     iconLabel.tag = OptionButton_Icon_Tag + index;
     iconLabel.text = [data objectForKey:@"icon"];
-    iconLabel.font = [UIFont fontWithName:@"iconfont" size:20];
-    iconLabel.textColor = [UIColor colorWithHexString:@"#605F65"];
+    iconLabel.font = [UIFont fontWithName:@"iconfont" size:18 * HOME_IPHONE6_WIDTH];
+    iconLabel.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
     [button addSubview:iconLabel];
     [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button);
-        make.top.equalTo(button).offset(5);
+        make.top.equalTo(button);
     }];
     
     UILabel *textLabel = [UILabel new];
     textLabel.tag = OptionButton_Title_Tag + index;
     textLabel.text = [data objectForKey:@"title"];
-    textLabel.font = [UIFont systemFontOfSize:12];
-    textLabel.textColor = [UIColor colorWithHexString:@"#605F65"];
+    textLabel.font = [UIFont systemFontOfSize:10 * HOME_IPHONE6_WIDTH];
+    textLabel.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
     [button addSubview:textLabel];
     [textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button);
-        make.bottom.equalTo(button).offset(-5);
+        make.bottom.equalTo(button);
     }];
     
     UILabel *tagLabel = [UILabel new];
     tagLabel.tag = OptionButton_Tag_Tag + index;
     tagLabel.textColor = [UIColor whiteColor];
-    tagLabel.font = [UIFont systemFontOfSize:8];
+    tagLabel.font = [UIFont systemFontOfSize:8 * HOME_IPHONE6_WIDTH];
     tagLabel.textAlignment = NSTextAlignmentCenter;
-    tagLabel.backgroundColor = [UIColor flatRedColor];
+    tagLabel.backgroundColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    tagLabel.layer.masksToBounds = YES;
+    tagLabel.layer.cornerRadius = 5 * HOME_IPHONE6_HEIGHT;
     tagLabel.hidden = YES;
-    tagLabel.layer.borderWidth = 1;
-    tagLabel.layer.borderColor = [UIColor whiteColor].CGColor;
     [button addSubview:tagLabel];
     [tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(button).offset(3);
-        make.right.equalTo(button).offset(-3);
-        make.size.mas_equalTo(CGSizeMake(20, 15));
-        tagLabel.layer.masksToBounds = YES;
-        tagLabel.layer.cornerRadius = 15 / 2;
+        make.top.equalTo(button).offset(-3 * HOME_IPHONE6_HEIGHT);
+        make.right.equalTo(button).offset(-8 * HOME_IPHONE6_WIDTH);
+        make.size.mas_equalTo(CGSizeMake(17 * HOME_IPHONE6_WIDTH, 10 * HOME_IPHONE6_HEIGHT));
     }];
 
 }
@@ -144,33 +132,22 @@
 - (void)createOperationView{
     
     _operationView = [UIView new];
+    //_operationView.backgroundColor = [UIColor redColor];
     [self addSubview:_operationView];
     [_operationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topLine.mas_bottom);
-        make.bottom.equalTo(self);
-        make.left.equalTo(self).offset(3 * OptionButton_Width);
-        make.right.equalTo(self);
+        make.top.bottom.equalTo(self);
+        make.width.mas_equalTo(192 * HOME_IPHONE6_WIDTH);
+        make.right.equalTo(self).offset(-5 * HOME_IPHONE6_WIDTH);
     }];
     
     
     _buyButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _buyButton.backgroundColor = [UIColor colorWithHexString:@"#FCBD33"];
-    _buyButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    //_buyButton.backgroundColor = [UIColor orangeColor];
+    _buyButton.titleLabel.font = [UIFont systemFontOfSize:14 * HOME_IPHONE6_WIDTH];
     [_operationView addSubview:_buyButton];
     [_buyButton addTarget:self action:@selector(buyButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [_buyButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topLine.mas_bottom);
-        make.left.bottom.equalTo(_operationView);
-    }];
-
-    
-    _addCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _addCartButton.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_operationView addSubview:_addCartButton];
-    [_addCartButton addTarget:self action:@selector(addCartButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_addCartButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topLine.mas_bottom);
-        make.right.bottom.equalTo(_operationView);
+        make.left.top.bottom.equalTo(_operationView);
     }];
     
     [self updateOperationStatusLayout:ProductBuyMenuStatusNormal];
@@ -200,11 +177,6 @@
     
 }
 
-- (void)addCartButtonAction:(id)sender{
-    
-    [self executeProductBuyMenuViewSelectedType:ProductBuyMenuTypeAdd];
-    
-}
 
 /**
  执行代理方法
@@ -228,40 +200,23 @@
 - (void)updateOperationStatusLayout:(ProductBuyMenuStatus)currentStatus{
     
     //文案,背景
-    [_buyButton setTitle:@"立即购买" forState:UIControlStateNormal];
     if (currentStatus == ProductBuyMenuStatusNoInventory) {
-        
-        [_addCartButton setTitle:@"暂时无货" forState:UIControlStateNormal];
-        _addCartButton.backgroundColor = [UIColor flatGrayColor];
-        
+        [_buyButton setTitle:@"求补货" forState:UIControlStateNormal];
+        _buyButton.enabled = NO;
     }else{
-        
-        [_addCartButton setTitle:@"加入购物车" forState:UIControlStateNormal];
-        _addCartButton.backgroundColor = [UIColor colorWithHexString:@"#F03337"];
-        
+        [_buyButton setTitle:@"立即购买" forState:UIControlStateNormal];
+        _buyButton.enabled = YES;
     }
     
     //样式
-    if (currentStatus == ProductBuyMenuStatusNoAdd) {
-        
+    if (currentStatus == ProductBuyMenuStatusNoInventory) {
         [_buyButton mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(_operationView.mas_left);
+            make.width.equalTo(_operationView);
         }];
-        
-        [_addCartButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_operationView);
-        }];
-        
     }else{
-        
         [_buyButton mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(_operationView.mas_centerX);
+            make.width.mas_equalTo(100 * HOME_IPHONE6_WIDTH);
         }];
-        
-        [_addCartButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_operationView.mas_centerX);
-        }];
-        
     }
     
 }
@@ -289,7 +244,7 @@
     }
     UILabel *iconLabel = [self viewWithTag:OptionButton_Icon_Tag + optionIndex];
     if (iconLabel) {
-        iconLabel.text = self.isSelectByGoods ? @"\U0000e60b" : @"\U0000e617";
+        iconLabel.text = self.isSelectByGoods ? @"\U0000e6f1" : @"\U0000e6ea";
     }
     
 }

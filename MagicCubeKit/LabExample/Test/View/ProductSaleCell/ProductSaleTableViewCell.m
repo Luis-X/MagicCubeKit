@@ -32,7 +32,6 @@
     
     _saleTagView = [ProductSaleTagView new];
     _saleTagView.title = @"3件199元";
-    _saleTagView.cornerRadius = 4;
     _saleTagView.height = 18;
     _saleTagView.fontSize = 12;
     [self.contentView addSubview:_saleTagView];

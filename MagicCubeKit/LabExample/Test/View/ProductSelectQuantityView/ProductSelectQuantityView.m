@@ -67,9 +67,9 @@
     
     self.backgroundColor = [UIColor whiteColor];
     self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 4;
+    self.layer.cornerRadius = 15;
     self.layer.borderWidth = 0.5;
-    self.layer.borderColor = [UIColor blackColor].CGColor;
+    self.layer.borderColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00].CGColor;
     
 }
 
@@ -95,7 +95,8 @@
     
     _numTextField = [UITextField new];
     _numTextField.layer.borderWidth = 0.5;
-    _numTextField.layer.borderColor = [UIColor blackColor].CGColor;
+    _numTextField.layer.borderColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00].CGColor;
+    _numTextField.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
     _numTextField.keyboardType = UIKeyboardTypeNumberPad;
     _numTextField.textAlignment = NSTextAlignmentCenter;
     _numTextField.enabled = NO;

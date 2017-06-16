@@ -6,13 +6,14 @@
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#define ProductBuyMenu_Height 50
+#define ProductBuyMenu_Height 50 * HOME_IPHONE6_HEIGHT
 
 #import "ProductDetailViewController.h"
 #import "ParallaxHeaderView.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "MagicScrollPage.h"
 #import "ZYBannerView.h"
+#import "MagicIconButton.h"
 
 #import "ProductInfomationTableViewCell.h"
 #import "ProductOptionTableViewCell.h"
@@ -42,6 +43,8 @@
     UILabel *_productBannerPageLabel;                            //主图Page
     UIImageView *_productLogoImageView;                          //主图Logo
     NSMutableArray *_allBannerDataArray;                         //主图Banner数据
+    UIButton *_addCartButton;                                    //加入购物车
+    NSInteger sectionCount;                                      //模块数量
 }
 
 
@@ -71,6 +74,7 @@
 
 - (void)initailData{
     _allBannerDataArray = [NSMutableArray array];
+    sectionCount = 6;
 }
 
 - (void)createMainView{
@@ -88,7 +92,7 @@
  主框架
  */
 - (void)createMainScrollView{
-    _mainScrollView = [MagicScrollPage showScrollPageViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64 - ProductBuyMenu_Height) firstPage:_firtTableView secondPage:_secondScrollView];
+    _mainScrollView = [MagicScrollPage showScrollPageViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64) firstPage:_firtTableView secondPage:_secondScrollView];
     _mainScrollView.myDelegate = self;
     [self.view addSubview:_mainScrollView];
 }
@@ -175,16 +179,51 @@
     _mainBuyMenuView.delegate = self;
     [self.view addSubview:_mainBuyMenuView];
     [_mainBuyMenuView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view);
-        make.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-5);
+        make.left.equalTo(self.view).offset(5);
+        make.right.equalTo(self.view).offset(-5);
         make.height.mas_equalTo(ProductBuyMenu_Height);
     }];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _mainBuyMenuView.cartAmount = 10;
     });
 
+    [self createAddCartButton];
 }
 
+
+/**
+ 加入购物车
+ */
+- (void)createAddCartButton{
+    
+    _addCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _addCartButton.titleLabel.font = [UIFont systemFontOfSize:16 * HOME_IPHONE6_WIDTH];
+    //_addCartButton.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:_addCartButton];
+    [_addCartButton addTarget:self action:@selector(addCartButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_addCartButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(95 * HOME_IPHONE6_HEIGHT);
+        make.right.bottom.equalTo(_mainBuyMenuView);
+    }];
+    
+    MagicIconButton *button = [MagicIconButton new];
+    //button.backgroundColor = [UIColor orangeColor];
+    button.titleLabel.textColor = [UIColor whiteColor];
+    button.iconLabel.textColor = [UIColor whiteColor];
+    button.titleLabel.text = @"加入购物袋";
+    button.iconLabel.text = @"\U0000e6e3";
+    button.titleLabel.font = [UIFont systemFontOfSize:10 * HOME_IPHONE6_WIDTH];
+    button.buttonStyle = IconTextButtonStyleTop;
+    button.iconFontSize = 25 * HOME_IPHONE6_WIDTH;
+    [_addCartButton addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(_addCartButton);
+        make.height.mas_equalTo(45 * HOME_IPHONE6_HEIGHT);
+    }];
+   [button addTarget:self action:@selector(addCartButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+
+}
 
 /**
  置顶
@@ -212,7 +251,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;
+    return sectionCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -224,18 +263,19 @@
         return infomationCell;
     }
     
-    // 规格
+    // 促销
     if (indexPath.section == 1) {
+        ProductOptionSaleTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"optionSale" forIndexPath:indexPath];
+        return optionCell;
+    }
+    
+    // 规格
+    if (indexPath.section == 2) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
         optionCell.titleLabel.text = @"规格选择";
         return optionCell;
     }
     
-    // 促销
-    if (indexPath.section == 2) {
-        ProductOptionSaleTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"optionSale" forIndexPath:indexPath];
-        return optionCell;
-    }
     
     // 活动
     if (indexPath.section == 3) {
@@ -266,6 +306,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    
+    
+    if (0 == section) {
+        return 0.01;
+    }
+    
+    if ((sectionCount - 1) == section) {
+        return ProductBuyMenu_Height;
+    }
 
     return 10;
     
@@ -280,7 +329,7 @@
         }];
     }
     
-    if (indexPath.section == 2) {
+    if (indexPath.section == 1) {
         return [tableView fd_heightForCellWithIdentifier:@"optionSale" cacheByIndexPath:indexPath configuration:^(id cell) {
            
         }];
@@ -304,11 +353,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 1) {
-        [self showProductDetailSelectViewController];
+        [self showProductDetailSaleViewController];
     }
     
     if (indexPath.section == 2) {
-        [self showProductDetailSaleViewController];
+        [self showProductDetailSelectViewController];
     }
     
 }
@@ -391,9 +440,6 @@
             NSLog(@"立即购买");
             break;
             
-        case ProductBuyMenuTypeAdd:
-            NSLog(@"加入购物车");
-            break;
         default:
             break;
     }
@@ -543,7 +589,6 @@
     
     // 海淘商品
     if (_mainModel.item.isHaiTao) {
-        _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNoAdd;
         return;
     }
     
@@ -561,4 +606,11 @@
     [_mainScrollView moveToFirstPageView];
 }
 
+
+/**
+ 加入购物车
+ */
+- (void)addCartButtonAction:(id)sender{
+    NSLog(@"加入购物车");
+}
 @end
