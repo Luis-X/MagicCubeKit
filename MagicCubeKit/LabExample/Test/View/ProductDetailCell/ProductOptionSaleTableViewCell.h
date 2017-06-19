@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductOptionSaleTableViewCell : UITableViewCell
-
+@property (nonatomic, strong) NSArray *salesArray; // 控件个数
+@property (nonatomic, assign) BOOL      flag;      // 控制标签
 @end

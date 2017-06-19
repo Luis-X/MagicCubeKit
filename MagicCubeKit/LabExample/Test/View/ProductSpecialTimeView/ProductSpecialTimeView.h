@@ -11,4 +11,5 @@
 
 @interface ProductSpecialTimeView : UIView
 @property (nonatomic, strong)ProductDetailModel *productDetailModel;
+- (void)recoverProductSpecialTimeStyleNone;
 @end

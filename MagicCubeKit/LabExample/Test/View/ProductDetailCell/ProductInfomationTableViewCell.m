@@ -11,6 +11,7 @@
 #import "ProductSpecialTimeView.h"
 @implementation ProductInfomationTableViewCell{
     UILabel *_titleLabel;                       //标题
+    UILabel *_subtitleLabel;                    //副标题
     UILabel *_priceLabel;                       //价格
     UIView  *_priceBackgroundView;              //价格背景
     UIImageView *_specialBGImageView;           //特卖背景
@@ -26,6 +27,9 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        
+        [self registerNSNotificationCenter];
+        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self createSubViews];
@@ -43,13 +47,17 @@
     _titleLabel.numberOfLines = 0;
     [self.contentView addSubview:_titleLabel];
     
+    _subtitleLabel = [UILabel new];
+    _subtitleLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    _subtitleLabel.font = [UIFont systemFontOfSize:12];
+    [self.contentView addSubview:_subtitleLabel];
+    
     _specialBGImageView = [UIImageView new];
     _specialBGImageView.image = [UIImage imageNamed:@"productDetailTag@2x.png"];
     [self.contentView addSubview:_specialBGImageView];
     
     _priceBackgroundView = [UIView new];
-    [_priceBackgroundView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    [self.contentView addSubview:_priceBackgroundView];
+    [_specialBGImageView addSubview:_priceBackgroundView];
     
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont boldSystemFontOfSize:22];
@@ -108,31 +116,41 @@
         make.width.mas_equalTo(Magic_screen_Width - 40);
     }];
     
-    [_priceBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(70);
-        make.centerX.equalTo(self.contentView);
+    [_subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_titleLabel.mas_bottom).offset(10);
+        make.centerX.equalTo(self.contentView);
+    }];
+    
+    [_specialBGImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_subtitleLabel.mas_bottom).offset(10);
+        make.centerX.equalTo(self.contentView);
+        make.width.mas_equalTo(240);
+        make.height.mas_equalTo(70);
+    }];
+    
+    [_priceBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.centerX.equalTo(_specialBGImageView);
     }];
     
     [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_priceBackgroundView);
-        make.left.equalTo(_priceBackgroundView).offset(30);
+        make.left.equalTo(_priceBackgroundView);
     }];
     
     [_commissionTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_priceLabel.mas_right).offset(6);
         make.centerY.equalTo(_priceBackgroundView);
-        make.right.equalTo(_priceBackgroundView).offset(-30);
+        make.right.equalTo(_priceBackgroundView);
     }];
-    
+
     [_specialTimeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.contentView);
-        make.top.equalTo(_priceBackgroundView.mas_bottom).offset(10);
+        make.centerX.equalTo(self.contentView);
+        make.top.equalTo(_specialBGImageView.mas_bottom).offset(10);
     }];
     
     [_byStagesTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.top.equalTo(_specialTimeView.mas_bottom).offset(10);
+        make.top.equalTo(_specialTimeView.mas_bottom);
     }];
     
 
@@ -148,30 +166,14 @@
     }];
     
     [_onLineIconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_onLineStatisticsView);
+        make.centerY.equalTo(_onLineBackgroundView);
         make.left.equalTo(_onLineBackgroundView);
     }];
     
     [_onLineCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_onLineIconLabel.mas_right).offset(5);
-        make.centerY.equalTo(_onLineStatisticsView);
+        make.centerY.equalTo(_onLineBackgroundView);
         make.right.equalTo(_onLineBackgroundView);
-    }];
-    
-    [_specialBGImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(_priceBackgroundView);
-    }];
-}
-
-/**
- 刷新特卖图片
- */
-- (void)reloadSpecialBGImageViewAutoLayout{
-    //调用layoutIfNeeded
-    [_priceBackgroundView layoutIfNeeded];
-    [_specialBGImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(_priceBackgroundView.frame.size.width);
-        make.height.mas_equalTo(_priceBackgroundView.frame.size.height);
     }];
 }
 
@@ -181,15 +183,13 @@
     
     if (_productDetailModel != productDetailModel) {
         _productDetailModel = productDetailModel;
-        
-        _titleLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.item.productTitle];
-        _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
-        _commissionTagView.title = [NSString stringWithFormat:@"赚:¥%.2f", _productDetailModel.commission];
-        _byStagesTagView.title = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
-        _specialTimeView.productDetailModel = productDetailModel;
-        _onLineCountLabel.text = [self checkGoodsShelvesCountWithShelvesCount:_productDetailModel.item.ID];
-        [self reloadSpecialBGImageViewAutoLayout];
     }
+    _titleLabel.text = [NSString stringWithFormat:@"%@", _productDetailModel.item.productTitle];
+    _subtitleLabel.text = @"本商品为预售商品";
+    _priceLabel.text = [NSString stringWithFormat:@"¥%.2f", _productDetailModel.item.price];
+    _commissionTagView.title = [NSString stringWithFormat:@"赚¥%.2f", _productDetailModel.commission];
+    _byStagesTagView.title = [NSString stringWithFormat:@"%@", _productDetailModel.byStages];
+    _onLineCountLabel.text = [self checkGoodsShelvesCountWithShelvesCount:_productDetailModel.item.ID];
     
 }
 
@@ -213,5 +213,36 @@
     
     return [NSString stringWithFormat:@"已被%.1f万位店主上架", (shelvesCount / 10000)];
     
+}
+
+
+#pragma mark - 倒计时相关
+- (void)dealloc {
+    [self removeNSNotificationCenter];
+}
+
+#pragma mark - 通知中心
+- (void)registerNSNotificationCenter{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notificationCenterEvent:)
+                                                 name:NOTIFICATION_TIME_CELL
+                                               object:nil];
+}
+
+- (void)removeNSNotificationCenter{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_TIME_CELL object:nil];
+}
+
+- (void)notificationCenterEvent:(id)sender{
+    if (self.m_isDisplayed) {
+        NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:_productDetailModel.skuCommission.startTime / 1000];
+        NSDate *endDate = [NSDate dateWithTimeIntervalSince1970:_productDetailModel.skuCommission.endTime / 1000];
+        NSDate *nowDate = [NSDate date];
+        if ([nowDate isEarlierThan:endDate]) {
+            _specialTimeView.productDetailModel = _productDetailModel;
+        }else{
+            [_specialTimeView recoverProductSpecialTimeStyleNone];
+        }
+    }
 }
 @end

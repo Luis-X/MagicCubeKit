@@ -8,8 +8,9 @@
 
 #import "ProductSpecialTimeView.h"
 
-#define DATE_FORMATTER_ONE @"MM月dd日HH点"
+#define DATE_FORMATTER_ONE @"MM月dd日"
 #define DATE_FORMATTER_TWO @"MM月dd日HH:mm"
+
 #define DATE_VIEW_SIZE CGSizeMake(12, 18)
 #define SELF_TIME_VIEW_SIZE 50
 
@@ -22,8 +23,6 @@ typedef enum : NSUInteger {
 @implementation ProductSpecialTimeView{
     UIView *_cellBackgroundView;     //背景
     UILabel *_messageLabel;          //信息
-    UILabel *_dayLabel;              //（天）
-    UILabel *_unitDayLabel;          //单位（天）
     UILabel *_hourLabel;             //十位（时）
     UILabel *_subhourLabel;          //个位（时）
     UILabel *_unitHourLabel;         //单位（时）
@@ -36,6 +35,7 @@ typedef enum : NSUInteger {
     UILabel *_millisecondLabel;      //（毫秒）
     dispatch_source_t _mainTimerSource;
     ProductSpecialTimeStyle timeStyle;
+    DTTimePeriod *_timePeriod;
 }
 
 
@@ -58,7 +58,8 @@ typedef enum : NSUInteger {
 }
 
 - (void)initialData{
-    timeStyle = ProductSpecialTimeStyleDay;
+    timeStyle = ProductSpecialTimeStyleNone;
+    _timePeriod = [DTTimePeriod new];
 }
 
 - (void)createSubViews{
@@ -68,18 +69,10 @@ typedef enum : NSUInteger {
     [self addSubview:_cellBackgroundView];
     
     _messageLabel = [UILabel new];
-    _messageLabel.text = @"距离结束仅剩";
     _messageLabel.font = [UIFont systemFontOfSize:14];
     _messageLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
     _messageLabel.adjustsFontSizeToFitWidth = YES;
     [_cellBackgroundView addSubview:_messageLabel];
-    
-    
-    _dayLabel = [self createBatchTimeLabel];
-    _unitDayLabel = [UILabel new];
-    _unitDayLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
-    _unitDayLabel.font = [UIFont systemFontOfSize:12];
-    [_cellBackgroundView addSubview:_unitDayLabel];
     
     _hourLabel = [self createBatchTimeLabel];
     _subhourLabel = [self createBatchTimeLabel];
@@ -156,7 +149,7 @@ typedef enum : NSUInteger {
 - (void)loadingAutoLayoutNoneStyle{
     
     [self mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(0);
+        make.height.mas_equalTo(1);
     }];
     
     [_hourLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -188,12 +181,6 @@ typedef enum : NSUInteger {
     
     [_millisecondLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
     }];
-
-    [_dayLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-    }];
-    
-    [_unitDayLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-    }];
     
 }
 
@@ -208,17 +195,36 @@ typedef enum : NSUInteger {
         make.height.mas_equalTo(SELF_TIME_VIEW_SIZE);
     }];
     
-    [_dayLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [_hourLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(DATE_VIEW_SIZE);
         make.centerY.equalTo(_cellBackgroundView);
         make.left.equalTo(_messageLabel.mas_right).offset(10);
     }];
     
-    [_unitDayLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [_subhourLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(DATE_VIEW_SIZE);
         make.centerY.equalTo(_cellBackgroundView);
-        make.left.equalTo(_dayLabel.mas_right).offset(5);
+        make.left.equalTo(_hourLabel.mas_right).offset(2);
+    }];
+    
+    [_unitHourLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(_cellBackgroundView);
+        make.left.equalTo(_subhourLabel.mas_right).offset(5);
+    }];
+    
+    [_minuteLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(DATE_VIEW_SIZE);
+        make.centerY.equalTo(_cellBackgroundView);
+        make.left.equalTo(_unitHourLabel.mas_right).offset(5);
+    }];
+    
+    [_subminuteLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(DATE_VIEW_SIZE);
+        make.centerY.equalTo(_cellBackgroundView);
+        make.left.equalTo(_minuteLabel.mas_right).offset(2);
         make.right.equalTo(_cellBackgroundView);
     }];
+
     
 }
 
@@ -303,17 +309,80 @@ typedef enum : NSUInteger {
     [self updateAllTimeWithStartTimeValue:_productDetailModel.skuCommission.startTime endTimeValue:_productDetailModel.skuCommission.endTime];
 }
 
+
+/**
+ 更新倒计时
+
+ @param startTimeValue 开始时间戳
+ @param endTimeValue 结束时间戳
+ */
 - (void)updateAllTimeWithStartTimeValue:(NSTimeInterval)startTimeValue endTimeValue:(NSTimeInterval)endTimeValue{
     
     NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:startTimeValue / 1000];
     NSDate *endDate = [NSDate dateWithTimeIntervalSince1970:endTimeValue / 1000];
+    NSDate *nowDate = [NSDate date];
+    //NSLog(@"开始：%@", [self getDateStringWithTimeValue:startTimeValue formatter:DATE_FORMATTER_TWO]);
+    //NSLog(@"结束：%@", [self getDateStringWithTimeValue:endTimeValue formatter:DATE_FORMATTER_TWO]);
     
-    DTTimePeriod *timePeriod =[[DTTimePeriod alloc] initWithStartDate:startDate endDate:endDate];
-    double  durationInSeconds = [timePeriod durationInSeconds];  //相差秒
-    [self startTimeWithDuration:(durationInSeconds * 10) endDate:endDate];
+    _timePeriod.StartDate = nowDate;
+    _timePeriod.EndDate = endDate;
+    BOOL isMoment = _timePeriod.isMoment;            //是否开始时间和结束时间相同
     
-    NSLog(@"开始：%@", [self getDateStringWithTimeValue:startTimeValue formatter:DATE_FORMATTER_ONE]);
-    NSLog(@"结束：%@", [self getDateStringWithTimeValue:endTimeValue formatter:DATE_FORMATTER_ONE]);
+    double  durationInDays    = [_timePeriod durationInDays];     //相差日
+    double  durationInHours   = [_timePeriod durationInHours];    //相差时
+    double  durationInMinutes = [_timePeriod durationInMinutes];  //相差分
+    double  durationInSeconds = [_timePeriod durationInSeconds];  //相差秒
+    double  durationInMilliseconds = durationInSeconds * 10;
+    
+    NSInteger days = durationInDays;
+    NSInteger includeHours = (days * 24);                                   //重复时
+    NSInteger hours = durationInHours - includeHours;
+    NSInteger includeMinutes = (includeHours + hours) * 60;                 //重复分
+    NSInteger minutes = durationInMinutes - includeMinutes;
+    NSInteger includeSeconds = (includeMinutes + minutes) * 60;             //重复秒
+    NSInteger seconds = durationInSeconds - includeSeconds;
+    NSInteger includeMilliseconds = (includeSeconds + seconds) * 10;        //重复毫秒
+    NSInteger milliseconds = durationInMilliseconds - includeMilliseconds;
+    
+    NSLog(@"⏳%ld日%ld时%ld分%ld秒%ld", days, hours, minutes, seconds, milliseconds);
+    
+    //特卖（未开始）
+    if ([nowDate isEarlierThan:startDate]) {
+        [self clearAllTimerStatusText];
+        timeStyle = ProductSpecialTimeStyleDay;
+        NSString *startDateString = [self getDateStringWithTimeValue:startTimeValue formatter:DATE_FORMATTER_ONE];
+        _messageLabel.text = [NSString stringWithFormat:@"特卖时间 %@", startDateString];
+        _hourLabel.text = [NSString stringWithFormat:@"%ld", startDate.hour / 10];
+        _subhourLabel.text = [NSString stringWithFormat:@"%ld", startDate.hour % 10];;
+        _unitHourLabel.text = @":";
+        _minuteLabel.text = [NSString stringWithFormat:@"%ld", startDate.minute / 10];;
+        _subminuteLabel.text = [NSString stringWithFormat:@"%ld", startDate.minute % 10];
+        [self settingAutoLayout];
+    }
+    
+    //特卖（进行中）
+    if ([nowDate isLaterThanOrEqualTo:startDate] && [nowDate isEarlierThanOrEqualTo:endDate]) {
+        [self clearAllTimerStatusText];
+        timeStyle = ProductSpecialTimeStyleHour;
+        _messageLabel.text = @"距离结束仅剩";
+        _hourLabel.text = [NSString stringWithFormat:@"%ld", (hours / 10)];
+        _subhourLabel.text = [NSString stringWithFormat:@"%ld", (hours % 10)];
+        _minuteLabel.text = [NSString stringWithFormat:@"%ld", (minutes / 10)];
+        _subminuteLabel.text = [NSString stringWithFormat:@"%ld", (minutes % 10)];
+        _secondLabel.text = [NSString stringWithFormat:@"%ld", (seconds / 10)];
+        _subsecondLabel.text = [NSString stringWithFormat:@"%ld", (seconds % 10)];
+        _millisecondLabel.text = [NSString stringWithFormat:@"%ld", milliseconds];
+        _unitHourLabel.text = @":";
+        _unitMinuteLabel.text = @":";
+        _unitSecondLabel.text = @":";
+        [self settingAutoLayout];
+    }
+    
+    //特卖（已结束）
+    if ([nowDate isLaterThan:endDate]) {
+        [self recoverProductSpecialTimeStyleNone];
+    }
+
 }
 
 /**
@@ -329,108 +398,9 @@ typedef enum : NSUInteger {
     
 }
 
-#pragma mark -倒计时
-/**
- 倒计时核心
- */
-- (void)startTimeWithDuration:(NSInteger)duration endDate:(NSDate *)endDate{
-    
-    [self endTimer];
-    __block NSInteger timeout = duration;
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    _mainTimerSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    dispatch_source_set_timer(_mainTimerSource, dispatch_walltime(NULL, 0), 0.1*NSEC_PER_SEC, 0); //每秒执行
-    dispatch_source_set_event_handler(_mainTimerSource, ^{
-        if(timeout <= 0){
-            //倒计时结束
-            [self endTimer];
-        }else{
-            //倒计时中
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateAllTimeStatusWithStartTimer:[NSDate date] endTimer:endDate];
-            });
-            timeout--;
-        }
-    });
-    dispatch_resume(_mainTimerSource);
-    
-}
-
-
-/**
- 结束倒计时
- */
-- (void)endTimer{
-    
-    if (_mainTimerSource) {
-        dispatch_source_cancel(_mainTimerSource);
-        dispatch_async(dispatch_get_main_queue(), ^{
-           
-        });
-    }
-    
-}
-
-/**
- 更新Timer数据
- */
-- (void)updateAllTimeStatusWithStartTimer:(NSDate *)startTimer endTimer:(NSDate *)endTimer{
-    
-     DTTimePeriod *timePeriod =[[DTTimePeriod alloc] initWithStartDate:startTimer endDate:endTimer];
-    BOOL isMoment     = timePeriod.isMoment;            //是否开始时间和结束时间相同
-    
-    double  durationInDays    = [timePeriod durationInDays];     //相差日
-    double  durationInHours   = [timePeriod durationInHours];    //相差时
-    double  durationInMinutes = [timePeriod durationInMinutes];  //相差分
-    double  durationInSeconds = [timePeriod durationInSeconds];  //相差秒
-    double  durationInMilliseconds = durationInSeconds * 10;
-    
-    NSInteger days = durationInDays;
-    NSInteger includeHours = (days * 24);                                   //重复时
-    NSInteger hours = durationInHours - includeHours;
-    NSInteger includeMinutes = (includeHours + hours) * 60;                 //重复分
-    NSInteger minutes = durationInMinutes - includeMinutes;
-    NSInteger includeSeconds = (includeMinutes + minutes) * 60;             //重复秒
-    NSInteger seconds = durationInSeconds - includeSeconds;
-    NSInteger includeMilliseconds = (includeSeconds + seconds) * 10;        //重复毫秒
-    NSInteger milliseconds = durationInMilliseconds - includeMilliseconds;
-    
-    if (days > 0) {
-        [self clearAllTimerStatusText];
-        timeStyle = ProductSpecialTimeStyleDay;
-        _messageLabel.text = @"距离特卖开始时间";
-        _dayLabel.text = [NSString stringWithFormat:@"%ld", days];
-        _unitDayLabel.text = @"天";
-    }else{
-        [self clearAllTimerStatusText];
-        timeStyle = ProductSpecialTimeStyleHour;
-        _messageLabel.text = @"距离结束仅剩";
-        _hourLabel.text = [NSString stringWithFormat:@"%ld", (hours / 10)];
-        _subhourLabel.text = [NSString stringWithFormat:@"%ld", (hours % 10)];
-        _minuteLabel.text = [NSString stringWithFormat:@"%ld", (minutes / 10)];
-        _subminuteLabel.text = [NSString stringWithFormat:@"%ld", (minutes % 10)];
-        _secondLabel.text = [NSString stringWithFormat:@"%ld", (seconds / 10)];
-        _subsecondLabel.text = [NSString stringWithFormat:@"%ld", (seconds % 10)];
-        _millisecondLabel.text = [NSString stringWithFormat:@"%ld", milliseconds];
-        _unitHourLabel.text = @":";
-        _unitMinuteLabel.text = @":";
-        _unitSecondLabel.text = @":";
-    }
-    
-    if ([startTimer isLaterThanOrEqualTo:endTimer]) {
-        [self clearAllTimerStatusText];
-        timeStyle = ProductSpecialTimeStyleNone;
-    }
-    [self settingAutoLayout];
-    
-    
-}
-
 //清空数据
 - (void)clearAllTimerStatusText{
     _messageLabel.text = nil;
-    _dayLabel.text = nil;
-    _unitDayLabel.text = nil;
     _hourLabel.text = nil;
     _subhourLabel.text = nil;
     _minuteLabel.text = nil;
@@ -443,4 +413,11 @@ typedef enum : NSUInteger {
     _unitSecondLabel.text = nil;
 }
 
+
+//恢复无内容样式
+- (void)recoverProductSpecialTimeStyleNone{
+    [self clearAllTimerStatusText];
+    timeStyle = ProductSpecialTimeStyleNone;
+    [self settingAutoLayout];
+}
 @end

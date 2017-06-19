@@ -46,6 +46,7 @@
 
 - (void)initailData{
     self.menuHeight = 0;
+    self.pageAnimatable = YES;
 }
 
 - (void)createMainView{

@@ -26,8 +26,17 @@
 #import "ProductDetailSaleViewController.h"
 #import "ProductBuyMenuView.h"
 #import "ProductDetailModel.h"
-@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate, MagicScrollPageDelegate>
 
+
+#define REUESED_CELL_INFO      @"infomation"
+#define REUESED_CELL_OPTION    @"option"
+#define REUESED_CELL_SALE      @"optionSale"
+#define REUESED_CELL_ACTIVITY  @"activity"
+#define REUESED_CELL_DESCRIBE  @"describe"
+#define REUESED_CELL_PROMISE   @"promise"
+
+@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate, MagicScrollPageDelegate>
+@property (nonatomic, strong) NSTimer        *m_timer;          //倒计时
 @end
 
 @implementation ProductDetailViewController{
@@ -45,6 +54,7 @@
     NSMutableArray *_allBannerDataArray;                         //主图Banner数据
     UIButton *_addCartButton;                                    //加入购物车
     NSInteger sectionCount;                                      //模块数量
+    
 }
 
 
@@ -75,6 +85,7 @@
 - (void)initailData{
     _allBannerDataArray = [NSMutableArray array];
     sectionCount = 6;
+    [self createTimer];
 }
 
 - (void)createMainView{
@@ -152,12 +163,12 @@
     _firtTableView.dataSource = self;
     _firtTableView.delegate = self;
     [_firtTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [_firtTableView registerClass:[ProductInfomationTableViewCell class] forCellReuseIdentifier:@"infomation"];
-    [_firtTableView registerClass:[ProductOptionTableViewCell class] forCellReuseIdentifier:@"option"];
-    [_firtTableView registerClass:[ProductOptionSaleTableViewCell class] forCellReuseIdentifier:@"optionSale"];
-    [_firtTableView registerClass:[ProductActivityTableViewCell class] forCellReuseIdentifier:@"activity"];
-    [_firtTableView registerClass:[ProductDescribeTableViewCell class] forCellReuseIdentifier:@"describe"];
-    [_firtTableView registerClass:[ProductPromiseTableViewCell class] forCellReuseIdentifier:@"promise"];
+    [_firtTableView registerClass:[ProductInfomationTableViewCell class] forCellReuseIdentifier:REUESED_CELL_INFO];
+    [_firtTableView registerClass:[ProductOptionTableViewCell class] forCellReuseIdentifier:REUESED_CELL_OPTION];
+    [_firtTableView registerClass:[ProductOptionSaleTableViewCell class] forCellReuseIdentifier:REUESED_CELL_SALE];
+    [_firtTableView registerClass:[ProductActivityTableViewCell class] forCellReuseIdentifier:REUESED_CELL_ACTIVITY];
+    [_firtTableView registerClass:[ProductDescribeTableViewCell class] forCellReuseIdentifier:REUESED_CELL_DESCRIBE];
+    [_firtTableView registerClass:[ProductPromiseTableViewCell class] forCellReuseIdentifier:REUESED_CELL_PROMISE];
 }
 
 
@@ -258,41 +269,45 @@
     
     // 信息
     if (indexPath.section == 0) {
-        ProductInfomationTableViewCell *infomationCell = [tableView dequeueReusableCellWithIdentifier:@"infomation" forIndexPath:indexPath];
+        ProductInfomationTableViewCell *infomationCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_INFO forIndexPath:indexPath];
         [self setupProductInfomationModelOfCell:infomationCell AtIndexPath:indexPath];
         return infomationCell;
     }
     
     // 促销
     if (indexPath.section == 1) {
-        ProductOptionSaleTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"optionSale" forIndexPath:indexPath];
-        return optionCell;
+        ProductOptionSaleTableViewCell *saleCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_SALE];
+        if (saleCell == nil){
+            saleCell = [[ProductOptionSaleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:REUESED_CELL_SALE];
+        }
+        [self setupProductSaleModelOfCell:saleCell AtIndexPath:indexPath];
+        return saleCell;
     }
     
     // 规格
     if (indexPath.section == 2) {
-        ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:@"option" forIndexPath:indexPath];
-        optionCell.titleLabel.text = @"规格选择";
+        ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_OPTION forIndexPath:indexPath];
+        optionCell.productDetailModel = _mainModel;
         return optionCell;
     }
     
     
     // 活动
     if (indexPath.section == 3) {
-        ProductActivityTableViewCell *activityCell = [tableView dequeueReusableCellWithIdentifier:@"activity" forIndexPath:indexPath];
+        ProductActivityTableViewCell *activityCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_ACTIVITY forIndexPath:indexPath];
         return activityCell;
     }
     
     // 描述
     if (indexPath.section == 4) {
-        ProductDescribeTableViewCell *describeCell = [tableView dequeueReusableCellWithIdentifier:@"describe" forIndexPath:indexPath];
+        ProductDescribeTableViewCell *describeCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_DESCRIBE forIndexPath:indexPath];
         [self setupProductDescribeModelOfCell:describeCell AtIndexPath:indexPath];
         return describeCell;
     }
     
     // 承诺
     if (indexPath.section == 5) {
-        ProductPromiseTableViewCell *promiseCell = [tableView dequeueReusableCellWithIdentifier:@"promise" forIndexPath:indexPath];
+        ProductPromiseTableViewCell *promiseCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_PROMISE forIndexPath:indexPath];
         return promiseCell;
     }
     
@@ -301,6 +316,22 @@
 }
 
 #pragma mark -UITableViewDelegate
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //防止倒计时消耗性能
+    if (indexPath.section == 0) {
+        ProductInfomationTableViewCell *tmpCell = (ProductInfomationTableViewCell *)cell;
+        tmpCell.m_isDisplayed = YES;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath {
+    //防止倒计时消耗性能
+    if (indexPath.section == 0) {
+        ProductInfomationTableViewCell *tmpCell = (ProductInfomationTableViewCell *)cell;
+        tmpCell.m_isDisplayed= YES;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.01;
 }
@@ -324,25 +355,25 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 0) {
-        return [tableView fd_heightForCellWithIdentifier:@"infomation" cacheByIndexPath:indexPath configuration:^(id cell) {
+        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_INFO cacheByIndexPath:indexPath configuration:^(id cell) {
             [self setupProductInfomationModelOfCell:cell AtIndexPath:indexPath];
         }];
     }
     
     if (indexPath.section == 1) {
-        return [tableView fd_heightForCellWithIdentifier:@"optionSale" cacheByIndexPath:indexPath configuration:^(id cell) {
-           
+        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_SALE cacheByIndexPath:indexPath configuration:^(id cell) {
+           [self setupProductSaleModelOfCell:cell AtIndexPath:indexPath];
         }];
     }
     
     if (indexPath.section == 4) {
-        return [tableView fd_heightForCellWithIdentifier:@"describe" cacheByIndexPath:indexPath configuration:^(id cell) {
+        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_DESCRIBE cacheByIndexPath:indexPath configuration:^(id cell) {
              [self setupProductDescribeModelOfCell:cell AtIndexPath:indexPath];
         }];
     }
     
     if (indexPath.section == 5) {
-        return [tableView fd_heightForCellWithIdentifier:@"promise" cacheByIndexPath:indexPath configuration:^(id cell) {
+        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_PROMISE cacheByIndexPath:indexPath configuration:^(id cell) {
             
         }];
     }
@@ -373,6 +404,12 @@
     cell.productDetailModel = _mainModel;
 }
 
+// 促销
+- (void)setupProductSaleModelOfCell:(ProductOptionSaleTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
+    cell.salesArray = @[@{@"title": @"3件199元", @"message": @"只需要199元可享三件商品"},
+                        @{@"title": @"多买优惠", @"message": @"购满2件可享八折"},
+                        @{@"title": @"3件199元", @"message": @"只需要199元可享三件商品只需要199元可享三件商品只需要199元可享三件商品"}];
+}
 
 #pragma mark - 滚动效果
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -613,4 +650,16 @@
 - (void)addCartButtonAction:(id)sender{
     NSLog(@"加入购物车");
 }
+
+
+#pragma mark -倒计时相关
+- (void)createTimer {
+    self.m_timer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_m_timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)timerEvent {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_TIME_CELL object:nil];
+}
+
 @end

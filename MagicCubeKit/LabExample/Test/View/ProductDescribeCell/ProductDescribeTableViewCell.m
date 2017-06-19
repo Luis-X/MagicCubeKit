@@ -11,7 +11,7 @@
 @implementation ProductDescribeTableViewCell{
     UIImageView *_logoImageView;
     UILabel *_titleLabel;
-    UILabel *_messageLabel;
+    //UILabel *_messageLabel;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
