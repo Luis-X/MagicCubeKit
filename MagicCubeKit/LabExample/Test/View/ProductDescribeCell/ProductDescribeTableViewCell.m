@@ -11,7 +11,6 @@
 @implementation ProductDescribeTableViewCell{
     UIImageView *_logoImageView;
     UILabel *_titleLabel;
-    //UILabel *_messageLabel;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -33,14 +32,14 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"达人店为您精选";
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
-    _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.font = [UIFont systemFontOfSize:14 * HOME_IPHONE6_HEIGHT];
     [self.contentView addSubview:_titleLabel];
     
     _messageLabel = [UILabel new];
     _messageLabel.textColor = [UIColor colorWithRed:0.51 green:0.51 blue:0.51 alpha:1.00];
-    _messageLabel.numberOfLines = 0;
-    _messageLabel.font = [UIFont systemFontOfSize:12];
+    _messageLabel.font = [UIFont systemFontOfSize:12 * HOME_IPHONE6_HEIGHT];
     [self.contentView addSubview:_messageLabel];
     
 }
@@ -48,21 +47,24 @@
 - (void)settingAutoLayout{
    
     [_logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(25);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
+        make.top.equalTo(self.contentView).offset(25 * HOME_IPHONE6_HEIGHT);
+        make.size.mas_equalTo(CGSizeMake(40 * HOME_IPHONE6_HEIGHT, 40 * HOME_IPHONE6_HEIGHT));
         make.centerX.equalTo(self.contentView);
     }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_logoImageView.mas_bottom).offset(10);
-        make.centerX.equalTo(self.contentView);
+        make.top.equalTo(_logoImageView.mas_bottom).offset(10 * HOME_IPHONE6_HEIGHT);
+        make.left.equalTo(self.contentView).offset(10 * HOME_IPHONE6_WIDTH);
+        make.right.equalTo(self.contentView).offset(-10 * HOME_IPHONE6_WIDTH);
+        make.height.mas_equalTo(15 * HOME_IPHONE6_HEIGHT);
     }];
 
     [_messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(Magic_screen_Width - 30);
-        make.top.equalTo(_titleLabel.mas_bottom).offset(25);
+        make.left.equalTo(self.contentView).offset(30 * HOME_IPHONE6_WIDTH);
+        make.right.equalTo(self.contentView).offset(-30 * HOME_IPHONE6_WIDTH);
+        make.top.equalTo(_titleLabel.mas_bottom).offset(15 * HOME_IPHONE6_HEIGHT);
         make.centerX.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView).offset(-25);
+        make.bottom.equalTo(self.contentView).offset(-15 * HOME_IPHONE6_HEIGHT);
     }];
     
 }

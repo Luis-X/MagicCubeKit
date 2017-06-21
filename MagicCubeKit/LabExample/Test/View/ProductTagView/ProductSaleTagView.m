@@ -45,9 +45,7 @@
 
     _tagLabel = [UILabel new];
     _tagLabel.font = [UIFont systemFontOfSize:_fontSize];
-    _tagLabel.layer.masksToBounds = YES;
     _tagLabel.layer.borderWidth = Tag_Border_Width;
-    _tagLabel.clipsToBounds = YES;
     [self addSubview:_tagLabel];
 
 }
@@ -77,6 +75,7 @@
 - (void)settingTagCornerRadius{
     if (_cornerRadius > 0) {
         _tagLabel.layer.cornerRadius =_cornerRadius;
+        
     }else{
         _tagLabel.layer.cornerRadius = _height / 2;
     }

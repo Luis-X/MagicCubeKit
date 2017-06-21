@@ -28,6 +28,7 @@ PODS:
   - FDFullscreenPopGesture (1.1)
   - iCarousel (1.8.3)
   - JLRoutes (2.0.5)
+  - JMRoundedCorner (1.9.5)
   - LazyScroll (0.0.2)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
@@ -55,6 +56,13 @@ PODS:
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
   - WYPopoverController (0.3.9)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
   - ZYBannerView (1.1.2)
 
 DEPENDENCIES:
@@ -65,6 +73,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - iCarousel (~> 1.8.3)
   - JLRoutes (~> 2.0)
+  - JMRoundedCorner (from `https://github.com/raozhizhen/JMRoundedCorner.git`, tag `1.9.6`)
   - LazyScroll (~> 0.0.2)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
@@ -76,7 +85,24 @@ DEPENDENCIES:
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
   - WYPopoverController (~> 0.3.9)
+  - YYWebImage (from `https://github.com/raozhizhen/YYWebImage.git`, tag `1.0.5`)
   - ZYBannerView (~> 1.1.2)
+
+EXTERNAL SOURCES:
+  JMRoundedCorner:
+    :git: https://github.com/raozhizhen/JMRoundedCorner.git
+    :tag: 1.9.6
+  YYWebImage:
+    :git: https://github.com/raozhizhen/YYWebImage.git
+    :tag: 1.0.5
+
+CHECKOUT OPTIONS:
+  JMRoundedCorner:
+    :git: https://github.com/raozhizhen/JMRoundedCorner.git
+    :tag: 1.9.6
+  YYWebImage:
+    :git: https://github.com/raozhizhen/YYWebImage.git
+    :tag: 1.0.5
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -86,6 +112,7 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
+  JMRoundedCorner: be3809e2e536939bc0b012d68eb943d870e5b1ed
   LazyScroll: 614022689b8e3b93c7bbe268c1a47b76e4265941
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -100,8 +127,11 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 687ae5742f8bc8e915d8af4f798b94f7518f9e2c
+PODFILE CHECKSUM: 085c4c0866267d97e058556bd10e21f10124e4c7
 
 COCOAPODS: 1.2.0

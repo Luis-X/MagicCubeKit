@@ -25,7 +25,7 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
-    _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.font = [UIFont systemFontOfSize:14 * HOME_IPHONE6_HEIGHT];
     [self addSubview:_titleLabel];
     
 }
@@ -34,7 +34,7 @@
 
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self);
-        make.left.equalTo(self).offset(10);
+        make.left.equalTo(self).offset(10 * HOME_IPHONE6_WIDTH);
     }];
     
 }

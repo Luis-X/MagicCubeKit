@@ -12,4 +12,5 @@
 @interface ProductConstant : NSObject
 + (ProductConstant *)shareManager;
 - (STPopupController *)showPopViewControllerWithMagicVC:(UIViewController *)magicVC AddController:(UIViewController *)addController CornerRadius:(CGFloat)cornerRadius NavigationBarHidden:(BOOL)navigationBarHidden;
++ (void)setRichSignNumberWithLabel:(UILabel*)label BigSize:(CGFloat)bigSize SmallSize:(CGFloat)smallSize Color:(UIColor *)color;
 @end

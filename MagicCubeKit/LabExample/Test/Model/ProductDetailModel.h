@@ -77,7 +77,7 @@
 
 @interface Recommend : NSObject
 @property (nonatomic, assign) NSInteger ID;
-@property (nonatomic, strong) NSString *price;
+@property (nonatomic, assign) CGFloat price;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *image;
 @property (nonatomic, strong) NSString *discount;

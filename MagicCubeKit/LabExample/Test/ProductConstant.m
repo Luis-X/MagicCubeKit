@@ -53,4 +53,32 @@
     [_stpopupController dismiss];
 }
 
+/**
+ 特殊金额样式（¥缩小，其余放大）
+ */
++ (void)setRichSignNumberWithLabel:(UILabel*)label BigSize:(CGFloat)bigSize SmallSize:(CGFloat)smallSize Color:(UIColor *)color{
+    
+    if (label.text == nil) {
+        //NSLog(@"过滤空数据");
+        return;
+    }
+    
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:label.text];
+    NSString *temp = nil;
+    for(int i = 0; i < [attributedString length]; i++){
+        
+        temp = [label.text substringWithRange:NSMakeRange(i, 1)];
+        
+        if([temp isEqualToString:@"¥"] || [temp isEqualToString:@"¥"] ||[temp isEqualToString:@"￥"]){
+            [attributedString setAttributes:@{NSForegroundColorAttributeName:color, NSFontAttributeName:[UIFont boldSystemFontOfSize:smallSize]} range:NSMakeRange(i, 1)];
+        }else{
+            [attributedString setAttributes:@{NSForegroundColorAttributeName:color, NSFontAttributeName:[UIFont boldSystemFontOfSize:bigSize]} range:NSMakeRange(i, 1)];
+        }
+    }
+    
+    label.attributedText = attributedString;
+    
+}
+
 @end

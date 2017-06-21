@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductDetailModel.h"
+
 @interface ProductDescribeTableViewCell : UITableViewCell
 @property (nonatomic, strong)ProductDetailModel *productDetailModel;
 @property (nonatomic, strong)UILabel *messageLabel;

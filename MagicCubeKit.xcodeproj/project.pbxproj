@@ -59,18 +59,26 @@
 		D19424631EE5383A00C9A867 /* shopSku.json in Resources */ = {isa = PBXBuildFile; fileRef = D19424621EE5383A00C9A867 /* shopSku.json */; };
 		D19424661EE5396000C9A867 /* ProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19424651EE5396000C9A867 /* ProductDetailModel.m */; };
 		D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */; };
-		D19FF0C41EEFC6D0007B0632 /* ProductSpecialTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0C31EEFC6D0007B0632 /* ProductSpecialTimeView.m */; };
 		D19FF0C71EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0C61EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m */; };
-		D19FF0D41EEFDDED007B0632 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0CB1EEFDDED007B0632 /* WMMenuItem.m */; };
-		D19FF0D51EEFDDED007B0632 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0CD1EEFDDED007B0632 /* WMMenuView.m */; };
-		D19FF0D61EEFDDED007B0632 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0CF1EEFDDED007B0632 /* WMProgressView.m */; };
-		D19FF0D71EEFDDED007B0632 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0D11EEFDDED007B0632 /* WMScrollView.m */; };
-		D19FF0D81EEFDDED007B0632 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0D31EEFDDED007B0632 /* WMPageController.m */; };
-		D19FF0DE1EEFEAAE007B0632 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */; };
-		D19FF0DF1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */; };
 		D19FF0E11EF13DFA007B0632 /* productDetailMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF0E01EF13DFA007B0632 /* productDetailMenu@2x.png */; };
 		D19FF0E31EF36CE4007B0632 /* productDetailTag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF0E21EF36CE4007B0632 /* productDetailTag@2x.png */; };
 		D19FF0E51EF3B678007B0632 /* productDetailLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF0E41EF3B678007B0632 /* productDetailLogo@2x.png */; };
+		D19FF0FA1EF92414007B0632 /* productDetailMenuNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF0F91EF92414007B0632 /* productDetailMenuNone@2x.png */; };
+		D19FF0FD1EF931D9007B0632 /* ProductSpecialTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0FC1EF931D9007B0632 /* ProductSpecialTimeTableViewCell.m */; };
+		D19FF1001EF931FD007B0632 /* ProductOnlineStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF0FF1EF931FD007B0632 /* ProductOnlineStatusTableViewCell.m */; };
+		D19FF1021EFA4E9F007B0632 /* productDetailGoTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19FF1011EFA4E9F007B0632 /* productDetailGoTop@2x.png */; };
+		D19FF11F1EFA5090007B0632 /* DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1061EFA5090007B0632 /* DZNSegmentedControl.m */; };
+		D19FF1201EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1081EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.m */; };
+		D19FF1211EFA5090007B0632 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF10D1EFA5090007B0632 /* ParallaxHeaderView.m */; };
+		D19FF1221EFA5090007B0632 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF10F1EFA5090007B0632 /* UIImage+ImageEffects.m */; };
+		D19FF1231EFA5090007B0632 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1121EFA5090007B0632 /* UICollectionViewLeftAlignedLayout.m */; };
+		D19FF1241EFA5090007B0632 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1161EFA5090007B0632 /* WMMenuItem.m */; };
+		D19FF1251EFA5090007B0632 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1181EFA5090007B0632 /* WMMenuView.m */; };
+		D19FF1261EFA5090007B0632 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF11A1EFA5090007B0632 /* WMProgressView.m */; };
+		D19FF1271EFA5090007B0632 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF11C1EFA5090007B0632 /* WMScrollView.m */; };
+		D19FF1281EFA5090007B0632 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF11E1EFA5090007B0632 /* WMPageController.m */; };
+		D19FF12F1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF12E1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m */; };
+		D19FF1331EFA75B9007B0632 /* ProductRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1321EFA75B9007B0632 /* ProductRecommendView.m */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
 		D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */; };
@@ -134,10 +142,7 @@
 		D1D257E81EDFC88C00A7CADD /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257E71EDFC88C00A7CADD /* ProductDetailViewController.m */; };
 		D1D257EB1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257EA1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m */; };
 		D1D257EE1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257ED1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m */; };
-		D1D257FB1EDFFB9900A7CADD /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257F81EDFFB9900A7CADD /* ParallaxHeaderView.m */; };
-		D1D257FC1EDFFB9900A7CADD /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257FA1EDFFB9900A7CADD /* UIImage+ImageEffects.m */; };
 		D1D257FF1EDFFEC400A7CADD /* ProductConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D257FE1EDFFEC400A7CADD /* ProductConstant.m */; };
-		D1D258031EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D258021EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m */; };
 		D1D258051EE1023800A7CADD /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D258041EE1023800A7CADD /* Reveal.framework */; };
 		D1D2580D1EE1098E00A7CADD /* ProductInfomationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D258081EE1098E00A7CADD /* ProductInfomationTableViewCell.m */; };
 		D1D2580E1EE1098E00A7CADD /* ProductOptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2580A1EE1098E00A7CADD /* ProductOptionTableViewCell.m */; };
@@ -274,27 +279,41 @@
 		D19424651EE5396000C9A867 /* ProductDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailModel.m; sourceTree = "<group>"; };
 		D19424691EE6A51500C9A867 /* ProductActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductActivityTableViewCell.h; sourceTree = "<group>"; };
 		D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductActivityTableViewCell.m; sourceTree = "<group>"; };
-		D19FF0C21EEFC6D0007B0632 /* ProductSpecialTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecialTimeView.h; sourceTree = "<group>"; };
-		D19FF0C31EEFC6D0007B0632 /* ProductSpecialTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecialTimeView.m; sourceTree = "<group>"; };
 		D19FF0C51EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductOptionSaleTableViewCell.h; sourceTree = "<group>"; };
 		D19FF0C61EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductOptionSaleTableViewCell.m; sourceTree = "<group>"; };
-		D19FF0CA1EEFDDED007B0632 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
-		D19FF0CB1EEFDDED007B0632 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
-		D19FF0CC1EEFDDED007B0632 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
-		D19FF0CD1EEFDDED007B0632 /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
-		D19FF0CE1EEFDDED007B0632 /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
-		D19FF0CF1EEFDDED007B0632 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
-		D19FF0D01EEFDDED007B0632 /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
-		D19FF0D11EEFDDED007B0632 /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
-		D19FF0D21EEFDDED007B0632 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
-		D19FF0D31EEFDDED007B0632 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
-		D19FF0DA1EEFEAAE007B0632 /* DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNSegmentedControl.h; sourceTree = "<group>"; };
-		D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
-		D19FF0DC1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DZNSegmentedControl.h"; sourceTree = "<group>"; };
-		D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DZNSegmentedControl.m"; sourceTree = "<group>"; };
 		D19FF0E01EF13DFA007B0632 /* productDetailMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailMenu@2x.png"; sourceTree = "<group>"; };
 		D19FF0E21EF36CE4007B0632 /* productDetailTag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailTag@2x.png"; sourceTree = "<group>"; };
 		D19FF0E41EF3B678007B0632 /* productDetailLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailLogo@2x.png"; sourceTree = "<group>"; };
+		D19FF0F91EF92414007B0632 /* productDetailMenuNone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailMenuNone@2x.png"; sourceTree = "<group>"; };
+		D19FF0FB1EF931D9007B0632 /* ProductSpecialTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecialTimeTableViewCell.h; sourceTree = "<group>"; };
+		D19FF0FC1EF931D9007B0632 /* ProductSpecialTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecialTimeTableViewCell.m; sourceTree = "<group>"; };
+		D19FF0FE1EF931FD007B0632 /* ProductOnlineStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductOnlineStatusTableViewCell.h; sourceTree = "<group>"; };
+		D19FF0FF1EF931FD007B0632 /* ProductOnlineStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductOnlineStatusTableViewCell.m; sourceTree = "<group>"; };
+		D19FF1011EFA4E9F007B0632 /* productDetailGoTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "productDetailGoTop@2x.png"; sourceTree = "<group>"; };
+		D19FF1051EFA5090007B0632 /* DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNSegmentedControl.h; sourceTree = "<group>"; };
+		D19FF1061EFA5090007B0632 /* DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNSegmentedControl.m; sourceTree = "<group>"; };
+		D19FF1071EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DZNSegmentedControl.h"; sourceTree = "<group>"; };
+		D19FF1081EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DZNSegmentedControl.m"; sourceTree = "<group>"; };
+		D19FF10C1EFA5090007B0632 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		D19FF10D1EFA5090007B0632 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		D19FF10E1EFA5090007B0632 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		D19FF10F1EFA5090007B0632 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		D19FF1111EFA5090007B0632 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		D19FF1121EFA5090007B0632 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
+		D19FF1151EFA5090007B0632 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		D19FF1161EFA5090007B0632 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		D19FF1171EFA5090007B0632 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		D19FF1181EFA5090007B0632 /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		D19FF1191EFA5090007B0632 /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		D19FF11A1EFA5090007B0632 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		D19FF11B1EFA5090007B0632 /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
+		D19FF11C1EFA5090007B0632 /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
+		D19FF11D1EFA5090007B0632 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		D19FF11E1EFA5090007B0632 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		D19FF12D1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductRecommendCollectionViewCell.h; sourceTree = "<group>"; };
+		D19FF12E1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecommendCollectionViewCell.m; sourceTree = "<group>"; };
+		D19FF1311EFA75B9007B0632 /* ProductRecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductRecommendView.h; sourceTree = "<group>"; };
+		D19FF1321EFA75B9007B0632 /* ProductRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecommendView.m; sourceTree = "<group>"; };
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
 		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
 		D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
@@ -418,14 +437,8 @@
 		D1D257EA1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailSelectViewController.m; sourceTree = "<group>"; };
 		D1D257EC1EDFC8DB00A7CADD /* ProductDetailSaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailSaleViewController.h; sourceTree = "<group>"; };
 		D1D257ED1EDFC8DB00A7CADD /* ProductDetailSaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailSaleViewController.m; sourceTree = "<group>"; };
-		D1D257F71EDFFB9900A7CADD /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
-		D1D257F81EDFFB9900A7CADD /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
-		D1D257F91EDFFB9900A7CADD /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		D1D257FA1EDFFB9900A7CADD /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		D1D257FD1EDFFEC400A7CADD /* ProductConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductConstant.h; sourceTree = "<group>"; };
 		D1D257FE1EDFFEC400A7CADD /* ProductConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductConstant.m; sourceTree = "<group>"; };
-		D1D258011EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
-		D1D258021EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		D1D258041EE1023800A7CADD /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		D1D258071EE1098E00A7CADD /* ProductInfomationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfomationTableViewCell.h; sourceTree = "<group>"; };
 		D1D258081EE1098E00A7CADD /* ProductInfomationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfomationTableViewCell.m; sourceTree = "<group>"; };
@@ -1171,50 +1184,106 @@
 			path = ProductActivityCell;
 			sourceTree = "<group>";
 		};
-		D19FF0C11EEFC6D0007B0632 /* ProductSpecialTimeView(特卖) */ = {
+		D19FF1031EFA5090007B0632 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				D19FF0C21EEFC6D0007B0632 /* ProductSpecialTimeView.h */,
-				D19FF0C31EEFC6D0007B0632 /* ProductSpecialTimeView.m */,
+				D19FF1041EFA5090007B0632 /* DZNSegmentedControl */,
+				D19FF1091EFA5090007B0632 /* PageMenu */,
+				D19FF10B1EFA5090007B0632 /* ParallaxTableViewHeader */,
+				D19FF1101EFA5090007B0632 /* UICollectionViewLeftAlignedLayout */,
+				D19FF1131EFA5090007B0632 /* WMPageController */,
 			);
-			name = "ProductSpecialTimeView(特卖)";
-			path = ProductSpecialTimeView;
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
-		D19FF0C81EEFDDED007B0632 /* WMPageController */ = {
+		D19FF1041EFA5090007B0632 /* DZNSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				D19FF0C91EEFDDED007B0632 /* WMMenuView */,
-				D19FF0D21EEFDDED007B0632 /* WMPageController.h */,
-				D19FF0D31EEFDDED007B0632 /* WMPageController.m */,
+				D19FF1051EFA5090007B0632 /* DZNSegmentedControl.h */,
+				D19FF1061EFA5090007B0632 /* DZNSegmentedControl.m */,
+				D19FF1071EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.h */,
+				D19FF1081EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.m */,
+			);
+			path = DZNSegmentedControl;
+			sourceTree = "<group>";
+		};
+		D19FF1091EFA5090007B0632 /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF10A1EFA5090007B0632 /* Obj-C Classes */,
+			);
+			path = PageMenu;
+			sourceTree = "<group>";
+		};
+		D19FF10A1EFA5090007B0632 /* Obj-C Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Obj-C Classes";
+			sourceTree = "<group>";
+		};
+		D19FF10B1EFA5090007B0632 /* ParallaxTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF10C1EFA5090007B0632 /* ParallaxHeaderView.h */,
+				D19FF10D1EFA5090007B0632 /* ParallaxHeaderView.m */,
+				D19FF10E1EFA5090007B0632 /* UIImage+ImageEffects.h */,
+				D19FF10F1EFA5090007B0632 /* UIImage+ImageEffects.m */,
+			);
+			path = ParallaxTableViewHeader;
+			sourceTree = "<group>";
+		};
+		D19FF1101EFA5090007B0632 /* UICollectionViewLeftAlignedLayout */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF1111EFA5090007B0632 /* UICollectionViewLeftAlignedLayout.h */,
+				D19FF1121EFA5090007B0632 /* UICollectionViewLeftAlignedLayout.m */,
+			);
+			path = UICollectionViewLeftAlignedLayout;
+			sourceTree = "<group>";
+		};
+		D19FF1131EFA5090007B0632 /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF1141EFA5090007B0632 /* WMMenuView */,
+				D19FF11D1EFA5090007B0632 /* WMPageController.h */,
+				D19FF11E1EFA5090007B0632 /* WMPageController.m */,
 			);
 			path = WMPageController;
 			sourceTree = "<group>";
 		};
-		D19FF0C91EEFDDED007B0632 /* WMMenuView */ = {
+		D19FF1141EFA5090007B0632 /* WMMenuView */ = {
 			isa = PBXGroup;
 			children = (
-				D19FF0CA1EEFDDED007B0632 /* WMMenuItem.h */,
-				D19FF0CB1EEFDDED007B0632 /* WMMenuItem.m */,
-				D19FF0CC1EEFDDED007B0632 /* WMMenuView.h */,
-				D19FF0CD1EEFDDED007B0632 /* WMMenuView.m */,
-				D19FF0CE1EEFDDED007B0632 /* WMProgressView.h */,
-				D19FF0CF1EEFDDED007B0632 /* WMProgressView.m */,
-				D19FF0D01EEFDDED007B0632 /* WMScrollView.h */,
-				D19FF0D11EEFDDED007B0632 /* WMScrollView.m */,
+				D19FF1151EFA5090007B0632 /* WMMenuItem.h */,
+				D19FF1161EFA5090007B0632 /* WMMenuItem.m */,
+				D19FF1171EFA5090007B0632 /* WMMenuView.h */,
+				D19FF1181EFA5090007B0632 /* WMMenuView.m */,
+				D19FF1191EFA5090007B0632 /* WMProgressView.h */,
+				D19FF11A1EFA5090007B0632 /* WMProgressView.m */,
+				D19FF11B1EFA5090007B0632 /* WMScrollView.h */,
+				D19FF11C1EFA5090007B0632 /* WMScrollView.m */,
 			);
 			path = WMMenuView;
 			sourceTree = "<group>";
 		};
-		D19FF0D91EEFEAAE007B0632 /* DZNSegmentedControl */ = {
+		D19FF1291EFA7148007B0632 /* ProductRecommendCell(推荐) */ = {
 			isa = PBXGroup;
 			children = (
-				D19FF0DA1EEFEAAE007B0632 /* DZNSegmentedControl.h */,
-				D19FF0DB1EEFEAAE007B0632 /* DZNSegmentedControl.m */,
-				D19FF0DC1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.h */,
-				D19FF0DD1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m */,
+				D19FF1311EFA75B9007B0632 /* ProductRecommendView.h */,
+				D19FF1321EFA75B9007B0632 /* ProductRecommendView.m */,
+				D19FF12D1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.h */,
+				D19FF12E1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m */,
 			);
-			path = DZNSegmentedControl;
+			name = "ProductRecommendCell(推荐)";
+			path = ProductRecommendCell;
+			sourceTree = "<group>";
+		};
+		D19FF1301EFA72E7007B0632 /* DaRenShop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DaRenShop;
 			sourceTree = "<group>";
 		};
 		D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */ = {
@@ -1605,37 +1674,17 @@
 		D1D257F51EDFFB9900A7CADD /* ReSource */ = {
 			isa = PBXGroup;
 			children = (
+				D19FF1301EFA72E7007B0632 /* DaRenShop */,
+				D19FF1031EFA5090007B0632 /* ThirdParty */,
+				D19FF1011EFA4E9F007B0632 /* productDetailGoTop@2x.png */,
+				D19FF0F91EF92414007B0632 /* productDetailMenuNone@2x.png */,
 				D19FF0E41EF3B678007B0632 /* productDetailLogo@2x.png */,
 				D19FF0E21EF36CE4007B0632 /* productDetailTag@2x.png */,
 				D19FF0E01EF13DFA007B0632 /* productDetailMenu@2x.png */,
-				D19FF0D91EEFEAAE007B0632 /* DZNSegmentedControl */,
-				D19FF0C81EEFDDED007B0632 /* WMPageController */,
 				D16665EE1EE94E4C00B84D1B /* ZYBannerView.bundle */,
-				D1D258001EE0222700A7CADD /* UICollectionViewLeftAlignedLayout */,
-				D1D257F61EDFFB9900A7CADD /* ParallaxTableViewHeader */,
 				D19424621EE5383A00C9A867 /* shopSku.json */,
 			);
 			path = ReSource;
-			sourceTree = "<group>";
-		};
-		D1D257F61EDFFB9900A7CADD /* ParallaxTableViewHeader */ = {
-			isa = PBXGroup;
-			children = (
-				D1D257F71EDFFB9900A7CADD /* ParallaxHeaderView.h */,
-				D1D257F81EDFFB9900A7CADD /* ParallaxHeaderView.m */,
-				D1D257F91EDFFB9900A7CADD /* UIImage+ImageEffects.h */,
-				D1D257FA1EDFFB9900A7CADD /* UIImage+ImageEffects.m */,
-			);
-			path = ParallaxTableViewHeader;
-			sourceTree = "<group>";
-		};
-		D1D258001EE0222700A7CADD /* UICollectionViewLeftAlignedLayout */ = {
-			isa = PBXGroup;
-			children = (
-				D1D258011EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.h */,
-				D1D258021EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m */,
-			);
-			path = UICollectionViewLeftAlignedLayout;
 			sourceTree = "<group>";
 		};
 		D1D258061EE1098E00A7CADD /* ProductDetailCell(详情) */ = {
@@ -1643,6 +1692,10 @@
 			children = (
 				D1D258071EE1098E00A7CADD /* ProductInfomationTableViewCell.h */,
 				D1D258081EE1098E00A7CADD /* ProductInfomationTableViewCell.m */,
+				D19FF0FB1EF931D9007B0632 /* ProductSpecialTimeTableViewCell.h */,
+				D19FF0FC1EF931D9007B0632 /* ProductSpecialTimeTableViewCell.m */,
+				D19FF0FE1EF931FD007B0632 /* ProductOnlineStatusTableViewCell.h */,
+				D19FF0FF1EF931FD007B0632 /* ProductOnlineStatusTableViewCell.m */,
 				D1D258091EE1098E00A7CADD /* ProductOptionTableViewCell.h */,
 				D1D2580A1EE1098E00A7CADD /* ProductOptionTableViewCell.m */,
 				D19FF0C51EEFCC7A007B0632 /* ProductOptionSaleTableViewCell.h */,
@@ -1769,7 +1822,7 @@
 		D1E0BE5B1ED922B200493704 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D19FF0C11EEFC6D0007B0632 /* ProductSpecialTimeView(特卖) */,
+				D19FF1291EFA7148007B0632 /* ProductRecommendCell(推荐) */,
 				D16665E11EE8FB8900B84D1B /* ProductTagView(标签功能) */,
 				D1D258181EE1160100A7CADD /* ProductBuyMenuView(菜单功能) */,
 				D1036A8E1EE7FD96002D656E /* ProductSelectQuantityView(数量功能) */,
@@ -1897,7 +1950,9 @@
 				D1C72B621EB83A6C00C88BAE /* exampleTangram.json in Resources */,
 				D19424631EE5383A00C9A867 /* shopSku.json in Resources */,
 				D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */,
+				D19FF0FA1EF92414007B0632 /* productDetailMenuNone@2x.png in Resources */,
 				D19FF0E31EF36CE4007B0632 /* productDetailTag@2x.png in Resources */,
+				D19FF1021EFA4E9F007B0632 /* productDetailGoTop@2x.png in Resources */,
 				D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */,
 				D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */,
 				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
@@ -1999,20 +2054,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
-				D19FF0DE1EEFEAAE007B0632 /* DZNSegmentedControl.m in Sources */,
 				D156E1DE1ED40E5B0024D309 /* ExampleWebViewJavascriptBridgeViewController.m in Sources */,
 				D1D2581B1EE1161B00A7CADD /* ProductBuyMenuView.m in Sources */,
+				D19FF1261EFA5090007B0632 /* WMProgressView.m in Sources */,
+				D19FF1211EFA5090007B0632 /* ParallaxHeaderView.m in Sources */,
 				D166660E1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m in Sources */,
 				D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */,
 				D19424661EE5396000C9A867 /* ProductDetailModel.m in Sources */,
 				D1C72C531EB86F0C00C88BAE /* TangramEvent.m in Sources */,
 				D1C72C4E1EB86F0C00C88BAE /* TangramBus.m in Sources */,
 				D1C72C5C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m in Sources */,
-				D19FF0D71EEFDDED007B0632 /* WMScrollView.m in Sources */,
 				D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */,
 				D187ACF31ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m in Sources */,
 				D11816A41EB2EFB5004C238A /* ViewController.m in Sources */,
-				D19FF0D61EEFDDED007B0632 /* WMProgressView.m in Sources */,
 				D1D257EB1EDFC8BA00A7CADD /* ProductDetailSelectViewController.m in Sources */,
 				D1C72C571EB86F0C00C88BAE /* TangramDefaultItemModelFactory.m in Sources */,
 				D156E1ED1ED441F00024D309 /* ExampleReachabilityViewController.m in Sources */,
@@ -2028,11 +2082,11 @@
 				D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */,
 				D1D257E81EDFC88C00A7CADD /* ProductDetailViewController.m in Sources */,
 				D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */,
-				D19FF0D51EEFDDED007B0632 /* WMMenuView.m in Sources */,
+				D19FF1331EFA75B9007B0632 /* ProductRecommendView.m in Sources */,
 				D1D258211EE16B0B00A7CADD /* ProductSelectFooterCollectionReusableView.m in Sources */,
 				D1C72C561EB86F0C00C88BAE /* TangramDefaultElementFactory.m in Sources */,
+				D19FF1271EFA5090007B0632 /* WMScrollView.m in Sources */,
 				D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */,
-				D19FF0D41EEFDDED007B0632 /* WMMenuItem.m in Sources */,
 				D1C72C681EB86F0C00C88BAE /* TangramTetradColumnLayout.m in Sources */,
 				D1C72CA61EB8849100C88BAE /* ExampleSJBugVideoKitViewController.m in Sources */,
 				D13E1FFE1ECC65A700472533 /* ExampleMagicImageDownloaderViewController.m in Sources */,
@@ -2040,7 +2094,9 @@
 				D1C72C641EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m in Sources */,
 				D1C72C521EB86F0C00C88BAE /* TangramContext.m in Sources */,
 				D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */,
+				D19FF1201EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */,
+				D19FF1221EFA5090007B0632 /* UIImage+ImageEffects.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
 				D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */,
 				D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */,
@@ -2051,21 +2107,25 @@
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
 				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
 				D16665E71EE8FBD000B84D1B /* ProductSaleTagView.m in Sources */,
+				D19FF1241EFA5090007B0632 /* WMMenuItem.m in Sources */,
 				D1D258141EE109FA00A7CADD /* ProductSelectCollectionViewCell.m in Sources */,
 				D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
+				D19FF1001EF931FD007B0632 /* ProductOnlineStatusTableViewCell.m in Sources */,
 				D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */,
-				D1D257FC1EDFFB9900A7CADD /* UIImage+ImageEffects.m in Sources */,
 				D11816EA1EB2F52D004C238A /* HomeViewController.m in Sources */,
 				D1D257FF1EDFFEC400A7CADD /* ProductConstant.m in Sources */,
 				D11994001EC2F42000841273 /* ExampleMagicPermissionManagerViewController.m in Sources */,
-				D19FF0C41EEFC6D0007B0632 /* ProductSpecialTimeView.m in Sources */,
 				D1036A911EE7FD96002D656E /* ProductSelectQuantityView.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
+				D19FF0FD1EF931D9007B0632 /* ProductSpecialTimeTableViewCell.m in Sources */,
 				D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */,
+				D19FF1281EFA5090007B0632 /* WMPageController.m in Sources */,
 				D16666111EEFB50A00B84D1B /* ProductDescribeTableViewCell.m in Sources */,
+				D19FF1231EFA5090007B0632 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				D13E1FFB1ECC658300472533 /* ExampleMagicScrollPageViewController.m in Sources */,
 				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
+				D19FF1251EFA5090007B0632 /* WMMenuView.m in Sources */,
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
 				D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */,
 				D1C72C4F1EB86F0C00C88BAE /* TangramBusIndex.m in Sources */,
@@ -2080,7 +2140,6 @@
 				D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */,
 				D1C72B681EB866A400C88BAE /* ExampleElementImage.m in Sources */,
 				D1E0BE4A1ED91C0200493704 /* LaboratoryViewController.m in Sources */,
-				D1D258031EE0222700A7CADD /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */,
 				D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */,
 				D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */,
@@ -2089,10 +2148,10 @@
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
 				D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */,
+				D19FF11F1EFA5090007B0632 /* DZNSegmentedControl.m in Sources */,
 				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
-				D1D257FB1EDFFB9900A7CADD /* ParallaxHeaderView.m in Sources */,
+				D19FF12F1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m in Sources */,
 				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
-				D19FF0DF1EEFEAAE007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
 				D1D2580E1EE1098E00A7CADD /* ProductOptionTableViewCell.m in Sources */,
@@ -2102,7 +2161,6 @@
 				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
 				D1BDFDA41ED2D536000064B8 /* ExampleMagicWebProgressViewController.m in Sources */,
 				D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */,
-				D19FF0D81EEFDDED007B0632 /* WMPageController.m in Sources */,
 				D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */,
 				D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */,
 				D1D258171EE1107900A7CADD /* ProductSaleTableViewCell.m in Sources */,

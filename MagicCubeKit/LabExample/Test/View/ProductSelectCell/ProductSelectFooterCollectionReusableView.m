@@ -38,13 +38,13 @@
     _titleLabel = [UILabel new];
     _titleLabel.text = @"数量";
     _titleLabel.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
-    _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.font = [UIFont systemFontOfSize:14 * HOME_IPHONE6_HEIGHT];
     [self addSubview:_titleLabel];
     
     _subtitleLabel = [UILabel new];
     _subtitleLabel.text = @"单次限购1件";
     _subtitleLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
-    _subtitleLabel.font = [UIFont systemFontOfSize:12];
+    _subtitleLabel.font = [UIFont systemFontOfSize:12 * HOME_IPHONE6_HEIGHT];
     [self addSubview:_subtitleLabel];
     
     _quantityStepView = [ProductSelectQuantityView new];
@@ -62,18 +62,18 @@
     }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_topLine).offset(25);
-        make.left.equalTo(self).offset(10);
+        make.top.equalTo(_topLine).offset(25 * HOME_IPHONE6_HEIGHT);
+        make.left.equalTo(self).offset(10 * HOME_IPHONE6_WIDTH);
     }];
     
     [_quantityStepView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-15);
+        make.right.equalTo(self).offset(-15 * HOME_IPHONE6_WIDTH);
         make.centerY.equalTo(_titleLabel);
-        make.size.mas_equalTo(CGSizeMake(130, 30));
+        make.size.mas_equalTo(CGSizeMake(130 * HOME_IPHONE6_WIDTH, 30 * HOME_IPHONE6_HEIGHT));
     }];
     
     [_subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_quantityStepView.mas_left).offset(-10);
+        make.right.equalTo(_quantityStepView.mas_left).offset(-10 * HOME_IPHONE6_WIDTH);
         make.centerY.equalTo(_titleLabel);
     }];
     

@@ -18,6 +18,7 @@
 @implementation ProductBuyMenuView{
     UIView *_operationView;      //操作视图
     UIButton *_buyButton;        //立即购买
+    UIImageView *_bgImageView;   //背景图
 }
 
 /*
@@ -39,11 +40,10 @@
 
 - (void)createSubViews{
     
-    UIImageView *bgImageView = [UIImageView new];
-    [bgImageView setImage:[UIImage imageNamed:@"productDetailMenu@2x.png"]];
-    //bgImageView.backgroundColor = [UIColor orangeColor];
-    [self addSubview:bgImageView];
-    [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    _bgImageView = [UIImageView new];
+    //_bgImageView.backgroundColor = [UIColor orangeColor];
+    [self addSubview:_bgImageView];
+    [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self);
         make.height.mas_equalTo(95 * HOME_IPHONE6_HEIGHT);
     }];
@@ -55,6 +55,8 @@
     [self updateOptionsGoodsOnOffButton];
     
 }
+
+
 
 
 /**
@@ -113,9 +115,7 @@
     tagLabel.textColor = [UIColor whiteColor];
     tagLabel.font = [UIFont systemFontOfSize:8 * HOME_IPHONE6_WIDTH];
     tagLabel.textAlignment = NSTextAlignmentCenter;
-    tagLabel.backgroundColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
-    tagLabel.layer.masksToBounds = YES;
-    tagLabel.layer.cornerRadius = 5 * HOME_IPHONE6_HEIGHT;
+    [tagLabel jm_setImageWithCornerRadius:(5 * HOME_IPHONE6_HEIGHT) borderColor:[UIColor clearColor] borderWidth:0 backgroundColor:[UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00]];
     tagLabel.hidden = YES;
     [button addSubview:tagLabel];
     [tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -203,9 +203,19 @@
     if (currentStatus == ProductBuyMenuStatusNoInventory) {
         [_buyButton setTitle:@"求补货" forState:UIControlStateNormal];
         _buyButton.enabled = NO;
+        [_bgImageView setImage:[UIImage imageNamed:@"productDetailMenuNone@2x.png"]];
+        [_bgImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(OptionButton_Width);
+        }];
+
     }else{
         [_buyButton setTitle:@"立即购买" forState:UIControlStateNormal];
         _buyButton.enabled = YES;
+        [_bgImageView setImage:[UIImage imageNamed:@"productDetailMenu@2x.png"]];
+        [_bgImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(95 * HOME_IPHONE6_HEIGHT);
+        }];
+
     }
     
     //样式

@@ -46,19 +46,19 @@
     UIView *saleBackgroundView = [UIView new];
     [self.contentView addSubview:saleBackgroundView];
     [saleBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(5 + 30 * index);
-        make.left.equalTo(self.contentView).offset(10);
-        make.right.equalTo(self.contentView).offset(-10);
-        make.height.mas_equalTo(30);
+        make.top.equalTo(self.contentView).offset((5 + 30 * index) * HOME_IPHONE6_WIDTH);
+        make.left.equalTo(self.contentView).offset(10 * HOME_IPHONE6_WIDTH);
+        make.right.equalTo(self.contentView).offset(-10 * HOME_IPHONE6_WIDTH);
+        make.height.mas_equalTo(30 * HOME_IPHONE6_HEIGHT);
         if (2 == index) {
-            make.bottom.equalTo(self.contentView).offset(-5);
+            make.bottom.equalTo(self.contentView).offset(-5 * HOME_IPHONE6_HEIGHT);
         }
     }];
     
     _saleTagView = [ProductSaleTagView new];
     _saleTagView.title = title;
-    _saleTagView.fontSize = 12;
-    _saleTagView.height = 18;
+    _saleTagView.fontSize = 12 * HOME_IPHONE6_HEIGHT;
+    _saleTagView.height = 18 * HOME_IPHONE6_HEIGHT;
     [saleBackgroundView addSubview:_saleTagView];
     [_saleTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(saleBackgroundView);
@@ -68,11 +68,11 @@
     _messageLabel = [UILabel new];
     _messageLabel.text = message;
     _messageLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
-    _messageLabel.font = [UIFont systemFontOfSize:12];
+    _messageLabel.font = [UIFont systemFontOfSize:12 * HOME_IPHONE6_HEIGHT];
     [saleBackgroundView addSubview:_messageLabel];
     [_messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(saleBackgroundView);
-        make.left.equalTo(_saleTagView.mas_right).offset(5);
+        make.left.equalTo(_saleTagView.mas_right).offset(5 * HOME_IPHONE6_WIDTH);
         make.right.lessThanOrEqualTo(saleBackgroundView);
     }];
 

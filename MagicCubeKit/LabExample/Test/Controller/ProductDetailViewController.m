@@ -16,11 +16,14 @@
 #import "MagicIconButton.h"
 
 #import "ProductInfomationTableViewCell.h"
+#import "ProductSpecialTimeTableViewCell.h"
+#import "ProductOnlineStatusTableViewCell.h"
 #import "ProductOptionTableViewCell.h"
 #import "ProductOptionSaleTableViewCell.h"
 #import "ProductActivityTableViewCell.h"
 #import "ProductDescribeTableViewCell.h"
 #import "ProductPromiseTableViewCell.h"
+#import "ProductRecommendView.h"
 
 #import "ProductDetailSelectViewController.h"
 #import "ProductDetailSaleViewController.h"
@@ -29,14 +32,19 @@
 
 
 #define REUESED_CELL_INFO      @"infomation"
+#define REUESED_CELL_SPECIAL   @"special"
+#define REUESED_CELL_ONLINE    @"online"
 #define REUESED_CELL_OPTION    @"option"
 #define REUESED_CELL_SALE      @"optionSale"
 #define REUESED_CELL_ACTIVITY  @"activity"
 #define REUESED_CELL_DESCRIBE  @"describe"
 #define REUESED_CELL_PROMISE   @"promise"
 
-@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate, MagicScrollPageDelegate>
+#define DES_MAX_LINES 7
+
+@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate, MagicScrollPageDelegate, ProductSpecialTimeTableViewCellDelegate, ProductRecommendViewDelegate>
 @property (nonatomic, strong) NSTimer        *m_timer;          //倒计时
+@property (nonatomic, strong) UILabel *noInventoryView;          //无库存提示
 @end
 
 @implementation ProductDetailViewController{
@@ -53,8 +61,10 @@
     UIImageView *_productLogoImageView;                          //主图Logo
     NSMutableArray *_allBannerDataArray;                         //主图Banner数据
     UIButton *_addCartButton;                                    //加入购物车
-    NSInteger sectionCount;                                      //模块数量
-    
+    NSInteger sectionCount;                                      //模块总数量
+    BOOL isStartTimer;                                           //倒计时状态
+    NSInteger productDescribeNumberOfLines;                      //描述显示行数
+    ProductRecommendView *_productRecommendView;                 //更多推荐
 }
 
 
@@ -83,8 +93,9 @@
 */
 
 - (void)initailData{
+    productDescribeNumberOfLines = DES_MAX_LINES;
     _allBannerDataArray = [NSMutableArray array];
-    sectionCount = 6;
+    sectionCount = 8;
     [self createTimer];
 }
 
@@ -98,6 +109,26 @@
     
 }
 
+#pragma mark -懒加载
+- (UILabel *)noInventoryView{
+    if (_noInventoryView == nil) {
+        _noInventoryView = [UILabel new];
+        _noInventoryView.textAlignment = NSTextAlignmentCenter;
+        _noInventoryView.text = @"该商品无货，非常抱歉！";
+        _noInventoryView.font = [UIFont systemFontOfSize:14];
+        _noInventoryView.textColor = [UIColor whiteColor];
+        _noInventoryView.layer.cornerRadius = 25 / 2;
+        _noInventoryView.layer.backgroundColor = [UIColor colorWithWhite:0.00 alpha:0.70].CGColor;
+        [self.view addSubview:_noInventoryView];
+        [_noInventoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view).offset(5);
+            make.right.equalTo(self.view).offset(-5);
+            make.height.mas_equalTo(25);
+            make.bottom.equalTo(_mainBuyMenuView.mas_top).offset(-3);
+        }];
+    }
+    return _noInventoryView;
+}
 
 /**
  主框架
@@ -131,12 +162,10 @@
     }];
     
     _productBannerPageLabel = [UILabel new];
-    _productBannerPageLabel.backgroundColor = [UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.00];
     _productBannerPageLabel.textAlignment = NSTextAlignmentCenter;
     _productBannerPageLabel.textColor = [UIColor whiteColor];
     _productBannerPageLabel.font = [UIFont systemFontOfSize:10];
-    _productBannerPageLabel.layer.masksToBounds = YES;
-    _productBannerPageLabel.layer.cornerRadius = 25 / 2;
+    [_productBannerPageLabel jm_setImageWithCornerRadius:(25 / 2) borderColor:[UIColor clearColor] borderWidth:0 backgroundColor:[UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.00]];
     [_productBannerView addSubview:_productBannerPageLabel];
     [_productBannerPageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(25, 25));
@@ -164,6 +193,8 @@
     _firtTableView.delegate = self;
     [_firtTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [_firtTableView registerClass:[ProductInfomationTableViewCell class] forCellReuseIdentifier:REUESED_CELL_INFO];
+     [_firtTableView registerClass:[ProductSpecialTimeTableViewCell class] forCellReuseIdentifier:REUESED_CELL_SPECIAL];
+     [_firtTableView registerClass:[ProductOnlineStatusTableViewCell class] forCellReuseIdentifier:REUESED_CELL_ONLINE];
     [_firtTableView registerClass:[ProductOptionTableViewCell class] forCellReuseIdentifier:REUESED_CELL_OPTION];
     [_firtTableView registerClass:[ProductOptionSaleTableViewCell class] forCellReuseIdentifier:REUESED_CELL_SALE];
     [_firtTableView registerClass:[ProductActivityTableViewCell class] forCellReuseIdentifier:REUESED_CELL_ACTIVITY];
@@ -178,6 +209,10 @@
 - (void)createSecondPage{
     
     _secondScrollView = [UIScrollView new];
+    _secondScrollView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
+    _productRecommendView = [[ProductRecommendView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 211)];
+    _productRecommendView.delegate = self;
+    [_secondScrollView addSubview:_productRecommendView];
     
 }
 
@@ -241,15 +276,15 @@
  */
 - (void)createStickButton{
     
-    CGSize stick_size = CGSizeMake(50, 50);
+    CGSize stick_size = CGSizeMake(40 * HOME_IPHONE6_HEIGHT, 40 * HOME_IPHONE6_HEIGHT);
     _stickButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _stickButton.backgroundColor = [UIColor blackColor];
+    [_stickButton setBackgroundImage:[UIImage imageNamed:@"productDetailGoTop@2x.png"] forState:UIControlStateNormal];
     _stickButton.hidden = YES;
     [self.view addSubview:_stickButton];
     [_stickButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(stick_size);
-        make.bottom.equalTo(self.view).offset(-100);
-        make.right.equalTo(self.view).offset(-20);
+        make.bottom.equalTo(self.view).offset(-120 * HOME_IPHONE6_HEIGHT);
+        make.right.equalTo(self.view).offset(-30 * HOME_IPHONE6_WIDTH);
     }];
     [_stickButton addTarget:self action:@selector(stickButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
@@ -273,9 +308,23 @@
         [self setupProductInfomationModelOfCell:infomationCell AtIndexPath:indexPath];
         return infomationCell;
     }
+
+    // 倒计时
+    if (indexPath.section == 1) {
+        ProductSpecialTimeTableViewCell *specialTimeCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_SPECIAL forIndexPath:indexPath];
+        [self setupProductSpecialTimeModelOfCell:specialTimeCell AtIndexPath:indexPath];
+        return specialTimeCell;
+    }
+    
+    // 上架状态
+    if (indexPath.section == 2) {
+        ProductOnlineStatusTableViewCell *onlineStatusCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_ONLINE forIndexPath:indexPath];
+        [self setupProductOnlineStatusModelOfCell:onlineStatusCell AtIndexPath:indexPath];
+        return onlineStatusCell;
+    }
     
     // 促销
-    if (indexPath.section == 1) {
+    if (indexPath.section == 3) {
         ProductOptionSaleTableViewCell *saleCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_SALE];
         if (saleCell == nil){
             saleCell = [[ProductOptionSaleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:REUESED_CELL_SALE];
@@ -285,7 +334,7 @@
     }
     
     // 规格
-    if (indexPath.section == 2) {
+    if (indexPath.section == 4) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_OPTION forIndexPath:indexPath];
         optionCell.productDetailModel = _mainModel;
         return optionCell;
@@ -293,20 +342,20 @@
     
     
     // 活动
-    if (indexPath.section == 3) {
+    if (indexPath.section == 5) {
         ProductActivityTableViewCell *activityCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_ACTIVITY forIndexPath:indexPath];
         return activityCell;
     }
     
     // 描述
-    if (indexPath.section == 4) {
+    if (indexPath.section == 6) {
         ProductDescribeTableViewCell *describeCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_DESCRIBE forIndexPath:indexPath];
         [self setupProductDescribeModelOfCell:describeCell AtIndexPath:indexPath];
         return describeCell;
     }
     
     // 承诺
-    if (indexPath.section == 5) {
+    if (indexPath.section == 7) {
         ProductPromiseTableViewCell *promiseCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_PROMISE forIndexPath:indexPath];
         return promiseCell;
     }
@@ -318,16 +367,16 @@
 #pragma mark -UITableViewDelegate
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     //防止倒计时消耗性能
-    if (indexPath.section == 0) {
-        ProductInfomationTableViewCell *tmpCell = (ProductInfomationTableViewCell *)cell;
+    if ([cell isKindOfClass:[ProductSpecialTimeTableViewCell class]]) {
+        ProductSpecialTimeTableViewCell *tmpCell = (ProductSpecialTimeTableViewCell *)cell;
         tmpCell.m_isDisplayed = YES;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath {
     //防止倒计时消耗性能
-    if (indexPath.section == 0) {
-        ProductInfomationTableViewCell *tmpCell = (ProductInfomationTableViewCell *)cell;
+    if ([cell isKindOfClass:[ProductSpecialTimeTableViewCell class]]) {
+        ProductSpecialTimeTableViewCell *tmpCell = (ProductSpecialTimeTableViewCell *)cell;
         tmpCell.m_isDisplayed= YES;
     }
 }
@@ -338,8 +387,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    
-    if (0 == section) {
+
+    if (section <= 2) {
         return 0.01;
     }
     
@@ -354,25 +403,44 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
     if (indexPath.section == 0) {
         return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_INFO cacheByIndexPath:indexPath configuration:^(id cell) {
             [self setupProductInfomationModelOfCell:cell AtIndexPath:indexPath];
         }];
     }
-    
+
     if (indexPath.section == 1) {
+        
+        if (isStartTimer == NO) {
+            return 0;
+        }
+        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_SPECIAL cacheByIndexPath:indexPath configuration:^(id cell) {
+            [self setupProductSpecialTimeModelOfCell:cell AtIndexPath:indexPath];
+        }];
+        
+    }
+
+    if (indexPath.section == 2) {
+        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_ONLINE cacheByIndexPath:indexPath configuration:^(id cell) {
+            [self setupProductOnlineStatusModelOfCell:cell AtIndexPath:indexPath];
+        }];
+    }
+
+    
+    if (indexPath.section == 3) {
         return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_SALE cacheByIndexPath:indexPath configuration:^(id cell) {
            [self setupProductSaleModelOfCell:cell AtIndexPath:indexPath];
         }];
     }
     
-    if (indexPath.section == 4) {
+    if (indexPath.section == 6) {
         return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_DESCRIBE cacheByIndexPath:indexPath configuration:^(id cell) {
              [self setupProductDescribeModelOfCell:cell AtIndexPath:indexPath];
         }];
     }
     
-    if (indexPath.section == 5) {
+    if (indexPath.section == 7) {
         return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_PROMISE cacheByIndexPath:indexPath configuration:^(id cell) {
             
         }];
@@ -383,25 +451,44 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 1) {
+    if (indexPath.section == 3) {
         [self showProductDetailSaleViewController];
     }
     
-    if (indexPath.section == 2) {
+    if (indexPath.section == 4) {
         [self showProductDetailSelectViewController];
+    }
+    
+    if (indexPath.section == 6) {
+        productDescribeNumberOfLines = (productDescribeNumberOfLines == DES_MAX_LINES) ? 0 : DES_MAX_LINES;
+        //[_firtTableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationFade];
+        [_firtTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:6]] withRowAnimation:UITableViewRowAnimationFade];
+        //[_firtTableView reloadData];
     }
     
 }
 
-#pragma mark -重点 自适应高度必须实现
+#pragma mark -Cell配置（自适应高度必须实现）
 // 详情
 - (void)setupProductInfomationModelOfCell:(ProductInfomationTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
      cell.productDetailModel = _mainModel;
 }
 
+// 倒计时
+- (void)setupProductSpecialTimeModelOfCell:(ProductSpecialTimeTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
+    cell.delegate = self;
+    cell.productDetailModel = _mainModel;
+}
+
+// 上架状态
+- (void)setupProductOnlineStatusModelOfCell:(ProductOnlineStatusTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
+    cell.productDetailModel = _mainModel;
+}
+
 // 描述
 - (void)setupProductDescribeModelOfCell:(ProductDescribeTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{
     cell.productDetailModel = _mainModel;
+    cell.messageLabel.numberOfLines = productDescribeNumberOfLines;
 }
 
 // 促销
@@ -544,6 +631,21 @@
     _stickButton.hidden = (index == 0) ? YES : NO;
 }
 
+#pragma mark - ProductSpecialTimeTableViewCellDelegate
+- (void)productSpecialTimeTableViewCellCurrentTimerStatus:(ProductSpecialTimeStatus)status{
+    
+    if (status == ProductSpecialTimeStatusSaleEnd) {
+        [self endTimer];
+        [_firtTableView reloadData];
+    }
+    
+}
+
+#pragma mark - ProductRecommendViewDelegate
+- (void)productRecommendViewSelectedSkuId:(NSInteger)skuId{
+    NSLog(@"%ld",skuId);
+}
+
 #pragma mark - Network
 
 - (void)networkGetAllProductDetailData{
@@ -565,6 +667,11 @@
                @"tagMap" : [TagMap class]};
     }];
     _mainModel = [ProductDetailModel mj_objectWithKeyValues:[dic objectForKey:@"data"]];
+    
+    //是否特卖
+    if (_mainModel.isSpecialSell) {
+        [self startTimer];
+    }
     [self reloadAllData];
     
 }
@@ -574,7 +681,7 @@
  刷新数据
  */
 - (void)reloadAllData{
-    
+    _productRecommendView.productDetailModel = _mainModel;
     [_firtTableView reloadData];
     [self reloadProductBannerViewData];
     [self reloadMainBuyMenuViewData];
@@ -587,6 +694,7 @@
 - (void)reloadProductBannerViewData{
     
     // 配置Banner数据
+    [_allBannerDataArray removeAllObjects];
     if (_mainModel.item.images.count > 0) {
         for (NSString *imageUrl in _mainModel.item.images) {
             [_allBannerDataArray addObject:imageUrl];
@@ -622,6 +730,7 @@
  */
 - (void)reloadMainBuyMenuViewData{
     
+    _addCartButton.hidden = NO;
     _mainBuyMenuView.isSelectByGoods = _mainModel.isSelect;
     
     // 海淘商品
@@ -632,14 +741,18 @@
     // 暂无库存
     if (_mainModel.item.inventory <= 0) {
         _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNoInventory;
+        _addCartButton.hidden = YES;
+        self.noInventoryView.hidden = NO;
         return;
     }
     
     // 普通商品
+    self.noInventoryView.hidden = YES;
     _mainBuyMenuView.currentStatus = ProductBuyMenuStatusNormal;
 }
 
 - (void)stickButtonAction{
+    _stickButton.hidden = YES;
     [_mainScrollView moveToFirstPageView];
 }
 
@@ -653,9 +766,25 @@
 
 
 #pragma mark -倒计时相关
-- (void)createTimer {
-    self.m_timer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_m_timer forMode:NSRunLoopCommonModes];
+- (void)createTimer{
+    
+    if (self.m_timer == nil) {
+        self.m_timer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(timerEvent) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:_m_timer forMode:NSRunLoopCommonModes];
+    }
+    [self endTimer];
+   
+}
+//开启定时器
+- (void)startTimer{
+    [self.m_timer setFireDate:[NSDate distantPast]];
+    isStartTimer = YES;
+}
+
+//关闭定时器
+- (void)endTimer{
+    [self.m_timer setFireDate:[NSDate distantFuture]];
+    isStartTimer = NO;
 }
 
 - (void)timerEvent {

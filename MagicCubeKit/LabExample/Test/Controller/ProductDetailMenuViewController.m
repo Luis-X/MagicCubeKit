@@ -65,7 +65,7 @@
     //左侧
     UILabel *leftItem = [UILabel new];
     leftItem.text = @"\U0000e6d5";
-    leftItem.font = [UIFont fontWithName:@"iconfont" size:20];
+    leftItem.font = [UIFont fontWithName:@"iconfont" size:20 * HOME_IPHONE6_HEIGHT];
     leftItem.textColor = [UIColor whiteColor];
     leftItem.userInteractionEnabled = YES;
     leftItem.textAlignment = NSTextAlignmentCenter;
@@ -74,28 +74,28 @@
     [leftItem mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(navigationBarView);
         make.left.equalTo(navigationBarView);
-        make.width.height.mas_equalTo(35);
+        make.width.height.mas_equalTo(35 * HOME_IPHONE6_HEIGHT);
     }];
     
     //右侧
     MagicIconButton *rightItem = [MagicIconButton new];
-    rightItem.backgroundColor = [UIColor whiteColor];
+    //rightItem.backgroundColor = [UIColor whiteColor];
     rightItem.titleLabel.text = @"分享赚";
     rightItem.iconLabel.text = @"\U0000e6f3";
     rightItem.titleLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
     rightItem.iconLabel.textColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
     rightItem.buttonStyle = IconTextButtonStyleRight;
-    rightItem.buttonEdges = UIEdgeInsetsMake(0, 10, 0, 0);
-    rightItem.iconFontSize = 14;
-    rightItem.titleLabel.font = [UIFont systemFontOfSize:12];
-    rightItem.layer.cornerRadius = 25 / 2;
+    rightItem.buttonEdges = UIEdgeInsetsMake(0, 10 * HOME_IPHONE6_WIDTH, 0, 0);
+    rightItem.iconFontSize = 14 * HOME_IPHONE6_HEIGHT;
+    rightItem.titleLabel.font = [UIFont systemFontOfSize:12 * HOME_IPHONE6_HEIGHT];
+    [rightItem jm_setImageWithCornerRadius:(25 / 2) * HOME_IPHONE6_HEIGHT borderColor:[UIColor clearColor] borderWidth:0 backgroundColor:[UIColor whiteColor]];
     [navigationBarView addSubview:rightItem];
     [rightItem addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressRightBarButtonItemAction)]];
     [rightItem mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(navigationBarView);
         make.right.equalTo(navigationBarView);
-        make.width.mas_equalTo(75);
-        make.height.mas_equalTo(25);
+        make.width.mas_equalTo(75 * HOME_IPHONE6_WIDTH);
+        make.height.mas_equalTo(25 * HOME_IPHONE6_HEIGHT);
     }];
     
     _pageSegmentedControl = [[DZNSegmentedControl alloc] initWithItems:self.titles];
@@ -103,7 +103,7 @@
     _pageSegmentedControl.tintColor = [UIColor colorWithRed:0.57 green:0.09 blue:0.17 alpha:1.00];
     _pageSegmentedControl.selectionIndicatorHeight = 2;
     _pageSegmentedControl.showsCount = NO;
-    _pageSegmentedControl.width = 100;
+    _pageSegmentedControl.width = 100 * HOME_IPHONE6_WIDTH;
     _pageSegmentedControl.height = 44;
     _pageSegmentedControl.font = [UIFont systemFontOfSize:14];
     [navigationBarView addSubview:_pageSegmentedControl];

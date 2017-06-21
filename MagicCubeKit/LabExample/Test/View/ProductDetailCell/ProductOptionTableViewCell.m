@@ -30,18 +30,19 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
-    _titleLabel.font = [UIFont systemFontOfSize:14];
+    _titleLabel.font = [UIFont systemFontOfSize:14 * HOME_IPHONE6_HEIGHT];
     [self.contentView addSubview:_titleLabel];
     
     _subtitleLabel = [UILabel new];
     _subtitleLabel.textColor = [UIColor colorWithRed:0.10 green:0.07 blue:0.06 alpha:1.00];
-    _subtitleLabel.font = [UIFont systemFontOfSize:14];
+    _subtitleLabel.font = [UIFont systemFontOfSize:14 * HOME_IPHONE6_HEIGHT];
     [self.contentView addSubview:_subtitleLabel];
     
     _arrowIcon = [UILabel new];
-    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:10];
+    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:10 * HOME_IPHONE6_HEIGHT];
     _arrowIcon.text = @"\U0000e64e";
     _arrowIcon.textColor = [UIColor grayColor];
+    _arrowIcon.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_arrowIcon];
 
 }
@@ -49,21 +50,20 @@
 - (void)settingAutoLayout{
     
     [_arrowIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-15);
-        make.top.equalTo(self.contentView).offset(18);
-        make.bottom.equalTo(self.contentView).offset(-18);
+        make.right.equalTo(self.contentView).offset(-15 * HOME_IPHONE6_WIDTH);
+        make.centerY.equalTo(self.contentView);
     }];
     
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_arrowIcon);
-        make.left.equalTo(self.contentView).offset(10);
+        make.left.equalTo(self.contentView).offset(10 * HOME_IPHONE6_WIDTH);
     }];
     
     [_subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_arrowIcon);
-        make.left.equalTo(_titleLabel.mas_right).offset(10);
-        make.right.lessThanOrEqualTo(_arrowIcon.mas_left).offset(-10);
+        make.left.equalTo(_titleLabel.mas_right).offset(10 * HOME_IPHONE6_WIDTH);
+        make.right.lessThanOrEqualTo(_arrowIcon.mas_left).offset(-10 * HOME_IPHONE6_WIDTH);
     }];
     
 }

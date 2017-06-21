@@ -32,23 +32,23 @@
     
     _saleTagView = [ProductSaleTagView new];
     _saleTagView.title = @"3件199元";
-    _saleTagView.height = 18;
-    _saleTagView.fontSize = 12;
+    _saleTagView.height = 18 * HOME_IPHONE6_HEIGHT;
+    _saleTagView.fontSize = 12 * HOME_IPHONE6_HEIGHT;
     [self.contentView addSubview:_saleTagView];
     
     _titleLabel = [UILabel new];
     _titleLabel.text = @"只需要199元可享三件商品";
     _titleLabel.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
-    _titleLabel.font = [UIFont systemFontOfSize:12];
+    _titleLabel.font = [UIFont systemFontOfSize:12 * HOME_IPHONE6_HEIGHT];
     [self.contentView addSubview:_titleLabel];
     
     _subTitleLabel = [UILabel new];
     _subTitleLabel.textColor =  [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
-    _subTitleLabel.font = [UIFont systemFontOfSize:12];
+    _subTitleLabel.font = [UIFont systemFontOfSize:12 * HOME_IPHONE6_HEIGHT];
     [self.contentView addSubview:_subTitleLabel];
     
     _arrowIcon = [UILabel new];
-    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:10];
+    _arrowIcon.font = [UIFont fontWithName:@"iconfont" size:10 * HOME_IPHONE6_HEIGHT];
     _arrowIcon.text = @"\U0000e64e";
     _arrowIcon.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.00];
     [self.contentView addSubview:_arrowIcon];
@@ -62,28 +62,28 @@
 - (void)settingAutoLayout{
     
     [_arrowIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-10);
-        make.top.equalTo(self.contentView).offset(15);
-        make.bottom.equalTo(self.contentView).offset(-15);
+        make.right.equalTo(self.contentView).offset(-10 * HOME_IPHONE6_WIDTH);
+        make.top.equalTo(self.contentView).offset(15 * HOME_IPHONE6_HEIGHT);
+        make.bottom.equalTo(self.contentView).offset(-15 * HOME_IPHONE6_HEIGHT);
     }];
     
     [_subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_arrowIcon);
-        make.right.equalTo(_arrowIcon.mas_left).offset(-10);
+        make.right.equalTo(_arrowIcon.mas_left).offset(-10 * HOME_IPHONE6_WIDTH);
     }];
     
     [_saleTagView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_arrowIcon);
-        make.left.equalTo(self.contentView).offset(10);
+        make.left.equalTo(self.contentView).offset(10 * HOME_IPHONE6_WIDTH);
     }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_arrowIcon);
-        make.left.equalTo(_saleTagView.mas_right).offset(10);
+        make.left.equalTo(_saleTagView.mas_right).offset(10 * HOME_IPHONE6_WIDTH);
     }];
 
     [_blackLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(10);
+        make.left.equalTo(self.contentView).offset(10 * HOME_IPHONE6_WIDTH);
         make.right.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView);
         make.height.mas_equalTo(0.5);

@@ -23,7 +23,7 @@
 //重写初始化方法
 - (instancetype)init{
     if (self = [super init]) {
-        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, 450);
+        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, 450 * HOME_IPHONE6_HEIGHT);
     }
     return self;
 }
@@ -61,11 +61,12 @@
     [self.view addSubview:_mainHeaderView];
     [_mainHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
-        make.height.mas_equalTo(66);
+        make.height.mas_equalTo(66 * HOME_IPHONE6_HEIGHT);
     }];
     
     UILabel *closeButton = [UILabel new];
-    closeButton.font = [UIFont fontWithName:@"iconfont" size:14];
+    closeButton.textAlignment = NSTextAlignmentCenter;
+    closeButton.font = [UIFont fontWithName:@"iconfont" size:14 * HOME_IPHONE6_HEIGHT];
     closeButton.text = @"\U0000e6e8";
     closeButton.textColor = [UIColor colorWithRed:0.80 green:0.80 blue:0.80 alpha:1.00];
     closeButton.userInteractionEnabled = YES;
@@ -73,12 +74,13 @@
     [_mainHeaderView addSubview:closeButton];
     [closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_mainHeaderView);
-        make.right.equalTo(_mainHeaderView).offset(-20);
+        make.right.equalTo(_mainHeaderView);
+        make.width.height.mas_equalTo(44 * HOME_IPHONE6_HEIGHT);
     }];
     
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"促销活动";
-    titleLabel.font = [UIFont systemFontOfSize:16];
+    titleLabel.font = [UIFont systemFontOfSize:16 * HOME_IPHONE6_HEIGHT];
     titleLabel.textColor = [UIColor colorWithRed:0.10 green:0.07 blue:0.06 alpha:1.00];
     [_mainHeaderView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

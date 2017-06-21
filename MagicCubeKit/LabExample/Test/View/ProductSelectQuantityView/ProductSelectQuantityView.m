@@ -66,17 +66,13 @@
     _maxValue = MAXFLOAT;
     
     self.backgroundColor = [UIColor whiteColor];
-    self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 15;
-    self.layer.borderWidth = 0.5;
-    self.layer.borderColor = [UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00].CGColor;
-    
+    [self jm_setImageWithCornerRadius:15 * HOME_IPHONE6_HEIGHT borderColor:[UIColor colorWithRed:0.90 green:0.90 blue:0.90 alpha:1.00] borderWidth:0.5 backgroundColor:[UIColor clearColor]];
 }
 
 - (void)createSubViews{
     
     _cutButton = [UILabel new];
-    _cutButton.font = [UIFont fontWithName:@"iconfont" size:15];
+    _cutButton.font = [UIFont fontWithName:@"iconfont" size:15 * HOME_IPHONE6_HEIGHT];
     _cutButton.text = @"\U0000e625";
     _cutButton.textAlignment = NSTextAlignmentCenter;
     _cutButton.userInteractionEnabled = YES;
@@ -85,7 +81,7 @@
 
     
     _addButton = [UILabel new];
-    _addButton.font = [UIFont fontWithName:@"iconfont" size:15];
+    _addButton.font = [UIFont fontWithName:@"iconfont" size:15 * HOME_IPHONE6_HEIGHT];
     _addButton.text = @"\U0000e624";
     _addButton.textAlignment = NSTextAlignmentCenter;
     _addButton.userInteractionEnabled = YES;
@@ -99,6 +95,7 @@
     _numTextField.textColor = [UIColor colorWithRed:0.30 green:0.30 blue:0.30 alpha:1.00];
     _numTextField.keyboardType = UIKeyboardTypeNumberPad;
     _numTextField.textAlignment = NSTextAlignmentCenter;
+    _numTextField.font = [UIFont systemFontOfSize:18 * HOME_IPHONE6_HEIGHT];
     _numTextField.enabled = NO;
     _numTextField.delegate = self;
     [self addSubview:_numTextField];

@@ -30,6 +30,7 @@
 #import <ChameleonFramework/Chameleon.h>
 #import <MJExtension.h>
 #import <UIImageView+WebCache.h>
+#import <JMRoundedCorner/JMRoundedCorner.h>
 
 //封装包
 #import "UIQuicklyKit.h"
