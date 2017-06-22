@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProductConstant.h"
 @interface ProductSaleTagView : UIView
 @property (nonatomic, copy)NSString *title;             //文案
 @property (nonatomic, assign)CGFloat fontSize;          //字体大小 （默认：10）

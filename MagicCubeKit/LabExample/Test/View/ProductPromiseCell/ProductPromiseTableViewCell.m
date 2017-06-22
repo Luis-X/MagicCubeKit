@@ -46,7 +46,7 @@
     [self createMenuButtonWithTitles:@[@"PICC承保", @"正品保障", @"假一赔十", @"90天无理由退货"]
                                Icons:@[@"\U0000e6ef", @"\U0000e6e9", @"\U0000e6ed", @"\U0000e6eb"]
                               Height:70 * HOME_IPHONE6_HEIGHT
-                        ContentWidth:Magic_screen_Width
+                        ContentWidth:Screen_width
                          BoundsSpace:15 * HOME_IPHONE6_WIDTH];
 
 }

@@ -7,8 +7,7 @@
 //
 
 #import "ProductDetailMenuViewController.h"
-#import "DZNSegmentedControl.h"
-#import "MagicIconButton.h"
+
 @interface ProductDetailMenuViewController ()
 
 @end

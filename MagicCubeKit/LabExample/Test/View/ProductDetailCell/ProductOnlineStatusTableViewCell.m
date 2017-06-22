@@ -109,7 +109,7 @@
     [_tagBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(10 * HOME_IPHONE6_HEIGHT);
         make.centerX.equalTo(self.contentView);
-        make.width.mas_lessThanOrEqualTo(Magic_screen_Width - 20 * HOME_IPHONE6_WIDTH);
+        make.width.mas_lessThanOrEqualTo(Screen_width - 20 * HOME_IPHONE6_WIDTH);
     }];
     
     [_onLineStatisticsView mas_makeConstraints:^(MASConstraintMaker *make) {

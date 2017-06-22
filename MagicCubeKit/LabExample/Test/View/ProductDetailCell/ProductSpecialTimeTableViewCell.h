@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductConstant.h"
 #import "ProductDetailModel.h"
 
 #define NOTIFICATION_TIME_CELL  @"NotificationTimeCell"

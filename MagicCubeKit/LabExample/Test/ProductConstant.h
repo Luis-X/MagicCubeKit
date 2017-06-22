@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WMPageController.h"
+#import <DateTools.h>
+#import <MJExtension.h>
 #import <STPopup.h>
+#import <JMRoundedCorner/JMRoundedCorner.h>
+#import "UITableView+FDTemplateLayoutCell.h"
+#import "ParallaxHeaderView.h"
+#import "DZNSegmentedControl.h"
+#import "MagicScrollPage.h"
+#import "ZYBannerView.h"
+#import "MagicIconButton.h"
+#import "SJHSlideMenuView.h"
 
 @interface ProductConstant : NSObject
 + (ProductConstant *)shareManager;

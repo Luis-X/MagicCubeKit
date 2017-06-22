@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "ProductConstant.h"
 @protocol ProductDetailSaleViewControllerDelegate <NSObject>
 
 - (void)productDetailSaleCloseActionWithValue:(id)value;

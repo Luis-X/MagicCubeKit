@@ -79,6 +79,9 @@
 		D19FF1281EFA5090007B0632 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF11E1EFA5090007B0632 /* WMPageController.m */; };
 		D19FF12F1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF12E1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m */; };
 		D19FF1331EFA75B9007B0632 /* ProductRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1321EFA75B9007B0632 /* ProductRecommendView.m */; };
+		D19FF13E1EFB95B1007B0632 /* ProductSecondPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF13D1EFB95B1007B0632 /* ProductSecondPageView.m */; };
+		D19FF1441EFBA512007B0632 /* SJHSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1411EFBA512007B0632 /* SJHSlideMenu.m */; };
+		D19FF1451EFBA512007B0632 /* SJHSlideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1431EFBA512007B0632 /* SJHSlideMenuView.m */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
 		D1BDFD941ED2CF5F000064B8 /* MVCommonUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD931ED2CF5F000064B8 /* MVCommonUI.bundle */; };
@@ -314,6 +317,12 @@
 		D19FF12E1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecommendCollectionViewCell.m; sourceTree = "<group>"; };
 		D19FF1311EFA75B9007B0632 /* ProductRecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductRecommendView.h; sourceTree = "<group>"; };
 		D19FF1321EFA75B9007B0632 /* ProductRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecommendView.m; sourceTree = "<group>"; };
+		D19FF13C1EFB95B1007B0632 /* ProductSecondPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSecondPageView.h; sourceTree = "<group>"; };
+		D19FF13D1EFB95B1007B0632 /* ProductSecondPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSecondPageView.m; sourceTree = "<group>"; };
+		D19FF1401EFBA512007B0632 /* SJHSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJHSlideMenu.h; sourceTree = "<group>"; };
+		D19FF1411EFBA512007B0632 /* SJHSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJHSlideMenu.m; sourceTree = "<group>"; };
+		D19FF1421EFBA512007B0632 /* SJHSlideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJHSlideMenuView.h; sourceTree = "<group>"; };
+		D19FF1431EFBA512007B0632 /* SJHSlideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJHSlideMenuView.m; sourceTree = "<group>"; };
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
 		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
 		D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
@@ -1187,6 +1196,7 @@
 		D19FF1031EFA5090007B0632 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				D19FF13F1EFBA512007B0632 /* SJSlideMenu */,
 				D19FF1041EFA5090007B0632 /* DZNSegmentedControl */,
 				D19FF1091EFA5090007B0632 /* PageMenu */,
 				D19FF10B1EFA5090007B0632 /* ParallaxTableViewHeader */,
@@ -1279,11 +1289,24 @@
 			path = ProductRecommendCell;
 			sourceTree = "<group>";
 		};
-		D19FF1301EFA72E7007B0632 /* DaRenShop */ = {
+		D19FF13B1EFB958D007B0632 /* ProductSecondPageView */ = {
 			isa = PBXGroup;
 			children = (
+				D19FF13C1EFB95B1007B0632 /* ProductSecondPageView.h */,
+				D19FF13D1EFB95B1007B0632 /* ProductSecondPageView.m */,
 			);
-			path = DaRenShop;
+			path = ProductSecondPageView;
+			sourceTree = "<group>";
+		};
+		D19FF13F1EFBA512007B0632 /* SJSlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D19FF1401EFBA512007B0632 /* SJHSlideMenu.h */,
+				D19FF1411EFBA512007B0632 /* SJHSlideMenu.m */,
+				D19FF1421EFBA512007B0632 /* SJHSlideMenuView.h */,
+				D19FF1431EFBA512007B0632 /* SJHSlideMenuView.m */,
+			);
+			path = SJSlideMenu;
 			sourceTree = "<group>";
 		};
 		D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */ = {
@@ -1674,7 +1697,6 @@
 		D1D257F51EDFFB9900A7CADD /* ReSource */ = {
 			isa = PBXGroup;
 			children = (
-				D19FF1301EFA72E7007B0632 /* DaRenShop */,
 				D19FF1031EFA5090007B0632 /* ThirdParty */,
 				D19FF1011EFA4E9F007B0632 /* productDetailGoTop@2x.png */,
 				D19FF0F91EF92414007B0632 /* productDetailMenuNone@2x.png */,
@@ -1822,6 +1844,7 @@
 		D1E0BE5B1ED922B200493704 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D19FF13B1EFB958D007B0632 /* ProductSecondPageView */,
 				D19FF1291EFA7148007B0632 /* ProductRecommendCell(推荐) */,
 				D16665E11EE8FB8900B84D1B /* ProductTagView(标签功能) */,
 				D1D258181EE1160100A7CADD /* ProductBuyMenuView(菜单功能) */,
@@ -2104,11 +2127,13 @@
 				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
 				D11993F51EC2F06600841273 /* MagicAlertView.m in Sources */,
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
+				D19FF1451EFBA512007B0632 /* SJHSlideMenuView.m in Sources */,
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
 				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
 				D16665E71EE8FBD000B84D1B /* ProductSaleTagView.m in Sources */,
 				D19FF1241EFA5090007B0632 /* WMMenuItem.m in Sources */,
 				D1D258141EE109FA00A7CADD /* ProductSelectCollectionViewCell.m in Sources */,
+				D19FF1441EFBA512007B0632 /* SJHSlideMenu.m in Sources */,
 				D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D19FF1001EF931FD007B0632 /* ProductOnlineStatusTableViewCell.m in Sources */,
@@ -2152,6 +2177,7 @@
 				D11993F21EC2F00000841273 /* ExampleMagicAlertViewViewController.m in Sources */,
 				D19FF12F1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m in Sources */,
 				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
+				D19FF13E1EFB95B1007B0632 /* ProductSecondPageView.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
 				D1D2580E1EE1098E00A7CADD /* ProductOptionTableViewCell.m in Sources */,

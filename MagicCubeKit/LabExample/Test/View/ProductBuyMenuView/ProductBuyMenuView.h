@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProductConstant.h"
 typedef enum : NSUInteger {
     ProductBuyMenuTypeService,  //客服
     ProductBuyMenuTypeOnOff,    //上下架

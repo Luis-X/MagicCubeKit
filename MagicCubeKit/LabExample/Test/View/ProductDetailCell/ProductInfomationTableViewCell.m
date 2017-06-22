@@ -8,7 +8,6 @@
 
 #import "ProductInfomationTableViewCell.h"
 #import "ProductSaleTagView.h"
-#import "ProductConstant.h"
 
 @implementation ProductInfomationTableViewCell{
     UIView *_cellBackgroundView;                //背景

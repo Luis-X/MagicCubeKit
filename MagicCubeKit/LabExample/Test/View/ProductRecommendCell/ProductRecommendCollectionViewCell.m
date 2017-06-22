@@ -7,7 +7,6 @@
 //
 
 #import "ProductRecommendCollectionViewCell.h"
-#import "ProductConstant.h"
 
 @implementation ProductRecommendCollectionViewCell{
     UIImageView *_imageView;     //商品图

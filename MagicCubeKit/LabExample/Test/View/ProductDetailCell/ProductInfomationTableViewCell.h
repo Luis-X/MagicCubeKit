@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductDetailModel.h"
+#import "ProductConstant.h"
 @interface ProductInfomationTableViewCell : UITableViewCell
 @property (nonatomic, strong)ProductDetailModel *productDetailModel;
 @end

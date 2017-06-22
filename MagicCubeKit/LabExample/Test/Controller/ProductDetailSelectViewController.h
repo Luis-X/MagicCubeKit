@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "ProductConstant.h"
 #import "ProductDetailModel.h"
 @protocol ProductDetailSelectViewControllerDelegate <NSObject>
 

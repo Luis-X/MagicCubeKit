@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductConstant.h"
 #import "ProductDetailModel.h"
 @interface ProductSelectCollectionViewCell : UICollectionViewCell
 - (void)updateCellDataWithValueModel:(Value *)valueModel selectedSkuId:(NSInteger)selectedSkuId;

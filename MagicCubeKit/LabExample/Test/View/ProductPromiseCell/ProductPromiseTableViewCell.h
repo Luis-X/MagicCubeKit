@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProductConstant.h"
 @interface ProductPromiseTableViewCell : UITableViewCell
 
 @end

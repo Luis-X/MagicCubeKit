@@ -9,12 +9,10 @@
 #define ProductBuyMenu_Height 55 * HOME_IPHONE6_HEIGHT
 
 #import "ProductDetailSelectViewController.h"
-#import <STPopup.h>
 #import "UICollectionViewLeftAlignedLayout.h"
 #import "ProductSelectCollectionViewCell.h"
 #import "ProductSelectHeaderCollectionReusableView.h"
 #import "ProductSelectFooterCollectionReusableView.h"
-#import "ProductConstant.h"
 
 @interface ProductDetailSelectViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, ProductSelectFooterCollectionReusableViewDelegate>
 
@@ -39,7 +37,7 @@
 //重写初始化方法
 - (instancetype)init{
     if (self = [super init]) {
-        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, Magic_screen_Height - 192 * HOME_IPHONE6_HEIGHT);
+        self.contentSizeInPopup = CGSizeMake(Screen_width, Screen_height - 192 * HOME_IPHONE6_HEIGHT);
     }
     return self;
 }

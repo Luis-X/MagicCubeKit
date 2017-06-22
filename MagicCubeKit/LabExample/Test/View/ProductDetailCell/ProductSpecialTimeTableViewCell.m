@@ -370,8 +370,12 @@
     if ([nowDate isLaterThanOrEqualTo:startDate] && [nowDate isEarlierThanOrEqualTo:endDate]) {
         [self updateProductSpecialTimeStyle:ProductSpecialTimeStyleHour];
         _timer_messageLabel.text = @"距离结束仅剩";
-        _timer_hourLabel.text = [NSString stringWithFormat:@"%ld", (hours / 10)];
-        _timer_subhourLabel.text = [NSString stringWithFormat:@"%ld", (hours % 10)];
+        NSInteger amountHours = (hours + includeHours);
+        if (amountHours > 99) {
+            amountHours = 99;
+        }
+        _timer_hourLabel.text = [NSString stringWithFormat:@"%ld", (amountHours / 10)];
+        _timer_subhourLabel.text = [NSString stringWithFormat:@"%ld", (amountHours % 10)];
         _timer_minuteLabel.text = [NSString stringWithFormat:@"%ld", (minutes / 10)];
         _timer_subminuteLabel.text = [NSString stringWithFormat:@"%ld", (minutes % 10)];
         _timer_secondLabel.text = [NSString stringWithFormat:@"%ld", (seconds / 10)];

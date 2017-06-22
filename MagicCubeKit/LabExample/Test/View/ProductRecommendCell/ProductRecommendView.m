@@ -100,8 +100,8 @@
  */
 - (void)executeProductRecommendViewSelectedSkuId:(NSInteger)skuId{
     
-    if ([self.delegate respondsToSelector:@selector(productRecommendViewSelectedSkuId:)]) {
-        [self.delegate productRecommendViewSelectedSkuId:skuId];
+    if ([self.myDelegate respondsToSelector:@selector(productRecommendViewSelectedSkuId:)]) {
+        [self.myDelegate productRecommendViewSelectedSkuId:skuId];
     }
     
 }

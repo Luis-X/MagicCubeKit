@@ -7,8 +7,6 @@
 //
 
 #import "ProductDetailSaleViewController.h"
-#import "UITableView+FDTemplateLayoutCell.h"
-#import <STPopup.h>
 #import "ProductSaleTableViewCell.h"
 
 @interface ProductDetailSaleViewController ()<UITableViewDataSource, UITableViewDelegate>{
@@ -23,7 +21,7 @@
 //重写初始化方法
 - (instancetype)init{
     if (self = [super init]) {
-        self.contentSizeInPopup = CGSizeMake(Magic_screen_Width, 450 * HOME_IPHONE6_HEIGHT);
+        self.contentSizeInPopup = CGSizeMake(Screen_width, 450 * HOME_IPHONE6_HEIGHT);
     }
     return self;
 }

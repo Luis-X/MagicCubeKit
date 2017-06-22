@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductConstant.h"
 #import "ProductDetailModel.h"
 
 @protocol ProductRecommendViewDelegate <NSObject>
@@ -17,5 +18,5 @@
 
 @interface ProductRecommendView : UIView<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) ProductDetailModel *productDetailModel;
-@property (nonatomic, weak) id <ProductRecommendViewDelegate> delegate;
+@property (nonatomic, weak) id <ProductRecommendViewDelegate> myDelegate;
 @end

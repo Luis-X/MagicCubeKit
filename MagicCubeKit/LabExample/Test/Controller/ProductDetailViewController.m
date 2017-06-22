@@ -9,12 +9,8 @@
 #define ProductBuyMenu_Height 50 * HOME_IPHONE6_HEIGHT
 
 #import "ProductDetailViewController.h"
-#import "ParallaxHeaderView.h"
-#import "UITableView+FDTemplateLayoutCell.h"
-#import "MagicScrollPage.h"
-#import "ZYBannerView.h"
-#import "MagicIconButton.h"
 
+#import "ProductSecondPageView.h"
 #import "ProductInfomationTableViewCell.h"
 #import "ProductSpecialTimeTableViewCell.h"
 #import "ProductOnlineStatusTableViewCell.h"
@@ -23,7 +19,6 @@
 #import "ProductActivityTableViewCell.h"
 #import "ProductDescribeTableViewCell.h"
 #import "ProductPromiseTableViewCell.h"
-#import "ProductRecommendView.h"
 
 #import "ProductDetailSelectViewController.h"
 #import "ProductDetailSaleViewController.h"
@@ -42,7 +37,7 @@
 
 #define DES_MAX_LINES 7
 
-@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate, MagicScrollPageDelegate, ProductSpecialTimeTableViewCellDelegate, ProductRecommendViewDelegate>
+@interface ProductDetailViewController ()<UITableViewDataSource, UITableViewDelegate, ProductBuyMenuViewDelegate, ProductDetailSelectViewControllerDelegate, ProductDetailSaleViewControllerDelegate, ZYBannerViewDataSource, ZYBannerViewDelegate, MagicScrollPageDelegate, ProductSpecialTimeTableViewCellDelegate>
 @property (nonatomic, strong) NSTimer        *m_timer;          //倒计时
 @property (nonatomic, strong) UILabel *noInventoryView;          //无库存提示
 @end
@@ -64,7 +59,6 @@
     NSInteger sectionCount;                                      //模块总数量
     BOOL isStartTimer;                                           //倒计时状态
     NSInteger productDescribeNumberOfLines;                      //描述显示行数
-    ProductRecommendView *_productRecommendView;                 //更多推荐
 }
 
 
@@ -145,7 +139,7 @@
  */
 - (ParallaxHeaderView *)createProductParallaxHeaderView{
     
-    _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 320)];
+    _productBannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, Screen_width, 320)];
     _productBannerView.backgroundColor = [UIColor whiteColor];
     _productBannerView.dataSource = self;
     _productBannerView.delegate = self;
@@ -210,9 +204,32 @@
     
     _secondScrollView = [UIScrollView new];
     _secondScrollView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
-    _productRecommendView = [[ProductRecommendView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_Width, 211)];
-    _productRecommendView.delegate = self;
-    [_secondScrollView addSubview:_productRecommendView];
+    _secondScrollView.scrollEnabled = NO;
+    
+    ProductSecondPageView *view1 = [ProductSecondPageView new];
+    view1.frame = CGRectMake(0, 0, Screen_width, Screen_height);
+    
+    ProductSecondPageView *view2 = [ProductSecondPageView new];
+    view2.frame = CGRectMake(0, 0, Screen_width, Screen_height);
+    
+    ProductSecondPageView *view3 = [ProductSecondPageView new];
+    view3.frame = CGRectMake(0, 0, Screen_width, Screen_height);
+    NSArray *marrVC = @[view1, view2, view3];
+    
+    SJHSlideMenuView *sjHSlideMenuView = [[SJHSlideMenuView alloc] initWithFrame:CGRectMake(0, 0, Screen_width, Screen_height)];
+    sjHSlideMenuView.backgroundColor=[UIColor whiteColor];
+    sjHSlideMenuView.menuHeight = 40;
+    sjHSlideMenuView.menuNormalColor = [UIColor colorWithRed:0.10 green:0.07 blue:0.06 alpha:1.00];
+    sjHSlideMenuView.menuSelectedColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    sjHSlideMenuView.xOffset = (Screen_width-marrVC.count * 80 ) / (marrVC.count + 1);
+    sjHSlideMenuView.btnSize = CGSizeMake(80, 38);
+    sjHSlideMenuView.arrTitles = @[@"商品详情", @"商品参数", @"购物须知"];
+    sjHSlideMenuView.arrContent = marrVC;
+    sjHSlideMenuView.selectedIndex = 0;
+    sjHSlideMenuView.menuSlideBottomColor = [UIColor whiteColor];
+    sjHSlideMenuView.menuSlideColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
+    sjHSlideMenuView.menuFont = [UIFont systemFontOfSize:12];
+    [_secondScrollView addSubview:sjHSlideMenuView];
     
 }
 
@@ -641,11 +658,6 @@
     
 }
 
-#pragma mark - ProductRecommendViewDelegate
-- (void)productRecommendViewSelectedSkuId:(NSInteger)skuId{
-    NSLog(@"%ld",skuId);
-}
-
 #pragma mark - Network
 
 - (void)networkGetAllProductDetailData{
@@ -681,11 +693,10 @@
  刷新数据
  */
 - (void)reloadAllData{
-    _productRecommendView.productDetailModel = _mainModel;
+    //_secondScrollView.productDetailModel = _mainModel;
     [_firtTableView reloadData];
     [self reloadProductBannerViewData];
     [self reloadMainBuyMenuViewData];
-    
 }
 
 /**
