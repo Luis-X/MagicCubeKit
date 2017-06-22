@@ -204,32 +204,6 @@
     
     _secondScrollView = [UIScrollView new];
     _secondScrollView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
-    _secondScrollView.scrollEnabled = NO;
-    
-    ProductSecondPageView *view1 = [ProductSecondPageView new];
-    view1.frame = CGRectMake(0, 0, Screen_width, Screen_height);
-    
-    ProductSecondPageView *view2 = [ProductSecondPageView new];
-    view2.frame = CGRectMake(0, 0, Screen_width, Screen_height);
-    
-    ProductSecondPageView *view3 = [ProductSecondPageView new];
-    view3.frame = CGRectMake(0, 0, Screen_width, Screen_height);
-    NSArray *marrVC = @[view1, view2, view3];
-    
-    SJHSlideMenuView *sjHSlideMenuView = [[SJHSlideMenuView alloc] initWithFrame:CGRectMake(0, 0, Screen_width, Screen_height)];
-    sjHSlideMenuView.backgroundColor=[UIColor whiteColor];
-    sjHSlideMenuView.menuHeight = 40;
-    sjHSlideMenuView.menuNormalColor = [UIColor colorWithRed:0.10 green:0.07 blue:0.06 alpha:1.00];
-    sjHSlideMenuView.menuSelectedColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
-    sjHSlideMenuView.xOffset = (Screen_width-marrVC.count * 80 ) / (marrVC.count + 1);
-    sjHSlideMenuView.btnSize = CGSizeMake(80, 38);
-    sjHSlideMenuView.arrTitles = @[@"商品详情", @"商品参数", @"购物须知"];
-    sjHSlideMenuView.arrContent = marrVC;
-    sjHSlideMenuView.selectedIndex = 0;
-    sjHSlideMenuView.menuSlideBottomColor = [UIColor whiteColor];
-    sjHSlideMenuView.menuSlideColor = [UIColor colorWithRed:0.96 green:0.22 blue:0.33 alpha:1.00];
-    sjHSlideMenuView.menuFont = [UIFont systemFontOfSize:12];
-    [_secondScrollView addSubview:sjHSlideMenuView];
     
 }
 
