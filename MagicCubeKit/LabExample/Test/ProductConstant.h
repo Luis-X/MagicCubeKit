@@ -18,10 +18,10 @@
 #import "MagicScrollPage.h"
 #import "ZYBannerView.h"
 #import "MagicIconButton.h"
-#import "SJHSlideMenuView.h"
 
 @interface ProductConstant : NSObject
 + (ProductConstant *)shareManager;
 - (STPopupController *)showPopViewControllerWithMagicVC:(UIViewController *)magicVC AddController:(UIViewController *)addController CornerRadius:(CGFloat)cornerRadius NavigationBarHidden:(BOOL)navigationBarHidden;
 + (void)setRichSignNumberWithLabel:(UILabel*)label BigSize:(CGFloat)bigSize SmallSize:(CGFloat)smallSize Color:(UIColor *)color;
++ (CGFloat)getTextWidthWithText:(NSString *)text height:(CGFloat)height font:(UIFont *)font;
 @end

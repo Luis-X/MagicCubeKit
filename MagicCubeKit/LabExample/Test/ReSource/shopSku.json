@@ -115,7 +115,7 @@
         "byStages": "该商品最多可享12期免息分期购",
         "price": "69000.00",
         "shopId": 6015,
-        "isSpecialSell": false,
+        "isSpecialSell": true,
         "shopName": "JOY的杂货",
         "item": {
             "zhName": "臻彩持久液体口红",

@@ -149,4 +149,14 @@
 - (void)pageController:(WMPageController *)pageController didEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info{
     [self updatePageSegmentedControlSelectedIndex];
 }
+
+- (void)pageController:(WMPageController *)pageController willEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info{
+    
+    if ([viewController isKindOfClass:[ProductDetailViewController class]]) {
+        NSLog(@"商品页面");
+    }
+    if ([viewController isKindOfClass:[ExampleMagicNetworkingViewController class]]) {
+        NSLog(@"素材页面");
+    }
+}
 @end

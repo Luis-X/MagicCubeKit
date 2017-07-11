@@ -81,4 +81,22 @@
     
 }
 
+#pragma mark -文本计算
+/**
+ 根据高度获取高度
+ 
+ @param text    文本
+ @param height  高度
+ @param font    字体
+ */
++ (CGFloat)getTextWidthWithText:(NSString *)text height:(CGFloat)height font:(UIFont *)font{
+    //1,设置内容大小  其中高度一定要与item一致,宽度度尽量设置大值
+    CGSize size = CGSizeMake(MAXFLOAT, height);
+    //2,设置计算方式
+    //3,设置字体大小属性   字体大小必须要与label设置的字体大小一致
+    NSDictionary *attributeDic = @{NSFontAttributeName: font};
+    CGRect frame = [text boundingRectWithSize:size options: NSStringDrawingUsesLineFragmentOrigin attributes:attributeDic context:nil];
+    //4.添加间距
+    return frame.size.width;
+}
 @end
