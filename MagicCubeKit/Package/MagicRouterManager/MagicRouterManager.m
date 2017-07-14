@@ -38,7 +38,7 @@
  */
 + (void)allActionManagementWithNavigationController:(UINavigationController *)navigationController Object:(NSString *)object Action:(NSString *)action{
     
-    //NSLog(@"对象:%@\n事件:%@", object, action);
+    NSLog(@"对象:%@\n事件:%@", object, action);
     
     //ViewController
     if ([object isEqualToString:@"ViewController"]) {

@@ -24,6 +24,7 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - CYLTabBarController (1.13.1)
   - DateTools (1.7.0)
   - FDFullscreenPopGesture (1.1)
   - iCarousel (1.8.3)
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AsyncDisplayKit (~> 2.0-beta.1)
   - ChameleonFramework (~> 2.1.0)
+  - CYLTabBarController (~> 1.13.1)
   - DateTools (~> 1.7.0)
   - FDFullscreenPopGesture
   - iCarousel (~> 1.8.3)
@@ -108,6 +110,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AsyncDisplayKit: 2234dd8d8770a5ed72936b3f8394bd5a807765f6
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CYLTabBarController: 97f6b486f9e6c613d69e9c111cc9c2c5db7000ce
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
@@ -132,6 +135,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 085c4c0866267d97e058556bd10e21f10124e4c7
+PODFILE CHECKSUM: 17f5ade6f6295f15e3e49c25aea3cb0d1fa6c6db
 
 COCOAPODS: 1.2.0

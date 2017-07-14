@@ -7,17 +7,19 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
-#import "LaboratoryViewController.h"
 
 #import "SJBugVideoTool.h"
 #import "SJScreenShortManager.h"
+#import "MainTabBarController.h"
+#import "CYLTabBarController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate>
 @property (nonatomic, strong) SJBugVideoTool *bugVideoTool;
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    NSMutableArray *_mainTabbarData;
+}
 
 /**
  *
@@ -27,6 +29,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self startSJBugVideoKit:YES];
+    [self initialData];
     [self startMainUIWindow];
    
     return YES;
@@ -103,24 +106,23 @@
 
 #pragma mark - UIWindow
 
+- (void)initialData{
+    _mainTabbarData = [NSMutableArray arrayWithArray: @[@{@"page" :@"HomeViewController",
+                                                                     @"normal" : @"tabbar_0@2x",
+                                                                     @"selected" : @"tabbar_0@2x",
+                                                                     @"title" : @"首页"},
+                                                                   @{@"page" :@"LaboratoryViewController",
+                                                                     @"normal" : @"tabbar_1@2x",
+                                                                     @"selected" : @"tabbar_1@2x",
+                                                                     @"title" : @"实验室"}]];
+}
+
 - (void)startMainUIWindow{
     
-    HomeViewController *homeViewController = [HomeViewController new];
-    BaseNavigationController *homeNavigationController = [[BaseNavigationController alloc] initWithRootViewController:homeViewController];
-    UIImage *home_normal = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *home_selected = [Magic_image(@"tabbar_0@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    homeNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:home_normal selectedImage:home_selected];
-    
-    LaboratoryViewController *laboratoryViewController = [LaboratoryViewController new];
-    BaseNavigationController *laboratoryNavigationController = [[BaseNavigationController alloc] initWithRootViewController:laboratoryViewController];
-    UIImage *laboratory_normal = [Magic_image(@"tabbar_1@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIImage *laboratory_selected = [Magic_image(@"tabbar_1@2x", @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    laboratoryNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"实验室" image:laboratory_normal selectedImage:laboratory_selected];
-
-    //标签栏
-    UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
-    rootTabBarController.viewControllers = @[homeNavigationController, laboratoryNavigationController];
-    
+    CYLTabBarController *rootTabBarController = [CYLTabBarController new];
+    rootTabBarController.delegate = self;
+    rootTabBarController.tabBarItemsAttributes = [self loadingTabbarItem:_mainTabbarData];
+    rootTabBarController.viewControllers = [self loadingUINavigationControllerWithControllerNames:_mainTabbarData];
     
     //创建一个window对象,属于AppDelegate的属性
     //UIScreen:      表示屏幕硬件类
@@ -135,6 +137,73 @@
     //将window作为主视图并且显示
     [self.window makeKeyAndVisible];
     [self customAllNavigationBarAppearance];
+
+}
+
+#pragma mark - CYLTabBarControllerDelegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectControl:(UIControl *)control{
+    
+    if (tabBarController.selectedIndex == 0) {
+        [_mainTabbarData addObject:@{@"page" :@"LaboratoryViewController",
+                                @"normal" : @"tabbar_0@2x",
+                                @"selected" : @"tabbar_0@2x",
+                                @"title" : @"测试"}];
+
+    }else{
+        [_mainTabbarData removeLastObject];
+    }
+    NSLog(@"%ld", tabBarController.selectedIndex);
+    CYLTabBarController *rootTabBarController2 = [CYLTabBarController new];
+    rootTabBarController2.tabBarItemsAttributes = [self loadingTabbarItem:_mainTabbarData];
+    rootTabBarController2.viewControllers = [self loadingUINavigationControllerWithControllerNames:_mainTabbarData];
+    self.window.rootViewController = rootTabBarController2;
+    
+}
+
+- (NSMutableArray *)loadingUINavigationControllerWithControllerNames:(NSArray *)controllerNames{
+    
+    NSMutableArray *result = [NSMutableArray array];
+    [controllerNames enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSString *page = [NSString stringWithFormat:@"%@", [obj objectForKey:@"page"]];
+        NSString *normal = [NSString stringWithFormat:@"%@", [obj objectForKey:@"normal"]];
+        NSString *selected = [NSString stringWithFormat:@"%@", [obj objectForKey:@"selected"]];
+        NSString *title = [NSString stringWithFormat:@"%@", [obj objectForKey:@"title"]];
+        
+        Class cls = NSClassFromString(page);
+        UIViewController *controller = (UIViewController*)[[cls alloc] init];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+        UIImage *laboratory_normal = [Magic_image(normal, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *laboratory_selected = [Magic_image(selected, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:laboratory_normal selectedImage:laboratory_selected];
+        [result addObject:navigationController];
+        
+    }];
+    return result;
+    
+}
+
+- (NSMutableArray *)loadingTabbarItem:(NSArray *)controllerNames{
+    
+    NSMutableArray *result = [NSMutableArray array];
+    [controllerNames enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSString *page = [NSString stringWithFormat:@"%@", [obj objectForKey:@"page"]];
+        NSString *normal = [NSString stringWithFormat:@"%@", [obj objectForKey:@"normal"]];
+        NSString *selected = [NSString stringWithFormat:@"%@", [obj objectForKey:@"selected"]];
+        NSString *title = [NSString stringWithFormat:@"%@", [obj objectForKey:@"title"]];
+        
+       
+        NSDictionary *firstTabBarItemsAttributes = @{
+                                                     //                                                 CYLTabBarItemTitle : @"首页",
+                                                     CYLTabBarItemImage : normal,
+                                                     CYLTabBarItemSelectedImage : selected,
+                                                     };
+
+        [result addObject:firstTabBarItemsAttributes];
+        
+    }];
+    return result;
     
 }
 
