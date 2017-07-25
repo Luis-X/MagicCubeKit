@@ -23,6 +23,6 @@ pod 'MJExtension', '~> 3.0.13'				# 数据转模型
 pod 'ZYBannerView', '~> 1.1.2'				# 滑动Banner侧拉
 pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.6'
 pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
-pod 'CYLTabBarController', '~> 1.13.1'
+pod 'NYTPhotoViewer', '~> 1.2.0'			# 图片浏览
 end
 

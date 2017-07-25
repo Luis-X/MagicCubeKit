@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CYLTabBarController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ChameleonFramework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>FDFullscreenPopGesture.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FLAnimatedImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -65,6 +65,16 @@
 			<false/>
 		</dict>
 		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NYTPhotoViewer-NYTPhotoViewer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NYTPhotoViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -152,12 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>098EE9D35D37A6958220AF3D051AC605</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0FFD609BC1FE2DFDE49B6E25BBD835E8</key>
+		<key>0FE1FBA015F8F25AC94D9AD7854E521B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,17 +172,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20A8EF2D998413EAB9C66909EF0DE7B8</key>
+		<key>265014D05BF506DDC55F11BDBA867CEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>272B6902EC233437C8C814A53CD3E70D</key>
+		<key>2B12E59241E4B6204ED7FF273F844ACD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49837403914E127120F952CC3754F2C9</key>
+		<key>4B094CD250B2319ED5AF689739141E16</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53F8571E2D572C4069860E38654A566A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,17 +197,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A075025471FCA262BD0A2026C7480BF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6E920AA26FEDC9CA6C1B66EDE6EF04F3</key>
+		<key>61239A5F21CD3986E9357497ABB564D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>700758C6C76B91FE462532FED6E4131D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7678A62BB32E860AF8413C4A9FFF1FC2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78AF93EDF125D8BFF3BB72251D47BE18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -208,6 +223,11 @@
 			<true/>
 		</dict>
 		<key>8586BC1CCCEA41239BBA567020B94D71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A558FD54C8100F86F2CF9C528D17531</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -227,7 +247,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A3429A337379418798919BF3764166A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A89C52C6948621A698B8D27A2503EAF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1B8DCAF9FA8AB66083D23D1212476D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -242,22 +272,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC3C94EF8126830785E4B8DED6326185</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BC70CC0AA0CC1766CA82678A377F70DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BD849D474B2BBD355F847BE93FEA45D3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CBED2E1D064A06B19E237FDE37A335A9</key>
+		<key>CCC68733C4159AD9137EA5CDE24DA685</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -272,17 +287,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>E590B8CC280AEA745A7FFC5D357782E0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EE366E1E6962F82E6AEC8AE66FA66CBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5954A7AC2C86CC0827E941E29AE59A8</key>
+		<key>F08DDACE24D7EC89ECD457260DDC40AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8D999CD5BA0A763F3208A263F763B76</key>
+		<key>F5954A7AC2C86CC0827E941E29AE59A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

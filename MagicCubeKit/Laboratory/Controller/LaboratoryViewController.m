@@ -8,6 +8,7 @@
 
 #import "LaboratoryViewController.h"
 #import "ProductDetailMenuViewController.h"
+#import "AutoAlbumListViewController.h"
 @interface LaboratoryViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -40,7 +41,8 @@
 }
 */
 - (void)initailData{
-    _menuArray = @[@{@"ProductDetailMenuViewController" : @"商品详情"}];
+    _menuArray = @[@{@"ProductDetailMenuViewController" : @"商品详情"},
+                   @{@"AutoAlbumViewController" : @"自动生成图片"}];
 }
 
 - (void)createMainViews{
@@ -90,7 +92,13 @@
             NSArray *viewControllers = @[[ProductDetailViewController class], [ExampleMagicNetworkingViewController class]];
             NSArray *titles = @[@"详情", @"素材"];
             ProductDetailMenuViewController *vc = [[ProductDetailMenuViewController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
+        }
+        if (indexPath.row == 1) {
+            AutoAlbumListViewController *autoAlbumViewController = [AutoAlbumListViewController new];
+            autoAlbumViewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:autoAlbumViewController animated:YES];
         }
     }
     

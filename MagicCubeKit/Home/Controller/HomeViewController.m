@@ -14,6 +14,7 @@
 
 @implementation HomeViewController{
     NSArray *_menuArray;
+    UITableView *_mainTableView;
 }
 
 - (void)viewDidLoad {
@@ -61,12 +62,12 @@
 
 - (void)createMainViews{
     
-    UITableView *mainTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    mainTableView.backgroundColor = [UIColor whiteColor];
-    mainTableView.dataSource = self;
-    mainTableView.delegate = self;
-    [self.view addSubview:mainTableView];
-    [mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    _mainTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    _mainTableView.backgroundColor = [UIColor whiteColor];
+    _mainTableView.dataSource = self;
+    _mainTableView.delegate = self;
+    [self.view addSubview:_mainTableView];
+    [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.left.bottom.right.equalTo(self.view);
         
@@ -92,6 +93,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _menuArray.count;
+}
+
+#pragma mark - 分割线顶头
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell setSeparatorInset:UIEdgeInsetsZero];
+    [cell setLayoutMargins:UIEdgeInsetsZero];
+    cell.preservesSuperviewLayoutMargins = NO;
+}
+
+- (void)viewDidLayoutSubviews {
+    [_mainTableView setSeparatorInset:UIEdgeInsetsZero];
+    [_mainTableView setLayoutMargins:UIEdgeInsetsZero];
 }
 
 #pragma mark - UITableViewDelegate

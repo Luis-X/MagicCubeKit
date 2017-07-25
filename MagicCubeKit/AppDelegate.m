@@ -10,10 +10,9 @@
 
 #import "SJBugVideoTool.h"
 #import "SJScreenShortManager.h"
-#import "MainTabBarController.h"
-#import "CYLTabBarController.h"
 
-@interface AppDelegate ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate>
+
+@interface AppDelegate ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) SJBugVideoTool *bugVideoTool;
 @end
 
@@ -119,9 +118,8 @@
 
 - (void)startMainUIWindow{
     
-    CYLTabBarController *rootTabBarController = [CYLTabBarController new];
+    UITabBarController *rootTabBarController = [UITabBarController new];
     rootTabBarController.delegate = self;
-    rootTabBarController.tabBarItemsAttributes = [self loadingTabbarItem:_mainTabbarData];
     rootTabBarController.viewControllers = [self loadingUINavigationControllerWithControllerNames:_mainTabbarData];
     
     //创建一个window对象,属于AppDelegate的属性
@@ -140,25 +138,7 @@
 
 }
 
-#pragma mark - CYLTabBarControllerDelegate
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectControl:(UIControl *)control{
-    
-    if (tabBarController.selectedIndex == 0) {
-        [_mainTabbarData addObject:@{@"page" :@"LaboratoryViewController",
-                                @"normal" : @"tabbar_0@2x",
-                                @"selected" : @"tabbar_0@2x",
-                                @"title" : @"测试"}];
 
-    }else{
-        [_mainTabbarData removeLastObject];
-    }
-    NSLog(@"%ld", tabBarController.selectedIndex);
-    CYLTabBarController *rootTabBarController2 = [CYLTabBarController new];
-    rootTabBarController2.tabBarItemsAttributes = [self loadingTabbarItem:_mainTabbarData];
-    rootTabBarController2.viewControllers = [self loadingUINavigationControllerWithControllerNames:_mainTabbarData];
-    self.window.rootViewController = rootTabBarController2;
-    
-}
 
 - (NSMutableArray *)loadingUINavigationControllerWithControllerNames:(NSArray *)controllerNames{
     
@@ -183,29 +163,6 @@
     
 }
 
-- (NSMutableArray *)loadingTabbarItem:(NSArray *)controllerNames{
-    
-    NSMutableArray *result = [NSMutableArray array];
-    [controllerNames enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-        NSString *page = [NSString stringWithFormat:@"%@", [obj objectForKey:@"page"]];
-        NSString *normal = [NSString stringWithFormat:@"%@", [obj objectForKey:@"normal"]];
-        NSString *selected = [NSString stringWithFormat:@"%@", [obj objectForKey:@"selected"]];
-        NSString *title = [NSString stringWithFormat:@"%@", [obj objectForKey:@"title"]];
-        
-       
-        NSDictionary *firstTabBarItemsAttributes = @{
-                                                     //                                                 CYLTabBarItemTitle : @"首页",
-                                                     CYLTabBarItemImage : normal,
-                                                     CYLTabBarItemSelectedImage : selected,
-                                                     };
-
-        [result addObject:firstTabBarItemsAttributes];
-        
-    }];
-    return result;
-    
-}
 
 #pragma mark - 全局导航栏
 - (void)customAllNavigationBarAppearance{

@@ -16,7 +16,10 @@
 @property (nonatomic, strong) UIViewController *addController;
 @end
 
-@implementation MagicImagePicker
+@implementation MagicImagePicker{
+    NSMutableArray *_saveImageArray;
+    MagicImagePickerBlockSuccess _blockCompletion;
+}
 
 + (MagicImagePicker *)shareManager{
     static dispatch_once_t onceToken;
@@ -149,4 +152,33 @@
     }
     
 }
+
+#pragma mark - 批量保存
+- (void)saveToSystemPhotosAlbum:(NSArray *)images completion:(MagicImagePickerBlockSuccess)completion{
+    _saveImageArray = [NSMutableArray arrayWithArray:images];
+    _blockCompletion = completion;
+    [self saveNext];
+}
+
+- (void)saveNext{
+    
+    if (_saveImageArray.count > 0) {
+        UIImage *image = [_saveImageArray firstObject];
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+    }else {
+        _blockCompletion(YES);
+    }
+    
+}
+
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    
+    if (!error) {
+        [_saveImageArray removeObjectAtIndex:0];
+    }
+    [self saveNext];
+    
+}
+
 @end

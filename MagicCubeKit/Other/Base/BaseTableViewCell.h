@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseTableViewCell : UITableViewCell
+// 属性
+@property (nonatomic, weak) NSIndexPath *cell_indexPath;
 
+// 方法 【子类可以重写】
+- (void)baseBuildDefaultConfig;
+- (void)baseBuildSubViews;
+- (void)baseLoadData:(id)data indexPath:(NSIndexPath *)indexPath;
 @end
