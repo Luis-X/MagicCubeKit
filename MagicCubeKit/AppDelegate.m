@@ -11,7 +11,6 @@
 #import "SJBugVideoTool.h"
 #import "SJScreenShortManager.h"
 
-
 @interface AppDelegate ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) SJBugVideoTool *bugVideoTool;
 @end
@@ -26,7 +25,6 @@
  *
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [self startSJBugVideoKit:YES];
     [self initialData];
     [self startMainUIWindow];
@@ -135,7 +133,6 @@
     //将window作为主视图并且显示
     [self.window makeKeyAndVisible];
     [self customAllNavigationBarAppearance];
-
 }
 
 

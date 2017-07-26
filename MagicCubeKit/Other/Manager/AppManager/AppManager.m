@@ -7,9 +7,22 @@
 //
 
 #import "AppManager.h"
+#import <FLEX.h>
 
 @implementation AppManager
 
+#pragma mark - 配置
++ (void)startManagerConfig{
+    
+    [self applicationIdleTimerDisabled:YES];
+    [self applicationEndEditing:NO];
+    [self applicationBrightness:1];
+    
+    [[FLEXManager sharedManager] showExplorer];
+}
+
+
+#pragma mark - 方法
 /**
  是否禁用手机睡眠
  */
@@ -94,6 +107,7 @@
     return result;
 }
 
+#pragma mark - 缓存
 
 /**
  获取缓存大小
@@ -130,7 +144,7 @@
     [[NSFileManager defaultManager] removeItemAtPath:myCachePath error:nil];
 }
 
-
+#pragma mark - 弹框
 /**
  任意位置弹框
 

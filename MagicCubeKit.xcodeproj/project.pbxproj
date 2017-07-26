@@ -103,6 +103,8 @@
 		D19FF12F1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF12E1EFA71F9007B0632 /* ProductRecommendCollectionViewCell.m */; };
 		D19FF1331EFA75B9007B0632 /* ProductRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF1321EFA75B9007B0632 /* ProductRecommendView.m */; };
 		D19FF13E1EFB95B1007B0632 /* ProductSecondPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D19FF13D1EFB95B1007B0632 /* ProductSecondPageView.m */; };
+		D1A98E191F289FE200EDE64A /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A98E181F289FE200EDE64A /* BaseTableView.m */; };
+		D1A98E1D1F28A78400EDE64A /* BaseWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A98E1C1F28A78400EDE64A /* BaseWebView.m */; };
 		D1B2765A1F17519300874A7E /* MagicImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B276591F17519300874A7E /* MagicImagePicker.m */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
@@ -235,7 +237,6 @@
 		D11816EB1EB30ED2004C238A /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		D11816F41EB310F3004C238A /* MagicCubeHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeHeader.pch; sourceTree = "<group>"; };
-		D11816F51EB31C96004C238A /* Base-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base-Header.h"; sourceTree = "<group>"; };
 		D11816F61EB31D9A004C238A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		D11816F71EB31D9A004C238A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		D11816FB1EB320B8004C238A /* MagicCubeDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeDefine.h; sourceTree = "<group>"; };
@@ -389,6 +390,11 @@
 		D19FF1321EFA75B9007B0632 /* ProductRecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecommendView.m; sourceTree = "<group>"; };
 		D19FF13C1EFB95B1007B0632 /* ProductSecondPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSecondPageView.h; sourceTree = "<group>"; };
 		D19FF13D1EFB95B1007B0632 /* ProductSecondPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSecondPageView.m; sourceTree = "<group>"; };
+		D1A98E171F289FE200EDE64A /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		D1A98E181F289FE200EDE64A /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		D1A98E1A1F28A0A600EDE64A /* BaseClassHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseClassHeader.h; sourceTree = "<group>"; };
+		D1A98E1B1F28A78400EDE64A /* BaseWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebView.h; sourceTree = "<group>"; };
+		D1A98E1C1F28A78400EDE64A /* BaseWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebView.m; sourceTree = "<group>"; };
 		D1B276581F17519300874A7E /* MagicImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicImagePicker.h; sourceTree = "<group>"; };
 		D1B276591F17519300874A7E /* MagicImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicImagePicker.m; sourceTree = "<group>"; };
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
@@ -739,7 +745,11 @@
 				D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */,
 				D11816F61EB31D9A004C238A /* BaseNavigationController.h */,
 				D11816F71EB31D9A004C238A /* BaseNavigationController.m */,
-				D11816F51EB31C96004C238A /* Base-Header.h */,
+				D1A98E171F289FE200EDE64A /* BaseTableView.h */,
+				D1A98E181F289FE200EDE64A /* BaseTableView.m */,
+				D1A98E1A1F28A0A600EDE64A /* BaseClassHeader.h */,
+				D1A98E1B1F28A78400EDE64A /* BaseWebView.h */,
+				D1A98E1C1F28A78400EDE64A /* BaseWebView.m */,
 			);
 			name = "Base(基类)";
 			path = Base;
@@ -2384,6 +2394,7 @@
 				D187ACEE1ED3DBCB00E8C4BA /* ExampleMagicButtonViewController.m in Sources */,
 				D1C72C641EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m in Sources */,
 				D1C72C521EB86F0C00C88BAE /* TangramContext.m in Sources */,
+				D1A98E191F289FE200EDE64A /* BaseTableView.m in Sources */,
 				D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */,
 				D19FF1201EFA5090007B0632 /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */,
@@ -2441,6 +2452,7 @@
 				D1C72C5B1EB86F0C00C88BAE /* UIView+Tangram.m in Sources */,
 				D1C72C581EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m in Sources */,
 				D1C72C511EB86F0C00C88BAE /* TangramBusIndexTopic.m in Sources */,
+				D1A98E1D1F28A78400EDE64A /* BaseWebView.m in Sources */,
 				D1C72B651EB8645700C88BAE /* ExampleElementText.m in Sources */,
 				D1C72B681EB866A400C88BAE /* ExampleElementImage.m in Sources */,
 				D1E0BE4A1ED91C0200493704 /* LaboratoryViewController.m in Sources */,

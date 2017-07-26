@@ -47,16 +47,17 @@
 
 - (void)createMainViews{
     
-    UITableView *mainTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    BaseTableView *mainTableView = [[BaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     mainTableView.backgroundColor = [UIColor whiteColor];
     mainTableView.dataSource = self;
     mainTableView.delegate = self;
     [self.view addSubview:mainTableView];
     [mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.top.left.bottom.right.equalTo(self.view);
         
     }];
+    
+    [mainTableView baseClearUnnecessaryRow];
     
 }
 

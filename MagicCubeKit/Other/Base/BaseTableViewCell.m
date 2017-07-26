@@ -57,4 +57,19 @@
 - (void)baseLoadData:(id)data indexPath:(NSIndexPath *)indexPath{
     
 }
+
+
+
+#pragma mark - 功能
+/**
+ * 选中颜色
+ * @param backgroundColor   背景颜色
+ */
+- (void)baseSelectedBackgroudColor:(UIColor *)backgroundColor{
+    
+    UIView *view = [UIView new];
+    view.backgroundColor = backgroundColor;
+    [self setSelectedBackgroundView:view];
+    
+}
 @end

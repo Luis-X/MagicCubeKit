@@ -34,27 +34,6 @@
 }
 
 
-/**
- 获取当前显示的控制器
- */
-- (UIViewController *)getCurrentDisplayViewControllerFrom:(UIViewController *)vc{
-    
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        return [self getCurrentDisplayViewControllerFrom:[((UINavigationController *) vc) visibleViewController]];
-    }
-    
-    if ([vc isKindOfClass:[UITabBarController class]]){
-        return [self getCurrentDisplayViewControllerFrom:[((UITabBarController *) vc) selectedViewController]];
-    }
-    
-    if (vc.presentedViewController) {
-        return [self getCurrentDisplayViewControllerFrom:vc.presentedViewController];
-    }
-    
-    return vc;
-
-}
-
 
 /**
  cell点击效果
@@ -62,36 +41,6 @@
 - (void)deselectRowAnimationTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
-/**
- 不满一屏去除多余单元格
- */
-- (void)clearMoreRowTableView:(UITableView *)tableView{
-    tableView.tableHeaderView = [UIView new];
-    tableView.tableFooterView = [UIView new];
-}
-
-/**
- 置顶tableView
- */
-- (void)stickTableView:(UITableView *)tableView{
-    [tableView setContentOffset:CGPointZero animated:YES];
-    //[tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
-}
-
-
-/**
- cell选中颜色
- */
-- (void)tableViewCell:(UITableViewCell *)cell backgroudColor:(UIColor *)backgroundColor{
-    
-    UIView *view = [UIView new];
-    view.backgroundColor = backgroundColor;
-    [cell setSelectedBackgroundView:view];
-    
-}
-
 
 /**
  分割线颜色
@@ -139,18 +88,5 @@
     return seconds;
     
 }
-
-
-/**
- 设置UIWebView透明
- */
-- (void)backgroundClearColorWithUIWebView:(UIWebView *)webView{
-    [webView setBackgroundColor:[UIColor clearColor]];
-    [webView setOpaque:NO];
-}
-
-
-
-
 
 @end

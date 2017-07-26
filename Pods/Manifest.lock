@@ -27,6 +27,7 @@ PODS:
   - DateTools (1.7.0)
   - FDFullscreenPopGesture (1.1)
   - FLAnimatedImage (1.0.12)
+  - FLEX (2.4.0)
   - iCarousel (1.8.3)
   - JLRoutes (2.0.5)
   - JMRoundedCorner (1.9.5)
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - ChameleonFramework (~> 2.1.0)
   - DateTools (~> 1.7.0)
   - FDFullscreenPopGesture
+  - FLEX (~> 2.4.0)
   - iCarousel (~> 1.8.3)
   - JLRoutes (~> 2.0)
   - JMRoundedCorner (from `https://github.com/raozhizhen/JMRoundedCorner.git`, tag `1.9.6`)
@@ -120,6 +122,7 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   JMRoundedCorner: be3809e2e536939bc0b012d68eb943d870e5b1ed
@@ -143,6 +146,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 9070183662bd3816668d154a2e0e00a1b3e08f70
+PODFILE CHECKSUM: 2f8f81bfde4f8b920d253a4ec14ad0ddab09eed4
 
 COCOAPODS: 1.2.0

@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-
+#import "BaseTableViewCell.h"
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -79,9 +79,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell = [[BaseTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        [cell baseSelectedBackgroudColor:[UIColor randomFlatColor]];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     NSDictionary *menuDic = [_menuArray objectAtIndex:indexPath.row];

@@ -24,5 +24,6 @@ pod 'ZYBannerView', '~> 1.1.2'				# 滑动Banner侧拉
 pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.6'
 pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
 pod 'NYTPhotoViewer', '~> 1.2.0'			# 图片浏览
+pod 'FLEX', '~> 2.4.0'					# FLEX调试工具
 end
 

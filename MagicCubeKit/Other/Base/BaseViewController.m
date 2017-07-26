@@ -114,4 +114,25 @@
     return nil;
     
 }
+
+/**
+ 获取当前显示的控制器
+ */
+- (UIViewController *)getCurrentDisplayViewControllerFrom:(UIViewController *)vc{
+    
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self getCurrentDisplayViewControllerFrom:[((UINavigationController *) vc) visibleViewController]];
+    }
+    
+    if ([vc isKindOfClass:[UITabBarController class]]){
+        return [self getCurrentDisplayViewControllerFrom:[((UITabBarController *) vc) selectedViewController]];
+    }
+    
+    if (vc.presentedViewController) {
+        return [self getCurrentDisplayViewControllerFrom:vc.presentedViewController];
+    }
+    
+    return vc;
+
+}
 @end

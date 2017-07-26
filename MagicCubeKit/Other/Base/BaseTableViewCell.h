@@ -16,4 +16,5 @@
 - (void)baseBuildDefaultConfig;
 - (void)baseBuildSubViews;
 - (void)baseLoadData:(id)data indexPath:(NSIndexPath *)indexPath;
+- (void)baseSelectedBackgroudColor:(UIColor *)backgroundColor;
 @end
