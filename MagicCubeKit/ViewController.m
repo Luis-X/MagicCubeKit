@@ -172,7 +172,7 @@
     [_mainTextView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.centerY.left.right.equalTo(self.view);
-        make.height.mas_equalTo(Magic_screen_height / 2);
+        make.height.mas_equalTo(MC_SCREEN_H / 2);
         
     }];
     

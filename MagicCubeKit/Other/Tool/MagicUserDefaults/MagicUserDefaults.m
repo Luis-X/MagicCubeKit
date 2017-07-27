@@ -17,10 +17,8 @@
  @param key   键
  */
 + (void)setObject:(id)value forKey:(NSString *)key{
-    
     [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
 }
 
 
@@ -30,9 +28,7 @@
  @param key 键
  */
 + (id)objectForKey:(NSString *)key{
-    
    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
-    
 }
 
 
@@ -42,10 +38,8 @@
  @param key 键
  */
 + (void)removeObjectForKey:(NSString *)key{
-    
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
 }
 
 
@@ -53,7 +47,6 @@
  清除所有
  */
 + (void)clearAllKeyValue{
-    
     // 方法一
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
@@ -68,6 +61,5 @@
     
     // 方法三
     [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
-    
 }
 @end

@@ -637,7 +637,7 @@
 - (void)networkGetAllProductDetailData{
 
     [_allBannerDataArray removeAllObjects];
-    NSString *jsonString = [NSString stringWithContentsOfFile:Magic_bundle(@"shopSku", @"json") encoding:NSUTF8StringEncoding error:nil];
+    NSString *jsonString = [NSString stringWithContentsOfFile:MC_PATH(@"shopSku", @"json") encoding:NSUTF8StringEncoding error:nil];
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
     

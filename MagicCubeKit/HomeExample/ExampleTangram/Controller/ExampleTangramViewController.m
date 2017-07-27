@@ -49,7 +49,7 @@
 
 - (void)createMainView{
     //获取数据
-    NSString *jsonString = [NSString stringWithContentsOfFile:Magic_bundle(@"exampleTangram", @"json") encoding:NSUTF8StringEncoding error:nil];
+    NSString *jsonString = [NSString stringWithContentsOfFile:MC_PATH(@"exampleTangram", @"json") encoding:NSUTF8StringEncoding error:nil];
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
     self.layoutModelArray = [[dic objectForKey:@"data"] objectForKey:@"cards"];

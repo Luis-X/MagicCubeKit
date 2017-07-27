@@ -150,8 +150,8 @@
         Class cls = NSClassFromString(page);
         UIViewController *controller = (UIViewController*)[[cls alloc] init];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-        UIImage *laboratory_normal = [Magic_image(normal, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        UIImage *laboratory_selected = [Magic_image(selected, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *laboratory_normal = [MC_IMAGE_FILE(normal, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *laboratory_selected = [MC_IMAGE_FILE(selected, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:laboratory_normal selectedImage:laboratory_selected];
         [result addObject:navigationController];
         

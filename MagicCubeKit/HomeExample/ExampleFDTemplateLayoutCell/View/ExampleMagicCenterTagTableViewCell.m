@@ -31,7 +31,7 @@
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 10;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, Magic_screen_width, 0) collectionViewLayout:layout];
+    _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, MC_SCREEN_W, 0) collectionViewLayout:layout];
     _mainCollectionView.backgroundColor = [UIColor whiteColor];
     _mainCollectionView.dataSource = self;
     _mainCollectionView.delegate = self;
@@ -87,7 +87,7 @@
 
     [_mainCollectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.width.mas_equalTo(Magic_screen_width);
+        make.width.mas_equalTo(MC_SCREEN_W);
         make.top.equalTo(self.contentView).offset(10);
         make.bottom.equalTo(self.contentView);
         make.height.mas_equalTo([_mainCollectionView.collectionViewLayout collectionViewContentSize].height);
