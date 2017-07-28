@@ -138,7 +138,8 @@
 + (void)applicationClearCache{
     //1.删除图片缓存
     [[SDImageCache sharedImageCache] clearMemory];
-    [[SDImageCache sharedImageCache] clearDisk];
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+    }];
     //2.删除自己缓存
     NSString *myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
     [[NSFileManager defaultManager] removeItemAtPath:myCachePath error:nil];

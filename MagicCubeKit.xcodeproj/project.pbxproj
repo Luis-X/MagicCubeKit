@@ -61,6 +61,8 @@
 		D16665FA1EEA929500B84D1B /* ProductDetailMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665F91EEA929500B84D1B /* ProductDetailMenuViewController.m */; };
 		D166660E1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D166660D1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m */; };
 		D16666111EEFB50A00B84D1B /* ProductDescribeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D16666101EEFB50A00B84D1B /* ProductDescribeTableViewCell.m */; };
+		D169A6F31F2B1E2C00209C68 /* MagicFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D169A6F21F2B1E2C00209C68 /* MagicFileManager.m */; };
+		D169A6FA1F2B34BF00209C68 /* MagicPhotoBrowserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D169A6F91F2B34BF00209C68 /* MagicPhotoBrowserManager.m */; };
 		D1707A891ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */; };
 		D1707A8C1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8B1ED7C1990024FC83 /* ExampleMagicDynamicViewController.m */; };
 		D1707A8F1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1707A8E1ED7C1A70024FC83 /* ExampleMagicDynamicModel.m */; };
@@ -188,7 +190,6 @@
 		D1E18E021F24852800BC54C4 /* AutoAlbumListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E18DFA1F24852800BC54C4 /* AutoAlbumListViewController.m */; };
 		D1E18E031F24852800BC54C4 /* AutoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E18DFC1F24852800BC54C4 /* AutoAlbumViewController.m */; };
 		D1E18E041F24852800BC54C4 /* AutoAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E18DFF1F24852800BC54C4 /* AutoAlbumCollectionViewCell.m */; };
-		D1E18E051F24852800BC54C4 /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E18E011F24852800BC54C4 /* NYTExamplePhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,6 +320,10 @@
 		D166660D1EEFB4F700B84D1B /* ProductPromiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPromiseTableViewCell.m; sourceTree = "<group>"; };
 		D166660F1EEFB50A00B84D1B /* ProductDescribeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDescribeTableViewCell.h; sourceTree = "<group>"; };
 		D16666101EEFB50A00B84D1B /* ProductDescribeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDescribeTableViewCell.m; sourceTree = "<group>"; };
+		D169A6F11F2B1E2C00209C68 /* MagicFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicFileManager.h; sourceTree = "<group>"; };
+		D169A6F21F2B1E2C00209C68 /* MagicFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicFileManager.m; sourceTree = "<group>"; };
+		D169A6F81F2B34BF00209C68 /* MagicPhotoBrowserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPhotoBrowserManager.h; sourceTree = "<group>"; };
+		D169A6F91F2B34BF00209C68 /* MagicPhotoBrowserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicPhotoBrowserManager.m; sourceTree = "<group>"; };
 		D1707A871ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicTableViewCell.h; sourceTree = "<group>"; };
 		D1707A881ED7C1870024FC83 /* ExampleMagicDynamicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicDynamicTableViewCell.m; sourceTree = "<group>"; };
 		D1707A8A1ED7C1990024FC83 /* ExampleMagicDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicDynamicViewController.h; sourceTree = "<group>"; };
@@ -551,8 +556,6 @@
 		D1E18DFC1F24852800BC54C4 /* AutoAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoAlbumViewController.m; sourceTree = "<group>"; };
 		D1E18DFE1F24852800BC54C4 /* AutoAlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoAlbumCollectionViewCell.h; sourceTree = "<group>"; };
 		D1E18DFF1F24852800BC54C4 /* AutoAlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoAlbumCollectionViewCell.m; sourceTree = "<group>"; };
-		D1E18E001F24852800BC54C4 /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
-		D1E18E011F24852800BC54C4 /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1038,6 +1041,8 @@
 		D15607861F21AEF000CE8E79 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				D169A6F71F2B34BF00209C68 /* MagicPhotoBrowserManager */,
+				D169A6F01F2B1E2C00209C68 /* MagicFileManager(文件操作) */,
 				D124D8771F2721DF0072272C /* MagicUserDefaults(持久化存储) */,
 			);
 			name = "Tool(工具)";
@@ -1312,6 +1317,25 @@
 			);
 			name = "ProductDescribeCell(描述)";
 			path = ProductDescribeCell;
+			sourceTree = "<group>";
+		};
+		D169A6F01F2B1E2C00209C68 /* MagicFileManager(文件操作) */ = {
+			isa = PBXGroup;
+			children = (
+				D169A6F11F2B1E2C00209C68 /* MagicFileManager.h */,
+				D169A6F21F2B1E2C00209C68 /* MagicFileManager.m */,
+			);
+			name = "MagicFileManager(文件操作)";
+			path = MagicFileManager;
+			sourceTree = "<group>";
+		};
+		D169A6F71F2B34BF00209C68 /* MagicPhotoBrowserManager */ = {
+			isa = PBXGroup;
+			children = (
+				D169A6F81F2B34BF00209C68 /* MagicPhotoBrowserManager.h */,
+				D169A6F91F2B34BF00209C68 /* MagicPhotoBrowserManager.m */,
+			);
+			path = MagicPhotoBrowserManager;
 			sourceTree = "<group>";
 		};
 		D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell(Cell动态高度) */ = {
@@ -2121,8 +2145,6 @@
 			children = (
 				D1E18DFE1F24852800BC54C4 /* AutoAlbumCollectionViewCell.h */,
 				D1E18DFF1F24852800BC54C4 /* AutoAlbumCollectionViewCell.m */,
-				D1E18E001F24852800BC54C4 /* NYTExamplePhoto.h */,
-				D1E18E011F24852800BC54C4 /* NYTExamplePhoto.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2377,6 +2399,7 @@
 				D1D2581E1EE1637200A7CADD /* ProductSelectHeaderCollectionReusableView.m in Sources */,
 				D15607941F21AF9A00CE8E79 /* AppRelease.m in Sources */,
 				D1C72C601EB86F0C00C88BAE /* TangramFixTopLayout.m in Sources */,
+				D169A6FA1F2B34BF00209C68 /* MagicPhotoBrowserManager.m in Sources */,
 				D156079D1F21B06400CE8E79 /* NetworkManager.m in Sources */,
 				D13E1FF51ECC645A00472533 /* ExampleMagicNetworkingViewController.m in Sources */,
 				D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */,
@@ -2401,6 +2424,7 @@
 				D15607AC1F21B09E00CE8E79 /* TestManager.m in Sources */,
 				D19FF1221EFA5090007B0632 /* UIImage+ImageEffects.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
+				D169A6F31F2B1E2C00209C68 /* MagicFileManager.m in Sources */,
 				D124D8901F2745920072272C /* UIView+Magic.m in Sources */,
 				D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */,
 				D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */,
@@ -2419,7 +2443,6 @@
 				D1E18E031F24852800BC54C4 /* AutoAlbumViewController.m in Sources */,
 				D19FF1241EFA5090007B0632 /* WMMenuItem.m in Sources */,
 				D1D258141EE109FA00A7CADD /* ProductSelectCollectionViewCell.m in Sources */,
-				D1E18E051F24852800BC54C4 /* NYTExamplePhoto.m in Sources */,
 				D156E1F31ED442380024D309 /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D19FF1001EF931FD007B0632 /* ProductOnlineStatusTableViewCell.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "MagicNetworkManager.h"
 #import "AFNetworking.h"
+#import <CRToast.h>
 
 @implementation MagicNetworkManager
 
@@ -112,16 +113,17 @@
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status) {
             case AFNetworkReachabilityStatusUnknown:
+                [self showStatusBarTostWithMessage:@"当前网络异常"];
                 break;
             case AFNetworkReachabilityStatusNotReachable: {
-                [QuicklyHUD showWindowsOnlyTextHUDText:@"当前设备无网络"];
+                [self showStatusBarTostWithMessage:@"当前网络断开"];
             }
                 break;
             case AFNetworkReachabilityStatusReachableViaWiFi:
-                [QuicklyHUD showWindowsOnlyTextHUDText:@"当前Wi-Fi网络"];
+                [self showStatusBarTostWithMessage:@"当前Wi-Fi网络"];
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN:
-                [QuicklyHUD showWindowsOnlyTextHUDText:@"当前蜂窝移动网络"];
+                [self showStatusBarTostWithMessage:@"当前蜂窝移动网络"];
                 break;
             default:
                 break;
@@ -139,6 +141,29 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = open;
 }
 
+
+/**
+ 状态栏通知
+ */
+- (void)showStatusBarTostWithMessage:(NSString *)message{
+    
+    if (!message.length) {
+        return;
+    }
+    NSDictionary *options = @{kCRToastTextKey : message,
+                              kCRToastFontKey : [UIFont systemFontOfSize:10],
+                              kCRToastTextAlignmentKey : @(NSTextAlignmentCenter),
+                              kCRToastNotificationPresentationTypeKey : @(CRToastPresentationTypeCover),
+                              kCRToastBackgroundColorKey : MC_COLOR_BLACK_A(0.8),
+                              kCRToastAnimationInTypeKey : @(CRToastAnimationTypeLinear),
+                              kCRToastAnimationOutTypeKey : @(CRToastAnimationTypeLinear),
+                              kCRToastAnimationInDirectionKey : @(CRToastAnimationDirectionTop),
+                              kCRToastAnimationOutDirectionKey : @(CRToastAnimationDirectionTop)};
+    [CRToastManager showNotificationWithOptions:options completionBlock:^{
+        NSLog(@"Completed");
+    }];
+    
+}
 
 
 #pragma mark -多网络请求示例

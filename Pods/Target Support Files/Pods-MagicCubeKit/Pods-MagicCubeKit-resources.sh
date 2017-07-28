@@ -78,13 +78,15 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "DateTools/DateTools/DateTools.bundle"
+  install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
+  install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/NYTPhotoViewer/NYTPhotoViewer.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "DateTools/DateTools/DateTools.bundle"
+  install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
+  install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/NYTPhotoViewer/NYTPhotoViewer.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -24,11 +24,16 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - CRToast (0.0.9)
+  - DACircularProgress (2.3.1)
   - DateTools (1.7.0)
   - FDFullscreenPopGesture (1.1)
-  - FLAnimatedImage (1.0.12)
   - FLEX (2.4.0)
   - iCarousel (1.8.3)
+  - IDMPhotoBrowser (1.11.3):
+    - DACircularProgress
+    - pop
+    - SDWebImage (= 4.0.0)
   - JLRoutes (2.0.5)
   - JMRoundedCorner (1.9.5)
   - LazyScroll (0.0.2)
@@ -36,13 +41,6 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
-  - NYTPhotoViewer (1.2.0):
-    - NYTPhotoViewer/AnimatedGifSupport (= 1.2.0)
-    - NYTPhotoViewer/Core (= 1.2.0)
-  - NYTPhotoViewer/AnimatedGifSupport (1.2.0):
-    - FLAnimatedImage (~> 1.0.12)
-    - NYTPhotoViewer/Core
-  - NYTPhotoViewer/Core (1.2.0)
   - PINCache (3.0.1-beta.4):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
     - PINCache/Core (= 3.0.1-beta.4)
@@ -57,10 +55,11 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.8):
     - PINCache (= 3.0.1-beta.4)
     - PINRemoteImage/Core
+  - pop (1.0.10)
   - Reachability (3.2)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - STPopup (1.8.2)
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
@@ -78,10 +77,12 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AsyncDisplayKit (~> 2.0-beta.1)
   - ChameleonFramework (~> 2.1.0)
+  - CRToast (~> 0.0.9)
   - DateTools (~> 1.7.0)
   - FDFullscreenPopGesture
   - FLEX (~> 2.4.0)
   - iCarousel (~> 1.8.3)
+  - IDMPhotoBrowser (~> 1.11.3)
   - JLRoutes (~> 2.0)
   - JMRoundedCorner (from `https://github.com/raozhizhen/JMRoundedCorner.git`, tag `1.9.6`)
   - LazyScroll (~> 0.0.2)
@@ -89,9 +90,8 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
-  - NYTPhotoViewer (~> 1.2.0)
   - Reachability (~> 3.2)
-  - SDWebImage (~> 3.7)
+  - SDWebImage (~> 4.0.0)
   - STPopup (~> 1.8.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
@@ -119,11 +119,13 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AsyncDisplayKit: 2234dd8d8770a5ed72936b3f8394bd5a807765f6
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IDMPhotoBrowser: b96159fe4adb991a844068eb17dab9c0b7d7e51a
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   JMRoundedCorner: be3809e2e536939bc0b012d68eb943d870e5b1ed
   LazyScroll: 614022689b8e3b93c7bbe268c1a47b76e4265941
@@ -131,12 +133,12 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  NYTPhotoViewer: 323217e4590a1586eb3c9674b3fefb0fb8b57896
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
@@ -146,6 +148,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 2f8f81bfde4f8b920d253a4ec14ad0ddab09eed4
+PODFILE CHECKSUM: bec21cefcf61411dc3cb23dfe5f59015e640b47d
 
 COCOAPODS: 1.2.0

@@ -636,19 +636,20 @@
             switch (self.bgScaleType) {
                 case TangramFlowLayoutBgImageScaleTypeFitStart:
                 {
-                    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:self.bgImgURL] options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                        if (image) {
-                            
-                            self.bgImageView.image = image;
-                            CGFloat height = 0;
-                            if (image.size.width > 0) {
-                                // 等比例缩放
-                                height = (self.width / image.size.width) * image.size.height;
-                            }
-                            self.bgImageView.frame = CGRectMake(self.bgImageView.frame.origin.x, self.bgImageView.frame.origin.y, self.bgImageView.frame.size.width, height);
-                            self.clipsToBounds = YES;
-                        }
-                    }];
+                    
+//                    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:self.bgImgURL] options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+//                        if (image) {
+//                            
+//                            self.bgImageView.image = image;
+//                            CGFloat height = 0;
+//                            if (image.size.width > 0) {
+//                                // 等比例缩放
+//                                height = (self.width / image.size.width) * image.size.height;
+//                            }
+//                            self.bgImageView.frame = CGRectMake(self.bgImageView.frame.origin.x, self.bgImageView.frame.origin.y, self.bgImageView.frame.size.width, height);
+//                            self.clipsToBounds = YES;
+//                        }
+//                    }];
 
                 }
                     break;

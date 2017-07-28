@@ -5,7 +5,7 @@ platform :ios, ‘8.0’
 pod 'Masonry', '~> 1.0.1'				# autolayout
 pod 'AFNetworking', '~> 3.1.0'				# 网络请求
 pod 'Reachability', '~> 3.2'				# 网络监听	
-pod 'SDWebImage', '~>3.7'				# 加载图片	
+pod 'SDWebImage', '~>4.0.0’				# 加载图片	
 pod 'DateTools', '~> 1.7.0'				# 日期工具
 pod 'JLRoutes', '~> 2.0'				# 路由跳转
 pod 'WebViewJavascriptBridge', '~> 6.0.2'	        # JS交互
@@ -23,7 +23,8 @@ pod 'MJExtension', '~> 3.0.13'				# 数据转模型
 pod 'ZYBannerView', '~> 1.1.2'				# 滑动Banner侧拉
 pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.6'
 pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
-pod 'NYTPhotoViewer', '~> 1.2.0'			# 图片浏览
 pod 'FLEX', '~> 2.4.0'					# FLEX调试工具
+pod 'IDMPhotoBrowser', '~> 1.11.3'			# 图片浏览
+pod 'CRToast', '~> 0.0.9'				# 顶部通知
 end
 

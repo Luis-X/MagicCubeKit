@@ -9,11 +9,9 @@
 #import "AutoAlbumViewController.h"
 #import "MagicNetworkManager.h"
 #import "AlbumModel.h"
-#import <NYTPhotoViewer.h>
-#import "NYTExamplePhoto.h"
 #import "AutoAlbumCollectionViewCell.h"
 #import "MagicImagePicker.h"
-
+#import "MagicPhotoBrowserManager.h"
 @interface AutoAlbumViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
@@ -304,19 +302,11 @@
 
 #pragma mark - 图片浏览
 - (void)showPhotosViewControllerWithIndex:(NSInteger)index{
-    
-    NSMutableArray *photos = [NSMutableArray array];
-    for (UIImage *resultImage in _allImageArray) {
-        NYTExamplePhoto *resultPhoto = [NYTExamplePhoto new];
-        resultPhoto.image = resultImage;
-        if (resultPhoto) {
-            [photos addObject:resultPhoto];
-        }
-    }
-
-    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:photos initialPhoto:[photos objectAtIndex:index]];
-    [self presentViewController:photosViewController animated:YES completion:nil];
-    
+    IDMPhotoBrowser *browser = [[MagicPhotoBrowserManager shareManager] showMagicPhotoBrowserAddControler:self
+                                                                                                   photos:_allImageArray
+                                                                                               startIndex:index];
+    browser.displayActionButton = YES;
+    browser.actionButtonImage = MC_IMAGE_NAMED(@"productDetailLogo@2x.png");
 }
 
 #pragma mark - 样式
