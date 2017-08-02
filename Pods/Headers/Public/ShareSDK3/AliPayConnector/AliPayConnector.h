@@ -1,0 +1,1 @@
+../../../../ShareSDK3/SDK/ShareSDK/Support/PlatformConnector/AliPayConnector.framework/Headers/AliPayConnector.h

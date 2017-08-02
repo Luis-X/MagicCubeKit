@@ -1,0 +1,1 @@
+../../../../ShareSDK3/SDK/ShareSDK/Support/PlatformConnector/SinaWeiboConnector.framework/Headers/SinaWeiboConnector.h
