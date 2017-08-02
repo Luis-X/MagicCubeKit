@@ -125,6 +125,11 @@
         ExampleMagicDynamicViewController *vc = [ExampleMagicDynamicViewController new];
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
     }
+    //WebView优化
+    if ([object isEqualToString:@"ExampleMagicWebViewController"]) {
+        ExampleMagicWebViewController *vc = [ExampleMagicWebViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
 }
 
 @end

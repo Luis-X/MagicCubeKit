@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface ShareManager : NSObject
-
++ (void)start;
 @end

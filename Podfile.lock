@@ -41,6 +41,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - MOBFoundation (3.0.1)
   - PINCache (3.0.1-beta.4):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
     - PINCache/Core (= 3.0.1-beta.4)
@@ -60,6 +61,23 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - ShareSDK3 (4.0.1):
+    - MOBFoundation
+    - ShareSDK3/ShareSDK (= 4.0.1)
+  - ShareSDK3/ShareSDK (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/AliPaySocial (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/DingTalk (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKUI (4.0.1):
+    - MOBFoundation
   - STPopup (1.8.2)
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
@@ -90,8 +108,16 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
+  - MOBFoundation
   - Reachability (~> 3.2)
   - SDWebImage (~> 4.0.0)
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/AliPaySocial
+  - ShareSDK3/ShareSDKPlatforms/DingTalk
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
   - STPopup (~> 1.8.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
@@ -133,12 +159,14 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MOBFoundation: 08328ccde124b687ac5e4367c2ccfc5b4d0235b7
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
@@ -148,6 +176,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: bec21cefcf61411dc3cb23dfe5f59015e640b47d
+PODFILE CHECKSUM: 0f3e94332620528a267129352cb020f104efc91a
 
 COCOAPODS: 1.2.0

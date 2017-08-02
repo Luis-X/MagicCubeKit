@@ -81,12 +81,20 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
   install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "DateTools/DateTools/DateTools.bundle"
   install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
   install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
+  install_resource "ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

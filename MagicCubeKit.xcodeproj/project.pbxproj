@@ -81,6 +81,7 @@
 		D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
 		D187ACEE1ED3DBCB00E8C4BA /* ExampleMagicButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACED1ED3DBCB00E8C4BA /* ExampleMagicButtonViewController.m */; };
 		D187ACF31ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACF21ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m */; };
+		D19013E91F306EF700DA46CA /* ExampleMagicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19013E81F306EF700DA46CA /* ExampleMagicWebViewController.m */; };
 		D19424631EE5383A00C9A867 /* shopSku.json in Resources */ = {isa = PBXBuildFile; fileRef = D19424621EE5383A00C9A867 /* shopSku.json */; };
 		D19424661EE5396000C9A867 /* ProductDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19424651EE5396000C9A867 /* ProductDetailModel.m */; };
 		D194246B1EE6A51500C9A867 /* ProductActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D194246A1EE6A51500C9A867 /* ProductActivityTableViewCell.m */; };
@@ -353,6 +354,8 @@
 		D187ACED1ED3DBCB00E8C4BA /* ExampleMagicButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicButtonViewController.m; sourceTree = "<group>"; };
 		D187ACF11ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicTimerButtonViewController.h; sourceTree = "<group>"; };
 		D187ACF21ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicTimerButtonViewController.m; sourceTree = "<group>"; };
+		D19013E71F306EF700DA46CA /* ExampleMagicWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleMagicWebViewController.h; sourceTree = "<group>"; };
+		D19013E81F306EF700DA46CA /* ExampleMagicWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleMagicWebViewController.m; sourceTree = "<group>"; };
 		D19424621EE5383A00C9A867 /* shopSku.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shopSku.json; sourceTree = "<group>"; };
 		D19424641EE5396000C9A867 /* ProductDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailModel.h; sourceTree = "<group>"; };
 		D19424651EE5396000C9A867 /* ProductDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailModel.m; sourceTree = "<group>"; };
@@ -1041,7 +1044,7 @@
 		D15607861F21AEF000CE8E79 /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
-				D169A6F71F2B34BF00209C68 /* MagicPhotoBrowserManager */,
+				D169A6F71F2B34BF00209C68 /* MagicPhotoBrowserManager(图片浏览) */,
 				D169A6F01F2B1E2C00209C68 /* MagicFileManager(文件操作) */,
 				D124D8771F2721DF0072272C /* MagicUserDefaults(持久化存储) */,
 			);
@@ -1329,12 +1332,13 @@
 			path = MagicFileManager;
 			sourceTree = "<group>";
 		};
-		D169A6F71F2B34BF00209C68 /* MagicPhotoBrowserManager */ = {
+		D169A6F71F2B34BF00209C68 /* MagicPhotoBrowserManager(图片浏览) */ = {
 			isa = PBXGroup;
 			children = (
 				D169A6F81F2B34BF00209C68 /* MagicPhotoBrowserManager.h */,
 				D169A6F91F2B34BF00209C68 /* MagicPhotoBrowserManager.m */,
 			);
+			name = "MagicPhotoBrowserManager(图片浏览)";
 			path = MagicPhotoBrowserManager;
 			sourceTree = "<group>";
 		};
@@ -1468,6 +1472,16 @@
 				D187ACF21ED3DC0400E8C4BA /* ExampleMagicTimerButtonViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D19013E61F306EF700DA46CA /* ExampleMagicWebViewController(WebView优化) */ = {
+			isa = PBXGroup;
+			children = (
+				D19013E71F306EF700DA46CA /* ExampleMagicWebViewController.h */,
+				D19013E81F306EF700DA46CA /* ExampleMagicWebViewController.m */,
+			);
+			name = "ExampleMagicWebViewController(WebView优化)";
+			path = ExampleMagicWebViewController;
 			sourceTree = "<group>";
 		};
 		D19424671EE6A4B500C9A867 /* ProductActivityCell(活动) */ = {
@@ -1634,6 +1648,7 @@
 		D1C72B591EB834ED00C88BAE /* HomeExample(Home示例) */ = {
 			isa = PBXGroup;
 			children = (
+				D19013E61F306EF700DA46CA /* ExampleMagicWebViewController(WebView优化) */,
 				D1707A801ED7C01E0024FC83 /* ExampleFDTemplateLayoutCell(Cell动态高度) */,
 				D156E1E21ED441800024D309 /* ExampleiCarousel(3D卡片) */,
 				D156E1E41ED441800024D309 /* ExampleReachability(网络状态) */,
@@ -2483,6 +2498,7 @@
 				D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */,
 				D1C72B601EB8354F00C88BAE /* ExampleTangramViewController.m in Sources */,
 				D1C72C661EB86F0C00C88BAE /* TangramStickyBottomLayout.m in Sources */,
+				D19013E91F306EF700DA46CA /* ExampleMagicWebViewController.m in Sources */,
 				D1C72C651EB86F0C00C88BAE /* TangramSingleColumnLayout.m in Sources */,
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,

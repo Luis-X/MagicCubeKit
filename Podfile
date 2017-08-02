@@ -26,5 +26,13 @@ pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag =
 pod 'FLEX', '~> 2.4.0'					# FLEX调试工具
 pod 'IDMPhotoBrowser', '~> 1.11.3'			# 图片浏览
 pod 'CRToast', '~> 0.0.9'				# 顶部通知
+pod 'ShareSDK3'						# 主模块(必须)
+pod 'MOBFoundation'					# Mob 公共库(必须) 
+pod 'ShareSDK3/ShareSDKUI'				# UI模块
+pod 'ShareSDK3/ShareSDKPlatforms/WeChat'		# 微信分享
+pod 'ShareSDK3/ShareSDKPlatforms/QQ'			# QQ分享
+pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'		# 新浪分享
+pod 'ShareSDK3/ShareSDKPlatforms/AliPaySocial'		# 支付宝分享
+pod 'ShareSDK3/ShareSDKPlatforms/DingTalk'		# 钉钉分享
 end
 

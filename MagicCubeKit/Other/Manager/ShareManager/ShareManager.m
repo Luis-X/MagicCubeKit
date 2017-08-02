@@ -9,5 +9,7 @@
 #import "ShareManager.h"
 
 @implementation ShareManager
-
++ (void)start{
+    //微信、朋友圈、微博、支付宝、QQ、空间、钉钉、复制链接
+}
 @end

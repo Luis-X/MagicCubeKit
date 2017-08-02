@@ -57,7 +57,8 @@
                    @{@"Reachability" : @"网络状态"},
                    @{@"iCarousel" : @"3D卡片"},
                    @{@"WYPopoverController" : @"气泡"},
-                   @{@"UITableView+FDTemplateLayoutCell" : @"列表高度自适应"}];
+                   @{@"UITableView+FDTemplateLayoutCell" : @"列表高度自适应"},
+                   @{@"ExampleMagicWebViewController" : @"WebView优化"}];
 }
 
 - (void)createMainViews{
@@ -170,6 +171,8 @@
             case 16:
                 routerSkipString = Router_Skip_ExampleMagicDynamicViewController;
                 break;
+            case 17:
+                routerSkipString = Router_Skip_ExampleMagicWebViewController;
             default:
                 break;
         }

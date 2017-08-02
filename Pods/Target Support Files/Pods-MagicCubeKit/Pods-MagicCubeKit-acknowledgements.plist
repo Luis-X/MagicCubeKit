@@ -460,6 +460,16 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright © 2012-2015 mob</string>
+			<key>License</key>
+			<string>Copyright © 2012-2017 mob.com</string>
+			<key>Title</key>
+			<string>MOBFoundation</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2011-2012 Masonry Team - https://github.com/Masonry
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -1173,6 +1183,17 @@ SOFTWARE.
 			<string>MIT</string>
 			<key>Title</key>
 			<string>STPopup</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright © 2012-2016 mob
+</string>
+			<key>License</key>
+			<string>MIT</string>
+			<key>Title</key>
+			<string>ShareSDK3</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
