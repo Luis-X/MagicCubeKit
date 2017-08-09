@@ -34,8 +34,16 @@
 #import <ChameleonFramework/Chameleon.h>
 #import <MJExtension.h>
 #import <UIImageView+WebCache.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 //封装包
 #import "UIQuicklyKit.h"
+
+//开源依赖
+#if DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static const DDLogLevel ddLogLevel = DDLogLevelWarning;
+#endif
 
 #endif /* MagicCubeHeader_pch */

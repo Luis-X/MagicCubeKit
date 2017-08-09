@@ -21,9 +21,16 @@ PODS:
     - AsyncDisplayKit/Core
     - PINRemoteImage/iOS (= 3.0.0-beta.8)
     - PINRemoteImage/PINCache
+  - ATSDK-Weex (0.0.1)
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - CocoaLumberjack (3.2.0):
+    - CocoaLumberjack/Default (= 3.2.0)
+    - CocoaLumberjack/Extensions (= 3.2.0)
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Extensions (3.2.0):
+    - CocoaLumberjack/Default
   - CRToast (0.0.9)
   - DACircularProgress (2.3.1)
   - DateTools (1.7.0)
@@ -79,6 +86,7 @@ PODS:
   - ShareSDK3/ShareSDKUI (4.0.1):
     - MOBFoundation
   - STPopup (1.8.2)
+  - SVProgressHUD (2.1.2)
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
   - WYPopoverController (0.3.9)
@@ -94,7 +102,9 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AsyncDisplayKit (~> 2.0-beta.1)
+  - ATSDK-Weex (~> 0.0.1)
   - ChameleonFramework (~> 2.1.0)
+  - CocoaLumberjack (~> 3.2.0)
   - CRToast (~> 0.0.9)
   - DateTools (~> 1.7.0)
   - FDFullscreenPopGesture
@@ -119,6 +129,7 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/WeChat
   - ShareSDK3/ShareSDKUI
   - STPopup (~> 1.8.2)
+  - SVProgressHUD (~> 2.1.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
   - WYPopoverController (~> 0.3.9)
@@ -144,7 +155,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AsyncDisplayKit: 2234dd8d8770a5ed72936b3f8394bd5a807765f6
+  ATSDK-Weex: 1b27558f4336d77fb97704d34fc6ad1fd468592c
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
@@ -168,6 +181,7 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
@@ -176,6 +190,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 0f3e94332620528a267129352cb020f104efc91a
+PODFILE CHECKSUM: 124d05ac273247b37721290c114079b8ca689858
 
 COCOAPODS: 1.2.0

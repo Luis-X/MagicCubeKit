@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-     self.mainTitle = @"MagicCubeKit";
     [self initailData];
     [self createMainViews];
 }
@@ -52,7 +51,7 @@
                    @{@"MagicImageDownloader" : @"图片下载"},
                    @{@"MagicWebProgress" : @"网页进度条"},
                    @{@"MagicLoading" : @"加载动画"},
-                   @{@"MagicTimerButton" : @"倒计时按钮"},
+                   @{@"MagicTimerManager" : @"倒计时"},
                    @{@"WebViewJavascriptBridge" : @"JS交互"},
                    @{@"Reachability" : @"网络状态"},
                    @{@"iCarousel" : @"3D卡片"},
@@ -70,10 +69,10 @@
     [self.view addSubview:_mainTableView];
     [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.left.bottom.right.equalTo(self.view);
+        make.top.equalTo(self.view).offset(-MC_NAVIGATION_BAR_H);
+        make.left.bottom.right.equalTo(self.view);
         
     }];
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -180,4 +179,5 @@
     }
     
 }
+
 @end

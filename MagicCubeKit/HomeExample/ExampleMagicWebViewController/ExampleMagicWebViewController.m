@@ -7,43 +7,43 @@
 //
 
 #import "ExampleMagicWebViewController.h"
-#import <WebKit/WebKit.h>
-@interface ExampleMagicWebViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
-@property (nonatomic, strong) UIProgressView *progressView;     //进度条
-@property (nonatomic, strong) WKWebView *wkWebView;             //WKWebView网页
+
+@interface ExampleMagicWebViewController ()
 @end
 
 @implementation ExampleMagicWebViewController{
-   
+    UITextField *_textField;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self createMainView];
+}
+
+- (void)createMainView{
     
-    // 进度条初始化
-    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 1)];
-    self.progressView.alpha = 1.0;
-    self.progressView.backgroundColor = [UIColor clearColor];           // 背景色
-    self.progressView.progressTintColor = [UIColor flatOrangeColor];    // 已过度颜色
-    self.progressView.trackTintColor = [UIColor clearColor];            // 未过度颜色
-    self.progressView.hidden = NO;
-    [self.view addSubview:self.progressView];
+    UITextField *textField = [QuicklyUI quicklyUITextFieldAddTo:self.view font:MC_FONT_SYSTEM(14)];
+    textField.text = @"https://shop.m.showjoy.net/trade/payfailure?orderNumber=7150207153634219&r=验证码输入有误，请重新输入";
+    textField.backgroundColor = [UIColor grayColor];
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(20);
+        make.left.equalTo(self.view).offset(20);
+        make.right.equalTo(self.view).offset(-20);
+        make.height.mas_equalTo(50);
+    }];
+    _textField = textField;
     
-    
-    // WKWebView
-    _wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-    [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://shop.m.showjoy.net/trade/payfailure?orderNumber=7150157199498519&r=%E5%BE%AE%E4%BF%A1"]]];
-    _wkWebView.navigationDelegate = self;
-    _wkWebView.UIDelegate = self;
-    [self.view addSubview:_wkWebView];
- 
-    
-    // 监听进度
-    [_wkWebView addObserver:self forKeyPath:@"estimatedProgress" options:(NSKeyValueObservingOptionNew) context:nil];
-    [self.view bringSubviewToFront:self.progressView];
+    UIButton *button = [QuicklyUI quicklyUIButtonAddTo:self.view backgroundColor:[UIColor grayColor] cornerRadius:5];
+    [button setTitle:@" 使用WKWebView打开 " forState:UIControlStateNormal];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.height.mas_equalTo(50);
+    }];
+    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,97 +60,18 @@
 }
 */
 
-#pragma mark - WKNavigationDelegate
-// 页面开始加载时调用
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-   
+- (void)buttonAction:(UIButton *)button{
     
-}
-
-// 当内容开始到达时调用
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
-    
-}
-
-// 页面加载完成之后调用
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    self.progressView.hidden = YES;
-}
-
-// 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-    self.progressView.hidden = YES;
-}
-
-
-//收到服务器重定向请求后调用
-- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
-    
-}
-
-//// 在收到响应开始加载后，决定是否跳转
-//- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-//    
-//}
-
-// 在请求开始加载之前调用，决定是否跳转
-//- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-//    
-//}
-
-
-
-
-#pragma mark - WKUIDelegate
-//- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures{
-//    
-//}
-
-// 在js中调用alert函数时，会调用该方法
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
-    
-}
-
-// 在js中调用confirm函数时，会调用该方法
-- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
-    
-}
-
-// 在js中调用prompt函数时，会调用该方法
-- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
-    
-}
-
-
-
-#pragma mark - WKScriptMessageHandler
-//获取js传递的数据
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
-    
-}
-
-
-/**
- 监听回调
- */
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    
-    if ([keyPath isEqualToString:@"estimatedProgress"]) {
-        [self.progressView setProgress:self.wkWebView.estimatedProgress animated:YES];
-        if (self.progressView.progress >= 1) {
-            self.progressView.hidden = YES;
-        }
-    }else{
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    if (_textField.text.length <= 0) {
+        return;
     }
     
-}
-
-//移除
--(void)dealloc{
-    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
-    self.progressView = nil;
-    self.wkWebView = nil;
+    // 加载请求(防止网址中含有中文字符,转为URLNSURL为nil)
+    NSString *urlString = _textField.text;
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *url = Router_Skip_MagicWebViewController(urlString);
+    [MagicRouterManager showAnyViewControllerWithRouterURL:url AddedNavigationController:self.navigationController];
+    
 }
 
 

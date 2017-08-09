@@ -77,20 +77,28 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "ATSDK-Weex/ATSDK.framework/Versions/A/Resources/ATSDK.bundle"
+  install_resource "ATSDK-Weex/ATSDK.framework/Versions/A/Resources/en.lproj"
+  install_resource "ATSDK-Weex/ATSDK.framework/Versions/A/Resources/zh-Hans.lproj"
   install_resource "DateTools/DateTools/DateTools.bundle"
   install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
   install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "ATSDK-Weex/ATSDK.framework/Versions/A/Resources/ATSDK.bundle"
+  install_resource "ATSDK-Weex/ATSDK.framework/Versions/A/Resources/en.lproj"
+  install_resource "ATSDK-Weex/ATSDK.framework/Versions/A/Resources/zh-Hans.lproj"
   install_resource "DateTools/DateTools/DateTools.bundle"
   install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
   install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"

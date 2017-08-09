@@ -9,6 +9,7 @@
 #import "LaboratoryViewController.h"
 #import "ProductDetailMenuViewController.h"
 #import "AutoAlbumListViewController.h"
+#import "HomePageViewController.h"
 @interface LaboratoryViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -42,7 +43,8 @@
 */
 - (void)initailData{
     _menuArray = @[@{@"ProductDetailMenuViewController" : @"商品详情"},
-                   @{@"AutoAlbumViewController" : @"自动生成图片"}];
+                   @{@"AutoAlbumViewController" : @"自动生成图片"},
+                   @{@"HomePageViewController" : @"首页列表"}];
 }
 
 - (void)createMainViews{
@@ -100,6 +102,11 @@
             AutoAlbumListViewController *autoAlbumViewController = [AutoAlbumListViewController new];
             autoAlbumViewController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:autoAlbumViewController animated:YES];
+        }
+        if (indexPath.row == 2) {
+            HomePageViewController *homePageViewController = [HomePageViewController new];
+            homePageViewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:homePageViewController animated:YES];
         }
     }
     

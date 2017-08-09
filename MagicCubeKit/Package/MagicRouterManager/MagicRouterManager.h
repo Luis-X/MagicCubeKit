@@ -26,31 +26,32 @@
 #import "ExampleWYPopoverControllerViewController.h"
 #import "ExampleMagicDynamicViewController.h"
 #import "ExampleMagicWebViewController.h"
+#import "MagicWebViewController.h"
 
 @interface MagicRouterManager : NSObject
-#define Router_HOST @"tiantian://"                                                                                  //协议
-#define Router_URL(object, action)  [NSString stringWithFormat:@"%@%@/%@", Router_HOST, (object), (action)]         //跳转
+#define R_HOST @"tiantian://"                                                         //协议
+#define R_URL(page)  [NSString stringWithFormat:@"%@%@", R_HOST, (page)]         //跳转
 
 //注册跳转
-#define Router_Skip_ViewController                                 Router_URL(@"ViewController", nil)
-#define Router_Skip_ExampleTangramViewController                   Router_URL(@"ExampleTangramViewController", nil)
-#define Router_Skip_ExampleSJBugVideoKitViewController             Router_URL(@"ExampleSJBugVideoKitViewController", nil)
-#define Router_Skip_ExampleMagicAlertViewViewController            Router_URL(@"ExampleMagicAlertViewViewController", nil)
-#define Router_Skip_ExampleMagicPermissionManagerViewController    Router_URL(@"ExampleMagicPermissionManagerViewController", nil)
-#define Router_Skip_ExampleMagicNetworkingViewController           Router_URL(@"ExampleMagicNetworkingViewController", nil)
-#define Router_Skip_ExampleMagicButtonViewController               Router_URL(@"ExampleMagicButtonViewController", nil)
-#define Router_Skip_ExampleMagicScrollPageViewController           Router_URL(@"ExampleMagicScrollPageViewController", nil)
-#define Router_Skip_ExampleMagicImageDownloaderViewController      Router_URL(@"ExampleMagicImageDownloaderViewController", nil)
-#define Router_Skip_ExampleMagicWebProgressViewController          Router_URL(@"ExampleMagicWebProgressViewController", nil)
-#define Router_Skip_ExampleMagicLoadingViewController              Router_URL(@"ExampleMagicLoadingViewController", nil)
-#define Router_Skip_ExampleMagicTimerButtonViewController          Router_URL(@"ExampleMagicTimerButtonViewController", nil)
-#define Router_Skip_ExampleWebViewJavascriptBridgeViewController   Router_URL(@"ExampleWebViewJavascriptBridgeViewController", nil)
-#define Router_Skip_ExampleReachabilityViewController              Router_URL(@"ExampleReachabilityViewController", nil)
-#define Router_Skip_ExampleiCarouselViewController                 Router_URL(@"ExampleiCarouselViewController", nil)
-#define Router_Skip_ExampleWYPopoverControllerViewController       Router_URL(@"ExampleWYPopoverControllerViewController", nil)
-#define Router_Skip_ExampleMagicDynamicViewController              Router_URL(@"ExampleMagicDynamicViewController", nil)
-#define Router_Skip_ExampleMagicWebViewController                  Router_URL(@"ExampleMagicWebViewController", nil)
-
+#define Router_Skip_ViewController                                 R_URL(@"ViewController")
+#define Router_Skip_ExampleTangramViewController                   R_URL(@"ExampleTangramViewController")
+#define Router_Skip_ExampleSJBugVideoKitViewController             R_URL(@"ExampleSJBugVideoKitViewController")
+#define Router_Skip_ExampleMagicAlertViewViewController            R_URL(@"ExampleMagicAlertViewViewController")
+#define Router_Skip_ExampleMagicPermissionManagerViewController    R_URL(@"ExampleMagicPermissionManagerViewController")
+#define Router_Skip_ExampleMagicNetworkingViewController           R_URL(@"ExampleMagicNetworkingViewController")
+#define Router_Skip_ExampleMagicButtonViewController               R_URL(@"ExampleMagicButtonViewController")
+#define Router_Skip_ExampleMagicScrollPageViewController           R_URL(@"ExampleMagicScrollPageViewController")
+#define Router_Skip_ExampleMagicImageDownloaderViewController      R_URL(@"ExampleMagicImageDownloaderViewController")
+#define Router_Skip_ExampleMagicWebProgressViewController          R_URL(@"ExampleMagicWebProgressViewController")
+#define Router_Skip_ExampleMagicLoadingViewController              R_URL(@"ExampleMagicLoadingViewController")
+#define Router_Skip_ExampleMagicTimerButtonViewController          R_URL(@"ExampleMagicTimerButtonViewController")
+#define Router_Skip_ExampleWebViewJavascriptBridgeViewController   R_URL(@"ExampleWebViewJavascriptBridgeViewController")
+#define Router_Skip_ExampleReachabilityViewController              R_URL(@"ExampleReachabilityViewController")
+#define Router_Skip_ExampleiCarouselViewController                 R_URL(@"ExampleiCarouselViewController")
+#define Router_Skip_ExampleWYPopoverControllerViewController       R_URL(@"ExampleWYPopoverControllerViewController")
+#define Router_Skip_ExampleMagicDynamicViewController              R_URL(@"ExampleMagicDynamicViewController")
+#define Router_Skip_ExampleMagicWebViewController                  R_URL(@"ExampleMagicWebViewController")
+#define Router_Skip_MagicWebViewController(url)                    MC_STRING_FORMAT(@"%@?url=%@", R_URL(@"MagicWebViewController"), (url))
 
 + (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL AddedNavigationController:(UINavigationController *)navigationController;
 
