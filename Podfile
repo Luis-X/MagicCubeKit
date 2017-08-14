@@ -37,5 +37,6 @@ pod 'ShareSDK3/ShareSDKPlatforms/QQ'			# QQ分享
 pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'		# 新浪分享
 pod 'ShareSDK3/ShareSDKPlatforms/AliPaySocial'		# 支付宝分享
 pod 'ShareSDK3/ShareSDKPlatforms/DingTalk'		# 钉钉分享
+pod 'XLForm', '~> 3.2.0'				# 快速创建列表
 end
 

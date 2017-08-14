@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
+  install_resource "XLForm/XLForm/XLForm.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "ATSDK-Weex/ATSDK.framework/Versions/A/Resources/ATSDK.bundle"
@@ -103,6 +104,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
+  install_resource "XLForm/XLForm/XLForm.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -159,6 +159,18 @@
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
         return;
     }
+    //Draw
+    if ([page isEqualToString:@"ExampleDrawViewController"]) {
+        ExampleDrawViewController *vc = [ExampleDrawViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+        return;
+    }
+    //XLForm
+    if ([page isEqualToString:@"ExampleXLFormViewController"]) {
+        ExampleXLFormViewController *vc = [ExampleXLFormViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+        return;
+    }
 }
 
 @end

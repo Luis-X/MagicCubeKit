@@ -57,7 +57,9 @@
                    @{@"iCarousel" : @"3D卡片"},
                    @{@"WYPopoverController" : @"气泡"},
                    @{@"UITableView+FDTemplateLayoutCell" : @"列表高度自适应"},
-                   @{@"ExampleMagicWebViewController" : @"WebView优化"}];
+                   @{@"ExampleMagicWebViewController" : @"WebView优化"},
+                   @{@"ExampleDrawViewController" : @"UIView绘制"},
+                   @{@"ExampleXLFormViewController" : @"快速创建列表"}];
 }
 
 - (void)createMainViews{
@@ -172,6 +174,13 @@
                 break;
             case 17:
                 routerSkipString = Router_Skip_ExampleMagicWebViewController;
+                break;
+            case 18:
+                routerSkipString = Router_Skip_ExampleDrawViewController;
+                break;
+            case 19:
+                routerSkipString = Router_Skip_ExampleXLFormViewController;
+                break;
             default:
                 break;
         }

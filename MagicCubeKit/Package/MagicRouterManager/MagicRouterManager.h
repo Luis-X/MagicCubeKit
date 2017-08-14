@@ -27,6 +27,8 @@
 #import "ExampleMagicDynamicViewController.h"
 #import "ExampleMagicWebViewController.h"
 #import "MagicWebViewController.h"
+#import "ExampleDrawViewController.h"
+#import "ExampleXLFormViewController.h"
 
 @interface MagicRouterManager : NSObject
 #define R_HOST @"tiantian://"                                                         //协议
@@ -52,7 +54,8 @@
 #define Router_Skip_ExampleMagicDynamicViewController              R_URL(@"ExampleMagicDynamicViewController")
 #define Router_Skip_ExampleMagicWebViewController                  R_URL(@"ExampleMagicWebViewController")
 #define Router_Skip_MagicWebViewController(url)                    MC_STRING_FORMAT(@"%@?url=%@", R_URL(@"MagicWebViewController"), (url))
-
+#define Router_Skip_ExampleDrawViewController                      R_URL(@"ExampleDrawViewController")
+#define Router_Skip_ExampleXLFormViewController                    R_URL(@"ExampleXLFormViewController")
 + (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL AddedNavigationController:(UINavigationController *)navigationController;
 
 @end
