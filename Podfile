@@ -1,6 +1,6 @@
 # 公有仓库
 source 'https://github.com/CocoaPods/Specs.git'
-target "MagicCubeKit” do
+target "MagicCubeKit" do
 platform :ios, ‘8.0’
 pod 'CocoaLumberjack', '~> 3.2.0'			# 日志
 pod 'Masonry', '~> 1.0.1'				# autolayout
@@ -38,5 +38,7 @@ pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'		# 新浪分享
 pod 'ShareSDK3/ShareSDKPlatforms/AliPaySocial'		# 支付宝分享
 pod 'ShareSDK3/ShareSDKPlatforms/DingTalk'		# 钉钉分享
 pod 'XLForm', '~> 3.2.0'				# 快速创建列表
+pod 'ActionSheetPicker-3.0', '~> 2.2.0'			# 弹框
+pod 'M13ProgressSuite', '~> 1.2.9'			# 进度条指示器
 end
 

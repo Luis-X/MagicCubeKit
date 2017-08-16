@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
   - AFNetworking (3.1.0):
     - AFNetworking/NSURLSession (= 3.1.0)
     - AFNetworking/Reachability (= 3.1.0)
@@ -44,6 +45,7 @@ PODS:
   - JLRoutes (2.0.5)
   - JMRoundedCorner (1.9.5)
   - LazyScroll (0.0.2)
+  - M13ProgressSuite (1.2.9)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
@@ -101,6 +103,7 @@ PODS:
   - ZYBannerView (1.1.2)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0 (~> 2.2.0)
   - AFNetworking (~> 3.1.0)
   - AsyncDisplayKit (~> 2.0-beta.1)
   - ATSDK-Weex (~> 0.0.1)
@@ -115,6 +118,7 @@ DEPENDENCIES:
   - JLRoutes (~> 2.0)
   - JMRoundedCorner (from `https://github.com/raozhizhen/JMRoundedCorner.git`, tag `1.9.6`)
   - LazyScroll (~> 0.0.2)
+  - M13ProgressSuite (~> 1.2.9)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
@@ -155,6 +159,7 @@ CHECKOUT OPTIONS:
     :tag: 1.0.5
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AsyncDisplayKit: 2234dd8d8770a5ed72936b3f8394bd5a807765f6
   ATSDK-Weex: 1b27558f4336d77fb97704d34fc6ad1fd468592c
@@ -170,6 +175,7 @@ SPEC CHECKSUMS:
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   JMRoundedCorner: be3809e2e536939bc0b012d68eb943d870e5b1ed
   LazyScroll: 614022689b8e3b93c7bbe268c1a47b76e4265941
+  M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -193,6 +199,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 5dd602d9b7c652ff784ef2337e3165fae4312464
+PODFILE CHECKSUM: f9dbf3eb9afb7c2bc79222d318eccfbcb9492995
 
 COCOAPODS: 1.2.0

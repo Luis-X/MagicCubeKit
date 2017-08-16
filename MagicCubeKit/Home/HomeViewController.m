@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.mainTitle = @"首页";
     [self initailData];
     [self createMainViews];
 }
@@ -40,26 +41,26 @@
 */
 
 - (void)initailData{
-    _menuArray = @[@{@"UIViewController" : @"ViewController调用机制"},
-                   @{@"Tangram" : @"七巧板界面动态化"},
-                   @{@"SJBugVideoKit" : @"录屏、截屏"},
-                   @{@"MagicAlertView" : @"弹框"},
-                   @{@"MagicPermissionManager" : @"权限"},
-                   @{@"MagicNetworkManager" : @"网络请求"},
-                   @{@"MagicIconButton" : @"icon按钮"},
-                   @{@"MagicScrollPage" : @"滚动分页"},
-                   @{@"MagicImageDownloader" : @"图片下载"},
-                   @{@"MagicWebProgress" : @"网页进度条"},
-                   @{@"MagicLoading" : @"加载动画"},
-                   @{@"MagicTimerManager" : @"倒计时"},
-                   @{@"WebViewJavascriptBridge" : @"JS交互"},
-                   @{@"Reachability" : @"网络状态"},
-                   @{@"iCarousel" : @"3D卡片"},
-                   @{@"WYPopoverController" : @"气泡"},
-                   @{@"UITableView+FDTemplateLayoutCell" : @"列表高度自适应"},
-                   @{@"ExampleMagicWebViewController" : @"WebView优化"},
-                   @{@"ExampleDrawViewController" : @"UIView绘制"},
-                   @{@"ExampleXLFormViewController" : @"快速创建列表"}];
+    _menuArray = @[@{@"ViewController调用机制" : @"UIViewController"},
+                   @{@"七巧板界面动态化" : @"Tangram" },
+                   @{@"录屏、截屏" : @"SJBugVideoKit"},
+                   @{@"弹框" : @"MagicAlertView"},
+                   @{@"权限" : @"MagicPermissionManager"},
+                   @{@"网络请求" : @"MagicNetworkManager"},
+                   @{@"icon按钮" : @"MagicIconButton"},
+                   @{@"滚动分页" : @"MagicScrollPage"},
+                   @{@"图片下载" : @"MagicImageDownloader"},
+                   @{@"网页进度条" : @"MagicWebProgress"},
+                   @{@"加载动画" : @"MagicLoading"},
+                   @{@"持续倒计时" : @"MagicTimerManager"},
+                   @{@"JS交互" : @"WebViewJavascriptBridge"},
+                   @{@"网络状态" : @"Reachability"},
+                   @{@"3D卡片" : @"iCarousel"},
+                   @{@"气泡" : @"WYPopoverController"},
+                   @{@"列表高度自适应" : @"UITableView+FDTemplateLayoutCell"},
+                   @{@"WebView优化" : @"ExampleMagicWebViewController"},
+                   @{@"UIView绘制" : @"ExampleDrawViewController"},
+                   @{@"快速创建列表" : @"ExampleXLFormViewController"}];
 }
 
 - (void)createMainViews{
@@ -71,7 +72,7 @@
     [self.view addSubview:_mainTableView];
     [_mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.equalTo(self.view).offset(-MC_NAVIGATION_BAR_H);
+        make.top.equalTo(self.view);
         make.left.bottom.right.equalTo(self.view);
         
     }];
@@ -89,7 +90,9 @@
     }
     NSDictionary *menuDic = [_menuArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [menuDic.allKeys firstObject];
+    cell.textLabel.font = MC_FONT_SYSTEM_BOLD(16);
     cell.detailTextLabel.text = [menuDic.allValues firstObject];
+    cell.detailTextLabel.textColor = [UIColor flatBlueColor];
     return cell;
     
 }
