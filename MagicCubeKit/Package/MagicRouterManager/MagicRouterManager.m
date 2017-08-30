@@ -171,6 +171,11 @@
         [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
         return;
     }
+    //ActionSheetPicker-3.0
+    if ([page isEqualToString:@"ExampleActionSheetPicker3ViewController"]) {
+        ExampleActionSheetPicker3ViewController *vc = [ExampleActionSheetPicker3ViewController new];
+        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+    }
 }
 
 @end

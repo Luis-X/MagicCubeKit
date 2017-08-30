@@ -6,7 +6,8 @@ pod 'CocoaLumberjack', '~> 3.2.0'			# 日志
 pod 'Masonry', '~> 1.0.1'				# autolayout
 pod 'AFNetworking', '~> 3.1.0'				# 网络请求
 pod 'Reachability', '~> 3.2'				# 网络监听	
-pod 'SDWebImage', '~>4.0.0’				# 加载图片	
+pod 'SDWebImage', '~>4.0.0’				# 加载图片
+pod ‘SDWebImage/WebP’					# 图片webP	
 pod 'DateTools', '~> 1.7.0'				# 日期工具
 pod 'JLRoutes', '~> 2.0'				# 路由跳转
 pod 'WebViewJavascriptBridge', '~> 6.0.2'	        # JS交互
@@ -29,7 +30,7 @@ pod 'FLEX', '~> 2.4.0'					# FLEX调试工具
 pod 'ATSDK-Weex', '~> 0.0.1'				# weex调试工具
 pod 'IDMPhotoBrowser', '~> 1.11.3'			# 图片浏览
 pod 'CRToast', '~> 0.0.9'				# 顶部通知
-pod 'ShareSDK3'						# 主模块(必须)
+pod 'ShareSDK3'					# 主模块(必须)
 pod 'MOBFoundation'					# Mob 公共库(必须) 
 pod 'ShareSDK3/ShareSDKUI'				# UI模块
 pod 'ShareSDK3/ShareSDKPlatforms/WeChat'		# 微信分享

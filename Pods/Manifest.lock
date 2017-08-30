@@ -45,6 +45,30 @@ PODS:
   - JLRoutes (2.0.5)
   - JMRoundedCorner (1.9.5)
   - LazyScroll (0.0.2)
+  - libwebp (0.6.0):
+    - libwebp/core (= 0.6.0)
+    - libwebp/dec (= 0.6.0)
+    - libwebp/demux (= 0.6.0)
+    - libwebp/dsp (= 0.6.0)
+    - libwebp/enc (= 0.6.0)
+    - libwebp/mux (= 0.6.0)
+    - libwebp/utils (= 0.6.0)
+    - libwebp/webp (= 0.6.0)
+  - libwebp/core (0.6.0):
+    - libwebp/webp
+  - libwebp/dec (0.6.0):
+    - libwebp/core
+  - libwebp/demux (0.6.0):
+    - libwebp/core
+  - libwebp/dsp (0.6.0):
+    - libwebp/core
+  - libwebp/enc (0.6.0):
+    - libwebp/core
+  - libwebp/mux (0.6.0):
+    - libwebp/core
+  - libwebp/utils (0.6.0):
+    - libwebp/core
+  - libwebp/webp (0.6.0)
   - M13ProgressSuite (1.2.9)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
@@ -70,6 +94,9 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SDWebImage/WebP (4.0.0):
+    - libwebp
+    - SDWebImage/Core
   - ShareSDK3 (4.0.1):
     - MOBFoundation
     - ShareSDK3/ShareSDK (= 4.0.1)
@@ -126,6 +153,7 @@ DEPENDENCIES:
   - MOBFoundation
   - Reachability (~> 3.2)
   - SDWebImage (~> 4.0.0)
+  - SDWebImage/WebP
   - ShareSDK3
   - ShareSDK3/ShareSDKPlatforms/AliPaySocial
   - ShareSDK3/ShareSDKPlatforms/DingTalk
@@ -175,6 +203,7 @@ SPEC CHECKSUMS:
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   JMRoundedCorner: be3809e2e536939bc0b012d68eb943d870e5b1ed
   LazyScroll: 614022689b8e3b93c7bbe268c1a47b76e4265941
+  libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -199,6 +228,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: f9dbf3eb9afb7c2bc79222d318eccfbcb9492995
+PODFILE CHECKSUM: bcd1962ced7a72edd6099a42f09639b4427e1179
 
 COCOAPODS: 1.2.0

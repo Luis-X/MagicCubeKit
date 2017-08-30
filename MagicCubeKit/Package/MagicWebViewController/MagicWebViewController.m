@@ -8,6 +8,8 @@
 
 #import "MagicWebViewController.h"
 #import <WebKit/WebKit.h>
+#import "MagicWebView-WebP.h"
+
 @interface MagicWebViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
 @property (nonatomic, strong) UIProgressView *progressView;     //进度条
 @property (nonatomic, strong) WKWebView *wkWebView;             //WKWebView网页
@@ -44,6 +46,8 @@
     [self customLeftNavigationBarButtonItem];
     [self customRightNavigationBarButtonItem];
     
+    // 注册协议支持webP
+    [[MagicWebViewWebPManager shareManager] registerMagicURLProtocolWebView:self.wkWebView];
     // 加载请求
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_requestURLString]];
     [self.wkWebView loadRequest:request];
@@ -226,11 +230,6 @@
     
 }
 
-//移除
--(void)dealloc{
-    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
-}
-
 #pragma mark - 导航栏
 /**
  自定义导航栏Item
@@ -328,4 +327,11 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+
+//移除
+-(void)dealloc{
+    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [[MagicWebViewWebPManager shareManager] unregisterMagicURLProtocolWebView:self.wkWebView];
+}
+
 @end

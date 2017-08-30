@@ -33,18 +33,14 @@
     [self startMainUIWindow];
     [MagicAPM start];
     [[MagicLogManager shareManager] start];
-    DDLogVerbose(@"Verbose");    // 详细日志
-    DDLogDebug(@"Debug");        // 调试日志
-    DDLogInfo(@"Info");          // 信息日志
-    DDLogWarn(@"Warn");          // 警告日志
-    DDLogError(@"Error");        // 错误日志
-    NSLog(@"日志路径%@", [[MagicLogManager shareManager] getAllLogFilePath]);
-    NSLog(@"日志内容%@", [[MagicLogManager shareManager] getAllLogFileContent]);
     
 #ifdef MC_BETA
     NSLog(@"测试版本");
 #else
     NSLog(@"生产版本");
+    [WXApi registerApp:@"wx1639894ad229bb65"];
+    TencentOAuth * tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"1105574446" andDelegate:[MagicShareQQ shareManager]];
+    tencentOAuth.redirectURI = @"http://www.showjoy.com";
 #endif
     return YES;
 }
@@ -103,13 +99,48 @@
     
 }
 
+#pragma mark - 打开URL回调
 /**
  *
- *  八、打开URL时执行
+ *  十、苹果整合了八、九的功能到此方法(iOS9.0+)
+ *  优先级: 高
+ */
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    return [self managerHandleOpenURL:url sourceApplication:[options valueForKey:UIApplicationOpenURLOptionsSourceApplicationKey]];
+}
+
+/**
  *
+ *  九、通过sourceApplication判断来自哪个App决定是否唤醒自己的App(iOS4.2 – 9.0)
+ *  优先级: 中
+ */
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+   return [self managerHandleOpenURL:url sourceApplication:sourceApplication];
+}
+
+/**
+ *
+ *  八、打开URL时执行(iOS2.0 – 9.0)
+ *  优先级: 低
  */
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return YES;
+    return [self managerHandleOpenURL:url sourceApplication:nil];
+}
+
+
+- (BOOL)managerHandleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication{
+
+    NSLog(@"来源App: %@", sourceApplication);
+    NSLog(@"url协议: %@", [url scheme]);
+    NSLog(@"url参数: %@", [url query]);
+
+    // QQ
+    if ([TencentApiInterface canOpenURL:url delegate:[MagicShareQQ shareManager]]){
+        return [TencentApiInterface handleOpenURL:url delegate:[MagicShareQQ shareManager]];
+    }
+    // 微信
+    return [WXApi handleOpenURL:url delegate:[MagicShareWeChat shareManager]];
+    
 }
 
 #pragma mark - 获取AppDelete实例

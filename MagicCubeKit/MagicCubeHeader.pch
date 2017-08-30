@@ -26,6 +26,7 @@
 #import "AppDelegate.h"
 #import "MagicRouterManager.h"
 #import "MagicNetworkManager.h"
+#import "MagicShareManager.h"
 
 //开源
 #import <Masonry.h>
