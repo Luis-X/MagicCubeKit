@@ -331,6 +331,7 @@
 		D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */; };
 		D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */; };
 		D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */; };
+		D1D015291F57FC4800DF8D18 /* MagicWebViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1D015281F57FC4800DF8D18 /* MagicWebViewUI.bundle */; };
 		D1D258051EE1023800A7CADD /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D258041EE1023800A7CADD /* Reveal.framework */; };
 		D1DF011B1F32FA4B009A7901 /* MagicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DF011A1F32FA4B009A7901 /* MagicWebViewController.m */; };
 		D1DF011D1F333A71009A7901 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DF011C1F333A71009A7901 /* ReplayKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -777,6 +778,7 @@
 		D1C72CBB1EB8856000C88BAE /* SJScreenShortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJScreenShortManager.h; sourceTree = "<group>"; };
 		D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJScreenShortManager.m; sourceTree = "<group>"; };
 		D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQuicklyKit.m; sourceTree = "<group>"; };
+		D1D015281F57FC4800DF8D18 /* MagicWebViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MagicWebViewUI.bundle; sourceTree = "<group>"; };
 		D1D258041EE1023800A7CADD /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		D1DF01191F32FA4B009A7901 /* MagicWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicWebViewController.h; sourceTree = "<group>"; };
 		D1DF011A1F32FA4B009A7901 /* MagicWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicWebViewController.m; sourceTree = "<group>"; };
@@ -2589,6 +2591,7 @@
 		D1DF01181F32FA2E009A7901 /* MagicWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D1D015281F57FC4800DF8D18 /* MagicWebViewUI.bundle */,
 				D1A03C021F5659B5001444D1 /* MagicWebView-WebP */,
 				D1DF01191F32FA4B009A7901 /* MagicWebViewController.h */,
 				D1DF011A1F32FA4B009A7901 /* MagicWebViewController.m */,
@@ -2764,6 +2767,7 @@
 				D1C72C4A1EB86F0C00C88BAE /* TangramHelperCustomMapping.plist in Resources */,
 				D1049C191F444215006A66EF /* productDetailGoTop@2x.png in Resources */,
 				D1049C021F444215006A66EF /* exampleTangram.json in Resources */,
+				D1D015291F57FC4800DF8D18 /* MagicWebViewUI.bundle in Resources */,
 				D1E0BE511ED920A600493704 /* tabbar_1@2x.png in Resources */,
 				D1049C1B1F444215006A66EF /* productDetailMenu@2x.png in Resources */,
 				D1049C1A1F444215006A66EF /* productDetailLogo@2x.png in Resources */,

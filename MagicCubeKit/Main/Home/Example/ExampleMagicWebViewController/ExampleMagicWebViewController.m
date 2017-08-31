@@ -24,7 +24,7 @@
 - (void)createMainView{
     
     UITextField *textField = [QuicklyUI quicklyUITextFieldAddTo:self.view font:MC_FONT_SYSTEM(14)];
-    textField.text = @"http://onzbjws3p.bkt.clouddn.com/testForwebpSrc/webpForhtml.html";
+    textField.text = @"http://isparta.github.io/compare-webp/index.html#12345";
     textField.backgroundColor = [UIColor grayColor];
     [textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(20);
@@ -68,7 +68,7 @@
     
     // 加载请求(防止网址中含有中文字符,转为URLNSURL为nil)
     NSString *urlString = _textField.text;
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    urlString = MC_ENCODE_UTF8(urlString);
     NSString *url = Router_Skip_MagicWebViewController(urlString);
     [MagicRouterManager showAnyViewControllerWithRouterURL:url AddedNavigationController:self.navigationController];
     

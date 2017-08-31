@@ -13,7 +13,7 @@
 #import <STPopup.h>
 #import "MagicActivityCollectionViewCell.h"
 
-@interface MagicActivityViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MagicActivityViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, MagicActivityCollectionViewCellDelegate>
 @property(nonatomic, copy) MagicActivityCompletion completion;
 @property(nonatomic, strong) NSMutableArray *allActivityItems;
 @property(nonatomic, assign) NSInteger maxItemCount;
@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithWhite:0.98 alpha:1.00];
+    self.view.backgroundColor = [UIColor colorWithWhite:1.00 alpha:0.95];
     [self configPopupControllerStyle];
     [self createMainSubviews];
     [self createMainLayout];
@@ -168,21 +168,27 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     MagicActivityCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"item" forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.cellIndexPath = indexPath;
     cell.magicActivityItem = [_allActivityItems objectAtIndex:indexPath.row];
     return cell;
 }
 
 #pragma mark -UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.completion) {
-        self.completion(indexPath.row);
-    }
+    [self dismissActivityViewController];
 }
-
 
 #pragma mark - Action
 - (void)dismissActivityViewController{
     [self.popupController dismiss];
 }
 
+#pragma mark - MagicActivityCollectionViewCellDelegate
+- (void)magicActivityCollectionViewCellDidSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.completion) {
+        self.completion(indexPath.row);
+    }
+    [self dismissActivityViewController];
+}
 @end

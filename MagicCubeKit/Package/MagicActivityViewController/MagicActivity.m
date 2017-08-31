@@ -20,10 +20,11 @@
     return activity;
 }
 
-+ (MagicActivity *)activityWithTitle:(NSString *)title image:(UIImage *)image{
++ (MagicActivity *)activityWithTitle:(NSString *)title image:(UIImage *)image highImage:(UIImage *)highImage{
     MagicActivity *activity = [[MagicActivity alloc] init];
     activity.title = title;
     activity.image = image;
+    activity.highImage = highImage;
     return activity;
 }
 @end

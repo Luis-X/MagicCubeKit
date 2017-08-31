@@ -12,7 +12,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *iconfont_code;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *highImage;
 
 + (MagicActivity *)activityWithTitle:(NSString *)title iconFontCode:(NSString *)iconfontCode;
-+ (MagicActivity *)activityWithTitle:(NSString *)title image:(UIImage *)image;
++ (MagicActivity *)activityWithTitle:(NSString *)title image:(UIImage *)image highImage:(UIImage *)highImage;
 @end

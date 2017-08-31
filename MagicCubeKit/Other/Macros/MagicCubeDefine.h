@@ -110,6 +110,9 @@
 #define MC_SELF_STRONG(type)     __strong typeof(type) type = weak##type;       //强引用
 #define MC_STRING_FORMAT(f, ...) [NSString stringWithFormat:f, ## __VA_ARGS__]  //万能转换
 
+/* 编码 */
+#define MC_ENCODE_UTF8(s)      [(s) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]         //编码
+#define MC_DECODE_UTF8(s)      [(s) stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]      //解码
 /*
 #if TARGET_OS_IPHONE
 // 真机

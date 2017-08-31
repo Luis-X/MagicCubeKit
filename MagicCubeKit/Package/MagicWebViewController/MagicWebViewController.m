@@ -19,10 +19,16 @@
     NSString *_requestURLString;         //初始化URLString
 }
 
+// 销毁
+-(void)dealloc{
+    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [[MagicWebViewWebPManager shareManager] unregisterMagicURLProtocolWebView:self.wkWebView];
+}
+
 - (instancetype)initWithRequestURL:(NSString *)url{
     self = [super init];
     if (self) {
-        _requestURLString = url;
+        _requestURLString = MC_DECODE_UTF8(url);
         [self initialData];
     }
     return self;
@@ -249,13 +255,13 @@
 // 返回按钮
 - (void)customLeftNavigationBarButtonItem{
     self.navigationItem.leftBarButtonItem = [self customNavigationBarButtonItemWithimageNamed:@"h5_preNavi@2x.png"
-                                                                                       action:@selector(backBarButtonItemAction:)];
+                                                                                       action:@selector(webViewGoBack)];
 }
 
 // 菜单按钮
 - (void)customRightNavigationBarButtonItem{
     self.navigationItem.rightBarButtonItem = [self customNavigationBarButtonItemWithimageNamed:@"h5_popovermenu_share@2x"
-                                                                                        action:@selector(menuBarButtonItemAction:)];
+                                                                                        action:@selector(showMenuAlertView)];
 }
 
 // 关闭按钮(显示、隐藏)
@@ -265,7 +271,7 @@
     closeButton.titleLabel.font = MC_FONT_SYSTEM(16);
     [closeButton setTitle:@"关闭" forState:UIControlStateNormal];
     [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [closeButton addTarget:self action:@selector(closeBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    [closeButton addTarget:self action:@selector(webViewClose) forControlEvents:UIControlEventTouchUpInside];
     [closeButton sizeToFit];
     UIBarButtonItem *colseItem = [[UIBarButtonItem alloc] initWithCustomView:closeButton];
     NSMutableArray *newArr = [NSMutableArray arrayWithObjects:self.navigationItem.leftBarButtonItem,colseItem, nil];
@@ -273,9 +279,42 @@
     
 }
 
+// 菜单
+- (void)showMenuAlertView{
+    
+    NSString *url = self.wkWebView.URL.absoluteString;
+    MagicActivity *activity0 = [MagicActivity activityWithTitle:@"Safari打开"
+                                                          image:MC_IMAGE_NAMED(@"MagicWebViewUI.bundle/share_icon_safari")
+                                                      highImage:MC_IMAGE_NAMED(@"MagicWebViewUI.bundle/share_icon_safari_high")];
+    MagicActivity *activity1 = [MagicActivity activityWithTitle:@"复制链接"
+                                                          image:MC_IMAGE_NAMED(@"MagicWebViewUI.bundle/share_icon_copy")
+                                                      highImage:MC_IMAGE_NAMED(@"MagicWebViewUI.bundle/share_icon_copy_high")];
+    MagicActivity *activity2 = [MagicActivity activityWithTitle:@"刷新"
+                                                          image:MC_IMAGE_NAMED(@"MagicWebViewUI.bundle/share_icon_refresh")
+                                                      highImage:MC_IMAGE_NAMED(@"MagicWebViewUI.bundle/share_icon_refresh_high")];
+       NSArray *activitys = @[activity0, activity1, activity2];
+    [MagicActivityViewController presentAddViewController:self topCustomView:nil activitys:activitys activityHeight:110 completion:^(NSInteger selectedIndex) {
+        
+        if (selectedIndex == 0) {
+            [self webViewSafariUrl:url];
+        }
+        if (selectedIndex == 1) {
+            [self webViewCopyUrl:url];
+        }
+        if (selectedIndex == 2) {
+            [self webViewReload];
+        }
+        
+    }];
+    
+}
+
+
 #pragma mark - Action
-// 返回
-- (void)backBarButtonItemAction:(id)sender{
+/**
+ 返回
+ */
+- (void)webViewGoBack{
     if (self.wkWebView.canGoBack) {
         [self.wkWebView goBack];
         if (self.navigationItem.leftBarButtonItems.count == 1) {
@@ -286,52 +325,35 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-// 关闭
-- (void)closeBarButtonItemAction:(id)sender{
+/**
+ 关闭
+ */
+- (void)webViewClose{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-// 菜单
-- (void)menuBarButtonItemAction:(id)sender{
-    
-    NSString *url = self.wkWebView.URL.absoluteString;
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"Safari打开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-    }];
-    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"复制链接" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[UIPasteboard generalPasteboard] setString:url];
-        [QuicklyHUD showWindowsOnlyTextHUDText:@"已复制到剪切板"];
-    }];
-    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"分享" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        /*
-         [self.wkWebView evaluateJavaScript:@"这里写js代码" completionHandler:^(id reponse, NSError * error) {
-         NSLog(@"返回的结果%@",reponse);
-         }];
-         */
-        NSLog(@"返回的结果%@",url);
-    }];
-    UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"刷新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self.wkWebView reload];
-    }];
-    UIAlertAction *action5 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        
-    }];
-    [alertController addAction:action1];
-    [alertController addAction:action2];
-    [alertController addAction:action3];
-    [alertController addAction:action4];
-    [alertController addAction:action5];
-    [self presentViewController:alertController animated:YES completion:nil];
-    
+/**
+ Safari打开
+ */
+- (void)webViewSafariUrl:(NSString *)url{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
-//移除
--(void)dealloc{
-    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
-    [[MagicWebViewWebPManager shareManager] unregisterMagicURLProtocolWebView:self.wkWebView];
+/**
+ 复制链接
+ */
+- (void)webViewCopyUrl:(NSString *)url{
+    [[UIPasteboard generalPasteboard] setString:url];
+    [QuicklyHUD showWindowsOnlyTextHUDText:@"已复制到剪切板"];
 }
+
+/**
+ 刷新
+ */
+- (void)webViewReload{
+    [self.wkWebView reload];
+}
+
+
 
 @end
