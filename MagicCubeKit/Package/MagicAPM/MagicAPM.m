@@ -12,8 +12,8 @@
 + (void)start{
     
     [self addCustomPlugin];
+    [[ATManager shareInstance] removePluginsByPluginIdArray:@[@"databoard", @"Mmuvp", @"log"]];
     [[ATManager shareInstance] show];
-    
 }
 
 + (void)addCustomPlugin{

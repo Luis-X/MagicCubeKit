@@ -9,6 +9,7 @@
 #import "MagicWebViewController.h"
 #import <WebKit/WebKit.h>
 #import "MagicWebView-WebP.h"
+#import "MagicActivityViewController.h"
 
 @interface MagicWebViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
 @property (nonatomic, strong) UIProgressView *progressView;     //进度条

@@ -26,7 +26,7 @@
 //主框架
 - (void)createMainTableView{
     
-    [MagicShareManager showShareViewAddViewController:self];
+    [MagicShareManager shareWebPageUrlParameters:nil];
     
     
 }

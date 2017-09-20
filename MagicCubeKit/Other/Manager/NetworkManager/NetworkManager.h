@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NetworkManager : NSObject
-
+// 域名
++ (NSString *)domainName;
+// 校验URL
++ (NSString *)verifyURLStringHandler:(NSString *)url;
 @end

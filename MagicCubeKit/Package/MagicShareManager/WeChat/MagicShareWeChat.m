@@ -30,6 +30,16 @@
  */
 - (void)sendToWechatMessageTitle:(NSString *)title description:(NSString *)description thumbImage:(UIImage *)thumbImage mediaObject:(id)mediaObject scene:(enum WXScene)scene{
     
+    if (![WXApi isWXAppInstalled]) {
+        NSLog(@"未安装微信");
+        return;
+    }
+    
+    if (![WXApi isWXAppSupportApi]) {
+        NSLog(@"微信版本过低");
+        return;
+    }
+    
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = title;
     message.description = description;

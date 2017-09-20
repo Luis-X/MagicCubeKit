@@ -8,6 +8,7 @@
 
 #import "PagerViewController.h"
 
+
 @interface PagerViewController ()
 
 @end
@@ -18,6 +19,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor randomFlatColor];
+    
+    UIImageView *imageView = [UIImageView new];
+    imageView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(200, 200));
+        make.center.equalTo(self.view);
+    }];
+    //imageView.animates = YES;
+    [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://assets.sbnation.com/assets/2512203/dogflops.gif"]];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(show)];
     [self.view addGestureRecognizer:tap];

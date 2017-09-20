@@ -114,9 +114,6 @@
 		D1166AFD1F4ABD3A00EB241D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1166AFC1F4ABD3A00EB241D /* JavaScriptCore.framework */; };
 		D1166AFF1F4ABD4C00EB241D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1166AFE1F4ABD4C00EB241D /* ImageIO.framework */; };
 		D1166B001F4ABD5500EB241D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D1166AEE1F4A8C8900EB241D /* libsqlite3.tbd */; };
-		D1166B0A1F4AD15700EB241D /* MagicShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1166B031F4AD15700EB241D /* MagicShareManager.m */; };
-		D1166B0B1F4AD15700EB241D /* MagicShareQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = D1166B061F4AD15700EB241D /* MagicShareQQ.m */; };
-		D1166B0C1F4AD15700EB241D /* MagicShareWeChat.m in Sources */ = {isa = PBXBuildFile; fileRef = D1166B091F4AD15700EB241D /* MagicShareWeChat.m */; };
 		D118169E1EB2EFB5004C238A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D118169D1EB2EFB5004C238A /* main.m */; };
 		D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816A01EB2EFB5004C238A /* AppDelegate.m */; };
 		D11816A41EB2EFB5004C238A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816A31EB2EFB5004C238A /* ViewController.m */; };
@@ -128,6 +125,10 @@
 		D11816E71EB2F511004C238A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816E61EB2F511004C238A /* BaseViewController.m */; };
 		D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */; };
 		D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816F71EB31D9A004C238A /* BaseNavigationController.m */; };
+		D1193F141F72648E0041AFF6 /* MagicShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F0B1F72648E0041AFF6 /* MagicShareManager.m */; };
+		D1193F151F72648E0041AFF6 /* MagicShareParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F0D1F72648E0041AFF6 /* MagicShareParameter.m */; };
+		D1193F161F72648E0041AFF6 /* MagicShareQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F101F72648E0041AFF6 /* MagicShareQQ.m */; };
+		D1193F171F72648E0041AFF6 /* MagicShareWeChat.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F131F72648E0041AFF6 /* MagicShareWeChat.m */; };
 		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
 		D124D8671F26F05A0072272C /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8661F26F05A0072272C /* CommonTool.m */; };
 		D124D87A1F2721DF0072272C /* MagicUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8791F2721DF0072272C /* MagicUserDefaults.m */; };
@@ -549,12 +550,6 @@
 		D1166AFA1F4ABD3100EB241D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		D1166AFC1F4ABD3A00EB241D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		D1166AFE1F4ABD4C00EB241D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		D1166B021F4AD15700EB241D /* MagicShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareManager.h; sourceTree = "<group>"; };
-		D1166B031F4AD15700EB241D /* MagicShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareManager.m; sourceTree = "<group>"; };
-		D1166B051F4AD15700EB241D /* MagicShareQQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareQQ.h; sourceTree = "<group>"; };
-		D1166B061F4AD15700EB241D /* MagicShareQQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareQQ.m; sourceTree = "<group>"; };
-		D1166B081F4AD15700EB241D /* MagicShareWeChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareWeChat.h; sourceTree = "<group>"; };
-		D1166B091F4AD15700EB241D /* MagicShareWeChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareWeChat.m; sourceTree = "<group>"; };
 		D1166B111F4AE68600EB241D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D11816991EB2EFB5004C238A /* MagicCubeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicCubeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D118169D1EB2EFB5004C238A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -580,6 +575,14 @@
 		D11816F61EB31D9A004C238A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		D11816F71EB31D9A004C238A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		D11816FB1EB320B8004C238A /* MagicCubeDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeDefine.h; sourceTree = "<group>"; };
+		D1193F0A1F72648E0041AFF6 /* MagicShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareManager.h; sourceTree = "<group>"; };
+		D1193F0B1F72648E0041AFF6 /* MagicShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareManager.m; sourceTree = "<group>"; };
+		D1193F0C1F72648E0041AFF6 /* MagicShareParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareParameter.h; sourceTree = "<group>"; };
+		D1193F0D1F72648E0041AFF6 /* MagicShareParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareParameter.m; sourceTree = "<group>"; };
+		D1193F0F1F72648E0041AFF6 /* MagicShareQQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareQQ.h; sourceTree = "<group>"; };
+		D1193F101F72648E0041AFF6 /* MagicShareQQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareQQ.m; sourceTree = "<group>"; };
+		D1193F121F72648E0041AFF6 /* MagicShareWeChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareWeChat.h; sourceTree = "<group>"; };
+		D1193F131F72648E0041AFF6 /* MagicShareWeChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareWeChat.m; sourceTree = "<group>"; };
 		D11993F71EC2F2F100841273 /* MagicPermissionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPermissionManager.h; sourceTree = "<group>"; };
 		D11993F81EC2F2F100841273 /* MagicPermissionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicPermissionManager.m; sourceTree = "<group>"; };
 		D11994011EC3022800841273 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
@@ -1412,7 +1415,6 @@
 		D1049B6A1F444215006A66EF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D1166B011F4AD15700EB241D /* MagicShareManager */,
 				D1049B6B1F444215006A66EF /* HomePageViewController.h */,
 				D1049B6C1F444215006A66EF /* HomePageViewController.m */,
 			);
@@ -1717,35 +1719,6 @@
 			path = MagicTimerManager;
 			sourceTree = "<group>";
 		};
-		D1166B011F4AD15700EB241D /* MagicShareManager */ = {
-			isa = PBXGroup;
-			children = (
-				D1166B021F4AD15700EB241D /* MagicShareManager.h */,
-				D1166B031F4AD15700EB241D /* MagicShareManager.m */,
-				D1166B041F4AD15700EB241D /* QQ */,
-				D1166B071F4AD15700EB241D /* WeChat */,
-			);
-			path = MagicShareManager;
-			sourceTree = "<group>";
-		};
-		D1166B041F4AD15700EB241D /* QQ */ = {
-			isa = PBXGroup;
-			children = (
-				D1166B051F4AD15700EB241D /* MagicShareQQ.h */,
-				D1166B061F4AD15700EB241D /* MagicShareQQ.m */,
-			);
-			path = QQ;
-			sourceTree = "<group>";
-		};
-		D1166B071F4AD15700EB241D /* WeChat */ = {
-			isa = PBXGroup;
-			children = (
-				D1166B081F4AD15700EB241D /* MagicShareWeChat.h */,
-				D1166B091F4AD15700EB241D /* MagicShareWeChat.m */,
-			);
-			path = WeChat;
-			sourceTree = "<group>";
-		};
 		D11816901EB2EFB4004C238A = {
 			isa = PBXGroup;
 			children = (
@@ -1935,6 +1908,37 @@
 			);
 			name = "Vender(第三方)";
 			path = Vender;
+			sourceTree = "<group>";
+		};
+		D1193F091F72648E0041AFF6 /* MagicShareManager */ = {
+			isa = PBXGroup;
+			children = (
+				D1193F0A1F72648E0041AFF6 /* MagicShareManager.h */,
+				D1193F0B1F72648E0041AFF6 /* MagicShareManager.m */,
+				D1193F0C1F72648E0041AFF6 /* MagicShareParameter.h */,
+				D1193F0D1F72648E0041AFF6 /* MagicShareParameter.m */,
+				D1193F0E1F72648E0041AFF6 /* QQ */,
+				D1193F111F72648E0041AFF6 /* WeChat */,
+			);
+			path = MagicShareManager;
+			sourceTree = "<group>";
+		};
+		D1193F0E1F72648E0041AFF6 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				D1193F0F1F72648E0041AFF6 /* MagicShareQQ.h */,
+				D1193F101F72648E0041AFF6 /* MagicShareQQ.m */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		D1193F111F72648E0041AFF6 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				D1193F121F72648E0041AFF6 /* MagicShareWeChat.h */,
+				D1193F131F72648E0041AFF6 /* MagicShareWeChat.m */,
+			);
+			path = WeChat;
 			sourceTree = "<group>";
 		};
 		D11993F61EC2F2D300841273 /* MagicPermissionManager */ = {
@@ -2497,6 +2501,7 @@
 		D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */ = {
 			isa = PBXGroup;
 			children = (
+				D1193F091F72648E0041AFF6 /* MagicShareManager */,
 				D18F43421F46E42D00347870 /* MagicPhotoBrowserManager */,
 				D18F43351F46E22200347870 /* MagicActivityViewController */,
 				D111CDD71F386B9D00CBF717 /* MagicTimerManager */,
@@ -2894,7 +2899,6 @@
 				D111CDDA1F386B9D00CBF717 /* MagicTimerManager.m in Sources */,
 				D1049C3D1F444215006A66EF /* SJIconTextButton.m in Sources */,
 				D1049C311F444215006A66EF /* ProductSpecialTimeTableViewCell.m in Sources */,
-				D1166B0C1F4AD15700EB241D /* MagicShareWeChat.m in Sources */,
 				D1049C3B1F444215006A66EF /* ProductSaleTagView.m in Sources */,
 				D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */,
 				D1049BF71F444215006A66EF /* ExampleMagicWebProgressViewController.m in Sources */,
@@ -2968,6 +2972,7 @@
 				D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */,
 				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
 				D15607A31F21B07C00CE8E79 /* RouterManager.m in Sources */,
+				D1193F151F72648E0041AFF6 /* MagicShareParameter.m in Sources */,
 				D15607A61F21B08700CE8E79 /* ShareManager.m in Sources */,
 				D1C72C691EB86F0C00C88BAE /* TangramTribleColumnLayout.m in Sources */,
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
@@ -2989,12 +2994,12 @@
 				D1049BF11F444215006A66EF /* ExampleMagicNetworkingViewController.m in Sources */,
 				D124D8671F26F05A0072272C /* CommonTool.m in Sources */,
 				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
-				D1166B0A1F4AD15700EB241D /* MagicShareManager.m in Sources */,
 				D15607A01F21B06E00CE8E79 /* PayManager.m in Sources */,
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
 				D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */,
 				D1C72C4F1EB86F0C00C88BAE /* TangramBusIndex.m in Sources */,
 				D1049C241F444215006A66EF /* WMMenuItem.m in Sources */,
+				D1193F161F72648E0041AFF6 /* MagicShareQQ.m in Sources */,
 				D1C72CC41EB8856000C88BAE /* SJBugVideoTool.m in Sources */,
 				D1C72C541EB86F0C00C88BAE /* TangramEventDispatcher.m in Sources */,
 				D1049C091F444215006A66EF /* HomeViewController.m in Sources */,
@@ -3005,7 +3010,6 @@
 				D1049C2B1F444215006A66EF /* ProductBuyMenuView.m in Sources */,
 				D1C72C5B1EB86F0C00C88BAE /* UIView+Tangram.m in Sources */,
 				D1049BDE1F444215006A66EF /* ExampleDrawView.m in Sources */,
-				D1166B0B1F4AD15700EB241D /* MagicShareQQ.m in Sources */,
 				D1049C3E1F444215006A66EF /* SJUIKit.m in Sources */,
 				D1C72C581EB86F0C00C88BAE /* TangramDefaultLayoutFactory.m in Sources */,
 				D1C72C511EB86F0C00C88BAE /* TangramBusIndexTopic.m in Sources */,
@@ -3014,6 +3018,7 @@
 				D1DF011B1F32FA4B009A7901 /* MagicWebViewController.m in Sources */,
 				D1A03C091F565B1F001444D1 /* NSURLProtocol+MagicWebView.m in Sources */,
 				D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */,
+				D1193F141F72648E0041AFF6 /* MagicShareManager.m in Sources */,
 				D1049BE51F444215006A66EF /* EqualSpaceFlowLayoutEvolve.m in Sources */,
 				D1049C301F444215006A66EF /* ProductOptionTableViewCell.m in Sources */,
 				D1049C151F444215006A66EF /* ProductDetailSelectViewController.m in Sources */,
@@ -3046,6 +3051,7 @@
 				D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */,
 				D124D88C1F2745920072272C /* NSString+Magic.m in Sources */,
 				D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */,
+				D1193F171F72648E0041AFF6 /* MagicShareWeChat.m in Sources */,
 				D1C6127B1F4FFF110043E495 /* PagerViewController.m in Sources */,
 				D1C72C671EB86F0C00C88BAE /* TangramStickyLayout.m in Sources */,
 			);

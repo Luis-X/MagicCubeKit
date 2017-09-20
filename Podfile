@@ -7,7 +7,8 @@ pod 'Masonry', '~> 1.0.1'				# autolayout
 pod 'AFNetworking', '~> 3.1.0'				# 网络请求
 pod 'Reachability', '~> 3.2'				# 网络监听	
 pod 'SDWebImage', '~>4.0.0’				# 加载图片
-pod ‘SDWebImage/WebP’					# 图片webP	
+pod ‘SDWebImage/WebP’					# 图片WebP 
+pod ‘SDWebImage/GIF’					# 图片GIF
 pod 'DateTools', '~> 1.7.0'				# 日期工具
 pod 'JLRoutes', '~> 2.0'				# 路由跳转
 pod 'WebViewJavascriptBridge', '~> 6.0.2'	        # JS交互

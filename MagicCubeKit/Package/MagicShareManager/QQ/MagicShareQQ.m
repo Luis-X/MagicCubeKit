@@ -25,8 +25,15 @@
  @param content 多媒体数据
  */
 - (void)sendToQQMessageContent:(QQApiObject *)content{
+    
+    if (![QQApiInterface isQQInstalled]) {
+        NSLog(@"未安装QQ");
+        return;
+    }
+    
     SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:content];
     [QQApiInterface sendReq:req];
+    
 }
 
 #pragma mark - QQ分享

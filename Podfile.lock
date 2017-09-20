@@ -36,6 +36,7 @@ PODS:
   - DACircularProgress (2.3.1)
   - DateTools (1.7.0)
   - FDFullscreenPopGesture (1.1)
+  - FLAnimatedImage (1.0.12)
   - FLEX (2.4.0)
   - iCarousel (1.8.3)
   - IDMPhotoBrowser (1.11.3):
@@ -94,6 +95,9 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SDWebImage/GIF (4.0.0):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - SDWebImage/WebP (4.0.0):
     - libwebp
     - SDWebImage/Core
@@ -153,6 +157,7 @@ DEPENDENCIES:
   - MOBFoundation
   - Reachability (~> 3.2)
   - SDWebImage (~> 4.0.0)
+  - SDWebImage/GIF
   - SDWebImage/WebP
   - ShareSDK3
   - ShareSDK3/ShareSDKPlatforms/AliPaySocial
@@ -197,6 +202,7 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IDMPhotoBrowser: b96159fe4adb991a844068eb17dab9c0b7d7e51a
@@ -228,6 +234,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: bcd1962ced7a72edd6099a42f09639b4427e1179
+PODFILE CHECKSUM: 7018bbeb0ee9ba38b0c18fd9a1dd5b92579ee97d
 
 COCOAPODS: 1.2.0
