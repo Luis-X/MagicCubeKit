@@ -22,7 +22,7 @@
 
 //项目内
 #import "BaseClassHeader.h"
-#import "MagicCubeDefine.h"
+#import "MagicToolHeader.h"
 #import "AppDelegate.h"
 #import "MagicRouterManager.h"
 #import "MagicNetworkManager.h"

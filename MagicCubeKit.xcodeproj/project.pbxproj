@@ -124,7 +124,6 @@
 		D11816C21EB2EFB5004C238A /* MagicCubeKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816C11EB2EFB5004C238A /* MagicCubeKitUITests.m */; };
 		D11816E71EB2F511004C238A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816E61EB2F511004C238A /* BaseViewController.m */; };
 		D11816ED1EB30ED2004C238A /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */; };
-		D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816F71EB31D9A004C238A /* BaseNavigationController.m */; };
 		D1193F141F72648E0041AFF6 /* MagicShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F0B1F72648E0041AFF6 /* MagicShareManager.m */; };
 		D1193F151F72648E0041AFF6 /* MagicShareParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F0D1F72648E0041AFF6 /* MagicShareParameter.m */; };
 		D1193F161F72648E0041AFF6 /* MagicShareQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F101F72648E0041AFF6 /* MagicShareQQ.m */; };
@@ -132,11 +131,6 @@
 		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
 		D124D8671F26F05A0072272C /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8661F26F05A0072272C /* CommonTool.m */; };
 		D124D87A1F2721DF0072272C /* MagicUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8791F2721DF0072272C /* MagicUserDefaults.m */; };
-		D124D88C1F2745920072272C /* NSString+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8831F2745920072272C /* NSString+Magic.m */; };
-		D124D88D1F2745920072272C /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8851F2745920072272C /* UIColor+Magic.m */; };
-		D124D88E1F2745920072272C /* UIImage+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8871F2745920072272C /* UIImage+Magic.m */; };
-		D124D88F1F2745920072272C /* UILabel+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8891F2745920072272C /* UILabel+Magic.m */; };
-		D124D8901F2745920072272C /* UIView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D88B1F2745920072272C /* UIView+Magic.m */; };
 		D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */; };
 		D14E01511F41475100145DF2 /* MagicLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D14E01501F41475100145DF2 /* MagicLogManager.m */; };
 		D14E01541F4149DD00145DF2 /* MagicLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D14E01531F4149DD00145DF2 /* MagicLogFormatter.m */; };
@@ -152,6 +146,12 @@
 		D15607AC1F21B09E00CE8E79 /* TestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607AB1F21B09E00CE8E79 /* TestManager.m */; };
 		D15607AF1F21B0AB00CE8E79 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607AE1F21B0AB00CE8E79 /* UserManager.m */; };
 		D15607B31F21B42100CE8E79 /* MonitorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607B21F21B42100CE8E79 /* MonitorManager.m */; };
+		D15B87321F73AA0E003F61B3 /* NSDictionary+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87311F73AA0E003F61B3 /* NSDictionary+Tool.m */; };
+		D15B87351F73AA40003F61B3 /* NSString+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87341F73AA40003F61B3 /* NSString+Tool.m */; };
+		D15B87381F73AAEF003F61B3 /* UIColor+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87371F73AAEF003F61B3 /* UIColor+Tool.m */; };
+		D15B873B1F73AB48003F61B3 /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B873A1F73AB48003F61B3 /* UIImage+Tool.m */; };
+		D15B873E1F73AC76003F61B3 /* UILabel+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B873D1F73AC76003F61B3 /* UILabel+Tool.m */; };
+		D15B87411F73ACB5003F61B3 /* UIView+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87401F73ACB5003F61B3 /* UIView+Tool.m */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
 		D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */; };
 		D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */; };
@@ -195,12 +195,10 @@
 		D190AA2F1F3C407C00B180A0 /* TangramSingleAndDoubleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C2C1EB86F0C00C88BAE /* TangramSingleAndDoubleLayout.m */; };
 		D190AA301F3C407C00B180A0 /* TangramContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C051EB86F0C00C88BAE /* TangramContext.m */; };
 		D190AA311F3C407C00B180A0 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A98E181F289FE200EDE64A /* BaseTableView.m */; };
-		D190AA321F3C407C00B180A0 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11816F71EB31D9A004C238A /* BaseNavigationController.m */; };
 		D190AA331F3C407C00B180A0 /* MagicImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */; };
 		D190AA361F3C407C00B180A0 /* TestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607AB1F21B09E00CE8E79 /* TestManager.m */; };
 		D190AA371F3C407C00B180A0 /* QuicklyAsyncDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C911EB87C6B00C88BAE /* QuicklyAsyncDisplay.m */; };
 		D190AA3A1F3C407C00B180A0 /* MagicFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D169A6F21F2B1E2C00209C68 /* MagicFileManager.m */; };
-		D190AA3B1F3C407C00B180A0 /* UIView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D88B1F2745920072272C /* UIView+Magic.m */; };
 		D190AA3C1F3C407C00B180A0 /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
 		D190AA3F1F3C407C00B180A0 /* MagicScrollPageRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */; };
 		D190AA431F3C407C00B180A0 /* UIQuicklyKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */; };
@@ -209,7 +207,6 @@
 		D190AA471F3C407C00B180A0 /* TangramTribleColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C361EB86F0C00C88BAE /* TangramTribleColumnLayout.m */; };
 		D190AA481F3C407C00B180A0 /* TangramSafeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C471EB86F0C00C88BAE /* TangramSafeMethod.m */; };
 		D190AA4A1F3C407C00B180A0 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
-		D190AA4C1F3C407C00B180A0 /* UILabel+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8891F2745920072272C /* UILabel+Magic.m */; };
 		D190AA4E1F3C407C00B180A0 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607961F21B02600CE8E79 /* AppManager.m */; };
 		D190AA501F3C407C00B180A0 /* TangramEventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C0B1EB86F0C00C88BAE /* TangramEventQueue.m */; };
 		D190AA581F3C407C00B180A0 /* SJResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */; };
@@ -239,13 +236,10 @@
 		D190AA831F3C407C00B180A0 /* TangramFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C261EB86F0C00C88BAE /* TangramFlowLayout.m */; };
 		D190AA841F3C407C00B180A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D118169D1EB2EFB5004C238A /* main.m */; };
 		D190AA851F3C407C00B180A0 /* TangramWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C381EB86F0C00C88BAE /* TangramWaterFlowLayout.m */; };
-		D190AA861F3C407C00B180A0 /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8851F2745920072272C /* UIColor+Magic.m */; };
 		D190AA871F3C407C00B180A0 /* ReplayKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CB21EB8856000C88BAE /* ReplayKitManager.m */; };
-		D190AA881F3C407C00B180A0 /* UIImage+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8871F2745920072272C /* UIImage+Magic.m */; };
 		D190AA891F3C407C00B180A0 /* QuicklyUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C951EB87C6B00C88BAE /* QuicklyUI.m */; };
 		D190AA8B1F3C407C00B180A0 /* TabBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607A81F21B09300CE8E79 /* TabBarManager.m */; };
 		D190AA8F1F3C407C00B180A0 /* TangramPageScrollLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C281EB86F0C00C88BAE /* TangramPageScrollLayout.m */; };
-		D190AA911F3C407C00B180A0 /* NSString+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8831F2745920072272C /* NSString+Magic.m */; };
 		D190AA921F3C407C00B180A0 /* TangramBusIndexClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C011EB86F0C00C88BAE /* TangramBusIndexClass.m */; };
 		D190AA931F3C407C00B180A0 /* TangramStickyLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C321EB86F0C00C88BAE /* TangramStickyLayout.m */; };
 		D190AA961F3C407C00B180A0 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DF011C1F333A71009A7901 /* ReplayKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -572,8 +566,6 @@
 		D11816EB1EB30ED2004C238A /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		D11816F41EB310F3004C238A /* MagicCubeHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeHeader.pch; sourceTree = "<group>"; };
-		D11816F61EB31D9A004C238A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
-		D11816F71EB31D9A004C238A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		D11816FB1EB320B8004C238A /* MagicCubeDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeDefine.h; sourceTree = "<group>"; };
 		D1193F0A1F72648E0041AFF6 /* MagicShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareManager.h; sourceTree = "<group>"; };
 		D1193F0B1F72648E0041AFF6 /* MagicShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareManager.m; sourceTree = "<group>"; };
@@ -591,16 +583,6 @@
 		D124D8661F26F05A0072272C /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		D124D8781F2721DF0072272C /* MagicUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicUserDefaults.h; sourceTree = "<group>"; };
 		D124D8791F2721DF0072272C /* MagicUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicUserDefaults.m; sourceTree = "<group>"; };
-		D124D8821F2745920072272C /* NSString+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Magic.h"; sourceTree = "<group>"; };
-		D124D8831F2745920072272C /* NSString+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Magic.m"; sourceTree = "<group>"; };
-		D124D8841F2745920072272C /* UIColor+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Magic.h"; sourceTree = "<group>"; };
-		D124D8851F2745920072272C /* UIColor+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Magic.m"; sourceTree = "<group>"; };
-		D124D8861F2745920072272C /* UIImage+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Magic.h"; sourceTree = "<group>"; };
-		D124D8871F2745920072272C /* UIImage+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Magic.m"; sourceTree = "<group>"; };
-		D124D8881F2745920072272C /* UILabel+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Magic.h"; sourceTree = "<group>"; };
-		D124D8891F2745920072272C /* UILabel+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Magic.m"; sourceTree = "<group>"; };
-		D124D88A1F2745920072272C /* UIView+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Magic.h"; sourceTree = "<group>"; };
-		D124D88B1F2745920072272C /* UIView+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Magic.m"; sourceTree = "<group>"; };
 		D13515AA1F3C3AA9004AD479 /* MagicCubeKit-beta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MagicCubeKit-beta-Info.plist"; path = "/Users/luisx/Desktop/LuisXGit/MagicCubeKit/MagicCubeKit-beta-Info.plist"; sourceTree = "<absolute>"; };
 		D13E20061ECC6B0A00472533 /* MagicImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicImageDownloader.h; sourceTree = "<group>"; };
 		D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicImageDownloader.m; sourceTree = "<group>"; };
@@ -632,6 +614,19 @@
 		D15607AE1F21B0AB00CE8E79 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		D15607B11F21B42100CE8E79 /* MonitorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorManager.h; sourceTree = "<group>"; };
 		D15607B21F21B42100CE8E79 /* MonitorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorManager.m; sourceTree = "<group>"; };
+		D15B87301F73AA0E003F61B3 /* NSDictionary+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Tool.h"; sourceTree = "<group>"; };
+		D15B87311F73AA0E003F61B3 /* NSDictionary+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Tool.m"; sourceTree = "<group>"; };
+		D15B87331F73AA40003F61B3 /* NSString+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Tool.h"; sourceTree = "<group>"; };
+		D15B87341F73AA40003F61B3 /* NSString+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tool.m"; sourceTree = "<group>"; };
+		D15B87361F73AAEF003F61B3 /* UIColor+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tool.h"; sourceTree = "<group>"; };
+		D15B87371F73AAEF003F61B3 /* UIColor+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tool.m"; sourceTree = "<group>"; };
+		D15B87391F73AB48003F61B3 /* UIImage+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tool.h"; sourceTree = "<group>"; };
+		D15B873A1F73AB48003F61B3 /* UIImage+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tool.m"; sourceTree = "<group>"; };
+		D15B873C1F73AC76003F61B3 /* UILabel+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Tool.h"; sourceTree = "<group>"; };
+		D15B873D1F73AC76003F61B3 /* UILabel+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Tool.m"; sourceTree = "<group>"; };
+		D15B873F1F73ACB5003F61B3 /* UIView+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Tool.h"; sourceTree = "<group>"; };
+		D15B87401F73ACB5003F61B3 /* UIView+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tool.m"; sourceTree = "<group>"; };
+		D15B87431F73AE01003F61B3 /* MagicToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicToolHeader.h; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
 		D16665E81EE92F8600B84D1B /* MagicScrollPageRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPageRefreshFooter.h; sourceTree = "<group>"; };
@@ -1817,8 +1812,6 @@
 				D11816E61EB2F511004C238A /* BaseViewController.m */,
 				D11816EB1EB30ED2004C238A /* BaseTableViewCell.h */,
 				D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */,
-				D11816F61EB31D9A004C238A /* BaseNavigationController.h */,
-				D11816F71EB31D9A004C238A /* BaseNavigationController.m */,
 				D1A98E171F289FE200EDE64A /* BaseTableView.h */,
 				D1A98E181F289FE200EDE64A /* BaseTableView.m */,
 				D1A98E1A1F28A0A600EDE64A /* BaseClassHeader.h */,
@@ -1963,16 +1956,19 @@
 		D124D8811F2745920072272C /* Category(类) */ = {
 			isa = PBXGroup;
 			children = (
-				D124D8821F2745920072272C /* NSString+Magic.h */,
-				D124D8831F2745920072272C /* NSString+Magic.m */,
-				D124D8841F2745920072272C /* UIColor+Magic.h */,
-				D124D8851F2745920072272C /* UIColor+Magic.m */,
-				D124D8861F2745920072272C /* UIImage+Magic.h */,
-				D124D8871F2745920072272C /* UIImage+Magic.m */,
-				D124D8881F2745920072272C /* UILabel+Magic.h */,
-				D124D8891F2745920072272C /* UILabel+Magic.m */,
-				D124D88A1F2745920072272C /* UIView+Magic.h */,
-				D124D88B1F2745920072272C /* UIView+Magic.m */,
+				D15B87431F73AE01003F61B3 /* MagicToolHeader.h */,
+				D15B87301F73AA0E003F61B3 /* NSDictionary+Tool.h */,
+				D15B87311F73AA0E003F61B3 /* NSDictionary+Tool.m */,
+				D15B87331F73AA40003F61B3 /* NSString+Tool.h */,
+				D15B87341F73AA40003F61B3 /* NSString+Tool.m */,
+				D15B87361F73AAEF003F61B3 /* UIColor+Tool.h */,
+				D15B87371F73AAEF003F61B3 /* UIColor+Tool.m */,
+				D15B87391F73AB48003F61B3 /* UIImage+Tool.h */,
+				D15B873A1F73AB48003F61B3 /* UIImage+Tool.m */,
+				D15B873C1F73AC76003F61B3 /* UILabel+Tool.h */,
+				D15B873D1F73AC76003F61B3 /* UILabel+Tool.m */,
+				D15B873F1F73ACB5003F61B3 /* UIView+Tool.h */,
+				D15B87401F73ACB5003F61B3 /* UIView+Tool.m */,
 			);
 			name = "Category(类)";
 			path = Category;
@@ -2897,6 +2893,7 @@
 				D1C72C5C1EB86F0C00C88BAE /* TangramDoubleColumnLayout.m in Sources */,
 				D1049C171F444215006A66EF /* ProductDetailModel.m in Sources */,
 				D111CDDA1F386B9D00CBF717 /* MagicTimerManager.m in Sources */,
+				D15B87351F73AA40003F61B3 /* NSString+Tool.m in Sources */,
 				D1049C3D1F444215006A66EF /* SJIconTextButton.m in Sources */,
 				D1049C311F444215006A66EF /* ProductSpecialTimeTableViewCell.m in Sources */,
 				D1049C3B1F444215006A66EF /* ProductSaleTagView.m in Sources */,
@@ -2930,6 +2927,7 @@
 				D1049BEB1F444215006A66EF /* ExampleMagicAlertViewViewController.m in Sources */,
 				D14FD8CF1F3486E900815B24 /* MagicAPM.m in Sources */,
 				D156079D1F21B06400CE8E79 /* NetworkManager.m in Sources */,
+				D15B873B1F73AB48003F61B3 /* UIImage+Tool.m in Sources */,
 				D1C72C631EB86F0C00C88BAE /* TangramQuintetColumnLayout.m in Sources */,
 				D1049C351F444215006A66EF /* ProductSaleTableViewCell.m in Sources */,
 				D1049C0F1F444215006A66EF /* HomePageViewController.m in Sources */,
@@ -2945,6 +2943,7 @@
 				D1049C201F444215006A66EF /* UIScrollView+DZNSegmentedControl.m in Sources */,
 				D1049C0B1F444215006A66EF /* AutoAlbumViewController.m in Sources */,
 				D1049C221F444215006A66EF /* UIImage+ImageEffects.m in Sources */,
+				D15B87411F73ACB5003F61B3 /* UIView+Tool.m in Sources */,
 				D1049C001F444215006A66EF /* ExampleSJBugVideoKitViewController.m in Sources */,
 				D1049BF51F444215006A66EF /* ExampleMagicScrollPageViewController.m in Sources */,
 				D1049C2C1F444215006A66EF /* ProductDescribeTableViewCell.m in Sources */,
@@ -2956,16 +2955,15 @@
 				D1049C121F444215006A66EF /* ShareQRCodeImageView.m in Sources */,
 				D1049C0A1F444215006A66EF /* AutoAlbumListViewController.m in Sources */,
 				D1A98E191F289FE200EDE64A /* BaseTableView.m in Sources */,
-				D11816F81EB31D9A004C238A /* BaseNavigationController.m in Sources */,
 				D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */,
 				D1049C2A1F444215006A66EF /* ProductActivityTableViewCell.m in Sources */,
 				D1049C271F444215006A66EF /* WMScrollView.m in Sources */,
 				D15607AC1F21B09E00CE8E79 /* TestManager.m in Sources */,
+				D15B87321F73AA0E003F61B3 /* NSDictionary+Tool.m in Sources */,
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
 				D1049C041F444215006A66EF /* ExampleElementText.m in Sources */,
 				D169A6F31F2B1E2C00209C68 /* MagicFileManager.m in Sources */,
 				D1A03C0F1F56659B001444D1 /* MagicWebViewWebPManager.m in Sources */,
-				D124D8901F2745920072272C /* UIView+Magic.m in Sources */,
 				D1049C331F444215006A66EF /* ProductRecommendCollectionViewCell.m in Sources */,
 				D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */,
 				D1049C2E1F444215006A66EF /* ProductOnlineStatusTableViewCell.m in Sources */,
@@ -2978,7 +2976,6 @@
 				D1C72C6C1EB86F0C00C88BAE /* TangramSafeMethod.m in Sources */,
 				D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */,
 				D1049C381F444215006A66EF /* ProductSelectFooterCollectionReusableView.m in Sources */,
-				D124D88F1F2745920072272C /* UILabel+Magic.m in Sources */,
 				D15607971F21B02600CE8E79 /* AppManager.m in Sources */,
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D1049C3A1F444215006A66EF /* ProductSelectQuantityView.m in Sources */,
@@ -3017,10 +3014,12 @@
 				D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */,
 				D1DF011B1F32FA4B009A7901 /* MagicWebViewController.m in Sources */,
 				D1A03C091F565B1F001444D1 /* NSURLProtocol+MagicWebView.m in Sources */,
+				D15B873E1F73AC76003F61B3 /* UILabel+Tool.m in Sources */,
 				D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */,
 				D1193F141F72648E0041AFF6 /* MagicShareManager.m in Sources */,
 				D1049BE51F444215006A66EF /* EqualSpaceFlowLayoutEvolve.m in Sources */,
 				D1049C301F444215006A66EF /* ProductOptionTableViewCell.m in Sources */,
+				D15B87381F73AAEF003F61B3 /* UIColor+Tool.m in Sources */,
 				D1049C151F444215006A66EF /* ProductDetailSelectViewController.m in Sources */,
 				D1C72C661EB86F0C00C88BAE /* TangramStickyBottomLayout.m in Sources */,
 				D1C72C651EB86F0C00C88BAE /* TangramSingleColumnLayout.m in Sources */,
@@ -3039,17 +3038,14 @@
 				D1049C0C1F444215006A66EF /* AlbumModel.m in Sources */,
 				D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */,
 				D1049BEE1F444215006A66EF /* ExampleMagicImageDownloaderViewController.m in Sources */,
-				D124D88D1F2745920072272C /* UIColor+Magic.m in Sources */,
 				D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */,
 				D1C612781F4FFDF80043E495 /* WeexPagerViewController.m in Sources */,
 				D1049BE11F444215006A66EF /* ExampleMagicDynamicModel.m in Sources */,
-				D124D88E1F2745920072272C /* UIImage+Magic.m in Sources */,
 				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
 				D1049C371F444215006A66EF /* ProductSelectCollectionViewCell.m in Sources */,
 				D1049C3C1F444215006A66EF /* MBSwitch.m in Sources */,
 				D15607A91F21B09300CE8E79 /* TabBarManager.m in Sources */,
 				D1C72C621EB86F0C00C88BAE /* TangramPageScrollLayout.m in Sources */,
-				D124D88C1F2745920072272C /* NSString+Magic.m in Sources */,
 				D1C72C501EB86F0C00C88BAE /* TangramBusIndexClass.m in Sources */,
 				D1193F171F72648E0041AFF6 /* MagicShareWeChat.m in Sources */,
 				D1C6127B1F4FFF110043E495 /* PagerViewController.m in Sources */,
@@ -3105,12 +3101,10 @@
 				D190AA2F1F3C407C00B180A0 /* TangramSingleAndDoubleLayout.m in Sources */,
 				D190AA301F3C407C00B180A0 /* TangramContext.m in Sources */,
 				D190AA311F3C407C00B180A0 /* BaseTableView.m in Sources */,
-				D190AA321F3C407C00B180A0 /* BaseNavigationController.m in Sources */,
 				D190AA331F3C407C00B180A0 /* MagicImageDownloader.m in Sources */,
 				D190AA361F3C407C00B180A0 /* TestManager.m in Sources */,
 				D190AA371F3C407C00B180A0 /* QuicklyAsyncDisplay.m in Sources */,
 				D190AA3A1F3C407C00B180A0 /* MagicFileManager.m in Sources */,
-				D190AA3B1F3C407C00B180A0 /* UIView+Magic.m in Sources */,
 				D190AA3C1F3C407C00B180A0 /* MagicTimerButton.m in Sources */,
 				D190AA3F1F3C407C00B180A0 /* MagicScrollPageRefreshFooter.m in Sources */,
 				D190AA431F3C407C00B180A0 /* UIQuicklyKit.m in Sources */,
@@ -3119,7 +3113,6 @@
 				D190AA471F3C407C00B180A0 /* TangramTribleColumnLayout.m in Sources */,
 				D190AA481F3C407C00B180A0 /* TangramSafeMethod.m in Sources */,
 				D190AA4A1F3C407C00B180A0 /* MagicRouterManager.m in Sources */,
-				D190AA4C1F3C407C00B180A0 /* UILabel+Magic.m in Sources */,
 				D190AA4E1F3C407C00B180A0 /* AppManager.m in Sources */,
 				D190AA501F3C407C00B180A0 /* TangramEventQueue.m in Sources */,
 				D190AA581F3C407C00B180A0 /* SJResponseViewController.m in Sources */,
@@ -3149,13 +3142,10 @@
 				D190AA831F3C407C00B180A0 /* TangramFlowLayout.m in Sources */,
 				D190AA841F3C407C00B180A0 /* main.m in Sources */,
 				D190AA851F3C407C00B180A0 /* TangramWaterFlowLayout.m in Sources */,
-				D190AA861F3C407C00B180A0 /* UIColor+Magic.m in Sources */,
 				D190AA871F3C407C00B180A0 /* ReplayKitManager.m in Sources */,
-				D190AA881F3C407C00B180A0 /* UIImage+Magic.m in Sources */,
 				D190AA891F3C407C00B180A0 /* QuicklyUI.m in Sources */,
 				D190AA8B1F3C407C00B180A0 /* TabBarManager.m in Sources */,
 				D190AA8F1F3C407C00B180A0 /* TangramPageScrollLayout.m in Sources */,
-				D190AA911F3C407C00B180A0 /* NSString+Magic.m in Sources */,
 				D190AA921F3C407C00B180A0 /* TangramBusIndexClass.m in Sources */,
 				D190AA931F3C407C00B180A0 /* TangramStickyLayout.m in Sources */,
 			);

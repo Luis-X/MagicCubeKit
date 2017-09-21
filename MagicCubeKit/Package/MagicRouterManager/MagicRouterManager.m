@@ -16,10 +16,11 @@
  注意: 不可包含中文
  */
 
-+ (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL AddedNavigationController:(UINavigationController *)navigationController{
++ (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL data:(NSDictionary *)data addedNavigationController:(UINavigationController *)navigationController{
     
+    routerURL = MC_ENCODE_UTF8(routerURL);      //UTF8编码
     [[JLRoutes globalRoutes] addRoute:@"/:object" handler:^BOOL(NSDictionary<NSString *,id> * _Nonnull parameters) {
-        [self allActionManagementWithNavigationController:navigationController parameters:parameters];
+        [self allActionManagementWithNavigationController:navigationController data:data parameters:parameters];
         return YES;
     }];
     [JLRoutes routeURL:[NSURL URLWithString:routerURL]];
@@ -32,150 +33,118 @@
  所有事件处理
  
  @param navigationController navigationController
- @param parameters           参数
+ @param data           数据
+ @param parameters     参数
  */
-+ (void)allActionManagementWithNavigationController:(UINavigationController *)navigationController parameters:(NSDictionary *)parameters{
++ (void)allActionManagementWithNavigationController:(UINavigationController *)navigationController data:(NSDictionary *)data parameters:(NSDictionary *)parameters{
     
     NSLog(@"参数:%@", parameters);
     // 通用参数
-    NSString *JLRoutePattern = [NSString stringWithFormat:@"%@", [parameters objectForKey:@"JLRoutePattern"]];
-    NSString *JLRouteScheme = [NSString stringWithFormat:@"%@", [parameters objectForKey:@"JLRouteScheme"]];
+    //NSString *JLRoutePattern = [NSString stringWithFormat:@"%@", [parameters objectForKey:@"JLRoutePattern"]];
+    //NSString *JLRouteScheme = [NSString stringWithFormat:@"%@", [parameters objectForKey:@"JLRouteScheme"]];
     NSString *JLRouteURL = [NSString stringWithFormat:@"%@", [parameters objectForKey:@"JLRouteURL"]];
     // 私有参数
     NSString *page = [parameters objectForKey:@"object"];             //页面
-    NSString *url = [JLRouteURL stringByReplacingOccurrencesOfString:Router_Skip_MagicWebViewController(@"") withString:@""];
+    // 匹配控制器
+    id viewController = nil;
     
-    //ViewController
+    // ViewController
     if ([page isEqualToString:@"ViewController"]) {
-        ViewController *vc = [ViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        NSLog(@"数据: %@", data);
+        viewController = [ViewController new];
     }
-    //七巧板
+    // MagicWebView
+    if ([page isEqualToString:@"web"]) {
+        //链接（特殊处理）
+        NSString *link = [JLRouteURL stringByReplacingOccurrencesOfString:R_URL_WEB(@"") withString:@""];
+        viewController = [[MagicWebViewController alloc] initWithRequestURL:link];
+    }
+    // 七巧板
     if ([page isEqualToString:@"ExampleTangramViewController"]) {
-        ExampleTangramViewController *vc = [ExampleTangramViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleTangramViewController new];
     }
-    //录屏、截屏
+    // 录屏、截屏
     if ([page isEqualToString:@"ExampleSJBugVideoKitViewController"]) {
-        ExampleSJBugVideoKitViewController *vc = [ExampleSJBugVideoKitViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleSJBugVideoKitViewController new];
     }
-    //弹框
+    // 弹框
     if ([page isEqualToString:@"ExampleMagicAlertViewViewController"]) {
-        ExampleMagicAlertViewViewController *vc = [ExampleMagicAlertViewViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicAlertViewViewController new];
     }
-    //权限
+    // 权限
     if ([page isEqualToString:@"ExampleMagicPermissionManagerViewController"]) {
-        ExampleMagicPermissionManagerViewController *vc = [ExampleMagicPermissionManagerViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController= [ExampleMagicPermissionManagerViewController new];
     }
-    //网络
+    // 网络
     if ([page isEqualToString:@"ExampleMagicNetworkingViewController"]) {
-        ExampleMagicNetworkingViewController *vc = [ExampleMagicNetworkingViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicNetworkingViewController new];
     }
-    //按钮
+    // 按钮
     if ([page isEqualToString:@"ExampleMagicButtonViewController"]) {
-        ExampleMagicButtonViewController *vc = [ExampleMagicButtonViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicButtonViewController new];
     }
-    //分页
+    // 分页
     if ([page isEqualToString:@"ExampleMagicScrollPageViewController"]) {
-        ExampleMagicScrollPageViewController *vc = [ExampleMagicScrollPageViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicScrollPageViewController new];
     }
-    //图片下载
+    // 图片下载
     if ([page isEqualToString:@"ExampleMagicImageDownloaderViewController"]) {
-        ExampleMagicImageDownloaderViewController *vc = [ExampleMagicImageDownloaderViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicImageDownloaderViewController new];
     }
-    //web进度
+    // web进度
     if ([page isEqualToString:@"ExampleMagicWebProgressViewController"]) {
-        ExampleMagicWebProgressViewController *vc = [ExampleMagicWebProgressViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicWebProgressViewController new];
     }
-    //加载动画
+    // 加载动画
     if ([page isEqualToString:@"ExampleMagicLoadingViewController"]) {
-        ExampleMagicLoadingViewController *vc = [ExampleMagicLoadingViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicLoadingViewController new];
     }
-    //倒计时按钮
+    // 倒计时按钮
     if ([page isEqualToString:@"ExampleMagicTimerButtonViewController"]) {
-        ExampleMagicTimerButtonViewController *vc = [ExampleMagicTimerButtonViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicTimerButtonViewController new];
     }
-    //JS交互
+    // JS交互
     if ([page isEqualToString:@"ExampleWebViewJavascriptBridgeViewController"]) {
-        ExampleWebViewJavascriptBridgeViewController *vc = [ExampleWebViewJavascriptBridgeViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleWebViewJavascriptBridgeViewController new];
     }
-    //3D卡片
+    // 3D卡片
     if ([page isEqualToString:@"ExampleiCarouselViewController"]) {
-        ExampleiCarouselViewController *vc = [ExampleiCarouselViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleiCarouselViewController new];
     }
-    //网络状态
+    // 网络状态
     if ([page isEqualToString:@"ExampleReachabilityViewController"]) {
-        ExampleReachabilityViewController *vc = [ExampleReachabilityViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleReachabilityViewController new];
     }
-    //气泡
+    // 气泡
     if ([page isEqualToString:@"ExampleWYPopoverControllerViewController"]) {
-        ExampleWYPopoverControllerViewController *vc = [ExampleWYPopoverControllerViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleWYPopoverControllerViewController new];
     }
-    //动态Cell高度
+    // 动态Cell高度
     if ([page isEqualToString:@"ExampleMagicDynamicViewController"]) {
-        ExampleMagicDynamicViewController *vc = [ExampleMagicDynamicViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicDynamicViewController new];
     }
-    //WebView优化
+    // WebView优化
     if ([page isEqualToString:@"ExampleMagicWebViewController"]) {
-        ExampleMagicWebViewController *vc = [ExampleMagicWebViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleMagicWebViewController new];
     }
-    //MagicWebView
-    if ([page isEqualToString:@"MagicWebViewController"]) {
-        MagicWebViewController *vc = [[MagicWebViewController alloc] initWithRequestURL:url];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
-    }
-    //Draw
+    // Draw
     if ([page isEqualToString:@"ExampleDrawViewController"]) {
-        ExampleDrawViewController *vc = [ExampleDrawViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleDrawViewController new];
     }
-    //XLForm
+    // XLForm
     if ([page isEqualToString:@"ExampleXLFormViewController"]) {
-        ExampleXLFormViewController *vc = [ExampleXLFormViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
-        return;
+        viewController = [ExampleXLFormViewController new];
     }
-    //ActionSheetPicker-3.0
+    // ActionSheetPicker-3.0
     if ([page isEqualToString:@"ExampleActionSheetPicker3ViewController"]) {
-        ExampleActionSheetPicker3ViewController *vc = [ExampleActionSheetPicker3ViewController new];
-        [UIQuicklyKit navigationController:navigationController pushViewController:vc hidesBottomBar:YES animated:YES];
+        viewController = [ExampleActionSheetPicker3ViewController new];
     }
+    
+    // 判空
+    if ([viewController isKindOfClass:[UIViewController class]] && (viewController != nil)) {
+        [UIQuicklyKit navigationController:navigationController pushViewController:viewController hidesBottomBar:YES animated:YES];
+    }
+    
 }
 
 @end

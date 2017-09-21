@@ -1,20 +1,19 @@
 //
-//  UIView+Magic.m
+//  UIView+Tool.m
 //  MagicCubeKit
 //
-//  Created by LuisX on 2017/7/25.
+//  Created by LuisX on 2017/9/21.
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#import "UIView+Magic.h"
+#import "UIView+Tool.h"
 
-@implementation UIView (Magic)
-
+@implementation UIView (Tool)
 #pragma mark - 获取
 /**
  获取UIView所处的控制器
  */
-- (UIViewController *)magicGetViewController{
+- (UIViewController *)viewGetViewController{
     for (UIView *next = [self superview]; next; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder];
         if ([nextResponder isKindOfClass:[UIViewController class]]) {
@@ -28,7 +27,7 @@
 /**
  不触发离屏渲染圆角
  */
-- (void)magicCornerRadius:(CGFloat)cornerRadius backgroundColor:(UIColor *)backgroundColor{
+- (void)viewCornerRadius:(CGFloat)cornerRadius backgroundColor:(UIColor *)backgroundColor{
     self.layer.cornerRadius = cornerRadius;
     self.layer.backgroundColor = backgroundColor.CGColor;
 }
@@ -39,7 +38,7 @@
  @param corners     某角
  @param cornerRadii 角度
  */
-- (void)magicRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii{
+- (void)viewRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii{
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds
                                                    byRoundingCorners:corners
                                                          cornerRadii:cornerRadii];
@@ -52,7 +51,7 @@
 /**
  UIView虚线边框
  */
-- (void)magicShapeLineColor:(UIColor *)lineColor{
+- (void)viewShapeLineColor:(UIColor *)lineColor{
     CAShapeLayer *border = [CAShapeLayer layer];
     border.strokeColor = lineColor.CGColor;
     border.fillColor = nil;
@@ -66,7 +65,7 @@
 /**
  转化成UIImage
  */
-- (UIImage *)magicToUIImage{
+- (UIImage *)viewToUIImage{
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
@@ -79,7 +78,7 @@
  
  @param fileName 文件名
  */
-- (void)magicSaveToPDFWithfileName:(NSString *)fileName{
+- (void)viewSaveToPDFWithfileName:(NSString *)fileName{
     NSMutableData *pdfData = [NSMutableData data];
     UIGraphicsBeginPDFContextToData(pdfData, self.bounds, nil);
     UIGraphicsBeginPDFPage();
@@ -98,7 +97,7 @@
 /**
  移除所有子视图
  */
-- (void)magicRemoveAllSubviews{
+- (void)viewRemoveAllSubviews{
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
@@ -112,10 +111,10 @@
 
 /**
  UIView从父视图移除
-
+ 
  @param duration 动画时长
  */
-- (void)magicRemoveFromSupervieWithAnimationDuration:(NSTimeInterval)duration{
+- (void)viewRemoveFromSupervieWithAnimationDuration:(NSTimeInterval)duration{
     [UIView animateWithDuration:duration animations:^{
         self.alpha = 0.0f;
     } completion:^(BOOL finished){

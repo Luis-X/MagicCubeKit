@@ -1,18 +1,18 @@
 //
-//  UIColor+Magic.m
+//  UIColor+Tool.m
 //  MagicCubeKit
 //
-//  Created by LuisX on 2017/7/25.
+//  Created by LuisX on 2017/9/21.
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#import "UIColor+Magic.h"
+#import "UIColor+Tool.h"
 
-@implementation UIColor (Magic)
+@implementation UIColor (Tool)
 /**
  UIColor转UIImage
  */
-- (UIImage *)magicToUIImage{
+- (UIImage *)colorToUIImage{
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -27,7 +27,7 @@
 /**
  UIColor颜色相同
  */
-- (BOOL)magicIsEqualToColor:(UIColor *)otherColor{
+- (BOOL)isEqualToColor:(UIColor *)otherColor{
     CGColorSpaceRef colorSpaceRGB = CGColorSpaceCreateDeviceRGB();
     UIColor *(^convertColorToRGBSpace)(UIColor*) = ^(UIColor *color) {
         if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) == kCGColorSpaceModelMonochrome) {
@@ -48,5 +48,4 @@
     return [selfColor isEqual:otherColor];
     
 }
-
 @end

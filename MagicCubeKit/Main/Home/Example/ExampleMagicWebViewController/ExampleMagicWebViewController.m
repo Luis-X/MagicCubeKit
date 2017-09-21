@@ -68,9 +68,8 @@
     
     // 加载请求(防止网址中含有中文字符,转为URLNSURL为nil)
     NSString *urlString = _textField.text;
-    urlString = MC_ENCODE_UTF8(urlString);
-    NSString *url = Router_Skip_MagicWebViewController(urlString);
-    [MagicRouterManager showAnyViewControllerWithRouterURL:url AddedNavigationController:self.navigationController];
+    NSString *url = R_URL_WEB(urlString);
+    [MagicRouterManager showAnyViewControllerWithRouterURL:url data:nil addedNavigationController:self.navigationController];
     
 }
 

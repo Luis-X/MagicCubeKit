@@ -1,20 +1,20 @@
 //
-//  UIImage+Magic.m
+//  UIImage+Tool.m
 //  MagicCubeKit
 //
-//  Created by LuisX on 2017/7/25.
+//  Created by LuisX on 2017/9/21.
 //  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#import "UIImage+Magic.h"
+#import "UIImage+Tool.h"
 
-@implementation UIImage (Magic)
+@implementation UIImage (Tool)
 
 #pragma mark - 获取
 /**
  根据NSData获取UIImage类型
  */
-- (NSString *)magicGetImageType{
+- (NSString *)imageType{
     NSData *data = UIImagePNGRepresentation(self);
     uint8_t c;
     [data getBytes:&c length:1];
@@ -44,7 +44,7 @@
 /**
  获取图片某一点颜色
  */
-- (UIColor *)magicGetColorWithPoint:(CGPoint)point{
+- (UIColor *)imagePointColor:(CGPoint)point{
     if (point.x < 0 || point.y < 0) return nil;
     
     CGImageRef imageRef = self.CGImage;
@@ -91,7 +91,7 @@
 /**
  圆角
  */
-- (UIImage *)magicToCircleImage{
+- (UIImage *)imageToCircleImage{
     // NO代表透明
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);
     // 获得上下文
@@ -112,7 +112,7 @@
 /**
  拉伸
  */
-- (UIImage *)magicResizableImageWithCapInsets:(UIEdgeInsets)insets{
+- (UIImage *)imageResizableWithCapInsets:(UIEdgeInsets)insets{
     CGFloat imageW = self.size.width;
     CGFloat imageH = self.size.height;
     UIImage *result = [self resizableImageWithCapInsets:UIEdgeInsetsMake(imageH * insets.top, imageW * insets.left, imageH * insets.bottom, imageW * insets.right) resizingMode:UIImageResizingModeStretch];
@@ -123,7 +123,7 @@
 /**
  两张图是否相同
  */
-- (BOOL)magicIsEqualToImage:(UIImage *)image{
+- (BOOL)isEqualToImage:(UIImage *)image{
     NSData *data1 = UIImagePNGRepresentation(self);
     NSData *data2 = UIImagePNGRepresentation(image);
     return [data1 isEqual:data2];
@@ -133,18 +133,18 @@
 /**
  UIImage转Base64
  */
-- (NSString *)magicToBase64EncodedString{
+- (NSString *)imageToBase64EncodedString{
     NSString *result = [UIImagePNGRepresentation(self) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return result;
 }
 
 /**
  压缩图片
-
+ 
  @param maxSize 最大尺寸
  @param quality 质量
  */
-- (UIImage *)magicResizeWithMaxSize:(CGSize)maxSize quality:(CGFloat)quality{
+- (UIImage *)imageResizeWithMaxSize:(CGSize)maxSize quality:(CGFloat)quality{
     
     float actualHeight = self.size.height;
     float actualWidth = self.size.width;
@@ -188,7 +188,7 @@
  
  @param fileName 文件名
  */
-- (void)magicSaveToSandBoxWithFileName:(NSString *)fileName{
+- (void)imageSaveToSandBoxWithFileName:(NSString *)fileName{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", fileName]];
     [UIImagePNGRepresentation(self) writeToFile:filePath atomically:YES];
@@ -197,7 +197,7 @@
 /**
  合成两张图片
  */
-- (UIImage *)magicToComposeImage:(UIImage *)first image:(UIImage *)second{
+- (UIImage *)imageToComposeImage:(UIImage *)first image:(UIImage *)second{
     
     CGImageRef firstImageRef = first.CGImage;
     CGFloat firstWidth = CGImageGetWidth(firstImageRef);
@@ -214,5 +214,4 @@
     return image;
     
 }
-
 @end

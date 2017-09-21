@@ -56,7 +56,7 @@
     UIImageView *_productLogoImageView;                          //主图Logo
     NSMutableArray *_allBannerDataArray;                         //主图Banner数据
     UIButton *_addCartButton;                                    //加入购物车
-    NSInteger sectionCount;                                      //模块总数量
+    NSInteger allRowCount;                                       //模块总数量
     BOOL isStartTimer;                                           //倒计时状态
     NSInteger productDescribeNumberOfLines;                      //描述显示行数
 }
@@ -89,7 +89,7 @@
 - (void)initailData{
     productDescribeNumberOfLines = DES_MAX_LINES;
     _allBannerDataArray = [NSMutableArray array];
-    sectionCount = 8;
+    allRowCount = 8;
     [self createTimer];
 }
 
@@ -181,7 +181,8 @@
     _firtTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _firtTableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
     _firtTableView.tableHeaderView = [self createProductParallaxHeaderView];
-    _firtTableView.fd_debugLogEnabled = NO;       //打开自适应高度debug模式
+    _firtTableView.estimatedRowHeight = 0.01;
+    _firtTableView.rowHeight = UITableViewAutomaticDimension;
     _firtTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _firtTableView.dataSource = self;
     _firtTableView.delegate = self;
@@ -284,38 +285,34 @@
 
 #pragma mark -UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return sectionCount;
+    return allRowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     // 信息
-    if (indexPath.section == 0) {
+    if (indexPath.row == 0) {
         ProductInfomationTableViewCell *infomationCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_INFO forIndexPath:indexPath];
         [self setupProductInfomationModelOfCell:infomationCell AtIndexPath:indexPath];
         return infomationCell;
     }
 
     // 倒计时
-    if (indexPath.section == 1) {
+    if (indexPath.row == 1) {
         ProductSpecialTimeTableViewCell *specialTimeCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_SPECIAL forIndexPath:indexPath];
         [self setupProductSpecialTimeModelOfCell:specialTimeCell AtIndexPath:indexPath];
         return specialTimeCell;
     }
     
     // 上架状态
-    if (indexPath.section == 2) {
+    if (indexPath.row == 2) {
         ProductOnlineStatusTableViewCell *onlineStatusCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_ONLINE forIndexPath:indexPath];
         [self setupProductOnlineStatusModelOfCell:onlineStatusCell AtIndexPath:indexPath];
         return onlineStatusCell;
     }
     
     // 促销
-    if (indexPath.section == 3) {
+    if (indexPath.row == 3) {
         ProductOptionSaleTableViewCell *saleCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_SALE];
         if (saleCell == nil){
             saleCell = [[ProductOptionSaleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:REUESED_CELL_SALE];
@@ -325,7 +322,7 @@
     }
     
     // 规格
-    if (indexPath.section == 4) {
+    if (indexPath.row == 4) {
         ProductOptionTableViewCell *optionCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_OPTION forIndexPath:indexPath];
         optionCell.productDetailModel = _mainModel;
         return optionCell;
@@ -333,20 +330,20 @@
     
     
     // 活动
-    if (indexPath.section == 5) {
+    if (indexPath.row == 5) {
         ProductActivityTableViewCell *activityCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_ACTIVITY forIndexPath:indexPath];
         return activityCell;
     }
     
     // 描述
-    if (indexPath.section == 6) {
+    if (indexPath.row == 6) {
         ProductDescribeTableViewCell *describeCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_DESCRIBE forIndexPath:indexPath];
         [self setupProductDescribeModelOfCell:describeCell AtIndexPath:indexPath];
         return describeCell;
     }
     
     // 承诺
-    if (indexPath.section == 7) {
+    if (indexPath.row == 7) {
         ProductPromiseTableViewCell *promiseCell = [tableView dequeueReusableCellWithIdentifier:REUESED_CELL_PROMISE forIndexPath:indexPath];
         return promiseCell;
     }
@@ -372,85 +369,17 @@
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.01;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    
-
-    if (section <= 2) {
-        return 0.01;
-    }
-    
-    if ((sectionCount - 1) == section) {
-        return ProductBuyMenu_Height;
-    }
-
-    return 10;
-    
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    if (indexPath.section == 0) {
-        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_INFO cacheByIndexPath:indexPath configuration:^(id cell) {
-            [self setupProductInfomationModelOfCell:cell AtIndexPath:indexPath];
-        }];
-    }
-
-    if (indexPath.section == 1) {
-        
-        if (isStartTimer == NO) {
-            return 0;
-        }
-        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_SPECIAL cacheByIndexPath:indexPath configuration:^(id cell) {
-            [self setupProductSpecialTimeModelOfCell:cell AtIndexPath:indexPath];
-        }];
-        
-    }
-
-    if (indexPath.section == 2) {
-        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_ONLINE cacheByIndexPath:indexPath configuration:^(id cell) {
-            [self setupProductOnlineStatusModelOfCell:cell AtIndexPath:indexPath];
-        }];
-    }
-
-    
-    if (indexPath.section == 3) {
-        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_SALE cacheByIndexPath:indexPath configuration:^(id cell) {
-           [self setupProductSaleModelOfCell:cell AtIndexPath:indexPath];
-        }];
-    }
-    
-    if (indexPath.section == 6) {
-        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_DESCRIBE cacheByIndexPath:indexPath configuration:^(id cell) {
-             [self setupProductDescribeModelOfCell:cell AtIndexPath:indexPath];
-        }];
-    }
-    
-    if (indexPath.section == 7) {
-        return [tableView fd_heightForCellWithIdentifier:REUESED_CELL_PROMISE cacheByIndexPath:indexPath configuration:^(id cell) {
-            
-        }];
-    }
-    return 45;
-    
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 3) {
+    if (indexPath.row == 3) {
         [self showProductDetailSaleViewController];
     }
     
-    if (indexPath.section == 4) {
+    if (indexPath.row == 4) {
         [self showProductDetailSelectViewController];
     }
     
-    if (indexPath.section == 6) {
+    if (indexPath.row == 6) {
         productDescribeNumberOfLines = (productDescribeNumberOfLines == DES_MAX_LINES) ? 0 : DES_MAX_LINES;
         //[_firtTableView reloadSections:[NSIndexSet indexSetWithIndex:6] withRowAnimation:UITableViewRowAnimationFade];
         [_firtTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:6]] withRowAnimation:UITableViewRowAnimationFade];

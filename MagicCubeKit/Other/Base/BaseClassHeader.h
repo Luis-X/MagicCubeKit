@@ -12,6 +12,5 @@
 #import "BaseViewController.h"
 #import "BaseTableView.h"
 #import "BaseTableViewCell.h"
-#import "BaseNavigationController.h"
 #endif /* BaseClassHeader_h */
 

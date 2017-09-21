@@ -1,19 +1,18 @@
 //
-//  UILabel+Magic.m
-//  
+//  UILabel+Tool.m
+//  MagicCubeKit
 //
-//  Created by LuisX on 2017/7/25.
-//
+//  Created by LuisX on 2017/9/21.
+//  Copyright © 2017年 LuisX. All rights reserved.
 //
 
-#import "UILabel+Magic.h"
+#import "UILabel+Tool.h"
 
-@implementation UILabel (Magic)
-
+@implementation UILabel (Tool)
 /**
  行间距
  */
-- (void)magicLineSpace:(CGFloat)lineSpace{
+- (void)lineSpace:(CGFloat)lineSpace{
     
     NSMutableAttributedString* attrString = [[NSMutableAttributedString  alloc] initWithString:self.text];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];

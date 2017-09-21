@@ -7,7 +7,7 @@
 //
 
 #import "ExampleMagicDynamicViewController.h"
-#import "UITableView+FDTemplateLayoutCell.h"
+//#import "UITableView+FDTemplateLayoutCell.h"
 #import "ExampleMagicDynamicModel.h"
 #import "ExampleMagicDynamicTableViewCell.h"
 #import "ExampleMagicCenterTagTableViewCell.h"
@@ -33,22 +33,26 @@
     _allDataArr = [NSMutableArray array];
 }
 
-- (void)createMianViews{
+- (void)createMianViews {
+    
     UITableView *myTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    myTableView.backgroundColor = [UIColor colorWithRed:246/255.0 green:246/255.0 blue:246/255.0 alpha:1];
+    myTableView.backgroundColor = [UIColor flatBlueColor];
     myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     myTableView.delegate = self;
     myTableView.dataSource = self;
-    myTableView.fd_debugLogEnabled = YES;       //打开自适应高度debug模式
+    //myTableView.fd_debugLogEnabled = YES;       //打开自适应高度debug模式
+#warning iOS8以上自适应列表高度（cell使用autoLayout布局top、bottom必须要约束）
+    myTableView.estimatedRowHeight = 0.01;
+    myTableView.rowHeight = UITableViewAutomaticDimension;
+    
     [self.view addSubview:myTableView];
     [myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [myTableView registerClass:[ExampleMagicDynamicTableViewCell class] forCellReuseIdentifier:@"dynamicCell"];
     [myTableView registerClass:[ExampleMagicCenterTagTableViewCell class] forCellReuseIdentifier:@"tagCell"];
     [myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
         make.top.left.bottom.right.equalTo(self.view);
-        
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +78,7 @@
         return cell;
     }
     
-    if (indexPath.row > 1) {
+    if (indexPath.row >= 1) {
         ExampleMagicCenterTagTableViewCell *cell = (ExampleMagicCenterTagTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"tagCell" forIndexPath:indexPath];
         [self setupModelOfCenterTagCell:cell AtIndexPath:indexPath];
         return cell;
@@ -89,28 +93,28 @@
 }
 
 #pragma mark -UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.row < 1) {
-        return [tableView fd_heightForCellWithIdentifier:@"dynamicCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            [self setupModelOfCell:cell AtIndexPath:indexPath];
-        }];
-    }
-    
-    if (indexPath.row > 1) {
-        return [tableView fd_heightForCellWithIdentifier:@"tagCell" cacheByIndexPath:indexPath configuration:^(id cell) {
-            [self setupModelOfCenterTagCell:cell AtIndexPath:indexPath];
-        }];
-    }
-    return 0;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//
+//    if (indexPath.row < 1) {
+//        return [tableView fd_heightForCellWithIdentifier:@"dynamicCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+//            [self setupModelOfCell:cell AtIndexPath:indexPath];
+//        }];
+//    }
+//
+//    if (indexPath.row > 1) {
+//        return [tableView fd_heightForCellWithIdentifier:@"tagCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+//            [self setupModelOfCenterTagCell:cell AtIndexPath:indexPath];
+//        }];
+//    }
+//    return 0;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 10;
+    return 0.01;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
+    return 0.01;
 }
 
 #warning 重点(自适应高度必须实现)

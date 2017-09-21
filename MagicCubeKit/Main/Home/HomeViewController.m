@@ -123,75 +123,77 @@
     
     if (indexPath.section == 0) {
         NSString *routerSkipString = [NSString string];
+        NSDictionary *data = @{@"1" : @"1", @"哈哈哈" : @"2"};
         
         switch (indexPath.row) {
             case 0:
-                routerSkipString = Router_Skip_ViewController;
+                routerSkipString = R_URL_NORMAL(@"ViewController");
                 break;
             case 1:
-                routerSkipString = Router_Skip_ExampleTangramViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleTangramViewController");
                 break;
             case 2:
-                routerSkipString = Router_Skip_ExampleSJBugVideoKitViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleSJBugVideoKitViewController");
                 break;
             case 3:
-                routerSkipString = Router_Skip_ExampleMagicAlertViewViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicAlertViewViewController");
                 break;
             case 4:
-                routerSkipString = Router_Skip_ExampleMagicPermissionManagerViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicPermissionManagerViewController");
                 break;
             case 5:
-                routerSkipString = Router_Skip_ExampleMagicNetworkingViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicNetworkingViewController");
                 break;
             case 6:
-                routerSkipString = Router_Skip_ExampleMagicButtonViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicButtonViewController");
                 break;
             case 7:
-                routerSkipString = Router_Skip_ExampleMagicScrollPageViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicScrollPageViewController");
                 break;
             case 8:
-                routerSkipString = Router_Skip_ExampleMagicImageDownloaderViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicImageDownloaderViewController");
                 break;
             case 9:
-                routerSkipString = Router_Skip_ExampleMagicWebProgressViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicWebProgressViewController");
                 break;
             case 10:
-                routerSkipString = Router_Skip_ExampleMagicLoadingViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicLoadingViewController");
                 break;
             case 11:
-                routerSkipString = Router_Skip_ExampleMagicTimerButtonViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicTimerButtonViewController");
                 break;
             case 12:
-                routerSkipString = Router_Skip_ExampleWebViewJavascriptBridgeViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleWebViewJavascriptBridgeViewController");
                 break;
             case 13:
-                routerSkipString = Router_Skip_ExampleReachabilityViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleReachabilityViewController");
                 break;
             case 14:
-                routerSkipString = Router_Skip_ExampleiCarouselViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleiCarouselViewController");
                 break;
             case 15:
-                routerSkipString = Router_Skip_ExampleWYPopoverControllerViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleWYPopoverControllerViewController");
                 break;
             case 16:
-                routerSkipString = Router_Skip_ExampleMagicDynamicViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicDynamicViewController");
                 break;
             case 17:
-                routerSkipString = Router_Skip_ExampleMagicWebViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleMagicWebViewController");
                 break;
             case 18:
-                routerSkipString = Router_Skip_ExampleDrawViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleDrawViewController");
                 break;
             case 19:
-                routerSkipString = Router_Skip_ExampleXLFormViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleXLFormViewController");
                 break;
             case 20:
-                routerSkipString = Router_Skip_ExampleActionSheetPicker3ViewController;
+                routerSkipString = R_URL_NORMAL(@"ExampleActionSheetPicker3ViewController");
                 break;
             default:
                 break;
         }
-        [MagicRouterManager showAnyViewControllerWithRouterURL:routerSkipString AddedNavigationController:self.navigationController];
+        
+        [MagicRouterManager showAnyViewControllerWithRouterURL:routerSkipString data:@{@"哈哈" : @"啊"} addedNavigationController:self.navigationController];
     }
     
 }

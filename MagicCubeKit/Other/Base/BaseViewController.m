@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     [self baseBuildDefaultConfig];
     [self baseBuildSubViews];
+    [self baseBuildLeftBarButtonItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +49,28 @@
  */
 - (void)baseBuildSubViews{
     
+}
+
+/**
+ * 自定义导航栏
+ */
+- (void)baseBuildLeftBarButtonItem{
+    
+    if (self.navigationController.viewControllers.count > 1) {
+        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        backButton.frame = CGRectMake(0, 0, 25, 25);
+        [backButton setBackgroundImage:[UIImage imageNamed:@"tabbar_0@2x.png"] forState:UIControlStateNormal];
+        [backButton addTarget:self action:@selector(basePopViewController) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    }
+    
+}
+
+/**
+ 返回
+ */
+- (void)basePopViewController{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - SET方法
