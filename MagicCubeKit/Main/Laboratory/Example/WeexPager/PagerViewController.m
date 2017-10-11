@@ -18,20 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor randomFlatColor];
     
-    UIImageView *imageView = [UIImageView new];
-    imageView.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:imageView];
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(200, 200));
-        make.center.equalTo(self.view);
-    }];
-    //imageView.animates = YES;
-    [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://assets.sbnation.com/assets/2512203/dogflops.gif"]];
+    _pageLabel = [UILabel new];
+    _pageLabel.textAlignment = NSTextAlignmentCenter;
+    _pageLabel.font = [UIFont boldSystemFontOfSize:16];
+    _pageLabel.textColor = [UIColor whiteColor];
+    [self.view addSubview:_pageLabel];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(show)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushViewControllerAction)];
     [self.view addGestureRecognizer:tap];
+    
+}
+
+- (void)viewDidLayoutSubviews{
+    
+    _pageLabel.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,9 +53,12 @@
 }
 */
 
-- (void)show{
-     UIViewController *vc = [UIViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)pushViewControllerAction{
+    
+    UIViewController *emptyViewController = [UIViewController new];
+    emptyViewController.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:emptyViewController animated:YES];
+    
 }
 
 @end

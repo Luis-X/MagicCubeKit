@@ -107,6 +107,11 @@
 		D1049C3D1F444215006A66EF /* SJIconTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D1049BD91F444215006A66EF /* SJIconTextButton.m */; };
 		D1049C3E1F444215006A66EF /* SJUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1049BDB1F444215006A66EF /* SJUIKit.m */; };
 		D1049C3F1F444215006A66EF /* LaboratoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1049BDD1F444215006A66EF /* LaboratoryViewController.m */; };
+		D10808161F7B5093001AB304 /* network_disconnected_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D10808111F7B5093001AB304 /* network_disconnected_btn@2x.png */; };
+		D10808171F7B5093001AB304 /* network_disconnected_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D10808121F7B5093001AB304 /* network_disconnected_btn@3x.png */; };
+		D10808181F7B5093001AB304 /* network_disconnected_img.png in Resources */ = {isa = PBXBuildFile; fileRef = D10808131F7B5093001AB304 /* network_disconnected_img.png */; };
+		D10808191F7B5093001AB304 /* NetworkDisconnectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D10808151F7B5093001AB304 /* NetworkDisconnectedView.m */; };
+		D10FC4C01F7A5EDB002F0648 /* ExampleWebPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10FC4BF1F7A5EDB002F0648 /* ExampleWebPlaceholderViewController.m */; };
 		D111CDDA1F386B9D00CBF717 /* MagicTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D111CDD91F386B9D00CBF717 /* MagicTimerManager.m */; };
 		D1166AF71F4ABD1D00EB241D /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D1166AF61F4ABD1D00EB241D /* libicucore.tbd */; };
 		D1166AF91F4ABD2800EB241D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D1166AF81F4ABD2800EB241D /* libz.tbd */; };
@@ -131,6 +136,7 @@
 		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
 		D124D8671F26F05A0072272C /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8661F26F05A0072272C /* CommonTool.m */; };
 		D124D87A1F2721DF0072272C /* MagicUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8791F2721DF0072272C /* MagicUserDefaults.m */; };
+		D130CF761F74E1D6007B0243 /* ExamplePagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D130CF751F74E1D6007B0243 /* ExamplePagerViewController.m */; };
 		D13E20081ECC6B0A00472533 /* MagicImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */; };
 		D14E01511F41475100145DF2 /* MagicLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D14E01501F41475100145DF2 /* MagicLogManager.m */; };
 		D14E01541F4149DD00145DF2 /* MagicLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D14E01531F4149DD00145DF2 /* MagicLogFormatter.m */; };
@@ -160,9 +166,12 @@
 		D1707AA01ED7CB400024FC83 /* LuisX.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D1707A9F1ED7CB400024FC83 /* LuisX.JPG */; };
 		D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */; };
 		D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */; };
+		D17E18431F79042500C10114 /* MagicCubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E18421F79042500C10114 /* MagicCubeKit.framework */; };
 		D1853CF11F0A7E0E00CA2B19 /* jiawen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */; };
 		D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
 		D18CF59A1F45300400953D40 /* ExampleActionSheetPicker3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CF5991F45300400953D40 /* ExampleActionSheetPicker3ViewController.m */; };
+		D18D715B1F7B9DDF00B91E68 /* BalloonRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D18D71581F7B9DDF00B91E68 /* BalloonRefresh.bundle */; };
+		D18D715C1F7B9DDF00B91E68 /* BalloonRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D18D715A1F7B9DDF00B91E68 /* BalloonRefreshHeader.m */; };
 		D18F433C1F46E22200347870 /* MagicActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D18F43371F46E22200347870 /* MagicActivityCollectionViewCell.m */; };
 		D18F433E1F46E22200347870 /* MagicActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18F433B1F46E22200347870 /* MagicActivityViewController.m */; };
 		D18F43411F46E26400347870 /* MagicActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D18F43401F46E26400347870 /* MagicActivity.m */; };
@@ -266,15 +275,12 @@
 		D190AAC31F3C407C00B180A0 /* TangramHelperCustomMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF41EB86F0C00C88BAE /* TangramHelperCustomMapping.plist */; };
 		D190AAC41F3C407C00B180A0 /* tabbar_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4B1ED920A600493704 /* tabbar_1@2x.png */; };
 		D190AAC61F3C407C00B180A0 /* LuisX.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D1707A9F1ED7CB400024FC83 /* LuisX.JPG */; };
-		D1A03C091F565B1F001444D1 /* NSURLProtocol+MagicWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A03C081F565B1F001444D1 /* NSURLProtocol+MagicWebView.m */; };
-		D1A03C0C1F56640B001444D1 /* MagicURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A03C0B1F56640B001444D1 /* MagicURLProtocol.m */; };
-		D1A03C0F1F56659B001444D1 /* MagicWebViewWebPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A03C0E1F56659B001444D1 /* MagicWebViewWebPManager.m */; };
+		D19278591F7CF8CE00D20C6C /* MagicWebViewWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19278581F7CF8CE00D20C6C /* MagicWebViewWebP.framework */; };
 		D1A98E191F289FE200EDE64A /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A98E181F289FE200EDE64A /* BaseTableView.m */; };
 		D1A98E1D1F28A78400EDE64A /* BaseWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A98E1C1F28A78400EDE64A /* BaseWebView.m */; };
 		D1B2765A1F17519300874A7E /* MagicImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B276591F17519300874A7E /* MagicImagePicker.m */; };
 		D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */; };
 		D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */; };
-		D1C612781F4FFDF80043E495 /* WeexPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C612771F4FFDF80043E495 /* WeexPagerViewController.m */; };
 		D1C6127B1F4FFF110043E495 /* PagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C6127A1F4FFF110043E495 /* PagerViewController.m */; };
 		D1C72C4A1EB86F0C00C88BAE /* TangramHelperCustomMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF41EB86F0C00C88BAE /* TangramHelperCustomMapping.plist */; };
 		D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF51EB86F0C00C88BAE /* TangramHelperMapping.plist */; };
@@ -336,6 +342,7 @@
 		D1E0BE541ED920A600493704 /* tabbar_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4E1ED920A600493704 /* tabbar_4@2x.png */; };
 		D1E0BE551ED920A600493704 /* tabbar_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4F1ED920A600493704 /* tabbar_5@2x.png */; };
 		D1E0BE561ED920A600493704 /* tabbar_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE501ED920A600493704 /* tabbar_6@2x.png */; };
+		D1EF0A261F8CD205005EE05E /* MagicDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EF0A251F8CD205005EE05E /* MagicDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -532,6 +539,13 @@
 		D1049BDB1F444215006A66EF /* SJUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJUIKit.m; sourceTree = "<group>"; };
 		D1049BDC1F444215006A66EF /* LaboratoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaboratoryViewController.h; sourceTree = "<group>"; };
 		D1049BDD1F444215006A66EF /* LaboratoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaboratoryViewController.m; sourceTree = "<group>"; };
+		D10808111F7B5093001AB304 /* network_disconnected_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "network_disconnected_btn@2x.png"; sourceTree = "<group>"; };
+		D10808121F7B5093001AB304 /* network_disconnected_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "network_disconnected_btn@3x.png"; sourceTree = "<group>"; };
+		D10808131F7B5093001AB304 /* network_disconnected_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = network_disconnected_img.png; sourceTree = "<group>"; };
+		D10808141F7B5093001AB304 /* NetworkDisconnectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDisconnectedView.h; sourceTree = "<group>"; };
+		D10808151F7B5093001AB304 /* NetworkDisconnectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDisconnectedView.m; sourceTree = "<group>"; };
+		D10FC4BE1F7A5EDB002F0648 /* ExampleWebPlaceholderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleWebPlaceholderViewController.h; sourceTree = "<group>"; };
+		D10FC4BF1F7A5EDB002F0648 /* ExampleWebPlaceholderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleWebPlaceholderViewController.m; sourceTree = "<group>"; };
 		D111CDD81F386B9D00CBF717 /* MagicTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicTimerManager.h; sourceTree = "<group>"; };
 		D111CDD91F386B9D00CBF717 /* MagicTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicTimerManager.m; sourceTree = "<group>"; };
 		D1166AE61F4A8C2400EB241D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -566,7 +580,6 @@
 		D11816EB1EB30ED2004C238A /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		D11816EC1EB30ED2004C238A /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		D11816F41EB310F3004C238A /* MagicCubeHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeHeader.pch; sourceTree = "<group>"; };
-		D11816FB1EB320B8004C238A /* MagicCubeDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicCubeDefine.h; sourceTree = "<group>"; };
 		D1193F0A1F72648E0041AFF6 /* MagicShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareManager.h; sourceTree = "<group>"; };
 		D1193F0B1F72648E0041AFF6 /* MagicShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicShareManager.m; sourceTree = "<group>"; };
 		D1193F0C1F72648E0041AFF6 /* MagicShareParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShareParameter.h; sourceTree = "<group>"; };
@@ -583,6 +596,8 @@
 		D124D8661F26F05A0072272C /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		D124D8781F2721DF0072272C /* MagicUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicUserDefaults.h; sourceTree = "<group>"; };
 		D124D8791F2721DF0072272C /* MagicUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicUserDefaults.m; sourceTree = "<group>"; };
+		D130CF741F74E1D6007B0243 /* ExamplePagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplePagerViewController.h; sourceTree = "<group>"; };
+		D130CF751F74E1D6007B0243 /* ExamplePagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamplePagerViewController.m; sourceTree = "<group>"; };
 		D13515AA1F3C3AA9004AD479 /* MagicCubeKit-beta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MagicCubeKit-beta-Info.plist"; path = "/Users/luisx/Desktop/LuisXGit/MagicCubeKit/MagicCubeKit-beta-Info.plist"; sourceTree = "<absolute>"; };
 		D13E20061ECC6B0A00472533 /* MagicImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicImageDownloader.h; sourceTree = "<group>"; };
 		D13E20071ECC6B0A00472533 /* MagicImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicImageDownloader.m; sourceTree = "<group>"; };
@@ -641,11 +656,15 @@
 		D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicIconButton.m; sourceTree = "<group>"; };
 		D17DE7A81ECEF63B00CE48D4 /* MagicScrollPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPage.h; sourceTree = "<group>"; };
 		D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPage.m; sourceTree = "<group>"; };
+		D17E18421F79042500C10114 /* MagicCubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicCubeKit.framework; sourceTree = "<group>"; };
 		D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jiawen.gpx; sourceTree = "<group>"; };
 		D187ACE71ED3DB5800E8C4BA /* MagicTimerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicTimerButton.h; sourceTree = "<group>"; };
 		D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicTimerButton.m; sourceTree = "<group>"; };
 		D18CF5981F45300400953D40 /* ExampleActionSheetPicker3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleActionSheetPicker3ViewController.h; sourceTree = "<group>"; };
 		D18CF5991F45300400953D40 /* ExampleActionSheetPicker3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleActionSheetPicker3ViewController.m; sourceTree = "<group>"; };
+		D18D71581F7B9DDF00B91E68 /* BalloonRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BalloonRefresh.bundle; sourceTree = "<group>"; };
+		D18D71591F7B9DDF00B91E68 /* BalloonRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalloonRefreshHeader.h; sourceTree = "<group>"; };
+		D18D715A1F7B9DDF00B91E68 /* BalloonRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalloonRefreshHeader.m; sourceTree = "<group>"; };
 		D18F43361F46E22200347870 /* MagicActivityCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicActivityCollectionViewCell.h; sourceTree = "<group>"; };
 		D18F43371F46E22200347870 /* MagicActivityCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicActivityCollectionViewCell.m; sourceTree = "<group>"; };
 		D18F433A1F46E22200347870 /* MagicActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicActivityViewController.h; sourceTree = "<group>"; };
@@ -655,13 +674,7 @@
 		D18F43431F46E42D00347870 /* MagicPhotoBrowserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPhotoBrowserManager.h; sourceTree = "<group>"; };
 		D18F43441F46E42D00347870 /* MagicPhotoBrowserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicPhotoBrowserManager.m; sourceTree = "<group>"; };
 		D190AACC1F3C407C00B180A0 /* MagicCubeKit-beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MagicCubeKit-beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1A03C071F565B1F001444D1 /* NSURLProtocol+MagicWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLProtocol+MagicWebView.h"; sourceTree = "<group>"; };
-		D1A03C081F565B1F001444D1 /* NSURLProtocol+MagicWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLProtocol+MagicWebView.m"; sourceTree = "<group>"; };
-		D1A03C0A1F56640B001444D1 /* MagicURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicURLProtocol.h; sourceTree = "<group>"; };
-		D1A03C0B1F56640B001444D1 /* MagicURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicURLProtocol.m; sourceTree = "<group>"; };
-		D1A03C0D1F56659B001444D1 /* MagicWebViewWebPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicWebViewWebPManager.h; sourceTree = "<group>"; };
-		D1A03C0E1F56659B001444D1 /* MagicWebViewWebPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicWebViewWebPManager.m; sourceTree = "<group>"; };
-		D1A03C101F5667EA001444D1 /* MagicWebView-WebP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MagicWebView-WebP.h"; sourceTree = "<group>"; };
+		D19278581F7CF8CE00D20C6C /* MagicWebViewWebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicWebViewWebP.framework; sourceTree = "<group>"; };
 		D1A98E171F289FE200EDE64A /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
 		D1A98E181F289FE200EDE64A /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		D1A98E1A1F28A0A600EDE64A /* BaseClassHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseClassHeader.h; sourceTree = "<group>"; };
@@ -672,8 +685,6 @@
 		D1B2D5A21ECAA9F600EA7146 /* MagicNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicNetworkManager.h; sourceTree = "<group>"; };
 		D1B2D5A31ECAA9F600EA7146 /* MagicNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicNetworkManager.m; sourceTree = "<group>"; };
 		D1BDFD8E1ED2CC6E000064B8 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		D1C612761F4FFDF80043E495 /* WeexPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeexPagerViewController.h; sourceTree = "<group>"; };
-		D1C612771F4FFDF80043E495 /* WeexPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeexPagerViewController.m; sourceTree = "<group>"; };
 		D1C612791F4FFF110043E495 /* PagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagerViewController.h; sourceTree = "<group>"; };
 		D1C6127A1F4FFF110043E495 /* PagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagerViewController.m; sourceTree = "<group>"; };
 		D1C72BF41EB86F0C00C88BAE /* TangramHelperCustomMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TangramHelperCustomMapping.plist; sourceTree = "<group>"; };
@@ -787,6 +798,8 @@
 		D1E0BE4E1ED920A600493704 /* tabbar_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_4@2x.png"; sourceTree = "<group>"; };
 		D1E0BE4F1ED920A600493704 /* tabbar_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_5@2x.png"; sourceTree = "<group>"; };
 		D1E0BE501ED920A600493704 /* tabbar_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_6@2x.png"; sourceTree = "<group>"; };
+		D1EF0A241F8CD205005EE05E /* MagicDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicDevice.h; sourceTree = "<group>"; };
+		D1EF0A251F8CD205005EE05E /* MagicDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicDevice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -797,12 +810,14 @@
 				D1166B001F4ABD5500EB241D /* libsqlite3.tbd in Frameworks */,
 				D1166AFF1F4ABD4C00EB241D /* ImageIO.framework in Frameworks */,
 				D1166AFD1F4ABD3A00EB241D /* JavaScriptCore.framework in Frameworks */,
+				D17E18431F79042500C10114 /* MagicCubeKit.framework in Frameworks */,
 				D1166AFB1F4ABD3100EB241D /* libstdc++.tbd in Frameworks */,
 				D1166AF91F4ABD2800EB241D /* libz.tbd in Frameworks */,
 				D1166AF71F4ABD1D00EB241D /* libicucore.tbd in Frameworks */,
 				D1DF011D1F333A71009A7901 /* ReplayKit.framework in Frameworks */,
 				CCC0D2F4E37508F360F5908D /* libPods-MagicCubeKit.a in Frameworks */,
 				D1D258051EE1023800A7CADD /* Reveal.framework in Frameworks */,
+				D19278591F7CF8CE00D20C6C /* MagicWebViewWebP.framework in Frameworks */,
 				3573EB60BE2E036AB23C0761 /* libPods-MagicCubeKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1329,6 +1344,7 @@
 		D1049B591F444215006A66EF /* Laboratory(实验室) */ = {
 			isa = PBXGroup;
 			children = (
+				D18D71571F7B9DDF00B91E68 /* BalloonRefreshHeader */,
 				D1049BDC1F444215006A66EF /* LaboratoryViewController.h */,
 				D1049BDD1F444215006A66EF /* LaboratoryViewController.m */,
 				D1049B5A1F444215006A66EF /* Example */,
@@ -1340,6 +1356,7 @@
 		D1049B5A1F444215006A66EF /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				D10FC4BD1F7A5EAF002F0648 /* WebViewPlaceholder */,
 				D1C612751F4FFDED0043E495 /* WeexPager */,
 				D1049B5B1F444215006A66EF /* AutoAlbum */,
 				D1049B691F444215006A66EF /* HomePage */,
@@ -1705,6 +1722,28 @@
 			path = MBSwitch;
 			sourceTree = "<group>";
 		};
+		D10808101F7B5093001AB304 /* NetworkDisconnectedView */ = {
+			isa = PBXGroup;
+			children = (
+				D10808111F7B5093001AB304 /* network_disconnected_btn@2x.png */,
+				D10808121F7B5093001AB304 /* network_disconnected_btn@3x.png */,
+				D10808131F7B5093001AB304 /* network_disconnected_img.png */,
+				D10808141F7B5093001AB304 /* NetworkDisconnectedView.h */,
+				D10808151F7B5093001AB304 /* NetworkDisconnectedView.m */,
+			);
+			path = NetworkDisconnectedView;
+			sourceTree = "<group>";
+		};
+		D10FC4BD1F7A5EAF002F0648 /* WebViewPlaceholder */ = {
+			isa = PBXGroup;
+			children = (
+				D10808101F7B5093001AB304 /* NetworkDisconnectedView */,
+				D10FC4BE1F7A5EDB002F0648 /* ExampleWebPlaceholderViewController.h */,
+				D10FC4BF1F7A5EDB002F0648 /* ExampleWebPlaceholderViewController.m */,
+			);
+			path = WebViewPlaceholder;
+			sourceTree = "<group>";
+		};
 		D111CDD71F386B9D00CBF717 /* MagicTimerManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1833,7 +1872,6 @@
 		D11816D61EB2F2D5004C238A /* Macros(宏) */ = {
 			isa = PBXGroup;
 			children = (
-				D11816FB1EB320B8004C238A /* MagicCubeDefine.h */,
 			);
 			name = "Macros(宏)";
 			path = Macros;
@@ -2260,6 +2298,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D18D71571F7B9DDF00B91E68 /* BalloonRefreshHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D18D71581F7B9DDF00B91E68 /* BalloonRefresh.bundle */,
+				D18D71591F7B9DDF00B91E68 /* BalloonRefreshHeader.h */,
+				D18D715A1F7B9DDF00B91E68 /* BalloonRefreshHeader.m */,
+			);
+			path = BalloonRefreshHeader;
+			sourceTree = "<group>";
+		};
 		D18F43351F46E22200347870 /* MagicActivityViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2285,22 +2333,9 @@
 		D18F43541F49190300347870 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				D17E18421F79042500C10114 /* MagicCubeKit.framework */,
 			);
 			path = SDK;
-			sourceTree = "<group>";
-		};
-		D1A03C021F5659B5001444D1 /* MagicWebView-WebP */ = {
-			isa = PBXGroup;
-			children = (
-				D1A03C101F5667EA001444D1 /* MagicWebView-WebP.h */,
-				D1A03C0D1F56659B001444D1 /* MagicWebViewWebPManager.h */,
-				D1A03C0E1F56659B001444D1 /* MagicWebViewWebPManager.m */,
-				D1A03C0A1F56640B001444D1 /* MagicURLProtocol.h */,
-				D1A03C0B1F56640B001444D1 /* MagicURLProtocol.m */,
-				D1A03C071F565B1F001444D1 /* NSURLProtocol+MagicWebView.h */,
-				D1A03C081F565B1F001444D1 /* NSURLProtocol+MagicWebView.m */,
-			);
-			path = "MagicWebView-WebP";
 			sourceTree = "<group>";
 		};
 		D1B276571F17518300874A7E /* MagicImagePicker */ = {
@@ -2324,10 +2359,10 @@
 		D1C612751F4FFDED0043E495 /* WeexPager */ = {
 			isa = PBXGroup;
 			children = (
-				D1C612761F4FFDF80043E495 /* WeexPagerViewController.h */,
-				D1C612771F4FFDF80043E495 /* WeexPagerViewController.m */,
 				D1C612791F4FFF110043E495 /* PagerViewController.h */,
 				D1C6127A1F4FFF110043E495 /* PagerViewController.m */,
+				D130CF741F74E1D6007B0243 /* ExamplePagerViewController.h */,
+				D130CF751F74E1D6007B0243 /* ExamplePagerViewController.m */,
 			);
 			path = WeexPager;
 			sourceTree = "<group>";
@@ -2497,6 +2532,7 @@
 		D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */ = {
 			isa = PBXGroup;
 			children = (
+				D1EF0A231F8CD1F7005EE05E /* MagicDevice */,
 				D1193F091F72648E0041AFF6 /* MagicShareManager */,
 				D18F43421F46E42D00347870 /* MagicPhotoBrowserManager */,
 				D18F43351F46E22200347870 /* MagicActivityViewController */,
@@ -2592,12 +2628,21 @@
 		D1DF01181F32FA2E009A7901 /* MagicWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D19278581F7CF8CE00D20C6C /* MagicWebViewWebP.framework */,
 				D1D015281F57FC4800DF8D18 /* MagicWebViewUI.bundle */,
-				D1A03C021F5659B5001444D1 /* MagicWebView-WebP */,
 				D1DF01191F32FA4B009A7901 /* MagicWebViewController.h */,
 				D1DF011A1F32FA4B009A7901 /* MagicWebViewController.m */,
 			);
 			path = MagicWebViewController;
+			sourceTree = "<group>";
+		};
+		D1EF0A231F8CD1F7005EE05E /* MagicDevice */ = {
+			isa = PBXGroup;
+			children = (
+				D1EF0A241F8CD205005EE05E /* MagicDevice.h */,
+				D1EF0A251F8CD205005EE05E /* MagicDevice.m */,
+			);
+			path = MagicDevice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2687,7 +2732,7 @@
 				TargetAttributes = {
 					D11816981EB2EFB5004C238A = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = TA37MW247M;
+						DevelopmentTeam = YS5VMXEH8P;
 						ProvisioningStyle = Automatic;
 					};
 					D11816B11EB2EFB5004C238A = {
@@ -2734,6 +2779,7 @@
 				D1C72CBE1EB8856000C88BAE /* share_problem@2x.png in Resources */,
 				D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */,
 				D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */,
+				D10808171F7B5093001AB304 /* network_disconnected_btn@3x.png in Resources */,
 				D1853CF11F0A7E0E00CA2B19 /* jiawen.gpx in Resources */,
 				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
 				D1049BE41F444215006A66EF /* 3.jpg in Resources */,
@@ -2757,6 +2803,7 @@
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
 				D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */,
 				D1049C111F444215006A66EF /* shareQRCode_bg_special.jpg in Resources */,
+				D10808161F7B5093001AB304 /* network_disconnected_btn@2x.png in Resources */,
 				D1049BE21F444215006A66EF /* 1.jpg in Resources */,
 				D11816A91EB2EFB5004C238A /* Assets.xcassets in Resources */,
 				D1E0BE541ED920A600493704 /* tabbar_4@2x.png in Resources */,
@@ -2770,7 +2817,9 @@
 				D1049C021F444215006A66EF /* exampleTangram.json in Resources */,
 				D1D015291F57FC4800DF8D18 /* MagicWebViewUI.bundle in Resources */,
 				D1E0BE511ED920A600493704 /* tabbar_1@2x.png in Resources */,
+				D18D715B1F7B9DDF00B91E68 /* BalloonRefresh.bundle in Resources */,
 				D1049C1B1F444215006A66EF /* productDetailMenu@2x.png in Resources */,
+				D10808181F7B5093001AB304 /* network_disconnected_img.png in Resources */,
 				D1049C1A1F444215006A66EF /* productDetailLogo@2x.png in Resources */,
 				D1049C101F444215006A66EF /* shareQRCode_bg_normal.jpg in Resources */,
 				D1049C061F444215006A66EF /* ExampleJSWeb.html in Resources */,
@@ -2896,6 +2945,7 @@
 				D15B87351F73AA40003F61B3 /* NSString+Tool.m in Sources */,
 				D1049C3D1F444215006A66EF /* SJIconTextButton.m in Sources */,
 				D1049C311F444215006A66EF /* ProductSpecialTimeTableViewCell.m in Sources */,
+				D130CF761F74E1D6007B0243 /* ExamplePagerViewController.m in Sources */,
 				D1049C3B1F444215006A66EF /* ProductSaleTagView.m in Sources */,
 				D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */,
 				D1049BF71F444215006A66EF /* ExampleMagicWebProgressViewController.m in Sources */,
@@ -2910,6 +2960,7 @@
 				D1049C181F444215006A66EF /* ProductConstant.m in Sources */,
 				D1C72C4D1EB86F0C00C88BAE /* TangramView.m in Sources */,
 				D1049C031F444215006A66EF /* ExampleElementImage.m in Sources */,
+				D10808191F7B5093001AB304 /* NetworkDisconnectedView.m in Sources */,
 				D1049C391F444215006A66EF /* ProductSelectHeaderCollectionReusableView.m in Sources */,
 				D1049C081F444215006A66EF /* ExampleXLFormViewController.m in Sources */,
 				D1C72C5E1EB86F0C00C88BAE /* TangramFixBottomLayout.m in Sources */,
@@ -2963,7 +3014,6 @@
 				D1C72C971EB87C6B00C88BAE /* QuicklyAsyncDisplay.m in Sources */,
 				D1049C041F444215006A66EF /* ExampleElementText.m in Sources */,
 				D169A6F31F2B1E2C00209C68 /* MagicFileManager.m in Sources */,
-				D1A03C0F1F56659B001444D1 /* MagicWebViewWebPManager.m in Sources */,
 				D1049C331F444215006A66EF /* ProductRecommendCollectionViewCell.m in Sources */,
 				D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */,
 				D1049C2E1F444215006A66EF /* ProductOnlineStatusTableViewCell.m in Sources */,
@@ -2980,19 +3030,20 @@
 				D1C72C551EB86F0C00C88BAE /* TangramEventQueue.m in Sources */,
 				D1049C3A1F444215006A66EF /* ProductSelectQuantityView.m in Sources */,
 				D14E01541F4149DD00145DF2 /* MagicLogFormatter.m in Sources */,
-				D1A03C0C1F56640B001444D1 /* MagicURLProtocol.m in Sources */,
 				D1049C131F444215006A66EF /* ProductDetailMenuViewController.m in Sources */,
 				D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */,
 				D1049C251F444215006A66EF /* WMMenuView.m in Sources */,
 				D1B2D5A41ECAA9F600EA7146 /* MagicNetworkManager.m in Sources */,
 				D15607B31F21B42100CE8E79 /* MonitorManager.m in Sources */,
 				D1B2765A1F17519300874A7E /* MagicImagePicker.m in Sources */,
+				D1EF0A261F8CD205005EE05E /* MagicDevice.m in Sources */,
 				D1049C3F1F444215006A66EF /* LaboratoryViewController.m in Sources */,
 				D1049BF11F444215006A66EF /* ExampleMagicNetworkingViewController.m in Sources */,
 				D124D8671F26F05A0072272C /* CommonTool.m in Sources */,
 				D1C72C981EB87C6B00C88BAE /* QuicklyHUD.m in Sources */,
 				D15607A01F21B06E00CE8E79 /* PayManager.m in Sources */,
 				D1C72C5A1EB86F0C00C88BAE /* TangramLayoutParseHelper.m in Sources */,
+				D10FC4C01F7A5EDB002F0648 /* ExampleWebPlaceholderViewController.m in Sources */,
 				D1C72CC51EB8856000C88BAE /* SJResponeInfo.m in Sources */,
 				D1C72C4F1EB86F0C00C88BAE /* TangramBusIndex.m in Sources */,
 				D1049C241F444215006A66EF /* WMMenuItem.m in Sources */,
@@ -3013,7 +3064,6 @@
 				D1A98E1D1F28A78400EDE64A /* BaseWebView.m in Sources */,
 				D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */,
 				D1DF011B1F32FA4B009A7901 /* MagicWebViewController.m in Sources */,
-				D1A03C091F565B1F001444D1 /* NSURLProtocol+MagicWebView.m in Sources */,
 				D15B873E1F73AC76003F61B3 /* UILabel+Tool.m in Sources */,
 				D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */,
 				D1193F141F72648E0041AFF6 /* MagicShareManager.m in Sources */,
@@ -3031,6 +3081,7 @@
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D1049BE91F444215006A66EF /* ExampleMagicDynamicTableViewCell.m in Sources */,
 				D1049BE01F444215006A66EF /* ExampleMagicDynamicViewController.m in Sources */,
+				D18D715C1F7B9DDF00B91E68 /* BalloonRefreshHeader.m in Sources */,
 				D118169E1EB2EFB5004C238A /* main.m in Sources */,
 				D1049C071F444215006A66EF /* ExampleWYPopoverControllerViewController.m in Sources */,
 				D1049BFF1F444215006A66EF /* ExampleReachabilityViewController.m in Sources */,
@@ -3039,7 +3090,6 @@
 				D1C72C6A1EB86F0C00C88BAE /* TangramWaterFlowLayout.m in Sources */,
 				D1049BEE1F444215006A66EF /* ExampleMagicImageDownloaderViewController.m in Sources */,
 				D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */,
-				D1C612781F4FFDF80043E495 /* WeexPagerViewController.m in Sources */,
 				D1049BE11F444215006A66EF /* ExampleMagicDynamicModel.m in Sources */,
 				D1C72C991EB87C6B00C88BAE /* QuicklyUI.m in Sources */,
 				D1049C371F444215006A66EF /* ProductSelectCollectionViewCell.m in Sources */,
@@ -3283,11 +3333,17 @@
 			baseConfigurationReference = CC53689CBB7FA71DA0B682C0 /* Pods-MagicCubeKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TA37MW247M;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YS5VMXEH8P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK/QQSDK",
+					"$(PROJECT_DIR)/MagicCubeKit/Other",
+					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK",
+					"$(PROJECT_DIR)/MagicCubeKit/Package/MagicWebViewController",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MagicCubeKit/MagicCubeHeader.pch";
 				INFOPLIST_FILE = MagicCubeKit/Info.plist;
@@ -3296,6 +3352,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK/OpenSDK1.8.0",
+					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -3356,6 +3413,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LuisX.MagicCubeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/FLAnimatedImage/FLAnimatedImage $(inherited) $(SRCROOT)/libwebp/src";
 			};
 			name = Debug;
 		};
@@ -3364,11 +3423,17 @@
 			baseConfigurationReference = 5C06E2702EE719BA762B55E9 /* Pods-MagicCubeKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TA37MW247M;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YS5VMXEH8P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK/QQSDK",
+					"$(PROJECT_DIR)/MagicCubeKit/Other",
+					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK",
+					"$(PROJECT_DIR)/MagicCubeKit/Package/MagicWebViewController",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MagicCubeKit/MagicCubeHeader.pch";
 				INFOPLIST_FILE = MagicCubeKit/Info.plist;
@@ -3377,6 +3442,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK/OpenSDK1.8.0",
+					"$(PROJECT_DIR)/MagicCubeKit/Other/SDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -3437,6 +3503,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LuisX.MagicCubeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/FLAnimatedImage/FLAnimatedImage $(inherited) $(SRCROOT)/libwebp/src";
 			};
 			name = Release;
 		};

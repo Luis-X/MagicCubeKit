@@ -9,7 +9,6 @@
 #ifndef MagicToolHeader_h
 #define MagicToolHeader_h
 
-#import "MagicCubeDefine.h"
 #import "NSDictionary+Tool.h"
 #import "NSString+Tool.h"
 #import "UIColor+Tool.h"

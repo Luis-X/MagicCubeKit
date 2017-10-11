@@ -10,7 +10,10 @@
 #import "ProductDetailMenuViewController.h"
 #import "AutoAlbumListViewController.h"
 #import "HomePageViewController.h"
-#import "WeexPagerViewController.h"
+#import "ExamplePagerViewController.h"
+#import "BalloonRefreshHeader.h"
+#import "ExampleWebPlaceholderViewController.h"
+
 @interface LaboratoryViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -46,7 +49,8 @@
     _menuArray = @[@{@"ProductDetailMenuViewController" : @"商品详情"},
                    @{@"AutoAlbumViewController" : @"自动生成图片"},
                    @{@"HomePageViewController" : @"首页列表"},
-                   @{@"WeexPagerViewController" : @"UIScrollview重用"}];
+                   @{@"WeexPagerViewController" : @"UIScrollview重用"},
+                   @{@"ExampleWebPlaceholderViewController" : @"WebView网络异常"}];
 }
 
 - (void)createMainViews{
@@ -62,6 +66,14 @@
     }];
     
     [mainTableView baseClearUnnecessaryRow];
+    
+    //下拉刷新
+    BalloonRefreshHeader *header = [BalloonRefreshHeader headerWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [mainTableView.mj_header endRefreshing];
+        });
+    }];
+    mainTableView.mj_header = header;
     
 }
 
@@ -111,9 +123,14 @@
             [self.navigationController pushViewController:homePageViewController animated:YES];
         }
         if (indexPath.row == 3) {
-            WeexPagerViewController *homePageViewController = [WeexPagerViewController new];
+            ExamplePagerViewController *homePageViewController = [ExamplePagerViewController new];
             homePageViewController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:homePageViewController animated:YES];
+        }
+        if (indexPath.row == 4) {
+            ExampleWebPlaceholderViewController *webPlaceholderViewController = [ExampleWebPlaceholderViewController new];
+            webPlaceholderViewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:webPlaceholderViewController animated:YES];
         }
     }
     

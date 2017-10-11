@@ -23,6 +23,15 @@
     self.mainTitle = @"首页";
     [self initailData];
     [self createMainViews];
+    
+    if (self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        NSLog(@"设备为 iPad");
+    }
+    
+    if (self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        NSLog(@"设备为 iPhone");
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -198,4 +207,47 @@
     
 }
 
+
+#pragma mark - 判断设备类型以及取得位置信息
+// 当width或height的regular、compact发生变化时调用
+- (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    
+    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
+    if (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) {
+        NSLog(@"Compact Width");
+    }
+    if (newCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) {
+        NSLog(@"Regular Width");
+    }
+    if (newCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
+        NSLog(@"Compact Height");
+    }
+    if (newCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular) {
+        NSLog(@"Regular Height");
+    }
+}
+
+// 当width或height的分辨率改变时调用
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    if (orientation == UIDeviceOrientationLandscapeLeft) {
+        NSLog(@"横向, 顶端, 左");
+    }
+    if (orientation == UIDeviceOrientationLandscapeRight) {
+        NSLog(@"横向, 顶端, 右");
+    }
+    if (orientation == UIDeviceOrientationPortrait) {
+        NSLog(@"竖向, 顶端, 上");
+    }
+    if (orientation == UIDeviceOrientationPortraitUpsideDown) {
+        NSLog(@"竖向, 顶端, 下");
+    }
+    if (orientation == UIDeviceOrientationUnknown) {
+        NSLog(@"方向未知");
+    }
+    NSLog(@"分辨率为 %.0f X %.0f", size.width, size.height);
+    
+}
 @end

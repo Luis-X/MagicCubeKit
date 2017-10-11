@@ -143,6 +143,7 @@ DEPENDENCIES:
   - CRToast (~> 0.0.9)
   - DateTools (~> 1.7.0)
   - FDFullscreenPopGesture
+  - FLAnimatedImage (~> 1.0.12)
   - FLEX (~> 2.4.0)
   - iCarousel (~> 1.8.3)
   - IDMPhotoBrowser (~> 1.11.3)
@@ -234,6 +235,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 7018bbeb0ee9ba38b0c18fd9a1dd5b92579ee97d
+PODFILE CHECKSUM: 6a55ec37389d9987ca4744cec5cd978cd657d60a
 
 COCOAPODS: 1.2.0

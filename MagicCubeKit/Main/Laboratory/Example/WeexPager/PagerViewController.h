@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PagerViewController : UIViewController
-
+@property (nonatomic, strong) UILabel *pageLabel;
 @end

@@ -181,7 +181,7 @@
     _firtTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _firtTableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
     _firtTableView.tableHeaderView = [self createProductParallaxHeaderView];
-    _firtTableView.estimatedRowHeight = 0.01;
+    _firtTableView.estimatedRowHeight = 5;
     _firtTableView.rowHeight = UITableViewAutomaticDimension;
     _firtTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _firtTableView.dataSource = self;

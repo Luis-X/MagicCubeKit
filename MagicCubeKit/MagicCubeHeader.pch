@@ -36,7 +36,11 @@
 #import <MJExtension.h>
 #import <UIImageView+WebCache.h>
 #import <XLForm.h>
+#import <MJRefresh.h>
 
 //封装包
 #import "UIQuicklyKit.h"
+
+//SDK
+#import <MagicCubeKit/MagicCubeKit.h>
 #endif /* MagicCubeHeader_pch */

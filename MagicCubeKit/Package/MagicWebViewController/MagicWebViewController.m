@@ -8,8 +8,9 @@
 
 #import "MagicWebViewController.h"
 #import <WebKit/WebKit.h>
-#import "MagicWebView-WebP.h"
+#import <MagicWebViewWebP/MagicWebViewWebPManager.h>
 #import "MagicActivityViewController.h"
+#import "NetworkDisconnectedView.h"
 
 @interface MagicWebViewController ()<WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
 @property (nonatomic, strong) UIProgressView *progressView;     //进度条
@@ -129,6 +130,9 @@
 // 3、页面加载失败
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"失败");
+    [NetworkDisconnectedView placeholderAddView:self.view reloadBlock:^{
+        [self webViewReload];
+    }];
 }
 
 // 3、接收到响应后，决定是否跳转
@@ -352,7 +356,8 @@
  刷新
  */
 - (void)webViewReload{
-    [self.wkWebView reload];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_requestURLString]];
+    [self.wkWebView loadRequest:request];
 }
 
 

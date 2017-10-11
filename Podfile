@@ -9,6 +9,7 @@ pod 'Reachability', '~> 3.2'				# 网络监听
 pod 'SDWebImage', '~>4.0.0’				# 加载图片
 pod ‘SDWebImage/WebP’					# 图片WebP 
 pod ‘SDWebImage/GIF’					# 图片GIF
+pod 'FLAnimatedImage', '~> 1.0.12'			# 显示GIF
 pod 'DateTools', '~> 1.7.0'				# 日期工具
 pod 'JLRoutes', '~> 2.0'				# 路由跳转
 pod 'WebViewJavascriptBridge', '~> 6.0.2'	        # JS交互
@@ -42,5 +43,6 @@ pod 'ShareSDK3/ShareSDKPlatforms/DingTalk'		# 钉钉分享
 pod 'XLForm', '~> 3.2.0'				# 快速创建列表
 pod 'ActionSheetPicker-3.0', '~> 2.2.0'			# 弹框
 pod 'M13ProgressSuite', '~> 1.2.9'			# 进度条指示器
+pod 'MJRefresh', '~> 3.1.12'				# 下拉刷新
 end
 

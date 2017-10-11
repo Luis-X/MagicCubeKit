@@ -17,24 +17,39 @@
 }
 
 
+
+
+
+
+
 /**
  *  ViewController声明周期
  
- 一、     viewDidLoad             第一次程序加载视图(只加载一次)
- 二、     viewWillAppear          视图即将显示(每次显示都会调用)
- 三、     viewDidAppear           视图已经显示
- 四、     viewWillDisappear       视图即将消失
- 五、     viewDidDisappear        视图已经消失
+ 一、     init                    初始化
+ 二、     loadView                加载视图资源并初始化视图
+ 三、     viewDidLoad             第一次程序加载视图(只加载一次)
+ 四、     viewWillAppear          视图即将显示(每次显示都会调用)
+ 五、
+ 六、
+ 七、     viewDidAppear           视图已经显示
+ 八、     viewWillDisappear       视图即将消失
+ 九、     viewDidDisappear        视图已经消失
+ 十、     viewDidUnload
+ 十一、    dealloc
  
  */
 
+/**
+ *  一、初始化
+ *
+ */
 - (instancetype)init{
     
     self = [super init];
     if (self) {
         [self createMainView];
         NSString *showString = @"init   初始化！";
-        NSLog(@"%@", showString);
+        NSLog(@"init   初始化！");
         [self updateMainTextViewString:showString];
     }
     return self;
@@ -42,8 +57,7 @@
 }
 
 /**
- *
- *  加载视图资源并初始化视图
+ *  二、加载视图资源并初始化视图
  *
  */
 - (void)loadView{
@@ -56,7 +70,7 @@
 }
 
 /**
- *  一、第一次程序加载视图
+ *  三、第一次程序加载视图
  *
  *  只加载一次
  *  用途: 布局初始化视图,初始化资源
@@ -75,7 +89,7 @@
 }
 
 /**
- *  二、视图即将显示
+ *  四、视图即将显示
  *
  *  每一次视图显示都会被调用
  */
@@ -89,7 +103,35 @@
 }
 
 /**
- *  三、视图已经显示
+ *  五、视图即将约束子视图
+ *
+ *
+ */
+- (void)viewWillLayoutSubviews{
+    
+    [super viewWillLayoutSubviews];
+    NSString *showString = @"viewWillLayoutSubviews   视图即将约束子视图！";
+    NSLog(@"%@", showString);
+    [self updateMainTextViewString:showString];
+    
+}
+
+/**
+ *  六、视图已经约束子视图
+ *
+ *  常用于修改frame
+ */
+- (void)viewDidLayoutSubviews{
+    
+    [super viewDidLayoutSubviews];
+    NSString *showString = @"viewWillLayoutSubviews   视图已经约束子视图！";
+    NSLog(@"%@", showString);
+    [self updateMainTextViewString:showString];
+    
+}
+
+/**
+ *  七、视图已经显示
  *
  *
  */
@@ -103,7 +145,7 @@
 }
 
 /**
- *  四、视图即将消失
+ *  八、视图即将消失
  *
  *
  */
@@ -118,7 +160,7 @@
 
 
 /**
- *  五、视图已经消失
+ *  九、视图已经消失
  *
  *
  */
@@ -131,8 +173,21 @@
     
 }
 
+- (void)viewDidUnload{
+    
+    NSString *showString = @"iOS6以后任何情况都不会被触发，所以苹果在文档中建议，应该将回收内存的相关操作移到另一个回调函数：didReceiveMemoryWarning中！";
+    NSLog(@"%@", showString);
+    [self updateMainTextViewString:showString];
+    
+}
 
-
+- (void)dealloc{
+    
+    NSString *showString = @"dealloc   回收内存！";
+    NSLog(@"%@", showString);
+    [self updateMainTextViewString:showString];
+    
+}
 
 /**
  *  当系统内存过低时,会发起警告信息

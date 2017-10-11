@@ -1,0 +1,6 @@
+framework module MagicCubeKit {
+  umbrella header "MagicCubeKit.h"
+
+  export *
+  module * { export * }
+}

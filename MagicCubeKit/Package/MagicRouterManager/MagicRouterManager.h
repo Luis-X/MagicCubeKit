@@ -33,11 +33,11 @@
 
 @interface MagicRouterManager : NSObject
 // 协议
-#define R_HOST @"tiantian://"
+#define R_SCHEME @"tiantian://"
 // 普通页面URL
-#define R_URL_NORMAL(page) [NSString stringWithFormat:@"%@%@", R_HOST, (page)]
+#define R_URL_NORMAL(page) [NSString stringWithFormat:@"%@%@", R_SCHEME, (page)]
 // web页面URL
-#define R_URL_WEB(link) [NSString stringWithFormat:@"%@web?link=%@", R_HOST, (link)]
+#define R_URL_WEB(link) [NSString stringWithFormat:@"%@web?link=%@", R_SCHEME, (link)]
 
 + (void)showAnyViewControllerWithRouterURL:(NSString *)routerURL data:(NSDictionary *)data addedNavigationController:(UINavigationController *)navigationController;
 
