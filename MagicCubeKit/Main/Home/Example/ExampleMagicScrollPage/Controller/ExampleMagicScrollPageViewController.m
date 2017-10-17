@@ -9,8 +9,6 @@
 #import "ExampleMagicScrollPageViewController.h"
 #import "MagicScrollPage.h"
 
-#define FX_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-#define FX_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 @interface ExampleMagicScrollPageViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @end

@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target "MagicCubeKit" do
 platform :ios, ‘8.0’
 pod 'CocoaLumberjack', '~> 3.2.0'			# 日志
-pod 'Masonry', '~> 1.0.1'				# autolayout
+pod 'Masonry', '~> 1.0.1’				# autolayout
 pod 'AFNetworking', '~> 3.1.0'				# 网络请求
 pod 'Reachability', '~> 3.2'				# 网络监听	
 pod 'SDWebImage', '~>4.0.0’				# 加载图片
@@ -44,5 +44,6 @@ pod 'XLForm', '~> 3.2.0'				# 快速创建列表
 pod 'ActionSheetPicker-3.0', '~> 2.2.0'			# 弹框
 pod 'M13ProgressSuite', '~> 1.2.9'			# 进度条指示器
 pod 'MJRefresh', '~> 3.1.12'				# 下拉刷新
+pod 'MagicScrollPage', '~> 0.0.1'			# 分页
 end
 

@@ -1,5 +1,5 @@
 //
-//  MagicScrollPageRefreshHeader.h
+//  MagicScrollPageRefreshFooter.h
 //  MagicCubeKit
 //
 //  Created by LuisX on 2017/6/8.
@@ -7,7 +7,8 @@
 //
 
 #import <MJRefresh/MJRefresh.h>
+#import <Masonry/Masonry.h>
 
-@interface MagicScrollPageRefreshHeader : MJRefreshHeader
+@interface MagicScrollPageRefreshFooter : MJRefreshBackFooter
 
 @end

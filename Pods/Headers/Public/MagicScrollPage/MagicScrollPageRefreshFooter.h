@@ -1,0 +1,1 @@
+../../../MagicScrollPage/MagicScrollPageExample/MagicScrollPage/MagicScrollPageRefreshFooter.h

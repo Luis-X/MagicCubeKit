@@ -71,6 +71,9 @@ PODS:
     - libwebp/core
   - libwebp/webp (0.6.0)
   - M13ProgressSuite (1.2.9)
+  - MagicScrollPage (0.0.1):
+    - Masonry (~> 1.0.1)
+    - MJRefresh (~> 3.1.12)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
@@ -151,6 +154,7 @@ DEPENDENCIES:
   - JMRoundedCorner (from `https://github.com/raozhizhen/JMRoundedCorner.git`, tag `1.9.6`)
   - LazyScroll (~> 0.0.2)
   - M13ProgressSuite (~> 1.2.9)
+  - MagicScrollPage (~> 0.0.1)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
@@ -212,6 +216,7 @@ SPEC CHECKSUMS:
   LazyScroll: 614022689b8e3b93c7bbe268c1a47b76e4265941
   libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
   M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
+  MagicScrollPage: 45560745f106fd2bd17ce62737282fe12b1975b9
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -235,6 +240,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 6a55ec37389d9987ca4744cec5cd978cd657d60a
+PODFILE CHECKSUM: e17c92e70dc349cd0101a5caf4bc42604a8d0203
 
 COCOAPODS: 1.2.0

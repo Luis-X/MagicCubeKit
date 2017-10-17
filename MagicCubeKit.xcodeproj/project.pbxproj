@@ -159,13 +159,10 @@
 		D15B873E1F73AC76003F61B3 /* UILabel+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B873D1F73AC76003F61B3 /* UILabel+Tool.m */; };
 		D15B87411F73ACB5003F61B3 /* UIView+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87401F73ACB5003F61B3 /* UIView+Tool.m */; };
 		D1643A781EB96FBB00964594 /* MagicRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1643A771EB96FBB00964594 /* MagicRouterManager.m */; };
-		D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */; };
-		D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */; };
 		D169A6F31F2B1E2C00209C68 /* MagicFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D169A6F21F2B1E2C00209C68 /* MagicFileManager.m */; };
 		D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1707A9D1ED7CB260024FC83 /* tabbar_0@2x.png */; };
 		D1707AA01ED7CB400024FC83 /* LuisX.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D1707A9F1ED7CB400024FC83 /* LuisX.JPG */; };
 		D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */; };
-		D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */; };
 		D17E18431F79042500C10114 /* MagicCubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E18421F79042500C10114 /* MagicCubeKit.framework */; };
 		D1853CF11F0A7E0E00CA2B19 /* jiawen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */; };
 		D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
@@ -209,7 +206,6 @@
 		D190AA371F3C407C00B180A0 /* QuicklyAsyncDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C911EB87C6B00C88BAE /* QuicklyAsyncDisplay.m */; };
 		D190AA3A1F3C407C00B180A0 /* MagicFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D169A6F21F2B1E2C00209C68 /* MagicFileManager.m */; };
 		D190AA3C1F3C407C00B180A0 /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
-		D190AA3F1F3C407C00B180A0 /* MagicScrollPageRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */; };
 		D190AA431F3C407C00B180A0 /* UIQuicklyKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */; };
 		D190AA441F3C407C00B180A0 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607A21F21B07C00CE8E79 /* RouterManager.m */; };
 		D190AA451F3C407C00B180A0 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607A51F21B08700CE8E79 /* ShareManager.m */; };
@@ -236,12 +232,10 @@
 		D190AA721F3C407C00B180A0 /* BaseWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A98E1C1F28A78400EDE64A /* BaseWebView.m */; };
 		D190AA761F3C407C00B180A0 /* TangramDefaultItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C3B1EB86F0C00C88BAE /* TangramDefaultItemModel.m */; };
 		D190AA771F3C407C00B180A0 /* MagicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DF011A1F32FA4B009A7901 /* MagicWebViewController.m */; };
-		D190AA781F3C407C00B180A0 /* MagicScrollPageRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */; };
 		D190AA7A1F3C407C00B180A0 /* TangramStickyBottomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C301EB86F0C00C88BAE /* TangramStickyBottomLayout.m */; };
 		D190AA7D1F3C407C00B180A0 /* TangramSingleColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C2E1EB86F0C00C88BAE /* TangramSingleColumnLayout.m */; };
 		D190AA7E1F3C407C00B180A0 /* TangramDefaultDataSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C151EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m */; };
 		D190AA7F1F3C407C00B180A0 /* TangramFixLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C221EB86F0C00C88BAE /* TangramFixLayout.m */; };
-		D190AA821F3C407C00B180A0 /* MagicScrollPage.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */; };
 		D190AA831F3C407C00B180A0 /* TangramFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C261EB86F0C00C88BAE /* TangramFlowLayout.m */; };
 		D190AA841F3C407C00B180A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D118169D1EB2EFB5004C238A /* main.m */; };
 		D190AA851F3C407C00B180A0 /* TangramWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72C381EB86F0C00C88BAE /* TangramWaterFlowLayout.m */; };
@@ -644,18 +638,12 @@
 		D15B87431F73AE01003F61B3 /* MagicToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicToolHeader.h; sourceTree = "<group>"; };
 		D1643A761EB96FBB00964594 /* MagicRouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicRouterManager.h; sourceTree = "<group>"; };
 		D1643A771EB96FBB00964594 /* MagicRouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicRouterManager.m; sourceTree = "<group>"; };
-		D16665E81EE92F8600B84D1B /* MagicScrollPageRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPageRefreshFooter.h; sourceTree = "<group>"; };
-		D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPageRefreshFooter.m; sourceTree = "<group>"; };
-		D16665EB1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPageRefreshHeader.h; sourceTree = "<group>"; };
-		D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPageRefreshHeader.m; sourceTree = "<group>"; };
 		D169A6F11F2B1E2C00209C68 /* MagicFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicFileManager.h; sourceTree = "<group>"; };
 		D169A6F21F2B1E2C00209C68 /* MagicFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicFileManager.m; sourceTree = "<group>"; };
 		D1707A9D1ED7CB260024FC83 /* tabbar_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_0@2x.png"; sourceTree = "<group>"; };
 		D1707A9F1ED7CB400024FC83 /* LuisX.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LuisX.JPG; sourceTree = "<group>"; };
 		D17DE7A51ECEF61400CE48D4 /* MagicIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicIconButton.h; sourceTree = "<group>"; };
 		D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicIconButton.m; sourceTree = "<group>"; };
-		D17DE7A81ECEF63B00CE48D4 /* MagicScrollPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicScrollPage.h; sourceTree = "<group>"; };
-		D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicScrollPage.m; sourceTree = "<group>"; };
 		D17E18421F79042500C10114 /* MagicCubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicCubeKit.framework; sourceTree = "<group>"; };
 		D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jiawen.gpx; sourceTree = "<group>"; };
 		D187ACE71ED3DB5800E8C4BA /* MagicTimerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicTimerButton.h; sourceTree = "<group>"; };
@@ -2021,19 +2009,6 @@
 			path = MagicImageDownloader;
 			sourceTree = "<group>";
 		};
-		D148265E1ECED70000FCB35C /* MagicScrollPage */ = {
-			isa = PBXGroup;
-			children = (
-				D17DE7A81ECEF63B00CE48D4 /* MagicScrollPage.h */,
-				D17DE7A91ECEF63B00CE48D4 /* MagicScrollPage.m */,
-				D16665E81EE92F8600B84D1B /* MagicScrollPageRefreshFooter.h */,
-				D16665E91EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m */,
-				D16665EB1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.h */,
-				D16665EC1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m */,
-			);
-			path = MagicScrollPage;
-			sourceTree = "<group>";
-		};
 		D14E014E1F41472C00145DF2 /* LogManager(日志) */ = {
 			isa = PBXGroup;
 			children = (
@@ -2542,7 +2517,6 @@
 				D1B276571F17518300874A7E /* MagicImagePicker */,
 				D187ACE61ED3DB4400E8C4BA /* MagicTimerButton */,
 				D17DE7A41ECEF5CA00CE48D4 /* MagicIconButton */,
-				D148265E1ECED70000FCB35C /* MagicScrollPage */,
 				D13E20051ECC6B0A00472533 /* MagicImageDownloader */,
 				D1B2D5A11ECAA9E600EA7146 /* MagicNetworkManager */,
 				D11993F61EC2F2D300841273 /* MagicPermissionManager */,
@@ -3017,7 +2991,6 @@
 				D1049C331F444215006A66EF /* ProductRecommendCollectionViewCell.m in Sources */,
 				D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */,
 				D1049C2E1F444215006A66EF /* ProductOnlineStatusTableViewCell.m in Sources */,
-				D16665EA1EE92F8600B84D1B /* MagicScrollPageRefreshFooter.m in Sources */,
 				D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */,
 				D15607A31F21B07C00CE8E79 /* RouterManager.m in Sources */,
 				D1193F151F72648E0041AFF6 /* MagicShareParameter.m in Sources */,
@@ -3065,7 +3038,6 @@
 				D1C72C6B1EB86F0C00C88BAE /* TangramDefaultItemModel.m in Sources */,
 				D1DF011B1F32FA4B009A7901 /* MagicWebViewController.m in Sources */,
 				D15B873E1F73AC76003F61B3 /* UILabel+Tool.m in Sources */,
-				D16665ED1EE92FA000B84D1B /* MagicScrollPageRefreshHeader.m in Sources */,
 				D1193F141F72648E0041AFF6 /* MagicShareManager.m in Sources */,
 				D1049BE51F444215006A66EF /* EqualSpaceFlowLayoutEvolve.m in Sources */,
 				D1049C301F444215006A66EF /* ProductOptionTableViewCell.m in Sources */,
@@ -3077,7 +3049,6 @@
 				D1C72C591EB86F0C00C88BAE /* TangramDefaultDataSourceHelper.m in Sources */,
 				D1C72C5F1EB86F0C00C88BAE /* TangramFixLayout.m in Sources */,
 				D1049BEF1F444215006A66EF /* ExampleMagicLoadingViewController.m in Sources */,
-				D17DE7AA1ECEF63B00CE48D4 /* MagicScrollPage.m in Sources */,
 				D1C72C611EB86F0C00C88BAE /* TangramFlowLayout.m in Sources */,
 				D1049BE91F444215006A66EF /* ExampleMagicDynamicTableViewCell.m in Sources */,
 				D1049BE01F444215006A66EF /* ExampleMagicDynamicViewController.m in Sources */,
@@ -3156,7 +3127,6 @@
 				D190AA371F3C407C00B180A0 /* QuicklyAsyncDisplay.m in Sources */,
 				D190AA3A1F3C407C00B180A0 /* MagicFileManager.m in Sources */,
 				D190AA3C1F3C407C00B180A0 /* MagicTimerButton.m in Sources */,
-				D190AA3F1F3C407C00B180A0 /* MagicScrollPageRefreshFooter.m in Sources */,
 				D190AA431F3C407C00B180A0 /* UIQuicklyKit.m in Sources */,
 				D190AA441F3C407C00B180A0 /* RouterManager.m in Sources */,
 				D190AA451F3C407C00B180A0 /* ShareManager.m in Sources */,
@@ -3183,12 +3153,10 @@
 				D190AA721F3C407C00B180A0 /* BaseWebView.m in Sources */,
 				D190AA761F3C407C00B180A0 /* TangramDefaultItemModel.m in Sources */,
 				D190AA771F3C407C00B180A0 /* MagicWebViewController.m in Sources */,
-				D190AA781F3C407C00B180A0 /* MagicScrollPageRefreshHeader.m in Sources */,
 				D190AA7A1F3C407C00B180A0 /* TangramStickyBottomLayout.m in Sources */,
 				D190AA7D1F3C407C00B180A0 /* TangramSingleColumnLayout.m in Sources */,
 				D190AA7E1F3C407C00B180A0 /* TangramDefaultDataSourceHelper.m in Sources */,
 				D190AA7F1F3C407C00B180A0 /* TangramFixLayout.m in Sources */,
-				D190AA821F3C407C00B180A0 /* MagicScrollPage.m in Sources */,
 				D190AA831F3C407C00B180A0 /* TangramFlowLayout.m in Sources */,
 				D190AA841F3C407C00B180A0 /* main.m in Sources */,
 				D190AA851F3C407C00B180A0 /* TangramWaterFlowLayout.m in Sources */,
