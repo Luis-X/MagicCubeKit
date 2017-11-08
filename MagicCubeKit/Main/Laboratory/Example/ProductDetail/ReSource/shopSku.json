@@ -2,214 +2,151 @@
     "count": 0,
     "data": {
         "shop": {
-            "gmtCreate": 1470794184000,
-            "gmtModified": 1490147396000,
+            "gmtCreate": 1471515348000,
+            "gmtModified": 1505899177000,
             "headImage": "",
-            "id": 6015,
+            "id": 6306,
             "isProbation": true,
             "isVip": 0,
             "membersCount": 0,
-            "name": "JOY的杂货",
+            "name": "Sweet2202",
             "paid": true,
-            "parentId": 6015,
-            "payOrderId": 2393,
+            "parentId": 4479,
+            "payOrderId": -1,
             "position": 0,
-            "source": "Joy的战队",
-            "userId": 2554919,
+            "source": "",
+            "userId": 2669403,
             "vipShopId": 0
         },
-        "isSelect": false,
-        "pageName": "itemDetail",
-        "productDeatilParam": {
-            "归属": "暂无信息",
-            "类别": "唇部彩妆",
-            "发货地": "达人店1号仓",
-            "品牌国籍": "暂无信息",
-            "规格": "5.0ml",
-            "英文名": "无"
-        },
-        "showCommission": true,
-        "commentsNum": 0,
-        "skuList": [{
-                    "classify": "选择规格",
-                    "value": [{
-                              "name": "5.0ml",
-                              "skuId": 147997
-                              }]
-                    }, {
-                    "classify": "选择颜色",
-                    "value": [{
-                              "name": "01 淑女雅致",
-                              "skuId": 147992
-                              }, {
-                              "name": "02 名媛正红",
-                              "skuId": 147993
-                              }, {
-                              "name": "03 芭比洋橙",
-                              "skuId": 147995
-                              }, {
-                              "name": "04 亮采珊瑚",
-                              "skuId": 147996
-                              }, {
-                              "name": "05 豆沙裸粉",
-                              "skuId": 147997
-                              }, {
-                              "name": "06 半糖蜜桃",
-                              "skuId": 147998
-                              }]
-                    }],
-        "type": "3",
-        "addCart": true,
+        "skuList": [],
         "shopProductId": 0,
+        "skuEnsures": [{
+                       "zhName": "中华保险承保",
+                       "picUrl": "https://cdn1.showjoy.com/images/df/df60338388584e9ea5524becf73740b0.png"
+                       }, {
+                       "zhName": "正品保障",
+                       "picUrl": "https://cdn1.showjoy.com/images/5b/5b059a5e953248e69d8581e2faf3e232.png"
+                       }, {
+                       "zhName": "品牌授权",
+                       "picUrl": "https://cdn1.showjoy.com/images/5f/5ff087aee707400b942ac331583d0ad7.png"
+                       }, {
+                       "zhName": "9天无理由退换货",
+                       "picUrl": "https://cdn1.showjoy.com/images/c3/c36eebb752a345d8834b80a558b186de.png"
+                       }],
+        "shopName": "Sweet2202",
+        "discount": "7.44",
         "recommend": [{
-                      "id": "143511",
-                      "price": "75.00",
-                      "name": "得鲜 【绝美秀智色】按压式唇膏口红2g",
-                      "image": "https://cdn1.showjoy.com/images/af/af6dbb901da34c29bbeef2cae4927b6c.png",
-                      "discount": "4.70"
+                      "image": "//cdn1.showjoy.com/images/93/93ad2efb92b04f09a8696e0a2285d740.jpg",
+                      "price": "65.00",
+                      "name": "达人店 设计浮雕创意巧克力",
+                      "discount": "6.00",
+                      "id": "161886"
                       }, {
-                      "id": "155844",
-                      "price": "99.00",
-                      "name": "雅诗兰黛 倾慕晶彩唇膏【体验装】1.2g",
-                      "image": "https://cdn1.showjoy.com/images/61/61358835ba3340e99eb3b8d5589bc641.png",
-                      "discount": "4.90"
+                      "image": "//cdn1.showjoy.com/images/24/2469ccd3be4a45e1bed985a32d50013e.jpg",
+                      "price": "65.00",
+                      "name": "达人店 设计浮雕创意巧克力",
+                      "discount": "6.00",
+                      "id": "163488"
                       }, {
-                      "id": "52643",
-                      "price": "245.00",
-                      "name": "迪奥 魅惑润唇膏3.5g",
-                      "image": "https://cdn1.showjoy.com/images/03/03ccc12123bb4bac8679113ebd21959f.png",
-                      "discount": "6.30"
+                      "image": "//cdn1.showjoy.com/images/c1/c135cd56fe654cebac654d76fe5dfdd9.jpg",
+                      "price": "65.00",
+                      "name": "达人店 设计浮雕创意巧克力",
+                      "discount": "6.00",
+                      "id": "161887"
                       }, {
-                      "id": "147499",
-                      "price": "75.00",
-                      "name": "迪奥 【断货N久，难得一见】魅惑丰唇蜜超值中样2ml",
-                      "image": "https://cdn1.showjoy.com/images/92/92f60502fb9c414aa679d4cfa6dce220.png",
-                      "discount": "6.00"
+                      "image": "//cdn1.showjoy.com/images/5e/5e45c2e16d0c4e409de17655dc50c5e6.jpg",
+                      "price": "65.00",
+                      "name": "达人店 设计浮雕创意巧克力",
+                      "discount": "6.00",
+                      "id": "161889"
                       }, {
-                      "id": "28288",
-                      "price": "245.00",
-                      "name": "迪奥 魅惑润唇膏3.5g",
-                      "image": "https://cdn1.showjoy.com/images/35/35ce3d34b10f449fb968d3011f65d9fa.png",
-                      "discount": "6.30"
+                      "image": "//cdn1.showjoy.com/images/a5/a50daa4d69414c6488f1198f11b39ad2.jpg",
+                      "price": "59.00",
+                      "name": "星星向荣 【红枣加核桃 营养美味都不少】特级精选枣夹核桃380g",
+                      "discount": "6.60",
+                      "id": "163100"
                       }, {
-                      "id": "51619",
-                      "price": "290.00",
-                      "name": "香奈儿 炫亮魅力唇膏丝绒系列 【不退不换】3.5g",
-                      "image": "https://cdn1.showjoy.com/images/89/89807760a7ac42f29c85ffff2e2501ff.png",
-                      "discount": "9.10"
+                      "image": "//cdn1.showjoy.com/images/a7/a7cd92a1885a4fb9a90d7a1f0f9f1294.png",
+                      "price": "89.00",
+                      "name": "白丽人 比利时进口白丽人贝壳巧克力 250g/盒",
+                      "discount": "6.01",
+                      "id": "151347"
                       }],
-        "discount": "5.4",
+        "shelveCount": 349934,
+        "type": "3",
         "skuCommission": {
-            "actPrice": 59,
+            "actPrice": 43.9,
             "commissionRate": 0.1,
-            "endTime": 1498629053000,
+            "endTime": 1508547599000,
             "isDelete": 0,
             "limitCommissionRate": 0,
             "limitInventory": 0,
+            "limitUseCoupon": false,
             "skuId": 0,
-            "specialSell": false,
-            "startTime": 1498031985000,
-            "type": 0
+            "specialSell": true,
+            "startTime": 1508461200000,
+            "type": 1
         },
-        "isFromHome": false,
-        "byStages": "该商品最多可享12期免息分期购",
-        "price": "69000.00",
-        "shopId": 6015,
+        "pageName": "itemDetail",
         "isSpecialSell": true,
-        "shopName": "JOY的杂货",
-        "item": {
-            "zhName": "臻彩持久液体口红",
-            "spuId": 169842,
-            "image": "http://cdn1.showjoy.com/images/93/93fba31cc523408f9694533067713351.png",
-            "brandName": "菲奥娜",
-            "discount": "5.4",
-            "id": 147997,
-            "unit": "ml",
-            "price": 69,
-            "originalPrice": 128,
-            "inventory": 18,
-            "productTitle": "[菲奥娜]臻彩持久液体口红05 豆沙裸粉5ml",
-            "volume": 5,
-            "images": [],
-            "isHaiTao": false,
-            "brandImage": "http://cdn1.showjoy.com/images/ba/babd340038ba477e97a4ae432a795902.png",
-            "introduction": "产品介绍：演绎魅力光泽，惊艳的光感显色让双唇整日都能锁住馥郁色彩，魅色持久绽放。轻盈质地，滋润保湿，一抹丝滑，上妆后紧锁水润，双唇凸显水光感别漾动人。倾斜弧度唇刷，有效遮盖唇纹，在刷头的勾勒下，一触丰唇，青春傲唇，塑形由此开始。"
-        },
+        "price": 43.9,
+        "commission": "4.39",
+        "maxCouponAmount": 0,
+        "shopId": 6306,
+        "byStages": "最多可享12期免息分期购",
         "tagSkus": [{
-                    "discount": "5.4",
-                    "id": 147992,
-                    "inventory": 20,
-                    "isCanSelect": true,
-                    "originalPrice": "128.00",
-                    "price": "69.00",
-                    "tagMaps": {
-                    "颜色": "01 淑女雅致"
-                    },
-                    "unit": "ml",
-                    "volume": 5
-                    }, {
-                    "discount": "5.4",
-                    "id": 147993,
-                    "inventory": 17,
-                    "isCanSelect": true,
-                    "originalPrice": "128.00",
-                    "price": "69.00",
-                    "tagMaps": {
-                    "颜色": "02 名媛正红"
-                    },
-                    "unit": "ml",
-                    "volume": 5
-                    }, {
-                    "discount": "5.4",
-                    "id": 147995,
-                    "inventory": 18,
-                    "isCanSelect": true,
-                    "originalPrice": "128.00",
-                    "price": "69.00",
-                    "tagMaps": {
-                    "颜色": "03 芭比洋橙"
-                    },
-                    "unit": "ml",
-                    "volume": 5
-                    }, {
-                    "discount": "5.4",
-                    "id": 147996,
-                    "inventory": 17,
-                    "isCanSelect": true,
-                    "originalPrice": "128.00",
-                    "price": "69.00",
-                    "tagMaps": {
-                    "颜色": "04 亮采珊瑚"
-                    },
-                    "unit": "ml",
-                    "volume": 5
-                    }, {
-                    "discount": "5.4",
-                    "id": 147997,
-                    "inventory": 18,
-                    "isCanSelect": true,
-                    "originalPrice": "128.00",
-                    "price": "69.00",
-                    "tagMaps": {
-                    "颜色": "05 豆沙裸粉"
-                    },
-                    "unit": "ml",
-                    "volume": 5
-                    }, {
-                    "discount": "5.4",
-                    "id": 147998,
-                    "inventory": 22,
-                    "isCanSelect": true,
-                    "originalPrice": "128.00",
-                    "price": "69.00",
-                    "tagMaps": {
-                    "颜色": "06 半糖蜜桃"
-                    },
-                    "unit": "ml",
-                    "volume": 5
+                    "discount": "8.1",
+                    "id": 152367,
+                    "inventory": 45,
+                    "isCanSelect": false,
+                    "originalPrice": "59.00",
+                    "price": "48.00",
+                    "tagMaps": {},
+                    "unit": "null",
+                    "volume": 0
                     }],
+        "commentsNum": 0,
+        "nowDate": 1508470153576,
+        "item": {
+            "image": "//cdn1.showjoy.com/images/d3/d3be0631ee2a4c9eb586485be30379f0.png",
+            "images": ["http://cdn1.showjoy.com/images/ff/ff3344f999ab4d1a98c422e6825aff7e.png"],
+            "brandName": "如胜",
+            "originalPrice": 59,
+            "brandImage": "http://cdn1.showjoy.com/images/25/25409126cda047258ce379980c511a48.png",
+            "discount": "7.44",
+            "skuSubtitle": "",
+            "inventory": 45,
+            "productTitle": "【如胜】乒乓夹心硬糖 1kg装",
+            "volume": 0,
+            "isHaiTao": false,
+            "unit": "null",
+            "zhName": "乒乓夹心硬糖 1kg装",
+            "price": 43.9,
+            "spuId": 175184,
+            "id": 152367,
+            "introduction": "产品介绍：如胜综合水果硬糖采用新鲜果浆夹心，好吃易不发胖，爆浆感颤动您的味蕾。品牌: ROSHEN/如胜系列配料表: 葡萄糖浆，浓缩果汁（草莓，菠萝，梨）柠檬酸，乳酸，白砂糖储藏方法: 730保质期: 730产品: 水果糖净含量: 1000g包装方式: 包装包装种类乌克兰口味: 综合果味."
+        },
+        "addCart": true,
+        "isSelect": false,
+        "isFreezeSell": false,
+        "cartCount": 22,
+        "isFromHome": false,
+        "saleInfo": {
+            "endTime": 1508547599000,
+            "price": 43.9,
+            "startTime": 1508461200000
+        },
+        "productDeatilParam": {
+            "品牌国籍": "暂无信息",
+            "发货地": "达人店2号仓",
+            "归属": "暂无信息",
+            "规格": "无",
+            "类别": "糖巧果干",
+            "英文名": "无"
+        },
+        "salesPromotion": [],
         "comment": [],
-        "commission": "6.90"
+        "showCommission": true
     },
     "isRedirect": 0,
     "isSuccess": 1,

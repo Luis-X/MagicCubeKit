@@ -10,5 +10,5 @@
 #import "ProductConstant.h"
 #import "ProductDetailModel.h"
 @interface ProductSelectCollectionViewCell : UICollectionViewCell
-- (void)updateCellDataWithValueModel:(Value *)valueModel selectedSkuId:(NSInteger)selectedSkuId;
+- (void)updateCellDataWithValueModel:(ProductValue *)valueModel selectedSkuId:(NSInteger)selectedSkuId;
 @end

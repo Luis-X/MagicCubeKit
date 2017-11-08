@@ -134,6 +134,7 @@
 		D1193F161F72648E0041AFF6 /* MagicShareQQ.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F101F72648E0041AFF6 /* MagicShareQQ.m */; };
 		D1193F171F72648E0041AFF6 /* MagicShareWeChat.m in Sources */ = {isa = PBXBuildFile; fileRef = D1193F131F72648E0041AFF6 /* MagicShareWeChat.m */; };
 		D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D11993F81EC2F2F100841273 /* MagicPermissionManager.m */; };
+		D119B5CC1F98A39300C4368C /* net_helper.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D119B5CB1F98A39300C4368C /* net_helper.bundle */; };
 		D124D8671F26F05A0072272C /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8661F26F05A0072272C /* CommonTool.m */; };
 		D124D87A1F2721DF0072272C /* MagicUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D124D8791F2721DF0072272C /* MagicUserDefaults.m */; };
 		D130CF761F74E1D6007B0243 /* ExamplePagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D130CF751F74E1D6007B0243 /* ExamplePagerViewController.m */; };
@@ -326,6 +327,8 @@
 		D1C72CC61EB8856000C88BAE /* SJResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBA1EB8856000C88BAE /* SJResponseViewController.m */; };
 		D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */; };
 		D1C72CC91EB8934000C88BAE /* UIQuicklyKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */; };
+		D1CC9C661FB299F500A41518 /* ExampleWebPageAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CC9C651FB299F500A41518 /* ExampleWebPageAlertViewController.m */; };
+		D1CC9C691FB29AA900A41518 /* WebPageAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CC9C681FB29AA900A41518 /* WebPageAlertManager.m */; };
 		D1D015291F57FC4800DF8D18 /* MagicWebViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D1D015281F57FC4800DF8D18 /* MagicWebViewUI.bundle */; };
 		D1D258051EE1023800A7CADD /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D258041EE1023800A7CADD /* Reveal.framework */; };
 		D1DF011B1F32FA4B009A7901 /* MagicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DF011A1F32FA4B009A7901 /* MagicWebViewController.m */; };
@@ -586,6 +589,7 @@
 		D11993F81EC2F2F100841273 /* MagicPermissionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicPermissionManager.m; sourceTree = "<group>"; };
 		D11994011EC3022800841273 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		D11994031EC3022D00841273 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D119B5CB1F98A39300C4368C /* net_helper.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = net_helper.bundle; sourceTree = "<group>"; };
 		D124D8651F26F05A0072272C /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		D124D8661F26F05A0072272C /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		D124D8781F2721DF0072272C /* MagicUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicUserDefaults.h; sourceTree = "<group>"; };
@@ -775,6 +779,10 @@
 		D1C72CBB1EB8856000C88BAE /* SJScreenShortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJScreenShortManager.h; sourceTree = "<group>"; };
 		D1C72CBC1EB8856000C88BAE /* SJScreenShortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJScreenShortManager.m; sourceTree = "<group>"; };
 		D1C72CC81EB8934000C88BAE /* UIQuicklyKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIQuicklyKit.m; sourceTree = "<group>"; };
+		D1CC9C641FB299F500A41518 /* ExampleWebPageAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleWebPageAlertViewController.h; sourceTree = "<group>"; };
+		D1CC9C651FB299F500A41518 /* ExampleWebPageAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleWebPageAlertViewController.m; sourceTree = "<group>"; };
+		D1CC9C671FB29AA900A41518 /* WebPageAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPageAlertManager.h; sourceTree = "<group>"; };
+		D1CC9C681FB29AA900A41518 /* WebPageAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageAlertManager.m; sourceTree = "<group>"; };
 		D1D015281F57FC4800DF8D18 /* MagicWebViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MagicWebViewUI.bundle; sourceTree = "<group>"; };
 		D1D258041EE1023800A7CADD /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		D1DF01191F32FA4B009A7901 /* MagicWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicWebViewController.h; sourceTree = "<group>"; };
@@ -1344,6 +1352,7 @@
 		D1049B5A1F444215006A66EF /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				D1CC9C5D1FB299B000A41518 /* WebPageAlertView */,
 				D10FC4BD1F7A5EAF002F0648 /* WebViewPlaceholder */,
 				D1C612751F4FFDED0043E495 /* WeexPager */,
 				D1049B5B1F444215006A66EF /* AutoAlbum */,
@@ -1868,6 +1877,7 @@
 		D11816DD1EB2F2D5004C238A /* Resource(资源) */ = {
 			isa = PBXGroup;
 			children = (
+				D119B2301F989FC700C4368C /* HTML */,
 				D11816DE1EB2F2D5004C238A /* Font(字体) */,
 				D11816DF1EB2F2D5004C238A /* Icon(图标) */,
 				D11816E01EB2F2D5004C238A /* Image(图片) */,
@@ -1967,6 +1977,14 @@
 				D11993F81EC2F2F100841273 /* MagicPermissionManager.m */,
 			);
 			path = MagicPermissionManager;
+			sourceTree = "<group>";
+		};
+		D119B2301F989FC700C4368C /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				D119B5CB1F98A39300C4368C /* net_helper.bundle */,
+			);
+			path = HTML;
 			sourceTree = "<group>";
 		};
 		D124D8771F2721DF0072272C /* MagicUserDefaults(持久化存储) */ = {
@@ -2599,6 +2617,49 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D1CC9C5D1FB299B000A41518 /* WebPageAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				D1CC9C6A1FB2D8B000A41518 /* ReSource */,
+				D1CC9C5E1FB299B000A41518 /* Controller */,
+				D1CC9C5F1FB299B000A41518 /* Model */,
+				D1CC9C601FB299B000A41518 /* View */,
+			);
+			path = WebPageAlertView;
+			sourceTree = "<group>";
+		};
+		D1CC9C5E1FB299B000A41518 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1CC9C641FB299F500A41518 /* ExampleWebPageAlertViewController.h */,
+				D1CC9C651FB299F500A41518 /* ExampleWebPageAlertViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1CC9C5F1FB299B000A41518 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1CC9C601FB299B000A41518 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1CC9C671FB29AA900A41518 /* WebPageAlertManager.h */,
+				D1CC9C681FB29AA900A41518 /* WebPageAlertManager.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1CC9C6A1FB2D8B000A41518 /* ReSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReSource;
+			sourceTree = "<group>";
+		};
 		D1DF01181F32FA2E009A7901 /* MagicWebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2775,6 +2836,7 @@
 				D1049BF91F444215006A66EF /* h5_popovermenu_share@2x.png in Resources */,
 				D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */,
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
+				D119B5CC1F98A39300C4368C /* net_helper.bundle in Resources */,
 				D1707A9E1ED7CB260024FC83 /* tabbar_0@2x.png in Resources */,
 				D1049C111F444215006A66EF /* shareQRCode_bg_special.jpg in Resources */,
 				D10808161F7B5093001AB304 /* network_disconnected_btn@2x.png in Resources */,
@@ -2901,6 +2963,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1CC9C661FB299F500A41518 /* ExampleWebPageAlertViewController.m in Sources */,
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
 				D1049C141F444215006A66EF /* ProductDetailSaleViewController.m in Sources */,
 				D1049C051F444215006A66EF /* ExampleWebViewJavascriptBridgeViewController.m in Sources */,
@@ -2922,6 +2985,7 @@
 				D130CF761F74E1D6007B0243 /* ExamplePagerViewController.m in Sources */,
 				D1049C3B1F444215006A66EF /* ProductSaleTagView.m in Sources */,
 				D1C72CC71EB8856000C88BAE /* SJScreenShortManager.m in Sources */,
+				D1CC9C691FB29AA900A41518 /* WebPageAlertManager.m in Sources */,
 				D1049BF71F444215006A66EF /* ExampleMagicWebProgressViewController.m in Sources */,
 				D11816A41EB2EFB5004C238A /* ViewController.m in Sources */,
 				D124D87A1F2721DF0072272C /* MagicUserDefaults.m in Sources */,

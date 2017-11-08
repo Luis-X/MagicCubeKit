@@ -226,7 +226,7 @@
 #pragma mark -UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    Value *valueModel = [self getValueModelWithSection:indexPath.section Row:indexPath.row];
+    ProductValue *valueModel = [self getValueModelWithSection:indexPath.section Row:indexPath.row];
     NSString *name = [valueModel.mj_keyValues objectForKey:@"name"];
     CGFloat cell_width = [self settingCollectionViewItemWidthBoundingWithText:[NSString stringWithFormat:@"%@", name]];
     return CGSizeMake(cell_width, 30 * HOME_IPHONE6_HEIGHT);
@@ -250,7 +250,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    SkuList *skuListModel = [self getSkuListModelWithSection:section];
+    ProductSkuList *skuListModel = [self getSkuListModelWithSection:section];
     return skuListModel.value.count;
 }
 
@@ -258,7 +258,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ProductSelectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    Value *valueModel =  [self getValueModelWithSection:indexPath.section Row:indexPath.row];
+    ProductValue *valueModel =  [self getValueModelWithSection:indexPath.section Row:indexPath.row];
     [cell updateCellDataWithValueModel:valueModel selectedSkuId:currentSelectedSkuId];
     return cell;
     
@@ -269,7 +269,7 @@
     // 头部
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         ProductSelectHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
-        SkuList *skuListModel = [self getSkuListModelWithSection:indexPath.section];
+        ProductSkuList *skuListModel = [self getSkuListModelWithSection:indexPath.section];
         [headerView updateHeaderDataWithSkuListModel:skuListModel];
         return headerView;
     }
@@ -289,7 +289,7 @@
 //单选
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
    
-    Value *valueModel = [self getValueModelWithSection:indexPath.section Row:indexPath.row];
+    ProductValue *valueModel = [self getValueModelWithSection:indexPath.section Row:indexPath.row];
     currentSelectedSkuId = [[valueModel.mj_keyValues objectForKey:@"skuId"] integerValue];
     [self reloadAllData];
     
@@ -352,17 +352,17 @@
 /**
  获取SkuList
  */
-- (SkuList *)getSkuListModelWithSection:(NSInteger)section{
-    SkuList *skuListModel = [_allSkuListModelArray objectAtIndex:section];
+- (ProductSkuList *)getSkuListModelWithSection:(NSInteger)section{
+    ProductSkuList *skuListModel = [_allSkuListModelArray objectAtIndex:section];
     return skuListModel;
 }
 
 /**
  获取Value
  */
-- (Value *)getValueModelWithSection:(NSInteger)section Row:(NSInteger)row{
-    SkuList *skuListModel = [_allSkuListModelArray objectAtIndex:section];
-    Value *valueModel = [skuListModel.value objectAtIndex:row];
+- (ProductValue *)getValueModelWithSection:(NSInteger)section Row:(NSInteger)row{
+    ProductSkuList *skuListModel = [_allSkuListModelArray objectAtIndex:section];
+    ProductValue *valueModel = [skuListModel.value objectAtIndex:row];
     return valueModel;
 }
 

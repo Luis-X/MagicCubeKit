@@ -10,48 +10,73 @@
 
 @implementation ProductDetailModel
 
+
 @end
 
-@implementation Shop
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
+@implementation ProductSalesPromotion
+
+
+@end
+
+@implementation ProductSkuEnsures
+
+
+@end
+
+@implementation ProductShop
+
++ (NSDictionary *)replacedKeyFromPropertyName{
     return  @{@"ID" : @"id"};
 }
-@end
-
-@implementation ProductDeatilParam
 
 @end
 
-@implementation SkuList
+@implementation ProductRecommend
 
-@end
-
-@implementation Value
-
-@end
-
-@implementation Recommend
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
++ (NSDictionary *)replacedKeyFromPropertyName{
     return  @{@"ID" : @"id"};
 }
-@end
-
-@implementation SkuCommission
 
 @end
 
-@implementation Item
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
+@implementation ProductSaleInfo
+
+
+@end
+
+@implementation ProductSkuList
+
+
+@end
+
+@implementation ProductValue
+
+
+@end
+
+@implementation ProductSkuCommission
+
+
+@end
+
+@implementation ProductItem
+
++ (NSDictionary *)replacedKeyFromPropertyName{
     return  @{@"ID" : @"id"};
 }
+
 @end
 
-@implementation TagSkus
-+ (NSDictionary *)mj_replacedKeyFromPropertyName{
+
+@implementation ProductTagSkus
+
++ (NSDictionary *)replacedKeyFromPropertyName{
     return  @{@"ID" : @"id"};
 }
+
 @end
 
-@implementation TagMap
+@implementation ProductTagMap
+
 
 @end

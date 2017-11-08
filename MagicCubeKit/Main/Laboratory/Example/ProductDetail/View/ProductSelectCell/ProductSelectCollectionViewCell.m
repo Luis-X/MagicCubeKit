@@ -47,7 +47,7 @@
  更新数据
 
  */
-- (void)updateCellDataWithValueModel:(Value *)valueModel selectedSkuId:(NSInteger)selectedSkuId{
+- (void)updateCellDataWithValueModel:(ProductValue *)valueModel selectedSkuId:(NSInteger)selectedSkuId{
     
     NSString *name = [NSString stringWithFormat:@"%@", [valueModel.mj_keyValues objectForKey:@"name"]];
     NSInteger skuId = [[valueModel.mj_keyValues objectForKey:@"skuId"] integerValue];

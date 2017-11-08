@@ -13,6 +13,7 @@
 #import "ExamplePagerViewController.h"
 #import "BalloonRefreshHeader.h"
 #import "ExampleWebPlaceholderViewController.h"
+#import "ExampleWebPageAlertViewController.h"
 
 @interface LaboratoryViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -50,7 +51,8 @@
                    @{@"AutoAlbumViewController" : @"自动生成图片"},
                    @{@"HomePageViewController" : @"首页列表"},
                    @{@"WeexPagerViewController" : @"UIScrollview重用"},
-                   @{@"ExampleWebPlaceholderViewController" : @"WebView网络异常"}];
+                   @{@"ExampleWebPlaceholderViewController" : @"WebView网络异常"},
+                   @{@"ExampleWebPageAlertViewController" : @"WebView弹框"}];
 }
 
 - (void)createMainViews{
@@ -131,6 +133,11 @@
             ExampleWebPlaceholderViewController *webPlaceholderViewController = [ExampleWebPlaceholderViewController new];
             webPlaceholderViewController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:webPlaceholderViewController animated:YES];
+        }
+        if (indexPath.row == 5) {
+            ExampleWebPageAlertViewController *webPageAlertViewController = [ExampleWebPageAlertViewController new];
+            webPageAlertViewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:webPageAlertViewController animated:YES];
         }
     }
     

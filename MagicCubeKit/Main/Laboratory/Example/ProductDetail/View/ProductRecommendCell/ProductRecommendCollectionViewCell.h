@@ -10,5 +10,5 @@
 #import "ProductConstant.h"
 #import "ProductDetailModel.h"
 @interface ProductRecommendCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong) Recommend *recommendModel;
+@property (nonatomic, strong) ProductRecommend *recommendModel;
 @end

@@ -538,7 +538,7 @@
 #pragma mark - ZYBannerViewDelegate
 
 - (void)banner:(ZYBannerView *)banner didSelectItemAtIndex:(NSInteger)index{
-    NSLog(@"放大%ld", index);
+    NSLog(@"放大%ld", (long)index);
 }
 
 - (void)bannerFooterDidTrigger:(ZYBannerView *)banner{
@@ -570,21 +570,27 @@
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
     
-    [ProductDetailModel mj_setupObjectClassInArray:^NSDictionary *{
-        return @{@"shop" : [Shop class],
-   @"productDeatilParam" : [ProductDeatilParam class],
-              @"skuList" : [SkuList class],
-                @"value" : [Value class],
-            @"recommend" : [Recommend class],
-        @"skuCommission" : [SkuCommission class],
-                 @"item" : [Item class],
-              @"tagSkus" : [TagSkus class],
-               @"tagMap" : [TagMap class]};
+    [ProductDetailModel setupObjectClassInArray:^NSDictionary *{
+        return @{@"shop" : [ProductShop class],
+                 @"skuList" : [ProductSkuList class],
+                 @"value" : [ProductValue class],
+                 @"saleInfo" : [ProductSaleInfo class],
+                 @"recommend" : [ProductRecommend class],
+                 @"skuCommission" : [ProductSkuCommission class],
+                 @"item" : [ProductItem class],
+                 @"tagSkus" : [ProductTagSkus class],
+                 @"tagMap" : [ProductTagMap class],
+                 @"skuEnsures" : [ProductSkuEnsures class],
+                 @"salesPromotion" : [ProductSalesPromotion class]};
     }];
     _mainModel = [ProductDetailModel mj_objectWithKeyValues:[dic objectForKey:@"data"]];
     
     //是否特卖
     if (_mainModel.isSpecialSell) {
+        
+        NSString *result = [self getDateStringWithTimeValue:_mainModel.saleInfo.startTime formatter:@"MM月dd日HH点"];
+        NSLog(@"🍎 %f %@", _mainModel.saleInfo.startTime, result);
+        
         [self startTimer];
     }
     [self reloadAllData];
@@ -705,4 +711,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_TIME_CELL object:nil];
 }
 
+
+#pragma mark - TEST
+/**
+ 根据13位时间戳返回日期
+ */
+- (NSString *)getDateStringWithTimeValue:(NSTimeInterval)timeValue formatter:(NSString *)formatter{
+    
+    if (timeValue <= 0) {
+        return nil;
+    }
+    NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:timeValue / 1000];
+    return [timeDate formattedDateWithFormat:formatter];
+    
+    
+}
 @end

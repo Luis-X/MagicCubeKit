@@ -10,5 +10,5 @@
 #import "ProductConstant.h"
 #import "ProductDetailModel.h"
 @interface ProductSelectHeaderCollectionReusableView : UICollectionReusableView
-- (void)updateHeaderDataWithSkuListModel:(SkuList *)skuListModel;
+- (void)updateHeaderDataWithSkuListModel:(ProductSkuList *)skuListModel;
 @end

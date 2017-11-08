@@ -57,7 +57,10 @@
     // 注册协议支持webP
     [[MagicWebViewWebPManager shareManager] registerMagicURLProtocolWebView:self.wkWebView];
     // 加载请求
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_requestURLString]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"net_helper.bundle/Net_helper_html/net_helper" ofType:@"html"];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_requestURLString]];
     [self.wkWebView loadRequest:request];
 
 }

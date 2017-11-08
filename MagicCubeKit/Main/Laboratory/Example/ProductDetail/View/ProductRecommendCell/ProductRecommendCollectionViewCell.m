@@ -76,7 +76,7 @@
     }];
 }
 
-- (void)setRecommendModel:(Recommend *)recommendModel{
+- (void)setRecommendModel:(ProductRecommend *)recommendModel{
     
     if (_recommendModel != recommendModel) {
         _recommendModel =  recommendModel;

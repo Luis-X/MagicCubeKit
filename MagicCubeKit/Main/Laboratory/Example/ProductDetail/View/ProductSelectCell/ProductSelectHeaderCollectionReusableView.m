@@ -40,7 +40,7 @@
 }
 
 #pragma mark -Update
-- (void)updateHeaderDataWithSkuListModel:(SkuList *)skuListModel{
+- (void)updateHeaderDataWithSkuListModel:(ProductSkuList *)skuListModel{
     _titleLabel.text = [NSString stringWithFormat:@"%@", skuListModel.classify];
 }
 @end

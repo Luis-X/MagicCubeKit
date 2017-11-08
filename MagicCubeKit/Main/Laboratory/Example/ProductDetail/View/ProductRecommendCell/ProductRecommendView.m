@@ -78,7 +78,7 @@
 }
 #pragma mark -UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    Recommend *recommendModel = [_allModelDataArray objectAtIndex:indexPath.row];
+    ProductRecommend *recommendModel = [_allModelDataArray objectAtIndex:indexPath.row];
     [self executeProductRecommendViewSelectedSkuId:recommendModel.ID];
 }
 

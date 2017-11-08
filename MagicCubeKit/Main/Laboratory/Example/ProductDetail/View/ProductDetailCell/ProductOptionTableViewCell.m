@@ -94,8 +94,8 @@
 - (void)checkSelectedInfomationWithModel:(ProductDetailModel *)model{
     
     NSString *showString = [NSString string];
-    for (SkuList *skuListModel in model.skuList) {
-        for (Value *valueModel in skuListModel.value) {
+    for (ProductSkuList *skuListModel in model.skuList) {
+        for (ProductValue *valueModel in skuListModel.value) {
             NSString *name = [NSString stringWithFormat:@"%@", [valueModel.mj_keyValues objectForKey:@"name"]];
             NSInteger skuId = [[valueModel.mj_keyValues objectForKey:@"skuId"] integerValue];
             if (skuId == model.item.ID) {
