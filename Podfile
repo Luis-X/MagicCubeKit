@@ -28,7 +28,7 @@ pod 'MJExtension', '~> 3.0.13'				# 数据转模型
 pod 'ZYBannerView', '~> 1.1.2'				# 滑动Banner侧拉
 pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.6'
 pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
-pod 'FLEX', '~> 2.4.0'					# FLEX调试工具
+#pod 'FLEX', '~> 2.4.0'					# FLEX调试工具
 pod 'ATSDK-Weex', '~> 0.0.1'				# weex调试工具
 pod 'IDMPhotoBrowser', '~> 1.11.3'			# 图片浏览
 pod 'CRToast', '~> 0.0.9'				# 顶部通知
@@ -45,5 +45,6 @@ pod 'ActionSheetPicker-3.0', '~> 2.2.0'			# 弹框
 pod 'M13ProgressSuite', '~> 1.2.9'			# 进度条指示器
 pod 'MJRefresh', '~> 3.1.12'				# 下拉刷新
 pod 'MagicScrollPage', '~> 0.0.1'			# 分页
+pod 'WeexSDK', '~> 0.16.2’
 end
 

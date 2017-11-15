@@ -89,6 +89,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
+  install_resource "WeexSDK/pre-build/native-bundle-main.js"
+  install_resource "WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png"
   install_resource "XLForm/XLForm/XLForm.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -104,6 +106,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle"
   install_resource "ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle"
+  install_resource "WeexSDK/pre-build/native-bundle-main.js"
+  install_resource "WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png"
   install_resource "XLForm/XLForm/XLForm.bundle"
 fi
 

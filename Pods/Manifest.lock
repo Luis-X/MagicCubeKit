@@ -37,7 +37,6 @@ PODS:
   - DateTools (1.7.0)
   - FDFullscreenPopGesture (1.1)
   - FLAnimatedImage (1.0.12)
-  - FLEX (2.4.0)
   - iCarousel (1.8.3)
   - IDMPhotoBrowser (1.11.3):
     - DACircularProgress
@@ -125,6 +124,7 @@ PODS:
   - SVProgressHUD (2.1.2)
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
+  - WeexSDK (0.16.2)
   - WYPopoverController (0.3.9)
   - XLForm (3.2.0)
   - YYCache (1.0.4)
@@ -147,7 +147,6 @@ DEPENDENCIES:
   - DateTools (~> 1.7.0)
   - FDFullscreenPopGesture
   - FLAnimatedImage (~> 1.0.12)
-  - FLEX (~> 2.4.0)
   - iCarousel (~> 1.8.3)
   - IDMPhotoBrowser (~> 1.11.3)
   - JLRoutes (~> 2.0)
@@ -175,6 +174,7 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.1.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
+  - WeexSDK (~> 0.16.2)
   - WYPopoverController (~> 0.3.9)
   - XLForm (~> 3.2.0)
   - YYWebImage (from `https://github.com/raozhizhen/YYWebImage.git`, tag `1.0.5`)
@@ -208,7 +208,6 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IDMPhotoBrowser: b96159fe4adb991a844068eb17dab9c0b7d7e51a
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
@@ -233,6 +232,7 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
+  WeexSDK: 854ef66c9a90d609ad60e87c8b76affe2b772224
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
   XLForm: 2250b4e96ab8ffa5f3355838c79edd90de451782
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -240,6 +240,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: e17c92e70dc349cd0101a5caf4bc42604a8d0203
+PODFILE CHECKSUM: 063baecf1b2684f929b7ad85562a2a7ff2e04062
 
 COCOAPODS: 1.2.0

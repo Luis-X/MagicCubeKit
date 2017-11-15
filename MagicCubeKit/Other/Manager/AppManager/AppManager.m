@@ -7,7 +7,7 @@
 //
 
 #import "AppManager.h"
-#import <FLEX.h>
+//#import <FLEX.h>
 
 @implementation AppManager
 
@@ -18,7 +18,7 @@
     [self applicationEndEditing:NO];
     [self applicationBrightness:1];
     
-    [[FLEXManager sharedManager] showExplorer];
+//    [[FLEXManager sharedManager] showExplorer];
 }
 
 

@@ -42,6 +42,13 @@
     TencentOAuth * tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"1105574446" andDelegate:[MagicShareQQ shareManager]];
     tencentOAuth.redirectURI = @"http://www.showjoy.com";
 #endif
+    
+    for (NSString * family in [UIFont familyNames]) {
+        NSLog(@"familyNames:%@", family);
+        for (NSString * name in [UIFont fontNamesForFamilyName:family]) {
+            NSLog(@"  name: %@",name);
+        }
+    }
     return YES;
 }
 
