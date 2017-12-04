@@ -12,5 +12,5 @@
 // 域名
 + (NSString *)domainName;
 // 校验URL
-+ (NSString *)verifyURLStringHandler:(NSString *)url;
++ (NSString *)httpsSchemeHandler:(NSString *)url;
 @end

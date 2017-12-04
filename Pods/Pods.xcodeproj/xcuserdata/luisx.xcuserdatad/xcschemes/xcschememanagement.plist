@@ -144,6 +144,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SocketRocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -207,7 +212,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>036D4E68098857960F8C5E5FC5E552F8</key>
+		<key>0967D0E744CD98B325FFA2B7EBBCF406</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A43E8B55D19F9FBADCC0E9CB9E91A04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -227,6 +237,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1D9489C14F409F3C1BE39B8D2C0D444F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>32992AD5A5E700C72B5B207C97BA142B</key>
 		<dict>
 			<key>primary</key>
@@ -237,22 +252,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>503DAAF5B91097FEE73C82BDB467B842</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>527B9F08158F6D6822D944ADDCF3C0FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53F8571E2D572C4069860E38654A566A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>564FA983F10000CF131924C227458DA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -262,7 +262,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>64E6AECB51CB0DAF06710B474E958355</key>
+		<key>6333B8422DA14DED1613F5F32F5EB50E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FE874E993E8F6A5B9BF2A26061B7259</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FFF34308BBD548460588FEE99400B37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -272,12 +282,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>76974FB09B5C7ACAC50E30F74838A0D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>78F6D87C41DDD056D2FCC48BC1CA2141</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7E5BCC7096C32273D51F4C927959C1A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8586BC1CCCEA41239BBA567020B94D71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8AE4D731014031763A73E8AFB339B0D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -307,11 +332,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF58F9936DA4CE312C74D42B827102DE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B36F6D48026E14827529F787D63D61B8</key>
 		<dict>
 			<key>primary</key>
@@ -322,12 +342,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6530F4CAFC531CEB0E635A7B299C916</key>
+		<key>BDB45DD6D41488A346190E17DEF63592</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDB45DD6D41488A346190E17DEF63592</key>
+		<key>C0F3CDC1BFE16E13C2DE8A8A931CA1C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -342,17 +362,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA56C705EF47BB647876D2F9CB11707F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D138F11C9169C1EB6462BB76A25F4CDA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D1D5078E8937F55EBBADDCD8B66AA878</key>
+		<key>D4812D932E47C3227FCCEC8DEF3AB2C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -372,17 +382,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E35CC4911062243127CDE9CADDB08B46</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBF606118B725C87E13C2C9C768700BA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>EE366E1E6962F82E6AEC8AE66FA66CBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF02380FB584901A910619C2FA6E7DED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -402,7 +407,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA235068968316AF6F88318B4B8C5F3A</key>
+		<key>FA26EBC0ADBC972055C8832735FE7DCE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE90E4381B537E8CF3621FF01F8AF2AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

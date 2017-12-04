@@ -12,6 +12,7 @@
 #import "SJScreenShortManager.h"
 #import "MagicAPM.h"
 #import "MagicLogManager.h"
+#import <WeexSDK.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) SJBugVideoTool *bugVideoTool;
@@ -159,14 +160,10 @@
 #pragma mark - UIWindow
 
 - (void)initialData{
-    _mainTabbarData = [NSMutableArray arrayWithArray: @[@{@"page" :@"HomeViewController",
-                                                                     @"normal" : @"tabbar_0@2x",
-                                                                     @"selected" : @"tabbar_0@2x",
-                                                                     @"title" : @"首页"},
-                                                                   @{@"page" :@"LaboratoryViewController",
-                                                                     @"normal" : @"tabbar_1@2x",
-                                                                     @"selected" : @"tabbar_1@2x",
-                                                                     @"title" : @"实验室"}]];
+    NSArray *tabBars = @[@{@"page" :@"HomeViewController", @"normal" : @"tabbar_0@2x", @"selected" : @"tabbar_0@2x", @"title" : @"首页"},
+                         @{@"page" :@"LaboratoryViewController", @"normal" : @"tabbar_1@2x", @"selected" : @"tabbar_1@2x", @"title" : @"实验室"},
+                         @{@"page" :@"WeexViewController", @"normal" : @"tabbar_2@2x", @"selected" : @"tabbar_2@2x", @"title" : @"Weex"}];
+    _mainTabbarData = [NSMutableArray arrayWithArray: tabBars];
 }
 
 - (void)startMainUIWindow{
@@ -256,5 +253,35 @@
         [self.bugVideoTool stopBugVideo];
     }
     
+}
+
+- (void)startWeexSDK
+{
+    //business configuration
+    [WXAppConfiguration setAppGroup:@"AliApp"];
+    [WXAppConfiguration setAppName:@"WeexDemo"];
+    [WXAppConfiguration setExternalUserAgent:@"ExternalUA"];
+    //init sdk environment
+    [WXSDKEngine initSDKEnvironment];
+    //register custom module and component，optional
+//    [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
+//    [WXSDKEngine registerHandler:[WXEventModule new] withProtocol:@protocol(WXEventModuleProtocol)];
+//    [WXSDKEngine registerHandler:[WXConfigCenterDefaultImpl new] withProtocol:@protocol(WXConfigCenterProtocol)];
+    
+//    [WXSDKEngine registerComponent:@"select" withClass:NSClassFromString(@"WXSelectComponent")];
+//    [WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
+//    [WXSDKEngine registerModule:@"syncTest" withClass:[WXSyncTestModule class]];
+//    [WXSDKEngine registerExtendCallNative:@"test" withClass:NSClassFromString(@"WXExtendCallNativeTest")];
+//    [WXSDKEngine registerModule:@"ext" withClass:[WXExtModule class]];
+    
+    //set the log level
+#ifdef DEBUG
+    [WXDebugTool setDebug:YES];
+    [WXLog setLogLevel:WXLogLevelLog];
+#else
+    [WXDebugTool setDebug:NO];
+    [WXLog setLogLevel:WXLogLevelError];
+#endif
+
 }
 @end

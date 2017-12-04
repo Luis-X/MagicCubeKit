@@ -41,7 +41,7 @@
 @property (nonatomic, copy)   NSString *pageName;
 @property (nonatomic, copy)   NSString *taxRate;         //税率
 @property (nonatomic, assign) NSInteger cartCount;       //购物车数量
-@property (nonatomic, assign) NSInteger nowDate;         //当前时间
+@property (nonatomic, assign) double nowDate;         //当前时间
 @property (nonatomic, assign) NSInteger shelveCount;     //上架店主数
 @property (nonatomic, assign) NSInteger maxCouponAmount; //优惠券数
 @property (nonatomic, assign) BOOL showCommission;

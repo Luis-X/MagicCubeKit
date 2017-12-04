@@ -120,11 +120,14 @@ PODS:
     - MOBFoundation
   - ShareSDK3/ShareSDKUI (4.0.1):
     - MOBFoundation
+  - SocketRocket (0.4.2)
   - STPopup (1.8.2)
   - SVProgressHUD (2.1.2)
   - UITableView+FDTemplateLayoutCell (1.6.beta)
   - WebViewJavascriptBridge (6.0.2)
   - WeexSDK (0.16.2)
+  - WXDevtool (0.15.3):
+    - WeexSDK
   - WYPopoverController (0.3.9)
   - XLForm (3.2.0)
   - YYCache (1.0.4)
@@ -140,6 +143,7 @@ DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.2.0)
   - AFNetworking (~> 3.1.0)
   - AsyncDisplayKit (~> 2.0-beta.1)
+  - ATSDK-Weex (= 0.0.1)
   - ATSDK-Weex (~> 0.0.1)
   - ChameleonFramework (~> 2.1.0)
   - CocoaLumberjack (~> 3.2.0)
@@ -170,11 +174,13 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
   - ShareSDK3/ShareSDKPlatforms/WeChat
   - ShareSDK3/ShareSDKUI
+  - SocketRocket (= 0.4.2)
   - STPopup (~> 1.8.2)
   - SVProgressHUD (~> 2.1.2)
   - UITableView+FDTemplateLayoutCell (~> 1.6.beta)
   - WebViewJavascriptBridge (~> 6.0.2)
   - WeexSDK (~> 0.16.2)
+  - WXDevtool (= 0.15.3)
   - WYPopoverController (~> 0.3.9)
   - XLForm (~> 3.2.0)
   - YYWebImage (from `https://github.com/raozhizhen/YYWebImage.git`, tag `1.0.5`)
@@ -228,11 +234,13 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
+  SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UITableView+FDTemplateLayoutCell: 3c326d8535802396c443e2972d990719a211bbed
   WebViewJavascriptBridge: 791ee0e26d1bf15efe5fb7fb9666a71a19b89d77
   WeexSDK: 854ef66c9a90d609ad60e87c8b76affe2b772224
+  WXDevtool: 6c837383e778a9442ee500db4069a95be321dac6
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
   XLForm: 2250b4e96ab8ffa5f3355838c79edd90de451782
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -240,6 +248,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 063baecf1b2684f929b7ad85562a2a7ff2e04062
+PODFILE CHECKSUM: c7683036a02738670d66ad05fd35412663c023bb
 
 COCOAPODS: 1.2.0

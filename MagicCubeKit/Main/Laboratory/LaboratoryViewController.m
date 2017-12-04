@@ -14,6 +14,7 @@
 #import "BalloonRefreshHeader.h"
 #import "ExampleWebPlaceholderViewController.h"
 #import "ExampleWebPageAlertViewController.h"
+#import "ProductLoadMoreViewController.h"
 
 @interface LaboratoryViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -52,7 +53,8 @@
                    @{@"HomePageViewController" : @"首页列表"},
                    @{@"WeexPagerViewController" : @"UIScrollview重用"},
                    @{@"ExampleWebPlaceholderViewController" : @"WebView网络异常"},
-                   @{@"ExampleWebPageAlertViewController" : @"WebView弹框"}];
+                   @{@"ExampleWebPageAlertViewController" : @"WebView弹框"},
+                   @{@"ProductLoadMoreViewController" : @"详情图-(htmlString+webp+native)"}];
 }
 
 - (void)createMainViews{
@@ -138,6 +140,11 @@
             ExampleWebPageAlertViewController *webPageAlertViewController = [ExampleWebPageAlertViewController new];
             webPageAlertViewController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:webPageAlertViewController animated:YES];
+        }
+        if (indexPath.row == 6) {
+            ProductLoadMoreViewController *productLoadMoreViewController = [ProductLoadMoreViewController new];
+            productLoadMoreViewController.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:productLoadMoreViewController animated:YES];
         }
     }
     

@@ -14,7 +14,7 @@
     return @"https://www.baidu.com";
 }
 
-+ (NSString *)verifyURLStringHandler:(NSString *)url{
++ (NSString *)httpsSchemeHandler:(NSString *)url{
     
     NSString *result = url;
     // 双斜杠
@@ -22,7 +22,6 @@
         result = [NSString stringWithFormat:@"https:%@", result];
         return result;
     }
-    
     // 绝对路径
     if ([result containsString:@"http://"]) {
         result = [result stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"];

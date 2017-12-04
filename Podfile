@@ -46,5 +46,8 @@ pod 'M13ProgressSuite', '~> 1.2.9'			# 进度条指示器
 pod 'MJRefresh', '~> 3.1.12'				# 下拉刷新
 pod 'MagicScrollPage', '~> 0.0.1'			# 分页
 pod 'WeexSDK', '~> 0.16.2’
+pod 'WXDevtool', '0.15.3'
+pod 'SocketRocket', '0.4.2'
+pod 'ATSDK-Weex', '0.0.1'
 end
 
