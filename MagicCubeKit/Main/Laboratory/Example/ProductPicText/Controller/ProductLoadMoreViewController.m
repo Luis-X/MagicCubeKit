@@ -10,11 +10,9 @@
 #import "MagicNetworkManager.h"
 #import "ProductLoadMorePicTextView.h"
 
-#define PRODUCT_API         @"https://shopappserver.showjoy.com/api/shop/sku"
-#define PRODUCT_PICTEXT_API @"https://shopappserver.showjoy.com/api/shop/item/pictext"
-#define PRODUCT_SKUID       @"146931"
-
-
+static NSString * const SJProductAPI = @"https://shopappserver.showjoy.com/api/shop/sku";
+static NSString * const SJProductPicTextAPI = @"https://shopappserver.showjoy.com/api/shop/item/pictext";
+static NSString * const SJProductSkuId = @"146931";
 
 @interface ProductLoadMoreViewController () <ProductLoadMorePicTextViewDelegate>
 
@@ -58,7 +56,7 @@
     // 商品信息
     dispatch_group_enter(group);
     dispatch_group_async(group, serialQueue, ^{
-        [[MagicNetworkManager shareManager] GET:PRODUCT_API Parameters:@{@"skuId" : PRODUCT_SKUID} Success:^(NSURLResponse *response, id responseObject) {
+        [[MagicNetworkManager shareManager] GET:SJProductAPI Parameters:@{@"skuId" : SJProductSkuId} Success:^(NSURLResponse *response, id responseObject) {
             [ProductDetailModel mj_setupObjectClassInArray:^NSDictionary *{
                 return @{@"shop" : [ProductShop class],
                          @"skuList" : [ProductSkuList class],
@@ -82,7 +80,7 @@
     // 图文信息
     dispatch_group_enter(group);
     dispatch_group_async(group, serialQueue, ^{
-        [[MagicNetworkManager shareManager] GET:PRODUCT_PICTEXT_API Parameters:@{@"skuId" : PRODUCT_SKUID} Success:^(NSURLResponse *response, id responseObject) {
+        [[MagicNetworkManager shareManager] GET:SJProductPicTextAPI Parameters:@{@"skuId" : SJProductSkuId} Success:^(NSURLResponse *response, id responseObject) {
             [ProductLoadMorePicTextModel mj_setupObjectClassInArray:^NSDictionary *{
                 return @{@"item" : [PicTextItem class],
                          @"itemPic" : [PicTextItemPic class],

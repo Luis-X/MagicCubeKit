@@ -11,11 +11,11 @@
 #import "MagicScrollPageRefreshHeader.h"
 #import <MagicWebViewWebP/MagicWebViewWebPManager.h>
 
-const CGFloat recommendViewHeight = 170;
-const CGFloat recommendViewSpace = 10;
-const CGFloat recommendItemWidth = 105;
-const CGFloat recommendItemSpace = 5;
-const CGFloat recommendTitleHeight = 40;
+static const CGFloat recommendViewHeight = 170.0;
+static const CGFloat recommendViewSpace = 10.0;
+static const CGFloat recommendItemWidth = 105.0;
+static const CGFloat recommendItemSpace = 5.0;
+static const CGFloat recommendTitleHeight = 40.0;
 
 @interface ProductLoadMorePicTextView ()<UIWebViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
