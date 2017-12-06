@@ -169,7 +169,6 @@
 		D1707AA01ED7CB400024FC83 /* LuisX.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D1707A9F1ED7CB400024FC83 /* LuisX.JPG */; };
 		D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */; };
 		D17E18431F79042500C10114 /* MagicCubeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E18421F79042500C10114 /* MagicCubeKit.framework */; };
-		D1853CF11F0A7E0E00CA2B19 /* jiawen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */; };
 		D187ACE91ED3DB5800E8C4BA /* MagicTimerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */; };
 		D18CF59A1F45300400953D40 /* ExampleActionSheetPicker3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18CF5991F45300400953D40 /* ExampleActionSheetPicker3ViewController.m */; };
 		D18F433C1F46E22200347870 /* MagicActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D18F43371F46E22200347870 /* MagicActivityCollectionViewCell.m */; };
@@ -253,7 +252,6 @@
 		D190AA9B1F3C407C00B180A0 /* share_problem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CAA1EB8856000C88BAE /* share_problem@2x.png */; };
 		D190AA9D1F3C407C00B180A0 /* video_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CAE1EB8856000C88BAE /* video_stop@2x.png */; };
 		D190AAA01F3C407C00B180A0 /* TangramKitLayoutTypeMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF61EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist */; };
-		D190AAA11F3C407C00B180A0 /* jiawen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */; };
 		D190AAA21F3C407C00B180A0 /* TangramHelperMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1C72BF51EB86F0C00C88BAE /* TangramHelperMapping.plist */; };
 		D190AAA41F3C407C00B180A0 /* share_friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C72CA91EB8856000C88BAE /* share_friend@2x.png */; };
 		D190AAA71F3C407C00B180A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11816AA1EB2EFB5004C238A /* LaunchScreen.storyboard */; };
@@ -348,6 +346,7 @@
 		D1E0BE551ED920A600493704 /* tabbar_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE4F1ED920A600493704 /* tabbar_5@2x.png */; };
 		D1E0BE561ED920A600493704 /* tabbar_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E0BE501ED920A600493704 /* tabbar_6@2x.png */; };
 		D1EF0A261F8CD205005EE05E /* MagicDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EF0A251F8CD205005EE05E /* MagicDevice.m */; };
+		D1FC5EF81FD78EE50042614F /* jiawen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D1FC5EF71FD78EE50042614F /* jiawen.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -666,7 +665,6 @@
 		D17DE7A51ECEF61400CE48D4 /* MagicIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicIconButton.h; sourceTree = "<group>"; };
 		D17DE7A61ECEF61400CE48D4 /* MagicIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicIconButton.m; sourceTree = "<group>"; };
 		D17E18421F79042500C10114 /* MagicCubeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicCubeKit.framework; sourceTree = "<group>"; };
-		D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jiawen.gpx; sourceTree = "<group>"; };
 		D187ACE71ED3DB5800E8C4BA /* MagicTimerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicTimerButton.h; sourceTree = "<group>"; };
 		D187ACE81ED3DB5800E8C4BA /* MagicTimerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicTimerButton.m; sourceTree = "<group>"; };
 		D18CF5981F45300400953D40 /* ExampleActionSheetPicker3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleActionSheetPicker3ViewController.h; sourceTree = "<group>"; };
@@ -821,6 +819,7 @@
 		D1E0BE501ED920A600493704 /* tabbar_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_6@2x.png"; sourceTree = "<group>"; };
 		D1EF0A241F8CD205005EE05E /* MagicDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicDevice.h; sourceTree = "<group>"; };
 		D1EF0A251F8CD205005EE05E /* MagicDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicDevice.m; sourceTree = "<group>"; };
+		D1FC5EF71FD78EE50042614F /* jiawen.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jiawen.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1779,7 +1778,6 @@
 		D11816901EB2EFB4004C238A = {
 			isa = PBXGroup;
 			children = (
-				D1853CF01F0A7E0E00CA2B19 /* jiawen.gpx */,
 				D1D258041EE1023800A7CADD /* Reveal.framework */,
 				D118169B1EB2EFB5004C238A /* MagicCubeKit */,
 				D11816B51EB2EFB5004C238A /* MagicCubeKitTests */,
@@ -1903,12 +1901,10 @@
 		D11816DD1EB2F2D5004C238A /* Resource(资源) */ = {
 			isa = PBXGroup;
 			children = (
+				D1FC5EF71FD78EE50042614F /* jiawen.gpx */,
 				D119B2301F989FC700C4368C /* HTML */,
 				D11816DE1EB2F2D5004C238A /* Font(字体) */,
-				D11816DF1EB2F2D5004C238A /* Icon(图标) */,
 				D11816E01EB2F2D5004C238A /* Image(图片) */,
-				D11816E11EB2F2D5004C238A /* LaunchImage(启动图) */,
-				D11816E21EB2F2D5004C238A /* Plist */,
 			);
 			name = "Resource(资源)";
 			path = Resource;
@@ -1923,14 +1919,6 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		D11816DF1EB2F2D5004C238A /* Icon(图标) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Icon(图标)";
-			path = Icon;
-			sourceTree = "<group>";
-		};
 		D11816E01EB2F2D5004C238A /* Image(图片) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1939,21 +1927,6 @@
 			);
 			name = "Image(图片)";
 			path = Image;
-			sourceTree = "<group>";
-		};
-		D11816E11EB2F2D5004C238A /* LaunchImage(启动图) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "LaunchImage(启动图)";
-			path = LaunchImage;
-			sourceTree = "<group>";
-		};
-		D11816E21EB2F2D5004C238A /* Plist */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Plist;
 			sourceTree = "<group>";
 		};
 		D11816E31EB2F2D5004C238A /* Vender(第三方) */ = {
@@ -2905,7 +2878,6 @@
 				D1C72CC21EB8856000C88BAE /* video_stop@2x.png in Resources */,
 				D1C72C4C1EB86F0C00C88BAE /* TangramKitLayoutTypeMap.plist in Resources */,
 				D10808171F7B5093001AB304 /* network_disconnected_btn@3x.png in Resources */,
-				D1853CF11F0A7E0E00CA2B19 /* jiawen.gpx in Resources */,
 				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
 				D1049BE41F444215006A66EF /* 3.jpg in Resources */,
 				D1049C1C1F444215006A66EF /* productDetailMenuNone@2x.png in Resources */,
@@ -2941,6 +2913,7 @@
 				D1049BFC1F444215006A66EF /* h5_preNavi@3x.png in Resources */,
 				D1C72C4A1EB86F0C00C88BAE /* TangramHelperCustomMapping.plist in Resources */,
 				D1049C191F444215006A66EF /* productDetailGoTop@2x.png in Resources */,
+				D1FC5EF81FD78EE50042614F /* jiawen.gpx in Resources */,
 				D1049C021F444215006A66EF /* exampleTangram.json in Resources */,
 				D1D015291F57FC4800DF8D18 /* MagicWebViewUI.bundle in Resources */,
 				D1E0BE511ED920A600493704 /* tabbar_1@2x.png in Resources */,
@@ -2976,7 +2949,6 @@
 				D190AA9B1F3C407C00B180A0 /* share_problem@2x.png in Resources */,
 				D190AA9D1F3C407C00B180A0 /* video_stop@2x.png in Resources */,
 				D190AAA01F3C407C00B180A0 /* TangramKitLayoutTypeMap.plist in Resources */,
-				D190AAA11F3C407C00B180A0 /* jiawen.gpx in Resources */,
 				D190AAA21F3C407C00B180A0 /* TangramHelperMapping.plist in Resources */,
 				D190AAA41F3C407C00B180A0 /* share_friend@2x.png in Resources */,
 				D190AAA71F3C407C00B180A0 /* LaunchScreen.storyboard in Resources */,
