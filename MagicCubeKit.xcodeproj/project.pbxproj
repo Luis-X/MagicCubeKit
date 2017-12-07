@@ -153,6 +153,7 @@
 		D15607AC1F21B09E00CE8E79 /* TestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607AB1F21B09E00CE8E79 /* TestManager.m */; };
 		D15607AF1F21B0AB00CE8E79 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607AE1F21B0AB00CE8E79 /* UserManager.m */; };
 		D15607B31F21B42100CE8E79 /* MonitorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D15607B21F21B42100CE8E79 /* MonitorManager.m */; };
+		D15918A91FD92F1A0042BF3F /* icon_version.sh in Resources */ = {isa = PBXBuildFile; fileRef = D15918A81FD92F1A0042BF3F /* icon_version.sh */; };
 		D15B87321F73AA0E003F61B3 /* NSDictionary+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87311F73AA0E003F61B3 /* NSDictionary+Tool.m */; };
 		D15B87351F73AA40003F61B3 /* NSString+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87341F73AA40003F61B3 /* NSString+Tool.m */; };
 		D15B87381F73AAEF003F61B3 /* UIColor+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B87371F73AAEF003F61B3 /* UIColor+Tool.m */; };
@@ -634,6 +635,7 @@
 		D15607AE1F21B0AB00CE8E79 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		D15607B11F21B42100CE8E79 /* MonitorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorManager.h; sourceTree = "<group>"; };
 		D15607B21F21B42100CE8E79 /* MonitorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorManager.m; sourceTree = "<group>"; };
+		D15918A81FD92F1A0042BF3F /* icon_version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = icon_version.sh; sourceTree = "<group>"; };
 		D15B87301F73AA0E003F61B3 /* NSDictionary+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Tool.h"; sourceTree = "<group>"; };
 		D15B87311F73AA0E003F61B3 /* NSDictionary+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Tool.m"; sourceTree = "<group>"; };
 		D15B87331F73AA40003F61B3 /* NSString+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Tool.h"; sourceTree = "<group>"; };
@@ -1778,6 +1780,7 @@
 		D11816901EB2EFB4004C238A = {
 			isa = PBXGroup;
 			children = (
+				D15918A81FD92F1A0042BF3F /* icon_version.sh */,
 				D1D258041EE1023800A7CADD /* Reveal.framework */,
 				D118169B1EB2EFB5004C238A /* MagicCubeKit */,
 				D11816B51EB2EFB5004C238A /* MagicCubeKitTests */,
@@ -2756,6 +2759,7 @@
 				D11816971EB2EFB5004C238A /* Resources */,
 				3C1EE37CD2D45CF734832848 /* [CP] Embed Pods Frameworks */,
 				11E96E7120A96FB92FA05913 /* [CP] Copy Pods Resources */,
+				D1C0D2E81FD92BF800326BE8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2908,6 +2912,7 @@
 				D11816A71EB2EFB5004C238A /* Main.storyboard in Resources */,
 				D1BBFE601FD4E9EE00F5C334 /* BalloonRefresh.bundle in Resources */,
 				D1049C291F444215006A66EF /* ZYBannerView.bundle in Resources */,
+				D15918A91FD92F1A0042BF3F /* icon_version.sh in Resources */,
 				D1C72CBF1EB8856000C88BAE /* share_qq@2x.png in Resources */,
 				D1E0BE551ED920A600493704 /* tabbar_5@2x.png in Resources */,
 				D1049BFC1F444215006A66EF /* h5_preNavi@3x.png in Resources */,
@@ -3017,6 +3022,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		D1C0D2E81FD92BF800326BE8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/icon_version.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3435,6 +3453,7 @@
 			baseConfigurationReference = CC53689CBB7FA71DA0B682C0 /* Pods-MagicCubeKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -3525,6 +3544,7 @@
 			baseConfigurationReference = 5C06E2702EE719BA762B55E9 /* Pods-MagicCubeKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
