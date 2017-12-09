@@ -2,6 +2,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 target "MagicCubeKit" do
 platform :ios, ‘8.0’
+pod 'QMUIKit', '~> 2.1.0'
 pod 'CocoaLumberjack', '~> 3.2.0'			# 日志
 pod 'Masonry', '~> 1.0.1’				# autolayout
 pod 'AFNetworking', '~> 3.1.0'				# 网络请求

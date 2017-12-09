@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1D9489C14F409F3C1BE39B8D2C0D444F'
+               BlueprintIdentifier = 'ED58B4E1FD7B3EB3C7F2ED2F45DB73A2'
                BlueprintName = 'YYWebImage'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libYYWebImage.a'>
