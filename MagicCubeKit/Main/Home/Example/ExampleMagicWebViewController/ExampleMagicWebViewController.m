@@ -24,7 +24,7 @@
 - (void)createMainView{
     
     UITextField *textField = [QuicklyUI quicklyUITextFieldAddTo:self.view font:MC_FONT_SYSTEM(14)];
-    textField.text = @"http://isparta.github.io/compare-webp/index.html#12345";
+    textField.text = @"http://10.1.2.118:9999/src/pages/sec-1212/sec-1212.html";
     textField.backgroundColor = [UIColor grayColor];
     [textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(20);

@@ -14,13 +14,18 @@
 #import "MagicLogManager.h"
 #import <WeexSDK.h>
 
-@interface AppDelegate ()<UITabBarControllerDelegate>
+#import "MenuViewController.h"
+#import "QDTabBarViewController.h"
+#import "QDNavigationController.h"
+#import "QDUIKitViewController.h"
+#import "QDComponentsViewController.h"
+#import "QDLabViewController.h"
+
+@interface AppDelegate ()
 @property (nonatomic, strong) SJBugVideoTool *bugVideoTool;
 @end
 
-@implementation AppDelegate{
-    NSMutableArray *_mainTabbarData;
-}
+@implementation AppDelegate
 
 /**
  *
@@ -30,11 +35,10 @@
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self startSJBugVideoKit:YES];
-    [self initialData];
     [self startMainUIWindow];
     [MagicAPM start];
     [[MagicLogManager shareManager] start];
-    
+
 #ifdef MC_BETA
     NSLog(@"测试版本");
 #else
@@ -43,7 +47,7 @@
     TencentOAuth * tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"1105574446" andDelegate:[MagicShareQQ shareManager]];
     tencentOAuth.redirectURI = @"http://www.showjoy.com";
 #endif
-    
+
     for (NSString * family in [UIFont familyNames]) {
         NSLog(@"familyNames:%@", family);
         for (NSString * name in [UIFont fontNamesForFamilyName:family]) {
@@ -136,7 +140,8 @@
 }
 
 
-- (BOOL)managerHandleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication{
+- (BOOL)managerHandleOpenURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication
+{
 
     NSLog(@"来源App: %@", sourceApplication);
     NSLog(@"url协议: %@", [url scheme]);
@@ -158,20 +163,9 @@
 
 
 #pragma mark - UIWindow
-
-- (void)initialData{
-    NSArray *tabBars = @[@{@"page" :@"HomeViewController", @"normal" : @"tabbar_0@2x", @"selected" : @"tabbar_0@2x", @"title" : @"首页"},
-                         @{@"page" :@"LaboratoryViewController", @"normal" : @"tabbar_1@2x", @"selected" : @"tabbar_1@2x", @"title" : @"实验室"},
-                         @{@"page" :@"WeexViewController", @"normal" : @"tabbar_2@2x", @"selected" : @"tabbar_2@2x", @"title" : @"Weex"}];
-    _mainTabbarData = [NSMutableArray arrayWithArray: tabBars];
-}
-
-- (void)startMainUIWindow{
-    
-    UITabBarController *rootTabBarController = [UITabBarController new];
-    rootTabBarController.delegate = self;
-    rootTabBarController.viewControllers = [self loadingUINavigationControllerWithControllerNames:_mainTabbarData];
-    
+- (void)startMainUIWindow
+{
+    UIViewController *rootTabBarViewController = [self loadingUINavigationControllerWithController];
     //创建一个window对象,属于AppDelegate的属性
     //UIScreen:      表示屏幕硬件类
     //mainScreen:    获得主屏幕信息
@@ -181,40 +175,57 @@
     //整个UIKit框架中只有一个根视图控制器,属于window的属性
     //视图控制器用来管理界面和处理界面的逻辑类对象
     //程序启动前必须对根视图控制器赋值
-    self.window.rootViewController = rootTabBarController;
+    self.window.rootViewController = rootTabBarViewController;
     //将window作为主视图并且显示
     [self.window makeKeyAndVisible];
     [self customAllNavigationBarAppearance];
 }
 
+- (UIViewController *)loadingUINavigationControllerWithController
+{
+   
+    // QD自定义的全局样式渲染
+    [QDCommonUI renderGlobalAppearances];
+    // 预加载 QQ 表情，避免第一次使用时卡顿
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [QDUIHelper qmuiEmotions];
+    });
 
-
-- (NSMutableArray *)loadingUINavigationControllerWithControllerNames:(NSArray *)controllerNames{
+    QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
     
-    NSMutableArray *result = [NSMutableArray array];
-    [controllerNames enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-        NSString *page = [NSString stringWithFormat:@"%@", [obj objectForKey:@"page"]];
-        NSString *normal = [NSString stringWithFormat:@"%@", [obj objectForKey:@"normal"]];
-        NSString *selected = [NSString stringWithFormat:@"%@", [obj objectForKey:@"selected"]];
-        NSString *title = [NSString stringWithFormat:@"%@", [obj objectForKey:@"title"]];
-        
-        Class cls = NSClassFromString(page);
-        UIViewController *controller = (UIViewController*)[[cls alloc] init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-        UIImage *laboratory_normal = [MC_IMAGE_FILE(normal, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        UIImage *laboratory_selected = [MC_IMAGE_FILE(selected, @"png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:laboratory_normal selectedImage:laboratory_selected];
-        [result addObject:navigationController];
-        
-    }];
-    return result;
+    // Menu
+    MenuViewController *menuViewController = [[MenuViewController alloc] init];
+    menuViewController.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *menuNavController = [[QDNavigationController alloc] initWithRootViewController:menuViewController];
+    menuNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"菜单" image:[UIImageMake(@"tabbar_1@2x.png") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"tabbar_1@2x.png") tag:0];
     
+    // QMUIKit
+    QDUIKitViewController *uikitViewController = [[QDUIKitViewController alloc] init];
+    uikitViewController.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *uikitNavController = [[QDNavigationController alloc] initWithRootViewController:uikitViewController];
+    uikitNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"UI" image:[UIImageMake(@"icon_tabbar_uikit") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:1];
+    
+    // UIComponents
+    QDComponentsViewController *componentViewController = [[QDComponentsViewController alloc] init];
+    componentViewController.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *componentNavController = [[QDNavigationController alloc] initWithRootViewController:componentViewController];
+    componentNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"组件" image:[UIImageMake(@"icon_tabbar_component") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:2];
+    
+    // Lab
+    QDLabViewController *labViewController = [[QDLabViewController alloc] init];
+    labViewController.hidesBottomBarWhenPushed = NO;
+    QDNavigationController *labNavController = [[QDNavigationController alloc] initWithRootViewController:labViewController];
+    labNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"实验" image:[UIImageMake(@"icon_tabbar_lab") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:3];
+    
+    // window root controller
+    tabBarViewController.viewControllers = @[menuNavController, uikitNavController, componentNavController, labNavController];
+    return tabBarViewController;
 }
 
 
 #pragma mark - 全局导航栏
-- (void)customAllNavigationBarAppearance{
+- (void)customAllNavigationBarAppearance
+{
     //背景颜色
     [[UINavigationBar appearance] setBarTintColor:[UIColor flatBlackColor]];
     //文本颜色
@@ -232,7 +243,8 @@
 }
 
 #pragma mark - SJBugVideoKit
-- (void)startSJBugVideoKit:(BOOL)start{
+- (void)startSJBugVideoKit:(BOOL)start
+{
     
     if (start) {
         // 初始化屏幕录制（默认：隐藏）
@@ -246,7 +258,8 @@
 /**
  BUG录制
  */
-- (void)showSJBugVideo:(BOOL)show{
+- (void)showSJBugVideo:(BOOL)show
+{
     
     self.bugVideoTool.hidden = !show;
     if (show == NO) {
@@ -284,4 +297,5 @@
 #endif
 
 }
+
 @end

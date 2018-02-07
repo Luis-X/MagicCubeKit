@@ -2,7 +2,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 target "MagicCubeKit" do
 platform :ios, ‘8.0’
-pod 'QMUIKit', '~> 2.1.0'
+pod 'QMUIKit', '~> 2.3.0'
 pod 'CocoaLumberjack', '~> 3.2.0'			# 日志
 pod 'Masonry', '~> 1.0.1’				# autolayout
 pod 'AFNetworking', '~> 3.1.0'				# 网络请求
@@ -20,7 +20,6 @@ pod 'LazyScroll', '~>0.0.2'				# 七巧板依赖
 pod 'MJRefresh', '~> 3.1.12'				# 上下拉刷新
 pod 'MBProgressHUD', '~> 1.0.0'				# HUD
 pod 'SVProgressHUD', '~> 2.1.2'				# HUD
-pod 'AsyncDisplayKit', '~> 2.0-beta.1'			# 界面流畅性
 pod 'iCarousel', '~> 1.8.3'				# 3D自定义滚动图
 pod 'WYPopoverController', '~> 0.3.9'			# 自定义弹出气泡
 pod 'ChameleonFramework', '~> 2.1.0'			# 变色龙

@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MBProgressHUD.h>
-#import <AsyncDisplayKit/AsyncDisplayKit.h>
 #import "QuicklyUI.h"
-#import "QuicklyAsyncDisplay.h"
 #import "QuicklyHUD.h"
 
 @interface UIQuicklyKit : NSObject
