@@ -20,4 +20,5 @@
 - (NSString *)removeSpaceAndNewline;                               //移除空格和换行
 - (UIImage *)base64EncodedStringToUIImage;                         //base64转UIImage
 - (NSString *)allNumberString;                                     //获取其中所有数字
+- (NSString *)stringFromRequestDuration:(NSTimeInterval)duration;  //NSTimeInterval转字符串
 @end

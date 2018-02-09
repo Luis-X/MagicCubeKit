@@ -109,6 +109,21 @@
     return image;
 }
 
+/*
+ 圆角图片
+ */
+- (UIImage *)imageCircularWithColor:(UIColor *)color radius:(CGFloat)radius
+{
+    CGFloat diameter = radius * 2.0;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(diameter, diameter), NO, 0.0);
+    CGContextRef imageContext = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(imageContext, [color CGColor]);
+    CGContextFillEllipseInRect(imageContext, CGRectMake(0, 0, diameter, diameter));
+    UIImage *circularImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return circularImage;
+}
+
 /**
  拉伸
  */
@@ -213,5 +228,27 @@
     UIGraphicsEndImageContext();
     return image;
     
+}
+
+/*
+ NSData转图片
+ */
+- (UIImage *)thumbnailedImageWithMaxPixelDimension:(NSInteger)dimension fromImageData:(NSData *)data
+{
+    UIImage *thumbnail = nil;
+    CGImageSourceRef imageSource = CGImageSourceCreateWithData((__bridge CFDataRef)data, 0);
+    if (imageSource) {
+        NSDictionary<NSString *, id> *options = @{ (__bridge id)kCGImageSourceCreateThumbnailWithTransform : @YES,
+                                                   (__bridge id)kCGImageSourceCreateThumbnailFromImageAlways : @YES,
+                                                   (__bridge id)kCGImageSourceThumbnailMaxPixelSize : @(dimension) };
+        
+        CGImageRef scaledImageRef = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, (__bridge CFDictionaryRef)options);
+        if (scaledImageRef) {
+            thumbnail = [UIImage imageWithCGImage:scaledImageRef];
+            CFRelease(scaledImageRef);
+        }
+        CFRelease(imageSource);
+    }
+    return thumbnail;
 }
 @end

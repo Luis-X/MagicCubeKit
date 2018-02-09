@@ -16,6 +16,7 @@
 // 样式
 - (UIImage *)imageToCircleImage;                                                //圆角
 - (UIImage *)imageResizableWithCapInsets:(UIEdgeInsets)insets;                  //拉伸
+- (UIImage *)imageCircularWithColor:(UIColor *)color radius:(CGFloat)radius;
 
 // 判断
 - (BOOL)isEqualToImage:(UIImage *)image;                                        //图片是否相同
@@ -25,4 +26,5 @@
 - (UIImage *)imageResizeWithMaxSize:(CGSize)maxSize quality:(CGFloat)quality;           //压缩
 - (void)imageSaveToSandBoxWithFileName:(NSString *)fileName;                            //保存到沙盒
 - (UIImage *)imageToComposeImage:(UIImage *)first image:(UIImage *)second;              //图片合成
+- (UIImage *)thumbnailedImageWithMaxPixelDimension:(NSInteger)dimension fromImageData:(NSData *)data;
 @end
