@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - ATSDK-Weex (0.0.1)
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
@@ -311,6 +312,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.2.0)
   - AFNetworking (~> 3.1.0)
+  - Aspects (~> 1.4.1)
   - ATSDK-Weex (= 0.0.1)
   - ATSDK-Weex (~> 0.0.1)
   - ChameleonFramework (~> 2.1.0)
@@ -374,6 +376,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   ATSDK-Weex: 1b27558f4336d77fb97704d34fc6ad1fd468592c
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
@@ -414,6 +417,6 @@ SPEC CHECKSUMS:
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYBannerView: 9018f090ea8a6c8b5b6749a4292f02becd399f42
 
-PODFILE CHECKSUM: 11887664baefd53ca3a78f170b7082d95ab7bc4a
+PODFILE CHECKSUM: de1ad3db82ee5240216668ac41afb9d291b2e0a6
 
 COCOAPODS: 1.4.0

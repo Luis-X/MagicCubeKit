@@ -6,7 +6,8 @@ pod 'QMUIKit', '~> 2.3.0'
 pod 'CocoaLumberjack', '~> 3.2.0'			# 日志
 pod 'Masonry', '~> 1.0.1’				# autolayout
 pod 'AFNetworking', '~> 3.1.0'				# 网络请求
-pod 'Reachability', '~> 3.2'				# 网络监听	
+pod 'Reachability', '~> 3.2'				# 网络监听
+pod 'Aspects', '~> 1.4.1'				# 面向切面编程	
 pod 'SDWebImage', '~>4.0.0’				# 加载图片
 pod ‘SDWebImage/WebP’					# 图片WebP 
 pod ‘SDWebImage/GIF’					# 图片GIF

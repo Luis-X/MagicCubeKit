@@ -54,7 +54,17 @@
             NSLog(@"  name: %@",name);
         }
     }
+    
+    [self addLogAspect];
     return YES;
+}
+
+// 面向切面编程打点逻辑
+- (void)addLogAspect
+{
+    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated) {
+        NSLog(@"View Controller %@ will appear animated: %tu", aspectInfo.instance, animated);
+    } error:NULL];
 }
 
 /**

@@ -38,6 +38,7 @@
 #import <UIImageView+WebCache.h>
 #import <XLForm.h>
 #import <MJRefresh.h>
+#import <Aspects/Aspects.h>
 
 //封装包
 #import "UIQuicklyKit.h"
