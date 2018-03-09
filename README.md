@@ -6,6 +6,4 @@
 <img src="Resource/app.png"></a>
 </p>
 
-
-<h1 align="center">MagicCubeKit</h1>
-<h2 align="center">2018</h2>
+<a href="https://www.jianshu.com/u/6387bbe37e0a"><img src="https://img.shields.io/badge/MagicCubeKit-2018-red.svg?style=flat"></a>
