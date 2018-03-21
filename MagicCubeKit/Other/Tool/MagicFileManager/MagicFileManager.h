@@ -14,13 +14,26 @@
 + (NSString *)pathLibraryDirectory;
 + (NSString *)pathCachesDirectory;
 + (NSString *)pathTemporaryDirectory;
-+ (NSString *)pathDocumentDirectoryWithFolder:(NSString *)folder file:(NSString *)file;
++ (NSString *)pathDocumentDirectoryWithFolder:(NSString *)folder
+                                     fileName:(NSString *)fileName;
 
 + (BOOL)createFileDirectoryWithFolder:(NSString *)folder;
-+ (BOOL)createFileWithFolder:(NSString *)folder file:(NSString *)file;
-+ (BOOL)writeFileWithFolder:(NSString *)folder file:(NSString *)file content:(NSString *)content;
-+ (NSData *)readFileWithFolder:(NSString *)folder file:(NSString *)file;
-+ (BOOL)deleteFileWithFolder:(NSString *)folder file:(NSString *)file;
-+ (BOOL)isExecutableFileWithFolder:(NSString *)folder file:(NSString *)file;
-+ (void)typeFileWithFolder:(NSString *)folder file:(NSString *)file;
++ (BOOL)createFileWithFolder:(NSString *)folder
+                    fileName:(NSString *)fileName;
+
++ (NSString *)writeFileWithFolder:(NSString *)folder
+                         fileName:(NSString *)fileName
+                             data:(NSData *)data;
+
++ (NSData *)readFileWithFolder:(NSString *)folder
+                      fileName:(NSString *)fileName;
+
++ (BOOL)deleteFileWithFolder:(NSString *)folder
+                    fileName:(NSString *)fileName;
+
++ (BOOL)isExecutableFileWithFolder:(NSString *)folder
+                          fileName:(NSString *)fileName;
+
++ (void)typeFileWithFolder:(NSString *)folder
+                  fileName:(NSString *)fileName;
 @end

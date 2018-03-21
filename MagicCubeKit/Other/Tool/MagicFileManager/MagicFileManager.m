@@ -17,7 +17,6 @@
 + (NSString *)pathHomeDirectory
 {
     NSString *result = NSHomeDirectory();
-    NSLog(@"根路径: %@",result);
     return result;
 }
 
@@ -28,7 +27,6 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *result = [paths objectAtIndex:0];
-    NSLog(@"Document路径: %@", result);
     return result;
 }
 
@@ -39,7 +37,6 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *result = [paths objectAtIndex:0];
-    NSLog(@"Library路径: %@",result);
     return result;
 }
 
@@ -50,7 +47,6 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *result = [paths objectAtIndex:0];
-    NSLog(@"Caches路径: %@",result);
     return result;
 }
 
@@ -60,25 +56,23 @@
 + (NSString *)pathTemporaryDirectory
 {
     NSString *result = NSTemporaryDirectory();
-    NSLog(@"Temporary路径: %@",result);
     return result;
 }
 
 /**
  获取文件路径
  */
-+ (NSString *)pathDocumentDirectoryWithFolder:(NSString *)folder file:(NSString *)file
++ (NSString *)pathDocumentDirectoryWithFolder:(NSString *)folder fileName:(NSString *)fileName
 {
     NSString *directory = [[self pathDocumentDirectory] stringByAppendingPathComponent:folder];
-    NSString *filePath = [directory stringByAppendingPathComponent:file];
-    NSLog(@"文件路径: %@",filePath);
+    NSString *filePath = [directory stringByAppendingPathComponent:fileName];
     return filePath;
 }
 
 #pragma 文件操作
 /**
  创建文件夹
-
+ 
  @param folder 文件夹名
  */
 + (BOOL)createFileDirectoryWithFolder:(NSString *)folder
@@ -92,55 +86,57 @@
  创建文件
  
  @param folder 文件夹
- @param file   文件
+ @param fileName 文件
  */
-+ (BOOL)createFileWithFolder:(NSString *)folder file:(NSString *)file
++ (BOOL)createFileWithFolder:(NSString *)folder fileName:(NSString *)fileName
 {
-    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder file:file];
+    [self createFileDirectoryWithFolder:folder];
+    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder fileName:fileName];
     BOOL result = [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
     return result;
 }
 
 /**
  写入文件
-
+ 
  @param folder  文件夹
- @param file    文件
- @param content 内容
+ @param fileName 文件
+ @param data 数据
  */
-+ (BOOL)writeFileWithFolder:(NSString *)folder file:(NSString *)file content:(NSString *)content
++ (NSString *)writeFileWithFolder:(NSString *)folder fileName:(NSString *)fileName data:(NSData *)data
 {
-    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder file:file];
-    BOOL result = [content writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    return result;
+    [self createFileWithFolder:folder fileName:fileName];
+    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder fileName:fileName];
+    BOOL result = [data writeToFile:filePath atomically:YES];
+    return result ? filePath : nil;
 }
 
 
 /**
  读取文件
-
+ 
  @param folder 文件夹
- @param file   文件
+ @param fileName 文件
+ 
+ NSLog(@"图片读取成功: %@",[UIImage imageWithData:data]);
+ NSLog(@"文件读取成功: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
  */
-+ (NSData *)readFileWithFolder:(NSString *)folder file:(NSString *)file
++ (NSData *)readFileWithFolder:(NSString *)folder fileName:(NSString *)fileName
 {
-    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder file:file];
+    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder fileName:fileName];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    NSLog(@"文件读取成功: %@",data);
-    //NSLog(@"图片读取成功: %@",[UIImage imageWithData:data]);
-    //NSLog(@"文件读取成功: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     return data;
 }
 
 /**
  删除文件
-
+ 
  @param folder 文件夹
- @param file   文件
+ @param fileName 文件
  */
-+ (BOOL)deleteFileWithFolder:(NSString *)folder file:(NSString *)file
++ (BOOL)deleteFileWithFolder:(NSString *)folder fileName:(NSString *)fileName
 {
-    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder file:file];
+    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder fileName:fileName];
     BOOL result = [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
     return result;
 }
@@ -148,13 +144,13 @@
 #pragma mark - 文件判断
 /**
  文件是否存在
-
+ 
  @param folder 文件夹
- @param file   文件
+ @param fileName 文件
  */
-+ (BOOL)isExecutableFileWithFolder:(NSString *)folder file:(NSString *)file
++ (BOOL)isExecutableFileWithFolder:(NSString *)folder fileName:(NSString *)fileName
 {
-    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder file:file];
+    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder fileName:fileName];
     BOOL result = [[NSFileManager defaultManager] isExecutableFileAtPath:filePath];
     return result;
 }
@@ -163,11 +159,11 @@
  文件属性
  
  @param folder 文件夹
- @param file   文件
+ @param fileName 文件
  */
-+ (void)typeFileWithFolder:(NSString *)folder file:(NSString *)file
++ (void)typeFileWithFolder:(NSString *)folder fileName:(NSString *)fileName
 {
-    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder file:file];
+    NSString *filePath = [self pathDocumentDirectoryWithFolder:folder fileName:fileName];
     NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
     NSArray *keys;
     id key, value;

@@ -54,7 +54,8 @@
                    @{@"WeexPagerViewController" : @"UIScrollview重用"},
                    @{@"ExampleWebPlaceholderViewController" : @"WebView网络异常"},
                    @{@"ExampleWebPageAlertViewController" : @"WebView弹框"},
-                   @{@"ProductLoadMoreViewController" : @"详情图-(htmlString+webp+native)"}];
+                   @{@"ProductLoadMoreViewController" : @"详情图-(htmlString+webp+native)"},
+                   @{@"MagicAlbumPicker" : @"多选相册"}];
 }
 
 - (void)createMainViews{
@@ -146,8 +147,75 @@
             productLoadMoreViewController.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:productLoadMoreViewController animated:YES];
         }
+        if (indexPath.row == 7) {
+            [self presentAlbumViewControllerWithTitle:@"照片"];
+        }
     }
     
+}
+
+- (void)presentAlbumViewControllerWithTitle:(NSString *)title
+{
+    MCAlbumViewController *albumViewController = [[MCAlbumViewController alloc] init];
+    albumViewController.albumViewControllerDelegate = self;
+    albumViewController.title = title;
+    QMUINavigationController *navigationController = [[QMUINavigationController alloc] initWithRootViewController:albumViewController];
+    [self presentViewController:navigationController animated:YES completion:NULL];
+}
+
+#pragma mark - <QMUIAlbumViewControllerDelegate>
+// 进入相册
+- (QMUIImagePickerViewController *)imagePickerViewControllerForAlbumViewController:(QMUIAlbumViewController *)albumViewController
+{
+    MCImagePickerViewController *imagePickerViewController = [[MCImagePickerViewController alloc] init];
+    imagePickerViewController.imagePickerViewControllerDelegate = self;
+    imagePickerViewController.allowsMultipleSelection = YES;
+    imagePickerViewController.maximumSelectImageCount = 3;
+    return imagePickerViewController;
+}
+
+// 预览（选择完成）
+- (void)imagePickerPreviewViewController:(MCMultipleImagePickerPreviewViewController *)imagePickerPreviewViewController sendImageWithImagesAssetArray:(NSMutableArray<QMUIAsset *> *)imagesAssetArray {
+    [self allImageSelectedHandlerWithImagesAssetArray:imagesAssetArray];
+}
+
+#pragma mark - <QMUIImagePickerViewControllerDelegate>
+// 相册（选择完成）
+- (void)imagePickerViewController:(QMUIImagePickerViewController *)imagePickerViewController didFinishPickingImageWithImagesAssetArray:(NSMutableArray<QMUIAsset *> *)imagesAssetArray {
+   [self allImageSelectedHandlerWithImagesAssetArray:imagesAssetArray];
+}
+
+// 进入预览
+- (QMUIImagePickerPreviewViewController *)imagePickerPreviewViewControllerForImagePickerViewController:(QMUIImagePickerViewController *)imagePickerViewController
+{
+    MCMultipleImagePickerPreviewViewController *imagePickerPreviewViewController = [[MCMultipleImagePickerPreviewViewController alloc] init];
+    imagePickerPreviewViewController.delegate = self;
+    imagePickerPreviewViewController.maximumSelectImageCount = 9;
+    imagePickerPreviewViewController.assetsGroup = imagePickerViewController.assetsGroup;
+    return imagePickerPreviewViewController;
+}
+
+#pragma mark - <QMUIImagePickerPreviewViewControllerDelegate>
+// 预览（勾选）
+- (void)imagePickerPreviewViewController:(QMUIImagePickerPreviewViewController *)imagePickerPreviewViewController didCheckImageAtIndex:(NSInteger)index
+{
+    MCMultipleImagePickerPreviewViewController *customImagePickerPreviewViewController = (MCMultipleImagePickerPreviewViewController *)imagePickerPreviewViewController;
+    [customImagePickerPreviewViewController reloadSendButtonTitlte];
+}
+
+// 预览（取消）
+- (void)imagePickerPreviewViewController:(QMUIImagePickerPreviewViewController *)imagePickerPreviewViewController didUncheckImageAtIndex:(NSInteger)index
+{
+    MCMultipleImagePickerPreviewViewController *customImagePickerPreviewViewController = (MCMultipleImagePickerPreviewViewController *)imagePickerPreviewViewController;
+     [customImagePickerPreviewViewController reloadSendButtonTitlte];
+}
+
+#pragma mark - 处理选择完成
+- (void)allImageSelectedHandlerWithImagesAssetArray:(NSMutableArray<QMUIAsset *> *)imagesAssetArray
+{
+    for (QMUIAsset *qmUIAsset in imagesAssetArray) {
+        UIImage *image = [qmUIAsset originImage];
+    }
 }
 
 @end

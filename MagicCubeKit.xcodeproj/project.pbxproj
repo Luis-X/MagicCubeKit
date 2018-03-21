@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CCC0D2F4E37508F360F5908D /* libPods-MagicCubeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A6F1EAA10BE5E744C2C4F61 /* libPods-MagicCubeKit.a */; };
+		D100641E205BC56D0042715D /* album_no_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1006413205BC56C0042715D /* album_no_selected@2x.png */; };
+		D100641F205BC56D0042715D /* MCAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1006414205BC56C0042715D /* MCAlbumViewController.m */; };
+		D1006420205BC56D0042715D /* MCImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1006415205BC56C0042715D /* MCImagePickerViewController.m */; };
+		D1006421205BC56D0042715D /* MCMultipleImagePickerPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1006416205BC56C0042715D /* MCMultipleImagePickerPreviewViewController.m */; };
+		D1006422205BC56D0042715D /* album_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1006417205BC56C0042715D /* album_selected@2x.png */; };
+		D1006423205BC56D0042715D /* MagicAlbumPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D1006418205BC56C0042715D /* MagicAlbumPickerManager.m */; };
+		D1006424205BC56D0042715D /* album_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1006419205BC56C0042715D /* album_back@2x.png */; };
+		D1006425205BC56D0042715D /* album_picker_no_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D100641A205BC56C0042715D /* album_picker_no_selected@2x.png */; };
 		D1049BDE1F444215006A66EF /* ExampleDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1049AE31F444215006A66EF /* ExampleDrawView.m */; };
 		D1049BDF1F444215006A66EF /* ExampleDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1049AE51F444215006A66EF /* ExampleDrawViewController.m */; };
 		D1049BE01F444215006A66EF /* ExampleMagicDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1049AE91F444215006A66EF /* ExampleMagicDynamicViewController.m */; };
@@ -468,6 +476,18 @@
 		0A6F1EAA10BE5E744C2C4F61 /* libPods-MagicCubeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MagicCubeKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C06E2702EE719BA762B55E9 /* Pods-MagicCubeKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicCubeKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicCubeKit/Pods-MagicCubeKit.release.xcconfig"; sourceTree = "<group>"; };
 		CC53689CBB7FA71DA0B682C0 /* Pods-MagicCubeKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicCubeKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicCubeKit/Pods-MagicCubeKit.debug.xcconfig"; sourceTree = "<group>"; };
+		D1006412205BC56C0042715D /* MagicAlbumPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicAlbumPickerManager.h; sourceTree = "<group>"; };
+		D1006413205BC56C0042715D /* album_no_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_no_selected@2x.png"; sourceTree = "<group>"; };
+		D1006414205BC56C0042715D /* MCAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAlbumViewController.m; sourceTree = "<group>"; };
+		D1006415205BC56C0042715D /* MCImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCImagePickerViewController.m; sourceTree = "<group>"; };
+		D1006416205BC56C0042715D /* MCMultipleImagePickerPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMultipleImagePickerPreviewViewController.m; sourceTree = "<group>"; };
+		D1006417205BC56C0042715D /* album_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_selected@2x.png"; sourceTree = "<group>"; };
+		D1006418205BC56C0042715D /* MagicAlbumPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicAlbumPickerManager.m; sourceTree = "<group>"; };
+		D1006419205BC56C0042715D /* album_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_back@2x.png"; sourceTree = "<group>"; };
+		D100641A205BC56C0042715D /* album_picker_no_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_picker_no_selected@2x.png"; sourceTree = "<group>"; };
+		D100641B205BC56C0042715D /* MCMultipleImagePickerPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMultipleImagePickerPreviewViewController.h; sourceTree = "<group>"; };
+		D100641C205BC56C0042715D /* MCImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImagePickerViewController.h; sourceTree = "<group>"; };
+		D100641D205BC56C0042715D /* MCAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAlbumViewController.h; sourceTree = "<group>"; };
 		D1049AE21F444215006A66EF /* ExampleDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleDrawView.h; sourceTree = "<group>"; };
 		D1049AE31F444215006A66EF /* ExampleDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleDrawView.m; sourceTree = "<group>"; };
 		D1049AE41F444215006A66EF /* ExampleDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleDrawViewController.h; sourceTree = "<group>"; };
@@ -1187,6 +1207,25 @@
 				5C06E2702EE719BA762B55E9 /* Pods-MagicCubeKit.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D1006411205BC56C0042715D /* MagicAlbumPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D1006419205BC56C0042715D /* album_back@2x.png */,
+				D1006413205BC56C0042715D /* album_no_selected@2x.png */,
+				D100641A205BC56C0042715D /* album_picker_no_selected@2x.png */,
+				D1006417205BC56C0042715D /* album_selected@2x.png */,
+				D1006412205BC56C0042715D /* MagicAlbumPickerManager.h */,
+				D1006418205BC56C0042715D /* MagicAlbumPickerManager.m */,
+				D100641D205BC56C0042715D /* MCAlbumViewController.h */,
+				D1006414205BC56C0042715D /* MCAlbumViewController.m */,
+				D100641C205BC56C0042715D /* MCImagePickerViewController.h */,
+				D1006415205BC56C0042715D /* MCImagePickerViewController.m */,
+				D100641B205BC56C0042715D /* MCMultipleImagePickerPreviewViewController.h */,
+				D1006416205BC56C0042715D /* MCMultipleImagePickerPreviewViewController.m */,
+			);
+			path = MagicAlbumPicker;
 			sourceTree = "<group>";
 		};
 		D1049ADE1F444215006A66EF /* Main(主要) */ = {
@@ -3192,6 +3231,7 @@
 		D1C72C8E1EB87C6B00C88BAE /* Package(封装包) */ = {
 			isa = PBXGroup;
 			children = (
+				D1006411205BC56C0042715D /* MagicAlbumPicker */,
 				D1BBFE5C1FD4E9EE00F5C334 /* BalloonRefreshHeader */,
 				D1EF0A231F8CD1F7005EE05E /* MagicDevice */,
 				D1193F091F72648E0041AFF6 /* MagicShareManager */,
@@ -3485,15 +3525,18 @@
 				D1C72C4B1EB86F0C00C88BAE /* TangramHelperMapping.plist in Resources */,
 				D1049BE41F444215006A66EF /* 3.jpg in Resources */,
 				D147C7732029B12400F6CBE7 /* image4@2x.png in Resources */,
+				D1006424205BC56D0042715D /* album_back@2x.png in Resources */,
 				D1049C1C1F444215006A66EF /* productDetailMenuNone@2x.png in Resources */,
 				D1049C0D1F444215006A66EF /* autoBackground.png in Resources */,
 				D1C72CBD1EB8856000C88BAE /* share_friend@2x.png in Resources */,
 				D1049BFE1F444215006A66EF /* h5_preNavi_disabled@3x.png in Resources */,
 				D1049C1D1F444215006A66EF /* productDetailTag@2x.png in Resources */,
 				D1049BE31F444215006A66EF /* 2.jpg in Resources */,
+				D1006422205BC56D0042715D /* album_selected@2x.png in Resources */,
 				D147C7712029B12400F6CBE7 /* image3@2x.png in Resources */,
 				D1049BFA1F444215006A66EF /* h5_popovermenu_share@3x.png in Resources */,
 				D1049C1E1F444215006A66EF /* shopSku.json in Resources */,
+				D1006425205BC56D0042715D /* album_picker_no_selected@2x.png in Resources */,
 				D11816AC1EB2EFB5004C238A /* LaunchScreen.storyboard in Resources */,
 				D1E0BE521ED920A600493704 /* tabbar_2@2x.png in Resources */,
 				D1E0BE531ED920A600493704 /* tabbar_3@2x.png in Resources */,
@@ -3504,6 +3547,7 @@
 				D1049BF91F444215006A66EF /* h5_popovermenu_share@2x.png in Resources */,
 				D147C7702029B12400F6CBE7 /* image1@2x.png in Resources */,
 				D1BDFD8F1ED2CC6E000064B8 /* iconfont.ttf in Resources */,
+				D100641E205BC56D0042715D /* album_no_selected@2x.png in Resources */,
 				D1C72CC01EB8856000C88BAE /* share_wechat@2x.png in Resources */,
 				D119B5CC1F98A39300C4368C /* net_helper.bundle in Resources */,
 				D147C7722029B12400F6CBE7 /* image6@2x.png in Resources */,
@@ -3686,6 +3730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1006420205BC56D0042715D /* MCImagePickerViewController.m in Sources */,
 				D1CC9C661FB299F500A41518 /* ExampleWebPageAlertViewController.m in Sources */,
 				D11993F91EC2F2F100841273 /* MagicPermissionManager.m in Sources */,
 				D147C70E2029AE9900F6CBE7 /* QMUIConfigurationTemplate.m in Sources */,
@@ -3720,6 +3765,7 @@
 				D147C74D2029AE9900F6CBE7 /* QDEmptyViewController.m in Sources */,
 				D147C75A2029AE9900F6CBE7 /* QDCustomToastAnimator.m in Sources */,
 				D1049BF71F444215006A66EF /* ExampleMagicWebProgressViewController.m in Sources */,
+				D1006423205BC56D0042715D /* MagicAlbumPickerManager.m in Sources */,
 				D11816A41EB2EFB5004C238A /* ViewController.m in Sources */,
 				D124D87A1F2721DF0072272C /* MagicUserDefaults.m in Sources */,
 				D1049C281F444215006A66EF /* WMPageController.m in Sources */,
@@ -3777,6 +3823,7 @@
 				D1049C0E1F444215006A66EF /* AutoAlbumCollectionViewCell.m in Sources */,
 				D11816A11EB2EFB5004C238A /* AppDelegate.m in Sources */,
 				D147C7202029AE9900F6CBE7 /* QDLinkButtonViewController.m in Sources */,
+				D100641F205BC56D0042715D /* MCAlbumViewController.m in Sources */,
 				D1C72C561EB86F0C00C88BAE /* TangramDefaultElementFactory.m in Sources */,
 				D17DE7A71ECEF61400CE48D4 /* MagicIconButton.m in Sources */,
 				D147C7522029AE9900F6CBE7 /* QDMoreOperationViewController.m in Sources */,
@@ -3935,6 +3982,7 @@
 				D1049BEE1F444215006A66EF /* ExampleMagicImageDownloaderViewController.m in Sources */,
 				D147C7512029AE9900F6CBE7 /* QDFloatLayoutViewController.m in Sources */,
 				D147C7292029AE9900F6CBE7 /* QDCollectionListViewController.m in Sources */,
+				D1006421205BC56D0042715D /* MCMultipleImagePickerPreviewViewController.m in Sources */,
 				D147C7162029AE9900F6CBE7 /* QDCommonListViewController.m in Sources */,
 				D1C72CC31EB8856000C88BAE /* ReplayKitManager.m in Sources */,
 				D147C7442029AE9900F6CBE7 /* QDAllAnimationViewController.m in Sources */,

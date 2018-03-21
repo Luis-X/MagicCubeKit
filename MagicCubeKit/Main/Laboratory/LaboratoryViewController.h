@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "QDNavigationController.h"
+#import "MCAlbumViewController.h"
+#import "MCImagePickerViewController.h"
+#import "MCMultipleImagePickerPreviewViewController.h"
 
-@interface LaboratoryViewController : BaseViewController
+@interface LaboratoryViewController : BaseViewController<QMUIAlbumViewControllerDelegate, QMUIImagePickerViewControllerDelegate, MCMultipleImagePickerPreviewViewControllerDelegate>
 
 @end
