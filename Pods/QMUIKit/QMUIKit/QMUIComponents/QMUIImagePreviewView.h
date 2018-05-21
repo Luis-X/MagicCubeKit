@@ -29,8 +29,6 @@ typedef NS_ENUM (NSUInteger, QMUIImagePreviewMediaType) {
 // 返回要展示的媒体资源的类型（图片、live photo、视频），如果不实现此方法，则 QMUIImagePreviewView 将无法选择最合适的 cell 来复用从而略微增大系统开销
 - (QMUIImagePreviewMediaType)imagePreviewView:(QMUIImagePreviewView *)imagePreviewView assetTypeAtIndex:(NSUInteger)index;
 
-@optional
-
 /**
  *  当左右的滚动停止时会触发这个方法
  *  @param  imagePreviewView 当前预览的 QMUIImagePreviewView
@@ -44,8 +42,6 @@ typedef NS_ENUM (NSUInteger, QMUIImagePreviewMediaType) {
  *  @param  index 当前滚动到的图片所在的索引
  */
 - (void)imagePreviewView:(QMUIImagePreviewView *)imagePreviewView willScrollHalfToIndex:(NSUInteger)index;
-
-@optional
 
 @end
 
@@ -84,7 +80,7 @@ typedef NS_ENUM (NSUInteger, QMUIImagePreviewMediaType) {
  *  获取某个 QMUIZoomImageView 所对应的 index
  *  @return zoomImageView 对应的 index，若当前的 zoomImageView 不可见，会返回 0
  */
-- (NSUInteger)indexForZoomImageView:(QMUIZoomImageView *)zoomImageView;
+- (NSInteger)indexForZoomImageView:(QMUIZoomImageView *)zoomImageView;
 
 /**
  *  获取某个 index 对应的 zoomImageView

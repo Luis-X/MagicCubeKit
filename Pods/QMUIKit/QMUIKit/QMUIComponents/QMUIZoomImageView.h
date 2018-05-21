@@ -8,18 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import <PhotosUI/PhotosUI.h>
+#import "QMUIAsset.h"
 
 @class QMUIZoomImageView;
 @class QMUIEmptyView;
 @class QMUIButton;
 @class QMUISlider;
 @class QMUIZoomImageViewVideoToolbar;
+@class QMUIPieProgressView;
 
 @protocol QMUIZoomImageViewDelegate <NSObject>
 @optional
 - (void)singleTouchInZoomingImageView:(QMUIZoomImageView *)zoomImageView location:(CGPoint)location;
 - (void)doubleTouchInZoomingImageView:(QMUIZoomImageView *)zoomImageView location:(CGPoint)location;
 - (void)longPressInZoomingImageView:(QMUIZoomImageView *)zoomImageView;
+
+/**
+ *  告知 delegate 用户点击了 iCloud 图片的重试按钮
+ */
+- (void)didTouchICloudRetryButtonInZoomImageView:(QMUIZoomImageView *)imageView;
+
 /**
  *  告知 delegate 在视频预览界面里，由于用户点击了空白区域或播放视频等导致了底部的视频工具栏被显示或隐藏
  *  @param didHide 如果为 YES 则表示工具栏被隐藏，NO 表示工具栏被显示了出来
@@ -28,10 +36,6 @@
 
 /// 是否支持缩放，默认为 YES
 - (BOOL)enabledZoomViewInZoomImageView:(QMUIZoomImageView *)zoomImageView;
-
-// 可通过此方法调整视频播放时底部 toolbar 的视觉位置，默认为 {25, 25, 25, 18}
-// 如果同时设置了 QMUIZoomImageViewVideoToolbar 实例的 contentInsets 属性，则这里设置的值将不再生效
-- (UIEdgeInsets)contentInsetsForVideoToolbar:(QMUIZoomImageViewVideoToolbar *)toolbar inZoomingImageView:(QMUIZoomImageView *)zoomImageView;
 
 @end
 
@@ -80,11 +84,24 @@
 // @see QMUIZoomImageViewVideoToolbar
 @property(nonatomic, strong, readonly) QMUIZoomImageViewVideoToolbar *videoToolbar;
 
+// 视频底部控制条的 margins，会在此基础上自动叠加 QMUIZoomImageView.qmui_safeAreaInsets，因此无需考虑在 iPhone X 下的兼容
+// 默认值为 {0, 25, 25, 18}
+@property(nonatomic, assign) UIEdgeInsets videoToolbarMargins UI_APPEARANCE_SELECTOR;
+
 // 播放 video 时屏幕中央的播放按钮
 @property(nonatomic, strong, readonly) QMUIButton *videoCenteredPlayButton;
 
 // 可通过此属性修改 video 播放时屏幕中央的播放按钮图片
 @property(nonatomic, strong) UIImage *videoCenteredPlayButtonImage UI_APPEARANCE_SELECTOR;
+
+// 从 iCloud 加载资源的进度展示
+@property(nonatomic, strong) QMUIPieProgressView *cloudProgressView;
+
+// 从 iCloud 加载资源失败的重试按钮
+@property(nonatomic, strong) QMUIButton *cloudDownloadRetryButton;
+
+// 当前展示的资源的下载状态
+@property(nonatomic, assign) QMUIAssetDownloadStatus cloudDownloadStatus;
 
 /// 暂停视频播放
 - (void)pauseVideo;
@@ -131,9 +148,8 @@
 @property(nonatomic, strong, readonly) UILabel *sliderLeftLabel;
 @property(nonatomic, strong, readonly) UILabel *sliderRightLabel;
 
-// 可通过调整此属性来调整 toolbar 的视觉位置，默认为 {25, 25, 25, 18}
-// 如果同时实现了 QMUIZoomImageViewDelegate 的 contentInsetsForVideoToolbar:inZoomingImageView: 方法，则此处设置的值会覆盖掉 delegate 中返回的值
-@property(nonatomic, assign) UIEdgeInsets contentInsets UI_APPEARANCE_SELECTOR;
+// 可通过调整此属性来调整 toolbar 内部的间距，默认为 {0, 0, 0, 0}
+@property(nonatomic, assign) UIEdgeInsets paddings UI_APPEARANCE_SELECTOR;
 
 // 可通过这些属性修改 video 播放时屏幕底部工具栏的播放/暂停图标
 @property(nonatomic, strong) UIImage *playButtonImage UI_APPEARANCE_SELECTOR;

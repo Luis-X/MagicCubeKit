@@ -25,6 +25,8 @@
     self.toolBarBackgroundColor = MC_COLOR_WHITE_A(0.95f);
     self.backButton.tintColor = MC_COLOR_RGB(26, 18, 16);
     self.checkboxButton.tintColor = MC_COLOR_RGB(26, 18, 16);
+    self.backButton.imageView.contentMode = 2;
+    self.checkboxButton.adjustsImageTintColorAutomatically = NO;
     [self.backButton setImage:MC_IMAGE_NAMED(@"album_back") forState:UIControlStateNormal];
     [self.checkboxButton setImage:MC_IMAGE_NAMED(@"album_no_selected") forState:UIControlStateNormal];
     [self.checkboxButton setImage:MC_IMAGE_NAMED(@"album_selected") forState:UIControlStateSelected];
@@ -59,12 +61,14 @@
     [super viewDidLayoutSubviews];
     CGFloat sendButtonWidth = 92.5f;
     CGFloat sendButtonHeight = 30.0f;
-    CGFloat toolBarItemSize = 23.5f;
-    _bottomToolBarView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - BottomToolBarViewHeight, CGRectGetWidth(self.view.bounds), BottomToolBarViewHeight);
+    CGFloat topToolBarViewHeight = MC_NAVIGATION_STATUS_BAR_H;
+    CGFloat topToolBarViewBottomSpace = 10.0f;
+    self.topToolBarView.frame = CGRectMake(self.topToolBarView.frame.origin.x, self.topToolBarView.frame.origin.y, self.topToolBarView.frame.size.width, topToolBarViewHeight);
+    _bottomToolBarView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - BottomToolBarViewHeight - MC_SAFE_BOTTOM_H, CGRectGetWidth(self.view.bounds), BottomToolBarViewHeight + MC_SAFE_BOTTOM_H);
     _sendButton.frame = CGRectMake(CGRectGetWidth(_bottomToolBarView.frame) - sendButtonWidth - 10, (CGRectGetHeight(_bottomToolBarView.frame) - sendButtonHeight) / 2, sendButtonWidth, sendButtonHeight);
     _sendButton.layer.cornerRadius = 15.0f;
-    self.backButton.frame = CGRectMake(self.backButton.frame.origin.x, self.backButton.frame.origin.y, toolBarItemSize, toolBarItemSize);
-    self.checkboxButton.frame = CGRectMake(self.checkboxButton.frame.origin.x, self.checkboxButton.frame.origin.y, toolBarItemSize, toolBarItemSize);
+    self.backButton.frame = CGRectMake(self.backButton.frame.origin.x, topToolBarViewHeight - 20 - topToolBarViewBottomSpace, 20, 20);
+    self.checkboxButton.frame = CGRectMake(self.checkboxButton.frame.origin.x, topToolBarViewHeight - 23 - topToolBarViewBottomSpace, 23, 23);
 }
 
 - (void)singleTouchInZoomingImageView:(QMUIZoomImageView *)zoomImageView location:(CGPoint)location

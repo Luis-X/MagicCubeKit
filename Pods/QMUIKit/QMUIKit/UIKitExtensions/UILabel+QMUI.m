@@ -16,8 +16,8 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ReplaceMethod([self class], @selector(setText:), @selector(qmui_setText:));
-        ReplaceMethod([self class], @selector(setAttributedText:), @selector(qmui_setAttributedText:));
+        ExchangeImplementations([self class], @selector(setText:), @selector(qmui_setText:));
+        ExchangeImplementations([self class], @selector(setAttributedText:), @selector(qmui_setAttributedText:));
     });
 }
 
@@ -151,11 +151,12 @@ static char kAssociatedObjectKey_lineHeight;
     return [objc_getAssociatedObject(self, &kAssociatedObjectKey_lineHeight) floatValue];
 }
 
-- (instancetype)initWithFont:(UIFont *)font textColor:(UIColor *)textColor {
-    if (self = [super init]) {
-        self.font = font;
-        self.textColor = textColor;
-    }
+- (instancetype)qmui_initWithFont:(UIFont *)font textColor:(UIColor *)textColor {
+    BeginIgnoreClangWarning(-Wunused-value)
+    [self init];
+    EndIgnoreClangWarning
+    self.font = font;
+    self.textColor = textColor;
     return self;
 }
 

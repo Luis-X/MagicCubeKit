@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "QMUIAsset.h"
-#import "QMUIButton.h"
-
-@class QMUIPieProgressView;
 
 // checkbox 的 margin 默认值
 extern const UIEdgeInsets QMUIImagePickerCollectionViewCellDefaultCheckboxButtonMargins;
+
+@class QMUIButton;
 
 /**
  *  图片选择空间里的九宫格 cell，支持显示 checkbox、饼状进度条及重试按钮（iCloud 图片需要）
@@ -29,12 +28,6 @@ extern const UIEdgeInsets QMUIImagePickerCollectionViewCellDefaultCheckboxButton
 
 /// checkbox 的 margin，定位从每个 cell（即每张图片）的最右边开始计算
 @property(nonatomic, assign) UIEdgeInsets checkboxButtonMargins UI_APPEARANCE_SELECTOR;
-
-/// progressView tintColor
-@property(nonatomic, strong) UIColor *progressViewTintColor UI_APPEARANCE_SELECTOR;
-
-/// downloadRetryButton 的 icon
-@property(nonatomic, strong) UIImage *downloadRetryImage UI_APPEARANCE_SELECTOR;
 
 /// videoMarkImageView 的 icon
 @property(nonatomic, strong) UIImage *videoMarkImage UI_APPEARANCE_SELECTOR;
@@ -53,14 +46,13 @@ extern const UIEdgeInsets QMUIImagePickerCollectionViewCellDefaultCheckboxButton
 
 @property(nonatomic, strong, readonly) UIImageView *contentImageView;
 @property(nonatomic, strong, readonly) QMUIButton *checkboxButton;
-@property(nonatomic, strong, readonly) QMUIPieProgressView *progressView;
-@property(nonatomic, strong, readonly) QMUIButton *downloadRetryButton;
 @property(nonatomic, strong, readonly) UIImageView *videoMarkImageView;
 @property(nonatomic, strong, readonly) UILabel *videoDurationLabel;
 @property(nonatomic, strong, readonly) CAGradientLayer *videoBottomShadowLayer;
 
-@property(nonatomic, assign, getter=isEditing) BOOL editing;
+@property(nonatomic, assign, getter=isSelectable) BOOL selectable;
 @property(nonatomic, assign, getter=isChecked) BOOL checked;
 @property(nonatomic, assign) QMUIAssetDownloadStatus downloadStatus; // Cell 中对应资源的下载状态，这个值的变动会相应地调整 UI 表现
+@property(nonatomic, copy) NSString *assetIdentifier;// 当前这个 cell 正在展示的 QMUIAsset 的 identifier
 
 @end

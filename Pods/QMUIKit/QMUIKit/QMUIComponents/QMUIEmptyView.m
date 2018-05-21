@@ -83,6 +83,7 @@
     
     _actionButton = [[UIButton alloc] init];
     self.actionButton.qmui_outsideEdge = UIEdgeInsetsMake(-20, -20, -20, -20);
+    self.actionButton.qmui_automaticallyAdjustTouchHighlightedInScrollView = YES;
     [self.contentView addSubview:self.actionButton];
 }
 
@@ -92,7 +93,13 @@
     self.scrollView.frame = self.bounds;
     
     CGSize contentViewSize = CGSizeFlatted([self sizeThatContentViewFits]);
+    // contentView 默认垂直居中于 scrollView
     self.contentView.frame = CGRectFlatMake(0, CGRectGetMidY(self.scrollView.bounds) - contentViewSize.height / 2 + self.verticalOffset, contentViewSize.width, contentViewSize.height);
+    
+    // 如果 contentView 要比 scrollView 高，则置顶展示
+    if (CGRectGetHeight(self.contentView.bounds) > CGRectGetHeight(self.scrollView.bounds)) {
+        self.contentView.frame = CGRectSetY(self.contentView.frame, 0);
+    }
     
     self.scrollView.contentSize = CGSizeMake(fmax(CGRectGetWidth(self.scrollView.bounds) - UIEdgeInsetsGetHorizontalValue(self.scrollView.contentInset), contentViewSize.width), fmax(CGRectGetHeight(self.scrollView.bounds) - UIEdgeInsetsGetVerticalValue(self.scrollView.contentInset), CGRectGetMaxY(self.contentView.frame)));
     
@@ -266,6 +273,8 @@
 - (void)setActionButtonTitleColor:(UIColor *)actionButtonTitleColor {
     _actionButtonTitleColor = actionButtonTitleColor;
     [self.actionButton setTitleColor:actionButtonTitleColor forState:UIControlStateNormal];
+    [self.actionButton setTitleColor:[actionButtonTitleColor colorWithAlphaComponent:ButtonHighlightedAlpha] forState:UIControlStateHighlighted];
+    [self.actionButton setTitleColor:[actionButtonTitleColor colorWithAlphaComponent:ButtonDisabledAlpha] forState:UIControlStateDisabled];
 }
 
 @end

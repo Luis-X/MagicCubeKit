@@ -78,6 +78,9 @@
 // 操作系统版本号，只获取第二级的版本号，例如 10.3.1 只会得到 10.3
 #define IOS_VERSION ([[[UIDevice currentDevice] systemVersion] doubleValue])
 
+// 数字形式的操作系统版本号，可直接用于大小比较；如 110205 代表 11.2.5 版本；根据 iOS 规范，版本号最多可能有3位
+#define IOS_VERSION_NUMBER [QMUIHelper numbericOSVersion]
+
 // 是否横竖屏
 // 用户界面横屏了才会返回YES
 #define IS_LANDSCAPE UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
@@ -107,6 +110,8 @@
 #define IS_40INCH_SCREEN [QMUIHelper is40InchScreen]
 // iPhone4/4s
 #define IS_35INCH_SCREEN [QMUIHelper is35InchScreen]
+// iPhone4/4s/5/5s/SE
+#define IS_320WIDTH_SCREEN (IS_35INCH_SCREEN || IS_40INCH_SCREEN)
 
 // 是否Retina
 #define IS_RETINASCREEN ([[UIScreen mainScreen] scale] >= 2.0)
@@ -156,6 +161,8 @@
 
 #pragma mark - 方法-创建器
 
+#define CGSizeMax CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+
 // 使用文件名(不带后缀名)创建一个UIImage对象，会被系统缓存，适用于大量复用的小资源图
 // 使用这个 API 而不是 imageNamed: 是因为后者在 iOS 8 下反而存在性能问题（by molice 不确定 iOS 9 及以后的版本是否还有这个问题）
 #define UIImageMake(img) [UIImage imageNamed:img inBundle:nil compatibleWithTraitCollection:nil]
@@ -190,31 +197,155 @@
 
 #define StringFromBOOL(_flag) (_flag ? @"YES" : @"NO")
 
-/// 以下是 QMUI 提供的打 log 的方法，仅用于 QMUI 项目内，业务项目可通过 QMUIHelperDelegate 来自定义 log 的输出方式（例如 Release 可将 log 记录到自己的日志文件里）
-/// 按照重要程度从低到高排列是：info、default、warn，每一个级别都可以通过修改配置表的开关来控制这个级别的 log 是否要输出
-/// QMUILog 默认会自动将当前打 log 的方法名记录下来，所以你的 log 内容可以不需要包含这部分的内容
-#define QMUILog(...) [[QMUIHelper sharedInstance] printLogWithCalledFunction:__FUNCTION__ level:QMUILogLevelDefault log:__VA_ARGS__]
-#define QMUILogInfo(...) [[QMUIHelper sharedInstance] printLogWithCalledFunction:__FUNCTION__ level:QMUILogLevelInfo log:__VA_ARGS__]
-#define QMUILogWarn(...) [[QMUIHelper sharedInstance] printLogWithCalledFunction:__FUNCTION__ level:QMUILogLevelWarn log:__VA_ARGS__]
-
 #pragma mark - 方法-C对象、结构操作
 
+/**
+ *  如果 fromClass 里存在 originSelector，则这个函数会将 fromClass 里的 originSelector 与 toClass 里的 newSelector 交换实现。
+ *  如果 fromClass 里不存在 originSelecotr，则这个函数会为 fromClass 增加方法 originSelector，并且该方法会使用 toClass 的 newSelector 方法的实现，而 toClass 的 newSelector 方法的实现则会被替换为空内容
+ *  @warning 注意如果 fromClass 里的 originSelector 是继承自父类并且 fromClass 也没有重写这个方法，这会导致实际上被替换的是父类，然后父类及父类的所有子类（也即 fromClass 的兄弟类）也受影响，因此使用时请谨记这一点。
+ *  @param _fromClass 要被替换的 class，不能为空
+ *  @param _originSelector 要被替换的 class 的 selector，可为空，为空则相当于为 fromClass 新增这个方法
+ *  @param _toClass 要拿这个 class 的方法来替换
+ *  @param _newSelector 要拿 toClass 里的这个方法来替换 originSelector
+ *  @return 是否成功替换（或增加）
+ */
 CG_INLINE BOOL
-ReplaceMethod(Class _class, SEL _originSelector, SEL _newSelector) {
-    Method oriMethod = class_getInstanceMethod(_class, _originSelector);
-    Method newMethod = class_getInstanceMethod(_class, _newSelector);
-    if (!newMethod) {
-        // class 里不存在该方法的实现
+ExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Class _toClass, SEL _newSelector) {
+    if (!_fromClass || !_toClass) {
         return NO;
     }
-    BOOL isAddedMethod = class_addMethod(_class, _originSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
+    
+    Method oriMethod = class_getInstanceMethod(_fromClass, _originSelector);
+    Method newMethod = class_getInstanceMethod(_toClass, _newSelector);
+    if (!newMethod) {
+        return NO;
+    }
+    
+    Class superclass = class_getSuperclass(_fromClass);
+    BOOL tryToExchangeSuperclassMethod = [superclass instancesRespondToSelector:_originSelector] && (class_getInstanceMethod(superclass, _originSelector) == class_getInstanceMethod(_fromClass, _originSelector));
+    if (tryToExchangeSuperclassMethod) {
+        NSLog(@"注意，%@ 准备替换方法 %@, 但这个方法来自于父类 %@", NSStringFromClass(_fromClass), NSStringFromSelector(_originSelector), NSStringFromClass(superclass));
+    }
+    
+    BOOL isAddedMethod = class_addMethod(_fromClass, _originSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
     if (isAddedMethod) {
-        class_replaceMethod(_class, _newSelector, method_getImplementation(oriMethod), method_getTypeEncoding(oriMethod));
+        // 如果 class_addMethod 成功了，说明之前 fromClass 里并不存在 originSelector，所以要用一个空的方法代替它，以避免 class_replaceMethod 后，后续 toClass 的这个方法被调用时可能会 crash
+        IMP oriMethodIMP = method_getImplementation(oriMethod) ?: imp_implementationWithBlock(^(id selfObject) {});
+        const char *oriMethodTypeEncoding = method_getTypeEncoding(oriMethod) ?: "v@:";
+        class_replaceMethod(_toClass, _newSelector, oriMethodIMP, oriMethodTypeEncoding);
     } else {
         method_exchangeImplementations(oriMethod, newMethod);
     }
     return YES;
 }
+
+/// 交换同一个 class 里的 originSelector 和 newSelector 的实现，如果原本不存在 originSelector，则相当于给 class 新增一个叫做 originSelector 的方法
+CG_INLINE BOOL
+ExchangeImplementations(Class _class, SEL _originSelector, SEL _newSelector) {
+    return ExchangeImplementationsInTwoClasses(_class, _originSelector, _class, _newSelector);
+}
+
+/**
+ *  用 block 重写某个 class 的指定方法
+ *  @param targetClass 要重写的 class
+ *  @param targetSelector 要重写的 class 里的实例方法，注意如果该方法不存在于 targetClass 里，则什么都不做
+ *  @param implementationBlock 该 block 必须返回一个 block，返回的 block 将被当成 targetSelector 的新实现，所以要在内部自己处理对 super 的调用，以及对当前调用方法的 self 的 class 的保护判断（因为如果 targetClass 的 targetSelector 是继承自父类的，targetClass 内部并没有重写这个方法，则我们这个函数最终重写的其实是父类的 targetSelector，所以会产生预期之外的 class 的影响，例如 targetClass 传进来  UIButton.class，则最终可能会影响到 UIView.class），implementationBlock 的参数里第一个为你要修改的 class，也即等同于 targetClass，第二个参数为你要修改的 selector，也即等同于 targetSelector，第三个参数是 targetSelector 原本的实现，由于 IMP 可以直接当成 C 函数调用，所以可利用它来实现“调用 super”的效果，但由于 targetSelector 的参数个数、参数类型、返回值类型，都会影响 IMP 的调用写法，所以这个调用只能由业务自己写。
+ */
+CG_INLINE BOOL
+OverrideImplementation(Class targetClass, SEL targetSelector, id (^implementationBlock)(Class originClass, SEL originCMD, IMP originIMP)) {
+    Method originMethod = class_getInstanceMethod(targetClass, targetSelector);
+    if (!originMethod) {
+        return NO;
+    }
+    IMP originIMP = method_getImplementation(originMethod);
+    method_setImplementation(originMethod, imp_implementationWithBlock(implementationBlock(targetClass, targetSelector, originIMP)));
+    return YES;
+}
+
+/**
+ *  用 block 重写某个 class 的某个无参数且返回值为 void 的方法，会自动在调用 block 之前先调用该方法原本的实现。
+ *  @param targetClass 要重写的 class
+ *  @param targetSelector 要重写的 class 里的实例方法，注意如果该方法不存在于 targetClass 里，则什么都不做，注意该方法必须无参数，返回值为 void
+ *  @param implementationBlock targetSelector 的自定义实现，直接将你的实现写进去即可，不需要管 super 的调用。参数 selfObject 代表当前正在调用这个方法的对象，也即 self 指针。
+ */
+CG_INLINE BOOL
+ExtendImplementationOfVoidMethodWithoutArguments(Class targetClass, SEL targetSelector, void (^implementationBlock)(__kindof NSObject *selfObject)) {
+    return OverrideImplementation(targetClass, targetSelector, ^id(Class originClass, SEL originCMD, IMP originIMP) {
+        return ^(__kindof NSObject *selfObject) {
+            
+            void (*originSelectorIMP)(id, SEL);
+            originSelectorIMP = (void (*)(id, SEL))originIMP;
+            originSelectorIMP(selfObject, originCMD);
+            
+            if (![selfObject isKindOfClass:originClass]) return;
+            
+            implementationBlock(selfObject);
+        };
+    });
+}
+
+/**
+ *  用 block 重写某个 class 的某个无参数且带返回值的方法，会自动在调用 block 之前先调用该方法原本的实现。
+ *  @param _targetClass 要重写的 class
+ *  @param _targetSelector 要重写的 class 里的实例方法，注意如果该方法不存在于 targetClass 里，则什么都不做，注意该方法必须带一个参数，返回值不为空
+ *  @param _returnType 返回值的数据类型
+ *  @param _implementationBlock 格式为 ^_returnType(NSObject *selfObject, _returnType originReturnValue) {}，内容即为 targetSelector 的自定义实现，直接将你的实现写进去即可，不需要管 super 的调用。第一个参数 selfObject 代表当前正在调用这个方法的对象，也即 self 指针；第二个参数 originReturnValue 代表 super 的返回值，具体类型请自行填写
+ */
+#define ExtendImplementationOfNonVoidMethodWithoutArguments(_targetClass, _targetSelector, _returnType, _implementationBlock) OverrideImplementation(_targetClass, _targetSelector, ^id(Class originClass, SEL originCMD, IMP originIMP) {\
+            return ^_returnType (__kindof NSObject *selfObject) {\
+                \
+                _returnType (*originSelectorIMP)(id, SEL);\
+                originSelectorIMP = (_returnType (*)(id, SEL))originIMP;\
+                _returnType result = originSelectorIMP(selfObject, originCMD);\
+                \
+                if ([selfObject isKindOfClass:originClass]) {\
+                    return _implementationBlock(selfObject, result);\
+                }\
+                \
+                return result;\
+            };\
+        });
+
+/**
+ *  用 block 重写某个 class 的带一个参数且返回值为 void 的方法，会自动在调用 block 之前先调用该方法原本的实现。
+ *  @param _targetClass 要重写的 class
+ *  @param _targetSelector 要重写的 class 里的实例方法，注意如果该方法不存在于 targetClass 里，则什么都不做，注意该方法必须带一个参数，返回值为 void
+ *  @param _argumentType targetSelector 的参数类型
+ *  @param _implementationBlock 格式为 ^(NSObject *selfObject, _argumentType firstArgv) {}，内容即为 targetSelector 的自定义实现，直接将你的实现写进去即可，不需要管 super 的调用。第一个参数 selfObject 代表当前正在调用这个方法的对象，也即 self 指针；第二个参数 firstArgv 代表 targetSelector 被调用时传进来的第一个参数，具体的类型请自行填写
+ */
+#define ExtendImplementationOfVoidMethodWithSingleArgument(_targetClass, _targetSelector, _argumentType, _implementationBlock) OverrideImplementation(_targetClass, _targetSelector, ^id(Class originClass, SEL originCMD, IMP originIMP) {\
+        return ^(__kindof NSObject *selfObject, _argumentType firstArgv) {\
+            \
+            void (*originSelectorIMP)(id, SEL, _argumentType);\
+            originSelectorIMP = (void (*)(id, SEL, _argumentType))originIMP;\
+            originSelectorIMP(selfObject, originCMD, firstArgv);\
+            \
+            if (![selfObject isKindOfClass:originClass]) return;\
+            \
+            _implementationBlock(selfObject, firstArgv);\
+        };\
+    });
+
+/**
+ *  用 block 重写某个 class 的带一个参数且带返回值的方法，会自动在调用 block 之前先调用该方法原本的实现。
+ *  @param targetClass 要重写的 class
+ *  @param targetSelector 要重写的 class 里的实例方法，注意如果该方法不存在于 targetClass 里，则什么都不做，注意该方法必须带一个参数，返回值不为空
+ *  @param implementationBlock，格式为 ^_returnType (NSObject *selfObject, _argumentType firstArgv, _returnType originReturnValue){}，内容也即 targetSelector 的自定义实现，直接将你的实现写进去即可，不需要管 super 的调用。第一个参数 selfObject 代表当前正在调用这个方法的对象，也即 self 指针；第二个参数 firstArgv 代表 targetSelector 被调用时传进来的第一个参数，具体的类型请自行填写；第三个参数 originReturnValue 代表 super 的返回值，具体类型请自行填写
+ */
+#define ExtendImplementationOfNonVoidMethodWithSingleArgument(_targetClass, _targetSelector, _argumentType, _returnType, _implementationBlock) OverrideImplementation(_targetClass, _targetSelector, ^id(Class originClass, SEL originCMD, IMP originIMP) {\
+        return ^_returnType (__kindof NSObject *selfObject, _argumentType firstArgv) {\
+            \
+            _returnType (*originSelectorIMP)(id, SEL, _argumentType);\
+            originSelectorIMP = (_returnType (*)(id, SEL, _argumentType))originIMP;\
+            _returnType result = originSelectorIMP(selfObject, originCMD, firstArgv);\
+            \
+            if ([selfObject isKindOfClass:originClass]) {\
+                return _implementationBlock(selfObject, firstArgv, result);\
+            }\
+            \
+            return result;\
+        };\
+    });
 
 #pragma mark - CGFloat
 
@@ -276,12 +407,13 @@ betweenOrEqual(CGFloat minimumValue, CGFloat value, CGFloat maximumValue) {
  *  例如 CGFloatToFixed(0.3333, 2) 会返回 0.33，而 CGFloatToFixed(0.6666, 2) 会返回 0.67
  *
  *  @warning 参数类型为 CGFloat，也即意味着不管传进来的是 float 还是 double 最终都会被强制转换成 CGFloat 再做计算
+ *  @warning 该方法无法解决浮点数精度运算的问题
  */
 CG_INLINE CGFloat
 CGFloatToFixed(CGFloat value, NSUInteger precision) {
     NSString *formatString = [NSString stringWithFormat:@"%%.%@f", @(precision)];
     NSString *toString = [NSString stringWithFormat:formatString, value];
-    #if defined(__LP64__) && __LP64__
+    #if CGFLOAT_IS_DOUBLE
     CGFloat result = [toString doubleValue];
     #else
     CGFloat result = [toString floatValue];

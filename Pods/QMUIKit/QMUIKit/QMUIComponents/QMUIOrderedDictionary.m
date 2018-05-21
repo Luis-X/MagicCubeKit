@@ -50,10 +50,10 @@
 }
 
 - (NSArray *)allKeys {
-    return self.mutableAllKeys;
+    return self.mutableAllKeys.copy;
 }
 
-- (instancetype)objectForKey:(id)key {
+- (id)objectForKey:(id)key {
     return [self.mutableDictionary objectForKey:key];
 }
 

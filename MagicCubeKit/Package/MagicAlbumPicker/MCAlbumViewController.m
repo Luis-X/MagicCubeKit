@@ -21,7 +21,7 @@
     self.albumTableViewCellHeight = 105;
     [QMUIAlbumTableViewCell appearance].albumImageSize = 75;
     [QMUIAlbumTableViewCell appearance].albumImageMarginLeft = 9;
-    [QMUIAlbumTableViewCell appearance].albumNameFontSize = 16;
+    [QMUIAlbumTableViewCell appearance].albumNameFontSize = 18;
     [QMUIAlbumTableViewCell appearance].albumAssetsNumberFontSize = 12;
 }
 

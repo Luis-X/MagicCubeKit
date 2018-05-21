@@ -9,6 +9,10 @@
 #import "MagicAlbumPickerManager.h"
 #import <AFNetworking/AFNetworking.h>
 
+@interface MagicAlbumPickerManager ()
+@property(nonatomic, strong) NSMutableSet *selectImageIndexSet;
+@end
+
 @implementation MagicAlbumPickerManager{
     MagicAlbumPickerManagerBlock _handler;
     NSInteger maxSelectImageCount;
@@ -20,15 +24,45 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [[MagicAlbumPickerManager alloc] init];
+        manager.selectImageIndexSet = [NSMutableSet set];
     });
     return manager;
     
 }
 
+- (NSMutableSet *)allSelectImageIndexSet
+{
+    return self.selectImageIndexSet;
+}
+
 - (void)presentAlbumViewControllerWithTitle:(NSString *)title maximumSelectImageCount:(NSInteger)maximumSelectImageCount addController:(UIViewController *)addController handler:(MagicAlbumPickerManagerBlock)handler
 {
+    if ([QMUIAssetsManager authorizationStatus] == QMUIAssetAuthorizationStatusNotDetermined) {
+        
+        [QMUIAssetsManager requestAuthorization:^(QMUIAssetAuthorizationStatus status) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showAlbumTitle:title
+                            maxCount:maximumSelectImageCount
+                       addController:addController
+                             handler:handler];
+            });
+        }];
+        
+    } else {
+        
+        [self showAlbumTitle:title
+                    maxCount:maximumSelectImageCount
+               addController:addController
+                     handler:handler];
+        
+    }
+}
+
+- (void)showAlbumTitle:(NSString *)title maxCount:(NSInteger)maxCount addController:(UIViewController *)addController handler:(MagicAlbumPickerManagerBlock)handler
+{
     _handler = handler;
-    maxSelectImageCount = maximumSelectImageCount;
+    [self.selectImageIndexSet removeAllObjects];
+    maxSelectImageCount = maxCount;
     MCAlbumViewController *albumViewController = [[MCAlbumViewController alloc] init];
     albumViewController.albumViewControllerDelegate = self;
     albumViewController.title = title;
@@ -68,10 +102,23 @@
     return imagePickerPreviewViewController;
 }
 
+// 勾选
+- (void)imagePickerViewController:(QMUIImagePickerViewController *)imagePickerViewController didCheckImageAtIndex:(NSInteger)index
+{
+    [self addSelectImageIndexSetWithIndex:index];
+}
+
+// 取消
+- (void)imagePickerViewController:(QMUIImagePickerViewController *)imagePickerViewController didUncheckImageAtIndex:(NSInteger)index
+{
+    [self removeSelectImageIndexSetWithIndex:index];
+}
+
 #pragma mark - <QMUIImagePickerPreviewViewControllerDelegate>
 // 预览（勾选）
 - (void)imagePickerPreviewViewController:(QMUIImagePickerPreviewViewController *)imagePickerPreviewViewController didCheckImageAtIndex:(NSInteger)index
 {
+    [self addSelectImageIndexSetWithIndex:index];
     MCMultipleImagePickerPreviewViewController *customImagePickerPreviewViewController = (MCMultipleImagePickerPreviewViewController *)imagePickerPreviewViewController;
     [customImagePickerPreviewViewController reloadSendButtonTitlte];
 }
@@ -79,8 +126,24 @@
 // 预览（取消）
 - (void)imagePickerPreviewViewController:(QMUIImagePickerPreviewViewController *)imagePickerPreviewViewController didUncheckImageAtIndex:(NSInteger)index
 {
+    [self removeSelectImageIndexSetWithIndex:index];
     MCMultipleImagePickerPreviewViewController *customImagePickerPreviewViewController = (MCMultipleImagePickerPreviewViewController *)imagePickerPreviewViewController;
     [customImagePickerPreviewViewController reloadSendButtonTitlte];
+}
+
+#pragma mark - 勾选
+- (void)addSelectImageIndexSetWithIndex:(NSInteger)index
+{
+    [self.selectImageIndexSet addObject:[NSNumber numberWithInteger:index]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"albumReload"
+                                                        object:[NSNumber numberWithInteger:index]];
+}
+
+- (void)removeSelectImageIndexSetWithIndex:(NSInteger)index
+{
+    [self.selectImageIndexSet removeObject:[NSNumber numberWithInteger:index]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"albumReload"
+                                                         object:[NSNumber numberWithInteger:index]];
 }
 
 #pragma mark - 处理选择完成
@@ -88,11 +151,12 @@
 {
     NSMutableArray *resultImages = [NSMutableArray array];
     for (QMUIAsset *qmUIAsset in imagesAssetArray) {
-        UIImage *image = [qmUIAsset originImage];
+        UIImage *image = [qmUIAsset previewImage];
         [resultImages addObject:image];
     }
     if (_handler) {
         _handler(resultImages);
+        resultImages = nil;
     }
 }
 
@@ -100,6 +164,9 @@
 + (void)networkUploadWithURLString:(NSString *)URLString parameters:(id)parameters images:(NSMutableArray *)images completionHandler:(void (^)(NSArray *imageUrls))completionHandler{
     
     NSMutableArray *result = [NSMutableArray array];
+    for (NSInteger i = 0; i < images.count; i++) {
+        [result addObject:[NSNull null]];
+    }
     
     dispatch_group_t group = dispatch_group_create();
     
@@ -111,10 +178,10 @@
         NSString *url = URLString;
         //2. 图片名称自定义
         NSString *imageName = [[NSDate date] formattedDateWithFormat:@"yyyyMMddHHmmss"];
-        NSString *fileName = [NSString stringWithFormat:@"%@.png",imageName];
+        NSString *fileName = [NSString stringWithFormat:@"%@_%ld.png",imageName, i];
         //3. 图片二进制文件
-        NSData *imageData = UIImagePNGRepresentation(images[i]);
-        //NSLog(@"文件大小: %ld k", (long)(imageData.length / 1024));
+        NSData *imageData = UIImageJPEGRepresentation(images[i], 0.5);
+        // NSLog(@"文件大小: %ld k", (long)(imageData.length / 1024));
         //4. 发起网络请求
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -126,16 +193,16 @@
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
-            // NSMutableArray 是线程不安全的，所以加个同步锁
             @synchronized (result) {
                 NSString *data = [NSString stringWithFormat:@"%@", [responseObject valueForKey:@"data"]];
-                [result addObject:data];
+                if (data.length) {
+                    result[i] = data;
+                }
             }
             dispatch_group_leave(group);
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             
-            // NSLog(@"第 %d 张图片上传失败: %@", (int)i + 1, error);
             dispatch_group_leave(group);
             
         }];
@@ -143,9 +210,18 @@
     }
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        
+        for (NSInteger i = 0; i < result.count; i++) {
+            id obj = result[i];
+            if (obj == [NSNull null]) {
+                [result removeObject:obj];
+            }
+        }
+        
         if (completionHandler) {
             completionHandler(result);
         }
+        
     });
 }
 

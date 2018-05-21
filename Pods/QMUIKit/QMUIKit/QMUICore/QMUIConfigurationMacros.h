@@ -95,7 +95,8 @@
 #define NavBarLargeTitleColor                           [QMUICMI navBarLargeTitleColor]
 #define NavBarLargeTitleFont                            [QMUICMI navBarLargeTitleFont]
 #define NavBarBarBackButtonTitlePositionAdjustment      [QMUICMI navBarBackButtonTitlePositionAdjustment]
-#define NavBarBackIndicatorImage                        [QMUICMI navBarBackIndicatorImage]                          // 自定义的返回按钮，尺寸建议与系统的返回按钮尺寸一致（iOS8下实测系统大小是(13, 21)），可提高性能
+#define NavBarBackIndicatorImage                        [QMUICMI navBarBackIndicatorImage]
+#define SizeNavBarBackIndicatorImageAutomatically       [QMUICMI sizeNavBarBackIndicatorImageAutomatically]
 #define NavBarCloseButtonImage                          [QMUICMI navBarCloseButtonImage]
 
 #define NavBarLoadingMarginRight                        [QMUICMI navBarLoadingMarginRight]                          // titleView里左边的loading的右边距
@@ -156,7 +157,7 @@
 #define TableViewCellBackgroundColor               [QMUICMI tableViewCellBackgroundColor]               // 列表 cell 的背景色
 #define TableViewCellSelectedBackgroundColor       [QMUICMI tableViewCellSelectedBackgroundColor]       // 列表 cell 按下时的背景色
 #define TableViewCellWarningBackgroundColor        [QMUICMI tableViewCellWarningBackgroundColor]        // 列表 cell 在未读状态下的背景色
-#define TableViewCellNormalHeight                  [QMUICMI tableViewCellNormalHeight]                  // 默认 cell 的高度
+#define TableViewCellNormalHeight                  [QMUICMI tableViewCellNormalHeight]                  // QMUITableView 的默认 cell 高度
 
 #define TableViewCellDisclosureIndicatorImage      [QMUICMI tableViewCellDisclosureIndicatorImage]      // 列表 cell 右边的箭头图片
 #define TableViewCellCheckmarkImage                [QMUICMI tableViewCellCheckmarkImage]                // 列表 cell 右边的打钩checkmark
@@ -204,6 +205,7 @@
 #define StatusbarStyleLightInitially                    [QMUICMI statusbarStyleLightInitially]      // 默认的状态栏内容是否使用白色，默认为NO，也即黑色
 #define NeedsBackBarButtonItemTitle                     [QMUICMI needsBackBarButtonItemTitle]       // 全局是否需要返回按钮的title，不需要则只显示一个返回image
 #define HidesBottomBarWhenPushedInitially               [QMUICMI hidesBottomBarWhenPushedInitially] // QMUICommonViewController.hidesBottomBarWhenPushed 的初始值，默认为 NO，以保持与系统默认值一致，但通常建议改为 YES，因为一般只有 tabBar 首页那几个界面要求为 NO
+#define PreventConcurrentNavigationControllerTransitions [QMUICMI preventConcurrentNavigationControllerTransitions] // PreventConcurrentNavigationControllerTransitions : 自动保护 QMUINavigationController 在上一次 push/pop 尚未结束的时候就进行下一次 push/pop 的行为，避免产生 crash
 #define NavigationBarHiddenInitially                    [QMUICMI navigationBarHiddenInitially]      // preferredNavigationBarHidden 的初始值，默认为NO
 #define ShouldFixTabBarTransitionBugInIPhoneX           [QMUICMI shouldFixTabBarTransitionBugInIPhoneX] // 是否需要自动修复 iOS 11 下，iPhone X 的设备在 push 界面时，tabBar 会瞬间往上跳的 bug
 

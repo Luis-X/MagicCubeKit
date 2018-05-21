@@ -44,16 +44,19 @@
 #define MC_SCREEN_W             [UIScreen mainScreen].bounds.size.width   //宽
 #define MC_SCREEN_W_SCALE       (MC_SCREEN_W / 375)                       //宽比 (iPhone6)
 #define MC_SCREEN_H             [UIScreen mainScreen].bounds.size.height  //高
-#define MC_SCREEN_H_SCALE       (MC_SCREEN_H / 667)                       //高比（iPhone6）
+#define MC_SCREEN_H_SCALE       (MC_SCREEN_H - (MC_IS_IPHONE_X ? 76.f: 0.f)) / 667                       //高比（iPhone6）
 #define MC_SCREEN_SCALE         [[UIScreen mainScreen] scale]             //屏幕的分辨率 (1:普通 2:Retian)
 
 /* 控件 */
-#define MC_STATUS_BAR_H         (20.f)   //状态栏
-#define MC_NAVIGATION_BAR_H     (44.f)   //导航栏
-#define MC_TAB_BAR_H            (49.f)   //标签栏
-#define MC_TABLEVIEW_CELL_H     (44.f)   //普通cell
-#define MC_EN_KEYBOARD_H        (216.f)  //英文键盘
-#define MC_CN_KEYBOARD_H        (252.f)  //中文键盘
+#define MC_NAVIGATION_BAR_H         (44.f)                                                //导航栏
+#define MC_NAVIGATION_STATUS_BAR_H  (MC_NAVIGATION_BAR_H + MC_STATUS_BAR_H)               //导航栏和状态栏
+#define MC_STATUS_BAR_H             (MC_IS_IPHONE_X ? (20.f + MC_SAFE_TOP_H) : 20.f)      //状态栏
+#define MC_TAB_BAR_H                (MC_IS_IPHONE_X ? (49.f + MC_SAFE_BOTTOM_H) : 49.f)   //标签栏
+#define MC_SAFE_TOP_H               (MC_IS_IPHONE_X ? 24.f : 0.f)                         //安全区上
+#define MC_SAFE_BOTTOM_H            (MC_IS_IPHONE_X ? 34.f : 0.f)                         //安全区域下
+#define MC_TABLEVIEW_CELL_H         (44.f)   //普通cell
+#define MC_EN_KEYBOARD_H            (216.f)  //英文键盘
+#define MC_CN_KEYBOARD_H            (252.f)  //中文键盘
 
 /* 设备 */
 #define MC_DEVICE_IPHONE        (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)            //iPhone
@@ -65,6 +68,7 @@
 #define MC_IS_IPHONE5           ([[UIScreen mainScreen] bounds].size.height == 568)  //568
 #define MC_IS_IPHONE6           ([[UIScreen mainScreen] bounds].size.height == 667)  //667
 #define MC_IS_IPHONE_PLUS       ([[UIScreen mainScreen] bounds].size.height == 736)  //736
+#define MC_IS_IPHONE_X          ([[UIScreen mainScreen] bounds].size.height == 812)  //812
 
 /* 系统 */
 #define MC_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
@@ -113,25 +117,21 @@
 /* 编码 */
 #define MC_ENCODE_UTF8(s)      [(s) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]         //编码
 #define MC_DECODE_UTF8(s)      [(s) stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]      //解码
+/*
+ #if TARGET_OS_IPHONE
+ // 真机
+ #endif
+ #if TARGET_IPHONE_SIMULATOR
+ // 模拟器
+ #endif
+ */
 
 /*
- *判断是真机还是模拟器
+ #if __has_feature(objc_arc)
+ // ARC
+ #else
+ // MRC
+ #endif
  */
-#if TARGET_OS_IPHONE
-//真机
-#endif
-
-#if TARGET_IPHONE_SIMULATOR
-//模拟器
-#endif
-
-/*
- *使用ARC和不使用ARC
- */
-#if __has_feature(objc_arc)
-//ARC
-#else
-//MRC
-#endif
 
 

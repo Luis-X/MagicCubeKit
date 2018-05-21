@@ -96,6 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong, nullable) UIColor  *navBarLargeTitleColor;
 @property(nonatomic, strong, nullable) UIFont   *navBarLargeTitleFont;
 @property(nonatomic, assign) UIOffset           navBarBackButtonTitlePositionAdjustment;
+@property(nonatomic, assign) BOOL               sizeNavBarBackIndicatorImageAutomatically;
 @property(nonatomic, strong, nullable) UIImage  *navBarBackIndicatorImage;
 @property(nonatomic, strong) UIImage            *navBarCloseButtonImage;
 
@@ -203,6 +204,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) BOOL               statusbarStyleLightInitially;
 @property(nonatomic, assign) BOOL               needsBackBarButtonItemTitle;
 @property(nonatomic, assign) BOOL               hidesBottomBarWhenPushedInitially;
+@property(nonatomic, assign) BOOL               preventConcurrentNavigationControllerTransitions;
 @property(nonatomic, assign) BOOL               navigationBarHiddenInitially;
 @property(nonatomic, assign) BOOL               shouldFixTabBarTransitionBugInIPhoneX;
 

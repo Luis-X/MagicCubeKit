@@ -13,6 +13,7 @@
 #import "UIScrollView+QMUI.h"
 #import "UIControl+QMUI.h"
 #import "UIImage+QMUI.h"
+#import "QMUILog.h"
 
 @implementation QMUIEmotion
 
@@ -170,7 +171,7 @@
                 [self.delegate emotionPageView:self didSelectEmotion:emotion atIndex:i];
             }
             if (self.debug) {
-                NSLog(@"点击的是当前页里的第 %@ 个表情，%@", @(i), emotion);
+                QMUILog(NSStringFromClass(self.class), @"点击的是当前页里的第 %@ 个表情，%@", @(i), emotion);
             }
             return;
         }
@@ -249,8 +250,8 @@
     [super layoutSubviews];
     CGRect collectionViewFrame = CGRectInsetEdges(self.bounds, self.qmui_safeAreaInsets);
     BOOL collectionViewSizeChanged = !CGSizeEqualToSize(collectionViewFrame.size, self.collectionView.bounds.size);
+    self.collectionViewLayout.itemSize = collectionViewFrame.size;// 先更新 itemSize 再设置 collectionView.frame，否则会触发系统的 UICollectionViewFlowLayoutBreakForInvalidSizes 断点
     self.collectionView.frame = collectionViewFrame;
-    self.collectionViewLayout.itemSize = self.collectionView.bounds.size;
     
     if (collectionViewSizeChanged) {
         [self pageEmotions];

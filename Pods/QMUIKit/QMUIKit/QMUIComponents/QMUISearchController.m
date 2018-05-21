@@ -136,7 +136,9 @@ BeginIgnoreDeprecatedWarning
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 主动触发 loadView，如果不这么做，那么有可能直到 QMUISearchController 被销毁，这期间 self.searchController 都没有被触发 loadView，然后在 dealloc 时就会报错，提示尝试在释放 self.searchController 时触发了 self.searchController 的 loadView
+    BeginIgnoreAvailabilityWarning
     [self.searchController loadViewIfNeeded];
+    EndIgnoreAvailabilityWarning
 }
 
 - (void)setSearchResultsDelegate:(id<QMUISearchControllerDelegate>)searchResultsDelegate {
@@ -255,10 +257,10 @@ EndIgnoreDeprecatedWarning
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ReplaceMethod(self.class, @selector(initSubviews), @selector(search_initSubviews));
-        ReplaceMethod(self.class, @selector(viewWillAppear:), @selector(search_viewWillAppear:));
-        ReplaceMethod(self.class, @selector(showEmptyView), @selector(search_showEmptyView));
-        ReplaceMethod(self.class, @selector(hideEmptyView), @selector(search_hideEmptyView));
+        ExchangeImplementations(self.class, @selector(initSubviews), @selector(search_initSubviews));
+        ExchangeImplementations(self.class, @selector(viewWillAppear:), @selector(search_viewWillAppear:));
+        ExchangeImplementations(self.class, @selector(showEmptyView), @selector(search_showEmptyView));
+        ExchangeImplementations(self.class, @selector(hideEmptyView), @selector(search_hideEmptyView));
     });
 }
 

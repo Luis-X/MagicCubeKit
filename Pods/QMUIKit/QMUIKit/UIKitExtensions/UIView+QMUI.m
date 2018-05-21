@@ -29,16 +29,18 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
-        if (@available(iOS 11, *)) {
-            ReplaceMethod([self class], @selector(safeAreaInsetsDidChange), @selector(qmui_safeAreaInsetsDidChange));
-        }
-        
         // 检查调用这系列方法的两个 view 是否存在共同的父 view，不存在则可能导致转换结果错误
-        ReplaceMethod([self class], @selector(convertPoint:toView:), @selector(qmui_convertPoint:toView:));
-        ReplaceMethod([self class], @selector(convertPoint:fromView:), @selector(qmui_convertPoint:fromView:));
-        ReplaceMethod([self class], @selector(convertRect:toView:), @selector(qmui_convertRect:toView:));
-        ReplaceMethod([self class], @selector(convertRect:fromView:), @selector(qmui_convertRect:fromView:));
+        SEL selectors[] = {
+            @selector(convertPoint:toView:),
+            @selector(convertPoint:fromView:),
+            @selector(convertRect:toView:),
+            @selector(convertRect:fromView:)
+        };
+        for (NSUInteger index = 0; index < sizeof(selectors) / sizeof(SEL); index++) {
+            SEL originalSelector = selectors[index];
+            SEL swizzledSelector = NSSelectorFromString([@"qmui_" stringByAppendingString:NSStringFromSelector(originalSelector)]);
+            ExchangeImplementations([self class], originalSelector, swizzledSelector);
+        }
     });
 }
 
@@ -53,25 +55,11 @@
     return UIEdgeInsetsZero;
 }
 
-static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
-- (void)setQmui_safeAreaInsetsBeforeChange:(UIEdgeInsets)qmui_safeAreaInsetsBeforeChange {
-    objc_setAssociatedObject(self, &kAssociatedObjectKey_safeAreaInsetsBeforeChange, [NSValue valueWithUIEdgeInsets:qmui_safeAreaInsetsBeforeChange], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIEdgeInsets)qmui_safeAreaInsetsBeforeChange {
-    return [((NSValue *)objc_getAssociatedObject(self, &kAssociatedObjectKey_safeAreaInsetsBeforeChange)) UIEdgeInsetsValue];
-}
-
-- (void)qmui_safeAreaInsetsDidChange {
-    [self qmui_safeAreaInsetsDidChange];
-    self.qmui_safeAreaInsetsBeforeChange = self.qmui_safeAreaInsets;
-}
-
 - (void)qmui_removeAllSubviews {
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
-+ (void)qmui_animateWithAnimated:(BOOL)animated duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion {
++ (void)qmui_animateWithAnimated:(BOOL)animated duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion {
     if (animated) {
         [UIView animateWithDuration:duration delay:delay options:options animations:animations completion:completion];
     } else {
@@ -84,7 +72,7 @@ static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
     }
 }
 
-+ (void)qmui_animateWithAnimated:(BOOL)animated duration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion {
++ (void)qmui_animateWithAnimated:(BOOL)animated duration:(NSTimeInterval)duration animations:(void (^ __nullable)(void))animations completion:(void (^)(BOOL finished))completion {
     if (animated) {
         [UIView animateWithDuration:duration animations:animations completion:completion];
     } else {
@@ -97,12 +85,25 @@ static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
     }
 }
 
-+ (void)qmui_animateWithAnimated:(BOOL)animated duration:(NSTimeInterval)duration animations:(void (^)(void))animations {
++ (void)qmui_animateWithAnimated:(BOOL)animated duration:(NSTimeInterval)duration animations:(void (^ __nullable)(void))animations {
     if (animated) {
         [UIView animateWithDuration:duration animations:animations];
     } else {
         if (animations) {
             animations();
+        }
+    }
+}
+
++ (void)qmui_animateWithAnimated:(BOOL)animated duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion {
+    if (animated) {
+        [UIView animateWithDuration:duration delay:delay usingSpringWithDamping:dampingRatio initialSpringVelocity:velocity options:options animations:animations completion:completion];
+    } else {
+        if (animations) {
+            animations();
+        }
+        if (completion) {
+            completion(YES);
         }
     }
 }
@@ -124,7 +125,7 @@ static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
     
     __block BOOL isPrivate = NO;
     NSString *classString = NSStringFromClass(self.class);
-    [@[@"LayoutContainer", @"NavigationItemButton", @"NavigationItemView", @"SelectionGrabber", @"InputViewContent"] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [@[@"LayoutContainer", @"NavigationItemButton", @"NavigationItemView", @"SelectionGrabber", @"InputViewContent", @"InputSetContainer", @"TextFieldContentView"] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (([classString hasPrefix:@"UI"] || [classString hasPrefix:@"_UI"]) && [classString containsString:obj]) {
             isPrivate = YES;
             *stop = YES;
@@ -135,7 +136,7 @@ static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
 
 - (void)alertConvertValueWithView:(UIView *)view {
     if (IS_DEBUG && ![self isUIKitPrivateView] && ![self hasSharedAncestorViewWithView:view]) {
-        QMUILogWarn(@"进行坐标系转换运算的 %@ 和 %@ 不存在共同的父 view，可能导致运算结果不准确（特别是在横屏状态下）", self, view);
+        NSLog(@"进行坐标系转换运算的 %@ 和 %@ 不存在共同的父 view，可能导致运算结果不准确（特别是在横屏状态下）", self, view);
     }
 }
 
@@ -187,6 +188,7 @@ static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
                                                [UIScrollView class],
                                                [UIDatePicker class],
                                                [UIPickerView class],
+                                               [UIVisualEffectView class],
                                                [UIWebView class],
                                                [UIWindow class],
                                                [UINavigationBar class],
@@ -197,11 +199,8 @@ static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
                                                [UIView class],
                                                nil];
     
-    if (NSClassFromString(@"UIStackView")) {
-        [viewSuperclasses addObject:[UIStackView class]];
-    }
-    if (NSClassFromString(@"UIVisualEffectView")) {
-        [viewSuperclasses addObject:[UIVisualEffectView class]];
+    if (@available(iOS 9.0, *)) {
+        [viewSuperclasses insertObject:[UIStackView class] atIndex:0];
     }
     
     for (NSInteger i = 0, l = viewSuperclasses.count; i < l; i++) {
@@ -221,9 +220,9 @@ static char kAssociatedObjectKey_safeAreaInsetsBeforeChange;
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ReplaceMethod([self class], @selector(layoutSubviews), @selector(qmui_debug_layoutSubviews));
-        ReplaceMethod([self class], @selector(addSubview:), @selector(qmui_debug_addSubview:));
-        ReplaceMethod([self class], @selector(becomeFirstResponder), @selector(qmui_debug_becomeFirstResponder));
+        ExchangeImplementations([self class], @selector(layoutSubviews), @selector(qmui_debug_layoutSubviews));
+        ExchangeImplementations([self class], @selector(addSubview:), @selector(qmui_debug_addSubview:));
+        ExchangeImplementations([self class], @selector(becomeFirstResponder), @selector(qmui_debug_becomeFirstResponder));
     });
 }
 
@@ -268,9 +267,11 @@ static char kAssociatedObjectKey_hasDebugColor;
 
 - (void)renderColorWithSubviews:(NSArray *)subviews {
     for (UIView *view in subviews) {
-        if ([view isKindOfClass:[UIStackView class]]) {
-            UIStackView *stackView = (UIStackView *)view;
-            [self renderColorWithSubviews:stackView.arrangedSubviews];
+        if (@available(iOS 9.0, *)) {
+            if ([view isKindOfClass:[UIStackView class]]) {
+                UIStackView *stackView = (UIStackView *)view;
+                [self renderColorWithSubviews:stackView.arrangedSubviews];
+            }
         }
         view.qmui_hasDebugColor = YES;
         view.qmui_shouldShowDebugColor = self.qmui_shouldShowDebugColor;
@@ -302,7 +303,7 @@ static char kAssociatedObjectKey_hasDebugColor;
 }
 
 - (void)QMUISymbolicUIViewBecomeFirstResponderWithoutKeyWindow {
-    QMUILog(@"尝试让一个处于非 keyWindow 上的 %@ becomeFirstResponder，可能导致界面显示异常，请添加 '%@' 的 Symbolic Breakpoint 以捕捉此类信息\n%@", NSStringFromClass(self.class), NSStringFromSelector(_cmd), [NSThread callStackSymbols]);
+    NSLog(@"尝试让一个处于非 keyWindow 上的 %@ becomeFirstResponder，可能导致界面显示异常，请添加 '%@' 的 Symbolic Breakpoint 以捕捉此类信息\n%@", NSStringFromClass(self.class), NSStringFromSelector(_cmd), [NSThread callStackSymbols]);
 }
 
 @end
@@ -313,9 +314,9 @@ static char kAssociatedObjectKey_hasDebugColor;
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ReplaceMethod([self class], @selector(initWithFrame:), @selector(qmui_initWithFrame:));
-        ReplaceMethod([self class], @selector(initWithCoder:), @selector(qmui_initWithCoder:));
-        ReplaceMethod([self class], @selector(layoutSublayersOfLayer:), @selector(qmui_layoutSublayersOfLayer:));
+        ExchangeImplementations([self class], @selector(initWithFrame:), @selector(qmui_initWithFrame:));
+        ExchangeImplementations([self class], @selector(initWithCoder:), @selector(qmui_initWithCoder:));
+        ExchangeImplementations([self class], @selector(layoutSublayersOfLayer:), @selector(qmui_layoutSublayersOfLayer:));
     });
 }
 
@@ -368,22 +369,22 @@ static char kAssociatedObjectKey_hasDebugColor;
         path = [UIBezierPath bezierPath];
     }
     
-    if (self.qmui_borderPosition & QMUIBorderViewPositionTop) {
+    if ((self.qmui_borderPosition & QMUIBorderViewPositionTop) == QMUIBorderViewPositionTop) {
         [path moveToPoint:CGPointMake(0, borderWidth / 2)];
         [path addLineToPoint:CGPointMake(CGRectGetWidth(self.bounds), borderWidth / 2)];
     }
     
-    if (self.qmui_borderPosition & QMUIBorderViewPositionLeft) {
+    if ((self.qmui_borderPosition & QMUIBorderViewPositionLeft) == QMUIBorderViewPositionLeft) {
         [path moveToPoint:CGPointMake(borderWidth / 2, 0)];
         [path addLineToPoint:CGPointMake(borderWidth / 2, CGRectGetHeight(self.bounds) - 0)];
     }
     
-    if (self.qmui_borderPosition & QMUIBorderViewPositionBottom) {
+    if ((self.qmui_borderPosition & QMUIBorderViewPositionBottom) == QMUIBorderViewPositionBottom) {
         [path moveToPoint:CGPointMake(0, CGRectGetHeight(self.bounds) - borderWidth / 2)];
         [path addLineToPoint:CGPointMake(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - borderWidth / 2)];
     }
     
-    if (self.qmui_borderPosition & QMUIBorderViewPositionRight) {
+    if ((self.qmui_borderPosition & QMUIBorderViewPositionRight) == QMUIBorderViewPositionRight) {
         [path moveToPoint:CGPointMake(CGRectGetWidth(self.bounds) - borderWidth / 2, 0)];
         [path addLineToPoint:CGPointMake(CGRectGetWidth(self.bounds) - borderWidth / 2, CGRectGetHeight(self.bounds))];
     }

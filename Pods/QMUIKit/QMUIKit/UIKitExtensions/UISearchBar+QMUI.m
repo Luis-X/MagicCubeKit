@@ -16,9 +16,9 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ReplaceMethod([self class], @selector(setPlaceholder:), @selector(qmui_setPlaceholder:));
-        ReplaceMethod([self class], @selector(layoutSubviews), @selector(qmui_layoutSubviews));
-        ReplaceMethod([self class], @selector(setFrame:), @selector(qmui_setFrame:));
+        ExchangeImplementations([self class], @selector(setPlaceholder:), @selector(qmui_setPlaceholder:));
+        ExchangeImplementations([self class], @selector(layoutSubviews), @selector(qmui_layoutSubviews));
+        ExchangeImplementations([self class], @selector(setFrame:), @selector(qmui_setFrame:));
     });
 }
 
@@ -284,7 +284,7 @@ static char kAssociatedObjectKey_textFieldMargins;
     UIImage *searchIconImage = SearchBarSearchIconImage;
     if (searchIconImage) {
         if (!CGSizeEqualToSize(searchIconImage.size, CGSizeMake(13, 13))) {
-            QMUILog(@"搜索框放大镜图片（SearchBarSearchIconImage）的大小最好为 (13, 13)，否则会失真，目前的大小为 %@", NSStringFromCGSize(searchIconImage.size));
+            NSLog(@"搜索框放大镜图片（SearchBarSearchIconImage）的大小最好为 (13, 13)，否则会失真，目前的大小为 %@", NSStringFromCGSize(searchIconImage.size));
         }
         [self setImage:searchIconImage forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     }

@@ -99,10 +99,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setNavigationItemsIsInEditMode:NO animated:NO];
-    [self setToolbarItemsIsInEditMode:NO animated:NO];
+    [self setupNavigationItems];
+    [self setupNavigationItems];
 }
 
+- (void)dealloc {
+    // iOS 9 以后，系统会在一个 object 被 release 的时候自动移除 observer，所以这句代码只为 iOS 8 使用
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - 空列表视图 QMUIEmptyView
 
@@ -164,7 +168,7 @@
 - (BOOL)layoutEmptyView {
     if (self.emptyView) {
         // 由于为self.emptyView设置frame时会调用到self.view，为了避免导致viewDidLoad提前触发，这里需要判断一下self.view是否已经被初始化
-        BOOL viewDidLoad = self.emptyView.superview || [self isViewLoaded];
+        BOOL viewDidLoad = self.emptyView.superview && [self isViewLoaded];
         if (viewDidLoad) {
             CGSize newEmptyViewSize = self.emptyView.superview.bounds.size;
             CGSize oldEmptyViewSize = self.emptyView.frame.size;
@@ -188,7 +192,11 @@
     return self.supportedOrientationMask;
 }
 
-#pragma mark - 键盘交互
+#pragma mark - HomeIndicator
+
+- (BOOL)prefersHomeIndicatorAutoHidden {
+    return NO;
+}
 
 #pragma mark - <QMUINavigationControllerDelegate>
 
@@ -206,8 +214,8 @@
 
 - (void)viewControllerKeepingAppearWhenSetViewControllersWithAnimated:(BOOL)animated {
     // 通常和 viewWillAppear: 里做的事情保持一致
-    [self setNavigationItemsIsInEditMode:NO animated:NO];
-    [self setToolbarItemsIsInEditMode:NO animated:NO];
+    [self setupNavigationItems];
+    [self setupNavigationItems];
 }
 
 @end
@@ -218,12 +226,12 @@
     // 子类重写
 }
 
-- (void)setNavigationItemsIsInEditMode:(BOOL)isInEditMode animated:(BOOL)animated {
+- (void)setupNavigationItems {
     // 子类重写
     self.navigationItem.titleView = self.titleView;
 }
 
-- (void)setToolbarItemsIsInEditMode:(BOOL)isInEditMode animated:(BOOL)animated {
+- (void)setupToolbarItems {
     // 子类重写
 }
 

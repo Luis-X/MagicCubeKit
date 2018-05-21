@@ -141,7 +141,9 @@ NSString *const QMUICommonTableViewControllerSectionFooterIdentifier = @"QMUISec
 
 - (QMUITableView *)tableView {
     if (!_tableView) {
+        BeginIgnoreAvailabilityWarning
         [self loadViewIfNeeded];
+        EndIgnoreAvailabilityWarning
     }
     return _tableView;
 }
@@ -307,10 +309,6 @@ NSString *const QMUICommonTableViewControllerSectionFooterIdentifier = @"QMUISec
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [[UITableViewCell alloc] init];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return TableViewCellNormalHeight;
 }
 
 @end

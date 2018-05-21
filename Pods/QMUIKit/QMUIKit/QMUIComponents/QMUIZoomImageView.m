@@ -9,6 +9,7 @@
 #import "QMUIZoomImageView.h"
 #import "QMUICore.h"
 #import "QMUIEmptyView.h"
+#import "UIView+QMUI.h"
 #import "UIImage+QMUI.h"
 #import "UIColor+QMUI.h"
 #import "UIScrollView+QMUI.h"
@@ -17,6 +18,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "UIControl+QMUI.h"
 #import "UILabel+QMUI.h"
+#import "QMUIPieProgressView.h"
 
 #define kIconsColor UIColorMakeWithRGBA(255, 255, 255, .75)
 
@@ -56,6 +58,8 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 @synthesize videoPlayerLayer = _videoPlayerLayer;
 @synthesize videoToolbar = _videoToolbar;
 @synthesize videoCenteredPlayButton = _videoCenteredPlayButton;
+@synthesize cloudProgressView = _cloudProgressView;
+@synthesize cloudDownloadRetryButton = _cloudDownloadRetryButton;
 
 - (void)didMoveToWindow {
     // 当 self.window 为 nil 时说明此 view 被移出了可视区域（比如所在的 controller 被 pop 了），此时应该停止视频播放
@@ -66,8 +70,6 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        QMUIZoomImageView *appearance = [QMUIZoomImageView appearance];
-        _videoCenteredPlayButtonImage = appearance.videoCenteredPlayButtonImage;
         
         self.contentMode = UIViewContentModeCenter;
         self.maximumZoomScale = 2.0;
@@ -121,14 +123,24 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
     CGRect viewportRect = [self finalViewportRect];
     
     if (_videoCenteredPlayButton) {
+        [_videoCenteredPlayButton sizeToFit];
         _videoCenteredPlayButton.center = CGPointMake(CGRectGetMidX(viewportRect), CGRectGetMidY(viewportRect));
     }
     
     if (_videoToolbar) {
         _videoToolbar.frame = ({
-            CGFloat height = [_videoToolbar sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)].height;
-            CGRectFlatMake(0, CGRectGetHeight(self.bounds) - height, CGRectGetWidth(self.bounds), height);
+            UIEdgeInsets margins = UIEdgeInsetsConcat(self.videoToolbarMargins, self.qmui_safeAreaInsets);
+            CGFloat width = CGRectGetWidth(self.bounds) - UIEdgeInsetsGetHorizontalValue(margins);
+            CGFloat height = [_videoToolbar sizeThatFits:CGSizeMake(width, CGFLOAT_MAX)].height;
+            CGRectFlatMake(margins.left, CGRectGetHeight(self.bounds) - margins.bottom - height, width, height);
         });
+    }
+    
+    if (_cloudProgressView && _cloudDownloadRetryButton) {
+        CGPoint origin = CGPointMake(12, 12);
+        _cloudDownloadRetryButton.frame = CGRectSetXY(_cloudDownloadRetryButton.frame, origin.x, 20 + NavigationBarHeight + IPhoneXSafeAreaInsets.top + origin.y);
+        _cloudProgressView.frame = CGRectSetSize(_cloudProgressView.frame, _cloudDownloadRetryButton.currentImage.size);
+        _cloudProgressView.center = _cloudDownloadRetryButton.center;
     }
 }
 
@@ -203,7 +215,9 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
     }
     
     [self initLivePhotoViewIfNeeded];
-    _livePhotoView.livePhoto = livePhoto;
+    if (@available(iOS 9.1, *)) {
+        _livePhotoView.livePhoto = livePhoto;
+    }
     _livePhotoView.hidden = NO;
     
     // 更新 livePhotoView 的大小时，livePhotoView 可能已经被缩放过，所以要应用当前的缩放
@@ -213,11 +227,13 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 }
 
 - (void)initLivePhotoViewIfNeeded {
-    if (_livePhotoView || !NSClassFromString(@"PHLivePhotoView")) {
-        return;
+    if (@available(iOS 9.1, *)) {
+        if (_livePhotoView) {
+            return;
+        }
+        _livePhotoView = [[PHLivePhotoView alloc] init];
+        [self.scrollView addSubview:_livePhotoView];
     }
-    _livePhotoView = [[PHLivePhotoView alloc] init];
-    [self.scrollView addSubview:_livePhotoView];
 }
 
 #pragma mark - Image Scale
@@ -575,9 +591,6 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
     }
     _videoToolbar = ({
         QMUIZoomImageViewVideoToolbar * b = [[QMUIZoomImageViewVideoToolbar alloc] init];
-        if ([self.delegate respondsToSelector:@selector(contentInsetsForVideoToolbar:inZoomingImageView:)]) {
-            b.contentInsets = [self.delegate contentInsetsForVideoToolbar:b inZoomingImageView:self];
-        }
         [b.playButton addTarget:self action:@selector(handlePlayButton:) forControlEvents:UIControlEventTouchUpInside];
         [b.pauseButton addTarget:self action:@selector(handlePauseButton) forControlEvents:UIControlEventTouchUpInside];
         [self insertSubview:b belowSubview:self.emptyView];
@@ -596,7 +609,6 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
         b.qmui_outsideEdge = UIEdgeInsetsMake(-60, -60, -60, -60);
         b.tag = kTagForCenteredPlayButton;
         [b setImage:self.videoCenteredPlayButtonImage forState:UIControlStateNormal];
-        [b sizeToFit];
         [b addTarget:self action:@selector(handlePlayButton:) forControlEvents:UIControlEventTouchUpInside];
         b.hidden = YES;
         [self insertSubview:b belowSubview:self.emptyView];
@@ -628,6 +640,11 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
     self.videoPlayer = nil;
 }
 
+- (void)setVideoToolbarMargins:(UIEdgeInsets)videoToolbarMargins {
+    _videoToolbarMargins = videoToolbarMargins;
+    [self setNeedsLayout];
+}
+
 - (void)setVideoCenteredPlayButtonImage:(UIImage *)videoCenteredPlayButtonImage {
     _videoCenteredPlayButtonImage = videoCenteredPlayButtonImage;
     if (!self.videoCenteredPlayButton) {
@@ -639,6 +656,89 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 
 - (void)applicationDidEnterBackground {
     [self pauseVideo];
+}
+
+#pragma mark - iCloud
+
+- (QMUIPieProgressView *)cloudProgressView {
+    [self initCloudRelatedViewsIfNeeded];
+    return _cloudProgressView;
+}
+
+- (UIButton *)cloudDownloadRetryButton {
+    [self initCloudRelatedViewsIfNeeded];
+    return _cloudDownloadRetryButton;
+}
+
+- (void)initCloudRelatedViewsIfNeeded {
+    [self initCloudProgressViewIfNeeded];
+    [self initCloudDownloadRetryButtonIfNeeded];
+}
+
+- (void)initCloudProgressViewIfNeeded {
+    if (_cloudProgressView) {
+        return;
+    }
+    _cloudProgressView = [[QMUIPieProgressView alloc] init];
+    _cloudProgressView.tintColor = ((UIActivityIndicatorView *)self.emptyView.loadingView).color;
+    _cloudProgressView.hidden = YES;
+    [self addSubview:_cloudProgressView];
+}
+
+- (void)initCloudDownloadRetryButtonIfNeeded {
+    if (_cloudDownloadRetryButton) {
+        return;
+    }
+    
+    _cloudDownloadRetryButton = [[QMUIButton alloc] init];
+    [_cloudDownloadRetryButton setImage:[QMUIHelper imageWithName:@"QMUI_icloud_download_fault"] forState:UIControlStateNormal];
+    _cloudDownloadRetryButton.adjustsImageTintColorAutomatically = YES;
+    _cloudDownloadRetryButton.tintColor = ((UIActivityIndicatorView *)self.emptyView.loadingView).color;
+    [_cloudDownloadRetryButton sizeToFit];
+    _cloudDownloadRetryButton.qmui_outsideEdge = UIEdgeInsetsMake(-6, -6, -6, -6);
+    _cloudDownloadRetryButton.hidden = YES;
+    [_cloudDownloadRetryButton addTarget:self action:@selector(handleICloudDownloadRetryEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_cloudDownloadRetryButton];
+}
+
+- (void)setCloudDownloadStatus:(QMUIAssetDownloadStatus)cloudDownloadStatus {
+    BOOL statusChanged = _cloudDownloadStatus != cloudDownloadStatus;
+    _cloudDownloadStatus = cloudDownloadStatus;
+    switch (cloudDownloadStatus) {
+        case QMUIAssetDownloadStatusSucceed:
+            self.cloudProgressView.hidden = YES;
+            self.cloudDownloadRetryButton.hidden = YES;
+            break;
+            
+        case QMUIAssetDownloadStatusDownloading:
+            self.cloudProgressView.hidden = NO;
+            [self.cloudProgressView.superview bringSubviewToFront:self.cloudProgressView];
+            self.cloudDownloadRetryButton.hidden = YES;
+            break;
+            
+        case QMUIAssetDownloadStatusCanceled:
+            self.cloudProgressView.hidden = YES;
+            self.cloudDownloadRetryButton.hidden = YES;
+            break;
+            
+        case QMUIAssetDownloadStatusFailed:
+            self.cloudProgressView.hidden = YES;
+            self.cloudDownloadRetryButton.hidden = NO;
+            [self.cloudDownloadRetryButton.superview bringSubviewToFront:self.cloudDownloadRetryButton];
+            break;
+            
+        default:
+            break;
+    }
+    if (statusChanged) {
+        [self setNeedsLayout];
+    }
+}
+
+- (void)handleICloudDownloadRetryEvent:(UIView *)sender {
+    if ([self.delegate respondsToSelector:@selector(didTouchICloudRetryButtonInZoomImageView:)]) {
+        [self.delegate didTouchICloudRetryButtonInZoomImageView:self];
+    }
 }
 
 #pragma mark - GestureRecognizers
@@ -794,6 +894,7 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 
 + (void)setDefaultAppearance {
     QMUIZoomImageView *appearance = [QMUIZoomImageView appearance];
+    appearance.videoToolbarMargins = UIEdgeInsetsMake(0, 25, 25, 18);
     appearance.videoCenteredPlayButtonImage = [QMUIZoomImageViewImageGenerator largePlayImage];
 }
 
@@ -898,12 +999,6 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        QMUIZoomImageViewVideoToolbar *appearance = [QMUIZoomImageViewVideoToolbar appearance];
-        _contentInsets = appearance.contentInsets;
-        _playButtonImage = appearance.playButtonImage;
-        _pauseButtonImage = appearance.pauseButtonImage;
-        
-        self.backgroundColor = UIColorMakeWithRGBA(.5, 255, 0, 0);
         
         _playButton = [[QMUIButton alloc] init];
         self.playButton.qmui_outsideEdge = UIEdgeInsetsMake(-10, -10, -10, -10);
@@ -922,7 +1017,7 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
         self.slider.thumbColor = UIColorWhite;
         [self addSubview:self.slider];
         
-        _sliderLeftLabel = [[UILabel alloc] initWithFont:UIFontMake(12) textColor:UIColorWhite];
+        _sliderLeftLabel = [[UILabel alloc] qmui_initWithFont:UIFontMake(12) textColor:UIColorWhite];
         self.sliderLeftLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.sliderLeftLabel];
         
@@ -941,41 +1036,41 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    CGFloat contentHeight = [self maxHeightAmongViews:@[self.playButton, self.pauseButton, self.sliderLeftLabel, self.sliderRightLabel, self.slider]];
+    CGFloat contentHeight = CGRectGetHeight(self.bounds) - UIEdgeInsetsGetVerticalValue(self.paddings);
     
     self.playButton.frame = ({
-        CGSize size = [self.playButton sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-        CGRectFlatMake(self.contentInsets.left, contentHeight / 2 - size.height / 2 + self.contentInsets.top, size.width, size.height);
+        CGSize size = [self.playButton sizeThatFits:CGSizeMax];
+        CGRectFlatMake(self.paddings.left, CGFloatGetCenter(contentHeight, size.height) + self.paddings.top, size.width, size.height);
     });
     
     self.pauseButton.frame = ({
-        CGSize size = [self.pauseButton sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+        CGSize size = [self.pauseButton sizeThatFits:CGSizeMax];
         CGRectFlatMake(CGRectGetMidX(self.playButton.frame) - size.width / 2, CGRectGetMidY(self.playButton.frame) - size.height / 2, size.width, size.height);
     });
     
     CGFloat timeLabelWidth = 55;
     self.sliderLeftLabel.frame = ({
         CGFloat marginLeft = 19;
-        CGRectFlatMake(CGRectGetMaxX(self.playButton.frame) + marginLeft, self.contentInsets.top, timeLabelWidth, contentHeight);
+        CGRectFlatMake(CGRectGetMaxX(self.playButton.frame) + marginLeft, self.paddings.top, timeLabelWidth, contentHeight);
     });
     self.sliderRightLabel.frame = ({
-        CGRectFlatMake(CGRectGetWidth(self.bounds) - self.contentInsets.right - timeLabelWidth, self.contentInsets.top, timeLabelWidth, contentHeight);
+        CGRectFlatMake(CGRectGetWidth(self.bounds) - self.paddings.right - timeLabelWidth, self.paddings.top, timeLabelWidth, contentHeight);
     });
     self.slider.frame = ({
         CGFloat marginToLabel = 4;
         CGFloat x = CGRectGetMaxX(self.sliderLeftLabel.frame) + marginToLabel;
-        CGRectFlatMake(x, self.contentInsets.top, CGRectGetMinX(self.sliderRightLabel.frame) - marginToLabel - x, contentHeight);
+        CGRectFlatMake(x, self.paddings.top, CGRectGetMinX(self.sliderRightLabel.frame) - marginToLabel - x, contentHeight);
     });
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
     CGFloat contentHeight = [self maxHeightAmongViews:@[self.playButton, self.pauseButton, self.sliderLeftLabel, self.sliderRightLabel, self.slider]];
-    size.height = contentHeight + UIEdgeInsetsGetVerticalValue(self.contentInsets);
+    size.height = contentHeight + UIEdgeInsetsGetVerticalValue(self.paddings);
     return size;
 }
 
-- (void)setContentInsets:(UIEdgeInsets)contentInsets {
-    _contentInsets = contentInsets;
+- (void)setPaddings:(UIEdgeInsets)paddings {
+    _paddings = paddings;
     [self setNeedsLayout];
 }
 
@@ -995,7 +1090,7 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 - (CGFloat)maxHeightAmongViews:(NSArray<UIView *> *)views {
     __block CGFloat maxValue = 0;
     [views enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat height = [obj sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)].height;
+        CGFloat height = [obj sizeThatFits:CGSizeMax].height;
         maxValue = MAX(height, maxValue);
     }];
     return maxValue;
@@ -1018,7 +1113,6 @@ static NSUInteger const kTagForCenteredPlayButton = 1;
 
 + (void)setDefaultAppearance {
     QMUIZoomImageViewVideoToolbar *appearance = [QMUIZoomImageViewVideoToolbar appearance];
-    appearance.contentInsets = UIEdgeInsetsMake(25, 25, 25, 18);
     appearance.playButtonImage = [QMUIZoomImageViewImageGenerator smallPlayImage];
     appearance.pauseButtonImage = [QMUIZoomImageViewImageGenerator pauseImage];
 }

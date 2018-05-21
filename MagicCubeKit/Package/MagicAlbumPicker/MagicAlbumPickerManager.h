@@ -15,7 +15,7 @@ typedef void (^MagicAlbumPickerManagerBlock)(NSMutableArray *images);
 
 @interface MagicAlbumPickerManager : NSObject<QMUIAlbumViewControllerDelegate, QMUIImagePickerViewControllerDelegate, MCMultipleImagePickerPreviewViewControllerDelegate>
 + (MagicAlbumPickerManager *)shareManager;
-
+- (NSMutableSet *)allSelectImageIndexSet;
 // 多选相册
 - (void)presentAlbumViewControllerWithTitle:(NSString *)title maximumSelectImageCount:(NSInteger)maximumSelectImageCount addController:(UIViewController *)addController handler:(MagicAlbumPickerManagerBlock)handler;
 // 批量上传

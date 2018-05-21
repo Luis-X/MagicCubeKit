@@ -39,7 +39,7 @@
 @property(nonatomic, weak, readonly) id<QMUIKeyboardManagerDelegate> delegate;
 
 /**
- *  是否允许触发delegate的回调，某些场景可能要主动停止对键盘事件的响应。
+ *  是否允许触发delegate的回调，常见的场景例如在 UIViewController viewWillAppear: 里打开，在 viewWillDisappear: 里关闭，从而避免在键盘升起的状态下手势返回时界面布局会跟着键盘往下移动。
  *  默认为 YES。
  */
 @property(nonatomic, assign) BOOL delegateEnabled;
@@ -54,6 +54,11 @@
  *  获取当前所有的 target UIResponder，若不存在则返回 nil
  */
 - (NSArray<UIResponder *> *)allTargetResponders;
+
+/**
+ *  移除 targetResponder 跟 keyboardManager 的关系，如果成功会返回 YES
+ */
+- (BOOL)removeTargetResponder:(UIResponder *)targetResponder;
 
 /**
  *  把键盘的rect转为相对于view的rect。一般用来把键盘的rect转化为相对于当前 self.view 的 rect，然后获取 y 值来布局对应的 view（这里一般不要获取键盘的高度，因为对于iPad的键盘，浮动状态下键盘的高度往往不是我们想要的）。
@@ -212,6 +217,16 @@
 
 @end
 
+@interface UIResponder (KeyboardManager)
+
+/// 系统自己的isFirstResponder有延迟，这里手动记录UIResponder是否isFirstResponder，QMUIKeyboardManager内部自己使用
+@property(nonatomic, assign) BOOL keyboardManager_isFirstResponder;
+
+/// 持有KeyboardManager对象
+@property(nonatomic, strong) QMUIKeyboardManager *qmui_keyboardManager;
+
+@end
+
 @interface UITextField (QMUI_KeyboardManager)
 
 /// 键盘相关block，搭配QMUIKeyboardManager一起使用
@@ -223,7 +238,7 @@
 @property(nonatomic, copy) void (^qmui_keyboardDidHideNotificationBlock)(QMUIKeyboardUserInfo *keyboardUserInfo);
 @property(nonatomic, copy) void (^qmui_keyboardDidChangeFrameNotificationBlock)(QMUIKeyboardUserInfo *keyboardUserInfo);
 
-@property(nonatomic, strong, readonly) QMUIKeyboardManager *qmui_keyboardManager;
+// @property(nonatomic, strong, readonly) QMUIKeyboardManager *qmui_keyboardManager;
 
 @end
 
@@ -238,6 +253,6 @@
 @property(nonatomic, copy) void (^qmui_keyboardDidHideNotificationBlock)(QMUIKeyboardUserInfo *keyboardUserInfo);
 @property(nonatomic, copy) void (^qmui_keyboardDidChangeFrameNotificationBlock)(QMUIKeyboardUserInfo *keyboardUserInfo);
 
-@property(nonatomic, strong, readonly) QMUIKeyboardManager *qmui_keyboardManager;
+// @property(nonatomic, strong, readonly) QMUIKeyboardManager *qmui_keyboardManager;
 
 @end

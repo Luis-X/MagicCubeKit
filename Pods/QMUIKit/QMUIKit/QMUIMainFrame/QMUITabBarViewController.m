@@ -28,7 +28,10 @@
 
 - (void)didInitialized {
     // UIView.tintColor 并不支持 UIAppearance 协议，所以不能通过 appearance 来设置，只能在实例里设置
-    self.tabBar.tintColor = TabBarTintColor;
+    UIColor *tintColor = TabBarTintColor;
+    if (tintColor) {
+        self.tabBar.tintColor = tintColor;
+    }
 }
 
 #pragma mark - 屏幕旋转
@@ -39,6 +42,16 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return [self.selectedViewController qmui_hasOverrideUIKitMethod:_cmd] ? [self.selectedViewController supportedInterfaceOrientations] : SupportedOrientationMask;
+}
+
+#pragma mark - HomeIndicator
+
+- (UIViewController *)childViewControllerForHomeIndicatorAutoHidden {
+    return self.selectedViewController;
+}
+
+- (BOOL)prefersHomeIndicatorAutoHidden {
+    return NO;
 }
 
 @end
